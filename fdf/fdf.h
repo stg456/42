@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:46:38 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/23 15:20:01 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/05/23 16:42:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,6 @@ typedef struct s_env
 }               t_env;
 
 // initilisation
-
-
-
-
 
 // utils
 char	**ft_split(char const *s, char c);
