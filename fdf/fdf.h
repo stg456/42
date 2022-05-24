@@ -6,12 +6,12 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:46:38 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/23 16:42:07 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:00:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef fdf_h
-# define fdf_h
+#ifndef FDF_H
+# define FDF_H
 
 # include <mlx.h>
 # include <math.h>
@@ -22,19 +22,22 @@
 # include <string.h>
 # include <stdarg.h>
 # include <sys/types.h>
+# define BUFFER_SIZE 300
 
 // struct mlx et window
 typedef struct s_env
 {
-    void    *mlx;
-    void    *win;
-    void	*img;
-    int     x;
-    int     y;
-    int     color;
-}               t_env;
+	void	*mlx;
+	void	*win;
+	void	*img;
+	int		x;
+	int		y;
+	int		color;
+}				t_env;
 
 // initilisation
+
+int		read_map(char *map);
 
 // utils
 char	**ft_split(char const *s, char c);

@@ -6,16 +6,19 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/23 16:04:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/05/24 11:02:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-int readmap(fd, e.win)
+int	read_map(char *map)
 {
-    int map;
+	char	*str;
+	int		fd;
 
-    map = open("./maps/42.fdf", O_RDONLY);
-    read(map, );
+	fd = open(map, O_RDONLY);
+	str = get_next_line(fd);
+	printf("%s", get_next_line(fd));
+	return (fd);
 }

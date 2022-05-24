@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:13:19 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/23 16:42:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/05/24 10:54:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,32 @@
 #include <mlx.h>
 #include <stdio.h>
 
-int close_hook(t_env *e)
+int	close_hook(t_env *e)
 {
-    mlx_destroy_window(e->mlx, e->win);
-    e->win = NULL;
-    exit(EXIT_SUCCESS);
+	mlx_destroy_window(e->mlx, e->win);
+	e->win = NULL;
+	exit(EXIT_SUCCESS);
 }
 
-int key_hook(int key, t_env *e)
+int	key_hook(int key, t_env *e)
 {
-    //if (key == 13 || key == 0 || key == 1 || key == 2)
-        //move(key, e);
-    if (key == 53)
-        close_hook(e);
-    return (1);
+	/*if (key == 13 || key == 0 || key == 1 || key == 2)
+		move(key, e);*/
+	if (key == 53)
+		close_hook(e);
+	return (1);
 }
 
-int main(void)
+int	main(int argc, char **argv)
 {
-	t_env   e;
+	t_env	e;
+	(void)argc;
 
-    e.mlx = mlx_init();
-    e.win = mlx_new_window(e.mlx, 1000, 1000, "Fdf stgerard");
-    mlx_hook(e.win, 17, 0, &close_hook, &e);
+	e.mlx = mlx_init();
+	e.win = mlx_new_window(e.mlx, 1000, 1000, "Fdf stgerard");
+	mlx_hook(e.win, 17, 0, &close_hook, &e);
 	mlx_key_hook(e.win, &key_hook, &e);
 	mlx_loop(e.mlx);
-    readmap(e.win);
+	read_map(argv[1]);
 	return (0);
 }

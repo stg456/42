@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 18:28:05 by stgerard          #+#    #+#             */
-/*   Updated: 2022/03/15 16:43:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/05/24 10:21:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+# define BUFFER_SIZE 300
 
 size_t	ft_strlen(const char *str);
 char	*ft_strchr(char *s, int c);
