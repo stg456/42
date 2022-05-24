@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:46:38 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/24 11:00:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/05/24 16:25:47 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ typedef struct s_env
 
 // initilisation
 
-int		read_map(char *map);
+//int		read_map(char *map);
+char	*read_map(char *map);
 
 // utils
 char	**ft_split(char const *s, char c);
