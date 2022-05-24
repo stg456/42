@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:13:19 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/24 10:54:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/05/24 15:26:26 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,8 @@ int	main(int argc, char **argv)
 	mlx_key_hook(e.win, &key_hook, &e);
 	mlx_loop(e.mlx);
 	read_map(argv[1]);
+	e.img = mlx_new_image(e.mlx, 1000, 1000);
+	mlx_put_image_to_wimdow(e.mlx, e.win, e.img, 50, 50);
+
 	return (0);
 }
