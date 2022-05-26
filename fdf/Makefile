@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 16:05:13 by stgerard          #+#    #+#              #
-#    Updated: 2022/05/24 10:23:27 by stgerard         ###   ########.fr        #
+#    Updated: 2022/05/26 14:35:41 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,4 +39,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: clean fclean re all
