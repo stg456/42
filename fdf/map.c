@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/30 15:35:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/05/30 16:10:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 char	*read_map(char *map)
 {
-	char	*str;
 	int		fd;
 	char	*line;
 	t_env	e;
@@ -34,12 +33,13 @@ char	*read_map(char *map)
 				line++;
 			else
 			{
+				e.z = atoi(*line);
 
 			}
 		}
 	}
-	str = get_next_line(fd);
-	return (str);
+
+	return (fd);
 }
 
 
