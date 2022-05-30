@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/24 16:51:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:35:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,31 @@ char	*read_map(char *map)
 {
 	char	*str;
 	int		fd;
+	char	*line;
+	t_env	e;
+	int		interv;
 
+	interv = 20;
+	e.x = 10;
+	e.y = 10;
 	fd = open(map, O_RDONLY);
 	if (fd < 0)
-		return (0); 
-	str = get_next_line(fd);	
+		return (0);
+	while (get_next_line,(fd, &line) == 1)
+	{
+		while (*line != '\0')
+		{
+			if (*line == ' ')
+				line++;
+			else
+			{
+
+			}
+		}
+	}
+	str = get_next_line(fd);
 	return (str);
 }
-
-
 
 
 //uint	mlx_get_color_value(void *mlx_ptr, int color);

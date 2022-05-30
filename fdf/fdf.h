@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:46:38 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/24 16:25:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:35:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_env
 	void	*img;
 	int		x;
 	int		y;
-	int		color;
+	int		z;
 }				t_env;
 
 // initilisation
