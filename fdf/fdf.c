@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:13:19 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/30 14:09:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:43:47 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main(int argc, char **argv)
 {
 	t_env	e;
 	char	*str;
+
 	(void)argc;
 
 	str = NULL;
@@ -42,11 +43,10 @@ int	main(int argc, char **argv)
 	mlx_hook(e.win, 17, 0, &close_hook, &e);
 	mlx_key_hook(e.win, &key_hook, &e);
 	read_map(argv[1]);
-	//e.img = mlx_new_image(e.mlx, 1000, 1000);
-	//mlx_pixel_put(e.mlx, e.win, x, y, color);
+	e.img = mlx_new_image(e.mlx, 1000, 1000);
+	//mlx_pixel_put(e.mlx, e.win, 0, 0, 0x80808080);
 	//mlx_put_image_to_window(e.mlx, e.win, e.img, 10, 10);
-	mlx_string_put(e.mlx, e.win, 50, 50, 0x80808080, argv[1]);
-/*	mlx_string_put(e.mlx, e.win, 100, 100, 255, str);seg fault*/
+	//mlx_string_put(e.mlx, e.win, 50, 50, 0x80808080, argv[1]);
 
 	mlx_loop(e.mlx);
 	return (0);
