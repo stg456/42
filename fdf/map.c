@@ -6,23 +6,24 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/05 16:24:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/05 16:36:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-char	*read_map(char *map)
+char	*read_map(char **argv)
 {
 	int		fd;
 	char	*line;
 	t_env	e;
 	int		interv;
+	char	**map;
 
 	interv = 20;
 	e.x = 10;
 	e.y = 10;
-	fd = open(map, O_RDONLY);
+	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		return (0);
 	while (get_next_line, (fd, &line) == 1)
@@ -40,7 +41,7 @@ char	*read_map(char *map)
 			}
 		}
 	}
-
+	//map = split et join
 	return (map);
 }
 

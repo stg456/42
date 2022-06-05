@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:13:19 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/05 14:10:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/05 16:41:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	e.win = mlx_new_window(e.mlx, 1000, 1000, "Fdf stgerard");
 	mlx_hook(e.win, 17, 0, &close_hook, &e);
 	mlx_key_hook(e.win, &key_hook, &e);
-	read_map(argv[1]);
+	read_map(argv);
 	e.img = mlx_new_image(e.mlx, 1000, 1000);
 	//mlx_pixel_put(e.mlx, e.win, 0, 0, 0x80808080);
 	//mlx_put_image_to_window(e.mlx, e.win, e.img, 10, 10);
