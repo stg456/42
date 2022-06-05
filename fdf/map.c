@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/05 16:36:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/05 17:50:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*read_map(char **argv)
 	t_env	e;
 	int		interv;
 	char	**map;
+	int		i;
+	int		j;
 
 	interv = 20;
 	e.x = 10;
@@ -34,7 +36,7 @@ char	*read_map(char **argv)
 				line++;
 			else
 			{
-				
+				map[i][j] = ft_split(*line, c);
 				e.z = atoi(&line);/*error*/
 				
 
