@@ -6,11 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:48:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/16 16:10:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/03/03 14:00:15 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fdf.h"
+#include "libft.h"
 
 static int	count_words(const char *str, char c)
 {

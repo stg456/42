@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:46:38 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/31 11:35:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/05 16:08:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <string.h>
 # include <stdarg.h>
 # include <sys/types.h>
+# include "./libft/libft.h"
 # define BUFFER_SIZE 300
 
 // struct mlx et window
@@ -30,10 +31,23 @@ typedef struct s_env
 	void	*mlx;
 	void	*win;
 	void	*img;
+	int		nbline;
+	int		color;
 	int		x;
 	int		y;
 	int		z;
+	char	**map;
 }				t_env;
+
+typedef struct s_draw
+{
+	int		startx;
+	int		starty;
+	int		endxx;
+	int		endxy;
+	int		endyx;
+	int		endyy;
+}				t_draw;
 
 // initilisation
 

@@ -1,30 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_islonglong.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:21:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/10 11:23:49 by stgerard         ###   ########.fr       */
+/*   Created: 2022/04/19 13:20:28 by stgerard          #+#    #+#             */
+/*   Updated: 2022/04/19 17:34:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_islonglong(const char *str)
 {
-	size_t	i;
-	char	*ptr;
+	int			i;
+	long long	rt;
+	int			sign;
 
+	rt = 0;
 	i = 0;
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (0);
-	while (i < count * size)
+	sign = 1;
+	if (str[i] && (str[i] == '-' || str[i] == '+'))
 	{
-		ptr[i] = 0;
+		if (str[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	return (ptr);
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
+	{
+		rt = rt * 10 + (str[i] - 48);
+		if (rt * sign > 2147483647)
+			return (0);
+		else if (rt * sign < -2147483648)
+			return (0);
+		i++;
+	}
+	return (1);
 }

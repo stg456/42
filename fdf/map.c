@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/31 13:06:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/05 16:24:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ char	*read_map(char *map)
 	fd = open(map, O_RDONLY);
 	if (fd < 0)
 		return (0);
-	while (get_next_line,(fd, &line) == 1)
+	while (get_next_line, (fd, &line) == 1)
 	{
 		while (*line != '\0')
 		{
@@ -33,6 +33,7 @@ char	*read_map(char *map)
 				line++;
 			else
 			{
+				
 				e.z = atoi(&line);/*error*/
 				
 

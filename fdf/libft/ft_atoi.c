@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:21:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/05/10 11:23:49 by stgerard         ###   ########.fr       */
+/*   Created: 2022/02/21 14:21:31 by stgerard          #+#    #+#             */
+/*   Updated: 2022/03/03 16:17:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
-	char	*ptr;
+	int			i;
+	int			n;
+	long int	j;
 
 	i = 0;
-	ptr = malloc(count * size);
-	if (!ptr)
-		return (0);
-	while (i < count * size)
+	j = 0;
+	n = 1;
+	while (((str[i] >= '\t') && (str[i] <= '\r')) || (str[i] == ' '))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		ptr[i] = 0;
+		if (str[i] == '-')
+			n *= -1;
 		i++;
 	}
-	return (ptr);
+	while ((str[i] >= '0') && (str[i] <= '9'))
+	{
+		if (j * n > 2147483647)
+			return (-1);
+		else if (j * n < -2147483648)
+			return (0);
+		j = (str[i] - '0') + (j * 10);
+		i++;
+	}
+	return (j * n);
 }

@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 16:05:13 by stgerard          #+#    #+#              #
-#    Updated: 2022/05/31 10:57:06 by stgerard         ###   ########.fr        #
+#    Updated: 2022/06/05 14:17:47 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 SRC = fdf.c map.c ./libft/get_next_line_utils.c ./libft/get_next_line.c \
+./libft/ft_bzero.c ./libft/ft_memalloc.c
 #./libft/gnlvy.c
 
 OBJ = ${SRC:.c=.o}
