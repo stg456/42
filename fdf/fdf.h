@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:46:38 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/07 14:29:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/07 15:16:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ typedef struct s_env
 {
 	void	*mlx;
 	void	*win;
-	void	*img;
 	int		nbline;
 	int		color;
 	int		x;
