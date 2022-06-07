@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/07 15:13:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/07 15:23:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,14 @@ char	*read_map(char **argv)
 	nbline = 0;
 	mapjoin = "\0";
 	e.nbline = 0;
-	map[i][j];
+
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		return (0);
 	line = get_next_line(fd);
+	map = ft_split(line, ' ');
 
+/*
 	while (line)
 	{
 		if (*line = '\n')
@@ -52,7 +54,7 @@ char	*read_map(char **argv)
 			
 		}
 	}
-
+*/
 
 	return (map);
 }
