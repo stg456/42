@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/07 14:48:57 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/07 15:13:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,16 @@ char	*read_map(char **argv)
 		return (0);
 	line = get_next_line(fd);
 
-	while (line == 1)
+	while (line)
 	{
-		if (line = '\n')
+		if (*line = '\n')
 			j++;
-		else if (line = ' ')
+		else if (*line = ' ')
 			i++;
 		else
 		{
-			map[i][j] = ft_split(&line, ' ');
-			e.z = atoi(&line);
+			map = ft_split(line, ' ');
+			e.z = atoi(&map[i][j]);
 				
 			
 		}
