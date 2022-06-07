@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:46:38 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/07 15:16:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/07 15:49:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 # include <stdarg.h>
 # include <sys/types.h>
 # include "./libft/libft.h"
-# define BUFFER_SIZE 300
+# define BUFFER_SIZE 3000
 
 // struct mlx et window
 typedef struct s_env
