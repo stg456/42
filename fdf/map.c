@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/07 14:43:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/07 14:48:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*read_map(char **argv)
 	{
 		if (line = '\n')
 			j++;
-		elseif (*line = ' ')
+		else if (line = ' ')
 			i++;
 		else
 		{
