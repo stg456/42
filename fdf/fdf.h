@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:46:38 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/05 16:38:48 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/07 14:29:12 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ typedef struct s_draw
 
 // initilisation
 
-//int		read_map(char *map);
 char	*read_map(char **argv);
 
 // utils
