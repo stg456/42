@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/05 16:05:13 by stgerard          #+#    #+#              #
-#    Updated: 2022/06/07 12:27:10 by stgerard         ###   ########.fr        #
+#    Updated: 2022/06/07 15:29:58 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 SRC = fdf.c map.c ./libft/get_next_line_utils.c ./libft/get_next_line.c \
-./lbft/ft_split.c ./libft/ft_atoi.c
+./libft/ft_split.c ./libft/ft_atoi.c
 #./libft/ft_bzero.c ./libft/ft_memalloc.c
 #./libft/gnlvy.c
 
