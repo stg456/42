@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/13 11:47:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/14 13:07:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ char	*read_map(char **argv)
 		}
 		else
 		{
-			map = ft_split(&line, ' ');
-			//e.z = atoi(&map[i][j]);
+			map[j][i] = ft_atoi(&line);
 				
 			
 		}
