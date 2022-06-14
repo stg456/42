@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/14 13:07:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/14 14:51:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*read_map(char **argv)
 	char	*mapjoin;
 	t_env	e;
 	int		interv;
-	char	**map;
+	int		**map;
 	int		i;
 	int		j;
 
@@ -37,25 +37,18 @@ char	*read_map(char **argv)
 	if (fd < 0)
 		return (0);
 	line = get_next_line(fd);
-	//mlx_string_put(e.mlx, e.win, 50, 50, 0x80808080, line);
-
 	while (line)
 	{
-		if (*line = '\n')
-		{
+		if (*line == '\n')
 			j++;
-			map[j][i] = &line;
-		}
-		else if (*line = ' ')
-		{
+		else if (*line == ' ')
 			i++;
-			map[j][i] = &line;
-		}
 		else
 		{
 			map[j][i] = ft_atoi(&line);
-				
-			
+			mlx_pixel_put(e.mlx, e.win, e.x, e.y, 0x80eaeaea);
+			e.x += 5;
+			e.y += 5;
 		}
 	}
 
