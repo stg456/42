@@ -6,25 +6,25 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/16 15:33:20 by stgerard          #+#    #+#              #
-#    Updated: 2022/06/16 15:34:29 by stgerard         ###   ########.fr        #
+#    Updated: 2022/06/16 15:56:04 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= fdf
 
-SRC		= src/main.c \
-		  src/key.c \
-		  src/draw.c \
-		  src/point.c \
-		  src/init.c \
-		  src/drawline.c \
-		  src/read.c \
-		  src/calculate.c \
-		  src/expose.c \
-		  src/info.c \
-		  src/color.c \
-		  src/utils.c \
-		  src/close.c
+SRC		= main.c \
+		  key.c \
+		  draw.c \
+		  point.c \
+		  init.c \
+		  drawline.c \
+		  read.c \
+		  calculate.c \
+		  expose.c \
+		  info.c \
+		  color.c \
+		  utils.c \
+		  close.c
 
 OBJ		= $(patsubst src/%.c,obj/%.o,$(SRC))
 .SILENT:
