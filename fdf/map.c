@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 15:01:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/14 14:51:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/16 14:22:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,15 +32,20 @@ char	*read_map(char **argv)
 	nbline = 0;
 	mapjoin = "\0";
 	e.nbline = 0;
+	map = NULL;
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		return (0);
 	line = get_next_line(fd);
-	while (line)
+	while (line[i])
 	{
-		if (*line == '\n')
+		if (line[i] == '\n')
+		{
+
+			map = malloc(sizeof(int *) * e.nbline);
 			j++;
+		}
 		else if (*line == ' ')
 			i++;
 		else

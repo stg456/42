@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:13:19 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/07 15:32:26 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/16 14:33:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	close_hook(t_env *e)
 
 int	key_hook(int key, t_env *e)
 {
-	/*if (key == 13 || key == 0 || key == 1 || key == 2)
-		move(key, e);*/
 	if (key == 53)
 		close_hook(e);
 	return (1);
