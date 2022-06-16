@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:13:19 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/16 14:33:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:58:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ int	main(int argc, char **argv)
 	mlx_key_hook(e.win, &key_hook, &e);
 	read_map(argv);
 
-	//mlx_pixel_put(e.mlx, e.win, 0, 0, 0x80808080);
-	//mlx_string_put(e.mlx, e.win, 50, 50, 0x80808080, line);
+	//mlx_pixel_put(e.mlx, e.win, 0, 0, 0xffffffff);
+	//mlx_string_put(e.mlx, e.win, 50, 50, 0xffffffff, line);
 
 	mlx_loop(e.mlx);
 	return (0);

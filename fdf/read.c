@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:42:05 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/16 14:42:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/16 16:58:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*read_map(char **argv)
 		else
 		{
 			map[j][i] = ft_atoi(&line);
-			mlx_pixel_put(e.mlx, e.win, e.x, e.y, 0x80eaeaea);
+			mlx_pixel_put(e.mlx, e.win, e.x, e.y, 0xffffffff);
 			e.x += 5;
 			e.y += 5;
 		}
