@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:42:05 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/18 18:16:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/18 18:44:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-char	*read_map(char **argv)
+int	read_map(char **argv)
 {
 	int		fd;
 	char	*line;
@@ -33,8 +33,8 @@ char	*read_map(char **argv)
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		return (0);
-	while (fd != '\0')
-		infd++;
+	//while (fd != '\0')
+	//	infd++;
 	//line = (char *)ft_calloc(sizeof(char) * (infd + 1));//malloc
 	line = get_next_line(fd);
 	//map = (int **)malloc(sizeof(int *) * );//malloc
@@ -52,6 +52,7 @@ char	*read_map(char **argv)
 			e.x += 5;
 			e.y += 5;
 		}
+		k++;
 	}
 	return (0);
 }

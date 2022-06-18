@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:13:19 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/18 16:16:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/18 18:44:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main(int argc, char **argv)
 	t_env	e;
 	char	*str;
 	(void)argc;
+	//(void)argv;
 
 	str = NULL;
 	e.mlx = mlx_init();
