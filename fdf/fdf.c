@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 12:13:19 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/16 16:58:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/18 15:25:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 int	close_hook(t_env *e)
 {
+	//mlx_destroy_image(e->mlx, e->img);
 	mlx_destroy_window(e->mlx, e->win);
 	e->win = NULL;
 	exit(EXIT_SUCCESS);

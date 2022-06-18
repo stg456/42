@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:46:38 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/16 16:58:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/18 15:25:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,12 @@ typedef struct s_env
 {
 	void	*mlx;
 	void	*win;
+	void	*img;
 	int		nbline;
 	int		x;
 	int		y;
 	int		z;
-	char	**map;
+	int		**map;
 }				t_env;
 
 typedef struct s_draw
@@ -50,6 +51,7 @@ typedef struct s_draw
 // initilisation
 
 char	*read_map(char **argv);
+int	draw_map(int **map);
 
 // utils
 char	**ft_split(char const *s, char c);
