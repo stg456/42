@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:42:05 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/18 16:37:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/18 17:44:08 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ char	*read_map(char **argv)
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		return (0);
+	//line = ft_calloc(sizeof(char *) * 1000001);//malloc
 	line = get_next_line(fd);
-	line = malloc(sizeof(char *) * + 1);//malloc
+	map = (int **)malloc(sizeof(int *) * );//malloc
 	while (line[k] != '\0')
 	{
 		if (line[k] == ' ')
@@ -43,9 +44,9 @@ char	*read_map(char **argv)
 		{
 			map[j][i] = ft_atoi(line);
 			mlx_pixel_put(e.mlx, e.win, e.x, e.y, 0xffffffff);
+			//draw_map(map);
 			e.x += 5;
 			e.y += 5;
-			//draw_map(map);
 		}
 	}
 	return (0);
