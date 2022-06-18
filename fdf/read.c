@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 14:42:05 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/18 17:44:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/18 18:16:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,23 @@ char	*read_map(char **argv)
 	int		i;
 	int		j;
 	int		k;
+	int		infd;
 
 	i = 0;
 	j = 0;
 	k = 0;
+	infd = 0;
 	e.x = 10;
 	e.y = 10;
 	map = NULL;
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		return (0);
-	//line = ft_calloc(sizeof(char *) * 1000001);//malloc
+	while (fd != '\0')
+		infd++;
+	//line = (char *)ft_calloc(sizeof(char) * (infd + 1));//malloc
 	line = get_next_line(fd);
-	map = (int **)malloc(sizeof(int *) * );//malloc
+	//map = (int **)malloc(sizeof(int *) * );//malloc
 	while (line[k] != '\0')
 	{
 		if (line[k] == ' ')
