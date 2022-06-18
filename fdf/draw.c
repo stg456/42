@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 16:12:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/18 16:16:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/18 16:33:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	draw_map(int **map)
 	t_env	e;
 
 	//e.win = 
-	mlx_pixel_put(e.mlx, e.win, 0, 0, 0xffffffff);
+	//mlx_pixel_put(e.mlx, e.win, 0, 0, 0xffffffff);
 
 
-
+	return (0);
 }
