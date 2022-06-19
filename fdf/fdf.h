@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 16:46:38 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/18 18:44:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/19 12:04:29 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int		draw_map(int **map);
 // utils
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *str);
+int		ft_atoi(const char *str);
 //char	*ft_strchr(char *s, int c);
 //char	*ft_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
