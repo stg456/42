@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/19 17:29:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/19 19:06:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,33 +20,46 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <string.h>
+# include <errno.h>
 # include <stdarg.h>
 # include <sys/types.h>
 # include "./libft/libft.h"
 # define BUFFER_SIZE 3000
+
+// struct image
+typedef struct s_img
+{
+	void	*player_up;
+	void	*player_left;
+	void	*player_right;
+	void	*player_down;
+	void	*background;
+}				t_img;
+
+// struct map
+typedef struct s_map
+{
+	char	**map;
+	void	objet;
+	int		x;
+	int		y;
+	int		diamonds;
+}				t_map;
 
 // struct mlx et window
 typedef struct s_env
 {
 	void	*mlx;
 	void	*win;
-	void	*img;
-	int		nbline;
-	int		x;
-	int		y;
-	int		z;
-	int		**map;
+	int		size_x;
+	int		size_y;
+	int		p_x;
+	int		p_y;
+	int		counter;
+	int		collected;
+	t_map	*map;
+	t_img	*img;
 }				t_env;
-
-typedef struct s_draw
-{
-	int		startx;
-	int		starty;
-	int		endxx;
-	int		endxy;
-	int		endyx;
-	int		endyy;
-}				t_draw;
 
 // initilisation
 

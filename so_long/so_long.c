@@ -6,13 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/19 17:29:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/19 19:06:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <mlx.h>
-#include <stdio.h>
 
 int	close_hook(t_env *e)
 {
@@ -24,6 +22,8 @@ int	close_hook(t_env *e)
 
 int	key_hook(int key, t_env *e)
 {
+	if (key == 'W' || key == 'A' || key == 'S'|| key == 'D')
+		key_move(e);//
 	if (key == 53)
 		close_hook(e);
 	return (1);
