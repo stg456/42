@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/19 17:21:41 by stgerard          #+#    #+#              #
-#    Updated: 2022/06/20 18:50:33 by stgerard         ###   ########.fr        #
+#    Updated: 2022/06/20 19:01:04 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-SRC = so_long.c init_win.c ft_line_length.c ft_count_lines.c \
+SRC = so_long.c init_win.c ./libft/ft_line_length.c ./libft/ft_count_lines.c \
+./libft/ft_calloc.c
 #./libft/get_next_line_utils.c ./libft/get_next_line.c \
 #./libft/ft_split.c ./libft/ft_atoi.c ./libft/ft_strnstr.c \
 # draw.c \
