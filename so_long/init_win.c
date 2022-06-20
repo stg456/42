@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:39:05 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/20 17:20:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:49:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_size_win(char **argv, t_env *e)
 {
 	int		fd;
-	t_env	e;
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)

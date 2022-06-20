@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/20 17:20:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/20 17:49:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,10 @@ int	main(int argc, char **argv)
 	t_env	e;
 	t_map	map;
 	//(void)argc;
-	//(void)argv;
 
-	ft_size_win(argv, e);
+	ft_size_win(argv, &e);
 	e.mlx = mlx_init();
-	e.win = mlx_new_window(e.mlx, 1000, 500, "so_long stgerard");
+	e.win = mlx_new_window(e.mlx, 1000, 500, "so_long");
 	mlx_hook(e.win, 17, 0, &close_hook, &e);
 	mlx_key_hook(e.win, &key_hook, &e);
 	read_map(argv);
