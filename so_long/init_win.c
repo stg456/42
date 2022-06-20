@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:39:05 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/20 15:54:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/20 16:12:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-ft_size_win(t_env e, char **argv)
+void	ft_size_win(t_env e, char **argv)
 {
 	int		fd;
 	t_env	e;

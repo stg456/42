@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/20 15:54:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/20 16:12:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct s_env
 
 // initilisation
 
+void	ft_size_win(t_env e, char **argv);
 int		read_map(char **argv);
 int		draw_map(int **map);
 
