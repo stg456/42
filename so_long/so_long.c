@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/20 19:01:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/20 19:05:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ int	main(int argc, char **argv)
 
 	ft_size_win(&e, argv);
 	map.map = ft_calloc(e.size_y+1, sizeof(char *));
+	if (!map.map)
+	{
+		perror("Error\nmalloc failed\n");
+		exit(EXIT_FAILURE);
+	}
+	
 	e.mlx = mlx_init();
 	e.win = mlx_new_window(e.mlx, 1000, 500, "so_long");
 	mlx_hook(e.win, 17, 0, &close_hook, &e);
