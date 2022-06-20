@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/20 18:26:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/20 18:40:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@
 # include <sys/types.h>
 # include "./libft/libft.h"
 # define BUFFER_SIZE 3000
+
+# define IMG_W 32
+# define IMG_H 32
 
 // struct image
 typedef struct s_img
