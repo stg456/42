@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/19 19:06:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/20 15:54:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_img
 typedef struct s_map
 {
 	char	**map;
-	void	objet;
+	void	*objet;
 	int		x;
 	int		y;
 	int		diamonds;
@@ -67,11 +67,13 @@ int		read_map(char **argv);
 int		draw_map(int **map);
 
 // utils
+void	*ft_calloc(size_t count, size_t size);
 char	**ft_split(char const *s, char c);
 size_t	ft_strlen(const char *str);
 int		ft_atoi(const char *str);
 //char	*ft_strchr(char *s, int c);
 //char	*ft_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 #endif
