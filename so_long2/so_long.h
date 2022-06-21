@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/21 14:24:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/21 15:22:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,14 @@ typedef struct s_env
 	int		p_y;
 	int		counter;
 	int		collected;
-	t_map	*map;
-	t_img	*img;
+	char	*map;
+	//t_img	*img;
 }				t_env;
 
 // initilisation
 
-void	ft_size_win(t_env *e, char **argv);
-void	ft_init(t_map map, t_env e);
+//oid	ft_size_win(t_env *e, char **argv);
+//void	ft_init(t_map map, t_env e);
 //int		read_map(char **argv);
 //int		draw_map(int **map);
 

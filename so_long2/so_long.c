@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/21 14:24:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/21 15:22:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,16 @@ int	main(int argc, char **argv)
 {
 	t_env	e;
 
-
+	if (argc != 2)
+	{
+		perror("Bad number of arguments");
+		exit(EXIT_FAILURE);
+	}
+	e.map = init_map(argv[1], &e);
+	
 	ft_size_win(&e, argv);
-	map.map = ft_calloc(e.size_y+1, sizeof(char *));
-	if (!map.map)
+	e.map = ft_calloc(e.size_y+1, sizeof(char *));
+	if (!e.map)
 	{
 		perror("\x1B[31mError\nmalloc failed\n");
 		exit(EXIT_FAILURE);
