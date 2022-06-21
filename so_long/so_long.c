@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/21 12:05:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/21 13:59:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ int	close_hook(t_env *e)
 
 int	key_hook(int key, t_env *e)
 {
-	if (key == 'W' || key == 'A' || key == 'S'|| key == 'D')
-		key_move(key, e);//gestion des wasd
+	if (key == 'W')
+	else if (key == 'A')
+	else if (key == 'S')
+	else if (key == 'D')
 	else if (key == 53)
 		close_hook(e);
 	return (1);
@@ -33,6 +35,7 @@ int	main(int argc, char **argv)
 {
 	t_env	e;
 	t_map	map;
+	(void)argc;
 
 	ft_size_win(&e, argv);
 	map.map = ft_calloc(e.size_y+1, sizeof(char *));
@@ -41,7 +44,7 @@ int	main(int argc, char **argv)
 		perror("\x1B[31mError\nmalloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	ft_init(&map. &e);
+	ft_init(&e, &map);
 	e.mlx = mlx_init();
 	e.win = mlx_new_window(e.mlx, 1000, 500, "so_long");
 	mlx_hook(e.win, 17, 0, &close_hook, &e);
