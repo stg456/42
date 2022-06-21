@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:39:05 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/20 18:50:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:05:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,16 @@ void	ft_size_win(t_env *e, char **argv)
 		perror("\x1B[31mError\nmap has to be .ber\n");
 		exit(EXIT_FAILURE);
 	}
-	//e.size_x = (ft_line_length(fd) * IMG_W);
-	//e.size_y = (ft_count_lines(fd, e.size_x, IMG_W) * IMG_H);
+	e.size_x = (ft_line_length(fd) * IMG_W);
+	e.size_y = (ft_count_lines(fd, e.size_x, IMG_W) * IMG_H);
+}
+
+void	ft_init(t_map map, t_env e)
+{
+	int		img_w;
+	int		img_h;
+	t_img	img;
+
+	e.map = map;
+
 }

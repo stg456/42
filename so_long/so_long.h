@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/20 18:40:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/21 12:05:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 # include "./libft/libft.h"
 # define BUFFER_SIZE 3000
 
-# define IMG_W 32
-# define IMG_H 32
+# define IMG_W 64
+# define IMG_H 64
 
 // struct image
 typedef struct s_img
@@ -67,6 +67,7 @@ typedef struct s_env
 // initilisation
 
 void	ft_size_win(t_env *e, char **argv);
+void	ft_init(t_map map, t_env e);
 //int		read_map(char **argv);
 //int		draw_map(int **map);
 
