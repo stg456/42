@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/20 19:05:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/21 11:37:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	map.map = ft_calloc(e.size_y+1, sizeof(char *));
 	if (!map.map)
 	{
-		perror("Error\nmalloc failed\n");
+		perror("\x1B[31mError\nmalloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	
