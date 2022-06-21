@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/21 14:14:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/21 14:24:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,26 +28,6 @@
 
 # define IMG_W 64
 # define IMG_H 64
-
-// struct image
-typedef struct s_img
-{
-	void	*player_up;
-	void	*player_left;
-	void	*player_right;
-	void	*player_down;
-	void	*background;
-}				t_img;
-
-// struct map
-typedef struct s_map
-{
-	char	**map;
-	void	*objet;
-	int		x;
-	int		y;
-	int		diamonds;
-}				t_map;
 
 // struct mlx et window
 typedef struct s_env
