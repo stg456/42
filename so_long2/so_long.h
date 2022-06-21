@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/21 15:22:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/21 16:13:26 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@
 
 # define IMG_W 64
 # define IMG_H 64
+
+# define ESC 53
+# define W 13
+# define A 0
+# define S 1
+# define D 2
 
 // struct mlx et window
 typedef struct s_env
