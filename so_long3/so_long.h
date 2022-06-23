@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/23 11:11:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/23 12:02:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include <stdarg.h>
 # include <sys/types.h>
 # include "./libft/libft.h"
-# define BUFFER_SIZE 3000
+# define BUFFER_SIZE 10000
 
 # define IMG_W 64
 # define IMG_H 64
@@ -39,6 +39,7 @@
 typedef struct s_env
 {
 	void	*mlx;
+	char	*map;
 	void	*win;
 	int		size_x;
 	int		size_y;
@@ -46,7 +47,7 @@ typedef struct s_env
 	int		p_y;
 	int		counter;
 	int		collected;
-	char	*map;
+
 	int		fd;
 	//t_img	*img;
 }				t_env;
@@ -62,6 +63,10 @@ typedef struct s_vstock
 
 // initilisation
 
+void	ft_size_win(t_env *e, char **argv);
+char	*init_map(char **argv, t_env e);
+int		key_hook(int key, t_env *e);
+int		close_hook(t_env *e);
 //oid	ft_size_win(t_env *e, char **argv);
 //void	ft_init(t_map map, t_env e);
 //int		read_map(char **argv);
