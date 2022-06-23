@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/23 11:58:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/23 12:52:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int	main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	e.map = init_map(argv[1], &e);
-	
 	ft_size_win(&e, argv);
 	e.map = ft_calloc(e.size_y+1, sizeof(char *));
 	if (!e.map)
@@ -50,6 +49,7 @@ int	main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	e.map = init_map(&e, e.map);
+	//verif map
 	if (!e.map)
 	{
 		perror("Error\nThe map is not playable\n");
