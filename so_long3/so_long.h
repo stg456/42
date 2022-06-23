@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/21 16:13:26 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/23 11:11:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,18 @@ typedef struct s_env
 	int		counter;
 	int		collected;
 	char	*map;
+	int		fd;
 	//t_img	*img;
 }				t_env;
+
+// counter map
+typedef struct s_vstock
+{
+	char	*tmp;
+	int		pcount;
+	int		ecount;
+	int		ccount;
+}				t_vstock;
 
 // initilisation
 

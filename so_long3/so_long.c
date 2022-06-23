@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/21 16:13:26 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/23 11:04:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ int	main(int argc, char **argv)
 		exit(EXIT_FAILURE);
 	}
 	ft_init(&e, e.map);
+	if (!e.map)
+	{
+		perror("Error\nThe map is not playable\n");
+		exit(EXIT_FAILURE);	
+	}
 	e.mlx = mlx_init();
 	e.win = mlx_new_window(e.mlx, 1000, 500, "so_long");
 	mlx_hook(e.win, 17, 0, &close_hook, &e);
