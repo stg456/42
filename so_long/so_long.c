@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 13:46:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 15:15:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,16 +45,18 @@ int	main(int argc, char **argv)
 		ft_error("Error\nBad number of arguments\n");
 	e->map = init_map(argv[1], e);
 	//e->map = ft_calloc(e->size_y+1, sizeof(char *));
-	ft_size_win(&e, argv);
+	ft_size_win(e);
 	if (!e->map)
 		ft_error("Error\nThe map is not playable\n");
 	e->mlx = mlx_init();
 	e->win = mlx_new_window(e->mlx, e->size_x, e->size_y, "so_long");
 
 	//mlx game
-	
+
 	mlx_hook(e->win, 17, 0, &close_hook, &e);
 	mlx_key_hook(e->win, &key_hook, &e);
+
+	mlx_put_image_to_window(e->mlx, e->win, e->img, e->p_x, e->p_y);
 
 	mlx_loop(e->mlx);
 	return (0);

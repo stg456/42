@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 13:53:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 15:05:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_env
 	void	*mlx;
 	char	*map;
 	void	*win;
+	void	*img;
 	int		size_x;
 	int		size_y;
 	int		p_x;
@@ -54,7 +55,7 @@ typedef struct s_env
 
 void	ft_error(char *str);
 int		check(t_env *e);
-void	ft_size_win(t_env *e, char **argv);
+void	ft_size_win(t_env *e);
 char	*init_map(char **argv, t_env *e);
 int		key_hook(int key, t_env *e);
 int		close_hook(t_env *e);

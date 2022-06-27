@@ -6,17 +6,19 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:59:55 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 13:53:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 14:43:06 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	char_check(char *str)
+static void	char_check(t_env *e)
 {
-	int	i;
+	char	*str;
+	int		i;
 
 	i = 0;
+	str = e->map;
 	while (str[i])
 	{
 		if (!(str[i] == '0' || str[i] == '1' || str[i] == 'C' || str[i] == 'E'
@@ -32,7 +34,7 @@ static void	wall_check(t_env *e)
 	int		i;
 
 	i = 0;
-	str[i] = e->map;
+	str = e->map;
 	while (str[i] != '\n')
 	{
 		if (str[i] != '1')
@@ -69,11 +71,11 @@ static void	min_check(t_env *e)
 	str = e->map;
 	while (str[i] != '\0')
 	{
-		if (str[i] = 'C')
+		if (str[i] == 'C')
 			C++;
-		else if (str[i] = 'E')
+		else if (str[i] == 'E')
 			E++;
-		else if (str[i] = 'P')
+		else if (str[i] == 'P')
 			P++;
 		i++;
 	}

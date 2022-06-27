@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:21:16 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 13:46:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 14:43:06 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,24 @@ char	*init_map(char **argv, t_env *e)
 	if (fd < 0)
 		ft_error("\x1B[31mInvalid map\n");
 	e->map = get_next_line(fd);
-	check(e);	
+	check(e);
 	return (e->map);
 }
 
-void	ft_size_win(t_env *e, char **argv)
+void	ft_size_win(t_env *e)
 {
-	int	fd;
+	int	i;
+	int	j;
 
-	e->size_x = (ft_line_length(fd) * IMG_W);
-	e->size_y = (ft_count_lines(fd, e->size_x, IMG_W) * IMG_H);
+	i = 0;
+	j = 1;
+	while (e->map[i] != '\n')
+		i++;
+	e->size_x = i * IMG_W;
+	while (e->map[i] != '\0')
+	{
+		if (e->map[i] =='\n')
+			j++;
+	}
+	e->size_y = j * IMG_H;
 }
