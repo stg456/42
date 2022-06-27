@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 15:39:05 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/21 13:02:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:32:02 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,3 @@ void	ft_size_win(t_env *e, char **argv)
 	e.size_y = (ft_count_lines(fd, e.size_x, IMG_W) * IMG_H);
 }
 
-void	ft_init(t_map map, t_env e)
-{
-	int		img_w;
-	int		img_h;
-	t_img	img;
-
-	e.map = map;
-
-}

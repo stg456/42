@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/23 12:02:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:50:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@
 # include "./libft/libft.h"
 # define BUFFER_SIZE 10000
 
-# define IMG_W 64
-# define IMG_H 64
+# define IMG_W 32
+# define IMG_H 32
 
 # define ESC 53
 # define W 13
@@ -48,36 +48,25 @@ typedef struct s_env
 	int		counter;
 	int		collected;
 
-	int		fd;
-	//t_img	*img;
 }				t_env;
-
-// counter map
-typedef struct s_vstock
-{
-	char	*tmp;
-	int		pcount;
-	int		ecount;
-	int		ccount;
-}				t_vstock;
 
 // initilisation
 
+int	check(t_env *e);
+void	wall_check(t_env *e);
+void	char_check(char *str);
 void	ft_size_win(t_env *e, char **argv);
-char	*init_map(char **argv, t_env e);
+char	*init_map(char **argv, t_env *e);
 int		key_hook(int key, t_env *e);
 int		close_hook(t_env *e);
-//oid	ft_size_win(t_env *e, char **argv);
-//void	ft_init(t_map map, t_env e);
-//int		read_map(char **argv);
-//int		draw_map(int **map);
 
 // utils
+
 void	*ft_calloc(size_t count, size_t size);
-char	**ft_split(char const *s, char c);
-size_t	ft_strlen(const char *str);
-int		ft_atoi(const char *str);
-char	*ft_strchr(char *s, int c);
+//char	**ft_split(char const *s, char c);
+//size_t	ft_strlen(const char *str);
+//int		ft_atoi(const char *str);
+//char	*ft_strchr(char *s, int c);
 //char	*ft_strjoin(char *s1, char *s2);
 char	*get_next_line(int fd);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);

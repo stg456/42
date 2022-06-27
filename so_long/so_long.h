@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/21 14:14:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/23 16:18:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,10 @@
 # include <stdarg.h>
 # include <sys/types.h>
 # include "./libft/libft.h"
-# define BUFFER_SIZE 3000
+# define BUFFER_SIZE 10000
 
-# define IMG_W 64
-# define IMG_H 64
-
-// struct image
-typedef struct s_img
-{
-	void	*player_up;
-	void	*player_left;
-	void	*player_right;
-	void	*player_down;
-	void	*background;
-}				t_img;
+# define IMG_W 32
+# define IMG_H 32
 
 // struct map
 typedef struct s_map
@@ -61,7 +51,6 @@ typedef struct s_env
 	int		counter;
 	int		collected;
 	t_map	*map;
-	t_img	*img;
 }				t_env;
 
 // initilisation
