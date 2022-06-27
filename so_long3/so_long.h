@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 11:32:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 13:53:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,8 @@ typedef struct s_env
 
 // initilisation
 
+void	ft_error(char *str);
 int		check(t_env *e);
-void	wall_check(t_env *e);
-void	char_check(char *str);
 void	ft_size_win(t_env *e, char **argv);
 char	*init_map(char **argv, t_env *e);
 int		key_hook(int key, t_env *e);
