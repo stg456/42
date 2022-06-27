@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:59:55 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 11:32:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 11:46:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,29 @@ void	char_check(char *str)
 void	wall_check(t_env *e)
 {
 	char	*str;
+	int		i;
 
+	i = 0;
+	str[i] = e->map;
+	while (str[i] != '\0')
+	{
+		while (str[i] != '\n')
+		{
+			if (str[i] != '1')
+			{
+				perror("\x1B[31mInvalid map\n");
+				exit(EXIT_FAILURE);
+			}
+			i++;
+		}
+		i++;
+		if (str[i] != '1')
+			{
+				perror("\x1B[31mInvalid map\n");
+				exit(EXIT_FAILURE);
+			}
+			i++;
+	}
 }
 
 int	min_check(t_env *e)
