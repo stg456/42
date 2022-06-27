@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:21:16 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 15:26:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:34:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*init_map(char **argv, t_env *e)
 	e->mlx = NULL;
 	e->map = NULL;
 	if (ft_strnstr(argv[1], ".ber", ft_strlen(argv[1])) == NULL)
-		ft_error("\x1B[31mError\nmap has to be .ber\n");
+		ft_error("\x1B[31mError: map has to be .ber\n");
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		ft_error("\x1B[31mInvalid map\n");

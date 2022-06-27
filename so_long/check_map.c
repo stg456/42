@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:59:55 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 14:43:06 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:34:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	char_check(t_env *e)
 	{
 		if (!(str[i] == '0' || str[i] == '1' || str[i] == 'C' || str[i] == 'E'
 				|| str[i] == 'P' || str[i] == 'F'))
-			ft_error("\x1B[31mError : unknown characters in map file.");
+			ft_error("\x1B[31mError: unknown characters in map file.");
 		i++;
 	}
 }
