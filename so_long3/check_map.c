@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:59:55 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 11:10:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 11:32:34 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,44 @@ void	wall_check(t_env *e)
 
 }
 
-void	min_check(t_env *map)
+int	min_check(t_env *e)
 {
-	if (map->p_nb != 1)
-		perror("\x1B[31mError : map file must contain one player position.");
-	if (map->c_nb < 1)
-		ft_printf("\x1B[31mError : map file must contain one collectible.");
-	if (map->e_nb < 1)
-		ft_printf("\x1B[31mError : map file must contain one exit.");
-	if (map->p_nb != 1 || map->c_nb < 1 || map->e_nb < 1)
+	int		i;
+	char	*str;
+	int		C;
+	int		E;
+	int		P;
+	
+	i = 0;
+
+	C = 0;
+	E = 0;
+	P = 0;
+	str[i] = e->map;
+	while (str[i] != '\0')
+	{
+		if (str[i] = 'C')
+			C++;
+		else if (str[i] = 'E')
+			E++;
+		else if (str[i] = 'P')
+			P++;
+		i++;
+	}
+	if (C !+ 1 || E != 1 || P != 1)
+	{
+		perror("\x1B[31mInvalid map\n");
 		exit(EXIT_FAILURE);
+	}
+	return (0);
+
 }
 
 int	check(t_env *e)
 {
 	char_check(e);
 	wall_check(e);
+	min_check(e);
 
 	return (0);
 }
