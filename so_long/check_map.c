@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:59:55 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 16:34:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:55:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,26 +60,26 @@ static void	min_check(t_env *e)
 {
 	int		i;
 	char	*str;
-	int		C;
-	int		E;
-	int		P;
-	
+	int		c;
+	int		e;
+	int		p;
+
 	i = 0;
-	C = 0;
-	E = 0;
-	P = 0;
+	c = 0;
+	e = 0;
+	p = 0;
 	str = e->map;
 	while (str[i] != '\0')
 	{
 		if (str[i] == 'C')
-			C++;
+			c++;
 		else if (str[i] == 'E')
-			E++;
+			e++;
 		else if (str[i] == 'P')
-			P++;
+			p++;
 		i++;
 	}
-	if (C != 1 || E != 1 || P != 1)
+	if (c != 1 || e != 1 || p != 1)
 		ft_error("\x1B[31mInvalid map\n");
 }
 

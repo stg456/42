@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:21:16 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 16:34:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:56:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_size_win(t_env *e)
 	e->size_x = i * IMG_W;
 	while (e->map[i] != '\0')
 	{
-		if (e->map[i] =='\n')
+		if (e->map[i] == '\n')
 			j++;
 	}
 	e->size_y = j * IMG_H;

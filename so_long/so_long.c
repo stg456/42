@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 16:49:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:57:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	close_hook(t_env *e)
 int	main(int argc, char **argv)
 {
 	t_env	*e;
-	
+
 	e = malloc(sizeof(t_env));
 	if (argc != 2)
 		ft_error("\x1B[31mError: Bad number of arguments\n");
