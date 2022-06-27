@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 15:20:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/27 16:08:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ int	close_hook(t_env *e)
 int	main(int argc, char **argv)
 {
 	t_env	*e;
-
+	
+	e = malloc(sizeof(t_env));
 	if (argc != 2)
 		ft_error("Error\nBad number of arguments\n");
-	e->map = init_map(argv[1], e);
+	e->map = init_map(&argv[1], e);
 	//e->map = ft_calloc(e->size_y+1, sizeof(char *));
 	ft_size_win(e);
 	if (!e->map)
@@ -55,8 +56,8 @@ int	main(int argc, char **argv)
 
 	mlx_hook(e->win, 17, 0, close_hook, e);
 	mlx_key_hook(e->win, key_hook, e);
-
-	mlx_put_image_to_window(e->mlx, e->win, e->img, e->p_x, e->p_y);
+	//mlx_loop_hook(e->mlx, loop_hook, e);
+	//mlx_put_image_to_window(e->mlx, e->win, e->img, e->p_x, e->p_y);
 
 	mlx_loop(e->mlx);
 	return (0);
