@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 17:55:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/28 16:51:34 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,8 @@ int	main(int argc, char **argv)
 	e = malloc(sizeof(t_env));
 	if (argc != 2)
 		ft_error("\x1B[31mError: Bad number of arguments\n");
+	e->map = malloc(((e->size_x * e->size_y * IMG_W) + 1) * sizeof(char *));
 	ft_size_win(e);
-	e->map = malloc((e->size_y + 1) * sizeof(char *));
 	e->map = init_map(&argv[1], e);
 	if (!e->map)
 		ft_error("\x1B[31mError: The map is not playable\n");
