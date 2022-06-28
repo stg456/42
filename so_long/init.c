@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:21:16 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 17:56:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/28 17:20:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*init_map(char **argv, t_env *e)
 	return (e->map);
 }
 
+// ne sort pas de la boucle
 void	ft_size_win(t_env *e)
 {
 	int	i;
