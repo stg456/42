@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:59:55 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/30 18:13:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/30 18:38:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static void	wall_check(t_env *e)
 	int		i;
 
 	i = 0;
+	e->size_x = 0;
+	e->size_y = 1;
 	str = e->map;
 	while (str[i] != '\n')
 	{
@@ -41,11 +43,12 @@ static void	wall_check(t_env *e)
 			ft_error("\x1B[31mInvalid map\n");
 		i++;
 	}
-	//e->size_x = i;
+	e->size_x = i;
 	while (str[i] != '\0')
 	{
-		if (str[i] != '\n')// pas bon
+		if (str[i] == '\n')
 		{
+			e->size_y++;
 			if (str[i--] != '1' || str[i++] != '1')
 				ft_error("\x1B[31mInvalid map\n");
 			i++;
