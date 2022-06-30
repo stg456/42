@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:59:55 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/27 17:30:48 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/06/30 18:01:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ static void	wall_check(t_env *e)
 			ft_error("\x1B[31mInvalid map\n");
 		i++;
 	}
+	//e->size_x = i;
 	while (str[i] != '\0')
 	{
 		while (str[i] != '\n')
