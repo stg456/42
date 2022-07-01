@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/01 15:03:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/01 15:52:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,16 +26,17 @@ int	close_hook(t_env *e)
 	exit(EXIT_SUCCESS);
 }
 
-// int	key_hook(int key, t_env *e)
-// {
-// 	if (key == W)
-// 	else if (key == A)
-// 	else if (key == S)
-// 	else if (key == D)
-// 	else if (key == ESC)
-// 		close_hook(e);
-// 	return (1);
-// }
+int	key_hook(int key, t_env *e)
+{
+	if (key == ESC)
+		close_hook(e);
+	// else if (key == W)
+	// else if (key == A)
+	// else if (key == S)
+	// else if (key == D)
+
+	return (1);
+}
 
 int	main(int argc, char **argv)
 {
@@ -54,7 +55,7 @@ int	main(int argc, char **argv)
 	//mlx game
 
 	mlx_hook(e->win, 17, 0, close_hook, e);
-	//mlx_key_hook(e->win, key_hook, e);
+	mlx_key_hook(e->win, key_hook, e);
 
 	//mlx_loop_hook(e->mlx, loop_hook, e);
 	//mlx_put_image_to_window(e->mlx, e->win, e->img, e->p_x, e->p_y);
