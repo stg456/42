@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:21:16 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/28 18:11:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/01 15:03:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	ft_size_win(t_env *e)
 	int	i;
 
 	i = 0;
-	tab = malloc(sizeof(char *)+1);
+	tab = (char **)malloc(sizeof(char *) + 1);
 	while (e->map != NULL)
 	{
 		
