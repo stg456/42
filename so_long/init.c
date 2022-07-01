@@ -6,15 +6,44 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:21:16 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/01 15:03:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/01 17:36:08 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char	*init_map(char **argv, t_env *e)
+char	**map_read(char *filename)
 {
-	int	fd;
+	t_map_reader	var;
+
+	var.fd = open(filename, O_RDONLY);
+	if (var.fd < 0)
+		return (NULL);
+	var.i = 0;
+	var.buffer = malloc(sizeof(char) * 1);
+	if (!var.buffer)
+		return (NULL);
+	var.buffer[0] = '\0';
+	var.temp = var.buffer;
+	while (42)
+	{
+		var.temp = get_next_line(var.fd);
+		if (var.temp == NULL)
+			break ;
+		var.buffer = ft_strjoin(var.buffer, var.temp);
+		if (var.buffer == NULL)
+			return (NULL);
+		free(var.temp);
+	}
+	var.arr = ft_split(var.buffer, '\n');
+	free(var.buffer);
+	close(var.fd);
+	return (var.arr);
+}
+
+char	**init_map(char **argv, t_env *e)
+{
+	int		fd;
 
 	e->mlx = NULL;
 	e->map = NULL;
@@ -23,40 +52,8 @@ char	*init_map(char **argv, t_env *e)
 	fd = open(argv[1], O_RDONLY);
 	if (fd < 0)
 		ft_error("\x1B[31mInvalid map\n");
-	e->map = get_next_line(fd);
-	check(e);
+	e->map = map_read(argv[1]);
+	check(e);;
+	close(fd);
 	return (e->map);
-}
-
-// ne sort pas de la boucle
-// void	ft_size_win(t_env *e)
-// {
-// 	int	i;
-// 	int	j;
-
-// 	i = 0;
-// 	j = 1;
-// 	while (e->map[i] != '\n')
-// 		i++;
-// 	e->size_x = i * IMG_W;
-// 	while (e->map[i] != '\0')
-// 	{
-// 		if (e->map[i] == '\n')
-// 			j++;
-// 	}
-// 	e->size_y = j * IMG_H;
-// }
-
-// v2
-void	ft_size_win(t_env *e)
-{
-	char	**tab;
-	int	i;
-
-	i = 0;
-	tab = (char **)malloc(sizeof(char *) + 1);
-	while (e->map != NULL)
-	{
-		
-	}
 }

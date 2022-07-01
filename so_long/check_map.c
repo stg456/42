@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:59:55 by stgerard          #+#    #+#             */
-/*   Updated: 2022/06/30 18:38:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/01 17:44:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,76 +14,93 @@
 
 static void	char_check(t_env *e)
 {
-	char	*str;
-	int		i;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	str = e->map;
-	while (str[i])
+	j = 0;
+	while (e->map[i])
 	{
-		if (!(str[i] == '0' || str[i] == '1' || str[i] == 'C' || str[i] == 'E'
-				|| str[i] == 'P' || str[i] == 'F'))
-			ft_error("\x1B[31mError: unknown characters in map file.");
-		i++;
+		j = 0;
+		while (e->map[i][j])
+		{
+			if (!(e->map[i][j] == '0' || e->map[i][j] == '1' 
+					|| e->map[i][j] == 'C' || e->map[i][j] == 'E'
+					|| e->map[i][j] == 'P' || e->map[i][j] == 'F'))
+				ft_error("\x1B[31mError: unknown characters in map file.");
+			++j;
+		}
+		++i;
 	}
 }
 
 static void	wall_check(t_env *e)
 {
-	char	*str;
-	int		i;
+	size_t	i;
 
 	i = 0;
 	e->size_x = 0;
-	e->size_y = 1;
-	str = e->map;
-	while (str[i] != '\n')
+	e->size_y = 0;
+	while (e->map[0][i]) // check 1ere ligne uniquement des 1
 	{
-		if (str[i] != '1')
+		if (e->map[0][i] != '1')
 			ft_error("\x1B[31mInvalid map\n");
-		i++;
+		++i;
 	}
 	e->size_x = i;
-	while (str[i] != '\0')
+	i = 0;
+	while (e->map[i]) // check que toutes les lignes soient de la meme long
 	{
-		if (str[i] == '\n')
-		{
-			e->size_y++;
-			if (str[i--] != '1' || str[i++] != '1')
-				ft_error("\x1B[31mInvalid map\n");
-			i++;
-		}
-		i++;
-		if (str[i] != '1')
+		if (ft_strlen(e->map[i]) != (size_t)e->size_x)
 			ft_error("\x1B[31mInvalid map\n");
-		i++;
+		++i;
+	}
+	i = 0;
+	while (e->map[i])  // check 1ere colonne et derniere colonne = 1
+	{
+		if (e->map[i][0] != '1' && e->map[i][ft_strlen(e->map[i])] != '1')
+			ft_error("\x1B[31mInvalid map\n");
+		++i;
+	}
+	e->size_y = i;
+	i = 0;
+	while (e->map[e->size_y - 1][i]) // check derniere ligne uniquement des 1
+	{
+		if (e->map[e->size_y - 1][i] != '1')
+			ft_error("\x1B[31mInvalid map\n");
+		++i;
 	}
 }
 
 static void	min_check(t_env *e)
 {
-	int		i;
-	char	*str;
-	int		c;
-	int		ee;
-	int		p;
+	size_t	i;
+	size_t	j;
+	int		n_c;
+	int		n_e;
+	int		n_p;
 
 	i = 0;
-	c = 0;
-	ee = 0;
-	p = 0;
-	str = e->map;
-	while (str[i] != '\0')
+	j = 0;
+	n_c = 0;
+	n_e = 0;
+	n_p = 0;
+	while (e->map[i])
 	{
-		if (str[i] == 'C')
-			c++;
-		else if (str[i] == 'E')
-			ee++;
-		else if (str[i] == 'P')
-			p++;
-		i++;
+		i = 0;
+		while(e->map[i][j])
+		{
+			if (e->map[i][j] == 'C')
+				n_c++;
+			else if (e->map[i][j] == 'E')
+				n_e++;
+			else if (e->map[i][j] == 'P')
+				n_p++;
+			++j;
+		}
+		++i;
 	}
-	if (c != 1 || ee != 1 || p != 1)
+	if (n_c != 1 || n_e != 1 || n_p != 1)
 		ft_error("\x1B[31mInvalid map\n");
 }
 

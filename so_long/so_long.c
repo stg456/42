@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/01 15:52:17 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/01 17:39:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ int	main(int argc, char **argv)
 	e = malloc(sizeof(t_env));
 	if (argc != 2)
 		ft_error("\x1B[31mError: Bad number of arguments\n");
-	e->map = init_map(&argv[1], e);
+	e->map = init_map(argv, e);
 	if (!e->map)
 		ft_error("\x1B[31mError: The map is not playable\n");
-	//e->map = malloc(((e->size_x * e->size_y * IMG_W) + 1) * sizeof(char *));
+	e->map = malloc(((e->size_x * e->size_y * IMG_W) + 1) * sizeof(char *));
 	e->mlx = mlx_init();
 	e->win = mlx_new_window(e->mlx, e->size_x, e->size_y, "so_long");
 
