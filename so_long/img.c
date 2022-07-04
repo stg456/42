@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:38:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 18:07:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/04 18:10:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,40 +44,27 @@ int	build(t_env *e)
 		e->p_x = 0;
 		while (e->map[e->p_y][e->p_x])
 		{
+		mlx_put_image_to_window(e->mlx, e->win, e->visu.floor,
+			e->p_x * T_S, e->p_y * T_S);
 		if (e->map[e->p_y][e->p_x] == '1')
 		{
-			printf("aa\n");
 			mlx_put_image_to_window(e->mlx, e->win, e->visu.wall,
 			e->p_x * T_S, e->p_y * T_S);
-			printf("aaa\n");
-		}
-		else if (e->map[e->p_y][e->p_x] != '1')
-		{
-			printf("bb\n");
-			mlx_put_image_to_window(e->mlx, e->win, e->visu.floor,
-			e->p_x * T_S, e->p_y * T_S);
-			printf("bbb\n");
 		}
 		else if (e->map[e->p_y][e->p_x] == 'C')
 		{
-			printf("cc\n");
 			mlx_put_image_to_window(e->mlx, e->win, e->visu.collectible,
 			e->p_x * T_S, e->p_y * T_S);
-			printf("ccc\n");
 		}
 		else if (e->map[e->p_y][e->p_x] == 'E')
 		{
-			printf("dd\n");
 			mlx_put_image_to_window(e->mlx, e->win, e->visu.exit,
 			e->p_x * T_S, e->p_y * T_S);
-			printf("ddd\n");
 		}
 		else if (e->map[e->p_y][e->p_x] == 'P')
 		{
-			printf("ee\n");
 			mlx_put_image_to_window(e->mlx, e->win, e->visu.player,
 			e->p_x * T_S, e->p_y * T_S);
-			printf("eee\n");
 		}
 		++e->p_x;
 		}
