@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 15:20:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/04 17:10:08 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,6 @@ int		close_hook(t_env *e);
 
 void	init_visu(t_env *e);
 void	*xpm_to_img(t_env *data, char *path);
+int		build(t_env *e);
 
 #endif

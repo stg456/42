@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 15:33:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/04 16:52:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ int	main(int argc, char **argv)
 	mlx_hook(e->win, 17, 0, close_hook, e);
 	mlx_key_hook(e->win, key_hook, e);
 	init_visu(e);
-
-	mlx_put_image_to_window(e->mlx, e->win, e->visu.player, 0, 0);
-	mlx_put_image_to_window(e->mlx, e->win, e->visu.collectible, 100, 0);
-	mlx_put_image_to_window(e->mlx, e->win, e->visu.floor, 200, 0);
-	mlx_put_image_to_window(e->mlx, e->win, e->visu.wall, 300, 0);
-	mlx_put_image_to_window(e->mlx, e->win, e->visu.exit, 400, 0);
+	build(e);
+	// mlx_put_image_to_window(e->mlx, e->win, e->visu.player, 0, 0);
+	// mlx_put_image_to_window(e->mlx, e->win, e->visu.collectible, 100, 0);
+	// mlx_put_image_to_window(e->mlx, e->win, e->visu.floor, 200, 0);
+	// mlx_put_image_to_window(e->mlx, e->win, e->visu.wall, 300, 0);
+	// mlx_put_image_to_window(e->mlx, e->win, e->visu.exit, 400, 0);
 
 	//mlx_loop_hook(e->mlx, loop_hook, e);
 
