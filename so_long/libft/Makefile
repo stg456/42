@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/25 12:01:50 by stgerard          #+#    #+#              #
-#    Updated: 2022/04/26 10:19:49 by stgerard         ###   ########.fr        #
+#    Updated: 2022/07/04 15:21:21 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ ft_isprint.c ft_memmove.c ft_putstr_fd.c ft_strjoin.c ft_strncmp.c \
 ft_tolower.c ft_isalnum.c ft_itoa.c	ft_memset.c	ft_split.c ft_strlcat.c \
 ft_strnstr.c ft_toupper.c ft_islonglong.c ft_intlen.c ft_dectobin.c \
 ft_printf.c ft_printf_utils.c ft_printf_utils2.c \
-ft_printf_utils3.c ft_printf_utils4.c
+ft_printf_utils3.c ft_printf_utils4.c get_next_line.c
 
 SRCSB		=  ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \

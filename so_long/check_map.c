@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:59:55 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 12:06:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/04 15:09:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ static void	min_check(t_env *e)
 		}
 		++i;
 	}
-	if (n_c != 1 || n_e != 1 || n_p != 1)
+	if (n_c < 1 || n_e < 1 || n_p < 1)
 		ft_error("\x1B[31mInvalid map\n");
 }
 
