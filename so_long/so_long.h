@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 17:10:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/04 18:07:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@
 # include "./libft/libft.h"
 # define BUFFER_SIZE 10000
 
-# define IMG_W 64
-# define IMG_H 64
+# define T_S 63
 
 # define ESC 53
 # define W 13
@@ -61,8 +60,8 @@ typedef struct s_env
 	void	*mlx;
 	char	**map;
 	void	*win;
-	int		size_x;
-	int		size_y;
+	size_t	size_x;
+	size_t	size_y;
 	int		p_x;
 	int		p_y;
 	int		counter;

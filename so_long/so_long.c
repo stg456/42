@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 16:52:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/04 18:07:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	main(int argc, char **argv)
 	if (!e->map)
 		ft_error("\x1B[31mError: The map is not playable\n");
 	e->mlx = mlx_init();
-	e->win = mlx_new_window(e->mlx, e->size_x * 64, e->size_y * 64, "so_long");
+	e->win = mlx_new_window(e->mlx, e->size_x * T_S, e->size_y * T_S, "so_long");
 
 	//mlx game
 

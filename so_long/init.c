@@ -6,11 +6,20 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:21:16 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 16:01:28 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/04 17:52:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void print_tab(char **tab)
+{
+	while (tab)
+	{
+		printf("%s\n", *tab);
+		tab++;
+	}
+}
 
 char	**map_read(char *filename)
 {
@@ -38,6 +47,7 @@ char	**map_read(char *filename)
 	var.arr = ft_split(var.buffer, '\n');
 	free(var.buffer);
 	close(var.fd);
+	//print_tab(var.arr);
 	return (var.arr);
 }
 

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:38:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 17:10:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/04 18:07:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,38 +37,61 @@ void	init_visu(t_env *e)
 
 int	build(t_env *e)
 {
+	e->p_x = 0;
+	e->p_y = 0;
+	while (e->map[e->p_y])// fct line
+	{
+		e->p_x = 0;
+		while (e->map[e->p_y][e->p_x])
+		{
+		if (e->map[e->p_y][e->p_x] == '1')
+		{
+			printf("aa\n");
+			mlx_put_image_to_window(e->mlx, e->win, e->visu.wall,
+			e->p_x * T_S, e->p_y * T_S);
+			printf("aaa\n");
+		}
+		else if (e->map[e->p_y][e->p_x] != '1')
+		{
+			printf("bb\n");
+			mlx_put_image_to_window(e->mlx, e->win, e->visu.floor,
+			e->p_x * T_S, e->p_y * T_S);
+			printf("bbb\n");
+		}
+		else if (e->map[e->p_y][e->p_x] == 'C')
+		{
+			printf("cc\n");
+			mlx_put_image_to_window(e->mlx, e->win, e->visu.collectible,
+			e->p_x * T_S, e->p_y * T_S);
+			printf("ccc\n");
+		}
+		else if (e->map[e->p_y][e->p_x] == 'E')
+		{
+			printf("dd\n");
+			mlx_put_image_to_window(e->mlx, e->win, e->visu.exit,
+			e->p_x * T_S, e->p_y * T_S);
+			printf("ddd\n");
+		}
+		else if (e->map[e->p_y][e->p_x] == 'P')
+		{
+			printf("ee\n");
+			mlx_put_image_to_window(e->mlx, e->win, e->visu.player,
+			e->p_x * T_S, e->p_y * T_S);
+			printf("eee\n");
+		}
+		++e->p_x;
+		}
+		++e->p_y;
+	}// fct colonne
+	return (0);
+}
+
+/*
+void	build_line(t_env *e, int line_no)
+{
 	e->size_x = 0;
 	e->size_y = 0;
 	e->p_x = 1;
 	e->p_y = 1;
-	while (e->map)
-	{
-		if (e->map[e->p_y][e->p_x] == '1')
-		{
-			mlx_put_image_to_window(e->mlx, e->win, e->visu.wall,
-			e->p_x * IMG_W, e->p_y * IMG_H);
-		}
-		else if (e->map[e->p_y][e->p_x] != '1')
-		{
-			mlx_put_image_to_window(e->mlx, e->win, e->visu.floor,
-			e->p_x * IMG_W, e->p_y * IMG_H);
-		}
-		else if (e->map[e->p_y][e->p_x] == 'C')
-		{
-			mlx_put_image_to_window(e->mlx, e->win, e->visu.collectible,
-			e->p_x * IMG_W, e->p_y * IMG_H);
-		}
-		else if (e->map[e->p_y][e->p_x] == 'E')
-		{
-			mlx_put_image_to_window(e->mlx, e->win, e->visu.exit,
-			e->p_x * IMG_W, e->p_y * IMG_H);
-		}
-		else if (e->map[e->p_y][e->p_x] == 'P')
-		{
-			mlx_put_image_to_window(e->mlx, e->win, e->visu.player,
-			e->p_x * IMG_W, e->p_y * IMG_H);
-		}
-		e->p_x++;
-	}
-	return (0);
 }
+*/
