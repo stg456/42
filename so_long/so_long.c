@@ -6,11 +6,25 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/01 17:39:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/04 12:22:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	*xpm_to_img(t_env *data, char *path)
+{
+	char	*apath;
+	void	*img;
+	int		width;
+	int		height;
+
+	apath = ft_strjoin("./sprites/", path);
+	img = mlx_xpm_file_to_image(data->mlx, apath, &width, &height);
+	if (!img)
+		printf("\x1B[31mError : invalid file.");
+	return (img);
+}
 
 void	ft_error(char *str)
 {
@@ -41,6 +55,7 @@ int	key_hook(int key, t_env *e)
 int	main(int argc, char **argv)
 {
 	t_env	*e;
+	void	*player;
 
 	e = malloc(sizeof(t_env));
 	if (argc != 2)
@@ -48,17 +63,17 @@ int	main(int argc, char **argv)
 	e->map = init_map(argv, e);
 	if (!e->map)
 		ft_error("\x1B[31mError: The map is not playable\n");
-	e->map = malloc(((e->size_x * e->size_y * IMG_W) + 1) * sizeof(char *));
 	e->mlx = mlx_init();
-	e->win = mlx_new_window(e->mlx, e->size_x, e->size_y, "so_long");
+	e->win = mlx_new_window(e->mlx, e->size_x * 64, e->size_y * 64, "so_long");
 
 	//mlx game
 
 	mlx_hook(e->win, 17, 0, close_hook, e);
 	mlx_key_hook(e->win, key_hook, e);
+	player = xpm_to_img(e, "player.xpm");
 
 	//mlx_loop_hook(e->mlx, loop_hook, e);
-	//mlx_put_image_to_window(e->mlx, e->win, e->img, e->p_x, e->p_y);
+	mlx_put_image_to_window(e->mlx, e->win, player, 0, 0);
 
 	mlx_loop(e->mlx);
 	return (0);

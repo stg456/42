@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:59:55 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/01 17:44:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/04 12:06:15 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ static void	min_check(t_env *e)
 	n_p = 0;
 	while (e->map[i])
 	{
-		i = 0;
+		j = 0;
 		while(e->map[i][j])
 		{
 			if (e->map[i][j] == 'C')
