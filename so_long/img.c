@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:38:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 18:10:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/05 12:24:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	build(t_env *e)
 {
 	e->p_x = 0;
 	e->p_y = 0;
-	while (e->map[e->p_y])// fct line
+	while (e->map[e->p_y])
 	{
 		e->p_x = 0;
 		while (e->map[e->p_y][e->p_x])
@@ -69,7 +69,7 @@ int	build(t_env *e)
 		++e->p_x;
 		}
 		++e->p_y;
-	}// fct colonne
+	}
 	return (0);
 }
 
