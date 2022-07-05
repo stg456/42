@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 18:07:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/05 16:21:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef struct s_map_reader
 	char	*temp;
 	int		fd;
 	int		i;
-}				t_map_reader;
+}		t_map_reader;
 
 typedef struct s_img
 {
@@ -51,8 +51,16 @@ typedef struct s_img
 	void	*wall;
 	void	*collectible;
 	void	*exit;
+	void	*exitc;
 	void	*floor;
-}				t_img;
+}		t_img;
+
+typedef struct s_pos
+{
+	ssize_t	x;
+	ssize_t	y;
+}		t_pos;
+
 
 // struct mlx et window
 typedef struct s_env
@@ -74,6 +82,7 @@ typedef struct s_env
 void	ft_error(char *str);
 int		check(t_env *e);
 void	ft_size_win(t_env *e);
+void	init_game(t_env *e);
 char	**init_map(char **argv, t_env *e);
 int		key_hook(int key, t_env *e);
 int		close_hook(t_env *e);
@@ -83,5 +92,7 @@ int		close_hook(t_env *e);
 void	init_visu(t_env *e);
 void	*xpm_to_img(t_env *data, char *path);
 int		build(t_env *e);
+void	move(int key, t_env *e);
+int		loop_hook(t_env *e);
 
 #endif

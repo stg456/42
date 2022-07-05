@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 18:07:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/05 16:23:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,8 @@ int	key_hook(int key, t_env *e)
 {
 	if (key == ESC)
 		close_hook(e);
-	// else if (key == W)
-	// else if (key == A)
-	// else if (key == S)
-	// else if (key == D)
-
+	else if (key == W || key == A || key == S || key == D)
+		move(key, e);
 	return (1);
 }
 
@@ -45,6 +42,7 @@ int	main(int argc, char **argv)
 	e = malloc(sizeof(t_env));
 	if (argc != 2)
 		ft_error("\x1B[31mError: Bad number of arguments\n");
+	init_game(e);
 	e->map = init_map(argv, e);
 	if (!e->map)
 		ft_error("\x1B[31mError: The map is not playable\n");
@@ -63,7 +61,7 @@ int	main(int argc, char **argv)
 	// mlx_put_image_to_window(e->mlx, e->win, e->visu.wall, 300, 0);
 	// mlx_put_image_to_window(e->mlx, e->win, e->visu.exit, 400, 0);
 
-	//mlx_loop_hook(e->mlx, loop_hook, e);
+	mlx_loop_hook(e->mlx, loop_hook, e);
 
 	
 	mlx_loop(e->mlx);

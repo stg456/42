@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:21:16 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 17:52:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/05 16:07:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,9 @@ char	**init_map(char **argv, t_env *e)
 	check(e);
 	close(fd);
 	return (e->map);
+}
+
+void	init_game(t_env *e)
+{
+	e->collected = 0;
 }

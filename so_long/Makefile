@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/19 17:21:41 by stgerard          #+#    #+#              #
-#    Updated: 2022/07/04 11:28:05 by stgerard         ###   ########.fr        #
+#    Updated: 2022/07/05 15:25:42 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,12 @@ CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address -g3
 #DEBUG_FLAG = -g -fsanitize=address -g3
 RM = rm -f
 
-SRC = so_long.c init.c check_map.c img.c \
+SRC = so_long.c init.c check_map.c img.c move.c \
 ./libft/get_next_line.c ./libft/ft_strchr.c ./libft/ft_strjoin.c \
 ./libft/ft_strnstr.c ./libft/ft_calloc.c ./libft/ft_memcpy.c \
-./libft/ft_strlen.c ./libft/ft_split.c
+./libft/ft_strlen.c ./libft/ft_split.c ./libft/ft_printf.c \
+./libft/ft_printf_utils.c ./libft/ft_printf_utils2.c \
+./libft/ft_printf_utils3.c ./libft/ft_printf_utils4.c
 #./libft/ft_line_length.c ./libft/ft_count_lines.c \
 #./libft/ft_split.c ./libft/ft_atoi.c
 #./libft/ft_bzero.c ./libft/ft_memalloc.c \
