@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:38:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/05 12:24:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/05 12:26:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	*xpm_to_img(t_env *e, char *path)// addition 2 string
+void	*xpm_to_img(t_env *e, char *path)
 {
 	char	*apath;
 	void	*img;
@@ -72,13 +72,3 @@ int	build(t_env *e)
 	}
 	return (0);
 }
-
-/*
-void	build_line(t_env *e, int line_no)
-{
-	e->size_x = 0;
-	e->size_y = 0;
-	e->p_x = 1;
-	e->p_y = 1;
-}
-*/
