@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/05 16:21:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/05 18:40:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # include <stdarg.h>
 # include <sys/types.h>
 # include "./libft/libft.h"
-# define BUFFER_SIZE 10000
+// # define BUFFER_SIZE 10000
 
 # define T_S 63
 
@@ -43,7 +43,7 @@ typedef struct s_map_reader
 	char	*temp;
 	int		fd;
 	int		i;
-}		t_map_reader;
+}			t_map_reader;
 
 typedef struct s_img
 {
@@ -53,16 +53,25 @@ typedef struct s_img
 	void	*exit;
 	void	*exitc;
 	void	*floor;
-}		t_img;
+}			t_img;
 
 typedef struct s_pos
 {
 	ssize_t	x;
 	ssize_t	y;
-}		t_pos;
+}			t_pos;
 
+typedef struct s_check
+{
+	size_t	i;
+	size_t	j;
+	int		n_c;
+	int		n_e;
+	int		n_p;
+}			t_check;
 
 // struct mlx et window
+
 typedef struct s_env
 {
 	void	*mlx;
@@ -75,6 +84,7 @@ typedef struct s_env
 	int		counter;
 	int		collected;
 	t_img	visu;
+	int		steps;
 }				t_env;
 
 // initilisation
@@ -91,8 +101,13 @@ int		close_hook(t_env *e);
 
 void	init_visu(t_env *e);
 void	*xpm_to_img(t_env *data, char *path);
-int		build(t_env *e);
+void	build(t_env *e);
 void	move(int key, t_env *e);
 int		loop_hook(t_env *e);
+void	put_mlx(t_env *e, void *img, int x, int y);
+void	refresh_tiles(t_env *e, t_pos p);
+void	refresh_collectible(t_env *e, t_pos p);
+void	refresh_exit(t_env *e, t_pos p);
+void	refresh_walls(t_env *e, t_pos p);
 
 #endif
