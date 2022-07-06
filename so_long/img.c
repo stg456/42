@@ -6,34 +6,30 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:38:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/05 18:36:01 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:48:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	*xpm_to_img(t_env *e, char *path)
+void	build_player(t_env *e, t_pos p)
 {
-	char	*apath;
-	void	*img;
-	int		width;
-	int		height;
-
-	apath = ft_strjoin("./sprites/", path);
-	img = mlx_xpm_file_to_image(e->mlx, apath, &width, &height);
-	if (!img)
-		ft_error("\x1B[31mError : invalid file.");
-	return (img);
+	e->p_x = p.x;
+	e->p_y = p.y;
+	put_mlx(e, e->visu.player, p.x * T_S, p.y * T_S);
 }
 
 void	init_visu(t_env *e)
 {
 	e->visu.player = xpm_to_img(e, "player.xpm");
-	e->visu.collectible = xpm_to_img(e, "collectible.xpm");
 	e->visu.floor = xpm_to_img(e, "floor.xpm");
 	e->visu.wall = xpm_to_img(e, "wall.xpm");
 	e->visu.exit = xpm_to_img(e, "exit.xpm");
 	e->visu.exitc = xpm_to_img(e, "exitc.xpm");
+	e->visu.enemy = xpm_to_img(e, "enemy.xpm");
+	img_to_sprite(e, &e->visu.health, "health", 3);
+	img_to_sprite(e, &e->visu.key, "key", 9);
+	e->visu.health->head = e->visu.health;
 }
 
 void	build(t_env *e)
@@ -50,17 +46,16 @@ void	build(t_env *e)
 			if (e->map[p.y][p.x] == '1')
 				put_mlx(e, e->visu.wall, p.x * T_S, p.y * T_S);
 			else if (e->map[p.y][p.x] == 'C')
-				put_mlx(e, e->visu.collectible, p.x * T_S, p.y * T_S);
+				put_mlx(e, e->visu.key->img, p.x * T_S, p.y * T_S);
 			else if (e->map[p.y][p.x] == 'E')
-				put_mlx(e, e->visu.exit, p.x * T_S, p.y * T_S);
+				put_mlx(e, e->visu.exitc, p.x * T_S, p.y * T_S);
 			else if (e->map[p.y][p.x] == 'P')
-			{
-				e->p_x = p.x;
-				e->p_y = p.y;
-				put_mlx(e, e->visu.player, p.x * T_S, p.y * T_S);
-			}
+				build_player(e, p);
+			else if (e->map[p.y][p.x] == 'X')
+				put_mlx(e, e->visu.enemy, p.x * T_S, p.y * T_S);
 			++p.x;
 		}
 		++p.y;
 	}
+	mlx_string_put(e->mlx, e->win, 0, 20, 0xFFFFFFFF, ft_itoa(e->steps));
 }

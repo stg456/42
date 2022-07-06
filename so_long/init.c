@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:21:16 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/05 17:41:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:22:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,6 @@ char	**init_map(char **argv, t_env *e)
 
 void	init_game(t_env *e)
 {
-	e->collected = 0;
+	e->steps = 0;
+	e->health = 3;
 }

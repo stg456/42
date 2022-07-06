@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 13:59:55 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/05 18:11:53 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/06 15:21:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ static void	char_check(t_env *e)
 		{
 			if (!(e->map[i][j] == '0' || e->map[i][j] == '1'
 					|| e->map[i][j] == 'C' || e->map[i][j] == 'E'
-					|| e->map[i][j] == 'P' || e->map[i][j] == 'F'))
+					|| e->map[i][j] == 'P' || e->map[i][j] == 'F'
+					|| e->map[i][j] == 'X'))
 				ft_error("\x1B[31mError: unknown characters in map file.");
 			++j;
 		}
@@ -105,6 +106,7 @@ static void	min_check(t_env *e)
 	}
 	if (v.n_c < 1 || v.n_e < 1 || v.n_p < 1)
 		ft_error("\x1B[31mInvalid map\n");
+	e->collectible = v.n_c;
 }
 
 int	check(t_env *e)

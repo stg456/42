@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/05 18:40:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:48:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,24 @@ typedef struct s_map_reader
 	int		i;
 }			t_map_reader;
 
+typedef struct s_sprite
+{
+	struct s_sprite		*head;
+	void				*img;
+	struct s_sprite		*next;
+}		t_sprite;
+
 typedef struct s_img
 {
-	void	*player;
-	void	*wall;
-	void	*collectible;
-	void	*exit;
-	void	*exitc;
-	void	*floor;
+	void		*player;
+	void		*wall;
+	void		*collectible;
+	void		*exit;
+	void		*exitc;
+	void		*floor;
+	void		*enemy;
+	t_sprite	*health;
+	t_sprite	*key;
 }			t_img;
 
 typedef struct s_pos
@@ -81,10 +91,10 @@ typedef struct s_env
 	size_t	size_y;
 	int		p_x;
 	int		p_y;
-	int		counter;
-	int		collected;
+	int		collectible;
 	t_img	visu;
 	int		steps;
+	int		health;
 }				t_env;
 
 // initilisation
@@ -101,6 +111,7 @@ int		close_hook(t_env *e);
 
 void	init_visu(t_env *e);
 void	*xpm_to_img(t_env *data, char *path);
+void	img_to_sprite(t_env *e, t_sprite **sprite, char *img, int c);
 void	build(t_env *e);
 void	move(int key, t_env *e);
 int		loop_hook(t_env *e);
@@ -109,5 +120,6 @@ void	refresh_tiles(t_env *e, t_pos p);
 void	refresh_collectible(t_env *e, t_pos p);
 void	refresh_exit(t_env *e, t_pos p);
 void	refresh_walls(t_env *e, t_pos p);
+void	refresh_enemy(t_env *e, t_pos p);
 
 #endif
