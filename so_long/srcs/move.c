@@ -6,11 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:28:58 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/06 16:15:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/06 16:56:37 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
 void	collision_check(t_env *e)
 {
