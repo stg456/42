@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 18:32:31 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/06 16:56:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/06 17:49:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	refresh_collectible(t_env *e, t_pos p)
 	{
 		if (e->map[p.y][p.x] == 'C')
 		{
+			put_mlx(e, e->visu.pentagram, p.x * T_S, p.y * T_S);
 			if (e->collectible != 0)
 			{
 				put_mlx(e, e->visu.key->img, p.x * T_S, p.y * T_S);

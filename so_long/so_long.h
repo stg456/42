@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:22:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/06 16:48:07 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/06 17:29:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef struct s_img
 	void		*exit;
 	void		*exitc;
 	void		*floor;
+	void		*pentagram;
 	void		*enemy;
 	t_sprite	*health;
 	t_sprite	*key;

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 11:38:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/06 16:56:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/06 17:47:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	init_visu(t_env *e)
 {
 	e->visu.player = xpm_to_img(e, "player.xpm");
 	e->visu.floor = xpm_to_img(e, "floor.xpm");
+	e->visu.pentagram = xpm_to_img(e, "pentagram.xpm");
 	e->visu.wall = xpm_to_img(e, "wall.xpm");
 	e->visu.exit = xpm_to_img(e, "exit.xpm");
 	e->visu.exitc = xpm_to_img(e, "exitc.xpm");
