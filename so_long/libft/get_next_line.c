@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/04 18:28:47 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/04 15:30:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/07 13:02:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,21 @@
 
 char	*get_next_line(int fd)
 {
-	int		i;
-	int		rd;
-	char	character;
-	char	*buffer;
+	char	*s;
+	char	*c;
 
-	i = 0;
-	rd = 0;
-	buffer = malloc(10000);
-	if (!buffer)
-		return (NULL);
-	while ((rd = read(fd, &character, 1)) > 0)
+	s = malloc(10000);
+	c = s;
+	while (read(fd, c, 1) > 0 && *c++ != '\n')
+		;
+	if (c > s)
 	{
-		buffer[i++] = character;
-		if (character == '\n')
-			break ;
+		*c = 0;
+		return (s);
 	}
-	if ((!buffer[i - 1] && !rd) || rd == -1)
+	else
 	{
-		free(buffer);
+		free(s);
 		return (NULL);
 	}
-	buffer[i] = '\0';
-	return (buffer);
 }
