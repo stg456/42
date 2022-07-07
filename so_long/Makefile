@@ -6,15 +6,14 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/19 17:21:41 by stgerard          #+#    #+#              #
-#    Updated: 2022/07/06 16:55:04 by stgerard         ###   ########.fr        #
+#    Updated: 2022/07/07 17:07:11 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address -g3
-#DEBUG_FLAG = -g -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
 
 SRC = ./srcs/so_long.c ./srcs/init.c ./srcs/check_map.c ./srcs/img.c \
@@ -23,19 +22,17 @@ SRC = ./srcs/so_long.c ./srcs/init.c ./srcs/check_map.c ./srcs/img.c \
 ./libft/ft_strnstr.c ./libft/ft_calloc.c ./libft/ft_memcpy.c \
 ./libft/ft_strlen.c ./libft/ft_split.c ./libft/ft_printf.c \
 ./libft/ft_printf_utils.c ./libft/ft_printf_utils2.c \
-./libft/ft_printf_utils3.c ./libft/ft_printf_utils4.c
+./libft/ft_printf_utils3.c ./libft/ft_printf_utils4.c ./libft/ft_arr_freer.c
 
 OBJ = ${SRC:.c=.o}
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	${CC} ${OBJ} -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME}
+	${CC} $(CFLAGS) ${OBJ} -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME}
 
 %.o: %.c
-	$(CC) -g3 -Wall -Wextra -Werror -Imlx -c $< -o $@
-
-
+	$(CC) $(CFLAGS) -Imlx -c $< -o $@
 
 clean:
 			${RM} ${OBJ}

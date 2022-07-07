@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 17:23:07 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/06 16:56:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/07 17:32:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,18 @@ void	ft_error(char *str)
 int	close_hook(t_env *e)
 {
 	mlx_destroy_window(e->mlx, e->win);
-	e->win = NULL;
+	ft_arr_freer(e->map);
+	free(e->visu.player);
+	free(e->visu.collectible);
+	free(e->visu.exit);
+	free(e->visu.exitc);
+	free(e->visu.floor);
+	free(e->visu.pentagram);
+	free(e->visu.enemy);
+	free(e->visu.key);
+	free(e->visu.health);
+	free(e->mlx);
+	free(e);
 	exit(EXIT_SUCCESS);
 }
 

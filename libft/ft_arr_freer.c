@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   ft_arr_freer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/04 18:28:47 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/07 13:05:31 by stgerard         ###   ########.fr       */
+/*   Created: 2022/07/07 17:01:34 by stgerard          #+#    #+#             */
+/*   Updated: 2022/07/07 17:01:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*get_next_line(int fd)
+void	ft_arr_freer(char **arr)
 {
-	char	*s;
-	char	*c;
+	size_t	i;
 
-	s = malloc(10000);
-	c = s;
-	while (read(fd, c, 1) > 0 && *c++ != '\n')
-		;
-	if (c > s)
+	if (!arr || !*arr)
+		return ;
+	i = 0;
+	while (arr[i])
 	{
-		*c = 0;
-		return (s);
+		free(arr[i]);
+		arr[i] = NULL;
+		i++;
 	}
-	else
-	{
-		free(s);
-		return (NULL);
-	}
+	free(arr);
+	arr = NULL;
 }
