@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/05 14:28:58 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/06 16:56:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/07 19:35:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	collision_check(t_env *e)
 	if (e->map[e->p_y][e->p_x] == 'C')
 	{
 		if (e->collectible != 0)
+		{
 			e->collectible--;
+			e->map[e->p_y][e->p_x] == '0';
+		}
 	}
 	if (e->map[e->p_y][e->p_x] == 'X')
 	{
