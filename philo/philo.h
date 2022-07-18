@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/18 16:09:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/18 16:14:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_arg
 
 // fct
 
-t_arg	init(char **argv);
+void	init(char **argv);
 
 // utils
 

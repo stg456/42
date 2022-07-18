@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/18 16:09:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/18 16:14:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-t_arg	init(char **argv, t_arg	param)
+void	init(char **argv, t_arg	param)
 {
 	param.nb_philo = ft_atoi(argv[1]);
 	param.time_to_die = ft_atoi(argv[2]);
