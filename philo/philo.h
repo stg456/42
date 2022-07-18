@@ -6,25 +6,26 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/18 15:32:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/18 16:09:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-ifndef PHILO_H
+#ifndef PHILO_H
 #define PHILO_H
 
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
 
 
-
-typedef struct s_philo
+typedef struct s_state
 {
 	int	eat;
 	int	sleep;
 	int	think;
-}				t_philo;
+}				t_state;
 
 typedef struct s_arg
 {
@@ -36,8 +37,10 @@ typedef struct s_arg
 
 // fct
 
-
+t_arg	init(char **argv);
 
 // utils
 
 int	ft_atoi(const char *str);
+
+#endif

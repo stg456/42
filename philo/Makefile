@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 19:18:30 by stgerard          #+#    #+#              #
-#    Updated: 2022/07/18 15:05:15 by stgerard         ###   ########.fr        #
+#    Updated: 2022/07/18 16:09:45 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ SRC = plilo.c utils.c
 OBJ = ${SRC:.c=.o}
 
 all: ${NAME}
+
+
 
 clean:
 			${RM} ${OBJ}
