@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/18 16:14:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/18 17:46:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
+# include <sys/time.h>
 
 
 typedef struct s_state
@@ -37,7 +38,7 @@ typedef struct s_arg
 
 // fct
 
-void	init(char **argv);
+void	init_arg(char **argv, t_arg	param);
 
 // utils
 
