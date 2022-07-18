@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 19:18:30 by stgerard          #+#    #+#              #
-#    Updated: 2022/07/18 17:46:03 by stgerard         ###   ########.fr        #
+#    Updated: 2022/07/18 18:49:46 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ OBJ = ${SRC:.c=.o}
 
 all: ${NAME}
 
-
+${NAME}: ${OBJ}
+			${CC} -o ${NAME} ${OBJ} ${CFLAGS}
 
 clean:
 			${RM} ${OBJ}
@@ -32,4 +33,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean re all
+.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/18 17:46:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/18 18:51:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,18 @@ void	gestphilo(void *)
 
 }
 
-int	main(char **argv)
+int	main(int argc, char **argv)
 {
 	t_arg		param;
 	pthread_t	philo;
 	int			i;
 
 	i = 0;
+	if (argc < 5 || argc > 6)
+	{
+		printf("REDError : Bad numbers of arguments.\n");
+		return (0);
+	}
 	init_arg(argv, param);
 	while (param.nb_philo != 0)
 	{
