@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/18 18:51:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/22 16:09:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 	int			i;
 
 	i = 0;
-	if (argc < 5 || argc > 6)
+	if (argc != 5)
 	{
 		printf("REDError : Bad numbers of arguments.\n");
 		return (0);
