@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/22 16:09:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/22 16:13:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	init_arg(char **argv, t_arg	param)
 
 void	gestphilo(void *)
 {
+
 
 }
 
