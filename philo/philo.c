@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/25 17:14:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/25 18:06:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ int	main(int argc, char **argv)
 	pthread_t	philo;
 	int			i;
 
+	// philo = malloc(sizeof(*philo)* param.nb_philo);
+	// if (philo == NULL)
+	// 	return (-1);
 	i = 0;
 	if (argc != 5)
 	{
