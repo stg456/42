@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/18 18:49:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/25 16:59:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_arg
 // fct
 
 void	init_arg(char **argv, t_arg	param);
+void	gestphilo(void *);
 
 // utils
 

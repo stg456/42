@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/22 16:13:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/25 17:14:47 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	init_arg(char **argv, t_arg	param)
 	param.time_to_sleep = ft_atoi(argv[4]);
 }
 
-void	gestphilo(void *)
+void	gestphilo(void *arg)
 {
 
-
+	printf("Après la création du thread.\n");
 }
 
 int	main(int argc, char **argv)
@@ -41,6 +41,7 @@ int	main(int argc, char **argv)
 	init_arg(argv, param);
 	while (param.nb_philo != 0)
 	{
+		printf("Avant la création du thread.\n");
 		pthread_create(&philo, NULL, gestphilo, (void *)&philo);
 		i++;
 		param.nb_philo--;
