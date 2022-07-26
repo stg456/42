@@ -6,24 +6,27 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 19:18:30 by stgerard          #+#    #+#              #
-#    Updated: 2022/07/25 16:59:57 by stgerard         ###   ########.fr        #
+#    Updated: 2022/07/26 15:32:23 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -lpthread -Wall -Wextra -Werror -g3 -fsanitize=address
 RM = rm -f
 
 SRC = plilo.c utils.c
 
 OBJ = ${SRC:.c=.o}
 
+.c.o:
+				${CC} ${CFLAGS} -I. -c $< -o ${<:.c=.o}
+
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-			${CC} -lpthread -o ${NAME} ${OBJ} ${CFLAGS}
+			${CC} -o ${NAME} ${OBJ} ${CFLAGS}
 
 clean:
 			${RM} ${OBJ}
