@@ -1,11 +1,7 @@
-make --dry-run --always-make --keep-going --print-directory
-<<<<<<< HEAD
+make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/stgerard/42'
+ 
 make: Leaving directory `/Users/stgerard/42'
-=======
-make: Entering directory `/Users/stgerard/42/42'
-make: Leaving directory `/Users/stgerard/42/42'
->>>>>>> 1f7aa037af4b8fc9f4c9b2734ca60f5aa37bdff4
  
 make: *** No targets specified and no makefile found.  Stop.
 
