@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/30 16:19:49 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/30 18:10:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	*gestphilo(void *arg)
 {
 
 	printf("Après la création du thread.\n");
+	usleep(1000);
 }
 
 int	main(int argc, char **argv)
@@ -47,7 +48,7 @@ int	main(int argc, char **argv)
 		printf("Avant la création du thread.\n");
 		pthread_create(&philo, NULL, &gestphilo, (void *)&philo);
 		pthread_join(philo, NULL);
-		// usleep(100000);
+		// usleep(1000);
 		i++;
 		param.nb_philo--;
 	}
