@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/30 18:10:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/30 19:09:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(int argc, char **argv)
 	// if (philo == NULL)
 	// 	return (-1);
 	i = 0;
-	if (argc != 5)
+	if (argc < 5 || argc > 6)
 	{
 		printf("REDError : Bad numbers of arguments.\n");
 		return (0);

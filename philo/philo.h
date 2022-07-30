@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/30 18:10:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/30 19:09:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ typedef struct s_arg
 	int	time_to_die;
 	int time_to_eat;
 	int time_to_sleep;
+	int	number_of_times_each_philosopher_must_eat;
 }				t_arg;
 
 // fct
