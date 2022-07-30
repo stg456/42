@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/30 19:09:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/30 19:26:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 void	init_arg(char **argv, t_arg	param)
 {
 	param.nb_philo = ft_atoi(argv[1]);
-	param.time_to_die = ft_atoi(argv[2]);
-	param.time_to_eat = ft_atoi(argv[3]);
-	param.time_to_sleep = ft_atoi(argv[4]);
+	param.timetodie = ft_atoi(argv[2]);
+	param.timetoeat = ft_atoi(argv[3]);
+	param.timetosleep = ft_atoi(argv[4]);
+	param.numberofeat = ft_atoi(argv[5]);
 }
 
 void	*gestphilo(void *arg)

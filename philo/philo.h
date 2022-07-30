@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/30 19:09:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/07/30 19:26:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,10 @@ typedef struct s_state
 typedef struct s_arg
 {
 	int	nb_philo;
-	int nb_fork;
-	int	time_to_die;
-	int time_to_eat;
-	int time_to_sleep;
-	int	number_of_times_each_philosopher_must_eat;
+	int	timetodie;
+	int timetoeat;
+	int timetosleep;
+	int	numberofeat;
 }				t_arg;
 
 // fct
