@@ -6,15 +6,15 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 19:18:30 by stgerard          #+#    #+#              #
-#    Updated: 2022/07/26 15:37:24 by stgerard         ###   ########.fr        #
+#    Updated: 2022/07/30 15:30:27 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philo
 
 CC = gcc
-CFLAGS = -lpthread -Wall -Wextra -Werror -g3
-# -fsanitize=address
+CFLAGS = -lpthread -Wall -Wextra -Werror -g3 -fsanitize=address
+
 RM = rm -f
 
 SRC = plilo.c utils.c
