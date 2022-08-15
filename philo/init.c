@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   time.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/15 10:55:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/15 12:54:16 by stgerard         ###   ########.fr       */
+/*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
+/*   Updated: 2022/08/15 13:10:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	diff_chrono(t_arg param, t_philo philo, t_chrono chrono)
+void	init_mutex(t_philo philo, t_arg param)
 {
-	struct timeval start;
-	struct timeval end;
+	int	i;
 
-	gettimeofday(&start, NULL);
-    // loopFunc(NUM);
-    gettimeofday(&end, NULL);
+	i = 0;
 
 }
-
-// float time_diff(struct timeval *start, struct timeval *end)
-// {
-//     return (end->tv_sec - start->tv_sec) + 1e-6*(end->tv_usec - start->tv_usec);
-// }

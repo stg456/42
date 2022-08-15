@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/15 12:42:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/15 13:10:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ int	main(int argc, char **argv)
 	// {
 	// 	philo_dead();
 	// }
+	init_mutex(&philo, &param);
+
 
 	i = 0;
 	while (param.nb_philo != 0)
