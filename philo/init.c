@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/15 15:57:48 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:46:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	init_arg(int argc, char **argv, t_arg	param)
 {
+	t_arg		param;
+	
 	if (argc < 5 || argc > 6)
 	{
 		printf("REDError : Bad numbers of arguments.\n");
@@ -34,6 +36,8 @@ void	init_mutex(t_philo philo, t_arg param)
 	int	i;
 
 	philo.forks = malloc(sizeof(pthread_mutex_t) * param.nb_philo);
+	if (philo.forks == NULL)
+		ft_error("REDle malloc des fork qui deconne");
 	i = param.nb_philo;
 	while (i--)
 	{
@@ -48,12 +52,13 @@ void	init_thread(t_philo philo, t_arg param)
 	int	i;
 
 	philo.threads = malloc(sizeof(pthread_t) * param.nb_philo);
+	if (philo.threads == NULL)
+		ft_error("REDle malloc des threads qui deconne");	
 	i = param.nb_philo;
 	while (i--)
 	{
 		printf("Avant la création du thread.\n");
 		pthread_create(&philo, NULL, &gestphilo, (void *)&philo);
 		printf("apres la création du thread.\n");
-
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/15 15:39:26 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:46:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,23 @@ void	*gestphilo(void *arg)
 {
 
 	printf("Après la création du thread.\n");
-	usleep(1000);
+	// usleep(1000);
+}
+
+void	ft_error(char *str)
+{
+	printf(str);
+	exit(EXIT_FAILURE);
 }
 
 int	main(int argc, char **argv)
 {
-	t_arg		param;
 	t_philo		philo;
 	t_chrono	chrono;
+	t_arg		param;
 	int			i;
 
-	// philo = malloc(sizeof(*philo)* param.nb_philo);
+	// philo = malloc(sizeof(t_philo) * param.nb_philo);
 	// if (philo == NULL)
 	// 	exit(EXIT_FAILURE);
 
@@ -35,8 +41,8 @@ int	main(int argc, char **argv)
 	// {
 	// 	philo_dead();
 	// }
-	init_fork(&philo, &param);
-	init_guy(&philo, &param);
+	init_mutex(&philo, &param);
+	init_thread(&philo, &param);
 
 
 	return (0);
