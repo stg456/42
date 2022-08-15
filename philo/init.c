@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/15 16:46:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:54:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ void	init_arg(int argc, char **argv, t_arg	param)
 	param.time_sleep = ft_atoi(argv[4]);
 	if (argc == 6) 
 		param.nb_eat = ft_atoi(argv[5]);
-	else
-		param.nb_eat = -1;
+	// else
+	// 	param.nb_eat = -1;
 }
 
 void	init_mutex(t_philo philo, t_arg param)
