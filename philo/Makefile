@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 19:18:30 by stgerard          #+#    #+#              #
-#    Updated: 2022/08/15 09:39:09 by stgerard         ###   ########.fr        #
+#    Updated: 2022/08/15 11:18:21 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,14 +20,14 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -f
 
-SRC = plilo.c utils.c
+SRC = philo.c utils.c time.c
 
 OBJ = ${SRC:.c=.o}
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-			${CC} ${OBJ} ${CFLAGS} -o ${NAME}
+			${CC} -pthread ${OBJ} ${CFLAGS} -o ${NAME}
 
 .c.o:
 				${CC} ${CFLAGS} -I. -c $< -o ${<:.c=.o}

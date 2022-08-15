@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/30 19:26:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/15 11:18:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,47 @@
 #define CYN  "\x1B[36m"
 #define WHT  "\x1B[37m"
 
-typedef struct s_state
-{
-	int	eat;
-	int	sleep;
-	int	think;
-	int dead;
-}				t_state;
+# define EAT "is eating"
+# define SLEEP "is sleeping"
+# define THINK "is thinking"
+# define FORK "has taken a fork"
+# define DIED "died"
 
 typedef struct s_arg
 {
 	int	nb_philo;
-	int	timetodie;
-	int timetoeat;
-	int timetosleep;
-	int	numberofeat;
+	int	time_die;
+	int time_eat;
+	int time_sleep;
+	int	nb_eat;
 }				t_arg;
+
+// typedef struct s_state
+// {
+// 	int	eat;
+// 	int	sleep;
+// 	int	think;
+// 	int dead;
+// }				t_state;
+
+// typedef struct s_fork
+// {
+// 	int	left;
+// 	int	right;
+// }				t_fork;
+
+typedef struct s_philo
+{
+	int			id;
+	int			nb_time;
+	int 		time_die;
+	// t_fork	fork;
+	pthread_t	thread;
+}				t_philo;
 
 // fct
 
-void	init_arg(char **argv, t_arg	param);
+void	init_arg(int argc, char **argv, t_arg	param);
 void	*gestphilo(void *arg);
 
 // utils
