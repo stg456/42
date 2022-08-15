@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/15 11:18:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/15 12:42:47 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@
 #define CYN  "\x1B[36m"
 #define WHT  "\x1B[37m"
 
-# define EAT "is eating"
-# define SLEEP "is sleeping"
-# define THINK "is thinking"
-# define FORK "has taken a fork"
-# define DIED "died"
+# define EAT " is eating"
+# define SLEEP " is sleeping"
+# define THINK " is thinking"
+# define FORK " has taken a fork"
+# define DIED " died"
 
 typedef struct s_arg
 {
@@ -63,16 +63,23 @@ typedef struct s_arg
 
 typedef struct s_philo
 {
-	int			id;
-	int			nb_time;
-	int 		time_die;
-	// t_fork	fork;
-	pthread_t	thread;
+	int				id;
+	int				nb_of_eat;
+	int 			time_before_die;
+	pthread_t		*threads;
+	pthread_mutex_t	*forks;
 }				t_philo;
+
+typedef struct s_chrono
+{
+	struct timeval	tv;
+	struct s_data	*data;
+}				t_chrono;
 
 // fct
 
 void	init_arg(int argc, char **argv, t_arg	param);
+void	diff_chrono(t_arg param, t_philo philo, t_chrono chrono);
 void	*gestphilo(void *arg);
 
 // utils
