@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/15 16:46:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/17 17:21:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*gestphilo(void *arg)
 {
 
-	printf("Après la création du thread.\n");
+	printf("debut routine.\n");
 	// usleep(1000);
 }
 
