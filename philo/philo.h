@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/15 16:46:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/19 12:39:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 # define EAT " is eating"
 # define SLEEP " is sleeping"
 # define THINK " is thinking"
-# define FORK " has taken a fork"
+# define FORK " has taken two forks"
 # define DIED " died"
 
 typedef struct s_arg
@@ -78,6 +78,7 @@ typedef struct s_chrono
 
 // fct
 
+int		main(int argc, char **argv);
 void	init_arg(int argc, char **argv, t_arg	param);
 void	init_mutex(t_philo philo, t_arg param);
 void	init_thread(t_philo philo, t_arg param);
