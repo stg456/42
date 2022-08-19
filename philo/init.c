@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/17 17:21:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/19 11:56:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ void	init_arg(int argc, char **argv, t_arg	param)
 	param.time_sleep = ft_atoi(argv[4]);
 	if (argc == 6) 
 		param.nb_eat = ft_atoi(argv[5]);
-	// else
-	// 	param.nb_eat = -1;
 }
 
 void	init_mutex(t_philo philo, t_arg param)
@@ -58,7 +56,7 @@ void	init_thread(t_philo philo, t_arg param)
 	while (i--)
 	{
 		printf("Avant la création du thread.\n");
-		pthread_create(&philo, NULL, &gestphilo, (void *)&philo);
+		pthread_create(&philo.threads, NULL, &gestphilo, (void *)&philo);
 		printf("apres la création du thread.\n");
 	}
 }

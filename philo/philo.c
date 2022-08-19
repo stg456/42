@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/17 17:21:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/19 11:18:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	*gestphilo(void *arg)
 {
-
 	printf("debut routine.\n");
 	// usleep(1000);
 }
@@ -41,8 +40,8 @@ int	main(int argc, char **argv)
 	// {
 	// 	philo_dead();
 	// }
-	init_mutex(&philo, &param);
-	init_thread(&philo, &param);
+	init_mutex(philo, param);
+	init_thread(philo, param);
 
 
 	return (0);
