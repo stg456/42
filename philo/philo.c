@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 11:02:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/29 11:22:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	*gestphilo(void *arg)
+void	*gestphilo(t_philo philo)
 {
 	printf("debut routine.\n");
 	// usleep(1000);
@@ -42,7 +42,8 @@ int	main(int argc, char **argv)
 	// }
 	init_mutex(philo, param);
 	init_thread(philo, param);
-
+	gestphilo(philo);
+	closephilo(philo);
 
 	return (0);
 }
