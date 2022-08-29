@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 17:05:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/29 17:14:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ void	*gestphilo(t_philo philo)
 	printf("debut routine.\n");
 	while (philo.id <= philo.nb_philo)
 	{
-		if (philo->forks[i] & philo->forks[i + 1])
+		pthread_mutex_lock(&philo);
+		if (philo.id[i] & philo.id[i + 1])
 		{
 
+			pthread_mutex_unlock(&philo);
 		}
 	}
 	// usleep(1000);
