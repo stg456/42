@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 10:58:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/29 12:05:06 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ void	init_thread(t_philo philo, t_arg param)
 	if (philo.threads == NULL)
 		ft_error("REDle malloc des threads qui deconne");
 	i = param.nb_philo;
-	printf("Avant la création des thread.\n");
+	printf("Avant la création des threads.\n");
 	while (i--)
 	{		
 		pthread_create(&philo.threads[i], NULL, &gestphilo, (void *)&philo);
-		printf("apres la création des thread.\n");
+		printf("apres la création des threads.\n");
 	}
 }
