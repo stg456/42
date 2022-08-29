@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 11:56:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/29 17:05:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,17 +35,17 @@
 # define EAT " is eating"
 # define SLEEP " is sleeping"
 # define THINK " is thinking"
-# define FORK " has taken two forks"
+# define FORK " has taken a fork"
 # define DIED " died"
 
-typedef struct s_arg
-{
-	int	nb_philo;
-	int	time_die;
-	int time_eat;
-	int time_sleep;
-	int	nb_eat;
-}				t_arg;
+// typedef struct s_arg
+// {
+// 	int	nb_philo;
+// 	int	time_die;
+// 	int time_eat;
+// 	int time_sleep;
+// 	int	nb_eat;
+// }				t_arg;
 
 // typedef struct s_state
 // {
@@ -55,14 +55,13 @@ typedef struct s_arg
 // 	int dead;
 // }				t_state;
 
-// typedef struct s_fork
-// {
-// 	int	left;
-// 	int	right;
-// }				t_fork;
-
 typedef struct s_philo
 {
+	int				nb_philo;
+	int				time_die;
+	int				time_eat;
+	int				time_sleep;
+	int				nb_eat;
 	int				id;
 	int				nb_of_eat;
 	int 			time_before_die;
@@ -79,10 +78,10 @@ typedef struct s_chrono
 // fct
 
 int		main(int argc, char **argv);
-void	init_arg(int argc, char **argv, t_arg	param);
-void	init_mutex(t_philo philo, t_arg param);
-void	init_thread(t_philo philo, t_arg param);
-void	diff_chrono(t_arg param, t_philo philo, t_chrono chrono);
+void	init_arg(int argc, char **argv, t_philo	philo);
+void	init_mutex(t_philo philo);
+void	init_thread(t_philo philo);
+void	diff_chrono(t_philo philo, t_chrono chrono);
 void	*gestphilo(t_philo philo);
 void	*closephilo(t_philo philo);
 
