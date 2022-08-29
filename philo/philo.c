@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 17:14:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/29 17:49:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@ void	*gestphilo(t_philo philo)
 		pthread_mutex_lock(&philo);
 		if (philo.id[i] & philo.id[i + 1])
 		{
+			pthread_mutex_lock(&philo);
+			philo.id[i];
 
+			// time
+			printf("philo %d ", philo.id);
 			pthread_mutex_unlock(&philo);
 		}
 	}

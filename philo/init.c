@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 17:05:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/29 17:49:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	init_thread(t_philo philo)
 	while (i--)
 	{		
 		pthread_create(&philo.threads[i], NULL, &gestphilo, (void *)&philo);
+		pthread_join(philo.threads[i], NULL);
 		printf("apres la création des threads.\n");
 	}
 }
