@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/19 12:39:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/29 10:58:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	init_mutex(t_philo philo, t_arg param)
 	printf("Avant la création des mutex.\n");
 	while (i--)
 	{
-		pthread_mutex_init(&philo.forks, NULL);
+		pthread_mutex_init(&philo.forks[i], NULL);
 		printf("apres la création des mutex.\n");
 	}
 }
@@ -56,7 +56,7 @@ void	init_thread(t_philo philo, t_arg param)
 	printf("Avant la création des thread.\n");
 	while (i--)
 	{		
-		pthread_create(&philo.threads, NULL, &gestphilo, (void *)&philo);
+		pthread_create(&philo.threads[i], NULL, &gestphilo, (void *)&philo);
 		printf("apres la création des thread.\n");
 	}
 }
