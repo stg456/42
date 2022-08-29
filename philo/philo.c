@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 17:53:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/29 18:07:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int	main(int argc, char **argv)
 	// if (philo == NULL)
 	// 	exit(EXIT_FAILURE);
 	
-
 	init_arg(argc, argv, philo);
 	// if (param.nb_philo = 1)
 	// {
