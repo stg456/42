@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 11:22:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/29 12:13:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 void	*gestphilo(t_philo philo)
 {
 	printf("debut routine.\n");
+	
 	// usleep(1000);
+	printf("fin routine.\n");
 }
 
 void	ft_error(char *str)
