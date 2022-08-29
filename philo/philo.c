@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 12:13:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/29 16:28:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@ void	*gestphilo(t_philo philo)
 	
 	// usleep(1000);
 	printf("fin routine.\n");
-}
-
-void	ft_error(char *str)
-{
-	printf(str);
-	exit(EXIT_FAILURE);
 }
 
 int	main(int argc, char **argv)

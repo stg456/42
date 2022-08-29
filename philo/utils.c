@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/07/18 14:57:02 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/08/29 16:27:56 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,10 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (j * n);
+}
+
+void	ft_error(char *str)
+{
+	printf(str);
+	exit(EXIT_FAILURE);
 }
