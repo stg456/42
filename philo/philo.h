@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 17:14:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/09/05 16:17:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ void	*closephilo(t_philo philo);
 // utils
 
 int		ft_atoi(const char *str);
+void	ft_error(char *str);
 
 #endif
