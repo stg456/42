@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 18:07:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:19:53 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,9 @@ void	*gestphilo(t_philo philo)
 int	main(int argc, char **argv)
 {
 	t_philo		philo;
-	t_chrono	chrono;
+	// t_chrono	chrono;
 	// t_arg		param;
-	int			i;
+	// int			i;
 
 	// philo = malloc(sizeof(t_philo));
 	// if (philo == NULL)
