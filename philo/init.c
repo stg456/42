@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 17:53:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/09/05 16:17:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 void	init_arg(int argc, char **argv, t_philo	philo)
 {
 	if (argc < 5 || argc > 6)
-	{
-		printf("REDError : Bad numbers of arguments.\n");
-		return (-1);
-	}
+		ft_error("REDError : Bad numbers of arguments.\n");
 	philo.nb_philo = ft_atoi(argv[1]);
 	philo.time_die = ft_atoi(argv[2]);
 	philo.time_eat = ft_atoi(argv[3]);

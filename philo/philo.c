@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/09/05 15:19:53 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/09/05 17:12:37 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ void	*gestphilo(t_philo philo)
 	while (philo.id <= philo.nb_philo)
 	{
 		pthread_mutex_lock(&philo);
-		if (philo.id[i] & philo.id[i + 1])
+		if (philo->forks[i] & philo->forks[i + 1])
 		{
 			pthread_mutex_lock(&philo);
-			philo.id[i];
+			philo.forks[i];
 
 			// time
 			printf("philo %d ", philo.id);
@@ -42,9 +42,9 @@ int	main(int argc, char **argv)
 	// t_arg		param;
 	// int			i;
 
-	// philo = malloc(sizeof(t_philo));
+	// philo = malloc(sizeof(t_philo) * philo.nb_philo);
 	// if (philo == NULL)
-	// 	exit(EXIT_FAILURE);
+	// 	ft_error("le malloc de philo qui deconne");
 	
 	init_arg(argc, argv, philo);
 	// if (param.nb_philo = 1)

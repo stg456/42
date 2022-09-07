@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/08/29 17:14:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/09/05 17:15:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@
 #define CYN  "\x1B[36m"
 #define WHT  "\x1B[37m"
 
-# define EAT " is eating"
-# define SLEEP " is sleeping"
-# define THINK " is thinking"
-# define FORK " has taken a fork"
-# define DIED " died"
+# define EAT "is eating"
+# define SLEEP "is sleeping"
+# define THINK "is thinking"
+# define FORK "has taken a fork"
+# define DIED "died"
 
 // typedef struct s_arg
 // {
@@ -64,7 +64,7 @@ typedef struct s_philo
 	int				nb_eat;
 	int				id;
 	int				nb_of_eat;
-	int 			time_before_die;
+	int				time_before_die;
 	pthread_t		*threads;
 	pthread_mutex_t	*forks;
 }				t_philo;
@@ -87,5 +87,6 @@ void	*closephilo(t_philo philo);
 // utils
 
 int		ft_atoi(const char *str);
+void	ft_error(char *str);
 
 #endif
