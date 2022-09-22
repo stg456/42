@@ -14,8 +14,8 @@ void str_cap(char *str)
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] += 32;
-		else if (str[i] >= 'a' && str[i] <= 'z' && (str[i - 1] == ' ')
-		|| str[i - 1] == '\t')
+		if ((str[i] >= 'a' && str[i] <= 'z') && (str[i - 1] == ' ' || \
+		str[i - 1] == '\t'))
 			str[i] -= 32;
 		write(1, &(str[i]), 1);
 		i++;
@@ -37,4 +37,5 @@ int main(int ac, char **av)
 	write(1, "\n", 1);
 	return (0);
 }
-// pas encore bon
+// enfin presque 
+// manque l'espace entre les mots
