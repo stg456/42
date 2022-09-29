@@ -2,19 +2,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-// int check(char *str, char c)
-// {
-// 	int i = 0;
+void check(char **av)
+{
 
-// }
+}
 
 int main(int ac, char **av)
 {
 	int i = 0;
 	int j = 0;
-	int z = 0;
-	char str[10000];
-	str[0] = "a";
+	int k = 0;
 
 	if (ac == 3)
 	{
@@ -22,19 +19,19 @@ int main(int ac, char **av)
 		{
 			if (av[1][i] == av[2][j])
 			{
-				while (str[z])
+				while (av[1][k] < av[1][i])
 				{
-					if (str[z] != av[1][i])
+					if (av[1][i] != av[1][k])
 					{
-						z++;
+						++k;
 					}
-					else if (str[z] == av[1][i])
-					{
-					
-					}
-					str[z] = av[1][i];
 				}
+				write(1, &av[1][i], 1);
+				++j;
 			}
+			else
+				++j;
+			++i;
 		}
 	}	
 	write(1, "\n", 1);
