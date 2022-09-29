@@ -22,7 +22,7 @@ int	ft_atoi_base(const char *str, int str_base)
 		}
 		if (str[i] >= '0' && str[i] <= '9')
 		{
-			res = res * str_base + str[i] - '0';
+			res = (res * str_base) + (str[i] - '0');
 		}
 
 	}
