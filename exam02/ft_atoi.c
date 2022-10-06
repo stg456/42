@@ -1,5 +1,7 @@
 
 #include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 int	ft_atoi(const char *str)
 {
@@ -32,11 +34,13 @@ int	ft_atoi(const char *str)
 	return (sign * res);
 }
 
-// int main()
-// {
-// 	const char	*str = "-234";
-// 	// printf("%s", str);
-// 	ft_atoi(str);
-// 	// printf("%d", ft_atoi(str));
-// 	return (0);
-// }
+int main()
+{
+	const char	*str = "-2147483649";
+	// printf("%s", str);
+	//ft_atoi(str);
+	printf("%d\n", ft_atoi(str));
+	printf("%d\n", atoi(str));
+	return (0);
+}
+// bizare

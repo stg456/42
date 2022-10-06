@@ -4,12 +4,28 @@
 
 unsigned char	reverse_bits(unsigned char octet)
 {
-	return (((octet >> 0) & 1) << 7) | \
-			(((octet >> 1) & 1) << 6) | \
-			(((octet >> 2) & 1) << 5) | \
-			(((octet >> 3) & 1) << 4) | \
-			(((octet >> 4) & 1) << 3) | \
-			(((octet >> 5) & 1) << 2) | \
-			(((octet >> 6) & 1) << 1) | \
-			(((octet >> 7) & 1) << 0);
+	int		i = 8;
+	unsigned char	res = 0;
+
+	while (i > 0)
+	{
+		res = res * 2 + (octet % 2);
+		octet = octet / 2;
+		i--;
+	}
+	return (res);
 }
+
+int main(int ac, char **av)
+{
+	(void)ac;
+	(void)av;
+
+	unsigned char res;
+	res = reverse_bits(00100110);
+	// res = reverse_bits(av[1][0]);
+	write(1, &res, 1);
+	return (0);
+}
+
+// pas bon pour le main et possible pour la fct
