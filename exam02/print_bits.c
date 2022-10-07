@@ -13,11 +13,12 @@ void	print_bits(unsigned char octet)
 		write(1, &bits, 1);
 	}
 }
-// pas encore bon
+// enfin bon
+// faut pas mettre ' ' dans le main
 
 int main()
 {
-	char c = '0';
+	unsigned char c = 2;
 	print_bits(c);
 	return (0);
 }
