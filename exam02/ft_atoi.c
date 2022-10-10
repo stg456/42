@@ -5,7 +5,7 @@
 
 int	ft_atoi(const char *str)
 {
-	int	res;
+	long	res;
 	int i;
 	int sign;
 
@@ -27,15 +27,22 @@ int	ft_atoi(const char *str)
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
+	// if (res > 2147483647 && sign > 0)
+	// {
+	// 	return (0);
+	// }
+	// if (res > 2147483648 && sign < 0)
+	// {
+	// 	return (0);
+	// }
 	// printf("%d", res * sign);
 	return (sign * res);
 }
 
 int main()
 {
-	const char	*str = "-95587";
-	// printf("%s", str);
-	//ft_atoi(str);
+	const char	*str = "9555555587";
+
 	printf("%d\n", ft_atoi(str));
 	printf("%d\n", atoi(str));
 	return (0);

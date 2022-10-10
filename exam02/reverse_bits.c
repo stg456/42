@@ -16,16 +16,23 @@ unsigned char	reverse_bits(unsigned char octet)
 	return (res);
 }
 
-int main(int ac, char **av)
-{
-	(void)ac;
-	(void)av;
+// int main(int ac, char **av)
+// {
+// 	(void)ac;
+// 	(void)av;
 
-	unsigned char res;
-	res = reverse_bits(00100110);
-	// res = reverse_bits(av[1][0]);
-	write(1, &res, 1);
-	return (0);
-}
+// 	unsigned char res;
+// 	res = reverse_bits(00100110);
+// 	// res = reverse_bits(av[1][0]);
+// 	write(1, &res, 1);
+// 	return (0);
+// }
 
 // pas bon pour le main et possible pour la fct
+
+// int main()
+// {
+// 	unsigned char c = 40;
+// 	printf("%i\n", reverse_bits(c));
+// 	return (0);
+// }
