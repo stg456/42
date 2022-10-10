@@ -14,6 +14,7 @@ int	ft_atoi_base(const char *str, int str_base)
 
 	if (str[i] == '-')
 		sign *= -1;
+	i++;
 	while (str[i])
 	{
 		k = 0;
@@ -24,12 +25,12 @@ int	ft_atoi_base(const char *str, int str_base)
 		}
 		if (s[k] >= '0' && s[k] <= '9')
 		{
-			res += k * str_base;
+			res += k * str_base - '0';
 			printf("1 %ld\n", res);
 		}
-		if ((s[k] >= 'a' && s[k] <= 'f') || (s[k] >= 'A' && s[k] <= 'F'))
+		else if ((s[k] >= 'a' && s[k] <= 'f') || (s[k] >= 'A' && s[k] <= 'F'))
 		{
-			res += k * str_base;
+			res += k * str_base - '0';
 			printf("2 %ld\n", res);
 		}
 		i++;
@@ -41,7 +42,7 @@ int	ft_atoi_base(const char *str, int str_base)
 int main()
 {
 	char *str = "ff";
-	printf("%d\n", ft_atoi_base(str, 10));
+	printf("%d\n", ft_atoi_base(str, 16));
 	return (0);
 }
 
