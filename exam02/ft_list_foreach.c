@@ -21,4 +21,7 @@ void    ft_list_foreach(t_list *begin_list, void (*f)(void *))
 }
 
 // comment verifier
-
+int main()
+{
+	ft_list_foreach(0, );
+}

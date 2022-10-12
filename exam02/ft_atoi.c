@@ -27,15 +27,6 @@ int	ft_atoi(const char *str)
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
-	// if (res > 2147483647 && sign > 0)
-	// {
-	// 	return (0);
-	// }
-	// if (res > 2147483648 && sign < 0)
-	// {
-	// 	return (0);
-	// }
-	// printf("%d", res * sign);
 	return (sign * res);
 }
 
