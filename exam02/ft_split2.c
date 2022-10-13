@@ -43,6 +43,8 @@ char    **ft_split(char *str)
 
 	num_w = ft_num_w(str);
 	tab = malloc(sizeof(char *) * num_w + 1);
+	if (!tab)
+		return (NULL);
 	while (str[i])
 	{
 		if ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && str[i] != '\0')
@@ -54,6 +56,18 @@ char    **ft_split(char *str)
 				k = 0;
 				len_w = lenmot(str, i);
 				tab[j] = malloc(sizeof(char) * len_w + 1);
+				if (!tab)
+				{
+					if (j > 0)
+					{
+						while (j >= 0)
+						{
+							free(tab[j]);
+							j--;
+						}
+					}
+					return (NULL);
+				}
 				while ((str[i] != ' ' && str[i] != '\t' && str[i] != '\n') && str[i] != '\0')
 				{
 					tab[j][k] = str[i];
@@ -65,7 +79,7 @@ char    **ft_split(char *str)
 			}
 		}
 	}
-	tab[j] = 0;
+	tab[j] = NULL;
 	return (tab);
 }
 
