@@ -38,4 +38,4 @@ int main()
 	printf("%d\n", atoi(str));
 	return (0);
 }
-// bizare
+// bizare mouais
