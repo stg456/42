@@ -11,10 +11,10 @@ int lentot(char *str)
 	return (i);
 }
 
-int lenmot(char str, int start)
+int lenmot(char str, int i)
 {
-	int i = start;
 	int res = 0;
+
 	while (str[i] != '\n' && str[i] != '\t' && str[i] != ' ' && str[i] != '\0')
 	{
 		i++;
@@ -36,7 +36,7 @@ char    **ft_split(char *str)
 	{
 		if (str[i] != '\0' && (str[i] == '\n' || str[i] == ' ' || str[i] == '\t'))
 			i++;
-		if ((str[i] != '\n' || str[i] != ' ' || str[i] != '\t') && str[i] != '\0')
+		else if ((str[i] != '\n' || str[i] != ' ' || str[i] != '\t') && str[i] != '\0')
 		{
 			tab[j] = malloc(sizeof(char) * lenmot(str, i) + 1);
 			tab[j][k] = str[i];
