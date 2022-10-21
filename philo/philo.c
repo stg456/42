@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/09/05 17:12:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:17:47 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*gestphilo(t_philo philo)
 	while (philo.id <= philo.nb_philo)
 	{
 		pthread_mutex_lock(&philo);
-		if (philo->forks[i] & philo->forks[i + 1])
+		if (philo.forks[i] & philo.forks[i + 1])
 		{
 			pthread_mutex_lock(&philo);
 			philo.forks[i];
