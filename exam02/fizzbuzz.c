@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 10:33:43 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/07 11:07:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/08 13:04:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	ft_putnbr(int i)
 	// char c;
 	char *str = "0123456789";
 	
-	while (i > 9)
+	if (i > 9)
 	{
-		str[i] /= 10;
+		ft_putnbr(i / 10);
 	}
-	write(1, &str[i], 1);
+	write(1, &str[i % 10], 1);
 }
 
 int main(void)
