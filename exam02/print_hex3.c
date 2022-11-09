@@ -19,11 +19,13 @@ void print_hex(int nb)
 {
 	char s[] = "0123456789abcdef";
 
-	while (nb >= 0)
+	if (nb >= 16)
 	{
-		write(1, s[(nb % 16)], 1);
-		nb /= 16;
-	}
+		print_hex(nb / 16);
+		print_hex(nb % 16);
+	}	
+	else
+		write(1, &s[nb % 16], 1);
 }
 
 int main(int ac, char **av)
@@ -36,4 +38,4 @@ int main(int ac, char **av)
 	return(0);
 }
 
-// pas encore
+// ok
