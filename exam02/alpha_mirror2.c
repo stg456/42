@@ -11,18 +11,12 @@ int main(int ac, char **av)
 	{
 		while (av[1][i])
 		{
-			if ((av[1][i] >= 'n' && av[1][i] <= 'z') || (av[1][i] >= 'N' && av[1][i] <= 'Z'))
-			{
-				c = av[1][i] - 13;
-			}
-			else if ((av[1][i] >= 'a' && av[1][i] <= 'm') || (av[1][i] >= 'A' && av[1][i] <= 'M'))
-			{
-				c = av[1][i] + 13;
-			}
+			if (av[1][i] >= 'A' && av[1][i] <= 'Z')
+				c = 'Z' - av[1][i] + 'A';
+			else if (av[1][i] >= 'a' && av[1][i] <= 'z')
+				c = 'z' - av[1][i] + 'a';
 			else
-			{
 				c = av[1][i];
-			}
 			write(1, &c, 1);
 			i++;
 		}
@@ -30,4 +24,5 @@ int main(int ac, char **av)
 	write(1, "\n", 1);
 	return (0);
 }
+
 // bon
