@@ -47,7 +47,7 @@ char	*ft_itoa(int nbr)
 
 int main(void)
 {
-	int nb = 555;
+	int nb = 345;
 
 	printf("%s\n", ft_itoa(nb));
 }
