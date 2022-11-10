@@ -25,7 +25,7 @@ int ft_atoi(char *str)
 
 int check(int nb)
 {
-	int i = 0;
+	int i = 2;
 
 	while (nb > i)
 	{
@@ -47,24 +47,25 @@ void ft_putnbr(int res)
 	}
 	else
 	{
-		c = (res % 10) + '0';
+		c = res + '0';
 		write(1, &c, 1);
 	}
 }
 
 int main(int ac, char **av)
 {
+	int i = 2;
 	int nb;
 	int res = 0;
 
 	if (ac == 2)
 	{
 		nb = ft_atoi(av[1]);
-		while (nb != '0')
+		while (nb >= i)
 		{
 			if (check(nb) == 1)
 				res = res + nb;
-			nb--;
+			i++;
 		}
 		ft_putnbr(res);
 	}
