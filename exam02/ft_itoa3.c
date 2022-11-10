@@ -41,7 +41,7 @@ char	*ft_itoa(int nbr)
 		nbr /= 10;
 		i--;
 	}
-	str[init_len] = '\0';
+	str[init_len] = '\0'; // remettre la len d'origine
 	return (str);
 }
 
