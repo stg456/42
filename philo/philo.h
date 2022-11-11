@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/10/21 12:40:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/11 17:16:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,32 +46,38 @@
 // 	int dead;
 // }				t_state;
 
-typedef struct s_philo
+typedef struct s_rules
 {
 	int				nb_philo;
 	int				time_die;
 	int				time_eat;
 	int				time_sleep;
 	int				nb_eat;
-	int				id;
 	int				nb_of_eat;
+}				t_rules;
+
+typedef struct s_philo
+{
+	int				id;
 	int				time_before_die;
 	pthread_t		*threads;
 	pthread_mutex_t	*forks;
+	// struct s_philo	*next_philo;
+
 }				t_philo;
 
-typedef struct s_chrono
-{
-	struct timeval	tv;
-	struct s_data	*data;
-}				t_chrono;
+// typedef struct s_chrono
+// {
+// 	struct timeval	tv;
+// 	struct s_data	*data;
+// }				t_chrono;
 
 // fct
 
-void	init_arg(int argc, char **argv, t_philo	philo);
+void	init_arg(int argc, char **argv, t_rules	rules);
 void	init_mutex(t_philo philo);
 void	init_thread(t_philo philo);
-void	diff_chrono(t_philo philo, t_chrono chrono);
+// void	diff_chrono(t_philo philo, t_chrono chrono);
 void	*gestphilo(t_philo philo);
 void	*closephilo(t_philo philo);
 
