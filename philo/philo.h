@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/11 17:28:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:24:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,11 @@ typedef struct s_philo
 // fct
 
 void	init_arg(int argc, char **argv, t_rules	*rules);
-void	init_mutex(t_philo philo);
-void	init_thread(t_philo philo);
-// void	diff_chrono(t_philo philo, t_chrono chrono);
-void	*gestphilo(t_philo philo);
-void	*closephilo(t_philo philo);
+void	init_mutex(t_philo *philo);
+void	init_thread(t_philo *philo);
+// void	diff_chrono(t_philo philo, t_chrono *chrono);
+void	*gestphilo(t_philo *philo);
+void	*closephilo(t_philo *philo);
 
 // utils
 

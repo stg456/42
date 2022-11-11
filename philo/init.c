@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/11 18:00:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:18:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,38 +22,41 @@ void	init_arg(int argc, char **argv, t_rules	*rules)
 	rules->time_sleep = ft_atoi(argv[4]);
 	if (argc == 6) 
 		rules->nb_eat = ft_atoi(argv[5]);
+	rules = malloc(sizeof(t_rules));
+	if (rules == NULL)
+		ft_error("le malloc de rules qui deconne");
 }
 
-void	init_mutex(t_philo philo)
+void	init_mutex(t_philo *philo)
 {
 	int	i;
 
-	philo.forks = malloc(sizeof(pthread_mutex_t) * philo.nb_philo);
-	if (philo.forks == NULL)
+	philo->forks = malloc(sizeof(pthread_mutex_t) * philo->rul->nb_philo);
+	if (philo->forks == NULL)
 		ft_error("REDle malloc des fork qui deconne");
-	i = philo.nb_philo;
+	i = philo->rul->nb_philo;
 	printf("Avant la création des mutex.\n");
 	while (i--)
 	{
-		pthread_mutex_init(&philo.forks[i], NULL);
-		printf("thread %d pid %d \n", pthread_mutex_init(&philo.forks[i], NULL), getpid());		
+		pthread_mutex_init(&(philo->forks)[i], NULL);
+		printf("thread %d pid %d \n", pthread_mutex_init(&(philo->forks)[i], NULL), getpid());		
 	}
 	printf("apres la création des mutex.\n");
 }
 
-void	init_thread(t_philo philo)
+void	init_thread(t_philo *philo)
 {
 	int	i;
 
-	philo.threads = malloc(sizeof(pthread_t) * philo.nb_philo);
-	if (philo.threads == NULL)
+	philo->threads = malloc(sizeof(pthread_t) * philo->rul->nb_philo);
+	if (philo->threads == NULL)
 		ft_error("REDle malloc des threads qui deconne");
-	i = philo.nb_philo;
+	i = philo->rul->nb_philo;
 	printf("Avant la création des threads.\n");
 	while (i--)
 	{		
-		pthread_create(&philo.threads[i], NULL, &gestphilo, (void *)&philo);
-		pthread_join(philo.threads[i], NULL);		
+		pthread_create(&(philo->threads)[i], NULL, &gestphilo, (void *)&philo);
+		pthread_join((philo->threads)[i], NULL);		
 	}
 	printf("apres la création des threads.\n");
 }
