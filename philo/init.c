@@ -6,22 +6,22 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/11 17:06:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:00:34 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	init_arg(int argc, char **argv, t_rules	rules)
+void	init_arg(int argc, char **argv, t_rules	*rules)
 {
 	if (argc < 5 || argc > 6)
 		ft_error("REDError : Bad numbers of arguments.\n");
-	rules.nb_philo = ft_atoi(argv[1]);
-	rules.time_die = ft_atoi(argv[2]);
-	rules.time_eat = ft_atoi(argv[3]);
-	rules.time_sleep = ft_atoi(argv[4]);
+	rules->nb_philo = ft_atoi(argv[1]);
+	rules->time_die = ft_atoi(argv[2]);
+	rules->time_eat = ft_atoi(argv[3]);
+	rules->time_sleep = ft_atoi(argv[4]);
 	if (argc == 6) 
-		rules.nb_eat = ft_atoi(argv[5]);
+		rules->nb_eat = ft_atoi(argv[5]);
 }
 
 void	init_mutex(t_philo philo)

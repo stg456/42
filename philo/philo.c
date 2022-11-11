@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/11 17:21:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:00:34 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,14 @@ void	*gestphilo(t_philo philo)
 int	main(int argc, char **argv)
 {
 	t_philo		philo;
-	t_rules		rules;
+	t_rules		*rules;
 	// t_chrono	chrono;
 
-	// rules = malloc(sizeof(t_rules));
-	// if (rules == NULL)
-	// 	ft_error("le malloc de philo qui deconne");
-	
 	init_arg(argc, argv, rules);
 
-	// rules = malloc(sizeof(t_rules));
-	// if (rules == NULL)
-	// 	ft_error("le malloc de philo qui deconne");
+	rules = malloc(sizeof(t_rules));
+	if (rules == NULL)
+		ft_error("le malloc de rules qui deconne");
 
 	init_mutex(philo);
 	init_thread(philo);
