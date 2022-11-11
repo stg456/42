@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/10/21 16:57:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/11 16:03:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@ void	*gestphilo(t_philo philo)
 	printf("debut routine.\n");
 	while (philo.id <= philo.nb_philo)
 	{
+
+
+
 
 
 		// pthread_mutex_lock(&philo);
@@ -43,9 +46,9 @@ int	main(int argc, char **argv)
 	// t_chrono	chrono;
 	// int			i;
 
-	philo = malloc(sizeof(t_philo) * philo.nb_philo);
-	if (philo == NULL)
-		ft_error("le malloc de philo qui deconne");
+	// philo = malloc(sizeof(t_philo) * philo.nb_philo);
+	// if (philo == NULL)
+	// 	ft_error("le malloc de philo qui deconne");
 	
 	init_arg(argc, argv, philo);
 
