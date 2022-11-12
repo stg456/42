@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/11 18:18:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/12 17:22:18 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	init_arg(int argc, char **argv, t_rules	*rules)
 	rules->time_die = ft_atoi(argv[2]);
 	rules->time_eat = ft_atoi(argv[3]);
 	rules->time_sleep = ft_atoi(argv[4]);
-	if (argc == 6) 
+	if (argc == 6)
 		rules->nb_eat = ft_atoi(argv[5]);
 	rules = malloc(sizeof(t_rules));
 	if (rules == NULL)
@@ -39,7 +39,7 @@ void	init_mutex(t_philo *philo)
 	while (i--)
 	{
 		pthread_mutex_init(&(philo->forks)[i], NULL);
-		printf("thread %d pid %d \n", pthread_mutex_init(&(philo->forks)[i], NULL), getpid());		
+		printf("thread %d pid %d \n", pthread_mutex_init(&(philo->forks)[i], NULL), getpid());	
 	}
 	printf("apres la création des mutex.\n");
 }
@@ -56,7 +56,7 @@ void	init_thread(t_philo *philo)
 	while (i--)
 	{		
 		pthread_create(&(philo->threads)[i], NULL, &gestphilo, (void *)&philo);
-		pthread_join((philo->threads)[i], NULL);		
+		pthread_join((philo->threads)[i], NULL);
 	}
 	printf("apres la création des threads.\n");
 }
