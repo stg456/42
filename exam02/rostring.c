@@ -2,49 +2,57 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(int ac, char **av)
+int check_space(char c)
+{
+	if (c == ' ' || c == '\t')
+		return (1);
+	return (0);
+}
+
+void rostring(char *str)
 {
 	int i = 0;
-	int i2;
-	int i3;
+	int start;
+	int end;
 
-	if (ac == 2)
+	while (str[i] && check_space(str[i]) == 1)
+		i++;
+	start = i;
+	while (str[i] && check_space(str[i]) == 0)
+		i++;
+	end = i;
+	while (str[i] && check_space(str[i]) == 1)
+		i++;
+	while (str[i] != '\0')
 	{
-		while (av[1][i])
+		if (str[i] && check_space(str[i]) == 0)
 		{
-			if (!(av[1][i] >= 65 && av[1][i] <= 126))
-				i++;
-			i2 = i;
-			if (av[1][i] && (av[1][i] >= 65 && av[1][i] <= 126))
-				i++;
-			i3 = i;
-			while (!(av[1][i] >= 65 && av[1][i] <= 126))
-				i++;
+			write(1, &str[i], 1);
 		}
-		printf("%d\n", i);
-		printf("%d\n", i2);
-		printf("%d\n", i3);
-		while (av[1][i] != '\0')
+		else if (str[i] && check_space(str[i]) == 1)
 		{
-			if (av[1][i] >= 65 && av[1][i] <= 126)
+			while (str[i] && check_space(str[i]) == 1)
 			{
-				write(1, &av[1][i], 1);
 				i++;
 			}
-			else if (!(av[1][i] >= 65 && av[1][i] <= 126))
-			{
-				write(1, " ", 1);
-				i++;
-			}
+			i--;
+			write(1, " ", 1);
 		}
-		// i = i2;
-		// while (i2 < i3)
-		// {
-		// 	write(1, &av[1][i], 1);
-		// 	i2++;
-		// }
+		i++;
 	}
+	write(1, " ", 1);
+	while (start <= end)
+	{
+		write(1, &str[start], 1);
+		start++;
+	}
+}
+
+int main(int ac, char **av)
+{
+	if (ac> 1)
+		rostring(av[1]);
 	write(1, "\n", 1);
 	return (0);
 }
-//pas bon
+// pas bon, pb de ' '

@@ -19,14 +19,17 @@ int main(int ac, char **av)
 			}
 			else if ((av[1][i] == '\t' || av[1][i] == ' '))
 			{
+				while ((av[1][i] == '\t' || av[1][i] == ' '))
+					i++;
+				i--;
 				c = ' ';
 			}
 			write(1, &c, 1);
 			i++;
 		}
 	}
-	write(1, "\n", 1);
+	// write(1, "\n", 1);
 	return (0);
 }
 
-// pas bon
+// pas  complétement bon , le dernier ' ' avant le '\0' est toujours là

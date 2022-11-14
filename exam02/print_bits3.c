@@ -13,3 +13,5 @@ void	print_bits(unsigned char octet)
 		write(1, &c, 1);
 	}
 }
+
+// bon
