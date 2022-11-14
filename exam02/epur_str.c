@@ -15,10 +15,9 @@ int main(int ac, char **av)
 		{
 			if (av[1][i] != ' ' && av[1][i] != '\t')
 			{
-				if (av[1][i++] )
 				c = av[1][i];
 			}
-			else if (av[1][i] == ' ' || av[1][i] == '\t')
+			else if ((av[1][i] == '\t' || av[1][i] == ' '))
 			{
 				c = ' ';
 			}
