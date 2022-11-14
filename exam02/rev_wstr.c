@@ -4,7 +4,7 @@
 
 int space(char c)
 {
-	if (c == ' ' || c == '\t' || c == '\0')
+	if (c == ' ' || c == '\t')
 		return (1);
 	return (0);
 }
@@ -19,10 +19,10 @@ void rev_wstr(char *str)
 		i++;
 	while (str[i] != '\0')
 	{
-		if (str[i] && space(str[i]) == 1)
+		if (str[i] && (space(str[i]) == 1))
 			i--;
 		end = i;
-		if (str[i] && space(str[i]) == 0)
+		if (str[i] && (space(str[i]) == 0))
 			i--;
 		start = i;
 		while (start <= end)
@@ -30,7 +30,7 @@ void rev_wstr(char *str)
 			write(1, &str[i], 1);
 			start++;
 		}
-		i = start;
+		start = i;
 		i--;
 	}
 }
@@ -42,3 +42,5 @@ int main(int ac, char **av)
 	write(1, "\n", 1);
 	return (0);
 }
+
+// pas bon
