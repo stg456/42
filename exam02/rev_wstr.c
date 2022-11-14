@@ -17,12 +17,12 @@ void rev_wstr(char *str)
 
 	while (str[i])
 		i++;
-	while (str[i] != '\0')
+	while (i >= 0)
 	{
-		if (str[i] && (space(str[i]) == 1))
+		while (str[i] && (space(str[i]) == 1))
 			i--;
 		end = i;
-		if (str[i] && (space(str[i]) == 0))
+		while (str[i] && (space(str[i]) == 0))
 			i--;
 		start = i;
 		while (start <= end)
