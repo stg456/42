@@ -7,7 +7,6 @@ int main(int ac, char **av)
 	int i = 0;
 	int start;
 	int end;
-	int flag;
 
 	if (ac >= 2)
 	{
@@ -23,11 +22,9 @@ int main(int ac, char **av)
 				i++;			
 			while (av[1][i])
 			{
-				flag = 1;
 				write(1, &av[1][i], 1);
 				i++;
 			}
-			if (flag == 1)
 				write(1, " ", 1);
 			while (start < end)
 			{
