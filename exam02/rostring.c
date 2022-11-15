@@ -7,7 +7,6 @@ int main(int ac, char **av)
 	int i = 0;
 	int start;
 	int end;
-	// int flag;
 
 	if (ac == 2)
 	{
@@ -16,7 +15,6 @@ int main(int ac, char **av)
 			while (av[1][i] == ' ' || av[1][i] == '\t')
 				i++;
 			start = i;
-			// flag = start;
 			while (av[1][i] != ' ' && av[1][i] != '\t')
 				i++;
 			end = i;
@@ -25,7 +23,6 @@ int main(int ac, char **av)
 				write(1, &av[1][i], 1);
 				i++;
 			}
-			// if (flag == 1)
 			write(1, " ", 1);
 			while (start < end)
 			{
@@ -36,4 +33,4 @@ int main(int ac, char **av)
 	}
 }
 
-// pas bon manque le flag
+// pas bon , manque le flag
