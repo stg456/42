@@ -29,7 +29,6 @@ int main(int ac, char **av)
 			}
 			if (flag != 0)
 				write(1, " ", 1);
-			// i--;
 		}
 	}
 	write(1, "\n", 1);
