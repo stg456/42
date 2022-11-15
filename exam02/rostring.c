@@ -7,6 +7,7 @@ int main(int ac, char **av)
 	int i = 0;
 	int start;
 	int end;
+	// int flag;
 
 	if (ac == 2)
 	{
@@ -14,9 +15,8 @@ int main(int ac, char **av)
 		{
 			while (av[1][i] == ' ' || av[1][i] == '\t')
 				i++;
-			i++;
 			start = i;
-			while (av[1][i] != ' ' || av[1][i] != '\t')
+			while (av[1][i] != ' ' && av[1][i] != '\t')
 				i++;
 			end = i;
 			while (av[1][i])
@@ -33,3 +33,5 @@ int main(int ac, char **av)
 		}
 	}
 }
+
+// pas bon manque le flag
