@@ -32,11 +32,13 @@ void tm(int b)
 {
 	int a = 1;
 	int res = 0;
-	char aa = a + '0';
-	char bb = b + '0';
+	char aa;
+	char bb;
 
 	while (a <= 9)
 	{
+		aa = a + '0'; // important
+		bb = b + '0'; // important
 		write(1, &aa, 1);
 		write(1, " x ", 3);
 		write(1, &bb, 1);
@@ -57,4 +59,4 @@ int main(int ac, char **av)
 	return (0);
 }
 
-// pas bon
+// bon
