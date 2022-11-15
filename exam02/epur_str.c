@@ -2,34 +2,38 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(int ac, char **av)
+void epur(char *str)
 {
 	int i = 0;
-	char c;
 
-	if (ac == 2)
+	if (str[i] == ' ' || str[i] == '\t')
 	{
-		if (av[1][i] == '\0' || av[1][i] == '\t' || av[1][i] == ' ')
+		while (str[i] == ' ' || str[i] == '\t')
 			i++;
-		while (av[1][i])
-		{
-			if (av[1][i] != ' ' && av[1][i] != '\t')
-			{
-				c = av[1][i];
-			}
-			else if ((av[1][i] == '\t' || av[1][i] == ' '))
-			{
-				while ((av[1][i] == '\t' || av[1][i] == ' '))
-					i++;
-				i--;
-				c = ' ';
-			}
-			write(1, &c, 1);
-			i++;
-		}
 	}
-	// write(1, "\n", 1);
+	while (str[i])
+	{
+		if (str[i] != '\0' && str[i] != ' ' && str[i] != '\t')
+		{
+			write(1, &str[i], 1);
+		}
+		if ((str[i] == ' ' || str[i] == '\t'))
+		{
+			while (str[i] == ' ' || str[i] == '\t')
+				i++;
+			i--;
+			write(1, " ", 1);
+		}
+		i++;
+	}
+}
+
+int main(int ac, char **av)
+{
+	if (ac == 2)
+		epur(av[1]);
+	write(1, "\n", 1);
 	return (0);
 }
 
-// pas  complétement bon , le dernier ' ' avant le '\0' est toujours là
+// pas bon , le ' ' à la fin est toujours là
