@@ -16,6 +16,7 @@ int main(int ac, char **av)
 			while (av[1][i] == ' ' || av[1][i] == '\t')
 				i++;
 			start = i;
+			// flag = start;
 			while (av[1][i] != ' ' && av[1][i] != '\t')
 				i++;
 			end = i;
@@ -24,6 +25,7 @@ int main(int ac, char **av)
 				write(1, &av[1][i], 1);
 				i++;
 			}
+			// if (flag == 1)
 			write(1, " ", 1);
 			while (start < end)
 			{
