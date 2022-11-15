@@ -24,7 +24,7 @@ int main(int ac, char **av)
 			flag = start;
 			while (start <= end)
 			{
-				write(1, &av[1][i], 1);
+				write(1, &av[1][start], 1); // le start bordel
 				start++;
 			}
 			if (flag != 0)
@@ -35,4 +35,4 @@ int main(int ac, char **av)
 	return (0);
 }
 
-// pas bon du tout
+// bon
