@@ -8,47 +8,40 @@ int len(int nbr)
 
 	while (nbr)
 	{
-		nbr /= 10;
-		len++;
+		nbr = nbr / 10;
+		len += 1;
 	}
+	// printf("len %d \n", len);
 	return (len);
 }
 
 char	*ft_itoa(int nbr)
 {
 	int i = len(nbr) - 1;
-	char *str;
+	char *s;
 
-	str = malloc(sizeof(char) * (len(nbr) + 1));
-	// if (nbr == '0')
-	// {
-	// 	str[0] = '0';
-	// 	return (str);
-	// }
-	// if (str[0] == '-')
-	// {
-	// 	str[0] = '-';
-	// 	nbr *= -1;
-	// }
+	s = (char *)malloc(sizeof(char) * (len(nbr) + 1));
+
 	while (nbr >= 10)
 	{
-		str[i] = (nbr % 10) + '0';
+		s[i] = (nbr % 10) + '0';
 		nbr /= 10;
 		i--;
 	}
 	if (nbr >= 0)
 	{
-		str[i] = (nbr % 10) + '0';
+		s[i] = (nbr % 10) + '0';
 	}
-	str[len(nbr)] = '\0';
-	return (str); 
+	s[len(nbr)] = '\0';
+	printf("%s \n", s);
+	return (s); 
 }
 
 int main(void)
 {
-	int nb = 345;
+	int nbr = 345;
 
-	printf("%s\n", ft_itoa(nb));
+	ft_itoa(nbr);
 }
 
 // pas bon
