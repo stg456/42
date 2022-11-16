@@ -25,7 +25,7 @@ int main(int ac, char **av)
 				write(1, &av[1][i], 1);
 				i++;
 			}
-				write(1, " ", 1);
+			write(1, " ", 1);
 			while (start < end)
 			{
 				write(1, &av[1][start], 1);
