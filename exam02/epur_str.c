@@ -17,7 +17,7 @@ void epur(char *str)
 		{
 			write(1, &str[i], 1);
 		}
-		if ((str[i] == ' ' || str[i] == '\t'))
+		if ((str[i] == ' ' || str[i] == '\t') && str[i + 1] != '\0') // le '\0' pour supprimer le ' ' a la fin
 		{
 			while (str[i] == ' ' || str[i] == '\t')
 				i++;
@@ -36,4 +36,4 @@ int main(int ac, char **av)
 	return (0);
 }
 
-// pas bon , le ' ' à la fin est toujours là
+// bon 
