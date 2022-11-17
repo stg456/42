@@ -17,7 +17,7 @@ int len(int nbr)
 
 char	*ft_itoa(int nbr)
 {
-	int i = len(nbr) - 1;
+	int i = len(nbr) - 1; // important
 	char *s;
 
 	s = (char *)malloc(sizeof(char) * (len(nbr) + 1));
@@ -35,7 +35,7 @@ char	*ft_itoa(int nbr)
 		printf("nbr %d %d\n", nbr, i);		
 	}
 	printf("s %s\n", s);
-	s[len(nbr)] = '\0';
+	s[len(nbr)] = '\0'; // important
 	return(s);
 }
 
