@@ -17,7 +17,7 @@ int len_mot(char *str)
 {
 	int i = 0;
 
-	while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n')
+	while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i])
 	{
 		i++;
 	}
@@ -32,26 +32,16 @@ char    **ft_split(char *str)
 	int k = 0;
 
 	tab = malloc(sizeof(char) * (len_tot(str) + 1));
-	// if (!(tab = (char **)malloc(sizeof(char *) * 256)))
-	// 	return (NULL);
-	// while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-	// 	i++;
 	while (str[i])
 	{
 		k = 0; 
 		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i])
 		{
 			tab[j] = malloc(sizeof(char) * (len_mot(str) + 1));
-			// if (!(tab[j] = (char *)malloc(sizeof(char) * 4096)))
-			// 	return (NULL);
-			tab[j][k] = str[i];
-			k++;
-			i++;
+			tab[j][k++] = str[i++];
 		}
-		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
-		{
+		while ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && str[i])
 			i++;
-		}
 		tab[j][k] = '\0';
 		j++;
 	}
