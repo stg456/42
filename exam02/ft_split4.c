@@ -31,21 +31,27 @@ char    **ft_split(char *str)
 	int j = 0; // index tab[j][k]
 	int k = 0;
 
-	tab = malloc(sizeof(char) * (len_tot(str) + 1));
+	tab = malloc(sizeof(char *) * (len_tot(str))); // taille d'un char *
 	while (str[i])
 	{
-		k = 0; 
-		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i])
+		if (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i]) // if puis while
 		{
-			tab[j] = malloc(sizeof(char) * (len_mot(str) + 1));
-			tab[j][k++] = str[i++];
+			k = 0;
+			tab[j] = malloc(sizeof(char) * (len_mot(str) + 1)); // le malloc une seule fois
+			while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i])
+			{
+				tab[j][k] = str[i];
+				k++;
+				i++;
+			}
+			tab[j][k] = '\0';
+			j++;
 		}
-		while ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && str[i])
+		if ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n') && str[i])
 			i++;
-		tab[j][k] = '\0';
-		j++;
+
 	}
-	tab[j] = NULL;
+	// tab[j] = NULL;
 	return (tab);
 }
 

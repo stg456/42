@@ -1,7 +1,3 @@
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-
 typedef struct    s_list
 {
     struct s_list *next;
@@ -10,16 +6,16 @@ typedef struct    s_list
 
 int	ft_list_size(t_list *begin_list)
 {
-	int i = 1;
 	t_list *lst;
+	int i = 1;
 
 	lst = begin_list;
-	while (lst)
+	while (lst->next)
 	{
-		lst = lst->next;
+		lst->data = lst->next;
 		i++;
 	}
 	return (i);
 }
 
-// en fait non manque list == 0
+// pas bon
