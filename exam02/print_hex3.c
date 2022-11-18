@@ -23,7 +23,7 @@ void print_hex(int nb)
 	{
 		print_hex(nb / 16);
 		print_hex(nb % 16);
-	}	
+	}
 	else
 		write(1, &s[nb % 16], 1);
 }
