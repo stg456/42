@@ -6,7 +6,7 @@ int len(int nbr)
 {
 	int i = 0;
 
-	while (nbr) // important, pas >= 0
+	while (nbr) // important, pas de >= 0
 	{
 		nbr /= 10;
 		i++;
