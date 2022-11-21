@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/21 10:45:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:15:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,8 @@ typedef struct s_philo
 {
 	int				id;
 	int				time_before_die;
+	int				l_fork;
+	int				r_fork;
 	pthread_t		*threads;
 	pthread_mutex_t	*forks;
 	struct s_rules	*rul;
