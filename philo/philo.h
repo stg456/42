@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/21 15:30:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:47:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,6 @@
 # define THINK "is thinking"
 # define FORK "has taken a fork"
 # define DIED "died"
-
-// typedef struct s_state
-// {
-// 	int	eat;
-// 	int	sleep;
-// 	int	think;
-// 	int dead;
-// }				t_state;
 
 typedef struct s_rules
 {
