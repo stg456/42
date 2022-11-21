@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/12 17:36:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/21 10:45:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ int	main(int argc, char **argv)
 	// t_chrono	*chrono;
 
 	init_arg(argc, argv, rules);
-
 	init_mutex(philo);
 	init_thread(philo);
 	gestphilo(philo);
