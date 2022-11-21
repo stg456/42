@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/21 15:30:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/21 15:31:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	init_arg(int argc, char **argv, t_rules	philo)
+void	init_arg(int argc, char **argv, t_rules	rules)
 {
 	if (argc < 5 || argc > 6)
 		ft_error("REDError : Bad numbers of arguments.\n");
