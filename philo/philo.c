@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/21 10:45:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/21 11:00:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*gestphilo(t_philo *philo)
 		// mutex lock
 		// tmps eat ft_wait 
 		// fin eat 
-		// mitex unlock
+		// mutex unlock
 
 
 		// pthread_mutex_lock(&philo);
