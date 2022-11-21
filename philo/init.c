@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/12 17:34:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/21 11:27:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ void	init_mutex(t_philo *philo)
 	while (i--)
 	{
 		pthread_mutex_init(&(philo->forks)[i], NULL);
-		printf("thread %d pid %d \n", pthread_mutex_init(&(philo->forks)[i], NULL), getpid());	
+		printf("thread %d pid %d \n", pthread_mutex_init(&(philo->forks)[i], NULL), getpid());
 	}
-	printf("apres la création des mutex.\n");
+	printf("apres la création des mutex pour les forks.\n");
 }
 
 void	init_thread(t_philo *philo)
@@ -53,10 +53,11 @@ void	init_thread(t_philo *philo)
 		ft_error("REDle malloc des threads qui deconne");
 	i = philo->rul->nb_philo;
 	printf("Avant la création des threads.\n");
-	while (i--)
+	while (i > 0)
 	{		
 		pthread_create(&(philo->threads)[i], NULL, &gestphilo, (void *)&philo);
 		pthread_join((philo->threads)[i], NULL);
+		i--;
 	}
 	printf("apres la création des threads.\n");
 }

@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 19:18:30 by stgerard          #+#    #+#              #
-#    Updated: 2022/10/21 12:17:47 by stgerard         ###   ########.fr        #
+#    Updated: 2022/11/21 11:27:40 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,6 @@ NAME = philo
 CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
-
-# LFLAGS = -pthread
 
 RM = rm -f
 
