@@ -6,21 +6,29 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 10:55:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/21 11:00:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/22 16:57:05 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	diff_chrono(t_philo philo, t_chrono chrono)
+long long	diff_chrono(t_philo philo, t_chrono chrono)
 {
 	struct timeval start;
 	struct timeval end;
 
-	gettimeofday(&start, NULL);
-    // loopFunc(NUM);
-    gettimeofday(&end, NULL);
+	// gettimeofday(&start, NULL);
+    // // loopFunc(NUM);
+    // gettimeofday(&end, NULL);
+	return (end - start);
+}
 
+long long	timestamp(void)
+{
+	struct timeval	t;
+
+	gettimeofday(&t, NULL);
+	return (t.tv_sec * 1000 + t.tv_usec / 1000);
 }
 
 // float time_diff(struct timeval *start, struct timeval *end)
