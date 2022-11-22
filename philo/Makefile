@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 19:18:30 by stgerard          #+#    #+#              #
-#    Updated: 2022/11/21 11:27:40 by stgerard         ###   ########.fr        #
+#    Updated: 2022/11/22 16:27:56 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ all: ${NAME}
 ${NAME}: ${OBJ}
 			${CC} -pthread ${OBJ} ${CFLAGS} -o ${NAME}
 
-.c.o:
-				${CC} ${CFLAGS} -I. -c $< -o ${<:.c=.o}
+# .c.o:
+# 				${CC} ${CFLAGS} -I. -c $< -o ${<:.c=.o}
 
 clean:
 			${RM} ${OBJ}
