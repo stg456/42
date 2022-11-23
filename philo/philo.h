@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/23 10:58:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/23 11:45:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,16 @@ typedef struct s_philo
 	int				time_before_die;
 	int				l_fork;
 	int				r_fork;
+	int				ate;
 	pthread_t		*threads;
 	pthread_mutex_t	*forks;
+	pthread_mutex_t	*writing;
 	struct timeval	start;
 	struct timeval	end;
-	struct s_rules	*rul;
+	struct s_rules	*rules;
 
 	// struct s_philo	*next_philo;
 }				t_philo;
-
-// typedef struct s_chrono
-// {
-// 	struct timeval	tv;
-// 	struct s_data	*data;
-// }				t_chrono;
 
 // fct
 

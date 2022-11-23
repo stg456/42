@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 10:55:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/22 16:57:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/23 11:42:37 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-long long	diff_chrono(t_philo philo, t_chrono chrono)
+long long	diff_chrono(t_philo philo)
 {
 	struct timeval start;
 	struct timeval end;

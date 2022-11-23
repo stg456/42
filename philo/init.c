@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/23 10:58:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/23 11:45:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ void	init_mutex(t_philo *philo)
 {
 	int	i;
 
-	philo->forks = malloc(sizeof(pthread_mutex_t) * philo->rul->nb_philo);
+	philo->forks = malloc(sizeof(pthread_mutex_t) * philo->rules->nb_philo);
 	if (philo->forks == NULL)
 		ft_error("REDle malloc des fork qui deconne");
-	i = philo->rul->nb_philo;
+	i = philo->rules->nb_philo;
 	printf("Avant la création des mutex.\n");
 	while (i--)
 	{
@@ -50,10 +50,10 @@ void	init_thread(t_philo *philo)
 {
 	int	i;
 
-	philo->threads = malloc(sizeof(pthread_t) * philo->rul->nb_philo);
+	philo->threads = malloc(sizeof(pthread_t) * philo->rules->nb_philo);
 	if (philo->threads == NULL)
 		ft_error("REDle malloc des threads qui deconne");
-	i = philo->rul->nb_philo;
+	i = philo->rules->nb_philo;
 	printf("Avant la création des threads.\n");
 	while (i > 0)
 	{		
