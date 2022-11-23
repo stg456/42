@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/22 16:30:28 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/23 10:59:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,11 @@ void	*gestphilo(t_philo *philo)
 int	main(int argc, char **argv)
 {
 	t_philo		*philo;
-	t_rules		rules;
+	// t_rules		rules;
 	// t_chrono	*chrono;
 
 	philo = NULL;
-	init_arg(argc, argv, rules);
+	init_arg(argc, argv);
 	init_mutex(philo);
 	init_thread(philo);
 	gestphilo(philo);
