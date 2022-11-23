@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/23 12:08:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/23 12:17:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	*gestphilo(t_philo *philo)
 		// print eating
 		// usleep
 		// timestamp
-		
+	
 
 		// si fork 1 et 2 > eat
 		// mutex lock
