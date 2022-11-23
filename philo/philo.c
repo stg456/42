@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/23 10:59:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/23 12:08:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*gestphilo(t_philo *philo)
 
 	i = 0;
 	printf("debut routine.\n");
-	while (philo->id <= philo->rul->nb_philo)
+	while (philo->id <= philo->rules->nb_philo)
 	{
 		pthread_mutex_lock(&(philo->forks)[i - 1]);
 		pthread_mutex_lock(&(philo->forks)[i]);
@@ -51,6 +51,7 @@ void	*gestphilo(t_philo *philo)
 		pthread_mutex_unlock(&(philo->forks)[i]);
 	}
 	printf("fin routine.\n");
+	return (NULL);
 }
 
 int	main(int argc, char **argv)
