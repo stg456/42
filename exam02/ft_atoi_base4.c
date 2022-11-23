@@ -36,3 +36,5 @@ int main()
 	printf("%d\n", ft_atoi_base(str, 16)); // base de depart
 	return (0);
 }
+
+//
