@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/22 15:14:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/25 16:09:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ void	ft_error(char *str)
 
 void	ft_print(char *str)
 {
-
+	printf(str);
 }
 
 void	ft_wait()
 {
-
+	usleep();
 }
