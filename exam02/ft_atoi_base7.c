@@ -5,7 +5,7 @@
 int	ft_atoi_base(const char *str, int str_base)
 {
 	int i = 0;
-	int res;
+	int res = 0;;
 	int sign = 1;
 
 	if (str[i] == '-')

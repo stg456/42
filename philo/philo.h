@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/23 11:45:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/25 14:18:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@
 # define CYN  "\x1B[36m"
 # define WHT  "\x1B[37m"
 
+# define FORK "has taken a fork"
 # define EAT "is eating"
 # define SLEEP "is sleeping"
 # define THINK "is thinking"
-# define FORK "has taken a fork"
 # define DIED "died"
 
 typedef struct s_rules
