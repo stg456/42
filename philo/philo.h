@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/26 17:05:28 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/26 17:35:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ typedef struct s_philo
 	int				ate;
 	pthread_t		*threads;
 	pthread_mutex_t	*forks;
-	// pthread_mutex_t	*writing;
+	pthread_mutex_t	*writing;
 	struct timeval	start;
 	struct timeval	end;
 	struct s_rules	*rules;
@@ -77,5 +77,6 @@ void	*closephilo(t_philo *philo);
 
 int		ft_atoi(const char *str);
 void	ft_error(char *str);
+void	ft_print(t_philo philo);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:14:22 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/26 17:05:28 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/26 17:35:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	sleeping(t_rules rules)
 
 	// print think
 	// timestamp
+	// attendre eat
 }
 
 

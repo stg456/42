@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/25 16:09:17 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/26 17:35:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,11 @@ void	ft_error(char *str)
 	exit(EXIT_FAILURE);
 }
 
-void	ft_print(char *str)
+void	ft_print(t_philo philo)
 {
-	printf(str);
+	p_thread_mutex_lock(philo->writing);
+	printf(" \n", timestamp);
+	p_thread_mutex_unlock(philo->writing);
 }
 
 void	ft_wait()
