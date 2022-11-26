@@ -6,22 +6,32 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/23 12:17:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/26 17:05:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	*gestphilo(t_philo *philo)
+void	*gestphilo(t_rules rules, t_philo *philo)
 {
 	int	i;
 
 	i = 0;
 	printf("debut routine.\n");
+	// timestamp
 	while (philo->id <= philo->rules->nb_philo)
 	{
-		pthread_mutex_lock(&(philo->forks)[i - 1]);
-		pthread_mutex_lock(&(philo->forks)[i]);
+		int	nb;
+		
+		nb = 0;
+		while (nb % 2 <= rules.nb_philo && rules.nb_eat > 0)
+		{
+			// has taken a fork
+			eating(rules, philo);
+			nb++;
+		}
+		rules.nb_eat--;
+
 		
 		// timestamp
 		// print eating
@@ -47,8 +57,7 @@ void	*gestphilo(t_philo *philo)
 		// 	pthread_mutex_unlock(&philo);
 		// }
 
-		pthread_mutex_unlock(&(philo->forks)[i - 1]);
-		pthread_mutex_unlock(&(philo->forks)[i]);
+
 	}
 	printf("fin routine.\n");
 	return (NULL);
@@ -57,14 +66,14 @@ void	*gestphilo(t_philo *philo)
 int	main(int argc, char **argv)
 {
 	t_philo		*philo;
-	// t_rules		rules;
+	t_rules		rules;
 	// t_chrono	*chrono;
 
 	philo = NULL;
 	init_arg(argc, argv);
 	init_mutex(philo);
 	init_thread(philo);
-	gestphilo(philo);
+	gestphilo(rules, philo);
 	closephilo(philo);
 
 	return (0);
