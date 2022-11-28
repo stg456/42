@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/26 17:35:49 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:07:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,15 @@ void	init_thread(t_philo *philo);
 void	*gestphilo(t_rules rules, t_philo *philo);
 void	*closephilo(t_philo *philo);
 
+// time
+
+long long	timestamp(void);
+long long	diff_chrono(t_philo philo);
+
 // utils
 
 int		ft_atoi(const char *str);
 void	ft_error(char *str);
-void	ft_print(t_philo philo);
+void	ft_print(t_philo *philo);
 
 #endif

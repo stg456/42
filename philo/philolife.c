@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:14:22 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/26 17:35:49 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:07:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	eating(t_rules rules, t_philo *philo)
 {
-	pthread_mutex_lock(&(philo->forks)[i - 1]); // mettre le id de philo
-	pthread_mutex_lock(&(philo->forks)[i]);
+	pthread_mutex_lock(&(philo->forks)[philo->id - 1]);
+	pthread_mutex_lock(&(philo->forks)[philo->id]);
 	// timestamp
 	// print eat
 

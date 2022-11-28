@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/26 17:05:28 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/28 11:07:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*gestphilo(t_rules rules, t_philo *philo)
 	i = 0;
 	printf("debut routine.\n");
 	// timestamp
-	while (philo->id <= philo->rules->nb_philo)
+	while (philo->id <= philo->rules->nb_philo && philo->rules->nb_eat)
 	{
 		int	nb;
 		
@@ -30,7 +30,7 @@ void	*gestphilo(t_rules rules, t_philo *philo)
 			eating(rules, philo);
 			nb++;
 		}
-		rules.nb_eat--;
+		philo->rules->nb_eat--;
 
 		
 		// timestamp
