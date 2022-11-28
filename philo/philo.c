@@ -6,29 +6,31 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/28 11:07:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/28 15:54:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	*gestphilo(t_rules rules, t_philo *philo)
+void	*gestphilo(void *ptr)
 {
-	int	i;
+	t_philo	*philo;
+	t_rules	rules;
+	int		i;
 
+
+	philo = (t_philo *)ptr;
+	rules = *philo->rules;
 	i = 0;
 	printf("debut routine.\n");
 	// timestamp
 	while (philo->id <= philo->rules->nb_philo && philo->rules->nb_eat)
 	{
-		int	nb;
-		
-		nb = 0;
-		while (nb % 2 <= rules.nb_philo && rules.nb_eat > 0)
+		while (i % 2 <= rules.nb_philo && rules.nb_eat > 0)
 		{
 			// has taken a fork
 			eating(rules, philo);
-			nb++;
+			i++;
 		}
 		philo->rules->nb_eat--;
 
@@ -69,12 +71,19 @@ int	main(int argc, char **argv)
 	t_rules		rules;
 	// t_chrono	*chrono;
 
-	philo = NULL;
-	init_arg(argc, argv);
+	philo = malloc(sizeof(t_philo));
+	if (!philo)
+	{
+		printf("Malloc error\n");
+		return (1);
+	}
+	init_arg(argc, argv, &rules);
+	philo->rules = &rules;
+	if (init_mutex(philo) || init_thread(philo))
+		return (1);
 	init_mutex(philo);
 	init_thread(philo);
-	gestphilo(rules, philo);
-	closephilo(philo);
+	// closephilo(philo);
 
 	return (0);
 }

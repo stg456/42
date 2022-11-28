@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/28 11:28:49 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/28 15:46:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_rules
 	int				time_sleep;
 	int				nb_eat;
 	int				nb_of_eat;
+	long long		runtime;
 }				t_rules;
 
 typedef struct s_philo
@@ -67,11 +68,12 @@ typedef struct s_philo
 
 // philo.c
 
-void	init_arg(int argc, char **argv);
-void	init_mutex(t_philo *philo);
-void	init_thread(t_philo *philo);
-void	*gestphilo(t_rules rules, t_philo *philo);
-// void	*closephilo(t_philo *philo);
+void	init_arg(int argc, char **argv, t_rules *rules);
+int		init_mutex(t_philo *philo);
+int		init_thread(t_philo *philo);
+void	*gestphilo(void *ptr);
+
+// void	closephilo(t_philo *philo);
 
 // philolife.c
 

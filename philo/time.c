@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 10:55:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/28 11:07:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/28 15:38:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,23 @@ long long	timestamp(void)
 long long	diff_chrono(t_philo philo)
 {
 	struct timeval	t;
-	struct timeval start;
-	struct timeval end;
+	long long		ms;
 
-	gettimeofday(&start, NULL);
-    // // loopFunc(NUM);
-    gettimeofday(&end, NULL);
-	return ((end - start));
+	gettimeofday(&t, NULL);
+	ms = (t.tv_sec * 1000 + t.tv_usec / 1000);
+	return ((ms - philo.rules->runtime));
 }
 
+void	closephilo(t_philo *philo)
+{
+	size_t i;
 
+	i = philo->rules->nb_philo;
+	if (!philo->forks)
+		return ;
+	while (i-- > 0)
+		pthread_mutex_destroy(&philo->forks[i]);
+	free(philo->forks);
+	free(philo->threads);
+	free(philo);
+}

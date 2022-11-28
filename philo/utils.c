@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/28 11:18:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/28 15:19:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,20 @@ int	ft_atoi(const char *str)
 
 void	ft_error(char *str)
 {
-	printf(str);
+	printf("%s\n", str);
 	exit(EXIT_FAILURE);
 }
 
 void	ft_print(t_philo *philo)
 {
-	p_thread_mutex_lock(philo->writing);
+	pthread_mutex_lock(philo->writing);
 	printf("%lld ", timestamp());
 	printf("philo %d ", philo->id);
-	printf("%s\n", msg);
-	p_thread_mutex_unlock(philo->writing);
+	//printf("%s\n", msg);
+	pthread_mutex_unlock(philo->writing);
 }
 
-void	ft_wait()
-{
-	usleep();
-}
+// void	ft_wait()
+// {
+// 	usleep();
+// }
