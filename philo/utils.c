@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/28 16:42:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:51:56 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_atoi(const char *str)
 void	ft_error(char *str)
 {
 	printf("%s\n", str);
-		return(EXIT_FAILURE);
+		return ;
 }
 
 void	ft_print(t_philo *philo)
