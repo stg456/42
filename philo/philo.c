@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/29 14:47:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:08:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,23 @@ void	*gestphilo(void *ptr)
 	philo = (t_philo *)ptr;
 	rules = *philo->rules;
 	i = 1;
-	philo->id = 0;
+	philo->id = 1;
 	printf("debut routine.\n");
 	// timestamp
+	// printf("%d \n", philo->rules->nb_philo);
+	printf("%d \n", rules.nb_philo);
+	// printf("%d \n", philo->id);
 	while (philo->id++ <= philo->rules->nb_philo && philo->rules->nb_eat)
 	{
-		while (i % 2 <= rules.nb_philo && rules.nb_eat > 0)
+		printf("1 \n");
+		while (philo->id % 2 <= rules.nb_philo && rules.nb_eat > 0)
 		{
+			printf("2 \n");
 			ft_print(philo, "FORK"); // has taken a fork pb
+			printf("3 \n");
 			eating(rules, philo);
-			i++;
+			printf("4 \n");
+			philo->id++;
 		}
 		// philo->rules->nb_eat--;
 	}
@@ -49,7 +56,7 @@ int	main(int argc, char **argv)
 		printf("Malloc error\n");
 		return (1);
 	}
-	init_arg(argc, argv, &rules);
+	init_arg(argc, argv, rules);
 	philo->rules = &rules;
 	if (init_mutex(philo) || init_thread(philo))
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/29 14:23:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:07:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ typedef struct s_philo
 
 // philo.c
 
-void	init_arg(int argc, char **argv, t_rules *rules);
+void	init_arg(int argc, char **argv, t_rules rules);
 int		init_mutex(t_philo *philo);
 int		init_thread(t_philo *philo);
 void	*gestphilo(void *ptr);
