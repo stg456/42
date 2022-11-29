@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/29 15:49:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/29 16:18:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,23 @@
 void	*gestphilo(void *ptr)
 {
 	t_philo	*philo;
-	t_rules	rules;
-	int		i;
 
 	philo = (t_philo *)ptr;
-	rules = *philo->rules;
-	i = 1;
-	philo->id = 1;
 	printf("debut routine.\n");
 	// timestamp
 	// printf("%d \n", philo->rules->nb_philo);
-	printf("%d \n", rules.nb_philo);
+	printf("%d \n", philo->rules.nb_philo);
 	// printf("%d \n", philo->id);
-	while (philo->id++ <= philo->rules->nb_philo && philo->rules->nb_eat)
+	while (philo->id <= philo->rules.nb_philo && philo->rules.nb_eat)
 	{
 		printf("1 \n");
-		while (philo->id % 2 <= rules.nb_philo && rules.nb_eat > 0)
+		while (philo->id % 2 <= philo->rules.nb_philo && philo->rules.nb_eat > 0)
 		{
 			printf("2 \n");
 			ft_print(philo, "FORK"); // has taken a fork pb
 			printf("3 \n");
-			eating(rules, philo);
+			eating(philo);
 			printf("4 \n");
-			philo->id++;
 		}
 		// philo->rules->nb_eat--;
 	}
@@ -48,7 +42,6 @@ void	*gestphilo(void *ptr)
 int	main(int argc, char **argv)
 {
 	t_philo		*philo;
-	t_rules		rules;
 
 	philo = malloc(sizeof(t_philo));
 	if (!philo)
@@ -56,13 +49,9 @@ int	main(int argc, char **argv)
 		printf("Malloc error\n");
 		return (1);
 	}
-	init_arg(argc, argv, rules);
-	philo->rules = &rules;
+	init_arg(argc, argv, philo);
 	if (init_mutex(philo) || init_thread(philo))
 		return (1);
-	init_mutex(philo);
-	init_thread(philo);
 	closephilo(philo);
-
 	return (0);
 }

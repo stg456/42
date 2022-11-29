@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/29 15:07:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/29 15:59:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,14 +61,14 @@ typedef struct s_philo
 	pthread_mutex_t	*writing;
 	struct timeval	start;
 	struct timeval	end;
-	struct s_rules	*rules;
+	struct s_rules	rules;
 
 	// struct s_philo	*next_philo;
 }				t_philo;
 
 // philo.c
 
-void	init_arg(int argc, char **argv, t_rules rules);
+void	init_arg(int argc, char **argv, t_philo *philo);
 int		init_mutex(t_philo *philo);
 int		init_thread(t_philo *philo);
 void	*gestphilo(void *ptr);
@@ -77,8 +77,8 @@ void	closephilo(t_philo *philo);
 
 // philolife.c
 
-void	eating(t_rules rules, t_philo *philo);
-void	sleeping(t_rules rules, t_philo *philo);
+void	eating(t_philo *philo);
+void	sleeping(t_philo *philo);
 
 // time
 
