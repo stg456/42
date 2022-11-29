@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/28 15:46:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/29 12:05:05 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int		init_mutex(t_philo *philo);
 int		init_thread(t_philo *philo);
 void	*gestphilo(void *ptr);
 
-// void	closephilo(t_philo *philo);
+void	closephilo(t_philo *philo);
 
 // philolife.c
 
@@ -89,6 +89,6 @@ long long	diff_chrono(t_philo philo);
 
 int		ft_atoi(const char *str);
 void	ft_error(char *str);
-void	ft_print(t_philo *philo);
+void	ft_print(t_philo *philo, char *msg);
 
 #endif
