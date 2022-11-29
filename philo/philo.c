@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/28 16:45:17 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/29 12:11:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,31 +33,6 @@ void	*gestphilo(void *ptr)
 			i++;
 		}
 		philo->rules->nb_eat--;
-
-		
-		// timestamp
-		// print eating
-		// usleep
-		// timestamp
-	
-
-		// si fork 1 et 2 > eat
-		// mutex lock
-		// tmps eat ft_wait 
-		// fin eat 
-		// mutex unlock
-
-
-		// pthread_mutex_lock(&philo);
-		// if (philo.forks[i] & philo.forks[i + 1])
-		// {
-		// 	pthread_mutex_lock(&philo);
-		// 	philo.forks[i];
-
-		// 	// time
-		// 	printf("philo %d ", philo.id);
-		// 	pthread_mutex_unlock(&philo);
-		// }
 
 
 	}
