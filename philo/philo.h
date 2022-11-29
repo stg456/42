@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/29 12:05:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/29 14:23:47 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	closephilo(t_philo *philo);
 // philolife.c
 
 void	eating(t_rules rules, t_philo *philo);
-void	sleeping(t_rules rules);
+void	sleeping(t_rules rules, t_philo *philo);
 
 // time
 
