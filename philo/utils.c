@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/29 12:05:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/11/29 17:56:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,22 @@ void	ft_error(char *str)
 		return ;
 }
 
-void	ft_print(t_philo *philo, char *msg)
+void	ft_print(t_philo *philo, int msg)
 {
-	pthread_mutex_lock(philo->writing);
-	printf("%lld ", timestamp());
+	pthread_mutex_lock(&philo->writing);
+	printf("%lld ", diff_chrono(*philo));
 	printf("philo %d ", philo->id);
-	printf("%s\n", msg);
-	pthread_mutex_unlock(philo->writing);
+	if (msg == 0)
+		printf("%s\n", "has taken a fork");
+	else if (msg == 1)
+		printf("%s\n", "is eating");
+	else if (msg == 2)
+		printf("%s\n", "is sleeping");
+	else if (msg == 3)
+		printf("%s\n", "is thinking");
+	else if (msg == 4)
+		printf("%s\n", "died");
+	pthread_mutex_unlock(&philo->writing);
 }
 
 // void	ft_wait()
