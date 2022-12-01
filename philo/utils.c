@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/29 17:56:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:56:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_atoi(const char *str)
 void	ft_error(char *str)
 {
 	printf("%s\n", str);
-		return ;
+	return ;
 }
 
 void	ft_print(t_philo *philo, int msg)
@@ -65,7 +65,26 @@ void	ft_print(t_philo *philo, int msg)
 	pthread_mutex_unlock(&philo->writing);
 }
 
-// void	ft_wait()
-// {
-// 	usleep();
-// }
+int	ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
+		return (0);
+}
+
+int	ft_isdigit_str(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+		{
+			return (1);
+		}
+		++i;
+	}
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/29 17:59:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:12:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,16 @@ void	*gestphilo(void *ptr)
 	int		nb_lunch;
 
 	philo = (t_philo *)ptr;
-	id = philo->id;
-	nb_lunch = philo->rules.nb_of_eat;
+	id = philo->id++;
+	nb_lunch = philo->rules.nb_eat;
 	while (philo->rules.dead == 0)
 	{
+		if (philo->rules.eat_mode == 1)
+		{
+			nb_lunch--;
+			if (nb_lunch <= 0)
+				break ;
+		}
 		eating(philo, id);
 		sleeping(philo);
 		ft_print(philo, THINK);
@@ -41,8 +47,8 @@ int	main(int argc, char **argv)
 		printf("Malloc error\n");
 		return (1);
 	}
-	if (init_arg(argc, argv, philo) || init_mutex(philo) || init_thread(philo)) 
+	if (init_arg(argc, argv, philo) || init_mutex(philo) || init_thread(philo))
 		return (1);
-	closephilo(philo);
+	//closephilo(philo);
 	return (0);
 }

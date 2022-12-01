@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 19:18:30 by stgerard          #+#    #+#              #
-#    Updated: 2022/11/29 17:08:39 by stgerard         ###   ########.fr        #
+#    Updated: 2022/12/01 16:07:26 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = philo
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g3
 
 RM = rm -f
 
@@ -25,7 +25,7 @@ OBJ = ${SRC:.c=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-			${CC} -pthread ${OBJ} ${CFLAGS} -o ${NAME} -fsanitize=address -g3
+			${CC} -pthread ${OBJ} ${CFLAGS} -o ${NAME} -g3
 
 clean:
 			${RM} ${OBJ}

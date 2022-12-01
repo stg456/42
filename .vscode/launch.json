@@ -8,12 +8,12 @@
 		"name": "(lldb) Launch",
 		"type": "cppdbg",
 		"request": "launch",
-		"program": "${workspaceFolder}/so_long/so_long",
-		"args": ["maps/map1.ber"],
+		"program": "${workspaceFolder}/philo/philo",
+		"args": ["10", "1000", "100", "100"],
 		"stopAtEntry": false,
-		"cwd": "${fileDirname}",
+		"cwd": "${workspaceFolder}/philo",
 		"environment": [],
-		"externalConsole": false,
+		"externalConsole": true,
 		"MIMode": "lldb"
 	}
 	]

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/11/29 17:54:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:43:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 # define CYN  "\x1B[36m"
 # define WHT  "\x1B[37m"
 
-enum msg
+enum e_msg
 {
 	FORK = 0,
 	EAT,
@@ -48,41 +48,34 @@ typedef struct s_rules
 	int				time_eat;
 	int				time_sleep;
 	int				nb_eat;
-	int				nb_of_eat;
 	long long		runtime;
 	int				dead;
+	int				eat_mode;
 }				t_rules;
 
 typedef struct s_philo
 {
 	int				id;
 	int				*lunch_time;
-	int				l_fork;
-	int				r_fork;
-	int				ate;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	writing;
 	pthread_t		*threads;
-	struct timeval	start;
-	struct timeval	end;
 	struct s_rules	rules;
-
-	// struct s_philo	*next_philo;
 }				t_philo;
 
 // philo.c
 
-int		init_arg(int argc, char **argv, t_philo *philo);
-int		init_mutex(t_philo *philo);
-int		init_thread(t_philo *philo);
-void	*gestphilo(void *ptr);
+int			init_arg(int argc, char **argv, t_philo *philo);
+int			init_mutex(t_philo *philo);
+int			init_thread(t_philo *philo);
+void		*gestphilo(void *ptr);
 
-void	closephilo(t_philo *philo);
+void		closephilo(t_philo *philo);
 
 // philolife.c
 
-void	eating(t_philo *philo, int id);
-void	sleeping(t_philo *philo);
+void		eating(t_philo *philo, int id);
+void		sleeping(t_philo *philo);
 
 // time
 
@@ -91,8 +84,10 @@ long long	diff_chrono(t_philo philo);
 
 // utils
 
-int		ft_atoi(const char *str);
-void	ft_error(char *str);
-void	ft_print(t_philo *philo, int msg);
+int			ft_atoi(const char *str);
+void		ft_error(char *str);
+void		ft_print(t_philo *philo, int msg);
+int			ft_isdigit(int c);
+int			ft_isdigit_str(char *str);
 
 #endif
