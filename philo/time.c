@@ -6,11 +6,22 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 10:55:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/01 15:57:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/01 17:35:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+void	ft_wait(long long delay)
+{
+	long long	t;
+	long long	start;
+
+	t = timestamp();
+	start = t;
+	while (t != start + delay)
+		t = timestamp();
+}
 
 long long	timestamp(void)
 {

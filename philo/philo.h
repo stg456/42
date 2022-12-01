@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/01 16:30:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/01 17:44:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct s_philo
 	int				*lunch_time;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	writing;
+	pthread_mutex_t	dead;
 	pthread_t		*threads;
 	struct s_rules	rules;
 }				t_philo;
@@ -80,6 +81,7 @@ void		sleeping(t_philo *philo, int id);
 
 long long	timestamp(void);
 long long	diff_chrono(t_philo philo);
+void		ft_wait(long long delay);
 
 // utils
 
