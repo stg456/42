@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/01 15:43:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:30:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <string.h>
 # include <errno.h>
 # include <sys/time.h>
-# include <time.h>
 
 # define RESET "\e[0m"
 # define NRM  "\x1B[0m"
@@ -75,7 +74,7 @@ void		closephilo(t_philo *philo);
 // philolife.c
 
 void		eating(t_philo *philo, int id);
-void		sleeping(t_philo *philo);
+void		sleeping(t_philo *philo, int id);
 
 // time
 
@@ -86,7 +85,7 @@ long long	diff_chrono(t_philo philo);
 
 int			ft_atoi(const char *str);
 void		ft_error(char *str);
-void		ft_print(t_philo *philo, int msg);
+void		ft_print(t_philo *philo, int msg, int id);
 int			ft_isdigit(int c);
 int			ft_isdigit_str(char *str);
 

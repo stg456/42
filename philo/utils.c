@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/01 15:56:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/01 16:57:37 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,21 +47,19 @@ void	ft_error(char *str)
 	return ;
 }
 
-void	ft_print(t_philo *philo, int msg)
+void	ft_print(t_philo *philo, int msg, int id)
 {
 	pthread_mutex_lock(&philo->writing);
-	printf("%lld ", diff_chrono(*philo));
-	printf("philo %d ", philo->id);
 	if (msg == 0)
-		printf("%s\n", "has taken a fork");
+		printf("%lld philo %i has taken a fork\n", diff_chrono(*philo), id);
 	else if (msg == 1)
-		printf("%s\n", "is eating");
+		printf("%lld philo %i is eating\n", diff_chrono(*philo), id);
 	else if (msg == 2)
-		printf("%s\n", "is sleeping");
+		printf("%lld philo %i is sleeping\n", diff_chrono(*philo), id);
 	else if (msg == 3)
-		printf("%s\n", "is thinking");
+		printf("%lld philo %i is thinking\n", diff_chrono(*philo), id);
 	else if (msg == 4)
-		printf("%s\n", "died");
+		printf("%lld philo %i died\n", diff_chrono(*philo), id);
 	pthread_mutex_unlock(&philo->writing);
 }
 
