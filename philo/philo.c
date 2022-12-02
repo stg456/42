@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/02 13:50:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/02 14:07:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,10 @@ int	main(int argc, char **argv)
 	}
 	if (init_arg(argc, argv, philo) || init_mutex(philo) || init_thread(philo))
 		return (1);
-	//closephilo(philo);
 	if (philo->rules.dead)
 	{
-//		pthread_mutex_unlock(&philo->writing);
+		pthread_mutex_unlock(&philo->writing);
 	}
+	closephilo(philo);
 	return (0);
 }
