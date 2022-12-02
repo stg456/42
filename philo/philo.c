@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/02 16:33:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/02 16:36:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	*gestphilo(void *ptr)
 			// ft_print(philo, DIED, id);
 			philo->rules.dead = 1;
 			ft_print(philo, DIED, id);
-			pthread_mutex_lock(&philo->dead); // pb boucle infini
+			// pthread_mutex_lock(&philo->dead); // pb boucle infini
+			closephilo(philo);
 			return (NULL);
 		}
 	}
@@ -64,6 +65,6 @@ int	main(int argc, char **argv)
 	// pthread_mutex_lock(&philo->dead);
 	// pthread_mutex_unlock(&philo->writing);
 	// pthread_mutex_unlock(&philo->dead);
-	closephilo(philo);
+	// closephilo(philo);
 	return (0);
 }
