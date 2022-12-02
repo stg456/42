@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:14:22 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/01 18:02:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/02 11:58:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,9 @@ void	eating(t_philo *philo, int id)
 	ft_print(philo, FORK, id);
 	ft_print(philo, EAT, id);
 	philo->lunch_time[id - 1] = diff_chrono(*philo);
+	printf("a \n");
 	ft_wait(philo->rules.time_eat);
+	printf("b \n");
 	if (id == 1 || id == philo->rules.nb_philo)
 	{
 		pthread_mutex_unlock(&philo->forks[philo->rules.nb_philo - 1]);

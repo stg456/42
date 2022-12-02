@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/01 17:45:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/02 12:08:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,10 +100,16 @@ int	init_thread(t_philo *philo)
 	while ((int)i < philo->rules.nb_philo)
 	{
 		pthread_create(&philo->threads[i], 0, &gestphilo, philo);
-		pthread_detach(philo->threads[i]);
+	//	pthread_join(philo->threads[i], NULL);
 		if (i % 2 == 0)
 			ft_wait(1);
 		++i;
+	}
+	i = 0;
+	while ((int)i < philo->rules.nb_philo)
+	{
+		pthread_join(philo->threads[i], NULL);
+		i++;
 	}
 	return (0);
 }
