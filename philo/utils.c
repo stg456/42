@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/01 16:57:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/02 13:53:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,15 @@ void	ft_print(t_philo *philo, int msg, int id)
 {
 	pthread_mutex_lock(&philo->writing);
 	if (msg == 0)
-		printf("%lld philo %i has taken a fork\n", diff_chrono(*philo), id);
+		printf("\x1B[34m%lld philo %i has taken a fork\n\x1B[0m", diff_chrono(*philo), id);
 	else if (msg == 1)
-		printf("%lld philo %i is eating\n", diff_chrono(*philo), id);
+		printf("\x1B[32m%lld philo %i is eating\n\x1B[0m", diff_chrono(*philo), id);
 	else if (msg == 2)
-		printf("%lld philo %i is sleeping\n", diff_chrono(*philo), id);
+		printf("\x1B[33m%lld philo %i is sleeping\n\x1B[0m", diff_chrono(*philo), id);
 	else if (msg == 3)
-		printf("%lld philo %i is thinking\n", diff_chrono(*philo), id);
+		printf("\x1B[36m%lld philo %i is thinking\n\x1B[0m", diff_chrono(*philo), id);
 	else if (msg == 4)
-		printf("%lld philo %i died\n", diff_chrono(*philo), id);
+		printf("\x1B[31m%lld philo %i died\n\x1B[0m", diff_chrono(*philo), id);
 	pthread_mutex_unlock(&philo->writing);
 }
 
