@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/02 16:27:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/02 16:33:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ void	ft_print(t_philo *philo, int msg, int id)
 	else if (msg == 4)
 	{
 		printf("\x1B[31m%lld philo %i died\n\x1B[0m", diff_chrono(*philo), id);
-		closephilo(philo);
+		// closephilo(philo);
 	}
 	if (philo->rules.dead == 0)
 		pthread_mutex_unlock(&philo->writing);
 	else
-		pthread_mutex_unlock(&philo->dead);
+		pthread_mutex_lock(&philo->dead);
 }
 
 int	ft_isdigit(int c)
