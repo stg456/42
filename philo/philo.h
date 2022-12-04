@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/02 13:51:56 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/04 16:12:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_rules
 
 typedef struct s_philo
 {
+	// int				end;
 	int				id;
 	int				*lunch_time;
 	pthread_mutex_t	*forks;

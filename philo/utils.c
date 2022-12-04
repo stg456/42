@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/02 17:51:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/04 16:42:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,22 +50,21 @@ void	ft_error(char *str)
 void	ft_print(t_philo *philo, int msg, int id)
 {
 	pthread_mutex_lock(&philo->writing);
-	if (msg == 0)
+	if (msg == 0 && philo->rules.dead == 0)
 		printf("\x1B[34m%lld philo %i has taken a fork\n\x1B[0m", diff_chrono(*philo), id);
-	else if (msg == 1)
+	else if (msg == 1 && philo->rules.dead == 0)
 		printf("\x1B[32m%lld philo %i is eating\n\x1B[0m", diff_chrono(*philo), id);
-	else if (msg == 2)
+	else if (msg == 2 && philo->rules.dead == 0)
 		printf("\x1B[33m%lld philo %i is sleeping\n\x1B[0m", diff_chrono(*philo), id);
-	else if (msg == 3)
+	else if (msg == 3 && philo->rules.dead == 0)
 		printf("\x1B[36m%lld philo %i is thinking\n\x1B[0m", diff_chrono(*philo), id);
-	else if (msg == 4)
+	else if (msg == 4 && philo->rules.dead == 1)
 	{
 		printf("\x1B[31m%lld philo %i died\n\x1B[0m", diff_chrono(*philo), id);
-		// closephilo(philo);
+		closephilo(philo);
 	}
 	if (philo->rules.dead == 0)
 		pthread_mutex_unlock(&philo->writing);
-	pthread_mutex_unlock(&philo->writing);
 }
 
 int	ft_isdigit(int c)
