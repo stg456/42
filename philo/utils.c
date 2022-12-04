@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/04 18:00:49 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/04 18:15:06 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_error(char *str)
 	return ;
 }
 
-void	ft_print(t_philo *philo, int msg, int id)
+int	ft_print(t_philo *philo, int msg, int id)
 {
 	pthread_mutex_lock(&philo->writing);
 	if (msg == 0 && philo->rules.dead == 0)
@@ -60,13 +60,13 @@ void	ft_print(t_philo *philo, int msg, int id)
 		printf("\x1B[36m%lld philo %i is thinking\n\x1B[0m", diff_chrono(*philo), id);
 	else if (msg == 4 && philo->rules.dead == 1)
 	{
-		printf("\x1B[31m%lld philo %i died\n\x1B[0m", diff_chrono(*philo), id);
-		// pthread_mutex_unlock(&philo->writing);
+		printf("\x1B[31m%lld philo %d died\n\x1B[0m", diff_chrono(*philo), id);
 		// closephilo(philo);
-		return ;
+		return (-1);
 	}
 	if (philo->rules.dead == 0)
 		pthread_mutex_unlock(&philo->writing);
+	return (0);
 }
 
 int	ft_isdigit(int c)

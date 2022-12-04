@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/04 16:12:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/04 18:08:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void		ft_wait(long long delay);
 
 int			ft_atoi(const char *str);
 void		ft_error(char *str);
-void		ft_print(t_philo *philo, int msg, int id);
+int		ft_print(t_philo *philo, int msg, int id);
 int			ft_isdigit(int c);
 int			ft_isdigit_str(char *str);
 

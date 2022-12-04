@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/04 16:39:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/04 18:22:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,14 @@ void	*gestphilo(void *ptr)
 		{
 			eating(philo, id);
 			sleeping(philo, id);
-			ft_print(philo, THINK, id);
+			if (ft_print(philo, THINK, id) == -1)
+				return (NULL);
 		}
 		if (diff_chrono(*philo) - philo->lunch_time[id - 1] > philo->rules.time_die)
 		{
 			philo->rules.dead = 1; // les autres threads ne s'arrête pas !!!
-			ft_print(philo, DIED, id);
-			return (NULL);
+			if (ft_print(philo, DIED, id) == -1)
+				return (NULL);
 		}
 	}
 	return (NULL);
@@ -62,6 +63,6 @@ int	main(int argc, char **argv)
 	// pthread_mutex_lock(&philo->dead);
 	// pthread_mutex_unlock(&philo->writing);
 	// pthread_mutex_unlock(&philo->dead);
-	// closephilo(philo);
+	closephilo(philo);
 	return (0);
 }
