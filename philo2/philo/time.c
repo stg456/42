@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 10:55:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 17:48:06 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 19:19:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ long long	diff_chrono(t_philo ph)
 
 	gettimeofday(&t, NULL);
 	ms = (t.tv_sec * 1000 + t.tv_usec / 1000);
-	return ((ms - philo.rules.runtime));
+	return ((ms - ph.runtime));
 }
