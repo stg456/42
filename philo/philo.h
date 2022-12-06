@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/04 18:08:28 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 10:32:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ typedef struct s_rules
 
 typedef struct s_philo
 {
-	// int				end;
 	int				id;
 	int				*lunch_time;
 	pthread_mutex_t	*forks;
@@ -88,7 +87,7 @@ void		ft_wait(long long delay);
 
 int			ft_atoi(const char *str);
 void		ft_error(char *str);
-int		ft_print(t_philo *philo, int msg, int id);
+int			ft_print(t_philo *philo, int msg, int id);
 int			ft_isdigit(int c);
 int			ft_isdigit_str(char *str);
 

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 10:55:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/04 18:24:01 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 11:46:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,20 @@ long long	diff_chrono(t_philo philo)
 void	closephilo(t_philo *philo)
 {
 	size_t	i;
-	//printf("hello\n");
+
+	if (philo->rules.dead == 1)
+		pthread_mutex_unlock(&philo->writing);
 	i = philo->rules.nb_philo;
 	if (!philo->forks)
 		return ;
-	//printf("hello1\n");
 	while (i-- > 0)
 	{
 		pthread_mutex_destroy(&philo->forks[i]);
-		//printf("hello2\n");
 	}
-	//printf("hello3\n");
 	pthread_mutex_destroy(&philo->writing);
 	pthread_mutex_destroy(&philo->dead);
 	free(philo->forks);
 	free(philo->threads);
 	free(philo->lunch_time);
 	free(philo);
-	//printf("hello4\n");
 }
