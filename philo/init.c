@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 15:22:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:48:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,12 +110,5 @@ int	init_thread(t_philo *philo)
 		if (philo->rules.dead == 1)
 			return (1);
 	}
-	// while ((int)i < philo->rules.nb_philo)
-	// {
-	// 	pthread_detach(philo->threads[i]);
-	// 	i++;
-	// 	if (philo->rules.dead == 1)
-	// 		return (0);
-	// }
 	return (0);
 }

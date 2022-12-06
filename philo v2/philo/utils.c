@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 17:26:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:48:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,36 +39,6 @@ int	ft_atoi(const char *str)
 		i++;
 	}
 	return (j * n);
-}
-
-void	ft_error(char *str)
-{
-	printf("%s\n", str);
-	return ;
-}
-
-int	ft_print(t_philo *philo, int msg, int id)
-{
-	//pthread_mutex_lock(&philo->writing);
-	if (msg == 0 && philo->rules.dead == 0)
-		printf("\x1B[34m%lld philo %i has taken a fork\n\x1B[0m", diff_chrono(*philo), id);
-	else if (msg == 1 && philo->rules.dead == 0)
-		printf("\x1B[32m%lld philo %i is eating\n\x1B[0m", diff_chrono(*philo), id);
-	else if (msg == 2 && philo->rules.dead == 0)
-		printf("\x1B[33m%lld philo %i is sleeping\n\x1B[0m", diff_chrono(*philo), id);
-	else if (msg == 3 && philo->rules.dead == 0)
-		printf("\x1B[36m%lld philo %i is thinking\n\x1B[0m", diff_chrono(*philo), id);
-	else if (philo->rules.dead == 1 && msg == 4)
-	{
-		printf("\x1B[31m%lld philo %d died\n\x1B[0m", diff_chrono(*philo), id);
-		pthread_mutex_unlock(&philo->writing);
-		return (-1);
-	}
-	else if (philo->rules.dead == 1 && msg != 4)
-		return (-1);
-	//if (philo->rules.dead == 0)
-	//	pthread_mutex_unlock(&philo->writing);
-	return (0);
 }
 
 int	ft_isdigit(int c)
