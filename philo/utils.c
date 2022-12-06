@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 11:34:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 12:10:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	ft_print(t_philo *philo, int msg, int id)
 		printf("\x1B[33m%lld philo %i is sleeping\n\x1B[0m", diff_chrono(*philo), id);
 	else if (msg == 3 && philo->rules.dead == 0)
 		printf("\x1B[36m%lld philo %i is thinking\n\x1B[0m", diff_chrono(*philo), id);
-	else if (philo->rules.dead == 1)
+	else if (philo->rules.dead == 1 && msg == 4)
 	{
 		printf("\x1B[31m%lld philo %d died\n\x1B[0m", diff_chrono(*philo), id);
 		return (-1);

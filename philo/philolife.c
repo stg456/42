@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:14:22 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 10:28:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 12:16:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,16 @@ void	eating(t_philo *philo, int id)
 		pthread_mutex_lock(&philo->forks[philo->rules.nb_philo - 1]);
 	else
 		pthread_mutex_lock(&philo->forks[id - 2]);
-	ft_print(philo, FORK, id);
+	if (philo->rules.dead == 0)
+		ft_print(philo, FORK, id);
 	if (id == 1 || id == philo->rules.nb_philo)
 		pthread_mutex_lock(&philo->forks[0]);
 	else
 		pthread_mutex_lock(&philo->forks[id - 1]);
-	ft_print(philo, FORK, id);
-	ft_print(philo, EAT, id);
+	if (philo->rules.dead == 0)
+		ft_print(philo, FORK, id);
+	if (philo->rules.dead == 0)
+		ft_print(philo, EAT, id);
 	philo->lunch_time[id - 1] = diff_chrono(*philo);
 	ft_wait(philo->rules.time_eat);
 	if (id == 1 || id == philo->rules.nb_philo)
@@ -37,10 +40,13 @@ void	eating(t_philo *philo, int id)
 		pthread_mutex_unlock(&philo->forks[id - 2]);
 		pthread_mutex_unlock(&philo->forks[id - 1]);
 	}
+	// return ;
 }
 
 void	sleeping(t_philo *philo, int id)
 {
-	ft_print(philo, SLEEP, id);
+	if (philo->rules.dead == 0)
+		ft_print(philo, SLEEP, id);
 	ft_wait(philo->rules.time_sleep);
+	// return ;
 }
