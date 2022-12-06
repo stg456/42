@@ -6,13 +6,21 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 18:50:05 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 18:50:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:58:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
+void	*verif_death(void *ptr)
+{
+	t_philo	*ph;
+
+	ph = ptr;
+	;
+}
+
 void	*gestphilo(void *ptr)
 {
-
+	;
 }
