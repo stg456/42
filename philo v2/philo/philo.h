@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 18:53:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:59:29 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int			init_all(int ac, char **av, t_philo *ph);
 // manage.c
 
 void		*gestphilo(void *ptr);
+void		*verif_death(void *ptr);
 
 // utils.c
 
