@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 18:48:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 19:05:02 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-static int	check_arg(char **av, int argc, t_philo *ph)
+static int	check_arg(int ac, char **av, t_philo *ph)
 {
 	size_t	i;
 
@@ -23,7 +23,7 @@ static int	check_arg(char **av, int argc, t_philo *ph)
 	if (ph->nb_philo < 0 || ph->time_die < 0 || ph->time_eat < 0
 		|| ph->time_sleep < 0)
 		return (1);
-	if (argc == 6 && (ft_isdigit_str(av[5]) || ph->nb_eat < 0))
+	if (ac == 6 && (ft_isdigit_str(av[5]) || ph->nb_eat < 0))
 		return (1);
 	return (0);
 }

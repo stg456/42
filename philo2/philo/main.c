@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 18:48:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 19:08:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 		printf("Malloc error\n");
 		return (1);
 	}
-	if (init_all(ph) == 1)
+	if (init_all(ac, **av, ph) == 1)
 	{
 		printf("init error\n");
 		return (1);
