@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 16:00:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:22:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,16 @@ void	*gestphilo(void *ptr)
 		if (diff_chrono(*philo) - philo->lunch_time[id - 1] > philo->rules.time_die)
 		{
 			philo->rules.dead = 1;
+			pthread_mutex_lock(&philo->dead);
 			pthread_mutex_lock(&philo->writing);
 			printf("\x1B[31m%lld philo %d died\n\x1B[0m", diff_chrono(*philo), id);
 			// ft_print(philo, DIED, id);
 			pthread_mutex_unlock(&philo->writing);
-			printf("%i le thread a est arrete \n", philo->id);
+			printf("%i a est arrete \n", philo->id);
 			return (NULL);
 		}
 	}
-	printf("%i le thread best arrete \n", philo->id);
+	printf("%i b est arrete \n", philo->id);
 	return (NULL);
 }
 
