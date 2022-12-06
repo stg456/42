@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 12:14:22 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 14:23:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 15:40:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ void	eating(t_philo *philo, int id)
 	if (philo->rules.dead == 0)
 	{
 		pthread_mutex_lock(&philo->writing);
-		ft_print(philo, FORK, id);
+		printf("\x1B[34m%lld philo %i has taken a fork\n\x1B[0m", diff_chrono(*philo), id);
+		// ft_print(philo, FORK, id);
 		pthread_mutex_unlock(&philo->writing);
 	}
 	if (id == 1 || id == philo->rules.nb_philo)
@@ -31,13 +32,15 @@ void	eating(t_philo *philo, int id)
 	if (philo->rules.dead == 0)
 	{
 		pthread_mutex_lock(&philo->writing);
-		ft_print(philo, FORK, id);
+		printf("\x1B[34m%lld philo %i has taken a fork\n\x1B[0m", diff_chrono(*philo), id);
+		// ft_print(philo, FORK, id);
 		pthread_mutex_unlock(&philo->writing);
 	}
 	if (philo->rules.dead == 0)
 	{
 		pthread_mutex_lock(&philo->writing);
-		ft_print(philo, EAT, id);
+		printf("\x1B[32m%lld philo %i is eating\n\x1B[0m", diff_chrono(*philo), id);
+		// ft_print(philo, EAT, id);
 		pthread_mutex_unlock(&philo->writing);
 	}
 	philo->lunch_time[id - 1] = diff_chrono(*philo);
@@ -60,7 +63,8 @@ void	sleeping(t_philo *philo, int id)
 	if (philo->rules.dead == 0)
 	{
 		pthread_mutex_lock(&philo->writing);
-		ft_print(philo, SLEEP, id);
+		printf("\x1B[33m%lld philo %i is sleeping\n\x1B[0m", diff_chrono(*philo), id);
+		// ft_print(philo, SLEEP, id);
 		pthread_mutex_unlock(&philo->writing);
 	}
 	ft_wait(philo->rules.time_sleep);
