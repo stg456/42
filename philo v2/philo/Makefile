@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 19:18:30 by stgerard          #+#    #+#              #
-#    Updated: 2022/12/06 17:48:05 by stgerard         ###   ########.fr        #
+#    Updated: 2022/12/06 18:50:50 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -g3
 
 RM = rm -f
 
-SRC = main.c utils.c time.c init.c 
+SRC = main.c utils.c time.c init.c manage.c
 
 OBJ = ${SRC:.c=.o}
 
