@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 13:17:06 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 14:09:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	ft_error(char *str)
 
 int	ft_print(t_philo *philo, int msg, int id)
 {
-	pthread_mutex_lock(&philo->writing);
+	//pthread_mutex_lock(&philo->writing);
 	if (msg == 0 && philo->rules.dead == 0)
 		printf("\x1B[34m%lld philo %i has taken a fork\n\x1B[0m", diff_chrono(*philo), id);
 	else if (msg == 1 && philo->rules.dead == 0)
@@ -65,8 +65,8 @@ int	ft_print(t_philo *philo, int msg, int id)
 	}
 	else if (philo->rules.dead == 1 && msg != 4)
 		return (-1);
-	if (philo->rules.dead == 0)
-		pthread_mutex_unlock(&philo->writing);
+	//if (philo->rules.dead == 0)
+	//	pthread_mutex_unlock(&philo->writing);
 	return (0);
 }
 

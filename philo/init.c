@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 12:17:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 15:17:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	init_mutex(t_philo *philo)
 	philo->forks = malloc(sizeof(pthread_mutex_t) * philo->rules.nb_philo);
 	pthread_mutex_init(&philo->writing, NULL);
 	pthread_mutex_init(&philo->dead, NULL);
-	pthread_mutex_lock(&philo->dead);
+	// pthread_mutex_lock(&philo->dead);
 	if (philo->forks == NULL)
 	{
 		printf("Mutex malloc error\n");
@@ -100,8 +100,6 @@ int	init_thread(t_philo *philo)
 	while ((int)i < philo->rules.nb_philo)
 	{
 		pthread_create(&philo->threads[i], 0, &gestphilo, philo);
-		if (i % 2 == 0)
-			ft_wait(1);
 		++i;
 	}
 	i = 0;
@@ -110,7 +108,7 @@ int	init_thread(t_philo *philo)
 		pthread_join(philo->threads[i], NULL);
 		i++;
 		if (philo->rules.dead == 1)
-			return (0);
+			return (1);
 	}
 	// while ((int)i < philo->rules.nb_philo)
 	// {

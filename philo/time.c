@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 10:55:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 12:11:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/06 14:18:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	closephilo(t_philo *philo)
 {
 	size_t	i;
 
-	if (philo->rules.dead == 1)
-		pthread_mutex_unlock(&philo->writing);
+	// if (philo->rules.dead == 1)
+	// 	pthread_mutex_unlock(&philo->writing);
 	i = philo->rules.nb_philo;
 	if (!philo->forks)
 		return ;
