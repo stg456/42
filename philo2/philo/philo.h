@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 18:59:29 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:09:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_philo
 	int				time_eat;
 	int				time_sleep;
 	int				nb_eat;
+	int				id;
 	long long		runtime;
 	pthread_mutex_t	*forks;
 	pthread_t		*threads;
@@ -46,16 +47,6 @@ typedef struct s_philo
 	int				dead;
 	int				eat_mode;
 }				t_philo;
-
-// typedef struct s_philo
-// {
-// 	int				id;
-// 	int				*lunch_time;
-// 	pthread_mutex_t	*forks;
-// 	pthread_mutex_t	writing;
-// 	pthread_t		*threads;
-// 	struct s_rules	rules;
-// }				t_philo;
 
 // main.c
 

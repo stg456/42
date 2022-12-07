@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 19:05:02 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:09:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static int	init_thread(t_philo *ph)
 
 	i = 0;
 	ph->threads = malloc(sizeof(pthread_t) * ph->nb_philo);
-	pthread_create(&ph->verif, 0, &verif_death, ph);
+	pthread_create(&ph->verif[i], 0, &verif_death, ph);
 	if (ph->threads == NULL)
 	{
 		printf("Pthread malloc error\n");
@@ -84,6 +84,7 @@ static int	init_thread(t_philo *ph)
 	while ((int)i < ph->nb_philo)
 	{
 		pthread_create(&ph->threads[i], 0, &gestphilo, ph);
+
 		++i;
 	}
 	i = 0;
@@ -100,13 +101,24 @@ static int	init_thread(t_philo *ph)
 int	init_all(int ac, char **av, t_philo *ph)
 {
 	if (init_arg(ac, **av, ph) == 1)
+	{
+		printf("a \n");
 		return (1);
+	}
 	if (check_arg(ac, **av, ph) == 1)
+	{
+		printf("b \n");
 		return (1);
+	}
 	if (init_mutex(ph) == 1)
+	{
+		printf("c \n");
 		return (1);
+	}
 	if (init_threads(ph) == 1)
+	{
+		printf("d \n");
 		return (1);
+	}
 	return (0);
 }
-

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/06 19:17:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:09:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main(int ac, char **av)
 		return (1);
 	}
 
-// 1 thread pour verif les timestamp
+	// 1 thread pour verif les timestamp
 
 	return (0);
 }
