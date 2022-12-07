@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/07 11:35:40 by faventur         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:50:01 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void	*gestphilo(void *ptr)
 	nb_lunch = philo->rules.nb_eat;
 	while (philo->rules.dead == 0)
 	{
-		// printf("%i boucle", philo->id);
 		if (philo->rules.eat_mode == 1)
 		{
 			nb_lunch--;
@@ -43,7 +42,6 @@ void	*gestphilo(void *ptr)
 		{
 			pthread_mutex_lock(&philo->writing);
 			printf("\x1B[36m%lld philo %i is thinking\n\x1B[0m", diff_chrono(*philo), id);
-			// ft_print(philo, THINK, id);
 			pthread_mutex_unlock(&philo->writing);
 		}
 		else
@@ -51,16 +49,11 @@ void	*gestphilo(void *ptr)
 		if (diff_chrono(*philo) - philo->lunch_time[id - 1] > philo->rules.time_die)
 		{
 			philo->rules.dead = 1;
-//			pthread_mutex_lock(&philo->dead);
-//			pthread_mutex_lock(&philo->writing);
 			printf("\x1B[31m%lld philo %d died\n\x1B[0m", diff_chrono(*philo), id);
-			// ft_print(philo, DIED, id);
 			pthread_mutex_unlock(&philo->dead);
-			printf("%i a est arrete \n", philo->id);
 			return (NULL);
 		}
 	}
-	printf("%i b est arrete \n", philo->id);
 	return (NULL);
 }
 

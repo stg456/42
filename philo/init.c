@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/07 11:32:49 by faventur         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:49:31 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,13 +105,5 @@ int	init_thread(t_philo *philo)
 			usleep(500);
 		++i;
 	}
-//	i = 0;
-//	while ((int)i < philo->rules.nb_philo)
-//	{
-//		pthread_join(philo->threads[i], NULL);
-//		i++;
-//		if (philo->rules.dead == 1)
-//			return (1);
-//	}
 	return (0);
 }
