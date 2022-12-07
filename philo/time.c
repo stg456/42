@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 10:55:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/07 17:10:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:56:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_wait(long long delay)
 
 	t = timestamp();
 	start = t;
-	while (t != start + delay)
+	while (t < start + delay)
 		t = timestamp();
 }
 
