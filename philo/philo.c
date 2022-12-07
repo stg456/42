@@ -6,7 +6,7 @@
 /*   By: faventur <faventur@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/07 11:50:01 by faventur         ###   ########.fr       */
+/*   Updated: 2022/12/07 11:59:10 by faventur         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ void	*gestphilo(void *ptr)
 		{
 			nb_lunch--;
 			if (nb_lunch <= 0)
+			{
+				pthread_mutex_unlock(&philo->dead);
 				break ;
+			}
 		}
 		if (philo->rules.dead == 0)
 			eating(philo, id);
