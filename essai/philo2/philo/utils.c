@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/07 11:09:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:23:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	ft_isdigit_str(char *str)
 int	ft_print(t_philo *philo, int msg, int id)
 {
 	pthread_mutex_lock(&philo->writing);
-	printf("\x1B[34m%lld philo %i has taken a fork\n\x1B[0m", diff_chrono(*philo), id);
-	printf("\x1B[34m%lld philo %i has taken a fork\n\x1B[0m", diff_chrono(*philo), id);
+	printf("\x1B[34m%lld philo %i has taken a fork\n\x1B[0m", chrono(*philo), id);
+	printf("\x1B[34m%lld philo %i has taken a fork\n\x1B[0m", chrono(*philo), id);
 	pthread_mutex_unlock(&philo->writing);
 }

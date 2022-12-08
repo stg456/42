@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albaur <albaur@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 14:11:55 by albaur           ###   ########.fr       */
+/*   Updated: 2022/12/08 14:23:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ void		ft_print(t_philo *philo, int msg, int id);
 // time
 
 long long	timestamp(void);
-long long	diff_chrono(t_philo *philo);
+long long	chrono(t_philo *philo);
 void		ft_wait(long long delay);
 void		closephilo(t_philo *philo);
 

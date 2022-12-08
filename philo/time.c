@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: albaur <albaur@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 10:55:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 14:10:27 by albaur           ###   ########.fr       */
+/*   Updated: 2022/12/08 14:23:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ long long	timestamp(void)
 	return (t.tv_sec * 1000 + t.tv_usec / 1000);
 }
 
-long long	diff_chrono(t_philo *philo)
+long long	chrono(t_philo *philo)
 {
 	long long		ms;
 

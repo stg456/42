@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 18:50:05 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/07 11:53:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:23:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*gestphilo(void *ptr)
 
 	ph = ptr;
 	ph->id + 1;
-	while (ph->time_die > diff_chrono)
+	while (ph->time_die > chrono)
 	eating;
 	sleeping;
 	thinking;

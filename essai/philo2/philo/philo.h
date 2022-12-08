@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/07 11:56:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:23:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int			ft_isdigit(int c);
 // time.c
 
 long long	timestamp(void);
-long long	diff_chrono(t_philo ph);
+long long	chrono(t_philo ph);
 void		ft_wait(long long delay);
 
 #endif
