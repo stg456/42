@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: albaur <albaur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 12:04:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:13:40 by albaur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ int	philo_dead(t_philo *philo, int id)
 {
 	if (philo->rules.dead == 1)
 		return (1);
-	if (diff_chrono(*philo) - philo->lunch_time[id - 1] > philo->rules.time_die)
+	if (diff_chrono(philo) - philo->lunch_time[id - 1] > philo->rules.time_die)
 	{
 		pthread_mutex_lock(&philo->writing);
 		philo->rules.dead = 1;
-		printf("\x1B[31m%lld philo %i %s", diff_chrono(*philo), id, "died\n\x1B[0m");
+		printf("\x1B[31m%lld philo %i %s", diff_chrono(philo), id, "died\n\x1B[0m");
 		pthread_mutex_unlock(&philo->dead);
 		return (1);
 	}
