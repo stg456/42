@@ -6,25 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:50:41 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 11:23:06 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:50:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
-
-int	gestphilo_lunch(t_philo *philo, int *nb_lunch)
-{
-	if (philo->rules.eat_mode == 1)
-	{
-		*nb_lunch -= 1;
-		if (*nb_lunch <= 0)
-		{
-			philo->rules.dead = 1;
-			return (1);
-		}
-	}
-	return (0);
-}
 
 int	ft_atoi(const char *str)
 {
