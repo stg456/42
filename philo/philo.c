@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 16:41:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:16:08 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,7 @@ void	*gestphilo(void *ptr)
 			solitude(philo, id);
 			break ;
 		}
-		if (!philo_dead(philo, id))
-			eating(philo, id);
-		if (!philo_dead(philo, id))
-			sleeping(philo, id);
-		if (!philo_dead(philo, id))
-			ft_print(philo, THINK, id);
+		gest(philo, id, nb_lunch);
 		if (gestphilo_lunch(philo, &nb_lunch) == 1)
 			break ;
 	}
