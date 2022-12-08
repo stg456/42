@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 12:18:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 16:17:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,6 @@ int	init_arg(int argc, char **argv, t_philo *philo)
 	}
 	philo->rules.runtime = timestamp();
 	philo->rules.dead = 0;
-	if (philo->rules.nb_philo == 1)
-		philo->rules.dead = 1;
 	philo->lunch_time = malloc(sizeof(int) * philo->rules.nb_philo);
 	if (philo->lunch_time == NULL)
 		return (1);
@@ -102,8 +100,6 @@ int	init_thread(t_philo *philo)
 	{
 		pthread_create(&philo->threads[i], 0, gestphilo, philo);
 		pthread_detach(philo->threads[i]);
-		if (philo->rules.nb_philo == 1)
-			solitude(philo);
 		if (i % 2 == 0)
 			usleep(500);
 		++i;

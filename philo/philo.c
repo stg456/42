@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 14:23:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 16:41:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,13 @@ void	closephilo(t_philo *philo)
 	free(philo);
 }
 
-void	solitude(t_philo *philo)
+void	solitude(t_philo *philo, int id)
 {
 	ft_print(philo, FORK, 1);
 	ft_wait(philo->rules.time_die);
+	pthread_mutex_lock(&philo->writing);
+	printf("\x1B[31m%lld philo %i %s", chrono(philo), id, "died\n\x1B[0m");
 	philo->rules.dead = 1;
-	ft_print(philo, DIED, 1);
 	pthread_mutex_unlock(&philo->dead);
 }
 
@@ -72,6 +73,11 @@ void	*gestphilo(void *ptr)
 	nb_lunch = philo->rules.nb_eat;
 	while (philo->rules.dead == 0)
 	{
+		if (philo->rules.nb_philo == 1)
+		{
+			solitude(philo, id);
+			break ;
+		}
 		if (!philo_dead(philo, id))
 			eating(philo, id);
 		if (!philo_dead(philo, id))

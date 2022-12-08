@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 14:23:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 16:41:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int			init_mutex(t_philo *philo);
 int			init_thread(t_philo *philo);
 void		*gestphilo(void *ptr);
 void		*check_end(void *ptr);
-void		solitude(t_philo *philo);
+void		solitude(t_philo *philo, int id);
 int			gestphilo_lunch(t_philo *philo, int *nb_lunch);
 
 // philolife.c
