@@ -6,11 +6,36 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 11:00:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 11:22:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+void	closephilo(t_philo *philo)
+{
+	size_t	i;
+	size_t	j;
+
+	j = 0;
+	while (j < philo->rules.nb_philo)
+	{
+		pthread_join(philo->threads[j], NULL);
+		j++;
+	}
+	i = 0;
+	while (i < philo->rules.nb_philo)
+	{
+		pthread_mutex_destroy(&philo->forks[i]);
+		i++;
+	}
+	pthread_mutex_destroy(&philo->writing);
+	pthread_mutex_destroy(&philo->dead);
+	free(philo->forks);
+	free(philo->threads);
+	free(philo->lunch_time);
+	free(philo);
+}
 
 void	solitude(t_philo *philo)
 {
@@ -58,15 +83,8 @@ void	*gestphilo(void *ptr)
 		eating(philo, id);
 		sleeping(philo, id);
 		ft_print(philo, THINK, id);
-		if (philo->rules.eat_mode == 1)
-		{
-			nb_lunch--;
-			if (nb_lunch <= 0)
-			{
-				philo->rules.dead = 1;
-				break ;
-			}
-		}
+		if (gestphilo_lunch(philo, &nb_lunch) == 1)
+			break ;
 	}
 	philo->rules.alive--;
 	if (philo->rules.alive == 0)

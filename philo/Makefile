@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/13 19:18:30 by stgerard          #+#    #+#              #
-#    Updated: 2022/12/07 17:58:38 by stgerard         ###   ########.fr        #
+#    Updated: 2022/12/08 11:16:48 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ OBJ = ${SRC:.c=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-			${CC} -pthread ${OBJ} ${CFLAGS} -o ${NAME} -g3
+			${CC} -pthread ${OBJ} ${CFLAGS} -o ${NAME} -g3 -fsanitize=address
 
 clean:
 			${RM} ${OBJ}
