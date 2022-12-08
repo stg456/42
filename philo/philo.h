@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/07 17:49:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 10:55:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ typedef struct s_rules
 	int				time_sleep;
 	int				nb_eat;
 	long long		runtime;
+	size_t			alive;
 	int				dead;
 	int				eat_mode;
 }				t_rules;
@@ -62,6 +63,7 @@ typedef struct s_philo
 	pthread_t		*threads;
 	pthread_t		police;
 	struct s_rules	rules;
+	struct timeval	t;
 }				t_philo;
 
 // philo.c

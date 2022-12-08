@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:26:24 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/07 17:29:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 10:51:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@ void	eating(t_philo *philo, size_t id)
 {
 	pthread_mutex_lock(&philo->forks[id - 1]);
 	pthread_mutex_lock(&philo->writing);
-	printf("\x1B[34m%lld philo %zu ", diff_chrono(*philo), id);
-	printf("has taken a fork\n\x1B[0m");
+	printf("\x1B[34m%lld philo %zu %s", diff_chrono(*philo), id,
+		"has taken a fork\n\x1B[0m");
 	pthread_mutex_unlock(&philo->writing);
 	pthread_mutex_lock(&philo->forks[id % philo->rules.nb_philo]);
 	pthread_mutex_lock(&philo->writing);
-	printf("\x1B[34m%lld philo %zu ", diff_chrono(*philo), id);
-	printf("has taken a fork\n\x1B[0m");
+	printf("\x1B[34m%lld philo %zu %s", diff_chrono(*philo), id,
+		"has taken a fork\n\x1B[0m");
 	pthread_mutex_unlock(&philo->writing);
 	philo->lunch_time[id - 1] = diff_chrono(*philo);
 	pthread_mutex_lock(&philo->writing);
-	printf("\x1B[32m%lld philo %zu ", diff_chrono(*philo), id);
-	printf("is eating\n\x1B[0m");
+	printf("\x1B[32m%lld philo %zu %s", diff_chrono(*philo), id,
+		"is eating\n\x1B[0m");
 	pthread_mutex_unlock(&philo->writing);
 	ft_wait(philo->rules.time_eat);
 	pthread_mutex_unlock(&philo->forks[id - 1]);
@@ -39,8 +39,8 @@ void	sleeping(t_philo *philo, size_t id)
 	if (philo->rules.dead == 0)
 	{
 		pthread_mutex_lock(&philo->writing);
-		printf("\x1B[33m%lld philo %zu ", diff_chrono(*philo), id);
-		printf("is sleeping\n\x1B[0m");
+		printf("\x1B[33m%lld philo %zu %s", diff_chrono(*philo), id,
+			"is sleeping\n\x1B[0m");
 		pthread_mutex_unlock(&philo->writing);
 	}
 	ft_wait(philo->rules.time_sleep);

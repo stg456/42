@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 10:55:56 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/07 18:56:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 10:55:56 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,10 @@ long long	timestamp(void)
 
 long long	diff_chrono(t_philo philo)
 {
-	struct timeval	t;
 	long long		ms;
 
-	gettimeofday(&t, NULL);
-	ms = (t.tv_sec * 1000 + t.tv_usec / 1000);
+	gettimeofday(&philo.t, NULL);
+	ms = (philo.t.tv_sec * 1000 + philo.t.tv_usec / 1000);
 	return ((ms - philo.rules.runtime));
 }
 

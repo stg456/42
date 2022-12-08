@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/07 19:08:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 10:43:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ static int	check_arg(char **argv, int argc, t_philo *philo)
 	if (argc == 6 && (ft_isdigit_str(argv[5]) || rules->nb_eat < 0))
 		return (1);
 	philo->rules.nb_philo = ft_atoi(argv[1]);
+	philo->rules.alive = philo->rules.nb_philo;
 	philo->rules.time_die = ft_atoi(argv[2]);
 	philo->rules.time_eat = ft_atoi(argv[3]);
 	philo->rules.time_sleep = ft_atoi(argv[4]);
@@ -108,7 +109,7 @@ int	init_thread(t_philo *philo)
 		if ((philo->rules.nb_philo % 2 == 1
 				&& i == philo->rules.nb_philo - 1)
 			|| i % 2 == 0)
-			usleep(300);
+			usleep(50);
 		++i;
 	}
 	return (0);
