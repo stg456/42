@@ -6,11 +6,26 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:47:48 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 11:22:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 12:04:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
+
+int	philo_dead(t_philo *philo, int id)
+{
+	if (philo->rules.dead == 1)
+		return (1);
+	if (diff_chrono(*philo) - philo->lunch_time[id - 1] > philo->rules.time_die)
+	{
+		pthread_mutex_lock(&philo->writing);
+		philo->rules.dead = 1;
+		printf("\x1B[31m%lld philo %i %s", diff_chrono(*philo), id, "died\n\x1B[0m");
+		pthread_mutex_unlock(&philo->dead);
+		return (1);
+	}
+	return (0);
+}
 
 void	closephilo(t_philo *philo)
 {
@@ -46,29 +61,6 @@ void	solitude(t_philo *philo)
 	pthread_mutex_unlock(&philo->dead);
 }
 
-void	*check_end(void *ptr)
-{
-	t_philo	*philo;
-	size_t	i;
-
-	i = 0;
-	philo = ptr;
-	while (!philo->rules.dead)
-	{
-		if (diff_chrono(*philo) - philo->lunch_time[i] > philo->rules.time_die)
-		{
-			philo->rules.dead = 1;
-			printf("\x1B[31m%lld philo %lu ", diff_chrono(*philo), i + 1);
-			printf("died\n\x1B[0m");
-			pthread_mutex_unlock(&philo->dead);
-		}
-		if (i == philo->rules.nb_philo - 1)
-			i = -1;
-		i++;
-	}
-	return (NULL);
-}
-
 void	*gestphilo(void *ptr)
 {
 	t_philo	*philo;
@@ -80,9 +72,12 @@ void	*gestphilo(void *ptr)
 	nb_lunch = philo->rules.nb_eat;
 	while (philo->rules.dead == 0)
 	{
-		eating(philo, id);
-		sleeping(philo, id);
-		ft_print(philo, THINK, id);
+		if (!philo_dead(philo, id))
+			eating(philo, id);
+		if (!philo_dead(philo, id))
+			sleeping(philo, id);
+		if (!philo_dead(philo, id))
+			ft_print(philo, THINK, id);
 		if (gestphilo_lunch(philo, &nb_lunch) == 1)
 			break ;
 	}

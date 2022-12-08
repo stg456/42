@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:03:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 10:43:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 12:18:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,18 +98,14 @@ int	init_thread(t_philo *philo)
 		printf("Pthread malloc error\n");
 		return (1);
 	}
-	pthread_create(&philo->police, 0, check_end, philo);
-	pthread_detach(philo->police);
 	while (i < philo->rules.nb_philo)
 	{
 		pthread_create(&philo->threads[i], 0, gestphilo, philo);
 		pthread_detach(philo->threads[i]);
 		if (philo->rules.nb_philo == 1)
 			solitude(philo);
-		if ((philo->rules.nb_philo % 2 == 1
-				&& i == philo->rules.nb_philo - 1)
-			|| i % 2 == 0)
-			usleep(50);
+		if (i % 2 == 0)
+			usleep(500);
 		++i;
 	}
 	return (0);
