@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:11:00 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 20:02:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 20:03:26 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #define "minishell.h"
 
-int	main(intac, char **av)
+int	main(int ac, char **av)
 {
 
 }
