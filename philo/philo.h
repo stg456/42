@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/18 14:48:36 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 17:16:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:18:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int			gestphilo_lunch(t_philo *philo, int *nb_lunch);
 void		eating(t_philo *philo, size_t id);
 void		sleeping(t_philo *philo, size_t id);
 void		ft_print(t_philo *philo, int msg, int id);
-void		gest(t_philo *philo, int id, int nb_lunch);
+void		gest(t_philo *philo, int id);
 
 // time
 

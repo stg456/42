@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 16:26:24 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/08 17:16:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/08 17:18:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-void	gest(t_philo *philo, int id, int nb_lunch)
+void	gest(t_philo *philo, int id)
 {
 	if (!philo_dead(philo, id))
 		eating(philo, id);
