@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_dectobin.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/09 14:22:29 by stgerard         ###   ########.fr       */
+/*   Created: 2022/04/25 13:37:44 by stgerard          #+#    #+#             */
+/*   Updated: 2022/04/25 13:42:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include <pthread.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include <errno.h>
-# include <sys/time.h>
-# include "libft.h"
+int	ft_dectobin(long long nb)
+{
+	int			i;
+	int			rem;
+	long long	bin;
 
-// main.c
-
-int		main(int ac, char **av);
-
-#endif
+	bin = 0;
+	rem = 1;
+	i = 1;
+	while (nb != 0)
+	{
+		rem = nb % 2;
+		nb /= 2;
+		bin += rem * i;
+		i *= 10;
+	}
+	return (bin);
+}

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/09 14:22:29 by stgerard         ###   ########.fr       */
+/*   Created: 2022/04/25 13:36:35 by stgerard          #+#    #+#             */
+/*   Updated: 2022/04/25 13:37:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include <pthread.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include <errno.h>
-# include <sys/time.h>
-# include "libft.h"
+int	ft_intlen(long n)
+{
+	int	len;
 
-// main.c
-
-int		main(int ac, char **av);
-
-#endif
+	len = 0;
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		n = n * -1;
+		len++;
+	}
+	while (n > 0)
+	{
+		n = n / 10;
+		len++;
+	}
+	return (len);
+}

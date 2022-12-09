@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minishell.h                                        :+:      :+:    :+:   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/09 14:22:29 by stgerard         ###   ########.fr       */
+/*   Created: 2022/03/04 18:28:47 by stgerard          #+#    #+#             */
+/*   Updated: 2022/07/07 13:05:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINISHELL_H
-# define MINISHELL_H
+#include "libft.h"
 
-# include <pthread.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <string.h>
-# include <errno.h>
-# include <sys/time.h>
-# include "libft.h"
+char	*get_next_line(int fd)
+{
+	char	*s;
+	char	*c;
 
-// main.c
-
-int		main(int ac, char **av);
-
-#endif
+	s = malloc(10000);
+	c = s;
+	while (read(fd, c, 1) > 0 && *c++ != '\n')
+		;
+	if (c > s)
+	{
+		*c = 0;
+		return (s);
+	}
+	else
+	{
+		free(s);
+		return (NULL);
+	}
+}
