@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:11:00 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/09 14:22:29 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/09 14:38:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ while (get_next_line(0, &line) > 0)
   parsing
   write(0, "~$ ", 3);
 }
+char *my_getenv(char **env, char *elem/*"PATH"*' '/) // sans le ' '
+
 
 */
