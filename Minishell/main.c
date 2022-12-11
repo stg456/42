@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:11:00 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/11 11:57:26 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/11 12:27:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,21 @@
 
 int	main(int ac, char **av, char **env)
 {
-	(void)env;
+	// (void)env;
 	(void)ac;
 	(void)av;
+	size_t			i;
+	// char	**tab;
 	
-	while (42)
+	i = 0;
+	ft_putstr("le prompt>");
+	while (env)
 	{
-		ft_putstr("le prompt>");
+		ft_strnstr(env, "PATH=", );
+		if (env == "PATH")
+		{
+			ft_split("PATH=", ':');
+		}
 	}
 }
 
