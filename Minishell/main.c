@@ -6,14 +6,19 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:11:00 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/09 14:38:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/11 11:57:26 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+# include "./libft/libft.h"
 
 int	main(int ac, char **av, char **env)
 {
+	(void)env;
+	(void)ac;
+	(void)av;
+	
 	while (42)
 	{
 		ft_putstr("le prompt>");
@@ -36,7 +41,5 @@ while (get_next_line(0, &line) > 0)
   parsing
   write(0, "~$ ", 3);
 }
-char *my_getenv(char **env, char *elem/*"PATH"*' '/) // sans le ' '
-
-
 */
+// char *my_getenv(char **env, char *elem/*"PATH"*/)
