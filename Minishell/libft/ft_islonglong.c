@@ -6,11 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 13:20:28 by stgerard          #+#    #+#             */
-/*   Updated: 2022/04/19 17:34:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/11 11:02:37 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 int	ft_islonglong(const char *str)
 {

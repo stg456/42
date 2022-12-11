@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/01 10:48:01 by stgerard          #+#    #+#             */
-/*   Updated: 2022/03/21 16:35:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/11 11:01:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,5 @@ char	*ft_itoa(int n)
 		nb = n;
 		ft_tab(str, nb, len);
 	}
+	return (str);
 }
