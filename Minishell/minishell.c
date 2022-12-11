@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/11 15:43:57 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/11 16:37:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,24 @@ int	main(int ac, char **av, char **env)
 	(void)env;
 	(void)ac;
 	(void)av;
+	int	i;
+	int	j;
 	const char	*path;
 	char **tab;
 
+	i = 0;
+	j = 0;
+	tab = NULL;
 	path = getenv("PATH");
 
 	ft_putstr("le prompt> \n");
 	printf("PATH == %s \n", path);
 	tab = ft_split(path, ':');
-	printf("%s \n", tab);
+	while (tab[j][i])
+	{
+		printf("%s \n", tab[j]);
+		j++;
+	}
 }
 
 /*
