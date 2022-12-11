@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 12:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/11 11:49:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/11 12:39:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,6 @@ int		ft_putint_unsigned(unsigned int n);
 char	*get_next_line(int fd);
 void	ft_arr_freer(char **arr);
 void	ft_putstr(char *str);
+char	*ft_strstr(const char *haystack, const char *needle);
 
 #endif
