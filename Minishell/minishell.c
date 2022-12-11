@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/08 19:11:00 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/11 14:10:38 by stgerard         ###   ########.fr       */
+/*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
+/*   Updated: 2022/12/11 15:43:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,18 @@
 
 int	main(int ac, char **av, char **env)
 {
-	// (void)env;
+	(void)env;
 	(void)ac;
 	(void)av;
-	size_t			i;
-	char	*s;
-	// char	**tab;
-	
-	i = 0;
-	s = env;
+	const char	*path;
+	char **tab;
+
+	path = getenv("PATH");
+
 	ft_putstr("le prompt> \n");
-	ft_putstr(s);
-	// while (env)
-	// {
-	// 	s = ft_strstr(env[1], "PATH=");
-	// 	ft_putstr(s);
-	// 	// if (env == "PATH=")
-	// 	// {
-	// 	// 	ft_split("PATH=", ':');
-	// 	// }
-	// }
+	printf("PATH == %s \n", path);
+	tab = ft_split(path, ':');
+	printf("%s \n", tab);
 }
 
 /*

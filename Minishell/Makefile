@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/08 19:06:31 by stgerard          #+#    #+#              #
-#    Updated: 2022/12/08 19:13:02 by stgerard         ###   ########.fr        #
+#    Updated: 2022/12/11 15:28:43 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,18 +14,18 @@ NAME = minishell
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -g3
+CFLAGS = -Wall -Wextra -Werror -g
 
 RM = rm -f
 
-SRC = main.c
+SRC = minishell.c ../libft/ft_putstr.c
 
 OBJ = ${SRC:.c=.o}
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-			${CC} -pthread ${OBJ} ${CFLAGS} -o ${NAME} -g3 -fsanitize=address
+			${CC} -pthread ${OBJ} ${CFLAGS} -o ${NAME}
 
 clean:
 			${RM} ${OBJ}
