@@ -6,12 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:11:00 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/11 12:50:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/11 14:10:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-// # include "./libft/libft.h"
 
 int	main(int ac, char **av, char **env)
 {
@@ -23,16 +22,18 @@ int	main(int ac, char **av, char **env)
 	// char	**tab;
 	
 	i = 0;
-	ft_putstr("le prompt>");
-	while (env)
-	{
-		s = ft_strstr(env[1], "PATH=");
-		ft_putstr(s);
-		// if (env == "PATH=")
-		// {
-		// 	ft_split("PATH=", ':');
-		// }
-	}
+	s = env;
+	ft_putstr("le prompt> \n");
+	ft_putstr(s);
+	// while (env)
+	// {
+	// 	s = ft_strstr(env[1], "PATH=");
+	// 	ft_putstr(s);
+	// 	// if (env == "PATH=")
+	// 	// {
+	// 	// 	ft_split("PATH=", ':');
+	// 	// }
+	// }
 }
 
 /*
