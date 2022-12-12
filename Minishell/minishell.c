@@ -6,28 +6,42 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/12 11:51:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:02:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+void	ft_free_shell(t_minishell *shell)
+{
+	// t_minishell		*shell;
+
+	close(shell->fd_in);
+	close(shell->fd_out);
+	free(shell->path);
+	free(shell->envdup);
+	free(shell);
+}
 
 void	ft_init(t_minishell **shell, char **env)
 {
 	int		i;
 
 	i = 0;
-	*shell = (t_minishell *)malloc(sizeof(t_minishell));
+	(*shell) = (t_minishell *)malloc(sizeof(t_minishell));
 	while (env[i])
 		i++;
 	(*shell)->envdup = (char **)malloc(sizeof(char *) * i + 1);
 	i = 0;
 	while (env[i])
 	{
-		(*shell)->envdup = ft_strdup(env[i]);
+		(*shell)->envdup[i] = ft_strdup(env[i]);
 		i++;
 	}
-	
+	(*shell)->envdup = NULL;
+	(*shell)->path = NULL;
+	(*shell)->fd_in = 0;
+	(*shell)->fd_out = 0;
 }
 
 void	ft_prompt(char **env)
@@ -39,7 +53,7 @@ void	ft_prompt(char **env)
 	ft_init(&shell, env);
 	while (line != NULL)
 	{
-		if (line)
+		if (*line)
 		{
 			add_history(line);
 		}
@@ -50,20 +64,11 @@ int	main(int ac, char **av, char **env)
 {
 	(void)ac;
 	(void)av;
-
-	// path = getenv("PATH");
+	// t_minishell		*shell;
 
 	ft_prompt(env);
-
-	// printf("PATH == %s \n", path[j]);
-	// path = ft_split(path[j], ':');
-	// if (!path[j])
-	// 	return (1);
-	// while (path[j])
-	// {
-	// 	printf("%s \n", path[j]);
-	// 	j++;
-	// }
+	
+	// ft_free_shell(shell);
 }
 
 /*

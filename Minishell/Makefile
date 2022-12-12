@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/08 19:06:31 by stgerard          #+#    #+#              #
-#    Updated: 2022/12/11 16:13:46 by stgerard         ###   ########.fr        #
+#    Updated: 2022/12/12 13:49:56 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ CFLAGS = -Wall -Wextra -Werror -g
 RM = rm -f
 
 SRC = minishell.c \
-../libft/ft_putstr.c ../libft/ft_split.c ../libft/ft_strlen.c 
+../libft/ft_putstr.c ../libft/ft_split.c ../libft/ft_strlen.c \
+../libft/ft_strdup.c
 
 OBJ = ${SRC:.c=.o}
 
