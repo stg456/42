@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/12 14:24:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:12:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	ft_prompt(char **env)
 
 	line = readline("prompt > ");
 	ft_init(&shell, env);
+	// line = getenv("PATH");
 	while (line != NULL)
 	{
 		if (*line)
