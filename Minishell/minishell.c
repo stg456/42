@@ -6,37 +6,51 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/11 16:52:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:14:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	main(int ac, char **av, char **env)
+void	ft_init(t_minishell **shell, char **envp)
 {
-	(void)env;
+	
+}
+
+void	ft_prompt(char **envp)
+{
+	char			*line;
+	t_minishell		*shell;
+
+	line = readline("prompt > ");
+	ft_init(shell, envp);
+	wile (line != NULL)
+	{
+		if (line)
+		{
+			add_history(line);
+		}
+	}
+}
+
+int	main(int ac, char **av, char **envp)
+{
 	(void)ac;
 	(void)av;
-	int	i;
-	int	j;
-	char	*path;
-	char	**tab;
 
-	i = 0;
-	j = 0;
-	tab = NULL;
-	path = getenv("PATH");
+	// path = getenv("PATH");
 
-	ft_putstr("le prompt> \n"); // readline
-	printf("PATH == %s \n", path);
-	tab = ft_split(path, ':');
-	if (!tab)
-		return (1);
-	while (tab[j])
-	{
-		printf("%s \n", tab[j]);
-		j++;
-	}
+	ft_prompt(envp);
+
+	// printf("PATH == %s \n", path[j]);
+	// path = ft_split(path[j], ':');
+	// if (!path[j])
+	// 	return (1);
+	// while (path[j])
+	// {
+	// 	printf("%s \n", path[j]);
+	// 	j++;
+	// }
 }
 
 /*
