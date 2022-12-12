@@ -6,24 +6,37 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/12 11:21:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/12 11:51:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	ft_init(t_minishell **shell, char **envp)
+void	ft_init(t_minishell **shell, char **env)
 {
+	int		i;
+
+	i = 0;
+	*shell = (t_minishell *)malloc(sizeof(t_minishell));
+	while (env[i])
+		i++;
+	(*shell)->envdup = (char **)malloc(sizeof(char *) * i + 1);
+	i = 0;
+	while (env[i])
+	{
+		(*shell)->envdup = ft_strdup(env[i]);
+		i++;
+	}
 	
 }
 
-void	ft_prompt(char **envp)
+void	ft_prompt(char **env)
 {
 	char			*line;
 	t_minishell		*shell;
 
 	line = readline("prompt > ");
-	ft_init(&shell, envp);
+	ft_init(&shell, env);
 	while (line != NULL)
 	{
 		if (line)
@@ -33,14 +46,14 @@ void	ft_prompt(char **envp)
 	}
 }
 
-int	main(int ac, char **av, char **envp)
+int	main(int ac, char **av, char **env)
 {
 	(void)ac;
 	(void)av;
 
 	// path = getenv("PATH");
 
-	ft_prompt(envp);
+	ft_prompt(env);
 
 	// printf("PATH == %s \n", path[j]);
 	// path = ft_split(path[j], ':');
