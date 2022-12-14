@@ -14,7 +14,7 @@ char *get_next_line(int fd)
 		if (c == '\n')
 			break;
 	}
-	if ((!buffer[i - 1] && !rd) || rd = -1)
+	if ((!buffer[i - 1] && !rd) || rd == -1)
 	{
 		free(buffer);
 		return (NULL);
