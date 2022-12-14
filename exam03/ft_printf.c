@@ -5,7 +5,7 @@
 
 int	ft_printf(const char *format, ...)
 {
-	int length = 0;
+	int len = 0;
 
 	va_list pointer;
 	va_start (pointer, format);
@@ -14,5 +14,5 @@ int	ft_printf(const char *format, ...)
 	{
 	
 	}
-	return (va_end(pointer, length));
+	return (va_end(pointer, len));
 }
