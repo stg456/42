@@ -27,7 +27,7 @@ OBJ = ${SRC:.c=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-			${CC} -pthread ${OBJ} ${CFLAGS} -o ${NAME}
+			${CC} -lreadline ${OBJ} ${CFLAGS} -o ${NAME}
 
 clean:
 			${RM} ${OBJ}
