@@ -18,11 +18,11 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 RM = rm -f
 
-SRC = minishell.c \
+SRCS = minishell.c utls.c \
 ../libft/ft_putstr.c ../libft/ft_split.c ../libft/ft_strlen.c \
-../libft/ft_strdup.c ft_strcmp.c
+../libft/ft_strdup.c
 
-OBJ = ${SRC:.c=.o}
+OBJS = ${SRCS:.c=.o}
 
 all: ${NAME}
 
@@ -30,7 +30,7 @@ ${NAME}: ${OBJ}
 			${CC} -lreadline ${OBJ} ${CFLAGS} -o ${NAME}
 
 clean:
-			${RM} ${OBJ}
+			${RM} ${OBJS}
 
 fclean: clean
 			${RM} ${NAME}
