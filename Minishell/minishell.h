@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/12 13:39:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/16 14:42:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <string.h>
 # include <errno.h>
 # include <sys/time.h>
+# include <fcntl.h>
 # include <signal.h>
 # include "../libft/libft.h"
 # include <readline/readline.h>
