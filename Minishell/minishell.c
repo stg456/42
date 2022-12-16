@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/16 14:42:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/16 16:01:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,10 +65,16 @@ void	ft_prompt(char **env)
 
 int	main(int ac, char **av, char **env)
 {
+	int			i;
 	(void)ac;
 	(void)av;
 	// t_minishell		*shell;
 
+	i = -1;
+	path = ft_split(getenv("PATH"), ':');
+	while (path[++i])
+		path[i] = ft_strjoin(path[i], "/");
+	
 	ft_prompt(env);
 	
 	// ft_free_shell(shell);
