@@ -46,19 +46,19 @@ void	ft_init(t_minishell **shell, char **env)
 
 void	ft_prompt(char **env)
 {
-	char			*line;
+	char			*buf;
 	t_minishell		*shell;
 
-	line = readline("prompt > ");
+	buf = readline("prompt > ");
 	ft_init(&shell, env);
 	// line = getenv("PATH");
-	while (line != NULL)
+	while (buf != NULL)
 	{
-		if (*line)
+		if (*buf)
 		{
-			add_history(line);
+			add_history(buf);
 		}
-		free(line);
+		free(buf);
 	}
 }
 

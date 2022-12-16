@@ -20,7 +20,7 @@ RM = rm -f
 
 SRC = minishell.c \
 ../libft/ft_putstr.c ../libft/ft_split.c ../libft/ft_strlen.c \
-../libft/ft_strdup.c
+../libft/ft_strdup.c ft_strcmp.c
 
 OBJ = ${SRC:.c=.o}
 
