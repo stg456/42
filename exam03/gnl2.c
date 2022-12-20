@@ -12,6 +12,8 @@ char	*get_next_line(int fd)
 
 	if ((fd < 0) || (BUFFER_SIZE <= 0))
 		return (NULL);
+	i = 0;
+	rd = read(fd, c, 1);
 	buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
 	while (rd > 0)
 	{
