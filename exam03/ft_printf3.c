@@ -23,12 +23,23 @@ int	ft_putstr(char *str)
 int	ft_putnbr(int nb)
 {
 	char	*s = "0123456789";
+	int 	i = 0;
 
-	int i = 0;
+	if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return (11);
+	}
+	if (nb < 0)
+	{
+		write(1, '-', 1);
+		i++;
+		nb = -nb;
+	}
 	if (nb >= 10)
 	{
-		ft_puthex(nb / 10);
-		ft_puthex(nb % 10);
+		i += ft_puthex(nb / 10);
+		i += ft_puthex(nb % 10);
 	}
 	if (nb < 10)
 	{
@@ -45,12 +56,12 @@ int	ft_puthex(unsigned int nb)
 	int i = 0;
 	if (nb >= 16)
 	{
-		ft_puthex(nb / 16);
-		ft_puthex(nb % 16);
+		i += ft_puthex(nb / 16);
+		i += ft_puthex(nb % 16);
 	}
 	if (nb < 16)
 	{
-		write(1, &s[i % 16], 1);
+		ft_putchar(nb + '0');
 		i++;
 	}
 	return (i);
