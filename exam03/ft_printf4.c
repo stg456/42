@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <limits.h>
 
 int ft_putstr(char *str)
 {
