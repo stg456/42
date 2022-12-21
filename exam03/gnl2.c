@@ -29,3 +29,5 @@ char	*get_next_line(int fd)
 	buf[i] = '\0';
 	return (buf);
 }
+
+// pas encore
