@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <limits.h>
 
 void	ft_putchar(char c)
 {
@@ -22,7 +23,7 @@ int	ft_putstr(char *str)
 
 int	ft_putnbr(int nb)
 {
-	char	*s = "0123456789";
+	// char	*s = "0123456789";
 	int 	i = 0;
 
 	if (nb == -2147483648)
@@ -32,14 +33,14 @@ int	ft_putnbr(int nb)
 	}
 	if (nb < 0)
 	{
-		write(1, '-', 1);
+		write(1, "-", 1);
 		i++;
 		nb = -nb;
 	}
 	if (nb >= 10)
 	{
-		i += ft_puthex(nb / 10);
-		i += ft_puthex(nb % 10);
+		i += ft_putnbr(nb / 10);
+		i += ft_putnbr(nb % 10);
 	}
 	if (nb < 10)
 	{
@@ -51,7 +52,7 @@ int	ft_putnbr(int nb)
 
 int	ft_puthex(unsigned int nb)
 {
-	char	*s = "0123456789abcdef";
+	char	*str = "0123456789abcdef";
 
 	int i = 0;
 	if (nb >= 16)
@@ -61,7 +62,7 @@ int	ft_puthex(unsigned int nb)
 	}
 	if (nb < 16)
 	{
-		ft_putchar(nb + '0');
+		ft_putchar(str[nb]);
 		i++;
 	}
 	return (i);
@@ -94,4 +95,29 @@ int ft_printf(const char *format, ... )
 	}
 	va_end(ptr);
 	return (len);
+}
+
+int main()
+{
+    int c;
+    int d;
+    char *s = "abcdefghi";
+    d = -20;
+    ft_printf("ft_printf int = %d\n%%", d);
+    c = ft_printf("%s", s);
+	printf("ft_print1 f: %d\n", c);
+	c = printf("%s", s);
+	printf("print1 f: %d\n", c);
+    ft_printf("ft_printf hexa = %x\n", d);
+
+    c = printf("ft_printf%% int = %d\n", d);
+    printf("printf count = %d\n", c);
+    c = printf("ft_printf string = %s\n", s);
+    printf("printf count = %d\n", c);
+    c = printf("ft_printf hexa = %x\n", d);
+    printf("printf count = %d\n", c);
+    printf("bon %%\n");
+    ft_printf(" oebon %%");
+	ft_printf("lol");
+    return (0);
 }
