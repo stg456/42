@@ -41,7 +41,7 @@ int	ft_printf(const char *format, ...)
 		{
 			format++;
 			if (*format == 's')
-				;
+				ft_putstr();
 			else if (*format == 'd')
 				;
 			else if (*format == 'x')
