@@ -79,7 +79,7 @@ int ft_printf(const char *format, ... )
 			else
 			{
 				write(1, &format[i], 1);
-				res ++;
+				res++;
 			}
 		}
 		i++;
