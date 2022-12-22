@@ -17,7 +17,7 @@ char	*get_next_line(int fd)
 	buf = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
 	while (rd > 0)
 	{
-		buf[i] = c;
+		buf[i++] = c;
 		if (c == '\n')
 			break ;
 		rd = read(fd, c, 1); // si buffer de 1
