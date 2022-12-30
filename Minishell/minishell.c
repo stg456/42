@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/16 16:09:20 by stgerard         ###   ########.fr       */
+/*   Updated: 2022/12/30 16:27:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,38 +19,38 @@ void	ft_free_shell(t_minishell *shell)
 	close(shell->fd_in);
 	close(shell->fd_out);
 	free(shell->path);
-	free(shell->envdup);
+	free(shell->env);
 	free(shell);
 }
 
-void	ft_init(t_minishell **shell, char **env)
+void	ft_init(t_minishell **shell, char **envp)
 {
 	int		i;
 
 	i = 0;
 	(*shell) = (t_minishell *)malloc(sizeof(t_minishell));
-	while (env[i])
+	while (envp[i])
 		i++;
-	(*shell)->envdup = (char **)malloc(sizeof(char *) * i + 1);
+	(*shell)->env = (char **)malloc(sizeof(char *) * i + 1);
 	i = 0;
-	while (env[i])
+	while (envp[i])
 	{
-		(*shell)->envdup[i] = ft_strdup(env[i]);
+		(*shell)->env[i] = ft_strdup(envp[i]);
 		i++;
 	}
-	(*shell)->envdup = NULL;
+	(*shell)->env = NULL;
 	(*shell)->path = NULL;
 	(*shell)->fd_in = 0;
 	(*shell)->fd_out = 0;
 }
 
-void	ft_prompt(char **env)
+void	ft_prompt(char **envp)
 {
 	char			*buf;
 	t_minishell		*shell;
 
 	buf = readline("Minishell $> ");
-	ft_init(&shell, env);
+	ft_init(&shell, envp);
 	// line = getenv("PATH");
 	while (buf != NULL)
 	{
@@ -58,12 +58,13 @@ void	ft_prompt(char **env)
 		{
 			add_history(buf);
 		}
+
 		free(buf);
 	}
 	// ft_free_shell(shell);
 }
 
-int	main(int ac, char **av, char **env)
+int	main(int ac, char **av, char **envp)
 {
 	// int			i;
 	(void)ac;
@@ -75,7 +76,7 @@ int	main(int ac, char **av, char **env)
 	// while (path[++i])
 	// 	path[i] = ft_strjoin(path[i], "/");
 	
-	ft_prompt(env);
+	ft_prompt(envp);
 	
 	// ft_free_shell(shell);
 }
