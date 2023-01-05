@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/30 16:32:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/05 19:30:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 void	ft_free_shell(t_minishell *shell)
 {
 	// t_minishell		*shell;
-
 	close(shell->fd_in);
 	close(shell->fd_out);
+	// /!\ free un tableau
 	free(shell->path);
 	free(shell->env);
 	free(shell);
@@ -42,6 +42,7 @@ void	ft_init(t_minishell **shell, char **envp)
 	(*shell)->path = NULL;
 	(*shell)->fd_in = 0;
 	(*shell)->fd_out = 0;
+
 }
 
 void	ft_prompt(char **envp)
@@ -49,17 +50,19 @@ void	ft_prompt(char **envp)
 	char			*buf;
 	t_minishell		*shell;
 
-	buf = readline("Minishell $> ");
+	buf = readline("minishell $>");
 	ft_init(&shell, envp);
 	// path = ft_split(getenv("PATH"), ':');
 	while (buf != NULL)
 	{
+		buf = readline("minishell $>");
 		if (*buf)
 		{
 			add_history(buf);
+			// malloc auto mais free ????
 		}
 		// ft_parse(buf, shell);
-		free(buf);
+
 	}
 	// ft_free_shell(shell);
 }

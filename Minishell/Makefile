@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/08 19:06:31 by stgerard          #+#    #+#              #
-#    Updated: 2022/12/16 15:10:41 by stgerard         ###   ########.fr        #
+#    Updated: 2023/01/05 19:00:45 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 RM = rm -f
 
-SRCS = minishell.c utls.c \
+SRCS = minishell.c utils.c \
 ../libft/ft_putstr.c ../libft/ft_split.c ../libft/ft_strlen.c \
 ../libft/ft_strdup.c ../libft/ft_strjoin.c
 
@@ -26,8 +26,8 @@ OBJS = ${SRCS:.c=.o}
 
 all: ${NAME}
 
-${NAME}: ${OBJ}
-			${CC} -lreadline ${OBJ} ${CFLAGS} -o ${NAME}
+${NAME}: ${OBJS}
+			${CC} -lreadline ${OBJS} ${CFLAGS} -o ${NAME}
 
 clean:
 			${RM} ${OBJS}
