@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/08 19:06:31 by stgerard          #+#    #+#              #
-#    Updated: 2023/01/09 15:48:07 by stgerard         ###   ########.fr        #
+#    Updated: 2023/01/09 16:38:05 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 RM = rm -f
 
-SRCS = minishell.c utils.c parse.c \
+SRCS = minishell.c utils.c parse.c signal.c \
 ../libft/ft_putstr.c ../libft/ft_split.c ../libft/ft_strlen.c \
 ../libft/ft_strdup.c ../libft/ft_strjoin.c
 
