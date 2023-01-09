@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2022/12/30 16:27:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:48:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ int		main(int ac, char **av, char **env);
 void	ft_prompt(char **env);
 void	ft_init(t_minishell **shell, char **env);
 void	ft_free_shell(t_minishell *shell);
+
+// parse.c
+
+void	ft_parse(char *buf, t_minishell *shell);
 
 // utils
 

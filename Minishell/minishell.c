@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/05 19:30:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:48:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,9 @@ void	ft_prompt(char **envp)
 {
 	char			*buf;
 	t_minishell		*shell;
+
+	signal(SIGQUIT, &contd);
+	signal(SIGINT, &contc);
 
 	buf = readline("minishell $>");
 	ft_init(&shell, envp);
