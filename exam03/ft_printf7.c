@@ -28,8 +28,8 @@ int ft_d(int nb)
 	}
 	if (nb >= 10)
 	{
-		ft_d(nb / 10);
-		ft_d(nb % 10);
+		i += ft_d(nb / 10);
+		i += ft_d(nb % 10);
 	}
 	if (nb < 10)
 	{
@@ -46,8 +46,8 @@ int ft_x(unsigned int nb)
 
 	if (nb >= 16)
 	{
-		ft_x(nb / 16);
-		ft_x(nb % 16);
+		i += ft_x(nb / 16);
+		i += ft_x(nb % 16);
 	}
 	if (nb < 16)
 	{
@@ -113,6 +113,7 @@ int main()
     printf("printf count = %d\n", c);
     printf("bon %%\n");
     ft_printf(" oebon %%");
-	ft_printf("lol");
+	ft_printf("lol\n");
+	ft_printf("%x\n", 16);
     return (0);
 }
