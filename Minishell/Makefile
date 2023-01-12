@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/08 19:06:31 by stgerard          #+#    #+#              #
-#    Updated: 2023/01/09 16:38:05 by stgerard         ###   ########.fr        #
+#    Updated: 2023/01/12 16:18:14 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ OBJS = ${SRCS:.c=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-			${CC} -lreadline ${OBJS} ${CFLAGS} -o ${NAME}
+			${CC} -lreadline ${OBJS} ${CFLAGS} -o ${NAME} -g3 -fsanitize=address
 
 clean:
 			${RM} ${OBJS}
