@@ -94,26 +94,12 @@ int	ft_printf(const char *format, ...)
 
 int main()
 {
-    int c;
-    int d;
-    char *s = "abc\ndef\nghi";
-    d = -20;
-    ft_printf("ft_printf int = %d\n%%", d);
-    c = ft_printf("%s", s);
-	printf("ft_print1 f: %d\n", c);
-	c = printf("%s", s);
-	printf("print1 f: %d\n", c);
-    ft_printf("ft_printf hexa = %x\n", d);
+    int c = 100;
+    int d = 200;
 
-    c = printf("ft_printf%% int = %d\n", d);
-    printf("printf count = %d\n", c);
-    c = printf("ft_printf string = %s\n", s);
-    printf("printf count = %d\n", c);
-    c = printf("ft_printf hexa = %x\n", d);
-    printf("printf count = %d\n", c);
-    printf("bon %%\n");
-    ft_printf(" oebon %%");
-	ft_printf("lol\n");
-	ft_printf("%x\n", 16);
+	printf("printf %x\n", c);
+	printf("printf %x\n", d);
+	ft_printf("ft printf %x\n", c);
+	ft_printf("ft printf %x\n", d);
     return (0);
 }
