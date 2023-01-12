@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/12 16:19:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/12 17:20:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,11 @@ void	ft_prompt(char **envp)
 	signal(SIGQUIT, sigint_handler);
 	signal(SIGINT, sigint_handler);
 
+	ft_init(&shell, envp);
+	ft_env(shell->env);
 	buf = readline("minishell $>");
 	add_history(buf);
-	ft_init(&shell, envp);
+	// ft_init(&shell, envp);
 	// path = ft_split(getenv("PATH"), ':');
 	while (buf != NULL)
 	{
