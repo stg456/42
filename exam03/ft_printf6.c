@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <limits.h>
 
 int ft_s(char *str)
 {
@@ -22,7 +23,7 @@ int ft_d(int nb)
 
 	if (nb < 0)
 	{
-		write(1, '-', 1);
+		write(1, "-", 1);
 		nb *= -1;
 		i++;
 	}
@@ -90,4 +91,29 @@ int	ft_printf(const char *format, ...)
 	}
 	va_end(arg);
 	return (count);
+}
+
+int main()
+{
+    int c;
+    int d;
+    char *s = "abc def ghi\n";
+    d = -20;
+    ft_printf("ft_printf int = %d\n%%", d);
+    c = ft_printf("%s", s);
+	printf("ft_print1 f: %d\n", c);
+	c = printf("%s", s);
+	printf("print1 f: %d\n", c);
+    ft_printf("ft_printf hexa = %x\n", d);
+
+    c = printf("ft_printf%% int = %d\n", d);
+    printf("printf count = %d\n", c);
+    c = printf("ft_printf string = %s\n", s);
+    printf("printf count = %d\n", c);
+    c = printf("ft_printf hexa = %x\n", d);
+    printf("printf count = %d\n", c);
+    printf("bon %%\n");
+    ft_printf(" oebon %%");
+	ft_printf("lol");
+    return (0);
 }
