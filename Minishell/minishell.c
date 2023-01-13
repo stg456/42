@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/12 17:20:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:45:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,11 @@ void	ft_prompt(char **envp)
 	signal(SIGQUIT, sigint_handler);
 	signal(SIGINT, sigint_handler);
 
-	ft_init(&shell, envp);
-	ft_env(shell->env);
+	// shell->env = ft_split(getenv("PATH"), ':');
+	// ft_env(shell);
 	buf = readline("minishell $>");
 	add_history(buf);
-	// ft_init(&shell, envp);
+	ft_init(&shell, envp);
 	// path = ft_split(getenv("PATH"), ':');
 	while (buf != NULL)
 	{
@@ -65,10 +65,14 @@ void	ft_prompt(char **envp)
 		if (buf)
 		{
 			add_history(buf);
-			// malloc auto mais free ???? non
+		}
+		if (ft_strcmp(buf, "env") == 1)
+		{
+			ft_env(shell);
 		}
 		// free(buf);
 		// ft_parse(buf, shell);
+		// builtins();
 
 	}
 	// ft_free_shell(shell);
@@ -82,7 +86,8 @@ int	main(int ac, char **av, char **envp)
 	// t_minishell		*shell;
 
 	// i = -1;
-	// path = ft_split(getenv("PATH"), ':');
+	// ft_init(&shell, envp);
+	// shell->path = ft_split(getenv("PATH"), ':');
 	// while (path[++i])
 	// 	path[i] = ft_strjoin(path[i], "/");
 	

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/12 17:25:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/13 10:46:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	ft_free_shell(t_minishell *shell);
 // builtins.c
 
 // void		ft_exit(t_minishell *shell);
-void		ft_env(t_minishell *shell, char **env);
+void	ft_env(t_minishell *shell);
 
 // signal.c
 
