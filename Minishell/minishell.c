@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/13 16:20:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/13 16:58:53 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,52 +23,76 @@ void	ft_free_shell(t_minishell *shell)
 	free(shell);
 }
 
-void	ft_init(t_minishell **shell, char **envp)
+t_minishell	*ft_init(void)
 {
-	int		i;
+	t_minishell	*shell;
+	int			i;
+	extern char	**environ;
 
 	i = 0;
-	(*shell) = (t_minishell *)malloc(sizeof(t_minishell));
-	while (envp[i])
+	shell = (t_minishell *)malloc(sizeof(t_minishell));
+	while (environ[i])
 		i++;
-	(*shell)->env = (char **)malloc(sizeof(char *) * i + 1);
+	shell->env = (char **)malloc(sizeof(char *) * i + 1);
+	shell->env[i] = 0;
 	i = 0;
-	while (envp[i])
+	while (environ[i])
 	{
-		(*shell)->env[i] = ft_strdup(envp[i]);
+		shell->env[i] = ft_strdup(environ[i]);
 		i++;
 	}
-	(*shell)->env = NULL;
-	(*shell)->path = NULL;
-	(*shell)->fd_in = 0;
-	(*shell)->fd_out = 0;
-
+	shell->path = ft_split(getenv("PATH"), ':');
+	shell->fd_in = 0;
+	shell->fd_out = 0;
+	return (shell);
 }
 
-void	ft_prompt(char **envp)
+int	check_input(char *str)
 {
+	size_t	i;
+
+	i = 0;
+	if (!str)
+		return (-1);
+	if (str[0] == '\0')
+		return (0);
+	while (str[i])
+	{
+		if (ft_isascii(str[i]) == 1 && ft_isspace(str[i]) == 0)
+			return (1);
+		++i;
+	}
+	return (0);
+}
+
+void	ft_prompt(void)
+{
+	int				first;
 	char			*buf;
 	t_minishell		*shell;
 
 	signal(SIGQUIT, sigint_handler);
 	signal(SIGINT, sigint_handler);
 
-	// shell->env = ft_split(getenv("PATH"), ':');
-	// ft_env(shell);
-	buf = readline("minishell $>");
-	add_history(buf);
-	ft_init(&shell, envp);
-	// path = ft_split(getenv("PATH"), ':');
+	first = 0;
+	buf = malloc(sizeof(char));
+	shell = ft_init();
 	while (buf != NULL)
 	{
+		if (first == 0)
+		{
+			first = 1;
+			free(buf);
+		}
 		buf = readline("minishell $>");
 		if (buf)
 		{
-			add_history(buf);
-		}
-		if (ft_strcmp(buf, "env") == 1)
-		{
-			ft_env(shell);
+			if (check_input(buf) == 1)
+				add_history(buf);
+			if (ft_strcmp(buf, "env") == 1)
+			{
+				ft_env(shell);
+			}
 		}
 		// free(buf);
 		// ft_parse(buf, shell);
@@ -78,7 +102,7 @@ void	ft_prompt(char **envp)
 	// ft_free_shell(shell);
 }
 
-int	main(int ac, char **av, char **envp)
+int	main(int ac, char **av)
 {
 	// int			i;
 	(void)ac;
@@ -90,8 +114,7 @@ int	main(int ac, char **av, char **envp)
 	// shell->path = ft_split(getenv("PATH"), ':');
 	// while (path[++i])
 	// 	path[i] = ft_strjoin(path[i], "/");
-	
-	ft_prompt(envp);
+	ft_prompt();
 	
 	// ft_free_shell(shell);
 }
