@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/13 16:58:53 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/15 17:56:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	ft_free_shell(t_minishell *shell)
 {
-	// t_minishell		*shell;
 	close(shell->fd_in);
 	close(shell->fd_out);
 	// /!\ free un tableau
+
 	free(shell->path);
 	free(shell->env);
 	free(shell);
@@ -71,8 +71,8 @@ void	ft_prompt(void)
 	char			*buf;
 	t_minishell		*shell;
 
-	signal(SIGQUIT, sigint_handler);
-	signal(SIGINT, sigint_handler);
+	// signal(SIGQUIT, sigint_handler);
+	// signal(SIGINT, sigint_handler);
 
 	first = 0;
 	buf = malloc(sizeof(char));
