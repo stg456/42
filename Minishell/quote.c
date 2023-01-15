@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 17:23:03 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/15 17:56:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/15 18:24:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,17 @@ int	ft_in_quote(char *c, int i)
 
 	squote = 0;
 	dquote = 0;
-	if (c[i] == '\'' && !dquote)
+	while ()
 	{
-		squote = 0;
-	}
-	if (c[i] == '\"' && !squote)
-	{
-		dquote = 0;
+		if (c[i] == '\'' && !dquote)
+		{
+			squote = 0;
+		}
+		else if (c[i] == '\"' && !squote)
+		{
+			dquote = 0;
+		}
+		if ()
 	}
 	
 
