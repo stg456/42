@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/13 16:46:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/15 18:05:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,10 @@ void		ft_free_shell(t_minishell *shell);
 
 // void		ft_exit(t_minishell *shell);
 void	ft_env(t_minishell *shell);
+
+// quote.c
+
+int		ft_in_quote(char *c, int i);
 
 // signal.c
 
