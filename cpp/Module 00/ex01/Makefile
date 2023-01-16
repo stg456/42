@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/01/15 15:18:12 by stgerard          #+#    #+#              #
-#    Updated: 2023/01/16 14:13:10 by stgerard         ###   ########.fr        #
+#    Created: 2023/01/16 17:34:50 by stgerard          #+#    #+#              #
+#    Updated: 2023/01/16 18:03:58 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = MyAwesomePhonebook
 
 CC = c++
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRCS = megaphone.cpp
+SRCS = MyAwesomePhoneBook.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
