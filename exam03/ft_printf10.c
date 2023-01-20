@@ -64,3 +64,8 @@ int ft_printf(const char *format, ...)
 	va_end(ptr);
 	return (i);
 }
+
+int main(void)
+{
+	
+}
