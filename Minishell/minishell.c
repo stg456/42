@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/15 17:56:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/23 17:38:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,12 +128,8 @@ int execve(const char *fichier, char *const argv[],
 int dup(int oldfd);
 int dup2(int oldfd, int newfd)
 
+char * getcwd( char *buffer, size_t size ); // pour le pwd
+
 ft_split(PATH, ':');
 
-while (get_next_line(0, &line) > 0)
-{
-  parsing
-  write(0, "~$ ", 3);
-}
 */
-// char *my_getenv(char **env, char *elem/*"PATH"*/)

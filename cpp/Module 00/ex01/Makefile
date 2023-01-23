@@ -6,11 +6,11 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 17:34:50 by stgerard          #+#    #+#              #
-#    Updated: 2023/01/16 18:03:58 by stgerard         ###   ########.fr        #
+#    Updated: 2023/01/23 16:10:59 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = MyAwesomePhonebook
+NAME = Phonebook
 
 CC = c++
 
