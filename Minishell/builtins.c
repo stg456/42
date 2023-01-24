@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:46:01 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/24 16:55:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:31:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 // }
 
-void	ft_env(t_minishell *shell)
+int	ft_env(t_minishell *shell)
 {
 	size_t	i;
 
@@ -27,6 +27,7 @@ void	ft_env(t_minishell *shell)
 		printf("%s\n", shell->env[i]);
 		++i;
 	}
+	return (EXIT_SUCCESS);
 }
 
 int	ft_pwd(t_minishell *shell)
