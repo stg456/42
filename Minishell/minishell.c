@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/24 14:46:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/24 17:05:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ int	check_input(char *str)
 
 void	ft_prompt(void)
 {
-	int				first;
+	int				first; // check 1ere ligne, eviter seg fault
 	char			*buf;
 	t_minishell		*shell;
 
@@ -87,7 +87,7 @@ void	ft_prompt(void)
 		buf = readline("minishell $>");
 		if (buf)
 		{
-			if (check_input(buf) == 1)
+			if (check_input(buf) == 1) // check ascii et ' '
 				add_history(buf);
 			if (ft_strcmp(buf, "env") == 1)
 			{

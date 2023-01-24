@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/24 14:39:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:57:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,22 +48,22 @@ void		ft_free_shell(t_minishell *shell);
 
 // parse.c
 
-// void	ft_parse(char *buf, t_minishell *shell);
+// void		ft_parse(char *buf, t_minishell *shell);
 
 // builtins.c
 
 // void		ft_exit(t_minishell *shell);
-void	ft_env(t_minishell *shell);
-int		ft_pwd(t_minishell *shell);
-int		ft_echo(char *buf);
+void		ft_env(t_minishell *shell);
+int			ft_pwd(t_minishell *shell);
+int			ft_echo(char *buf);
 
 // quote.c
 
-int		ft_in_quote(char *c, int i);
+int			ft_in_quote(char *c, int i);
 
 // signal.c
 
-void	sigint_handler(int sig_num);
+void		sigint_handler(int sig_num);
 
 // utils
 

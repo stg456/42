@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:46:01 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/24 14:46:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:55:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,28 @@ int	ft_pwd(t_minishell *shell)
 
 int		ft_echo(char *buf)
 {
-	printf("%s\n", buf);
+	int		i;
+	char	*str;
+
+	if (buf[i] == NULL)
+		return -1;
+	if (ft_strcmp(buf, "echo ") == 1)
+	{
+		char	*buf2;
+		int		i;
+
+		i = 0;
+
+		printf("%s\n", buf2);
+		return (0);
+	}
+
+	while (buf[i])
+	{
+
+		printf("%s\n", str);
+	}
 	return EXIT_SUCCESS;
 }
+
+// pas bon le echo
