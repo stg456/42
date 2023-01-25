@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/24 17:31:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/25 11:01:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		ft_free_shell(t_minishell *shell);
 // void		ft_exit(t_minishell *shell);
 int			ft_env(t_minishell *shell);
 int			ft_pwd(t_minishell *shell);
-int			ft_echo(char *buf);
+// int			ft_echo(char *buf);
 
 // quote.c
 

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:46:01 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/24 17:31:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/25 12:06:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,32 +46,20 @@ int	ft_pwd(t_minishell *shell)
         }
         exit(EXIT_FAILURE);
     }
-    printf("Current working directory: %s\n", buffer);
+    printf("%s\n", buffer);
     return EXIT_SUCCESS;
 }
 
 int		ft_echo(char *buf)
 {
+	char	*ec = "echo ";
+	char	*ecn = "echo -n";
 	int		i;
-	char	*str;
 
-	if (buf[i] == NULL)
-		return -1;
-	if (ft_strcmp(buf, "echo ") == 1)
+	i = 0;
+	while (buf)
 	{
-		char	*buf2;
-		int		i;
-
-		i = 0;
-
-		printf("%s\n", buf2);
-		return (0);
-	}
-
-	while (buf[i])
-	{
-
-		printf("%s\n", str);
+		if ()
 	}
 	return EXIT_SUCCESS;
 }
