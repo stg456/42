@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/25 15:07:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:36:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,6 @@ void		sigint_handler(int sig_num);
 // utils
 
 int			ft_strcmp(char *s1, char *s2);
-char		*ft_strtrimst(char const *s1, char const *set);
+char		*trimecho(char *s1);
 
 #endif

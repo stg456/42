@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 14:42:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/25 15:18:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:41:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,55 +26,32 @@ int	ft_strcmp(char *s1, char *s2)
 	return (1);
 }
 
-static int	ft_char_in_set(char c, char const *set)
+char	*trimecho(char *s1)
 {
-	size_t	i;
-
-	i = 0;
-	while (set[i])
-	{
-		if (set[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
-char	*ft_strtrimst(char const *s1, char const *set)
-{
+	int		i;
+	int		end;
+	int		start;
+	char	*e = "echo ";
 	char	*str;
-	size_t	i;
-	size_t	start;
-	size_t	end;
 
-	start = 0;
 	if (!s1)
 		return (0);
-	while (s1[start] && ft_char_in_set(s1[start], set))
-		start++;
+	start = 0;
+	i = 0;
+	while (s1[i] == e[i])
+	{
+		i++;
+	}
+	start = i;
 	end = ft_strlen(s1);
-	// while (end > start && ft_char_in_set(s1[end - 1], set))
-	// 	end--;
-	str = (char *) malloc (sizeof (*s1) * (end - start + 1));
+	str = malloc(sizeof(*s1) * (end - start + 1));
+	i = 0;
 	if (!str)
 		return (NULL);
-	i = 0;
 	while (start < end)
 		str[i++] = s1[start++];
 	str[i] = 0;
 	return (str);
 }
 
-char	*trimecho(char *s1)
-{
-	int		i;
-	char	*e = "echo";
-
-	// if (!s1)
-	// 	return (0);
-	i = 0;
-	while (s1[i] == e[i])
-	{
-		i++;
-	}
-}
+// ne free pas

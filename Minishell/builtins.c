@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:46:01 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/25 15:18:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:41:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,9 @@ int		ft_echo(char *buf)
 
 	if (!buf)
 		return (-1);
-	res = ft_strtrimst(buf, "echo ");
+	res = trimecho(buf);
 	printf("%s\n", res);
 	return EXIT_SUCCESS;
 }
 
-// pas bon le echo, le trim est trop radical
-// il aime pas echo echo et e, c, h, o  !!!
+// pas mal mais le trim ne free pas 
