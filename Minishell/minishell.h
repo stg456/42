@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/25 15:36:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/25 17:18:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include <sys/time.h>
 # include <sys/wait.h>
 # include <fcntl.h>
+# include <termios.h>
 # include <curses.h>
 # include <term.h>
 # include <stdint.h>
