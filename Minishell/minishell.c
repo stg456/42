@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/11 14:47:42 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/25 11:01:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/25 14:31:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,9 @@ void	ft_prompt(void)
 			{
 				ft_pwd(shell);
 			}
-			if (ft_strcmp(buf, "echo") == 1)
+			if (ft_strncmp(buf, "echo", 4) == 0)
 			{
-				// ft_echo(buf);
+				ft_echo(buf);
 			}
 		}
 		// free(buf);

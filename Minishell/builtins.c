@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:46:01 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/25 12:06:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:18:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,14 @@ int	ft_pwd(t_minishell *shell)
 
 int		ft_echo(char *buf)
 {
-	char	*ec = "echo ";
-	char	*ecn = "echo -n";
-	int		i;
+	char	*res;
 
-	i = 0;
-	while (buf)
-	{
-		if ()
-	}
+	if (!buf)
+		return (-1);
+	res = ft_strtrimst(buf, "echo ");
+	printf("%s\n", res);
 	return EXIT_SUCCESS;
 }
 
-// pas bon le echo
+// pas bon le echo, le trim est trop radical
+// il aime pas echo echo et e, c, h, o  !!!
