@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:46:01 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/26 11:54:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/26 14:22:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,3 +65,14 @@ int		ft_echo(char *buf)
 
 // pas encore le -n
 // pas mal mais le trim ne free pas 
+
+int		ft_cd(char **path)
+{
+	int		i;
+	char	*tmp; // 
+	char	**env;
+
+	i = 0;
+
+}
+
