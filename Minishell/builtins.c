@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:46:01 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/26 11:40:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/26 11:54:15 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	ft_env(t_minishell *shell)
 	return (EXIT_SUCCESS);
 }
 
+// parait bon
+
 int	ft_pwd(t_minishell *shell)
 {
 	(void)shell;
@@ -49,7 +51,6 @@ int	ft_pwd(t_minishell *shell)
 }
 
 // doit remonter une erreur si il y a un argument en plus !!
-// le pwd doit pouvoir fonctionner avec des ' ' après, c'est pas le cas.
 
 int		ft_echo(char *buf)
 {
