@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:46:01 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/25 17:18:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/26 11:29:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ int	ft_env(t_minishell *shell)
 	return (EXIT_SUCCESS);
 }
 
-int	ft_pwd(t_minishell *shell)
+int	ft_pwd(char *buf)
 {
-	(void)shell;
+	// (void)shell;
 	char buffer[256];
 
-    if (getcwd(buffer, 256) == NULL) 
+    if (getcwd(buffer, 256) == NULL)
 	{
 		perror("Cannot get current working directory path\n");
-        if (errno == ERANGE) 
+        if (errno == ERANGE)
 		{
 			perror("Buffer size is too small.\n");
         }
@@ -50,7 +50,6 @@ int	ft_pwd(t_minishell *shell)
 
 // doit remonter une erreur si il y a un argument en plus !!
 // le pwd doit pouvoir fonctionner avec des ' ' après, c'est pas le cas.
-// peut-être avec strncmp 
 
 int		ft_echo(char *buf)
 {

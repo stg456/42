@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/08 19:08:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/25 17:18:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/01/26 10:53:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@
 
 typedef struct s_minishell
 {
+	int		ac;
+	char	**av;
 	char	**env;
 	char	**path;
 	int		fd_in;
