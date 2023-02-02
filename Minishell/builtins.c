@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 16:46:01 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/26 14:22:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/02/02 17:00:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,3 +76,29 @@ int		ft_cd(char **path)
 
 }
 
+int	ft_cd(t_minishell *shell, t_node *lst)
+{
+	int		i;
+
+	shell->dir = getenv("PWD=");
+	// printf("%s\n", shell->dir);
+	if ((lst->cmd[0] && !lst->cmd[1]))
+	{
+		shell->dir = getenv("HOME=");
+		chdir(shell->dir);
+		// printf("%s\n", shell->dir);
+	}
+	else if (lst->cmd[0] && lst->cmd[1])
+	{
+		i = chdir(lst->cmd[1]);
+		// printf("arg de cd: %s\n", lst->cmd[1]);
+		if (i == 0)
+		{
+			shell->dir = ft_strjoin(lst->cmd[0], " ");
+			shell->dir = ft_strjoin(shell->dir, lst->cmd[1]);
+		}
+		chdir(shell->dir);
+		// printf("%s\n", shell->dir);
+	}
+	return 0;
+}
