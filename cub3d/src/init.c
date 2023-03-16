@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:08:08 by stgerard          #+#    #+#             */
-/*   Updated: 2023/03/16 17:12:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/03/16 17:50:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,4 @@ char	**init_map(char **argv, t_env *e)
 	close(fd);
 	return (e->map);
 }
+

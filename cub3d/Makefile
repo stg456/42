@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/19 17:21:41 by stgerard          #+#    #+#              #
-#    Updated: 2023/03/16 16:15:42 by stgerard         ###   ########.fr        #
+#    Updated: 2023/03/16 17:50:38 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-SRC = ./src/cub3d.c ./src/init.c ./src/check_map.c ./src/img.c \
+SRC = ./src/cub3d.c ./src/init.c \
+./src/check_map.c ./src/img.c \
 ./src/move.c ./src/move2.c ./src/utils_img.c \
 ./libft/get_next_line.c ./libft/ft_strchr.c ./libft/ft_strjoin.c \
 ./libft/ft_strnstr.c ./libft/ft_calloc.c ./libft/ft_memcpy.c \
