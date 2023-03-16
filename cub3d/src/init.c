@@ -1,46 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/16 15:44:48 by stgerard          #+#    #+#             */
+/*   Created: 2023/03/16 17:08:08 by stgerard          #+#    #+#             */
 /*   Updated: 2023/03/16 17:12:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "../cub3d.h"
 
-# include <mlx.h>
-# include <math.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include <fcntl.h>
-# include <string.h>
-# include <errno.h>
-# include <stdarg.h>
-# include <sys/types.h>
-# include "./libft/libft.h"
-
-# define T_S 63
-# define ESC 53
-# define W 13
-# define A 0
-# define S 1
-# define D 2
-
-typedef struct s_env
+char	**init_map(char **argv, t_env *e)
 {
-	void	*mlx;
-	char	**map;
-	void	*win;
-	size_t	size_x;
-	size_t	size_y;
-}				t_env;
+	int	fd;
 
-// main.c
-
-#endif
+	e->mlx = NULL;
+	e->map = NULL;
+	if (ft_strnstr(argv[1], ".cub", ft_strlen(argv[1])) == NULL)
+		ft_error("\x1B[31mError: map has to be .cub\n");
+	fd = open(argv[1], O_RDONLY);
+	if (fd < 0)
+	{
+		close(fd);
+		ft_error("\x1B[31mInvalid map\n");
+	}
+	e->map = map_read(argv[1]);
+	check(e);
+	close(fd);
+	return (e->map);
+}
