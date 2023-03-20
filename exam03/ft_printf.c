@@ -83,8 +83,8 @@ int	ft_printf(const char *format, ...)
 int main()
 {
 	char *str = NULL;
-	long long nb = -3372562354384384;
-	unsigned int hex = 10000;
+	long long nb = -33725623544384;
+	unsigned int hex = 100;
 
 	printf("str: %s, int:%lld, hex:%x\n", str, nb, hex);
 	ft_printf("str: %s, int:%d, hex:%x\n", str, nb, hex);
