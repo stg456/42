@@ -14,7 +14,7 @@ int	put_s(char *str)
 	return (i);
 }
 
-int	put_d(int nb)
+int	put_d(long long nb)
 {
 	int i = 0;
 	char *s = "0123456789";
@@ -65,7 +65,7 @@ int	ft_printf(const char *format, ...)
 			if (format[i] == 's')
 				res += put_s(va_arg(ptr, char *));
 			else if (format[i] == 'd')
-				res += put_d(va_arg(ptr, long long int));
+				res += put_d(va_arg(ptr, long long));
 			else if (format[i] == 'x')
 				res += put_x(va_arg(ptr, unsigned int));
 		}
@@ -81,11 +81,11 @@ int	ft_printf(const char *format, ...)
 
 int main()
 {
-	char *str = "";
-	int nb = -3372562;
+	char *str = NULL;
+	long long nb = -3372562354384384;
 	unsigned int hex = 10000;
 
-	printf("str: %s, int:%d, hex:%x\n", str, nb, hex);
+	printf("str: %s, int:%lld, hex:%x\n", str, nb, hex);
 	ft_printf("str: %s, int:%d, hex:%x\n", str, nb, hex);
 	return (0);
 }
