@@ -15,12 +15,12 @@ char *get_next_line(int fd)
 	while ((rd = read(fd, &c, BUFFER_SIZE - BUFFER_SIZE + 1)) > 0)
 	{
 		buf[i++] = c;
-		if (c = '\n')
+		if (c == '\n')
 			break ;
 	}
 	if (rd == -1 || (!buf[i - 1] && !rd))
 	{
-		free (buf);
+		free(buf);
 		return (NULL);
 	}
 	buf[i] = '\0';
