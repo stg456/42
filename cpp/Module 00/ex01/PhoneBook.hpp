@@ -6,12 +6,12 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:14:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/17 14:55:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:21:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 #include <iostream>
 #include <cstring>
@@ -37,7 +37,7 @@ class	Contact
 
 // }
 
-// MyAwesomePhonebook.cpp
+// PhoneBook.cpp
 
 int		main(void);
 
