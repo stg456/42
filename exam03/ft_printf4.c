@@ -1,7 +1,7 @@
+#include <stdarg.h>
+#include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
-#include <stdarg.h>
 #include <limits.h>
 
 int ft_s(char *str)
@@ -27,11 +27,10 @@ int ft_d(int nb)
 	}
 	if (nb < 0)
 	{
-		write(1, "-", 1);
+		i += write(1, "-", 1);
 		nb = -nb;
-		i++;
 	}
-	if (nb >= 10)
+	if (nb > 10)
 	{
 		i += ft_d(nb / 10);
 		i += ft_d(nb % 10);
@@ -62,9 +61,9 @@ int ft_x(unsigned int nb)
 
 int ft_printf(const char *format, ...)
 {
-	va_list ptr;
 	int i = 0;
 	int res = 0;
+	va_list ptr;
 
 	va_start(ptr, format);
 	while (format[i])
@@ -75,7 +74,7 @@ int ft_printf(const char *format, ...)
 			if (format[i] == 's')
 				res += ft_s(va_arg(ptr, char *));
 			else if (format[i] == 'd')
-				res += ft_d(va_arg(ptr, long));
+				res += ft_d(va_arg(ptr, int));
 			else if (format[i] == 'x')
 				res += ft_x(va_arg(ptr, unsigned int));
 		}
@@ -132,5 +131,3 @@ int main()
 
 	return (0);
 }
-
-// parait bon
