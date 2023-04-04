@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:04:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/04 10:55:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:29:37 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@ void	PhoneBook::add()
 {
 	std::string info[5];
 
+
 	std::cout << "Fisrt Name:" ;
 	std::getline(std::cin, info[0]);
-	if (empty)
+	if (info[0].empty())
 	{
-	
+		std::cout << "The fields of a registered contact cannot be empty!" << std::endl;
+        return ;
 	}
 	std::cout << "Last Name:" ;
 	std::getline(std::cin, info[1]);
@@ -50,5 +52,5 @@ void	PhoneBook::add()
 
 void	PhoneBook::search()
 {
-
+	std::cout << "enter the contact number you want:" ;
 }

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:14:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/04 10:55:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:29:37 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHONEBOOK_HPP
 
 #include <iostream>
+#include <iomanip>
 #include <string>
 #include <locale>
 #include <array>
@@ -42,7 +43,16 @@ class	Contact
 
 	public:
 	Contact();
-	
+	void            setFirstName(std::string firstName);
+    void            setLastName(std::string lastName);
+    void            setPhoneNumber(std::string phoneNumber);
+    void            setNickName(std::string nickName);
+    void            setDarkestSecret(std::string darkestSecret);
+    std::string     getFirstName();
+    std::string     getLastName();
+    std::string     getPhoneNumber();
+    std::string     getDarkestSecret();
+    std::string     getNickName();
 };
 
 
