@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/16 17:34:50 by stgerard          #+#    #+#              #
-#    Updated: 2023/04/04 11:37:50 by stgerard         ###   ########.fr        #
+#    Updated: 2023/04/04 16:27:40 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRCS = main.cpp PhoneBook.cpp \
+SRCS = main.cpp PhoneBook.cpp Contact.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 

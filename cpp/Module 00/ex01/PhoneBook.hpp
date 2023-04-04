@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:14:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/04 14:29:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:27:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class	PhoneBook
 {
 	private:
 	std::string rep[8];
-	int			lenC;
-	int			numC;
+	int			_lenC;
+	int			_numC;
 
 	public:
 	PhoneBook();
@@ -39,7 +39,7 @@ class	Contact
 	std::string LastName;
 	std::string NickName;
 	std::string PhoneNumber;
-	std::string DartkestSecret;
+	std::string DarkestSecret;
 
 	public:
 	Contact();
