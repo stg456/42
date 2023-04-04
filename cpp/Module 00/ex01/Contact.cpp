@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 16:06:16 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/04 16:27:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:38:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,28 @@
 		DarkestSecret = darkestSecret;
 	}
 
-    std::string     getFirstName();
-    std::string     getLastName();
-    std::string     getPhoneNumber();
-    std::string     getDarkestSecret();
-    std::string     getNickName();
+    std::string    Contact::getFirstName()
+    {
+        return (FirstName);
+    }
+
+    std::string     Contact::getLastName()
+	{
+		return (LastName);
+	}
+
+    std::string     Contact::getPhoneNumber()
+	{
+		return (PhoneNumber);
+	}
+
+    std::string     Contact::getDarkestSecret()
+	{
+		return (DarkestSecret);
+	}
+
+    std::string     Contact::getNickName()
+	{
+		return (NickName);
+	}
+	
