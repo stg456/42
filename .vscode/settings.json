@@ -62,6 +62,7 @@
 		"unordered_map": "cpp",
 		"utility": "cpp",
 		"vector": "cpp",
-		"limits.h": "c"
+		"limits.h": "c",
+		"iomanip": "cpp"
 	}
 }

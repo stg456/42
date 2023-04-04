@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:04:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/04 14:29:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/04 14:40:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,27 +26,31 @@ void	PhoneBook::add()
 	}
 	std::cout << "Last Name:" ;
 	std::getline(std::cin, info[1]);
-	if (empty)
+	if (info[1].empty())
 	{
-	
+		std::cout << "The fields of a registered contact cannot be empty!" << std::endl;
+        return ;
 	}
 	std::cout << "Nick Name:" ;
 	std::getline(std::cin, info[2]);
-	if (empty)
+	if (info[2].empty())
 	{
-	
+		std::cout << "The fields of a registered contact cannot be empty!" << std::endl;
+        return ;
 	}
 	std::cout << "Phone Number:" ;
 	std::getline(std::cin, info[3]);
-	if (empty)
+	if (info[3].empty())
 	{
-	
+		std::cout << "The fields of a registered contact cannot be empty!" << std::endl;
+        return ;
 	}
 	std::cout << "Dartkest Secret:" ;
 	std::getline(std::cin, info[4]);
-	if (empty)
+	if (info[4].empty())
 	{
-	
+		std::cout << "The fields of a registered contact cannot be empty!" << std::endl;
+        return ;
 	}
 }
 
