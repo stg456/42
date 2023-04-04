@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:14:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/03/25 14:56:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/04 10:55:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PHONEBOOK_HPP
 
 #include <iostream>
-#include <cstring>
+#include <string>
 #include <locale>
 #include <array>
 
