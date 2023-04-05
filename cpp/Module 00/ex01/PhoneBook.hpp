@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:14:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/04 16:27:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/05 18:35:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,42 +18,21 @@
 #include <string>
 #include <locale>
 #include <array>
+#include "Contact.hpp"
 
 class	PhoneBook
 {
 	private:
-	std::string rep[8];
+	Contact 	rep[8];
 	int			_lenC;
 	int			_numC;
+	int			_old;
 
 	public:
 	PhoneBook();
 	void	add();
 	void	search();
+	void printContact(int numb);
 };
-
-class	Contact
-{
-	private:
-	std::string FirstName;
-	std::string LastName;
-	std::string NickName;
-	std::string PhoneNumber;
-	std::string DarkestSecret;
-
-	public:
-	Contact();
-	void            setFirstName(std::string firstName);
-    void            setLastName(std::string lastName);
-    void            setPhoneNumber(std::string phoneNumber);
-    void            setNickName(std::string nickName);
-    void            setDarkestSecret(std::string darkestSecret);
-    std::string     getFirstName();
-    std::string     getLastName();
-    std::string     getPhoneNumber();
-    std::string     getDarkestSecret();
-    std::string     getNickName();
-};
-
 
 #endif
