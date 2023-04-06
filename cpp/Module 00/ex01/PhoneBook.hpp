@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:14:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/05 18:35:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:57:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ class	PhoneBook
 	PhoneBook();
 	void	add();
 	void	search();
-	void printContact(int numb);
+	void	printContact(int numb);
+	void	printList(int numb);
 };
 
 #endif
