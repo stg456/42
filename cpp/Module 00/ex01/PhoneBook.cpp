@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:04:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/07 14:12:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/07 15:55:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,43 +58,40 @@ void PhoneBook::printContact(int numb)
 	numb -= 1;
 	std::cout << this->rep[numb].getFirstName() << std::endl;
 	std::cout << this->rep[numb].getLastName() << std::endl;
-	std::cout << this->rep[numb].getPhoneNumber() << std::endl;
 	std::cout << this->rep[numb].getNickName() << std::endl;
+	std::cout << this->rep[numb].getPhoneNumber() << std::endl;
 	std::cout << this->rep[numb].getDarkestSecret() << std::endl;
 }
 
 std::string PhoneBook::ft_cut(std::string str)
 {
 	if (str.length() < 10)
-	{
-		int a = 10 - str.length();
-		std::string txt = "          ";
-		txt.insert(a, str);
-		// std::cout << txt;
-		return (txt);
-	}
+		return (str);
 	else
 	{
 		std::string txt = str.substr(0, 9);
 		txt.insert(9, ".");
-		// std::cout << txt;
 		return (txt);
 	}
 }
 
 void	PhoneBook::printList(std::string str)
 {
-	int space = 0;
-	// _lenC
-	// _numC
+	// std::string FirstName = this->rep[_numC - 1].getFirstName();
+	// std::string LastName = this->rep[_numC - 1].getLastName();
+	// std::string NickName = this->rep[_numC - 1].getNickName();
+	PhoneBook phonebook;
+
 	std::cout << "|     index|First Name| Last Name| Nick Name|" << std::endl;
 	std::cout << "|___________________________________________|" << std::endl;
-	std::cout << "|" << this->rep[_numC] << "|" << this->rep[numb].getFirstName() << "|" << this->rep[numb].getLastName() << "|" << this->rep[numb].getNickName() << "|" << std::endl;
-	for (_numC = 0; _numC <= 8; _numC++)
+	for (_numC = 1; _numC <= 8; _numC++)
 	{
-
+		std::string FirstName = this->rep[_numC - 1].getFirstName();
+		std::string LastName = this->rep[_numC - 1].getLastName();
+		std::string NickName = this->rep[_numC - 1].getNickName();
+		std::cout << "|" << std::setw(10) << _numC << "|" << std::setw(10) << phonebook.ft_cut(FirstName) << "|" << std::setw(10) << phonebook.ft_cut(LastName) << "|" << std::setw(10) << phonebook.ft_cut(NickName) << "|" << std::endl;
 	}
-	
+	std::cout << "|___________________________________________|" << std::endl;
 }
 
 void	PhoneBook::search()
@@ -102,7 +99,7 @@ void	PhoneBook::search()
 	int checker;
 	std::string ct_numb;
 	this->ft_cut(ct_numb);
-	// this->printlist();
+	this->printList(ct_numb);
 	std::cout << "enter the contact number you want:";
 	std::getline(std::cin, ct_numb);
 	checker = stoi(ct_numb);
