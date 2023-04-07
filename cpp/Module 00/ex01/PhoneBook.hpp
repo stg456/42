@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:14:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/06 15:57:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/07 12:32:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@ class	PhoneBook
 
 	public:
 	PhoneBook();
-	void	add();
-	void	search();
-	void	printContact(int numb);
-	void	printList(int numb);
+	void		add();
+	void		search();
+	void		printContact(int numb);
+	void		printList(std::string str);
+	std::string ft_cut(std::string str);
 };
 
 #endif

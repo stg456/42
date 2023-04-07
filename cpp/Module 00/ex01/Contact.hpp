@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 16:56:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/06 16:56:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:58:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ class	Contact
     std::string     getPhoneNumber();
     std::string     getDarkestSecret();
     std::string     getNickName();
-	~Contact();
 };
 
 #endif

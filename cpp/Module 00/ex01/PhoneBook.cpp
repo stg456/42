@@ -6,15 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:04:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/06 15:57:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/07 12:32:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() : _lenC(0), _numC(0), _old(0) {}
-
-PhoneBook::~PhoneBook() {}
 
 void	PhoneBook::add()
 {
@@ -65,17 +63,34 @@ void PhoneBook::printContact(int numb)
 	std::cout << this->rep[numb].getDarkestSecret() << std::endl;
 }
 
-void	PhoneBook::printList(int numb)
+std::string PhoneBook::ft_cut(std::string str)
+{
+	if (str.length() < 10)
+	{
+		int a = 10 - str.length();
+		std::string txt = "          ";
+		// std::string txt = str.substr(0, a);
+		txt.insert(a, str);
+		return (txt);
+	}
+	else
+	{
+		std::string txt = str.substr(0, 9);
+		txt.insert(9, ".");
+		return (txt);
+	}
+}
+
+void	PhoneBook::printList(std::string str)
 {
 	int space = 0;
-	_lenC
-	_numC
+	// _lenC
+	// _numC
 	std::cout << "|     index|First Name| Last Name| Nick Name|" << std::endl;
 	std::cout << "|___________________________________________|" << std::endl;
 	for (_numC = 0; _numC <= 8; _numC++)
 	{
-		space = 10 - std::strlen(_numC(0));
-		std::cout << "|" "|" << std::endl;
+
 	}
 	
 }
@@ -84,7 +99,7 @@ void	PhoneBook::search()
 {
 	int checker;
 	std::string ct_numb;
-	this->printlist();
+	// this->printlist();
 	std::cout << "enter the contact number you want:";
 	std::getline(std::cin, ct_numb);
 	checker = stoi(ct_numb);
