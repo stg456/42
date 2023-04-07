@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:04:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/07 12:32:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:12:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,15 @@ std::string PhoneBook::ft_cut(std::string str)
 	{
 		int a = 10 - str.length();
 		std::string txt = "          ";
-		// std::string txt = str.substr(0, a);
 		txt.insert(a, str);
+		// std::cout << txt;
 		return (txt);
 	}
 	else
 	{
 		std::string txt = str.substr(0, 9);
 		txt.insert(9, ".");
+		// std::cout << txt;
 		return (txt);
 	}
 }
@@ -88,6 +89,7 @@ void	PhoneBook::printList(std::string str)
 	// _numC
 	std::cout << "|     index|First Name| Last Name| Nick Name|" << std::endl;
 	std::cout << "|___________________________________________|" << std::endl;
+	std::cout << "|" << this->rep[_numC] << "|" << this->rep[numb].getFirstName() << "|" << this->rep[numb].getLastName() << "|" << this->rep[numb].getNickName() << "|" << std::endl;
 	for (_numC = 0; _numC <= 8; _numC++)
 	{
 
@@ -99,6 +101,7 @@ void	PhoneBook::search()
 {
 	int checker;
 	std::string ct_numb;
+	this->ft_cut(ct_numb);
 	// this->printlist();
 	std::cout << "enter the contact number you want:";
 	std::getline(std::cin, ct_numb);
