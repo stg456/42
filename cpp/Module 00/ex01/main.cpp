@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 13:12:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/05 17:56:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:30:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(void)
 	std::string	cmd;
 	PhoneBook	phoneBook;
 
+	std::cout << "enter ADD or SEARCH or EXIT" << std::endl;
 	while (42)
 	{
 		std::getline(std::cin, cmd);

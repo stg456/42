@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:04:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/07 16:07:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:36:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,15 +95,11 @@ void	PhoneBook::search()
 {
 	int checker;
 	std::string ct_numb;
-	this->ft_cut(ct_numb);
 	this->printList(ct_numb);
-	std::cout << "enter the contact number you want:";
-	std::getline(std::cin, ct_numb);
-	checker = stoi(ct_numb);
-	if (checker < 1 || checker > 8)
+	while (ct_numb.empty() || (ct_numb[0] < '1' || ct_numb[0] > '8') || (ct_numb.length() > 1))
 	{
-		std::cout << "invalid number of contact" << std::endl;
-		return ;
+		std::cout << "enter the contact number you want:";
+		getline(std::cin, ct_numb);
 	}
-	this->printContact(std::stoi(ct_numb));
+	printContact(std::stoi(ct_numb));
 }

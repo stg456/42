@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:39:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/07 16:56:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/07 17:19:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,11 @@ private:
 	std::string	name;
 
 public:
-	Zombie(/* args */);
+	Zombie();
 	void	announce(void);
 
 	~Zombie();
 };
-
-
-
-Zombie::Zombie(/* args */)
-{
-}
-
-Zombie::~Zombie()
-{
-}
 
 
 #endif
