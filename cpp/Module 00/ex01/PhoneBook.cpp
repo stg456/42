@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:04:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/07 15:55:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/07 16:07:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook() : _lenC(0), _numC(0), _old(0) {}
+PhoneBook::PhoneBook() : _numC(0), _old(0) {}
 
 void	PhoneBook::add()
 {
@@ -56,11 +56,11 @@ void	PhoneBook::add()
 void PhoneBook::printContact(int numb)
 {
 	numb -= 1;
-	std::cout << this->rep[numb].getFirstName() << std::endl;
-	std::cout << this->rep[numb].getLastName() << std::endl;
-	std::cout << this->rep[numb].getNickName() << std::endl;
-	std::cout << this->rep[numb].getPhoneNumber() << std::endl;
-	std::cout << this->rep[numb].getDarkestSecret() << std::endl;
+	std::cout << "First Name: " << this->rep[numb].getFirstName() << std::endl;
+	std::cout << "Last Name: " << this->rep[numb].getLastName() << std::endl;
+	std::cout << "Nic kName: " << this->rep[numb].getNickName() << std::endl;
+	std::cout << "Phone Number: " << this->rep[numb].getPhoneNumber() << std::endl;
+	std::cout << "Darkest Secret: " << this->rep[numb].getDarkestSecret() << std::endl;
 }
 
 std::string PhoneBook::ft_cut(std::string str)
@@ -77,9 +77,6 @@ std::string PhoneBook::ft_cut(std::string str)
 
 void	PhoneBook::printList(std::string str)
 {
-	// std::string FirstName = this->rep[_numC - 1].getFirstName();
-	// std::string LastName = this->rep[_numC - 1].getLastName();
-	// std::string NickName = this->rep[_numC - 1].getNickName();
 	PhoneBook phonebook;
 
 	std::cout << "|     index|First Name| Last Name| Nick Name|" << std::endl;

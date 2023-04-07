@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:14:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/07 12:32:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/07 16:00:34 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class	PhoneBook
 {
 	private:
 	Contact 	rep[8];
-	int			_lenC;
 	int			_numC;
 	int			_old;
 
