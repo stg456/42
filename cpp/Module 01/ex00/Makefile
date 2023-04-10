@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 16:37:16 by stgerard          #+#    #+#              #
-#    Updated: 2023/04/07 16:56:23 by stgerard         ###   ########.fr        #
+#    Updated: 2023/04/10 13:46:04 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRCS = main.cpp Zombie.cpp \
+SRCS = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
