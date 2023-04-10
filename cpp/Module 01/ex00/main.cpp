@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:36:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/07 19:42:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/10 13:08:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int main()
 {
-	Zombie	Zombie;
+	Zombie	zombie;
 	
-
+	randomChump("Hola");
 	return (0);
 }

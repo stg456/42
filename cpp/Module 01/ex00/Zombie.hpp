@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:39:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/07 17:19:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/10 13:08:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ private:
 	std::string	name;
 
 public:
-	Zombie();
-	void	announce(void);
+	zombie();
+	~zombie();
 
-	~Zombie();
+	void	announce(void);
 };
 
+void	randomChump(std::string name);
 
 #endif
