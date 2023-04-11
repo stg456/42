@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:36:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/11 13:22:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/11 13:32:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	Zombie	*zombie;
 	
-	zombie = zombiehorde(6, "Salut !");
+	zombie = zombiehorde(6, "Bob");
 
 	return (0);
 }

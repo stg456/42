@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:39:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/11 13:22:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/11 13:32:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ public:
 	Zombie(std::string name);
 	~Zombie();
 
-	void		announce(void);
-	std::string nom(void);
+	void	announce(void);
+	void	zombieName(std::string name);
 };
 
 Zombie* zombieHorde(int N, std::string name);

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:40:24 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/11 13:22:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/11 13:32:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,7 @@ void	Zombie::announce(void)
 	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-std::string nom(void)
+void	Zombie::zombieName(std::string name)
 {
-	this->nom = name + i;
-	return (nom);
+	this->name = name;
 }
