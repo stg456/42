@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:39:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/11 13:32:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:42:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,12 @@ private:
 	std::string	name;
 
 public:
+	Zombie();
 	Zombie(std::string name);
 	~Zombie();
 
 	void	announce(void);
-	void	zombieName(std::string name);
+	void	zombieName(std::string name, int i);
 };
 
 Zombie* zombieHorde(int N, std::string name);
