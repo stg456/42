@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:36:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/10 15:32:53 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/11 13:22:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,9 @@
 
 int main()
 {
-	Zombie	zombie("Bob");
+	Zombie	*zombie;
 	
-	randomChump("Jo");
-	zombie.announce();
-	Zombie *a = newZombie("charles");
-	a->announce();
-
-	delete a;
+	zombie = zombiehorde(6, "Salut !");
 
 	return (0);
 }
