@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:04:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/11 15:30:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:02:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,10 +83,10 @@ void	PhoneBook::printList(std::string str)
 	std::cout << "|___________________________________________|" << std::endl;
 	for (int i = 1; i <= 8; i++)
 	{
-		std::string FirstName = this->rep[_numC - 1].getFirstName();
-		std::string LastName = this->rep[_numC - 1].getLastName();
-		std::string NickName = this->rep[_numC - 1].getNickName();
-		std::cout << "|" << std::setw(10) << _numC << "|" << std::setw(10) << phonebook.ft_cut(FirstName) << "|" << std::setw(10) << phonebook.ft_cut(LastName) << "|" << std::setw(10) << phonebook.ft_cut(NickName) << "|" << std::endl;
+		std::string FirstName = this->rep[i - 1].getFirstName();
+		std::string LastName = this->rep[i - 1].getLastName();
+		std::string NickName = this->rep[i - 1].getNickName();
+		std::cout << "|" << std::setw(10) << i << "|" << std::setw(10) << phonebook.ft_cut(FirstName) << "|" << std::setw(10) << phonebook.ft_cut(LastName) << "|" << std::setw(10) << phonebook.ft_cut(NickName) << "|" << std::endl;
 	}
 	std::cout << "|___________________________________________|" << std::endl;
 }
