@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 18:04:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/07 18:36:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/11 15:30:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	PhoneBook::printList(std::string str)
 
 	std::cout << "|     index|First Name| Last Name| Nick Name|" << std::endl;
 	std::cout << "|___________________________________________|" << std::endl;
-	for (_numC = 1; _numC <= 8; _numC++)
+	for (int i = 1; i <= 8; i++)
 	{
 		std::string FirstName = this->rep[_numC - 1].getFirstName();
 		std::string LastName = this->rep[_numC - 1].getLastName();
