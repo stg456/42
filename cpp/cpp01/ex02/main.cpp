@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:36:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/12 18:23:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:40:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main()
 	std::cout << "adresse stockée dans stringREF: " << &stringREF << std::endl;
 
 	std::cout << "La valeur de la string: " << str << std::endl;
-	std::cout << "La valeur pointée par stringPTR: " << stringPTR << std::endl;
+	std::cout << "La valeur pointée par stringPTR: " << *stringPTR << std::endl;
 	std::cout << "La valeur pointée par stringREF: " << stringREF << std::endl;
 
 
