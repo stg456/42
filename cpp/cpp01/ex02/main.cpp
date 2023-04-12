@@ -6,11 +6,12 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:36:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/12 16:34:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/12 16:46:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+// #include "Zombie.hpp"
+#include <iostream>
 
 int main()
 {
@@ -28,11 +29,11 @@ int main()
 // • La valeur pointée par stringPTR.
 // • La valeur pointée par stringREF.
 
-	std::cout << "adresse de la string en mémoire: " << &str << endl;
-	stringPTR = &str;
-	std::cout << "adresse stockée dans stringPTR: " << stringPTR << endl;
+	std::cout << "adresse de la string en mémoire: " << &str << std::endl;
+	stringPTR == &str;
+	std::cout << "adresse stockée dans stringPTR: " << stringPTR << std::endl;
 	stringREF = *str;
-	std::cout << "adresse stockée dans stringREF: " << stringREF << endl;
+	std::cout << "adresse stockée dans stringREF: " << stringREF << std::endl;
 
 
 	return (0);
