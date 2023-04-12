@@ -6,16 +6,14 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:36:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/12 16:46:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/12 17:12:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "Zombie.hpp"
 #include <iostream>
 
 int main()
 {
-	// Zombie		*zombie;
 	std::string	str = "HI THIS IS BRAIN";
 	std::string stringPTR;
 	std::string stringREF;
@@ -34,6 +32,10 @@ int main()
 	std::cout << "adresse stockée dans stringPTR: " << stringPTR << std::endl;
 	stringREF = *str;
 	std::cout << "adresse stockée dans stringREF: " << stringREF << std::endl;
+
+	std::cout << "La valeur de la string: " << str << std::endl;
+	std::cout << "La valeur pointée par stringPTR: " << stringPTR << std::endl;
+	std::cout << "La valeur pointée par stringREF: " << stringREF << std::endl;
 
 
 	return (0);
