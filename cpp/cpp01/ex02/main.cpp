@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 16:36:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/12 18:00:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:23:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int main()
 {
 	std::string	str = "HI THIS IS BRAIN";
-	std::string stringPTR;
-	std::string stringREF;
+	std::string *stringPTR = &str;
+	std::string& stringREF = str;
 	
 // 	Votre programme doit afficher :
 // • L’adresse de la string en mémoire.
@@ -28,10 +28,8 @@ int main()
 // • La valeur pointée par stringREF.
 
 	std::cout << "adresse de la string en mémoire: " << &str << std::endl;
-	stringPTR = &str;
 	std::cout << "adresse stockée dans stringPTR: " << stringPTR << std::endl;
-	stringREF = *str;
-	std::cout << "adresse stockée dans stringREF: " << stringREF << std::endl;
+	std::cout << "adresse stockée dans stringREF: " << &stringREF << std::endl;
 
 	std::cout << "La valeur de la string: " << str << std::endl;
 	std::cout << "La valeur pointée par stringPTR: " << stringPTR << std::endl;
