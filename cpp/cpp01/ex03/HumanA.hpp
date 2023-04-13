@@ -6,12 +6,12 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:44:16 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/13 12:37:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/13 15:43:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HUMANA_HPP
-# include HUMANA_HPP
+# define HUMANA_HPP
 
 #include <iostream>
 #include <string>
@@ -21,10 +21,10 @@
 class HumanA
 {
 public:
-	HumanA(std string name, std::string weapon);
+	HumanA(std::string name, Weapon weapon);
 	~HumanA();
 
-void	attack();
+	void	attack();
 
 private:
 	std::string	_name;
