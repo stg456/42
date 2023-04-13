@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:44:16 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/12 19:20:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/13 12:37:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 # include HUMANA_HPP
 
 #include <iostream>
-#include <iomanip>
 #include <string>
-#include <array>
+#include "Weapon.hpp"
+
 
 class HumanA
 {
-private:
-
-
 public:
-	HumanA();
+	HumanA(std string name, std::string weapon);
 	~HumanA();
 
+void	attack();
+
+private:
+	std::string	_name;
+	Weapon		_weapon;
 };
 
 #endif

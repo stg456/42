@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:44:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/12 19:20:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/13 12:37:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,17 @@
 
 class HumanB
 {
-private:
-
-
 public:
-	HumanB();
+	HumanB(std::string name);
 	~HumanB();
+
+void	attack();
+
+private:
+	std::string nameB;
+	std::string weaponB;
+
+
 
 };
 

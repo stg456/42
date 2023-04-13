@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:43:52 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/12 19:03:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/13 12:16:12 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,15 @@
 class Weapon
 {
 private:
-	std::string	type;
-
-std::string& getType();
-std::string type setType();
+	std::string	_type;
 
 public:
+	Weapon(std::string type);
+	~Weapon();
+
+std::string	getType();
+void		setType(std::string type);
 
 };
+
 #endif
