@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/14 14:39:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/14 15:23:34 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,17 @@
 
 int	main(int ac, char **av)
 {
-	std::string	fichier;
-	std::string	s1 = "toto";
-	std::string	s2 = "titi";
+	std::string	str;
+	std::string	buf;
+	std::string	s1 = av[2];
+	std::string	s2 = av[3];
+	std::ifstream myfile (av[1]);
+	if (myfile.open())
+	{
+		
+	}
+
+
 
 	std::ofstream f("fichier.txt");
 	if (!f.is_open())
