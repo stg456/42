@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ofstream.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
+/*   Created: 2023/04/14 13:42:48 by stgerard          #+#    #+#             */
 /*   Updated: 2023/04/14 13:57:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include "ifstream.hpp"
-#include "ofstream.hpp"
+#ifndef OFSTREAM_HPP
+# define OFSTREAM_HPP
 
-int	main(int ac, char **av)
+Class ecrit
 {
-	std::string	fichier;
-	std::string	s1;
-	std::string	s2;
+pulbic:
 
-	ifstream f ("toto.txt");
+private:
+	ofstream f(toto.txt);
+	~ofstream f();
 
+};
 
-	return 0;	
-
-}
+#endif

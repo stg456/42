@@ -5,10 +5,11 @@
 #                                                     +:+ +:+         +:+      #
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/07 16:37:16 by stgerard          #+#    #+#              #
-#    Updated: 2023/04/13 16:59:08 by stgerard         ###   ########.fr        #
+#    Created: 2023/04/14 13:41:21 by stgerard          #+#    #+#              #
+#    Updated: 2023/04/14 13:57:45 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
 
 NAME = BraiiiiiiinnnzzzZ
 
@@ -18,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRCS = main.cpp \
+SRCS = main.cpp ifstream.cpp ofstream.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
