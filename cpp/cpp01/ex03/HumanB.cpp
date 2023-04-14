@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:45:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/13 17:18:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/14 11:26:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,8 @@ void	setWeapon(Weapon weapon)
 
 void	attack() 
 {
-	std::cout << this->_name << " attacks with their " << this->_weapon->Weapon::getType() << std::endl;
+	if (_weapon)
+		std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
+	else
+		std::cout << this->_name << " attacks with their " << std::endl;
 }
