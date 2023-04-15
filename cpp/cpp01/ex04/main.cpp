@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/15 17:46:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:09:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,30 @@
 
 int	main(int ac, char **av)
 {
-	std::string		str = (av[1]);
+	std::string		str;
 	std::string		s1 = av[2];
 	std::string		s2 = av[3];
-	std::ifstream	myfile = str + ".replace";
-
-	std::cout << myfile.replace << std::endl;
+	std::ifstream	myfile (av[1]);
 
 	if (ac != 4)
 	{
-		std::cout << "Erreur dans le nombre d'arguments !" << std::endl;
+		std::cout << "Bad number of arguments !" << std::endl;
 		return 0;
 	}
 
 	if (!myfile)
 	{
-		std::cout << "Erreur, il n'y a pas de fichier !" << std::endl;
+		std::cout << "Unable to read the file !" << std::endl;
 		return 0;
 	}
 
 	if (s1.empty() || s2.empty())
 	{
-		std::cout << "Erreur dans les arguments à remplacer !" << std::endl;
+		std::cout << "Error in the arguments to replace !" << std::endl;
 		return 0;
 	}
 
-
-
-
+	// std::cout << myfile.replace << std::endl;
 
 
 	
