@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/14 17:13:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/15 16:06:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,27 @@ int	main(int ac, char **av)
 	std::string		s1 = av[2];
 	std::string		s2 = av[3];
 	std::ifstream	myfile (av[1]);
+	std::string		resfile = (av[1]);
+
+	if (ac != 4)
+	{
+		std::cout << "Erreur dans le nombre d'arguments !" << std::endl;
+		return 0;
+	}
+	if (s1.length == 0 || s2.length == 0)
+	{
+		std::cout << "Erreur dans les arguments à remplacer !" << std::endl;
+		return 0;
+	}
+	if (!myfile)
+	{
+		std::cout << "Erreur, il n'y a pas de fichier !" << std::endl;
+		return 0;
+	}
+
+
+
+	resfile.append(".replace");
 
 	if (myfile.open())
 	{
@@ -30,7 +51,7 @@ int	main(int ac, char **av)
 		{
 			if ()
 			{
-			
+
 			}
 		}
 	}
