@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/15 18:09:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/18 15:59:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,47 +16,40 @@
 
 int	main(int ac, char **av)
 {
-	std::string		str;
+	char			str[100];
+	size_t			pos;
 	std::string		s1 = av[2];
 	std::string		s2 = av[3];
+	std::string		filename = av[1];
 	std::ifstream	myfile (av[1]);
 
 	if (ac != 4)
 	{
 		std::cout << "Bad number of arguments !" << std::endl;
-		return 0;
+		return 1;
 	}
 
-	if (!myfile)
+	// if (s1.empty() || s2.empty())
+	// {
+	// 	std::cout << "Error in the arguments to replace !" << std::endl;
+	// 	return 1;
+	// }
+
+	filename.append(".replace"); // creer le nom de fichier
+	std::cout << filename << std::endl;
+
+	std::ofstream newfile(filename, std::ios::binary);
+	while (str)
 	{
-		std::cout << "Unable to read the file !" << std::endl;
-		return 0;
+		filename << str;
 	}
 
-	if (s1.empty() || s2.empty())
-	{
-		std::cout << "Error in the arguments to replace !" << std::endl;
-		return 0;
-	}
 
-	// std::cout << myfile.replace << std::endl;
 
+
+	// std::cout << str << std::endl;
 
 	
-	// if (myfile.open())
-	// {
-	// 	while (getline(myfile, buf))
-	// 	{
-	// 		if ()
-	// 		{
-
-	// 		}
-	// 	}
-	// }
-	// else
-	// 	std::cout << "Impossible de lire le fichier !" << std::endl;
-
-
 
 
 	// myfile.close();
