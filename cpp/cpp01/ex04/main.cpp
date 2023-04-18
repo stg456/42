@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/18 19:06:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/18 19:16:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,6 @@ int	main(int ac, char **av)
 
 	std::ofstream newfile(filename, std::ios::binary | std::ios::out | std::ios::in);
 
-	// if (newfile.is_open())
-	// {
-	// 	std::cout << "dans la boucle" << std::endl;
-	// 	while (getline(myfile, filename, '\0'))
-	// 	{
-	// 		newfile << filename;
-	// 		std::cout << filename << std::endl;
-	// 	}
-	// }
-
 	// std::cout << myfile.is_open();
 	
 	if (myfile.is_open())
@@ -59,9 +49,10 @@ int	main(int ac, char **av)
 			// find, delete, insert
 			newfile << str << std::endl; // mets le contenu dans le nouveau fichier
 			std::cout << str << std::endl;
-			str.find(s1);
-			str.erase(s1);
-			str.insert(s2);
+			pos = str.find(s1);
+			std::cout << pos << std::endl;
+			// str.erase(s1);
+			// str.insert(s2);
 		}
 		
 	}
