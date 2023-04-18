@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/18 16:39:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/18 17:08:08 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int ac, char **av)
 	std::string		s1 = av[2];
 	std::string		s2 = av[3];
 	std::string		filename = av[1];
-	std::ifstream	myfile (av[1]);
+	std::ifstream	myfile (av[1], std::ios::binary | std::ios::out | std::ios::in);
 
 	// if (ac != 4)
 	// {
@@ -35,20 +35,24 @@ int	main(int ac, char **av)
 	// 	return 1;
 	// }
 
-	filename.append(".replace"); // creer le nom de fichier
-	std::cout << filename << std::endl;
 
-	if (myfile.is_open())
+	// std::cout << filename << std::endl;
+	std::string filename2 = filename; //  creer le nom de fichier
+	filename2.append(".replace"); 
+
+
+	std::ofstream newfile(filename2, std::ios::binary | std::ios::out | std::ios::in);
+
+	if (newfile.is_open() && myfile.is_open())
 	{
-		std::getline (myfile, filename, '\0');
+		// fstream 
+		std::getline (myfile, filename2, '\0');
 		// std::cout << myfile << std::endl;
 		std::cout << filename << std::endl;
 	}
-	std::ofstream newfile(filename, std::ios::binary);
-	// while (str)
-	// {
-		// filename << str;
-	// }
+	else
+		std::cout << "pas dans la boucle" << std::endl;
+
 
 
 
