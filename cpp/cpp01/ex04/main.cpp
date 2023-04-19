@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/19 17:13:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/19 17:37:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,30 +39,27 @@ int	main(int ac, char **av)
 	{
 		while (getline(myfile, str, '\0'))
 		{
-			i = str.find(s1); // pb !
-			std::cout << str[i] << std::endl;
-			std::cout << i << std::endl;
-			std::cout << s1[i] << std::endl;
-			// str.erase(pos, s1.length()); // pb !
-			// std::cout << "a" << std::endl;
-			// str.insert(pos, s2);
-			// std::cout << str << std::endl;
-			// 	std::cout << "a" << std::endl;
+			i = str.find(s1);
+			// std::cout << str[i] << std::endl;
+			str.erase(i, s1.length());
+			str.insert(i, s2);
+			// std::cout << str[i] << std::endl;
 		}	
 	}
 
 	filename = av[1]; // apres la protection sinon seg fault
-	filename.append(".replace");
-	std::ofstream newfile(filename, std::ios::binary | std::ios::out | std::ios::in);
+	std::string filename2 = filename + ".replace";
+	std::cout << filename2 << std::endl;
 	
+	std::ofstream newfile(filename2);
 	if (newfile.is_open())
 	{
+		std::cout << "is open" << std::endl;
 		newfile << str; // mets le contenu dans le nouveau fichier
 	}
-	std::cout << str << std::endl;
 
-	// myfile.close();
-	// newfile.close();
+	myfile.close();
+	newfile.close();
 	
 	return 0;	
 }
