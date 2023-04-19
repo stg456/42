@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 18:16:46 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/19 18:28:01 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/19 18:35:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@ Harl::Harl() {}
 
 Harl::~Harl() {}
 
-void debug( void )
+void Harl::debug( void )
 {
 
 }
 
-void info( void )
+void Harl::info( void )
 {
 
 }
 
-void warning( void )
+void Harl::warning( void )
 {
 
 }
 
-void error( void )
+void Harl::error( void )
 {
 
 }
 
-void complain( std::string level )
+void Harl::complain( std::string level )
 {
 
 }
