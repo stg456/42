@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/19 17:37:07 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/19 17:39:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int	main(int ac, char **av)
 		exit (0);
 	}
 
-	// if (s1.empty() || s2.empty())
-	// {
-	// 	std::cout << "Error in the arguments to replace !" << std::endl;
-	// 	return 1;
-	// }
+	if (s1.empty() || s2.empty())
+	{
+		std::cout << "Error in the arguments to replace !" << std::endl;
+		exit (0);
+	}
 
 	if (myfile.is_open())
 	{
@@ -49,12 +49,12 @@ int	main(int ac, char **av)
 
 	filename = av[1]; // apres la protection sinon seg fault
 	std::string filename2 = filename + ".replace";
-	std::cout << filename2 << std::endl;
+	// std::cout << filename2 << std::endl;
 	
 	std::ofstream newfile(filename2);
 	if (newfile.is_open())
 	{
-		std::cout << "is open" << std::endl;
+		// std::cout << "is open" << std::endl;
 		newfile << str; // mets le contenu dans le nouveau fichier
 	}
 
