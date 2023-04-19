@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/19 16:44:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:45:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	main(int ac, char **av)
 	{
 		while (getline(myfile, str, '\0'))
 		{
-			pos = str.find(s1);
+			pos = str.find(s1); // pb !
 			std::cout << pos << std::endl;
 								std::cout << "a" << std::endl;
 			str.erase(pos, s1.length()); // pb !
