@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/19 16:45:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/19 17:13:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,18 @@
 
 int	main(int ac, char **av)
 {
-	size_t			pos;
+	size_t			i = 0;
 	std::string		str;
 	std::string		s1 = av[2];
 	std::string		s2 = av[3];
 	std::string		filename;
 	std::ifstream	myfile (av[1], std::ios::binary | std::ios::in | std::ios::out);
 
-
 	if (ac != 4)
 	{
 		std::cout << "Bad number of arguments !" << std::endl;
 		exit (0);
 	}
-	filename = av[1]; // apres la protection sinon seg fault
 
 	// if (s1.empty() || s2.empty())
 	// {
@@ -37,29 +35,29 @@ int	main(int ac, char **av)
 	// 	return 1;
 	// }
 
-	std::cout << str << std::endl;
-
 	if (myfile.is_open())
 	{
 		while (getline(myfile, str, '\0'))
 		{
-			pos = str.find(s1); // pb !
-			std::cout << pos << std::endl;
-								std::cout << "a" << std::endl;
-			str.erase(pos, s1.length()); // pb !
-			std::cout << "a" << std::endl;
-			str.insert(pos, s2);
-			std::cout << str << std::endl;
-				std::cout << "a" << std::endl;
+			i = str.find(s1); // pb !
+			std::cout << str[i] << std::endl;
+			std::cout << i << std::endl;
+			std::cout << s1[i] << std::endl;
+			// str.erase(pos, s1.length()); // pb !
+			// std::cout << "a" << std::endl;
+			// str.insert(pos, s2);
+			// std::cout << str << std::endl;
+			// 	std::cout << "a" << std::endl;
 		}	
 	}
 
-	std::string filename2 = filename + ".replace";
-	std::ofstream newfile(filename2, std::ios::binary | std::ios::out | std::ios::in);
+	filename = av[1]; // apres la protection sinon seg fault
+	filename.append(".replace");
+	std::ofstream newfile(filename, std::ios::binary | std::ios::out | std::ios::in);
 	
 	if (newfile.is_open())
 	{
-		newfile << str << std::endl; // mets le contenu dans le nouveau fichier
+		newfile << str; // mets le contenu dans le nouveau fichier
 	}
 	std::cout << str << std::endl;
 
