@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 18:45:43 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/14 11:41:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/19 16:14:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Weapon::Weapon(std::string type) : _type(type)
 Weapon::~Weapon() {}
 
 std::string Weapon::getType() const
+// const std::string& Weapon::getType(void);
 {
 	return (this->_type);
 }
