@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 18:16:46 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/20 14:49:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/20 15:08:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void Harl::complain(std::string level)
 	for (i = 0; i < 4; i++)
 	{
 		if (level == msg[i])
-			this->*(ptr[i])();
+			(this->*(ptr[i]))();
 	}
-	if (i < 0 || i > 4)
-		std::cout << "Message inconnu: 42 style, demmerde toi !" << std::endl;
+	// if (i < 0 || i > 4)
+	// 	std::cout << "Message inconnu: 42 style, demmerde toi !" << std::endl;
 }
