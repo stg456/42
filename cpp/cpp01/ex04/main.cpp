@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/21 12:47:18 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:53:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ int	main(int ac, char **av)
 		while (getline(myfile, str, '\0'))
 		{
 			i = str.find(s1);
+			if (!str.find(s1))
+			{
+				std::cout << "Error in the arguments to replace !" << std::endl;
+				exit (0);
+			}
 			// std::cout << str[i] << std::endl;
 			str.erase(i, s1.length());
 			str.insert(i, s2);
