@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/19 18:14:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/21 12:47:18 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int ac, char **av)
 	std::string filename2 = filename + ".replace";
 	// std::cout << filename2 << std::endl;
 	
-	std::ofstream newfile(filename2);
+	std::ofstream newfile(filename2, std::ios::binary | std::ios::out);
 	if (newfile.is_open())
 	{
 		// std::cout << "is open" << std::endl;
