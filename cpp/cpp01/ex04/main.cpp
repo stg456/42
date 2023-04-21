@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/21 12:53:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/21 13:44:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,13 @@ int	main(int ac, char **av)
 	{
 		while (getline(myfile, str, '\0'))
 		{
-			i = str.find(s1);
-			if (!str.find(s1))
-			{
-				std::cout << "Error in the arguments to replace !" << std::endl;
-				exit (0);
-			}
+			i = str.find(s1); // il manque une protection si av[2] n'est pas present
+
 			// std::cout << str[i] << std::endl;
 			str.erase(i, s1.length());
 			str.insert(i, s2);
 			// std::cout << str[i] << std::endl;
-		}	
+		}
 	}
 
 	filename = av[1]; // apres la protection sinon seg fault
