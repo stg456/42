@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 18:16:31 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/21 15:01:17 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/21 15:13:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ private:
 public:
 	Harl();
 	~Harl();
-	int	level;
+	int	niveau;
 
 	void complain(std::string level);
 };
