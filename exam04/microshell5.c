@@ -85,3 +85,5 @@ int main(int ac, char **av, char **env)
 	close(tmpfd);
 	return (0);
 }
+
+// ./a.out cd ";" /usr/bin/ls ./a.out
