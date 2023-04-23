@@ -4,6 +4,26 @@
 #include <stdio.h>
 #include <string.h>
 
+int ft_putstr_fd2(char *str, char *arg)
+{
+	while (*str)
+		write(2, str++, 1);
+	if (arg)
+		while (*arg)
+			write(2, arg++, 1);
+	write(2, "\n", 1);
+	return (1);
+}
+
+int ft_exe(char **av, int i, int tmpfd, char **env)
+{
+	av[i] = NULL;
+	dup2(tmpfd, STDIN_FILENO);
+	close(tmpfd);
+	execve(av[0], av, env);
+	return (ft_putstr_fd2("error: cannot execute ", av[0]));
+}
+
 int main(int ac, char **av, char **env)
 {
 	int i = 0;
