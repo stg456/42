@@ -6,22 +6,22 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/23 15:34:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/24 16:16:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-ifndef FIXED_HPP
-#define FIXED_HPP
+#ifndef FIXED_HPP
+# define FIXED_HPP
 
 # include <iostream>
 
 class	Fixed
 {
-		public:
-				// constructeur
-				Fixed(void);
-
-				~Fixed(void);
+		public:			
+				Fixed(void); // constructeur par defaut
+				Fixed(const Fixed&); // constructeur de recopie 
+				~Fixed(void); // destructeur
+				Fixed &operator=(const Fixed&); // operateur d'afectation
 
 				// fonction
 				int getRawBits(void) const;
@@ -29,7 +29,7 @@ class	Fixed
 
 		private:
 				int					nbFix;
-				static const int	bitFrac;
+				static const int	nbFrac;
 
 };
 

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/23 15:34:19 by stgerard         ###   ########.fr       */
+/*   Created: 2023/04/20 17:57:22 by stgerard          #+#    #+#             */
+/*   Updated: 2023/04/24 14:54:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Fixxed.hpp"
+#include "Fixed.hpp"
 
-Fixed() {}
-
-~Fixed() {}
-
-int Fixed::getRawBits(void) const
+int main()
 {
+	Fixed	fixed;
 
+	Fixed a;
+	Fixed b( a );
+	Fixed c;
+
+	c = b;
 	
-}
+	std::cout << a.getRawBits() << std::endl;
+	std::cout << b.getRawBits() << std::endl;
+	std::cout << c.getRawBits() << std::endl;
 
-void Fixed::setRawBits(int const raw)
-{
-
-
+	return 0;
 }
