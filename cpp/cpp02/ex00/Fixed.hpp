@@ -6,14 +6,16 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/24 16:32:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/25 13:30:29 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
 # define FIXED_HPP
 
-# include <iostream>
+#include <iostream>
+#include <string>
+#include <iomanip>
 
 class	Fixed
 {
@@ -28,8 +30,8 @@ class	Fixed
 				void setRawBits(int const raw);
 
 		private:
-				int					nbFix;
-				static const int	nbFrac;
+				int					_nbFix;
+				static const int	_nbFrac;
 
 };
 
