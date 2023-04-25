@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:22 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/24 14:54:28 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/25 14:41:56 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 
 int main()
 {
-	Fixed	fixed;
-
 	Fixed a;
 	Fixed b( a );
 	Fixed c;
