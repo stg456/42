@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 16:37:16 by stgerard          #+#    #+#              #
-#    Updated: 2023/04/11 13:22:13 by stgerard         ###   ########.fr        #
+#    Updated: 2023/04/25 18:08:33 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ RM = rm -f
 SRCS = main.cpp Zombie.cpp zombieHorde.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
+
+.cpp.o:
+		${CC} ${CFLAGS} -c $< -o ${<:.cpp=.o}
 
 all: ${NAME}
 

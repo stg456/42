@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 16:37:16 by stgerard          #+#    #+#              #
-#    Updated: 2023/04/14 11:59:53 by stgerard         ###   ########.fr        #
+#    Updated: 2023/04/25 18:07:46 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ RM = rm -f
 SRCS = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
+
+.cpp.o:
+		${CC} ${CFLAGS} -c $< -o ${<:.cpp=.o}
 
 all: ${NAME}
 

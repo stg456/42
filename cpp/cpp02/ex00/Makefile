@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/20 18:01:33 by stgerard          #+#    #+#              #
-#    Updated: 2023/04/20 18:02:59 by stgerard         ###   ########.fr        #
+#    Updated: 2023/04/25 18:11:05 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,9 @@ RM = rm -f
 SRCS = main.cpp Fixed.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
+
+.cpp.o:
+		${CC} ${CFLAGS} -c $< -o ${<:.cpp=.o}
 
 all: ${NAME}
 
