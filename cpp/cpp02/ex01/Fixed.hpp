@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/25 16:37:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:45:56 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class	Fixed
 		public:			
 				Fixed(void); // constructeur par defaut
 				Fixed(const Fixed& copy); // constructeur de recopie 
+F				ixed &operator=(const Fixed& rhs); // operateur d'affectation
 				~Fixed(void); // destructeur
-				Fixed &operator=(const Fixed& rhs); // operateur d'affectation
-				Fixed &operator<<(const Fixed& rhs);
-				Conv1(const int);
-				Conv2(const float);
+				
+				Fixed(int const fixe);
+				Fixed(float const fixe);
 
 				// fonction
 				int getRawBits(void) const;
