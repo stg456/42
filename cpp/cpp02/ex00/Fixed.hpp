@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/25 14:41:56 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:02:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,11 @@ class	Fixed
 
 				// fonction
 				int getRawBits(void) const;
-				// void setRawBits(int const raw);
+				void setRawBits(int const raw);
 
 		private:
-				int					_raw;
-				static const int	_nbFrac = 8;
-
+				int					_fix;
+				static const int	_frac = 8;
 };
 
 #endif
