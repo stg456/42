@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/25 16:49:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/25 18:59:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ class	Fixed
 		private:
 				int					_fix;
 				static const int	_frac = 8;
-
 				
 };
+
 
 #endif

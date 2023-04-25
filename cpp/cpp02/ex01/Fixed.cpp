@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/25 16:49:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/25 18:59:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,3 +57,5 @@ int Fixed::toInt( void ) const
 {
 
 }
+
+std::ofstream newfile(filename2, std::ios::binary | std::ios::out);
