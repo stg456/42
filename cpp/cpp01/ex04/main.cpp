@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/21 14:46:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/25 18:53:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ int	main(int ac, char **av)
 		exit (0);
 	}
 
+	if (s2 == s1)
+	{
+		std::cout << "Error in the arguments to replace !" << std::endl;
+		exit (0);
+	}
 	if (myfile.is_open())
 	{
 		while (getline(myfile, str, '\0'))
