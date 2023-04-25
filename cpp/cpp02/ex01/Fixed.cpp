@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/25 16:02:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:37:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,14 @@ void Fixed::setRawBits(int const raw)
 {
 	std::cout << "setRawBits member function called" << std::endl;
 	_fix = raw;
+}
+
+float Fixed::toFloat( void ) const 
+{
+
+}
+
+int Fixed::toInt( void ) const 
+{
+
 }
