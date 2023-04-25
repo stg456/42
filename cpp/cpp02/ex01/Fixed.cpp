@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/25 16:37:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/25 16:49:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ Fixed& Fixed::operator=(const Fixed& rhs) {
 	_fix = rhs.getRawBits();
 	return *this;
 }
+
+Fixed::Fixed(int const fixe) {}
+
+Fixed::Fixed(float const fixe) {}
 
 int Fixed::getRawBits(void) const
 {
