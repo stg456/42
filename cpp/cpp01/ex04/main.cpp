@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/25 18:53:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/26 14:07:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,13 @@ int	main(int ac, char **av)
 	{
 		while (getline(myfile, str, '\0'))
 		{
-			i = str.find(s1); // il manque une protection si av[2] n'est pas present dans av[1]
+			i = str.find(s1);
 			while (i != str.npos) // si different ca veux dire qu'il a trouve le str
 			{
 				str.erase(i, s1.length());
 				str.insert(i, s2);
-				i = str.find(s1); // il manque une protection si av[2] n'est pas present dans av[1]
+				i = str.find(s1);
 			}
-
 			// std::cout << str[i] << std::endl;
 				// std::cout << "Error the arument to replace is not present !" << std::endl;
 				// exit (0);
