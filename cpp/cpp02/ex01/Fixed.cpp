@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/25 18:59:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:27:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,16 @@ Fixed& Fixed::operator=(const Fixed& rhs) {
 	return *this;
 }
 
-Fixed::Fixed(int const fixe) {}
+Fixed::Fixed(int const value) {
+	std::cout << "INT constructor called" << std::endl;
+	_fix = value << _frac;
+}
 
-Fixed::Fixed(float const fixe) {}
+Fixed::Fixed(float const value) {
+	std::cout << "Float constructor called" << std::endl;
+	float pre = 1 << _frac;
+	_fix = roundf(value + pre);
+}
 
 int Fixed::getRawBits(void) const
 {
@@ -58,4 +65,7 @@ int Fixed::toInt( void ) const
 
 }
 
-std::ofstream newfile(filename2, std::ios::binary | std::ios::out);
+std::ofstream &operator<<(std::ofstream &out, Fixed &arg) // a voir pour les arguments
+{
+
+}

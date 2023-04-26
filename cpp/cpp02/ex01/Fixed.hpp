@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/25 18:59:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/26 13:27:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ class	Fixed
 				Fixed &operator=(const Fixed& rhs); // operateur d'affectation
 				~Fixed(void); // destructeur
 				
-				Fixed(int const fixe);
-				Fixed(float const fixe);
+				Fixed(int const value);
+				Fixed(float const value);
 
 				// fonction
-				int getRawBits(void) const;
-				void setRawBits(int const raw);
-				float toFloat( void ) const;
-				int toInt( void ) const;
+				int		getRawBits(void) const;
+				void	setRawBits(int const raw);
+				float	toFloat(void) const;
+				int		toInt(void) const;
 
 		private:
 				int					_fix;
@@ -41,5 +41,6 @@ class	Fixed
 				
 };
 
+std::ofstream &operator<<(std::ofstream &out, Fixed &arg);
 
 #endif
