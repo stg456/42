@@ -6,20 +6,21 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:22 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/25 16:37:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:22:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <iostream>
 
 int main()
 {
 	Fixed a;
-	Fixed const b( 10 );
-	Fixed const c( 42.42f );
-	Fixed const d( b );
+	Fixed const b(10);
+	Fixed const c(42.42f);
+	Fixed const d(b);
 
-	a = Fixed( 1234.4321f );
+	a = Fixed(1234.4321f);
 
 	std::cout << "a is " << a << std::endl;
 	std::cout << "b is " << b << std::endl;
