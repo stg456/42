@@ -6,12 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/26 17:48:20 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:02:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 Fixed::Fixed() : _fix(0) {
 	std::cout << "Default constructor called" << std::endl;

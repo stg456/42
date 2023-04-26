@@ -6,12 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:22 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/26 16:35:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:02:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 int main(void) {
 	Fixed a;

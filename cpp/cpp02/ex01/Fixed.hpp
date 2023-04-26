@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/26 16:17:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/26 18:02:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define FIXED_HPP
 
 #include <iostream>
-#include <string>
-#include <iomanip>
+// #include <string>
+// #include <iomanip>
 #include <cmath>
 
 class	Fixed
