@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/26 17:31:17 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:46:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,9 @@ void Fixed::setRawBits(int const raw) {
 
 float Fixed::toFloat(void) const {
 	// c'est un beau bordel
-	
-	return ();
+	float f;
+	f = (float)_fix / (1 << _frac);
+	return (f);
 }
 
 int Fixed::toInt(void) const {
