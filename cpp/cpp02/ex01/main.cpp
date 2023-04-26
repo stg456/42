@@ -6,15 +6,14 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:22 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/26 16:22:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/26 16:35:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
-int main()
-{
+int main(void) {
 	Fixed a;
 	Fixed const b(10);
 	Fixed const c(42.42f);
