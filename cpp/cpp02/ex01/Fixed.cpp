@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/26 17:46:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:48:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int Fixed::toInt(void) const {
 	return (_fix >> _frac);
 }
 
-std::ofstream& operator<<(std::ofstream& out, Fixed& rhs) {
+std::ofstream& operator<<(std::ofstream& out, const Fixed& rhs) {
 	out << rhs.tofloat();
 	return (out);
 }
