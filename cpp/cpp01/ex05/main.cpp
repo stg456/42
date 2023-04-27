@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:41:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/21 15:43:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:18:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <string>
 #include "Harl.hpp"
 
-int	main(int ac, char **av)
+int	main()
 {
 	Harl	Harl;
 	

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/26 18:02:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:46:26 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ Fixed::Fixed(const Fixed& copy) {
 
 Fixed& Fixed::operator=(const Fixed& rhs) {
 	std::cout << "Copy assignment operator called" << std::endl;
-	_fix = rhs.getRawBits();
-	return *_fix;
+	this->_fix = rhs.getRawBits();
+	return *this; // par this ça passe !!
 }
 
 Fixed::Fixed(int const value) {
@@ -65,6 +65,6 @@ int Fixed::toInt(void) const {
 }
 
 std::ofstream& operator<<(std::ofstream& out, const Fixed& rhs) {
-	out << rhs.tofloat();
+	out << rhs.toFloat();
 	return (out);
 }
