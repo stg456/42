@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/27 18:03:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/27 19:02:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ class	Fixed
 				
 };
 
-				std::ofstream &operator<<(std::ofstream &out, Fixed &arg);
+				std::ofstream& operator<<(std::ofstream& out, const Fixed& rhs);
 
 #endif
