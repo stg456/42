@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/28 14:30:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/28 15:42:05 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,10 @@ class	Fixed
 				bool operator==(const Fixed &rhs) const;
 				bool operator!=(const Fixed &rhs) const;
 
-				Fixed oprateur+(const Fixed &rhs) const;
-				Fixed oprateur-(const Fixed &rhs) const;
-				Fixed oprateur*(const Fixed &rhs) const;
-				Fixed oprateur/(const Fixed &rhs) const;
+				Fixed oprateur+(Fixed &rhs) const;
+				Fixed oprateur-(Fixed &rhs) const;
+				Fixed oprateur*(Fixed &rhs) const;
+				Fixed oprateur/(Fixed &rhs) const;
 
 
 
