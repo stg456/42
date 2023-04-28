@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/28 11:51:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/28 12:05:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Fixed::Fixed(int const value) {
 Fixed::Fixed(float const value) {
 	std::cout << "Float constructor called" << std::endl;
 	float pre = 1 << _frac;
-	_fix = roundf(value * pre); // *
+	_fix = roundf(value * pre); // * important
 }
 
 int Fixed::getRawBits(void) const {
@@ -54,7 +54,6 @@ void Fixed::setRawBits(int const raw) {
 }
 
 float Fixed::toFloat(void) const {
-	// c'est un beau bordel
 	float f;
 	f = (float)_fix / (1 << _frac);
 	return (f);
@@ -64,7 +63,7 @@ int Fixed::toInt(void) const {
 	return (_fix >> _frac);
 }
 
-std::ofstream &operator<<(std::ofstream &out, const Fixed &rhs) {
+std::ostream &operator<<(std::ostream &out, const Fixed &rhs) {
 	out << rhs.toFloat();
 	return (out);
 }

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/28 11:51:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/04/28 12:05:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define FIXED_HPP
 
 #include <iostream>
-// #include <string>
-// #include <iomanip>
 #include <cmath>
 
 class	Fixed
@@ -41,6 +39,6 @@ class	Fixed
 				
 };
 
-				std::ofstream &operator<<(std::ofstream &out, const Fixed &rhs);
+				std::ostream &operator<<(std::ostream &out, const Fixed &rhs);
 
 #endif
