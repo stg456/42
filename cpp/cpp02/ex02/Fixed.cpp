@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/01 17:51:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/01 17:57:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,13 @@ bool Fixed::operator==(const Fixed &rhs) const {return (_fix == rhs.getRawBits()
 
 bool Fixed::operator!=(const Fixed &rhs) const {return (_fix != rhs.getRawBits());}
 
-Fixed Fixed::operator+(Fixed &rhs) const {return (toFloat() + rhs.toFloat());}
+Fixed& Fixed::operator+(Fixed &rhs) const {return Fixed(toFloat() + rhs.toFloat());}
 
-Fixed Fixed::operator-(Fixed &rhs) const {return (toFloat() - rhs.toFloat());}
+Fixed& Fixed::operator-(Fixed &rhs) const {return Fixed(toFloat() - rhs.toFloat());}
 
-Fixed Fixed::operator*(Fixed &rhs) const {return (toFloat() * rhs.toFloat());}
+Fixed& Fixed::operator*(Fixed &rhs) const {return Fixed(toFloat() * rhs.toFloat());}
 
-Fixed Fixed::operator/(Fixed &rhs) const {return (toFloat() / rhs.toFloat());}
+Fixed& Fixed::operator/(Fixed &rhs) const {return Fixed(toFloat() / rhs.toFloat());}
 
 // prefix
 
