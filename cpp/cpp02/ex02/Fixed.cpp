@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/28 15:42:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/01 15:48:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,42 @@ bool Fixed::operator!=(const Fixed &rhs) const {return (_fix != rhs.getRawBits()
 
 Fixed Fixed::operator+(Fixed &rhs) const {return (toFloat() + rhs.toFloat());}
 
-Fixed Fixed::operator-(Fixed &rhs) const {return (toFloat() +- rhs.toFloat());}
+Fixed Fixed::operator-(Fixed &rhs) const {return (toFloat() - rhs.toFloat());}
 
 Fixed Fixed::operator*(Fixed &rhs) const {return (toFloat() * rhs.toFloat());}
 
 Fixed Fixed::operator/(Fixed &rhs) const {return (toFloat() / rhs.toFloat());}
 
+// prefix
 
+Fixed &Fixed::operator++(void) {
+	nb++;
+	return *this;
+}
 
+Fixed &operator--(void) {
+	nb--;
+	return *this;
+}
 
+//postfix
+
+Fixed Fixed::operator++(int) {
+	Fixed nb(*this);
+	nb++;
+	return (nb);
+}
+
+Fixed operator--(int) {
+	Fixed nb(*this);
+	nb--;
+	return (nb);
+}
+
+static Fixed & Fixed::min(int &a, int &b) {}
+
+static Fixed const &min(int const &a, int const &b) {}
+
+static Fixed &max(int &a, int &b) {}
+
+static Fixed const &max(int const &a, int const &b) {}
