@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/01 15:48:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/01 16:21:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,10 +114,10 @@ Fixed operator--(int) {
 	return (nb);
 }
 
-static Fixed & Fixed::min(int &a, int &b) {}
+Fixed& Fixed::min(int &a, int &b) {return (a < b) ? a : b;}
 
-static Fixed const &min(int const &a, int const &b) {}
+const Fixed& Fixed::min(int const &a, int const &b) {return (a < b) ? a : b;}
 
-static Fixed &max(int &a, int &b) {}
+Fixed& Fixed::max(int &a, int &b) {return (a > b) ? a : b;}
 
-static Fixed const &max(int const &a, int const &b) {}
+const Fixed& Fixed::max(int const &a, int const &b) {return (a > b) ? a : b;}
