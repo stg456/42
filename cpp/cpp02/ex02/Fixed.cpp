@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/01 16:50:18 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/01 17:04:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,12 +91,12 @@ Fixed Fixed::operator/(Fixed &rhs) const {return (toFloat() / rhs.toFloat());}
 // prefix
 
 Fixed &Fixed::operator++(void) {
-	nb++;
+	_fix++;
 	return *this;
 }
 
-Fixed &operator--(void) {
-	nb--;
+Fixed &Fixed::operator--(void) {
+	_fix--;
 	return *this;
 }
 
@@ -108,7 +108,7 @@ Fixed Fixed::operator++(int) {
 	return (nb);
 }
 
-Fixed operator--(int) {
+Fixed Fixed::operator--(int) {
 	Fixed nb(*this);
 	nb--;
 	return (nb);
