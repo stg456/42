@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:22 by stgerard          #+#    #+#             */
-/*   Updated: 2023/04/28 13:14:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/01 16:31:37 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int main(void)
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 
-	std::cout Fixed::max(a, b) << std::endl;
+	std::cout << Fixed::max(a, b) << std::endl;
 
 	return 0;
 }

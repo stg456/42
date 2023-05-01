@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/01 16:21:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/01 16:29:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ class	Fixed
 				static Fixed const &min(int const &a, int const &b);
 				
 				static Fixed &max(int &a, int &b);
-				static const fixed &max(int const &a, int const &b);
+				static const Fixed &max(int const &a, int const &b);
 
 
 		private:
