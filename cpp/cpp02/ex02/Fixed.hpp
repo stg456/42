@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:59:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/01 16:29:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/01 16:50:18 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ class	Fixed
 				Fixed operator++(int);
 				Fixed operator--(int);
 
-				static Fixed &min(int &a, int &b);
-				static Fixed const &min(int const &a, int const &b);
+				static Fixed &min(Fixed &a, Fixed &b);
+				static Fixed const &min(Fixed const &a, Fixed const &b);
 				
-				static Fixed &max(int &a, int &b);
-				static const Fixed &max(int const &a, int const &b);
+				static Fixed &max(Fixed &a, Fixed &b);
+				static const Fixed &max(Fixed const &a, Fixed const &b);
 
 
 		private:
