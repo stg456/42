@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:53:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/02 16:57:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/02 17:07:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ ClapTrap::ClapTrap(std::string name) {
 ClapTrap::~ClapTrap() {std::cout << "Destructor called" << std::endl;}
 
 void attack(const std::string& target) {
-	std::cout << "ClapTrap " << name << "attacks " << target << "causing" << damage << "points of damage" << std::endl;
+	std::cout << "ClapTrap " << _name << "attacks " << target << "causing" << damage << "points of damage" << std::endl;
 }
 
 void takeDamage(unsigned int amount) {
-	std::cout << "ClapTrap " << name << "take " << amount << "points of damage" << std::endl;
+	std::cout << "ClapTrap " << _name << "take " << amount << "points of damage" << std::endl;
 }
 
 void beRepaired(unsigned int amount) {
-	std::cout << "ClapTrap " << name << "be repaired " << amount << "points of damage" << std::endl;
+	std::cout << "ClapTrap " << _name << "be repaired " << amount << "points of damage" << std::endl;
 }
