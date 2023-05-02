@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:53:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/02 17:59:49 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/02 18:10:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,15 @@ ClapTrap::ClapTrap(std::string name) {
 	_attackDamage = 0;
 }
 
-// ClapTrap::ClapTrap(const ClapTrap& copy) {
-// 	std::cout << "Copy constructor called" << std::endl;
-// 	_fix = copy.getRawBits();
-// }
+ClapTrap::ClapTrap(const ClapTrap &copy) {
+	std::cout << "Copy constructor called" << std::endl;
+}
 
-// ClapTrap ClapTrap::operator=(const ClapTrap& rhs) {
-// 	std::cout << "Copy assignment operator called" << std::endl;
+ClapTrap ClapTrap::operator=(const ClapTrap& rhs) {
+	std::cout << "Copy assignment operator called" << std::endl;
 // 	this->_fix = rhs.getRawBits();
 // 	return *this;
-// }
+}
 
 ClapTrap::~ClapTrap() {std::cout << "Destructor called" << std::endl;}
 
