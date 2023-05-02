@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/04/20 18:01:33 by stgerard          #+#    #+#              #
-#    Updated: 2023/04/26 18:02:24 by stgerard         ###   ########.fr        #
+#    Created: 2023/05/02 13:54:39 by stgerard          #+#    #+#              #
+#    Updated: 2023/05/02 14:02:51 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Fixed
+NAME = ClapTrap
 
 CC = c++
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRCS = main.cpp Fixed.cpp \
+SRCS = main.cpp ClapTrap.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
