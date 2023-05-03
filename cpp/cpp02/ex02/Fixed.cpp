@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/03 16:31:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:46:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::~Fixed() {
 }
 
 Fixed::Fixed(const Fixed& copy) {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	_fix = copy.getRawBits();
 }
 
@@ -91,27 +91,25 @@ float Fixed::operator/(Fixed rhs) const {return this->toFloat() / rhs.toFloat();
 // prefix
 
 Fixed &Fixed::operator++(void) {
-	_fix++;
+	++_fix;
 	return *this;
 }
 
 Fixed &Fixed::operator--(void) {
-	_fix--;
+	--_fix;
 	return *this;
 }
 
 //postfix
 
-int Fixed::operator++(int) {
-	Fixed nb(*this);
-	nb++;
-	return (nb);
+Fixed &Fixed::operator++(int) {
+	_fix++;
+	return *this;
 }
 
-int Fixed::operator--(int) {
-	Fixed nb(*this);
-	nb--;
-	return (nb);
+Fixed &Fixed::operator--(int) {
+	_fix--;
+	return *this;
 }
 
 Fixed& Fixed::min(Fixed &a, Fixed &b) {return (a < b) ? a : b;}

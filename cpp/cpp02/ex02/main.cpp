@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:22 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/01 17:31:26 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:47:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(void)
 	std::cout << a << std::endl;
 	std::cout << ++a << std::endl;
 	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
+	std::cout << a++ << std::endl; // pb !!!
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 
