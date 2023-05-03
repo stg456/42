@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 17:57:58 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/03 16:46:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:06:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,14 +102,16 @@ Fixed &Fixed::operator--(void) {
 
 //postfix
 
-Fixed &Fixed::operator++(int) {
-	_fix++;
-	return *this;
+Fixed Fixed::operator++(int) {
+	Fixed tmp = *this;
+	++*this;
+	return (tmp);
 }
 
-Fixed &Fixed::operator--(int) {
-	_fix--;
-	return *this;
+Fixed Fixed::operator--(int) {
+	Fixed tmp = *this;
+	--*this;
+	return (tmp);
 }
 
 Fixed& Fixed::min(Fixed &a, Fixed &b) {return (a < b) ? a : b;}
