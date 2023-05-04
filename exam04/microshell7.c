@@ -4,6 +4,20 @@
 #include <stdio.h>
 #include <string.h>
 
+int g_fd;
+
+int print(char *str)
+{
+	while (*str)
+		write(2, str++, 1);
+	return 1;
+}
+
+int built(char **av)
+{
+	
+}
+
 int main(int ac, char **av, char **env)
 {
 	int i = 1;
@@ -17,7 +31,7 @@ int main(int ac, char **av, char **env)
 		while (av[i] && strcmp(av[i], ";" != 0) && strcmp(av[i], "|" != 0))
 			i++;
 		if (!strcmp(av[i], "cd"))
-			build(av);
+			built(av);
 		else
 			exe(av, i, env);
 		i++;
