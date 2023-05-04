@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:53:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/03 18:49:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/03 19:05:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,3 +51,8 @@ void takeDamage(unsigned int amount) {
 void beRepaired(unsigned int amount) {
 	std::cout << "ClapTrap " << _name << "be repaired " << amount << "points of damage" << std::endl;
 }
+
+// increase
+
+// decrease
+
