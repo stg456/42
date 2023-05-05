@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:53:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/05 13:55:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/05 14:23:08 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy) {
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
+ClapTrap& ClapTrap::operator=(const ClapTrap &rhs) {
 	if (this == rhs) // mais pourquoi putain !!!!
 		return (*this);
 	this->name = rhs._name;
@@ -42,15 +42,21 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
 
 ClapTrap::~ClapTrap() {std::cout << "Destructor called" << std::endl;}
 
-void attack(const std::string& target) {
-	std::cout << "ClapTrap " << _name << "attacks " << target << "causing" << _attackDamage << "points of damage" << std::endl;
+void ClapTrap::attack(const std::string &target) {
+	if (_energyPoints) {
+		std::cout << "ClapTrap " << _name << "attacks " << target << "causing" << _attackDamage << "points of damage" << std::endl;
+		_energyPoints--;
+	}
+	else
+		std::cout << "" << std::endl;
+	_name = target;
 }
 
-void takeDamage(unsigned int amount) {
+void ClapTrap::takeDamage(unsigned int amount) {
 	std::cout << "ClapTrap " << _name << "take " << amount << "points of damage" << std::endl;
 }
 
-void beRepaired(unsigned int amount) {
+void ClapTrap::beRepaired(unsigned int amount) {
 	std::cout << "ClapTrap " << _name << "be repaired " << amount << "points of damage" << std::endl;
 }
 
