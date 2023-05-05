@@ -4,6 +4,11 @@
 #include <stdio.h>
 #include <string.h>
 
+int built(char **av)
+{
+	
+}
+
 int main(int ac, char **av, char **env)
 {
 	int i = 1;
@@ -23,5 +28,4 @@ int main(int ac, char **av, char **env)
 			exec(av, i, env);
 		i++;
 	}
-
 }

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:53:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/03 19:05:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:48:15 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ ClapTrap::ClapTrap(const ClapTrap &copy) {
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
 	std::cout << "Copy assignment operator called" << std::endl;
-// 	this->_fix = rhs.getRawBits();
+
 	return *this;
 }
 
 ClapTrap::~ClapTrap() {std::cout << "Destructor called" << std::endl;}
 
 void attack(const std::string& target) {
-	std::cout << "ClapTrap " << _name << "attacks " << target << "causing" << damage << "points of damage" << std::endl;
+	std::cout << "ClapTrap " << _name << "attacks " << target << "causing" << _attackDamage << "points of damage" << std::endl;
 }
 
 void takeDamage(unsigned int amount) {
