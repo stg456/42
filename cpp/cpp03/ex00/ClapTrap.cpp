@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:53:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/05 13:48:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/05 13:55:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ ClapTrap::ClapTrap(const ClapTrap &copy) {
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& rhs) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	if (this == rhs) // mais pourquoi putain !!!!
+		return (*this);
+	this->name = rhs._name;
 
 	return *this;
 }
