@@ -6,22 +6,22 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:53:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/09 12:28:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/09 13:18:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap() : _hitPoints(100), _energyPoints(50), _attackDamage(20) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(100), _energyPoints(50), _attackDamage(20) {
-	std::cout << "Constructor with Name called" << std::endl;
+	std::cout << "ClapTrap constructor with Name called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	*this = copy; // le this permet de pas se les cogner 1 par 1
 	// _name = copy._name;
 	// _attackDamage = copy._attackDamage;
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap(const ClapTrap &copy) {
 }
 
 ClapTrap& ClapTrap::operator = (const ClapTrap &rhs) {
-	std::cout << "Assignement operator called" << std::endl;
+	std::cout << "ClapTrap assignement operator called" << std::endl;
 	if (this == &rhs) // & pour rhs et * pour this
 		return (*this);
 	this->_name = rhs._name;
