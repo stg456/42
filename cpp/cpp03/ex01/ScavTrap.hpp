@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:42:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/09 14:33:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/09 15:02:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,4 @@ class	ScavTrap : public ClapTrap
 
 };
 
-#endif
+#endif	
