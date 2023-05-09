@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:42:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/09 11:59:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:06:53 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class	ScavTrap
+class	ScavTrap : ClapTrap
 {
 	private:
 
