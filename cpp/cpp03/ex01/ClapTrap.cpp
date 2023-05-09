@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:53:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/09 11:59:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:28:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ ClapTrap& ClapTrap::operator = (const ClapTrap &rhs) {
 	return *this;
 }
 
-ClapTrap::~ClapTrap() {std::cout << "Destructor called" << std::endl;}
+ClapTrap::~ClapTrap() {std::cout << "ClapTrap destructor called" << std::endl;}
 
 
 void ClapTrap::attack(const std::string &target) {
