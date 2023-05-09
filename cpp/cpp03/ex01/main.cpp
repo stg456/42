@@ -6,11 +6,12 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:54:24 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/09 11:37:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/09 16:50:05 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void) 
 {
