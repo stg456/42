@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 11:43:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/09 13:18:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/09 13:25:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ ScavTrap::ScavTrap() {
 	std::cout << "ScavTrap constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name): _name(name) {
+ScavTrap::ScavTrap(std::string name): _name(name), _hitPoints(100), _energyPoints(50), _attackDamage(20) {
 	std::cout << "ScavTrap constructor with name called" << std::endl;
 }
 
