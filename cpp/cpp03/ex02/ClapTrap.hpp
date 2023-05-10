@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:50:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/09 15:01:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/10 14:52:37 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class	ClapTrap
 
 	public:
 		ClapTrap();
-		ClapTrap(std::string Name);
+		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &copy);
 		ClapTrap &operator = (const ClapTrap &rhs);
 		~ClapTrap();
