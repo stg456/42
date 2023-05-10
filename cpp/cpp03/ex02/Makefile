@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 13:54:39 by stgerard          #+#    #+#              #
-#    Updated: 2023/05/02 14:02:51 by stgerard         ###   ########.fr        #
+#    Updated: 2023/05/10 14:49:15 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRCS = main.cpp ClapTrap.cpp \
+SRCS = main.cpp FragTrap.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
