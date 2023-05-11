@@ -6,17 +6,17 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:53:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/09 13:18:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/11 14:08:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _hitPoints(100), _energyPoints(50), _attackDamage(20) {
+ClapTrap::ClapTrap() : _hitPoints(100), _energyPoints(100), _attackDamage(30) {
 	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(100), _energyPoints(50), _attackDamage(20) {
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(100), _energyPoints(100), _attackDamage(30) {
 	std::cout << "ClapTrap constructor with Name called" << std::endl;
 }
 

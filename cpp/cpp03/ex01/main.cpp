@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:54:24 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/09 18:10:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/11 14:04:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ int main(void)
 	ScavTrap	scavTrap("Jack");
 
 	clapTrap.attack("Joe");
-	clapTrap.takeDamage(3);
+	clapTrap.takeDamage(20);
 	clapTrap.beRepaired(2);
-	clapTrap.attack("Jack");
-	clapTrap.takeDamage(3);
+	clapTrap.attack("Bob");
+	clapTrap.takeDamage(20);
 	clapTrap.beRepaired(2);
 
-	scavTrap.attack("Jack");
-	scavTrap.takeDamage(3);
+	scavTrap.attack("Joe");
+	scavTrap.takeDamage(20);
 	scavTrap.beRepaired(2);
 	scavTrap.guardGate();
 

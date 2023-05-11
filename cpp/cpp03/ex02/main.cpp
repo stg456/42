@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 13:54:24 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/10 15:17:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/11 14:09:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 int main(void) 
 {
 	ClapTrap	clapTrap("Bob");
-	FragTrap	FragTrap("John");
+	FragTrap	FragTrap("Jack");
 
 	clapTrap.attack("John");
-	clapTrap.takeDamage(3);
+	clapTrap.takeDamage(30);
 	clapTrap.beRepaired(2);
-	clapTrap.attack("John");
-	clapTrap.takeDamage(3);
+	clapTrap.attack("Bob");
+	clapTrap.takeDamage(30);
 	clapTrap.beRepaired(2);
 
 	FragTrap.attack("Bob");
-	FragTrap.takeDamage(3);
+	FragTrap.takeDamage(30);
 	FragTrap.beRepaired(2);
 	FragTrap.highFivesGuys();
 
