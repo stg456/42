@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:31:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/11 16:35:20 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/11 17:14:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ Cat::Cat(std::string type) {
 Cat::Cat(const Cat &copy) {
 	std::cout << "Cat copy constructor called" << std::endl;
 	*this = copy;
-
 }
 
 Cat& Cat::operator = (const Cat &rhs) {
 	std::cout << "Cat assignement operator called" << std::endl;
-	if (this == &rhs) // & pour rhs et * pour this
+	if (this == &rhs)
 		return (*this);
-
+	return (*this);
 }
