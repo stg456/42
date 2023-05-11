@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 15:40:04 by stgerard          #+#    #+#             */
+/*   Created: 2023/05/11 16:27:47 by stgerard          #+#    #+#             */
 /*   Updated: 2023/05/11 16:35:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Dog.hpp"
 
-#include <iostream>
+Dog::Dog() {
+	std::cout << "Dog default constructor called" << std::endl;
+}
 
-class Animal
-{
-	protected:
-		std::string type;
-	
-	public:
-		Animal();
-		Animal(std::string type);
-		Animal(const Animal &copy);
-		Animal& operator = (const Animal &rhs);
-		~Animal();
+Dog::Dog(std::string type) {
+	std::cout << "Dog constructor with type called" << std::endl;
+}
 
-	void	makeSound();
-};
+Dog::Dog(const Dog &copy) {
+	std::cout << "Dog copy constructor called" << std::endl;
+	*this = copy;
 
-#endif
+}
+
+Dog& Dog::operator = (const Dog &rhs) {
+	std::cout << "Dog assignement operator called" << std::endl;
+	if (this == &rhs) // & pour rhs et * pour this
+		return (*this);
+
+}

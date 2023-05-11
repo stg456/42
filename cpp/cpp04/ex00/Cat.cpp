@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 15:40:04 by stgerard          #+#    #+#             */
+/*   Created: 2023/05/11 16:31:15 by stgerard          #+#    #+#             */
 /*   Updated: 2023/05/11 16:35:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#include "Cat.hpp"
 
-#include <iostream>
+Cat::Cat() {
+	std::cout << "Cat default constructor called" << std::endl;
+}
 
-class Animal
-{
-	protected:
-		std::string type;
-	
-	public:
-		Animal();
-		Animal(std::string type);
-		Animal(const Animal &copy);
-		Animal& operator = (const Animal &rhs);
-		~Animal();
+Cat::Cat(std::string type) {
+	std::cout << "Cat constructor with type called" << std::endl;
+}
 
-	void	makeSound();
-};
+Cat::Cat(const Cat &copy) {
+	std::cout << "Cat copy constructor called" << std::endl;
+	*this = copy;
 
-#endif
+}
+
+Cat& Cat::operator = (const Cat &rhs) {
+	std::cout << "Cat assignement operator called" << std::endl;
+	if (this == &rhs) // & pour rhs et * pour this
+		return (*this);
+
+}
