@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 15:21:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/12 16:44:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,5 @@ WrongCat& WrongCat::operator = (const WrongCat &rhs) {
 }
 
 WrongCat::~WrongCat() {std::cout << "WrongCat destructor called" << std::endl;}
+
+void	WrongCat::makeSound() const {std::cout << "Wrong Meoh !" << std::endl;}

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:31:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/11 17:37:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/12 16:46:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ class WrongCat : public WrongAnimal
 	
 	public:
 		WrongCat();
-		WrongCat(std::string type);
+		// WrongCat(std::string type);
 		WrongCat(const WrongCat &copy);
 		WrongCat& operator = (const WrongCat &rhs);
-		~WrongCat();
+		virtual ~WrongCat();
 
-	void	makeSound();
+	virtual void	makeSound() const;
 };
 
 #endif
