@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 10:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 10:50:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:21:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ WrongCat::WrongCat() {
 	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(std::string type) {
-	std::cout << "WrongCat constructor with type called" << std::endl;
-}
+// WrongCat::WrongCat(std::string type) {
+// 	std::cout << "WrongCat constructor with type called" << std::endl;
+// }
 
 WrongCat::WrongCat(const WrongCat &copy) {
 	std::cout << "WrongCat copy constructor called" << std::endl;

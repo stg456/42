@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:31:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 14:50:07 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:21:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ Cat::Cat() {
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(std::string type) {
-	std::cout << "Cat constructor with type called" << std::endl;
-}
+// Cat::Cat(std::string type) {
+// 	std::cout << "Cat constructor with type called" << std::endl;
+// }
 
 Cat::Cat(const Cat &copy) {
 	std::cout << "Cat copy constructor called" << std::endl;

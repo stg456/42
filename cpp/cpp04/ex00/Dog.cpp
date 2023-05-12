@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:27:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 14:50:07 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:21:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ Dog::Dog() {
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(std::string type) {
-	std::cout << "Dog constructor with type called" << std::endl;
-}
+// Dog::Dog(std::string type) {
+// 	std::cout << "Dog constructor with type called" << std::endl;
+// }
 
 Dog::Dog(const Dog &copy) {
 	std::cout << "Dog copy constructor called" << std::endl;

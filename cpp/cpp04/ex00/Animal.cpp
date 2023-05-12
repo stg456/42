@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:08:03 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 15:01:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:24:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ Animal::Animal() {
 	std::cout << "Animal default constructor called" << std::endl;
 }
 
-Animal::Animal(std::string type) {
-	std::cout << "Animal constructor with type called" << std::endl;
-}
+// Animal::Animal(std::string type) {
+// 	std::cout << "Animal constructor with type called" << std::endl;
+// }
 
 Animal::Animal(const Animal &copy) {
 	std::cout << "Animal copy constructor called" << std::endl;
@@ -38,8 +38,8 @@ Animal::~Animal() {
 	return ;
 }
 
-std::string	Animal::getType(std::string type) const {
+std::string	Animal::getType() const {
 	return this->type;
 }
 
-void	Animal::makeSound() const {std::cout << "" << std::endl;}
+void	Animal::makeSound() const {std::cout << "a silent animal !" << std::endl;}
