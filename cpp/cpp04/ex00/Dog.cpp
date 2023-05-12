@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:27:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/11 17:14:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/12 10:38:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,5 @@ Dog& Dog::operator = (const Dog &rhs) {
 		return (*this);
 	return (*this);
 }
+
+Dog::~Dog() {std::cout << "Dog destructor called" << std::endl;}
