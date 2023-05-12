@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:09:29 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 11:58:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/12 12:01:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
-	delete [] meta;
-	delete [] i;
-	delete [] j;
+	delete	meta;
+	delete	i;
+	delete	j;
 	
 	return 0;
 }
