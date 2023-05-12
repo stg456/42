@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:30:46 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/11 17:37:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/12 14:45:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define WRONGANIMAL_HPP
 
 #include <iostream>
+#include "Animal.hpp"
 
 class WrongAnimal
 {

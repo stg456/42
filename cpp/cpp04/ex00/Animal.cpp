@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:08:03 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 11:58:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/12 15:01:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,17 @@ Animal& Animal::operator = (const Animal &rhs) {
 	std::cout << "Animal assignement operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
-	this->_type = rhs._type;
+	this->type = rhs.type;
 	return *this;
 }
 
-Animal::~Animal() {std::cout << "Animal destructor called" << std::endl;}
-
-std::string	Animal::getType(std::string type) {
-	return this->_type
+Animal::~Animal() {
+	std::cout << "Animal destructor called" << std::endl;
+	return ;
 }
 
-void	Animal::makeSound() {std::cout << "" << std::endl;}
+std::string	Animal::getType(std::string type) const {
+	return this->type;
+}
+
+void	Animal::makeSound() const {std::cout << "" << std::endl;}

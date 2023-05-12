@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:24:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 11:58:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/12 14:58:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Dog : public Animal
 		Dog(std::string type);
 		Dog(const Dog &copy);
 		Dog& operator = (const Dog &rhs);
-		~Dog();
+		virtual ~Dog();
 
 		virtual void	makeSound() const;
 };
