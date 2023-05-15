@@ -6,13 +6,14 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:08:03 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 15:24:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:52:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal() {
+	this->type = "no type";
 	std::cout << "Animal default constructor called" << std::endl;
 }
 

@@ -6,14 +6,16 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:27:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 15:21:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/15 14:03:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 Dog::Dog() {
 	std::cout << "Dog default constructor called" << std::endl;
+	this->_Brain = new Brain();
 }
 
 // Dog::Dog(std::string type) {
@@ -32,7 +34,10 @@ Dog& Dog::operator = (const Dog &rhs) {
 	return (*this);
 }
 
-Dog::~Dog() {std::cout << "Dog destructor called" << std::endl;}
+Dog::~Dog() {
+	std::cout << "Dog destructor called" << std::endl;
+	delete this->_Brain;
+}
 
 void	Dog::makeSound() const {
 	std::cout << "Wouf" << std::endl;

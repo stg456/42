@@ -6,13 +6,14 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:31:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 15:21:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:19:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat() {
+	this->type = "Cat";
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
@@ -36,4 +37,8 @@ Cat::~Cat() {std::cout << "Cat destructor called" << std::endl;}
 
 void	Cat::makeSound() const {
 	std::cout << "Meoh" << std::endl;
+}
+
+std::string		Dog::getType() const {
+	return (this->type);
 }

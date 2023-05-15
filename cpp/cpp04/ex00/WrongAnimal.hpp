@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:30:46 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 16:46:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:50:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ class WrongAnimal
 		WrongAnimal& operator = (const WrongAnimal &rhs);
 		virtual ~WrongAnimal();
 
-	virtual void	makeSound() const;
+		std::string		getType() const;
+		void	makeSound() const;
 };
 
 #endif
