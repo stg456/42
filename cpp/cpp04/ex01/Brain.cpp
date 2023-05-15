@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/10 16:09:29 by stgerard          #+#    #+#             */
+/*   Created: 2023/05/15 10:44:12 by stgerard          #+#    #+#             */
 /*   Updated: 2023/05/15 11:02:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
 #include "Brain.cpp"
 
-int main() 
-{
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+Brain::Brain() {
+	std::cout << "Brain default constructor called" << std::endl;
+}
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+// Animal::Animal(std::string type) {
+// 	std::cout << "Animal constructor with type called" << std::endl;
+// }
 
+Brain::Brain(const Brain &copy) {
+	std::cout << "Brain copy constructor called" << std::endl;
+	*this = copy;
+}
 
-	std::cout << i->getType() << " " << std::endl;
+Brain& Brain::operator = (const Brain &rhs) {
+	std::cout << "Brain assignement operator called" << std::endl;
+	if (this == &rhs)
+		return (*this);
+	this->type = rhs.type;
+	return *this;
+}
 
-	i2->makeSound();
-	met2->makeSound();
-
-	delete	meta;
-	delete	i;
-	delete	j;
-
-	return 0;
+Brain::~Brain() {
+	std::cout << "Brain destructor called" << std::endl;
+	return ;
 }

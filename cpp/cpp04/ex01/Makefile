@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 13:54:39 by stgerard          #+#    #+#              #
-#    Updated: 2023/05/12 10:50:41 by stgerard         ###   ########.fr        #
+#    Updated: 2023/05/15 10:28:26 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp \
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
