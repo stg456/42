@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:31:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/15 17:19:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/15 17:24:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ void	Cat::makeSound() const {
 	std::cout << "Meoh" << std::endl;
 }
 
-std::string		Dog::getType() const {
+std::string		Cat::getType() const {
 	return (this->type);
 }
