@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/11 16:24:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/15 11:47:07 by stgerard         ###   ########.fr       */
+/*   Created: 2023/05/11 17:30:46 by stgerard          #+#    #+#             */
+/*   Updated: 2023/05/12 16:46:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
+#include <iostream>
 #include "Animal.hpp"
-#include "Brain.hpp"
 
-class Dog : public Animal
+class WrongAnimal
 {
+	protected:
+		std::string type;
+	
 	public:
-		Dog();
-		Dog(std::string type);
-		Dog(const Dog &copy);
-		Dog& operator = (const Dog &rhs);
-		virtual ~Dog();
+		WrongAnimal();
+		// WrongAnimal(std::string type);
+		WrongAnimal(const WrongAnimal &copy);
+		WrongAnimal& operator = (const WrongAnimal &rhs);
+		virtual ~WrongAnimal();
 
-		virtual void	makeSound() const;
-
-	private:
-		Brain *_Brain;
+	virtual void	makeSound() const;
 };
 
 #endif

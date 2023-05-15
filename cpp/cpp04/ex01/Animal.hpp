@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:40:04 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/15 11:02:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/15 11:47:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Animal
 {
 	protected:
-		std::string type;
+		std::string _type;
 	
 	public:
 		Animal();

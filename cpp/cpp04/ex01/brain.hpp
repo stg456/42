@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 10:24:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/15 11:02:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/15 11:47:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@ public:
 	Brain();
 	Brain (const Brain &copy);
 	Brain& operator = (const Brain &rhs);
-	virtual ~Brain();
+	~Brain();
 
-	std::string	ideas[100];
+	std::string	getIdeas(int i) const;
+
+private:
+	std::string	_ideas[100];
 };
 
 #endif

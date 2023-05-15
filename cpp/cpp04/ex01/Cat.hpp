@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:28:55 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 14:58:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/15 11:47:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ class Cat : public Animal
 		virtual ~Cat();
 
 		virtual void	makeSound() const;
+	private:
+		Brain *_Brain;
 };
 
 #endif
