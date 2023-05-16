@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/16 17:34:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/16 17:51:02 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int main(int ac, char **av)
 	e = malloc(sizeof(t_env));
 	if (ac != 2)
 		ft_error("\x1B[31mError: Bad number of arguments\n");
-	verif(e);
+	check(e);
 
 
 

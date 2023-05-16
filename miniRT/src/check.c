@@ -1,53 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   miniRT.h                                           :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
+/*   Created: 2023/05/16 17:44:25 by stgerard          #+#    #+#             */
 /*   Updated: 2023/05/16 17:51:02 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#include "miniRT.h"
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include <mlx.h>
-
-// # define T_S 63
-
-# define ESC 53
-// # define W 13
-// # define A 0
-// # define S 1
-// # define D 2
-
-typedef struct s_env
+void	check(t_env e)
 {
-	void	*mlx;
-	void	*win;
-	void	*img;
-}				t_env;
-
-typedef struct s_data
-{
-	char	*buf;
-	char	*tmp;
-	int		fd;
-	int		i;
-	char	
-
-}				t_data;
-
-// main.c
-int		main(int ac, char **av);
-void	ft_error(char *str);
 
 
-
-#endif
+}
