@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/05/16 16:55:47 by stgerard         ###   ########.fr        #
+#    Updated: 2023/05/16 17:34:04 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
 
-SRC = 
+SRC = \
 
 OBJ = ${SRC:.c=.o}
 
