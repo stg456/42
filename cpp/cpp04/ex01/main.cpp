@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:09:29 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/16 13:47:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/16 14:44:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int main()
 	std::cout << i->getType() << " " << std::endl;
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
-	meta->makeSound();
+	// meta->makeSound();
 
 
 	std::cout << i->getType() << " " << std::endl;
 
-	i2->makeSound();
-	met2->makeSound();
+	// i2->makeSound();
+	// met2->makeSound();
 
 	// delete	meta;
 	delete	i;

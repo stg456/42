@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 14:02:12 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/16 14:02:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/16 14:44:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	Brain& operator = (const Brain &rhs);
 	~Brain();
 
-	std::string	getIdeas(int i) const;
+	std::string	getIdeas(int i);
 
 private:
 	std::string	_ideas[100];
