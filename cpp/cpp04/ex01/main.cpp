@@ -6,14 +6,14 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:09:29 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/15 11:47:07 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/16 13:47:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "Brain.cpp"
+#include "Brain.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 

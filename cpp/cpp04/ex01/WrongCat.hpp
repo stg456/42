@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 17:31:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/12 16:46:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/15 15:12:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class WrongCat : public WrongAnimal
 		WrongCat& operator = (const WrongCat &rhs);
 		virtual ~WrongCat();
 
-	virtual void	makeSound() const;
+		virtual void	makeSound() const;
 };
 
 #endif
