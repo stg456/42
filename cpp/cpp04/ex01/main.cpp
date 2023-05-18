@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:09:29 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/18 16:37:56 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:39:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int main()
 		{
 			meta[i] = new Dog();
 			meta[i]->makeSound();
-			meta[i]->Brain::setIdea("balle", i);
-			meta[i]->Brain::getIdeas(i);
-			std::cout << this->meta[i] << std::endl;
+			// meta[i]->Brain::setIdea("balle", i);
+			// meta[i]->Brain::getIdeas(i);
+			// std::cout << this->meta[i] << std::endl;
 		}
 		else
 		{
