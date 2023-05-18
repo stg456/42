@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 10:44:12 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/16 14:44:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/18 12:45:29 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 Brain::Brain() {
 	std::cout << "Brain default constructor called" << std::endl;
+	for (int i = 1; i <= 100; i++)
+		this->_ideas[i] = "ideas " + i;
+	return ;
 }
 
 // Animal::Animal(std::string type) {
