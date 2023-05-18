@@ -6,14 +6,14 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:27:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/15 17:19:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/18 12:15:47 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
 Dog::Dog() {
-	this->type = "Dog";
+	this->_type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
@@ -30,7 +30,7 @@ Dog& Dog::operator =(const Dog &rhs) {
 	std::cout << "Dog assignement operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
-	this->type = rhs.type;
+	this->_type = rhs._type;
 	return (*this);
 }
 
@@ -41,5 +41,5 @@ void	Dog::makeSound() const {
 }
 
 std::string		Dog::getType() const {
-	return (this->type);
+	return (this->_type);
 }
