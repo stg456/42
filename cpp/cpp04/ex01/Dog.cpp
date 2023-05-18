@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:27:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/18 12:15:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:07:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 Dog::Dog() {
 	this->_type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
+	this->_Brain = new _Brain();
+	return ;
 }
 
 // Dog::Dog(std::string type) {
@@ -34,7 +36,10 @@ Dog& Dog::operator =(const Dog &rhs) {
 	return (*this);
 }
 
-Dog::~Dog() {std::cout << "Dog destructor called" << std::endl;}
+Dog::~Dog() {
+	std::cout << "Dog destructor called" << std::endl;
+	delete _Brain;
+}
 
 void	Dog::makeSound() const {
 	std::cout << "Wouf" << std::endl;
@@ -43,3 +48,4 @@ void	Dog::makeSound() const {
 std::string		Dog::getType() const {
 	return (this->_type);
 }
+

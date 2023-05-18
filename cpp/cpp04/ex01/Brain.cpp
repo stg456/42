@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 10:44:12 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/18 12:45:29 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:07:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ Brain::~Brain() {
 	return ;
 }
 
-std::string	getIdeas(int i) {
+std::string	getIdeas(int i) const {
 	return (this->_ideas[i]);
 }

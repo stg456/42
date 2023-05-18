@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:09:29 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/16 14:44:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:07:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@
 
 int main() 
 {
-	// const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	for (int i = 1; i <= 100; i++)
+	{
+
+	}
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
@@ -32,12 +33,6 @@ int main()
 
 	std::cout << i->getType() << " " << std::endl;
 
-	// i2->makeSound();
-	// met2->makeSound();
-
-	// delete	meta;
-	delete	i;
-	delete	j;
 
 	return 0;
 }

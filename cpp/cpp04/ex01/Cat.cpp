@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:31:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/18 12:45:29 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/18 14:24:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ Cat& Cat::operator = (const Cat &rhs) {
 	return (*this);
 }
 
-Cat::~Cat() {std::cout << "Cat destructor called" << std::endl;}
+Cat::~Cat() {
+	std::cout << "Cat destructor called" << std::endl;
+	delete _Brain;
+}
 
 void	Cat::makeSound() const {
 	std::cout << "Meoh" << std::endl;
