@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:31:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/18 14:24:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/18 15:52:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cat::Cat() {
 	this->_type = "Cat";
 	std::cout << "Cat default constructor called" << std::endl;
-	this->_Brain = new _Brain();
+	this->_Brain = new Brain();
 	return ;
 }
 

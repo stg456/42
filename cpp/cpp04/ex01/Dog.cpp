@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:27:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/18 15:07:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:01:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Dog::Dog() {
 	this->_type = "Dog";
 	std::cout << "Dog default constructor called" << std::endl;
-	this->_Brain = new _Brain();
+	this->_Brain = new Brain();
 	return ;
 }
 

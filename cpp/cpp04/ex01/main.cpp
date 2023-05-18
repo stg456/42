@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:09:29 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/18 15:07:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/18 16:37:56 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,23 +16,32 @@
 #include "Brain.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+#define N 10
 
 int main() 
 {
-	for (int i = 1; i <= 100; i++)
+    const Animal* meta[N];
+	for (int i = 0; i < N; i++)
 	{
-
+		if (i % 2)
+		{
+			meta[i] = new Dog();
+			meta[i]->makeSound();
+			meta[i]->Brain::setIdea("balle", i);
+			meta[i]->Brain::getIdeas(i);
+			std::cout << this->meta[i] << std::endl;
+		}
+		else
+		{
+			meta[i] = new Cat();
+			meta[i]->makeSound();
+		}
 	}
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	// meta->makeSound();
-
-
-	std::cout << i->getType() << " " << std::endl;
-
+	for (int i = 0; i < N; i++)
+	{
+		delete meta[i];
+	}
 
 	return 0;
 }
