@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 10:44:12 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/20 17:12:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/20 18:18:37 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ Brain::Brain() {
 	// 	this->_ideas[i] = "ideas ";
 	// 	this->_ideas[i] += i + '0';
 	// }
-	std::string ideas[] = {"sleep", "play", "eat", "do something stupid",};
+	std::string ideas[] = {"sleep", "play", "eat", "do something stupid"};
 	for (int i = 0; i < 100; i++)
-		this->_ideas = ideas[i % 4];
+		*this->_ideas = ideas[i % 4]; // pq * ?!
 	return ;
 }
 
@@ -54,7 +54,7 @@ Brain::~Brain() {
 	return ;
 }
 
-std::string	Brain::getIdeas(int i) const {
+std::string	Brain::getIdeas(int i) {
 
 	return (this->_ideas[i]);
 }
