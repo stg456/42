@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 10:44:12 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/20 18:18:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/20 19:35:12 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ Brain& Brain::operator = (const Brain &rhs) {
 	std::cout << "Brain assignement operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
-	// this->_type = rhs._type;
+	for (int i = 0; i < 100; i++)
+		this->_ideas[i] = rhs._ideas[i];
+	// std::cout << this->_ideas << std::endl;
 	return *this;
 }
 
@@ -55,6 +57,6 @@ Brain::~Brain() {
 }
 
 std::string	Brain::getIdeas(int i) {
-
+	// std::cout << this->_ideas << std::endl;
 	return (this->_ideas[i]);
 }

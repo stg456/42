@@ -63,6 +63,9 @@
 		"utility": "cpp",
 		"vector": "cpp",
 		"limits.h": "c",
-		"iomanip": "cpp"
+		"iomanip": "cpp",
+		"deque": "cpp",
+		"fstream": "cpp",
+		"stack": "cpp"
 	}
 }
