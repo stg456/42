@@ -3,6 +3,26 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int	ft_error(char *str, char *av)
+{
+	while (str && *str)
+		write(2, str++, 1);
+	if (av)
+		while (*av)
+			write(2, av++, 1);
+	write(2, "\n", 1);
+	return 1;
+}
+
+int	ft_exe(char **av, int i, int tmpfd, char **env)
+{
+	av[i] = 0;
+	dup2(tmpfd, STDIN_FILENO);
+	close(tmpfd);
+	execve(av[0], av, env);
+	return (ft_error("error: cannot execute ", av[0]));
+}
+
 int main(int ac, char **av, char **env)
 {
 	int i = 0;
@@ -19,11 +39,14 @@ int main(int ac, char **av, char **env)
 			i++;
 		if (strcmp(av[0], "cd") == 0)
 		{
-		
+			if (i != 2)
+				ft_error("error: cd: bad arguments", NULL);
+			else if (chdir(av[1] != 0))
+				ft_error("error: cd: cannot change directory to ", av[1]);
 		}
 		else if (i != 0 && (strcmp(av[i], ";") == 0 || av[i] == NULL))
 		{
-		
+
 		}
 		else if (i != 0 && strcmp(av[i], "|"))
 		{

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:09:29 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/18 16:39:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/20 17:12:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "Brain.hpp"
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
+
 #define N 10
 
 int main() 
