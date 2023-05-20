@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:31:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/18 15:52:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/20 20:06:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat() {
 	this->_type = "Cat";
-	std::cout << "Cat default constructor called" << std::endl;
+	std::cout << "Cat default constructor called with the new Brain" << std::endl;
 	this->_Brain = new Brain();
 	return ;
 }
@@ -36,7 +36,7 @@ Cat& Cat::operator = (const Cat &rhs) {
 }
 
 Cat::~Cat() {
-	std::cout << "Cat destructor called" << std::endl;
+	std::cout << "Cat destructor called with the delete Brain" << std::endl;
 	delete _Brain;
 }
 
