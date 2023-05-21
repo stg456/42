@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:36:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/21 16:46:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/21 18:27:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 AMateria::AMateria() {}
 
-AMateria::AMateria(std::string type) {}
+AMateria::AMateria(std::string type) : _type {}
 
 AMateria::AMateria(const AMateria &copy) {}
 

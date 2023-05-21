@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:25:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/21 17:48:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/21 18:27:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ class AMateria
 		AMateria();
 		AMateria(std::string const &type);
 		AMateria(const AMateria &copy);
-		AMateria& operator = (const AMateria &rhs);
 		virtual ~AMateria();
 
+		AMateria& operator = (const AMateria &rhs);
 		std::string const	& getType() const;
 		virtual			AMateria* clone() const = 0;
 		virtual void	use(ICharacter & target);
@@ -41,8 +41,9 @@ class Ice
 		Ice();
 		Ice(std::string const &type);
 		Ice(const Ice &copy);
-		Ice& operator = (const Ice &rhs);
 		~Ice();
+
+		Ice& operator = (const Ice &rhs);
 };
 
 class Cure
@@ -54,8 +55,9 @@ class Cure
 		Cure();
 		Cure(std::string const &type);
 		Cure(const Cure &copy);
-		Cure operator = (const Cure &rhs);
 		~Cure();
+
+		Cure operator = (const Cure &rhs);
 };
 
 class Character
@@ -64,9 +66,9 @@ class Character
 		ICharacter();
 		ICharacter(std::string const &name);
 		ICharacter(const ICharacter &copy);
-		ICharacter& operator = (const ICharacter &rhs);
 		virtual ~ICharacter();
 
+		ICharacter& operator = (const ICharacter &rhs);
 		virtual std::string const & getName() const = 0;
 		virtual void	equip(AMateria* m) = 0;
 		virtual void	unequip(int idx) = 0;
