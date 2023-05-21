@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:28:55 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/18 15:52:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:35:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Cat : public Animal
 {
 	public:
 		Cat();
-		Cat(std::string type);
+		// Cat(std::string type);
 		Cat(const Cat &copy);
 		Cat& operator = (const Cat &rhs);
 		virtual ~Cat();
