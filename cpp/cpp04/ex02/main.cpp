@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:09:29 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/20 17:12:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/21 15:24:53 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,9 @@
 
 int main() 
 {
+	// const Animal* metaA = new Animal(); // ne compile pas car reconnait la class abstraite
     const Animal* meta[N];
+	// metaA->makeSound();
 	for (int i = 0; i < N; i++)
 	{
 		if (i % 2)
@@ -43,6 +45,6 @@ int main()
 	{
 		delete meta[i];
 	}
-
+	// delete metaA;
 	return 0;
 }
