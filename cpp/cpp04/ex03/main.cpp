@@ -6,45 +6,29 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:09:29 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/21 15:24:53 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/21 17:48:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "Brain.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
-
-#define N 10
+#include "AMateria.hpp"
 
 int main() 
 {
-	// const Animal* metaA = new Animal(); // ne compile pas car reconnait la class abstraite
-    const Animal* meta[N];
-	// metaA->makeSound();
-	for (int i = 0; i < N; i++)
-	{
-		if (i % 2)
-		{
-			meta[i] = new Dog();
-			meta[i]->makeSound();
-			// meta[i]->Brain::setIdea("balle", i);
-			// meta[i]->Brain::getIdeas(i);
-			// std::cout << this->meta[i] << std::endl;
-		}
-		else
-		{
-			meta[i] = new Cat();
-			meta[i]->makeSound();
-		}
-	}
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	ICharacter* me = new Character("me");
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
+	ICharacter* bob = new Character("bob");
+	me->use(0, *bob);
+	me->use(1, *bob);
+	delete bob;
+	delete me;
+	delete src;
 
-	for (int i = 0; i < N; i++)
-	{
-		delete meta[i];
-	}
-	// delete metaA;
 	return 0;
 }
