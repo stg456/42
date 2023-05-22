@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:25:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/21 18:27:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/22 10:36:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class AMateria
 
 		AMateria& operator = (const AMateria &rhs);
 		std::string const	& getType() const;
-		virtual			AMateria* clone() const = 0;
-		virtual void	use(ICharacter & target);
+		virtual AMateria* 	clone() const = 0;
+		virtual void		use(ICharacter & target);
 };
 
 class Ice
@@ -60,7 +60,7 @@ class Cure
 		Cure operator = (const Cure &rhs);
 };
 
-class Character
+class ICharacter
 {
 	public:
 		ICharacter();

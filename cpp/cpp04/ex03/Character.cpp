@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 16:36:05 by stgerard          #+#    #+#             */
+/*   Created: 2023/05/22 10:25:18 by stgerard          #+#    #+#             */
 /*   Updated: 2023/05/22 10:36:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-AMateria::AMateria() {}
+ICharacter::ICharacter() {}
 
-AMateria::AMateria(std::string type) : _type {}
+ICharacter::ICharacter(std::string const &name) {}
 
-AMateria::AMateria(const AMateria &copy) {}
+ICharacter::ICharacter(const ICharacter &copy) {}
 
-AMateria::~AMateria() {}
+ICharacter::~ICharacter() {}
 
-AMateria& AMateria::operator = (const AMateria &rhs) {} 
+ICharacter & ICharacter::operator = (const ICharacter &rhs) {}
 
-std::string const	& AMateria::getType() const; {}
+std::string const & ICharacter::getName() const {}
 
-AMateria*	AMateria::clone() const {}
+void	ICharacter::equip(AMateria* m) {}
 
-void	AMateria::use(ICharacter & target) {}
+void	ICharacter::unequip(int idx) {}
+
+void	ICharacter::use(int idx, ICharacter &target) {}
+
