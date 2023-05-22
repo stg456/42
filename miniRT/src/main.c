@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/22 15:23:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/22 15:40:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,21 @@ int main(int ac, char **av)
 	// d = malloc(sizeof(t_data));
 
 	check(e, ac, av);
+	load_data(e, av);
 	
 	init_rt(e);
-	e->map = init_map(av, e);
-	if (!e->map)
-		ft_error("\x1B[31mError: The map is not playable\n");
-	e->mlx = mlx_init();
-	e->win = mlx_new_window(e->mlx, e->size_x * T_S, e->size_y * T_S, "Game");
-	mlx_hook(e->win, 17, 0, close_hook, e);
-	mlx_key_hook(e->win, key_hook, e);
-	init_visu(e);
-	build(e);
-	mlx_loop_hook(e->mlx, loop_hook, e);
-	mlx_loop(e->mlx);
 
+	// e->mlx = init_map(av, e);
+	// if (!e->map)
+	// 	ft_error("\x1B[31mError: The map is not playable\n");
+	// e->mlx = mlx_init();
+	// e->win = mlx_new_window(e->mlx, e->size_x * T_S, e->size_y * T_S, "Game");
+	// mlx_hook(e->win, 17, 0, close_hook, e);
+	// mlx_key_hook(e->win, key_hook, e);
+	// init_visu(e);
+	// build(e);
+	// mlx_loop_hook(e.mlx, loop_hook, e);
+	// mlx_loop(e->mlx);
 
 
 	// free(e);

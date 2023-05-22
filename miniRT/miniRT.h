@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/22 15:18:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/22 15:40:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,12 @@ int		close_hook(t_env *e);
 
 void	check(t_env e, int ac, char **av);
 
+// init.c
+
+void	init_rt(t_env e, t_data d);
+
+// load.c
+
+int	load_data(t_env e, t_data d)
 
 #endif
