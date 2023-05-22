@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:25:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/22 11:20:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/22 11:42:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define AMATERIA_HPP
 
 #include <iostream>
+#include <string>
 
 class AMateria
 {
@@ -62,14 +63,17 @@ class Cure
 
 class Character
 {
+	protected:
+		std::string	item[4];
+
 	public:
 		Character();
 		Character(std::string const &name);
 		Character(const Character &copy);
 		Character& operator = (const Character &rhs);
-}
+};
 
-class ICharacter
+class ICharacter : Character
 {
 	public:
 		// ICharacter();

@@ -6,11 +6,11 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/02 13:54:39 by stgerard          #+#    #+#              #
-#    Updated: 2023/05/21 18:27:11 by stgerard         ###   ########.fr        #
+#    Updated: 2023/05/22 11:42:16 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Animal
+NAME = AMateria
 
 CC = c++
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRCS = main.cpp AMateria.cpp \
+SRCS = main.cpp AMateria.cpp Character.cpp Ice_Cure.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
