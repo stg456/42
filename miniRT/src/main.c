@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/22 15:40:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/22 17:11:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int main(int ac, char **av)
 	// d = malloc(sizeof(t_data));
 
 	check(e, ac, av);
-	load_data(e, av);
+	load_data(e, d, av);
 	
-	init_rt(e);
+	init_rt(e, d);
 
 	// e->mlx = init_map(av, e);
 	// if (!e->map)

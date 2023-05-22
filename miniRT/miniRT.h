@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/22 15:40:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/22 17:11:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <mlx.h>
+#include <fcntl.h>
 
 // # define T_S 63
 
@@ -35,6 +36,9 @@ typedef struct s_env
 
 typedef struct s_data
 {
+	int			fd;
+	char		*buf;
+	int			i;
 	int			nbA;
 	float		ratioA;
 	int			Ar;
@@ -102,6 +106,7 @@ void	init_rt(t_env e, t_data d);
 
 // load.c
 
-int	load_data(t_env e, t_data d)
+int		load_data(t_env e, t_data d, char **av);
+
 
 #endif
