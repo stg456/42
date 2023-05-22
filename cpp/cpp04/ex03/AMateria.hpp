@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:25:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/22 10:36:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/22 11:20:15 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,15 +60,24 @@ class Cure
 		Cure operator = (const Cure &rhs);
 };
 
+class Character
+{
+	public:
+		Character();
+		Character(std::string const &name);
+		Character(const Character &copy);
+		Character& operator = (const Character &rhs);
+}
+
 class ICharacter
 {
 	public:
-		ICharacter();
-		ICharacter(std::string const &name);
-		ICharacter(const ICharacter &copy);
-		virtual ~ICharacter();
+		// ICharacter();
+		// ICharacter(std::string const &name);
+		// ICharacter(const ICharacter &copy);
+		// ICharacter& operator = (const ICharacter &rhs);
 
-		ICharacter& operator = (const ICharacter &rhs);
+		virtual ~ICharacter();
 		virtual std::string const & getName() const = 0;
 		virtual void	equip(AMateria* m) = 0;
 		virtual void	unequip(int idx) = 0;

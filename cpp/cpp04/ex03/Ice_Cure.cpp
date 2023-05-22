@@ -1,32 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.cpp                                      :+:      :+:    :+:   */
+/*   Ice_Cure.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 10:25:18 by stgerard          #+#    #+#             */
+/*   Created: 2023/05/22 11:02:39 by stgerard          #+#    #+#             */
 /*   Updated: 2023/05/22 11:30:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-// ICharacter::ICharacter() {}
+Ice& Ice::operator = (const Ice &rhs) {
 
-// ICharacter::ICharacter(std::string const &name) {}
+	std::cout << "* shoots an ice bolt at ";
+	std::cout << rhs.name << std::endl;
+}
 
-// ICharacter::ICharacter(const ICharacter &copy) {}
-
-// ICharacter & ICharacter::operator = (const ICharacter &rhs) {}
-
-ICharacter::~ICharacter() {}
-
-std::string const & ICharacter::getName() const {}
-
-void	ICharacter::equip(AMateria* m) {}
-
-void	ICharacter::unequip(int idx) {}
-
-void	ICharacter::use(int idx, ICharacter &target) {}
-
+Cure Cure::operator = (const Cure &rhs) {}
