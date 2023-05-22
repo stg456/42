@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/05/16 17:51:02 by stgerard         ###   ########.fr        #
+#    Updated: 2023/05/22 14:36:42 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
 
 SRC = main.c check.c \
+./libft/get_next_line.c \
 
 OBJ = ${SRC:.c=.o}
 
