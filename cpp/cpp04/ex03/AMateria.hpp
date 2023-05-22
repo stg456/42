@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 16:25:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/22 11:42:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/22 11:45:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ class Cure
 class Character
 {
 	protected:
-		std::string	item[4];
+		std::string	_item[4];
+		std::string	_name;
 
 	public:
 		Character();
