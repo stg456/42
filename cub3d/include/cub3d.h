@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:44:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/23 16:42:28 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:08:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_env
 // main.c
 
 int		main(int ac, char **av);
-void	keyhook(t_env *e, mlx_key_data_t key, void* param);
+void	keyhook(mlx_key_data_t keydata, void* param);
 void	ft_error(char *str);
 int		close_hook(t_env *e);
 

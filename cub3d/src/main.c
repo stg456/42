@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:49:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/23 16:50:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:09:47 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,13 @@ int	close_hook(t_env *e)
 // 	return (1);
 // }
 
-void	keyhook(t_env *e, mlx_key_data_t keydata, void* param)
+void	keyhook(mlx_key_data_t keydata, void* param)
 {
-	(void)param;
+	// (void)param;
+	t_env	*e;
+	e = (t_env *)param;
 
-	if (keydata.key == ESC)
+	if (keydata.key == MLX_KEY_ESCAPE)
 		close_hook(e);
 	return ;
 }
@@ -66,7 +68,7 @@ int	main(int ac, char **av)
 	e->size_x = 640;
 	e->size_y = 480;
 	e->mlx = mlx_init(e->size_x, e->size_y, "cub3d", false);
-	mlx_key_hook(e->mlx, &keyhook, NULL);
+	mlx_key_hook(e->mlx, &keyhook, e);
 	e->img = mlx_new_image(e->mlx, e->size_x, e->size_y);
 	
 	mlx_image_to_window(e->mlx, e->img, 0, 0);
