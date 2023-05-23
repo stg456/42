@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:44:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/03/16 17:12:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/23 14:23:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,15 @@ typedef struct s_env
 }				t_env;
 
 // main.c
+
+int		main(int ac, char **av);
+int		key_hook(int key, t_env *e);
+void	ft_error(char *str);
+int		close_hook(t_env *e);
+
+// init.c
+
+char	**init_map(char **argv, t_env *e);
+char	**map_read(char *filename);
 
 #endif
