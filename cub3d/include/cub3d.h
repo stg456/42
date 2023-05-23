@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:44:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/23 17:08:17 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/23 18:04:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,7 @@
 # include <stdarg.h>
 # include <sys/types.h>
 
-# define T_S 63
-# define ESC 53
-# define W 13
-# define A 0
-# define S 1
-# define D 2
+#define PI 3.14159
 
 typedef struct s_env
 {
