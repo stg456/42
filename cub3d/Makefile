@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/19 17:21:41 by stgerard          #+#    #+#              #
-#    Updated: 2023/05/23 11:22:31 by stgerard         ###   ########.fr        #
+#    Updated: 2023/05/23 11:56:43 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,30 +16,30 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-SRC = ./src/cub3d.c ./src/init.c \
-./src/check_map.c ./src/img.c \
-./src/move.c ./src/move2.c ./src/utils_img.c \
-./libft/get_next_line.c ./libft/ft_strchr.c ./libft/ft_strjoin.c \
-./libft/ft_strnstr.c ./libft/ft_calloc.c ./libft/ft_memcpy.c \
-./libft/ft_strlen.c ./libft/ft_split.c ./libft/ft_printf.c \
-./libft/ft_printf_utils.c ./libft/ft_printf_utils2.c \
-./libft/ft_printf_utils3.c ./libft/ft_printf_utils4.c ./libft/ft_arr_freer.c
+SRC = ./src/main.c ./src/init.c 
 
 OBJ = ${SRC:.c=.o}
 
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	${CC} $(CFLAGS) ${OBJ} libmlx42.a -I include -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit -o ${NAME}
+	${MAKE} -sC ./libft
+	${MAKE} -sC ./MLX42
+	mv ./libft/libft.a ./
+	mv ./MLX42/libmlx42.a ./
+	${CC} $(CFLAGS) ${OBJ} libmlx42.a -I include -lglfw -L/Users/${USER}/goinfre/.brew/opt/glfw/lib/ -o ${NAME}
 
 %.o: %.c
-	$(CC) $(CFLAGS) -Imlx -c $< -o $@
+	$(CC) $(CFLAGS)  -I./MLX42/include/MLX42 -I/Users/${USER}/goinfre/.brew/opt/glfw/include -c $< -o $@
 
 clean:
-			${RM} ${OBJ}
+	${RM} ${OBJ} libmlx42.a libft.a
+	${MAKE} clean -sC ./libft
+	
 
 fclean: clean
-			${RM} ${NAME}
+	${RM} ${NAME}
+	${MAKE} fclean -sC ./libft
 
 re: fclean all
 

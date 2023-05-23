@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:49:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/23 11:22:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/23 11:59:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	main(int ac, char **av)
 	mlx_key_hook(e->win, key_hook, e);
 	init_visu(e);
 	build(e);
-	mlx_loop_hook(e->mlx, loop_hook, e);
+	// mlx_loop_hook(e->mlx, loop_hook, e);
 	mlx_loop(e->mlx);
 	return (0);
 }
