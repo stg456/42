@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:49:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/23 17:09:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/23 17:38:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	close_hook(t_env *e)
 // 	// free(e->visu.key);
 // 	// free(e->visu.health);
 // 	free(e->mlx);
-	printf("c'est un beau bordel !");
+	printf("c'est un beau bordel !\n");
 	// free(e);
 	exit(EXIT_SUCCESS);
 }
@@ -55,6 +55,11 @@ void	keyhook(mlx_key_data_t keydata, void* param)
 
 	if (keydata.key == MLX_KEY_ESCAPE)
 		close_hook(e);
+	// else if (keydata.key == MLX_KEY_W || keydata.key == MLX_KEY_A
+	// 		|| keydata.key == MLX_KEY_S || keydata.key == MLX_KEY_D)
+	// 	move(keydata.key, e);
+	// else if (keydata.key == MLX_KEY_SPACE)
+	// 	action(keydata.key, e);
 	return ;
 }
 
