@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:49:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/03/16 17:12:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/23 11:22:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@ int	close_hook(t_env *e)
 {
 	mlx_destroy_window(e->mlx, e->win);
 	ft_arr_freer(e->map);
-	free(e->visu.player);
-	free(e->visu.collectible);
-	free(e->visu.exit);
-	free(e->visu.exitc);
-	free(e->visu.floor);
-	free(e->visu.pentagram);
-	free(e->visu.enemy);
-	free(e->visu.key);
-	free(e->visu.health);
+	// free(e->visu.player);
+	// free(e->visu.collectible);
+	// free(e->visu.exit);
+	// free(e->visu.exitc);
+	// free(e->visu.floor);
+	// free(e->visu.pentagram);
+	// free(e->visu.enemy);
+	// free(e->visu.key);
+	// free(e->visu.health);
 	free(e->mlx);
 	free(e);
 	exit(EXIT_SUCCESS);

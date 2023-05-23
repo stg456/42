@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/19 17:21:41 by stgerard          #+#    #+#              #
-#    Updated: 2023/03/16 17:50:38 by stgerard         ###   ########.fr        #
+#    Updated: 2023/05/23 11:22:31 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ OBJ = ${SRC:.c=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	${CC} $(CFLAGS) ${OBJ} -Lmlx -lmlx -framework OpenGL -framework AppKit -o ${NAME}
+	${CC} $(CFLAGS) ${OBJ} libmlx42.a -I include -lglfw3 -framework Cocoa -framework OpenGL -framework IOKit -o ${NAME}
 
 %.o: %.c
 	$(CC) $(CFLAGS) -Imlx -c $< -o $@
