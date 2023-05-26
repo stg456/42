@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/19 17:21:41 by stgerard          #+#    #+#              #
-#    Updated: 2023/05/26 11:47:05 by stgerard         ###   ########.fr        #
+#    Updated: 2023/05/26 15:05:36 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,12 +23,12 @@ OBJ = ${SRC:.c=.o}
 all: ${NAME}
 
 ${NAME}: ${OBJ}
-	${MAKE} -sC ./libft
+	${MAKE} -sC ./libft/
 	${MAKE} -sC ./MLX42
 	mv ./libft/libft.a ./
 	mv ./MLX42/libmlx42.a ./
-	#${CC} $(CFLAGS) ${OBJ} libmlx42.a -lglfw -L/Users/${USER}/goinfre/.brew/opt/glfw/lib/ -o ${NAME}
-	${CC} $(CFLAGS) ${OBJ} libmlx42.a -lglfw -L/Users/${USER}/42/cub3d/glfw/lib/ -o ${NAME}
+	# ${CC} $(CFLAGS) ${OBJ} libmlx42.a -lglfw -L/Users/${USER}/goinfre/.brew/opt/glfw/lib/ -o ${NAME}
+	${CC} $(CFLAGS) ${OBJ} libft.a libmlx42.a -lglfw -L/Users/${USER}/42/cub3d/glfw/lib/ -o ${NAME}
 	
 %.o: %.c
 	$(CC) $(CFLAGS)  -I./MLX42/include/MLX42 -I./include -I/Users/${USER}/42/cub3d/glfw/include -c $< -o $@

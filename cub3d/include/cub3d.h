@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:44:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/26 12:14:20 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:08:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <errno.h>
 # include <stdarg.h>
 # include <sys/types.h>
+# include "../libft/libft.h"
 
 #define PI 3.14159
 
