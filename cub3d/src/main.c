@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:49:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/26 12:10:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/26 15:49:48 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,9 @@ int	main(int ac, char **av)
 	e->size_y = 480;
 	e->mlx = mlx_init(e->size_x, e->size_y, "cub3d", false);
 	mlx_key_hook(e->mlx, &keyhook, e);
-	e->img = mlx_new_image(e->mlx, e->size_x, e->size_y);
+	// e->img = mlx_new_image(e->mlx, e->size_x, e->size_y);
 	
-	mlx_image_to_window(e->mlx, e->img, 0, 0);
+	// mlx_image_to_window(e->mlx, e->img, 0, 0);
 
 	mlx_loop(e->mlx);
 	close_hook(e);
