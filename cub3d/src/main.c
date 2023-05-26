@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:49:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/23 17:42:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:10:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,6 @@ int	main(int ac, char **av)
 	mlx_image_to_window(e->mlx, e->img, 0, 0);
 
 	mlx_loop(e->mlx);
-
+	close_hook(e);
 	return (0);
 }

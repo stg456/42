@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:44:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/23 18:04:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/26 12:14:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,15 @@
 # include <sys/types.h>
 
 #define PI 3.14159
+
+typedef struct s_map
+{
+	char	**arr;
+	char	*buffer;
+	char	*temp;
+	int		fd;
+	int		i;
+}			t_map;
 
 typedef struct s_env
 {

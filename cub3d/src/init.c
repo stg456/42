@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:08:08 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/23 16:08:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/26 13:58:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,23 +45,25 @@
 // 	return (arr);
 // }
 
-// char	**init_map(char **av, t_env *e)
-// {
-// 	int	fd;
-
-// 	e->mlx = NULL;
-// 	e->map = NULL;
-// 	if (ft_strnstr(av[1], ".cub", ft_strlen(av[1])) == NULL)
-// 		ft_error("\x1B[31mError: map has to be .cub\n");
-// 	fd = open(av[1], O_RDONLY);
-// 	if (fd < 0)
-// 	{
-// 		close(fd);
-// 		ft_error("\x1B[31mInvalid map\n");
-// 	}
-// 	e->map = map_read(av[1]);
-// 	check(e);
-// 	close(fd);
-// 	return (e->map);
-// }
-
+char	**init_map(char **av, t_env *e)
+{
+	// (void)av;
+	t_map	*m;
+	
+	m = malloc(sizeof(t_map));
+	e->mlx = NULL;
+	e->map = NULL;
+	if (ft_strnstr(av[1], ".cub", ft_strlen(av[1])) == NULL)
+		ft_error("\x1B[31mError: map has to be .cub\n");
+	m->fd = open(av[1], O_RDONLY);
+	if (m->fd < 0)
+	{
+		close(m->fd);
+		ft_error("\x1B[31mInvalid map\n");
+	}
+	e->map = map_read(av[1]);
+	// check(e);
+	close(m->fd);
+	free(m);
+	return (e->map);
+}
