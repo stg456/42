@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
-#                                                      +:+                     #
-#    By: W2Wizard <w2.wizzard@gmail.com>              +#+                      #
-#                                                    +#+                       #
-#    Created: 2022/02/26 21:32:49 by W2Wizard      #+#    #+#                  #
-#    Updated: 2022/08/10 12:42:39 by lde-la-h      ########   odam.nl          #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/02/26 21:32:49 by W2Wizard          #+#    #+#              #
+#    Updated: 2023/05/26 17:46:26 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ else
 		include Makefile_Unix.mk
 	else ifeq ($(UNAME_S), Darwin)
 		# Default
-		DYLIB_EXISTS := test -e /usr/local/lib/libglfw.3.dylib || echo "false"
+		DYLIB_EXISTS := test -e ../glfw/lib/libglfw.3.dylib || echo "false"
 
 		# Generic Homebrew path
 		ifneq ($(DYLIB_EXISTS), false)
