@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/19 17:21:41 by stgerard          #+#    #+#              #
-#    Updated: 2023/05/23 16:23:28 by stgerard         ###   ########.fr        #
+#    Updated: 2023/05/26 11:47:05 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,11 @@ ${NAME}: ${OBJ}
 	${MAKE} -sC ./MLX42
 	mv ./libft/libft.a ./
 	mv ./MLX42/libmlx42.a ./
-	${CC} $(CFLAGS) ${OBJ} libmlx42.a -lglfw -L/Users/${USER}/goinfre/.brew/opt/glfw/lib/ -o ${NAME}
-
+	#${CC} $(CFLAGS) ${OBJ} libmlx42.a -lglfw -L/Users/${USER}/goinfre/.brew/opt/glfw/lib/ -o ${NAME}
+	${CC} $(CFLAGS) ${OBJ} libmlx42.a -lglfw -L/Users/${USER}/42/cub3d/glfw/lib/ -o ${NAME}
+	
 %.o: %.c
-	$(CC) $(CFLAGS)  -I./MLX42/include/MLX42 -I./include -I/Users/${USER}/goinfre/.brew/opt/glfw/include -c $< -o $@
+	$(CC) $(CFLAGS)  -I./MLX42/include/MLX42 -I./include -I/Users/${USER}/42/cub3d/glfw/include -c $< -o $@
 
 clean:
 	${RM} ${OBJ} libmlx42.a libft.a

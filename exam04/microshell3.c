@@ -4,6 +4,26 @@
 #include <stdio.h>
 #include <string.h>
 
+int	ft_error(char *str, char *av)
+{
+	while (str && *str)
+		write(2, str++, 1);
+	if (av)
+		while (*av)
+			write(2, av++, 1);
+	write(2, "\n", 1);
+	return 1;
+}
+
+int ft_exe(av, i, tmpfd, env)
+{
+	av[i] = NULL;
+	dup2(tmpfd, STDIN_FILENO);
+	close(tmpfd);
+	execve(av[0], av, env);
+	return (ft_error("error: cannot execute ", av[0]));
+}
+
 int main(int ac, char **av, char **env)
 {
 	int i = 0;
@@ -56,5 +76,5 @@ int main(int ac, char **av, char **env)
 		}
 	}
 	close(tmpfd);
-	return 1;
+	return 0;
 }
