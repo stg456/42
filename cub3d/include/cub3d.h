@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:44:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/26 15:08:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/29 15:24:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@
 typedef struct s_map
 {
 	char	**arr;
-	char	*buffer;
-	char	*temp;
+	char	*buf;
+	char	*tmp;
 	int		fd;
 	int		i;
 }			t_map;
