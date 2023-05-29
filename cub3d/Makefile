@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/19 17:21:41 by stgerard          #+#    #+#              #
-#    Updated: 2023/05/26 17:45:55 by stgerard         ###   ########.fr        #
+#    Updated: 2023/05/29 18:11:08 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 RM = rm -f
 
-SRC = ./src/main.c ./src/init.c 
+SRC = ./src/main.c ./src/init.c utils.c
 
 OBJ = ${SRC:.c=.o}
 

@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/05/29 15:06:11 by stgerard         ###   ########.fr        #
+#    Updated: 2023/05/29 18:11:08 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
 
-SRC = main.c check.c init.c load.c \
+SRC = main.c check.c init.c load.c urtils.c \
 
 OBJ = ${SRC:.c=.o}
 
