@@ -6,11 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/29 17:01:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/29 18:23:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "miniRT.h"
 
 int	rgbinrange(int nb)
 {
