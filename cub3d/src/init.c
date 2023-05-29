@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:08:08 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/29 17:39:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/29 18:05:12 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	**map_read(char *filename)
 {
 	t_map	*m;
 
-m = malloc(sizeof(t_map));
+	m = malloc(sizeof(t_map));
 	m->i = 0;
 	m->fd = open(filename, O_RDONLY);
 	printf("c: %d\n", m->fd);
@@ -69,7 +69,7 @@ char	**init_map(char **av, t_env *e)
 		ft_error("\x1B[31mError\nInvalid map\n");
 	}
 	// printf("%s\n", m->arr);
-	e->map = map_read(av[1]);
+	// e->map = map_read(av[1]);
 	// check(e);
 	close(m->fd);
 	free(m);
