@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:44:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/29 15:24:57 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/29 16:01:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,16 @@ typedef struct s_map
 	char	*tmp;
 	int		fd;
 	int		i;
+	char	*N;
+	char	*S;
+	char	*E;
+	char	*W;
+	int		Fr;
+	int		Fg;
+	int		Fb;
+	int		Cr;
+	int		Cg;
+	int		Cb;
 }			t_map;
 
 typedef struct s_env
@@ -58,5 +68,9 @@ int		close_hook(t_env *e);
 
 char	**init_map(char **argv, t_env *e);
 char	**map_read(char *filename);
+
+// utils.c
+
+int		rgbinrange(int nb);
 
 #endif
