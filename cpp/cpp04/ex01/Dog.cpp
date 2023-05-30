@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:27:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/20 20:05:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:56:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Dog& Dog::operator =(const Dog &rhs) {
 	std::cout << "Dog assignement operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
-	this->_type = rhs._type;
+	this->_Brain = rhs._Brain;
 	return (*this);
 }
 

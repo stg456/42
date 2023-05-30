@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:31:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/20 20:06:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:56:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ Cat& Cat::operator = (const Cat &rhs) {
 	std::cout << "Cat assignement operator called" << std::endl;
 	if (this == &rhs)
 		return (*this);
+	// this->_Brain = new Brain();
+	this->_Brain = rhs._Brain;
 	return (*this);
 }
 

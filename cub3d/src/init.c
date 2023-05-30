@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 17:08:08 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/30 11:18:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/30 15:44:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	**map_read(char *filename)
 
 char	**init_map(char **av, t_env *e)
 {
-	(void)av;
+	// (void)av;
 	// t_map	*m;
 	int	fd;
 	
@@ -57,7 +57,6 @@ char	**init_map(char **av, t_env *e)
 	// m = malloc(sizeof(t_map));
 	e->mlx = NULL;
 	e->map = NULL;
-	// m->fd = 0;
 
 	if (ft_strnstr(av[1], ".cub", ft_strlen(av[1])) == NULL)
 		ft_error("\x1B[31mError\nmap has to be .cub\n");
