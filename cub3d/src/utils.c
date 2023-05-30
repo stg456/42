@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/29 17:01:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/05/30 11:18:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	rgbinrange(int nb)
 {
 	if (nb < 0 || nb > 255)
-		// ft_error("incorrect color");
+		// ft_error("Error\nincorrect color\n");
 		return 1;
 	return 0;
 }
