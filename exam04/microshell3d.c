@@ -38,7 +38,7 @@ int main(int ac, char **av, char **env)
 		i = 0;
 		while (av[i] && strcmp(av[i], ";") && strcmp(av[i], "|"))
 			i++;
-		if (strcmp(av[0], "cd" == 0))
+		if (strcmp(av[0], "cd") == 0)
 		{
 			if (i != 2)
 				ft_error("error: cd: bad arguments", NULL);
