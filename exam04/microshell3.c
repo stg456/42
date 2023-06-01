@@ -1,8 +1,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include <sys/wait.h>
 #include <string.h>
+#include <sys/wait.h>
 
 int ft_error(char *str, char *av)
 {
@@ -26,21 +26,21 @@ int ft_exe(char **av, int i, int tmpfd, char **env)
 
 int main(int ac, char **av, char **env)
 {
-	int i = 0;
-	int fd[2];
-	int tmpfd;
 	(void)ac;
+	int i = 0;
+	int tmpfd;
+	int fd[2];
 
 	tmpfd = dup(STDIN_FILENO);
 	while (av[i] && av[i + 1])
 	{
-		av = &av[i +1];
+		av = &av[i + 1];
 		i = 0;
-		while (av[i] && strcmp(av[i], ";") &&strcmp(av[i], "|"))
+		while (av[i] && strcmp(av[i], ";") && strcmp(av[i], "|"))
 			i++;
-		if (strcmp(av[0], "cd") == 0)
+		if (strcmp(av[i], "cd") == 0)
 		{
-			if (1 != 2)
+			if (i != 2)
 				ft_error("error: cd: bad arguments", NULL);
 			else if (chdir(av[1]) != 0)
 				ft_error("error: cd: cannot change directory to ", av[1]);
@@ -66,8 +66,8 @@ int main(int ac, char **av, char **env)
 			if (fork() == 0)
 			{
 				dup2(fd[1], STDOUT_FILENO);
-				close(fd[0]);
 				close(fd[1]);
+				close(fd[0]);
 				if (ft_exe(av, i, tmpfd, env))
 					return 1;
 			}
@@ -80,5 +80,5 @@ int main(int ac, char **av, char **env)
 		}
 	}
 	close(tmpfd);
-	return 0;
+	return 1;
 }

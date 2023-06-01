@@ -27,23 +27,23 @@ int ft_exe(char **av, int i, int tmpfd, char **env)
 int main(int ac, char **av, char **env)
 {
 	(void)ac;
-	int i;
+	int i = 0;
 	int tmpfd;
 	int fd[2];
 
-	tmpfd = dup(STDIN_FILENO);
+	tmpfd= dup(STDIN_FILENO);
 	while (av[i] && av[i + 1])
 	{
-		av[i] = &av[i + 1];
+		av = &av[i + 1];
 		i = 0;
 		while (av[i] && strcmp(av[i], ";") && strcmp(av[i], "|"))
 			i++;
-		if (strcmp(av[0], "cd") == 0)
+		if (strcmp(av[i], "cd") == 0)
 		{
 			if (i != 2)
 				ft_error("error: cd: bad arguments", NULL);
 			else if (chdir(av[1]) != 0)
-				ft_error("error: cannot change directory to ", av[1]);
+				ft_error("error: cd: cannot change directory to ", av[1]);
 		}
 		else if (i != 0 && (av[i] == NULL || strcmp(av[i], ";") == 0))
 		{
@@ -51,13 +51,13 @@ int main(int ac, char **av, char **env)
 			{
 				if (ft_exe(av, i, tmpfd, env))
 					return 1;
-			}
-			else
-			{
-				close(tmpfd);
-				while (waitpid(-1, NULL, WUNTRACED) != -1)
-					;
-				tmpfd = dup(STDIN_FILENO);
+				else
+				{
+					close(tmpfd);
+					while (waitpid(-1, NULL, WUNTRACED) != -1)
+						;
+					tmpfd = dup(STDIN_FILENO);
+				}
 			}
 		}
 		else if (i != 0 && strcmp(av[i], "|") == 0)
@@ -66,8 +66,8 @@ int main(int ac, char **av, char **env)
 			if (fork() == 0)
 			{
 				dup2(fd[1], STDOUT_FILENO);
-				close(fd[0]);
 				close(fd[1]);
+				close(fd[0]);
 				if (ft_exe(av, i, tmpfd, env))
 					return 1;
 			}
