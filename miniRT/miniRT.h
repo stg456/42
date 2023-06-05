@@ -6,27 +6,25 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/29 18:23:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/05 11:32:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIRT_H
 # define MINIRT_H
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <math.h>
-#include <mlx.h>
-#include <fcntl.h>
+# include "MLX42.h"
+# include <math.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <string.h>
+# include <errno.h>
+# include <stdarg.h>
+# include <sys/types.h>
+# include "../libft/libft.h"
 
-// # define T_S 63
-
-# define ESC 53
-// # define W 13
-// # define A 0
-// # define S 1
-// # define D 2
 
 typedef struct s_env
 {
@@ -46,7 +44,7 @@ typedef struct s_data
 	int			Ab;
 	int			nbC;
 	float		cx;
-	float		cy
+	float		cy;
 	float		cz;
 	float		cxv;
 	float		cyv;
@@ -58,7 +56,7 @@ typedef struct s_data
 	float		Lz;
 	float		ratioL;
 	int			Lr;
-	int			Lg
+	int			Lg;
 	int			Lb;
 	int			nbsp;
 	float		spx;
@@ -93,12 +91,15 @@ typedef struct s_data
 
 int		main(int ac, char **av);
 void	ft_error(char *str);
-int		key_hook(int key, t_env *e);
+void		key_hook(int key, t_env *e);
 int		close_hook(t_env *e);
 
 // check.c
 
 void	check(t_env e, int ac, char **av);
+int		rgbinrange(int nb);
+int		vectinrange(float nb);
+int		ratioinrange(float nb);
 
 // init.c
 
@@ -110,6 +111,5 @@ int		load_data(t_env e, t_data d, char **av);
 
 // utils.c
 
-int		rgbinrange(int nb);
 
 #endif

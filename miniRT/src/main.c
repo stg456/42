@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/05/22 17:11:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/05 11:50:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,20 @@ void	ft_error(char *str)
 	exit(EXIT_FAILURE);
 }
 
-int	key_hook(int key, t_env *e)
+void	keyhook(mlx_key_data_t keydata, void* param)
 {
-	if (key == ESC)
+	// (void)param;
+	t_env	*e;
+	e = (t_env *)param;
+
+	if (keydata.key == MLX_KEY_ESCAPE)
 		close_hook(e);
-	// else if (key == W || key == A || key == S || key == D)
-	// 	move(key, e);
-	return (1);
+	// else if (keydata.key == MLX_KEY_W || keydata.key == MLX_KEY_A
+	// 		|| keydata.key == MLX_KEY_S || keydata.key == MLX_KEY_D)
+	// 	move(keydata.key, e);
+	// else if (keydata.key == MLX_KEY_SPACE)
+	// 	action(keydata.key, e);
+	return ;
 }
 
 int	close_hook(t_env *e)
@@ -49,18 +56,6 @@ int main(int ac, char **av)
 	load_data(e, d, av);
 	
 	init_rt(e, d);
-
-	// e->mlx = init_map(av, e);
-	// if (!e->map)
-	// 	ft_error("\x1B[31mError: The map is not playable\n");
-	// e->mlx = mlx_init();
-	// e->win = mlx_new_window(e->mlx, e->size_x * T_S, e->size_y * T_S, "Game");
-	// mlx_hook(e->win, 17, 0, close_hook, e);
-	// mlx_key_hook(e->win, key_hook, e);
-	// init_visu(e);
-	// build(e);
-	// mlx_loop_hook(e.mlx, loop_hook, e);
-	// mlx_loop(e->mlx);
 
 
 	// free(e);
