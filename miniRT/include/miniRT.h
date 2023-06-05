@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/05 12:22:53 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/05 12:35:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,8 @@ typedef struct s_data
 
 int		main(int ac, char **av);
 void	ft_error(char *str);
-void	key_hook(int key, t_env *e);
-int		close_hook(t_env *e);
+void	key_hook(int key, t_env e);
+int		close_hook(t_env e);
 
 // check.c
 
