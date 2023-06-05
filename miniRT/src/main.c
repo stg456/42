@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/05 12:43:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/05 12:47:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int main(int ac, char **av)
 	init_rt(e, d);
 
 	mlx_loop(e.mlx);
-	close_hook(&e);
+	close_hook(e);
 	// free(e);
 	return 0;
 }
