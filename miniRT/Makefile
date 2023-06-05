@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/06/05 11:55:00 by stgerard         ###   ########.fr        #
+#    Updated: 2023/06/05 16:12:38 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,10 +27,10 @@ ${NAME}: ${OBJ}
 	${MAKE} -sC ./MLX42
 	mv ./libft/libft.a ./
 	mv ./MLX42/libmlx42.a ./
-	${CC} $(CFLAGS) ${OBJ} libft.a libmlx42.a -lglfw -L./glfw/lib/ -o ${NAME}
+	${CC} $(CFLAGS) ${OBJ} libft.a libmlx42.a -lglfw -L/Users/${USER}/goinfre/.brew/opt/glfw/lib/ -o ${NAME}
 
 %.o: %.c
-	$(CC) $(CFLAGS)  -I./MLX42/include/MLX42 -I./include -I./glfw/include -c $< -o $@
+	$(CC) $(CFLAGS)  -I./MLX42/include/MLX42 -I./include -I/Users/${USER}/goinfre/.brew/opt/glfw/include -c $< -o $@
 
 clean:
 	${RM} ${OBJ} libmlx42.a libft.a
