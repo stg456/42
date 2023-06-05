@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/05 11:32:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/05 12:16:02 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,14 @@
 # include <sys/types.h>
 # include "../libft/libft.h"
 
+# define PI 3.14159
 
 typedef struct s_env
 {
 	void	*mlx;
 	void	*win;
+	size_t	size_x;
+	size_t	size_y;
 }				t_env;
 
 typedef struct s_data
@@ -91,7 +94,7 @@ typedef struct s_data
 
 int		main(int ac, char **av);
 void	ft_error(char *str);
-void		key_hook(int key, t_env *e);
+void	key_hook(int key, t_env *e);
 int		close_hook(t_env *e);
 
 // check.c
@@ -107,7 +110,7 @@ void	init_rt(t_env e, t_data d);
 
 // load.c
 
-int		load_data(t_env e, t_data d, char **av);
+void	load_data(t_env e, t_data d, char **av);
 
 // utils.c
 
