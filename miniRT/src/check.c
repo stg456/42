@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/05 11:32:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/05 12:21:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	check(t_env e, int ac, char **av)
 {
+	(void)e;
 	if (ac != 2)
 		ft_error("\x1B[31mError: Bad number of arguments\n");
 	if (ft_strnstr(av[1], ".rt", ft_strlen(av[1])) == NULL)
