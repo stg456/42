@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 16:09:29 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/04 15:53:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/05 10:45:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ int main()
 	{
 		delete meta[i];
 	}
+
+	// Dog basic;
+	// {
+	// 	Dog tmp = basic;
+	// }
 
 	return 0;
 }
