@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 15:10:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:27:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,13 @@ typedef struct s_data
 	int			nbpl;
 	int			nbcy;
 }				t_data;
+
+typedef struct s_vect
+{
+	double		x;
+	double		y;
+	double		z;
+}				t_vect;
 
 // typedef struct s_color
 // {
@@ -132,13 +139,6 @@ typedef struct s_lum
 	int			Lg;
 	int			Lb;
 }				t_lum;
-
-typedef struct s_vect
-{
-	double		x;
-	double		y;
-	double		z;
-}				t_vect;
 
 // main.c
 

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 14:55:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:29:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,14 @@ int	load_data(t_env e, t_data d, char **av)
 {
 	int	fd;
 	(void)e;
-	(void)d;
+	// (void)d;
 
+	d.nbA = 0;
+	d.nbC = 0;
+	d.nbcy = 0;
+	d.nbL = 0;
+	d.nbpl = 0;
+	d.nbsp = 0;
 
 	fd = open(av[1], O_RDONLY);
 	if (fd < 0)
@@ -25,7 +31,7 @@ int	load_data(t_env e, t_data d, char **av)
 		close(fd);
 		ft_error("\x1B[31mInvalid file\n");
 	}
-
+	printf("a donf\n");
 	
 
 	close(fd);
