@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 14:55:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:08:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,13 @@ typedef struct s_data
 	int			nbcy;
 }				t_data;
 
+typedef struct s_color
+{
+	int			r;
+	int			g;
+	int			b;
+}				t_color;
+
 typedef struct s_sp
 {
 	int			nbsp;
@@ -56,6 +63,7 @@ typedef struct s_sp
 	int			spr;
 	int			spg;
 	int			spb;
+	t_color
 }				t_sp;
 
 typedef struct s_pl
@@ -65,9 +73,10 @@ typedef struct s_pl
 	// double		ply;
 	// double		plz;
 	t_vect		pos;
-	double		plxv;
-	double		plyv;
-	double		plzv;
+	// double		plxv;
+	// double		plyv;
+	// double		plzv;
+	t_vect		axe;
 	int			plr;
 	int			plg;
 	int			plb;
@@ -80,9 +89,10 @@ typedef struct s_cy
 	// double		cyy;
 	// double		cyz;
 	t_vect		pos;
-	double		cyxv;
-	double		cyyv;
-	double		cyzv;
+	// double		cyxv;
+	// double		cyyv;
+	// double		cyzv;
+	t_vect		axe;
 	double		cyd;
 	double		cyh;
 	int			cyr;
