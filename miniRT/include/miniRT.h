@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 11:41:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 12:37:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,37 @@ typedef struct s_data
 	int			Lr;
 	int			Lg;
 	int			Lb;
+	// int			nbsp;
+	// double		spx;
+	// double		spy;
+	// double		spz;
+	// double		spd;
+	// int			spr;
+	// int			spg;
+	// int			spb;
+	// int			nbpl;
+	// double		plx;
+	// double		ply;
+	// double		plz;
+	// double		plxv;
+	// double		plyv;
+	// double		plzv;
+	// int			nbcy;
+	// double		cyx;
+	// double		cyy;
+	// double		cyz;
+	// double		cyxv;
+	// double		cyyv;
+	// double		cyzv;
+	// double		cyd;
+	// double		cyh;
+	// int			cyr;
+	// int			cyg;
+	// int			cyb;
+}				t_data;
+
+typedef struct s_sp
+{
 	int			nbsp;
 	double		spx;
 	double		spy;
@@ -69,6 +100,10 @@ typedef struct s_data
 	int			spr;
 	int			spg;
 	int			spb;
+}				t_sp;
+
+typedef struct s_pl
+{
 	int			nbpl;
 	double		plx;
 	double		ply;
@@ -76,6 +111,13 @@ typedef struct s_data
 	double		plxv;
 	double		plyv;
 	double		plzv;
+	int			plr;
+	int			plg;
+	int			plb;
+}				t_pl;
+
+typedef struct s_cy
+{
 	int			nbcy;
 	double		cyx;
 	double		cyy;
@@ -88,12 +130,7 @@ typedef struct s_data
 	int			cyr;
 	int			cyg;
 	int			cyb;
-}				t_data;
-
-// typedef struct s_sp
-// {
-
-// }				t_sp;
+}				t_cy;
 
 // main.c
 

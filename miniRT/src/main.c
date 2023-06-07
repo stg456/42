@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/05 16:21:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 12:38:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	keyhook(mlx_key_data_t keydata, void* param)
 
 int	close_hook(t_env e)
 {
-	// (void)e;
-	free(&e);
+	(void)e;
+	// free(&e);
 	exit(EXIT_SUCCESS);
 }
 
