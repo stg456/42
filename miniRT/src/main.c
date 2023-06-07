@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 15:29:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 16:55:15 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ void	ft_error(char *str)
 	exit(EXIT_FAILURE);
 }
 
-void	keyhook(mlx_key_data_t keydata, void* param)
+void	keyhook(mlx_key_data_t keydata, void *param)
 {
-	// (void)param;
 	t_env	*e;
 	e = (t_env *)param;
 
@@ -41,7 +40,7 @@ int	close_hook(t_env e)
 	exit(EXIT_SUCCESS);
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_env	e;
 	t_data	d;
@@ -59,7 +58,7 @@ int main(int ac, char **av)
 	check(e, ac, av);
 	load_data(e, d, av);
 	
-	init_rt(e, d);
+	// init_rt(e, d);
 
 	mlx_loop(e.mlx);
 	close_hook(e);

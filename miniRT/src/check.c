@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 11:41:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 16:46:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,19 @@ int	rgbinrange(int nb)
 {
 	if (nb < 0 || nb > 255)
 		ft_error("incorrect color");
-	return 0;
+	return (0);
 }
 
 int	vectinrange(double nb)
 {
 	if (nb < -1 || nb > 1)
 		ft_error("incorect vector");
-	return 0;
+	return (0);
 }
 
 int	ratioinrange(double nb)
 {
 	if (nb < 0 || nb > 1)
 		ft_error("incorect ratio");
-	return 0;
+	return (0);
 }

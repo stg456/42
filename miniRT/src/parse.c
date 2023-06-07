@@ -1,19 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 15:30:22 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 16:46:58 by stgerard         ###   ########.fr       */
+/*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
+/*   Updated: 2023/06/07 17:02:29 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-void	init_rt(t_env e, t_data d)
+void	amb(char *buf)
 {
-	(void)e;
-	(void)d;
+	while ()
+}
+
+void	cam()
+{
+
+}
+
+void	lum()
+{
+
+}
+
+void	sp()
+{
+
+}
+
+void	pl()
+{
+
+}
+
+void	cyl()
+{
+
 }
