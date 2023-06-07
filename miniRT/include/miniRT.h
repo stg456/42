@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 15:09:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:10:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,12 @@ typedef struct s_data
 	int			nbcy;
 }				t_data;
 
-typedef struct s_color
-{
-	int			r;
-	int			g;
-	int			b;
-}				t_color;
+// typedef struct s_color
+// {
+// 	int			r;
+// 	int			g;
+// 	int			b;
+// }				t_color;
 
 typedef struct s_sp
 {
