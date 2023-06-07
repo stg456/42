@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 15:08:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:09:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ typedef struct s_sp
 	int			spr;
 	int			spg;
 	int			spb;
-	t_color
 }				t_sp;
 
 typedef struct s_pl
