@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/05 12:21:07 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:41:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,14 @@ int	rgbinrange(int nb)
 	return 0;
 }
 
-int	vectinrange(float nb)
+int	vectinrange(double nb)
 {
 	if (nb < -1 || nb > 1)
 		ft_error("incorect vector");
 	return 0;
 }
 
-int	ratioinrange(float nb)
+int	ratioinrange(double nb)
 {
 	if (nb < 0 || nb > 1)
 		ft_error("incorect ratio");

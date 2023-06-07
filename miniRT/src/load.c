@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/05 12:24:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:41:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ int	load_data(t_env e, t_data d, char **av)
 		close(fd);
 		ft_error("\x1B[31mInvalid map\n");
 	}
-	// if (!d.buf)
-	// 	return (NULL);
+
 	
 
 	close(fd);

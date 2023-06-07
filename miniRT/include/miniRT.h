@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/05 12:35:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 11:41:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,54 +41,59 @@ typedef struct s_data
 	char		*buf;
 	int			i;
 	int			nbA;
-	float		ratioA;
+	double		ratioA;
 	int			Ar;
 	int			Ag;
 	int			Ab;
 	int			nbC;
-	float		cx;
-	float		cy;
-	float		cz;
-	float		cxv;
-	float		cyv;
-	float		czv;
+	double		cx;
+	double		cy;
+	double		cz;
+	double		cxv;
+	double		cyv;
+	double		czv;
 	int			fov;
 	int			nbL;
-	float		Lx;
-	float		Ly;
-	float		Lz;
-	float		ratioL;
+	double		Lx;
+	double		Ly;
+	double		Lz;
+	double		ratioL;
 	int			Lr;
 	int			Lg;
 	int			Lb;
 	int			nbsp;
-	float		spx;
-	float		spy;
-	float		spz;
-	float		spd;
+	double		spx;
+	double		spy;
+	double		spz;
+	double		spd;
 	int			spr;
 	int			spg;
 	int			spb;
 	int			nbpl;
-	float		plx;
-	float		ply;
-	float		plz;
-	float		plxv;
-	float		plyv;
-	float		plzv;
+	double		plx;
+	double		ply;
+	double		plz;
+	double		plxv;
+	double		plyv;
+	double		plzv;
 	int			nbcy;
-	float		cyx;
-	float		cyy;
-	float		cyz;
-	float		cyxv;
-	float		cyyv;
-	float		cyzv;
-	float		cyd;
-	float		cyh;
+	double		cyx;
+	double		cyy;
+	double		cyz;
+	double		cyxv;
+	double		cyyv;
+	double		cyzv;
+	double		cyd;
+	double		cyh;
 	int			cyr;
 	int			cyg;
 	int			cyb;
 }				t_data;
+
+// typedef struct s_sp
+// {
+
+// }				t_sp;
 
 // main.c
 
@@ -101,8 +106,8 @@ int		close_hook(t_env e);
 
 void	check(t_env e, int ac, char **av);
 int		rgbinrange(int nb);
-int		vectinrange(float nb);
-int		ratioinrange(float nb);
+int		vectinrange(double nb);
+int		ratioinrange(double nb);
 
 // init.c
 
