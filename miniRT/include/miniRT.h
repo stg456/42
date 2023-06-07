@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 14:35:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 14:55:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,57 +37,12 @@ typedef struct s_env
 
 typedef struct s_data
 {
-	int			fd;
-	char		*buf;
-	int			i;
-	// int			nbA;
-	// double		ratioA;
-	// int			Ar;
-	// int			Ag;
-	// int			Ab;
-	// int			nbC;
-	// double		cx;
-	// double		cy;
-	// double		cz;
-	// double		cxv;
-	// double		cyv;
-	// double		czv;
-	// int			fov;
-	// int			nbL;
-	// double		Lx;
-	// double		Ly;
-	// double		Lz;
-	// double		ratioL;
-	// int			Lr;
-	// int			Lg;
-	// int			Lb;
-	// int			nbsp;
-	// double		spx;
-	// double		spy;
-	// double		spz;
-	// double		spd;
-	// int			spr;
-	// int			spg;
-	// int			spb;
-	// int			nbpl;
-	// double		plx;
-	// double		ply;
-	// double		plz;
-	// double		plxv;
-	// double		plyv;
-	// double		plzv;
-	// int			nbcy;
-	// double		cyx;
-	// double		cyy;
-	// double		cyz;
-	// double		cyxv;
-	// double		cyyv;
-	// double		cyzv;
-	// double		cyd;
-	// double		cyh;
-	// int			cyr;
-	// int			cyg;
-	// int			cyb;
+	int			nbA;
+	int			nbC;
+	int			nbL;
+	int			nbsp;
+	int			nbpl;
+	int			nbcy;
 }				t_data;
 
 typedef struct s_sp
