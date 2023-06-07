@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 15:27:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 16:31:29 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,7 +160,9 @@ void	init_rt(t_env e, t_data d);
 
 // load.c
 
-int	load_data(t_env e, t_data d, char **av);
+int		load_data(t_env e, t_data d, char **av);
+t_data	load_data2(t_env e, t_data d, char **av);
+
 
 // utils.c
 
