@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 16:52:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 17:31:03 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,17 @@ t_data	load_data2(char *buf, t_data d)
 			while (*buf == ' ' || *buf == '\t')
 				buf++;
 			if (ft_strcmp(*buf, "A") == 0)
-				amb();
-			else if (ft_strcmp(*buf, "C") == 0)
-				cam();
-			else if (ft_strcmp(*buf, "L") == 0)
-				lum();
-			else if (ft_strcmp(*buf, "sp") == 0)
-				sp();
-			else if (ft_strcmp(*buf, "pl") == 0)
-				pl();
-			else if (ft_strcmp(*buf, "cy") == 0)
-				cyl();
+				amb(buf, d);
+			// else if (ft_strcmp(*buf, "C") == 0)
+			// 	cam();
+			// else if (ft_strcmp(*buf, "L") == 0)
+			// 	lum();
+			// else if (ft_strcmp(*buf, "sp") == 0)
+			// 	sp();
+			// else if (ft_strcmp(*buf, "pl") == 0)
+			// 	pl();
+			// else if (ft_strcmp(*buf, "cy") == 0)
+			// 	cyl();
 			else
 				ft_error("Error:\nincorrect data\n");
 		}

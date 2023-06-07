@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 12:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/01/13 17:00:20 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/07 17:41:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,5 +78,6 @@ char	*get_next_line(int fd);
 void	ft_arr_freer(char **arr);
 void	ft_putstr(char *str);
 char	*ft_strstr(const char *haystack, const char *needle);
+double	ft_atof(const char *str);
 
 #endif
