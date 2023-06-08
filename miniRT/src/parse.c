@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/08 15:41:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/08 16:26:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-void	amb(char *buf, t_data d)
+t_data	amb(char *buf, t_data d)
 {
 	t_amb	A;
 
@@ -34,6 +34,7 @@ void	amb(char *buf, t_data d)
 		buf++;
 		A.rgb.b = ft_atoi(buf);
 	}
+	return (d);
 }
 
 // void	cam(char *buf, t_data d)

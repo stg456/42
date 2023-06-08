@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 18:13:53 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/08 16:28:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_data	load_data2(char *buf, t_data d)
 	{
 		while (*buf != '\n')
 		{
-			while (*buf == ' ' || *buf == '\t')
+			if (*buf == ' ' || *buf == '\t')
 				buf++;
 			if (ft_strncmp(buf, "A", 1) == 0)
 				amb(buf, d);
@@ -61,6 +61,7 @@ int	load_data(t_env e, t_data d, char **av)
 	if (!buf)
 		ft_error("Error\nfile is empty\n");
 	d = load_data2(buf, d);
+
 	close(fd);
 	return (0);
 }

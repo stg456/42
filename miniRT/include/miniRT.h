@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/08 15:31:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/08 16:26:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,7 +172,7 @@ t_data	load_data2(char *buf, t_data d);
 
 // parse.c
 
-void	amb(char *buf, t_data d);
+t_data	amb(char *buf, t_data d);
 
 // utils.c
 
