@@ -6,29 +6,18 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/05 14:39:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/08 18:30:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-// int	rgbinrange(int nb)
-// {
-// 	if (nb < 0 || nb > 255)
-// 		ft_error("incorrect color");
-// 	return 0;
-// }
+int	pass(char *str)
+{
+	int	i;
 
-// int	vectinrange(float nb)
-// {
-// 	if (nb < -1 || nb > 1)
-// 		ft_error("incorect vector");
-// 	return 0;
-// }
-
-// int	ratioinrange(float nb)
-// {
-// 	if (nb < 0 || nb > 1)
-// 		ft_error("incorect ratio");
-// 	return 0;
-// }
+	i = 0;
+	while (str[i] == ' ' || str[i] == '\t')
+		i++;
+	return (i);
+}

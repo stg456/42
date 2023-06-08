@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/08 16:26:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/08 18:30:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,5 +176,6 @@ t_data	amb(char *buf, t_data d);
 
 // utils.c
 
+int		pass(char *str);
 
 #endif

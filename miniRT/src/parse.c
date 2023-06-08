@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/08 17:22:57 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/08 18:30:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,17 @@
 t_data	amb(char *buf, t_data d)
 {
 	t_amb	A;
+	char	*tmp;
+	int		i;
 
+	i = 0;
 	if (*buf != '\n')
 	{
-		printf("%s\n", buf);
+		printf("dans A; %s\n", buf);
+		
 		if (ft_strncmp(buf, "A", 1) == 0)
 			d.nbA += 1;
-		printf("dans A; %s\n", buf);
+		
 		while (*buf == ' ' || *buf == '\t')
 			buf++;
 		A.ratioA = ft_atof(buf);
