@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 17:29:29 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/08 15:31:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,12 +52,12 @@ typedef struct s_vect
 	double		z;
 }				t_vect;
 
-// typedef struct s_color
-// {
-// 	int			r;
-// 	int			g;
-// 	int			b;
-// }				t_color;
+typedef struct s_color
+{
+	int			r;
+	int			g;
+	int			b;
+}				t_color;
 
 typedef struct s_sp
 {
@@ -67,9 +67,10 @@ typedef struct s_sp
 	// double		spz;
 	t_vect		pos;
 	double		spd;
-	int			spr;
-	int			spg;
-	int			spb;
+	// int			spr;
+	// int			spg;
+	// int			spb;
+	t_color		rgb;
 }				t_sp;
 
 typedef struct s_pl
@@ -83,9 +84,10 @@ typedef struct s_pl
 	// double		plyv;
 	// double		plzv;
 	t_vect		axe;
-	int			plr;
-	int			plg;
-	int			plb;
+	// int			plr;
+	// int			plg;
+	// int			plb;
+	t_color			rgb;
 }				t_pl;
 
 typedef struct s_cy
@@ -101,29 +103,33 @@ typedef struct s_cy
 	t_vect		axe;
 	double		cyd;
 	double		cyh;
-	int			cyr;
-	int			cyg;
-	int			cyb;
+	// int			cyr;
+	// int			cyg;
+	// int			cyb;
+	t_color			rgb;
 }				t_cy;
 
 typedef struct s_amb
 {
 	int			nbA;
 	double		ratioA;
-	int			Ar;
-	int			Ag;
-	int			Ab;
+	// int			Ar;
+	// int			Ag;
+	// int			Ab;
+	t_color			rgb;
 }				t_amb;
 
 typedef struct s_cam
 {
 	int			nbC;
-	double		cx;
-	double		cy;
-	double		cz;
-	double		cxv;
-	double		cyv;
-	double		czv;
+	// double		cx;
+	// double		cy;
+	// double		cz;
+	t_vect		pos;
+	// double		cxv;
+	// double		cyv;
+	// double		czv;
+	t_vect		axe;
 	int			fov;
 }				t_cam;
 
@@ -135,9 +141,10 @@ typedef struct s_lum
 	// double		Lz;
 	t_vect		pos;
 	double		ratioL;
-	int			Lr;
-	int			Lg;
-	int			Lb;
+	// int			Lr;
+	// int			Lg;
+	// int			Lb;
+	t_color		rgb;
 }				t_lum;
 
 // main.c
