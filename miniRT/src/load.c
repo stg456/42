@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/08 16:28:17 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/08 17:14:05 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,24 @@
 
 t_data	load_data2(char *buf, t_data d)
 {
-	while (*buf != '\0')
+	if (*buf != '\0' && *buf != '\n')
 	{
-		while (*buf != '\n')
-		{
-			if (*buf == ' ' || *buf == '\t')
-				buf++;
-			if (ft_strncmp(buf, "A", 1) == 0)
-				amb(buf, d);
-			// else if (ft_strcmp(*buf, "C") == 0)
-			// 	cam();
-			// else if (ft_strcmp(*buf, "L") == 0)
-			// 	lum();
-			// else if (ft_strcmp(*buf, "sp") == 0)
-			// 	sp();
-			// else if (ft_strcmp(*buf, "pl") == 0)
-			// 	pl();
-			// else if (ft_strcmp(*buf, "cy") == 0)
-			// 	cyl();
-			else
-				ft_error("Error:\nincorrect data\n");
-		}
+		if (*buf == ' ' || *buf == '\t')
+			buf++;
+		if (ft_strncmp(buf, "A", 1) == 0)
+			amb(buf, d);
+		// else if (ft_strcmp(*buf, "C") == 0)
+		// 	cam();
+		// else if (ft_strcmp(*buf, "L") == 0)
+		// 	lum();
+		// else if (ft_strcmp(*buf, "sp") == 0)
+		// 	sp();
+		// else if (ft_strcmp(*buf, "pl") == 0)
+		// 	pl();
+		// else if (ft_strcmp(*buf, "cy") == 0)
+		// 	cyl();
+		else
+			ft_error("Error:\nincorrect data\n");
 	}
 	return (d);
 }

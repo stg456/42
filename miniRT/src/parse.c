@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/08 16:26:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/08 17:22:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ t_data	amb(char *buf, t_data d)
 		while (*buf == ' ' || *buf == '\t')
 			buf++;
 		A.ratioA = ft_atof(buf);
+		printf("%lf\n", A.ratioA);
 		while (*buf == ' ' || *buf == '\t')
 			buf++;
 		A.rgb.r = ft_atoi(buf);
-		printf("%s\n", buf);
+		printf("%d\n", A.rgb.r);
 		buf++;
 		A.rgb.g = ft_atoi(buf);
 		buf++;
