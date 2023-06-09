@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/09 14:40:20 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/09 15:16:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,30 @@ t_data	amb(char *buf, t_data d)
 
 	i = 0;
 	tmp = NULL;
-	if (*buf != '\n')
+	while (*buf != '\n')
 	{
+		if (*buf == ' ' || *buf == '\t')
+			i++;
 		printf("dans A: %s\n", buf);		
 		if (ft_strncmp(buf, "A", 1) == 0)
+		{
 			d.nbA += 1;
+			i++;
+		}
 		printf("nb A: %d\n", d.nbA);
 		i++;
-		if (buf[i] == ' ' || buf[i] == '\t')
-			i++;
+		// if (buf[i] == ' ' || buf[i] == '\t')
+			// i++;
 		printf("i: %d\n", i);
 		if (*buf != ' ' && *buf != '\t')
 		{
-			*tmp = *buf;
-			printf("i: %d\n", i);
+			while (*buf != ' ' && *buf != '\t')
+			{
+				*tmp = *buf;
+				printf("i: %d\n", i);
+				tmp++;
+				buf++;
+			}
 		}
 		printf("tmp: %s\n", tmp);
 		A.ratioA = ft_atof(tmp);
@@ -48,6 +58,7 @@ t_data	amb(char *buf, t_data d)
 		// A.rgb.g = ft_atoi(buf);
 		// buf++;
 		// A.rgb.b = ft_atoi(buf);
+		i++;
 	}
 	return (d);
 }
@@ -56,7 +67,7 @@ t_data	amb(char *buf, t_data d)
 // {
 // 	while (*buf)
 // 	{
-// 		if (ft_strcmp(*buf, "C") == 0)
+// 		if (ft_strncmp(*buf, "C", 1) == 0)
 // 			d.nbC += 1;
 // 	}
 // }
@@ -65,7 +76,7 @@ t_data	amb(char *buf, t_data d)
 // {
 // 	while (*buf)
 // 	{
-// 		if (ft_strcmp(*buf, "L") == 0)
+// 		if (ft_strncmp(*buf, "L", 1) == 0)
 // 			d.nbL += 1;
 // 	}
 // }
@@ -74,7 +85,7 @@ t_data	amb(char *buf, t_data d)
 // {
 // 	while (*buf)
 // 	{
-// 		if (ft_strcmp(*buf, "sp") == 0)
+// 		if (ft_strncmp(*buf, "sp", 2) == 0)
 // 			d.nbsp += 1;
 // 	}
 // }
@@ -83,7 +94,7 @@ t_data	amb(char *buf, t_data d)
 // {
 // 	while (*buf)
 // 	{
-// 		if (ft_strcmp(*buf, "pl") == 0)
+// 		if (ft_strncmp(*buf, "pl", 2) == 0)
 // 			d.nbpl += 1;
 // 	}
 // }
@@ -92,7 +103,7 @@ t_data	amb(char *buf, t_data d)
 // {
 // 	while (*buf)
 // 	{
-// 		if (ft_strcmp(*buf, "cy") == 0)
+// 		if (ft_strncmp(*buf, "cy", 2) == 0)
 // 			d.nbcy += 1;
 // 	}
 // }
