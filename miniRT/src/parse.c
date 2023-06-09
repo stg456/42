@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/09 13:17:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/09 13:30:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ t_data	amb(char *buf, t_data d)
 		printf("nb A: %d\n", d.nbA);
 		while (*buf == ' ' || *buf == '\t')
 			buf++;
-		// if (*buf != ' ' || *buf != '\t')
-			if (*buf != ' ')
-				tmp = buf;
+		if (*buf != ' ' || *buf != '\t')
+			while (*buf != ' ')
+				*tmp++ = *buf++;
 		printf("tmp: %s\n", tmp);
-		A.ratioA = ft_atof(buf);
+		A.ratioA = ft_atof(tmp);
 		printf("ratio: %lf\n", A.ratioA);
 		// while (*buf == ' ' || *buf == '\t')
 		// 	buf++;
