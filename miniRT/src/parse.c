@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/09 11:52:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/09 13:17:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_data	amb(char *buf, t_data d)
 		printf("dans A: %s\n", buf);		
 		if (ft_strncmp(buf, "A", 1) == 0)
 			d.nbA += 1;
-		printf("%d\n", d.nbA);
+		printf("nb A: %d\n", d.nbA);
 		while (*buf == ' ' || *buf == '\t')
 			buf++;
 		// if (*buf != ' ' || *buf != '\t')
