@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/09 15:16:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/10 15:54:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,28 @@ t_data	amb(char *buf, t_data d)
 	t_amb	A;
 	char	*tmp;
 	int		i;
+	int		j;
 
 	i = 0;
+	j = 0;
 	tmp = NULL;
-	while (*buf != '\n')
+	while (buf[i] != '\n')
 	{
-		if (*buf == ' ' || *buf == '\t')
+		printf("dans A: %s\n", buf);
+		if (buf[i] == ' ' || buf[i] == '\t')
 			i++;
-		printf("dans A: %s\n", buf);		
-		if (ft_strncmp(buf, "A", 1) == 0)
+		else if (ft_strncmp(buf, "A", 1) == 0)
 		{
 			d.nbA += 1;
 			i++;
 		}
+		// i++;
 		printf("nb A: %d\n", d.nbA);
-		i++;
-		// if (buf[i] == ' ' || buf[i] == '\t')
-			// i++;
+		if (buf[i] == ' ' || buf[i] == '\t')
+			i++;
 		printf("i: %d\n", i);
-		if (*buf != ' ' && *buf != '\t')
-		{
-			while (*buf != ' ' && *buf != '\t')
-			{
-				*tmp = *buf;
-				printf("i: %d\n", i);
-				tmp++;
-				buf++;
-			}
-		}
+		if (buf[i] != ' ' && buf[i] != '\t')
+			tmp[j++] = buf[i++];
 		printf("tmp: %s\n", tmp);
 		A.ratioA = ft_atof(tmp);
 		printf("ratio: %lf\n", A.ratioA);
@@ -58,7 +52,7 @@ t_data	amb(char *buf, t_data d)
 		// A.rgb.g = ft_atoi(buf);
 		// buf++;
 		// A.rgb.b = ft_atoi(buf);
-		i++;
+		// i++;
 	}
 	return (d);
 }
