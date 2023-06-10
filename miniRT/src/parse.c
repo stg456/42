@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/10 15:54:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/10 16:07:06 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_data	amb(char *buf, t_data d)
 		printf("dans A: %s\n", buf);
 		if (buf[i] == ' ' || buf[i] == '\t')
 			i++;
-		else if (ft_strncmp(buf, "A", 1) == 0)
+		if (ft_strncmp(buf, "A", 1) == 0)
 		{
 			d.nbA += 1;
 			i++;
@@ -37,8 +37,9 @@ t_data	amb(char *buf, t_data d)
 		if (buf[i] == ' ' || buf[i] == '\t')
 			i++;
 		printf("i: %d\n", i);
-		if (buf[i] != ' ' && buf[i] != '\t')
-			tmp[j++] = buf[i++];
+		// if (buf[i] != ' ' && buf[i] != '\t')
+		// 	while (buf[i] != ' ' && buf[i] != '\t')
+		// 		tmp[j++] = buf[i++];
 		printf("tmp: %s\n", tmp);
 		A.ratioA = ft_atof(tmp);
 		printf("ratio: %lf\n", A.ratioA);
