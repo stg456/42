@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/10 16:44:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/10 17:51:15 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ t_data	amb(char *buf, t_data d)
 
 	i = 0;
 	j = 0;
-	tmp = "";
-	while (buf[i] != '\n')
+	tmp = malloc(sizeof(char) *	j + 1);
+	while (buf[i++] != '\n')
 	{
-		printf("dans A: %s\n", buf);
+		// printf("dans A: %s\n", buf);
 		if (buf[i] == ' ' || buf[i] == '\t')
 			i++;
 		else if (ft_strncmp(buf, "A", 1) == 0)
@@ -34,12 +34,17 @@ t_data	amb(char *buf, t_data d)
 		}
 		// printf("nb A: %d\n", d.nbA);
 		// printf("i: %d\n", i);
-		else if (buf[i] != ' ' && buf[i] != '\t')
+		else if (buf[i] != ' ' && buf[i] != '\t' && buf[i] != 'A')
 		{
 			while (buf[i] != ' ' && buf[i] != '\t')
+			{
 				tmp[j] = buf[i];
+				printf("%c\n", buf[i]);
+				// printf("%c\n", tmp[j]);
+
+			}
 		}
-		printf("%c\n", buf[i]);
+		printf("i: %d\n", i);
 		printf("tmp: %s\n", tmp);
 		A.ratioA = ft_atof(tmp);
 		printf("ratio: %lf\n", A.ratioA);
@@ -53,8 +58,9 @@ t_data	amb(char *buf, t_data d)
 		// A.rgb.g = ft_atoi(buf);
 		// buf++;
 		// A.rgb.b = ft_atoi(buf);
-		// i++;
 	}
+
+	free(tmp);
 	return (d);
 }
 
