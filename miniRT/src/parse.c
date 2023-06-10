@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/10 17:51:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/10 18:25:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_data	amb(char *buf, t_data d)
 	i = 0;
 	j = 0;
 	tmp = malloc(sizeof(char) *	j + 1);
-	while (buf[i++] != '\n')
+	while (buf[i] != '\n')
 	{
 		// printf("dans A: %s\n", buf);
 		if (buf[i] == ' ' || buf[i] == '\t')
@@ -36,8 +36,10 @@ t_data	amb(char *buf, t_data d)
 		// printf("i: %d\n", i);
 		else if (buf[i] != ' ' && buf[i] != '\t' && buf[i] != 'A')
 		{
+			printf("a\n");
 			while (buf[i] != ' ' && buf[i] != '\t')
 			{
+				printf("b\n");
 				tmp[j] = buf[i];
 				printf("%c\n", buf[i]);
 				// printf("%c\n", tmp[j]);
@@ -45,6 +47,7 @@ t_data	amb(char *buf, t_data d)
 			}
 		}
 		printf("i: %d\n", i);
+
 		printf("tmp: %s\n", tmp);
 		A.ratioA = ft_atof(tmp);
 		printf("ratio: %lf\n", A.ratioA);
