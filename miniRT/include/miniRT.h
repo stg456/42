@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/08 18:30:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/10 15:20:53 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,7 +151,7 @@ typedef struct s_lum
 
 int		main(int ac, char **av);
 void	ft_error(char *str);
-void	key_hook(int key, t_env e);
+void	keyhook(mlx_key_data_t keydata, void *param);
 int		close_hook(t_env e);
 
 // check.c
