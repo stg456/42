@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/10 16:07:06 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/10 16:44:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,25 @@ t_data	amb(char *buf, t_data d)
 
 	i = 0;
 	j = 0;
-	tmp = NULL;
+	tmp = "";
 	while (buf[i] != '\n')
 	{
 		printf("dans A: %s\n", buf);
 		if (buf[i] == ' ' || buf[i] == '\t')
 			i++;
-		if (ft_strncmp(buf, "A", 1) == 0)
+		else if (ft_strncmp(buf, "A", 1) == 0)
 		{
 			d.nbA += 1;
 			i++;
 		}
-		// i++;
-		printf("nb A: %d\n", d.nbA);
-		if (buf[i] == ' ' || buf[i] == '\t')
-			i++;
-		printf("i: %d\n", i);
-		// if (buf[i] != ' ' && buf[i] != '\t')
-		// 	while (buf[i] != ' ' && buf[i] != '\t')
-		// 		tmp[j++] = buf[i++];
+		// printf("nb A: %d\n", d.nbA);
+		// printf("i: %d\n", i);
+		else if (buf[i] != ' ' && buf[i] != '\t')
+		{
+			while (buf[i] != ' ' && buf[i] != '\t')
+				tmp[j] = buf[i];
+		}
+		printf("%c\n", buf[i]);
 		printf("tmp: %s\n", tmp);
 		A.ratioA = ft_atof(tmp);
 		printf("ratio: %lf\n", A.ratioA);
