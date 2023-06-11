@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/11 16:57:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/11 18:55:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-t_data	amb(char *buf, t_data d)
+int	amb(char *buf, t_data d)
 {
 	t_amb	A;
 	char	*tmp;
@@ -64,7 +64,7 @@ t_data	amb(char *buf, t_data d)
 	}
 
 	free(tmp);
-	return (d);
+	return (d.nbA);
 }
 
 // void	cam(char *buf, t_data d)

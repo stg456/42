@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/10 15:20:53 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/11 18:55:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,11 +168,11 @@ void	init_rt(t_env e, t_data d);
 // load.c
 
 int		load_data(t_env e, t_data d, char **av);
-t_data	load_data2(char *buf, t_data d);
+int	load_data2(char *buf, t_data d);
 
 // parse.c
 
-t_data	amb(char *buf, t_data d);
+int	amb(char *buf, t_data d);
 
 // utils.c
 

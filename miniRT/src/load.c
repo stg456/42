@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/08 17:14:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/11 18:55:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_data	load_data2(char *buf, t_data d)
 		if (*buf == ' ' || *buf == '\t')
 			buf++;
 		if (ft_strncmp(buf, "A", 1) == 0)
-			amb(buf, d);
+			d.nbA += amb(buf, d);
 		// else if (ft_strcmp(*buf, "C") == 0)
 		// 	cam();
 		// else if (ft_strcmp(*buf, "L") == 0)
