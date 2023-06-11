@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:27:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/09 14:10:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/11 16:57:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ Dog::Dog(const Dog &copy) {
 	// *this = copy;
 	this->_type = copy._type;
 	this->_Brain = new Brain();
-	this->_Brain = copy._Brain;
-	// *this->_Brain = *copy._Brain;
+	// this->_Brain = copy._Brain;
+	*this->_Brain = *copy._Brain;
 }
 
 Dog& Dog::operator = (const Dog &rhs) {

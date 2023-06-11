@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/11 16:31:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/09 14:10:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/11 16:57:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ Cat::Cat(const Cat &copy) {
 	// *this = copy;
 	this->_type = copy._type;
 	this->_Brain = new Brain();
-	this->_Brain = copy._Brain;
-	// *this->_Brain = *copy._Brain;
+	// this->_Brain = copy._Brain;
+	*this->_Brain = *copy._Brain;
 }
 
 Cat& Cat::operator = (const Cat &rhs) {

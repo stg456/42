@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/10 18:25:01 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/11 16:57:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_data	amb(char *buf, t_data d)
 		else if (buf[i] != ' ' && buf[i] != '\t' && buf[i] != 'A')
 		{
 			printf("a\n");
-			while (buf[i] != ' ' && buf[i] != '\t')
+			while (buf[i] != ' ' || buf[i] != '\t')
 			{
 				printf("b\n");
 				tmp[j] = buf[i];
