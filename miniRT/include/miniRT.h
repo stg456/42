@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/12 17:19:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:59:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,7 @@ void	sp(char *buf, t_data d);
 
 // parse2.c
 
+void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor);
 void	pl(char *buf, t_data d);
 void	cyl(char *buf, t_data d);
 
