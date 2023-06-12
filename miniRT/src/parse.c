@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/12 16:15:02 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/12 16:51:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	amb(char *buf, t_data d)
 	a.rgb.r = ft_atoi(tmpcolor[0]);
 	a.rgb.g = ft_atoi(tmpcolor[1]);
 	a.rgb.b = ft_atoi(tmpcolor[2]);
+	free(tmpcolor);
 	free(tmp);
 	return (d.nbA);
 }
@@ -53,6 +54,8 @@ int	cam(char *buf, t_data d)
 	c.axe.y = ft_atof(tmp_axe[1]);
 	c.axe.z = ft_atof(tmp_axe[2]);
 	c.fov = ft_atoi(tmp[3]);
+	free(tmp_pos);
+	free(tmp_axe);
 	free(tmp);
 	return (d.nbC);
 }
@@ -78,6 +81,8 @@ int	lum(char *buf, t_data d)
 	l.rgb.r = ft_atoi(tmpcolor[0]);
 	l.rgb.g = ft_atoi(tmpcolor[1]);
 	l.rgb.b = ft_atoi(tmpcolor[2]);
+	free(tmp_pos);
+	free(tmpcolor);
 	free(tmp);
 	return (d.nbL);
 }
@@ -103,6 +108,8 @@ int	sp(char *buf, t_data d)
 	sp.rgb.r = ft_atoi(tmpcolor[0]);
 	sp.rgb.g = ft_atoi(tmpcolor[1]);
 	sp.rgb.b = ft_atoi(tmpcolor[2]);
+	free(tmp_pos);
+	free(tmpcolor);
 	free(tmp);
 	return (d.nbsp);
 }
@@ -132,6 +139,9 @@ int	pl(char *buf, t_data d)
 	pl.rgb.r = ft_atoi(tmpcolor[0]);
 	pl.rgb.g = ft_atoi(tmpcolor[1]);
 	pl.rgb.b = ft_atoi(tmpcolor[2]);
+	free(tmp_pos);
+	free(tmp_axe);
+	free(tmpcolor);
 	free(tmp);
 	return (d.nbpl);
 }
@@ -163,6 +173,9 @@ int	cyl(char *buf, t_data d)
 	cy.rgb.r = ft_atoi(tmpcolor[0]);
 	cy.rgb.g = ft_atoi(tmpcolor[1]);
 	cy.rgb.b = ft_atoi(tmpcolor[2]);
+	free(tmp_pos);
+	free(tmp_axe);
+	free(tmpcolor);
 	free(tmp);
 	return (d.nbcy);
 }
