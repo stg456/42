@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/12 17:03:48 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:19:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-int	amb(char *buf, t_data d)
+void	amb(char *buf, t_data d)
 {
 	t_amb	a;
 	char	**tmp;
@@ -30,10 +30,9 @@ int	amb(char *buf, t_data d)
 	a.rgb.b = ft_atoi(tmpcolor[2]);
 	free(tmpcolor);
 	free(tmp);
-	return (d.nbA);
 }
 
-int	cam(char *buf, t_data d)
+void	cam(char *buf, t_data d)
 {
 	t_cam	c;
 	char	**tmp;
@@ -57,10 +56,9 @@ int	cam(char *buf, t_data d)
 	free(tmp_pos);
 	free(tmp_axe);
 	free(tmp);
-	return (d.nbC);
 }
 
-int	lum(char *buf, t_data d)
+void	lum(char *buf, t_data d)
 {
 	t_lum	l;
 	char	**tmp;
@@ -84,10 +82,9 @@ int	lum(char *buf, t_data d)
 	free(tmp_pos);
 	free(tmpcolor);
 	free(tmp);
-	return (d.nbL);
 }
 
-int	sp(char *buf, t_data d)
+void	sp(char *buf, t_data d)
 {
 	t_sp	sp;
 	char	**tmp;
@@ -111,6 +108,5 @@ int	sp(char *buf, t_data d)
 	free(tmp_pos);
 	free(tmpcolor);
 	free(tmp);
-	return (d.nbsp);
 }
 

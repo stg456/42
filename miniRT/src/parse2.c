@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/12 16:59:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/12 17:03:48 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/12 17:19:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-int	pl(char *buf, t_data d)
+void	pl(char *buf, t_data d)
 {
 	t_pl	pl;
 	char	**tmp;
@@ -41,10 +41,9 @@ int	pl(char *buf, t_data d)
 	free(tmp_axe);
 	free(tmpcolor);
 	free(tmp);
-	return (d.nbpl);
 }
 
-int	cyl(char *buf, t_data d)
+void	cyl(char *buf, t_data d)
 {
 	t_cy	cy;
 	char	**tmp;
@@ -75,5 +74,4 @@ int	cyl(char *buf, t_data d)
 	free(tmp_axe);
 	free(tmpcolor);
 	free(tmp);
-	return (d.nbcy);
 }
