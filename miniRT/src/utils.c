@@ -6,18 +6,22 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/08 18:30:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/12 12:07:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-int	pass(char *str)
+char	pass(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (str[i] == ' ' || str[i] == '\t')
-		i++;
-	return (i);
+	if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
+		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
+	{
+		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r' || str[i])
+			i++;
+	}
+	return (' ');
 }

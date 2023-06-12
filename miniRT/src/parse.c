@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/11 18:55:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/12 12:19:29 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,42 +15,49 @@
 int	amb(char *buf, t_data d)
 {
 	t_amb	A;
-	char	*tmp;
+	char	**tmp;
 	int		i;
 	int		j;
 
-	i = 0;
-	j = 0;
-	tmp = malloc(sizeof(char) *	j + 1);
-	while (buf[i] != '\n')
-	{
-		// printf("dans A: %s\n", buf);
-		if (buf[i] == ' ' || buf[i] == '\t')
-			i++;
-		else if (ft_strncmp(buf, "A", 1) == 0)
-		{
-			d.nbA += 1;
-			i++;
-		}
-		// printf("nb A: %d\n", d.nbA);
-		// printf("i: %d\n", i);
-		else if (buf[i] != ' ' && buf[i] != '\t' && buf[i] != 'A')
-		{
-			printf("a\n");
-			while (buf[i] != ' ' || buf[i] != '\t')
-			{
-				printf("b\n");
-				tmp[j] = buf[i];
-				printf("%c\n", buf[i]);
-				// printf("%c\n", tmp[j]);
+	i = 0; // index sur buf
+	j = 0; // index sur tmp[j] 
+	tmp = malloc(sizeof(char *) *	ft_strlen(buf) + 1);
 
-			}
-		}
+	// {
+	// 	tmp[i] = ft_split(buf, ' ');
+	// 	printf("tmp[i]: %s\n", tmp[i]);
+	// }
+
+	pass(buf);
+	while (buf[i])
+	{
+		printf("dans A: %s\n", buf);
+		tmp = ft_split(buf, ' ');
+		j++;
+	}
+	d.nbA += 1;
+	printf("tmp: %s\n", tmp[0]);
+	printf("nb A: %d\n", d.nbA);
+	// printf("i: %d\n", i);
+	// if (buf[i] != ' ' && buf[i] != '\t' && buf[i] != 'A')
+	// {
+	// 	printf("a\n");
+	// 	while (buf[i] != ' ' || buf[i] != '\t')
+	// 	{
+	// 		printf("b\n");
+	// 		tmp[j] = buf;
+	// 		// printf("%c\n", buf[i]);
+	// 		printf("%s\n", tmp[j]);
+
+	// 	}
+	// }
 		printf("i: %d\n", i);
 
-		printf("tmp: %s\n", tmp);
-		A.ratioA = ft_atof(tmp);
+		printf("tmp[j]: %s\n", tmp[0]);
+		A.ratioA = ft_atof(tmp[1]);
 		printf("ratio: %lf\n", A.ratioA);
+
+		// color
 		// while (*buf == ' ' || *buf == '\t')
 		// 	buf++;
 		// while (*buf != ',')
@@ -61,7 +68,7 @@ int	amb(char *buf, t_data d)
 		// A.rgb.g = ft_atoi(buf);
 		// buf++;
 		// A.rgb.b = ft_atoi(buf);
-	}
+	// }
 
 	free(tmp);
 	return (d.nbA);

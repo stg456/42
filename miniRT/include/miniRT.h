@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/11 18:55:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/12 12:07:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,73 +62,40 @@ typedef struct s_color
 typedef struct s_sp
 {
 	int			nbsp;
-	// double		spx;
-	// double		spy;
-	// double		spz;
 	t_vect		pos;
-	double		spd;
-	// int			spr;
-	// int			spg;
-	// int			spb;
+	double		diam;
 	t_color		rgb;
 }				t_sp;
 
 typedef struct s_pl
 {
 	int			nbpl;
-	// double		plx;
-	// double		ply;
-	// double		plz;
 	t_vect		pos;
-	// double		plxv;
-	// double		plyv;
-	// double		plzv;
 	t_vect		axe;
-	// int			plr;
-	// int			plg;
-	// int			plb;
-	t_color			rgb;
+	t_color		rgb;
 }				t_pl;
 
 typedef struct s_cy
 {
 	int			nbcy;
-	// double		cyx;
-	// double		cyy;
-	// double		cyz;
 	t_vect		pos;
-	// double		cyxv;
-	// double		cyyv;
-	// double		cyzv;
 	t_vect		axe;
-	double		cyd;
-	double		cyh;
-	// int			cyr;
-	// int			cyg;
-	// int			cyb;
-	t_color			rgb;
+	double		diam;
+	double		height;
+	t_color		rgb;
 }				t_cy;
 
 typedef struct s_amb
 {
 	int			nbA;
 	double		ratioA;
-	// int			Ar;
-	// int			Ag;
-	// int			Ab;
-	t_color			rgb;
+	t_color		rgb;
 }				t_amb;
 
 typedef struct s_cam
 {
 	int			nbC;
-	// double		cx;
-	// double		cy;
-	// double		cz;
 	t_vect		pos;
-	// double		cxv;
-	// double		cyv;
-	// double		czv;
 	t_vect		axe;
 	int			fov;
 }				t_cam;
@@ -136,14 +103,8 @@ typedef struct s_cam
 typedef struct s_lum
 {
 	int			nbL;
-	// double		Lx;
-	// double		Ly;
-	// double		Lz;
 	t_vect		pos;
 	double		ratioL;
-	// int			Lr;
-	// int			Lg;
-	// int			Lb;
 	t_color		rgb;
 }				t_lum;
 
@@ -168,14 +129,14 @@ void	init_rt(t_env e, t_data d);
 // load.c
 
 int		load_data(t_env e, t_data d, char **av);
-int	load_data2(char *buf, t_data d);
+t_data	load_data2(char *buf, t_data d);
 
 // parse.c
 
-int	amb(char *buf, t_data d);
+int		amb(char *buf, t_data d);
 
 // utils.c
 
-int		pass(char *str);
+char	pass(char *str);
 
 #endif
