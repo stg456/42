@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/12 12:19:29 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/12 12:23:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,8 @@ int	amb(char *buf, t_data d)
 	j = 0; // index sur tmp[j] 
 	tmp = malloc(sizeof(char *) *	ft_strlen(buf) + 1);
 
-	// {
-	// 	tmp[i] = ft_split(buf, ' ');
-	// 	printf("tmp[i]: %s\n", tmp[i]);
-	// }
-
 	pass(buf);
-	while (buf[i])
+	while (buf[i]) // boucle infini
 	{
 		printf("dans A: %s\n", buf);
 		tmp = ft_split(buf, ' ');
