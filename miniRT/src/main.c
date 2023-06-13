@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/13 14:31:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:56:06 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int ac, char **av)
 	mlx_key_hook(e.mlx, &keyhook, &e);
 
 	load_data(e, d, av);
-	printf("main a.rgb.b: %d\n", a.rgb.b);
+	printf("main a.rgb.b: %d\n", a.rgb.b); // pb
 	// check(e, ac, av);
 	
 	// init_rt(e, d);

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/13 14:11:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/13 15:57:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	amb(char *buf, t_data d)
 	a.rgb.r = ft_atoi(tmpcolor[0]);
 	a.rgb.g = ft_atoi(tmpcolor[1]);
 	a.rgb.b = ft_atoi(tmpcolor[2]);
-	printf("a.rgb.b: %d\n", a.rgb.b);
 	free(tmpcolor);
 	free(tmp);
 	printf("amb a.rgb.b: %d\n", a.rgb.b);
