@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/13 14:17:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/13 14:31:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ int	main(int ac, char **av)
 	t_env	e;
 	t_data	d;
 	t_amb	a;
-	// t_lum	l;
 	(void)ac;
 	(void)av;
 
@@ -60,7 +59,6 @@ int	main(int ac, char **av)
 
 	load_data(e, d, av);
 	printf("main a.rgb.b: %d\n", a.rgb.b);
-	// printf("check2b l.rgb.b: %d\n", l.rgb.b);
 	// check(e, ac, av);
 	
 	// init_rt(e, d);
