@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/12 17:50:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/13 11:47:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,24 @@ int	rgbinrange(int nb)
 {
 	if (nb < 0 || nb > 255)
 		return (1);
-	return (0);
+	else
+		return (0);
 }
 
 int	vectinrange(double nb)
 {
 	if (nb < -1 || nb > 1)
 		return (1);
-	return (0);
+	else
+		return (0);
 }
 
 int	ratioinrange(double nb)
 {
 	if (nb < 0 || nb > 1)
 		return (1);
-	return (0);
+	else
+		return (0);
 }
 
 void	check(t_env e, int ac, char **av)
@@ -59,5 +62,7 @@ void	check(t_env e, int ac, char **av)
 	// 	ft_error("Error\nincorect vector\n");
 	// else if (ratioinrange(l.ratioL) || ratioinrange(a.ratioA))
 	// 	ft_error("Error\nincorect ratio\n");
+	printf("a.rgb.b: %d\n", a.rgb.b);
+	printf("in range de a.rgb.b: %d\n", rgbinrange(a.rgb.b));
 }
 // pb sur les check color et vector

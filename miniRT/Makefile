@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/06/12 17:00:47 by stgerard         ###   ########.fr        #
+#    Updated: 2023/06/13 11:26:08 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
 
 SRC = ./src/main.c ./src/check.c ./src/init.c ./src/load.c ./src/utils.c \
-		./src/parse.c ./src/parse2.c
+		./src/parse.c ./src/parse2.c ./src/check2.c
 
 OBJ = ${SRC:.c=.o}
 
