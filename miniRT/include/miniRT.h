@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/13 11:47:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/13 13:56:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,10 @@ void	sp(char *buf, t_data d);
 void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor);
 void	pl(char *buf, t_data d);
 void	cyl(char *buf, t_data d);
+
+// check2.c
+
+void	check_amb(t_amb a);
 
 // utils.c
 
