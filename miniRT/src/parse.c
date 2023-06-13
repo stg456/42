@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/13 13:56:49 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/13 14:11:15 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ void	amb(char *buf, t_data d)
 	printf("a.rgb.b: %d\n", a.rgb.b);
 	free(tmpcolor);
 	free(tmp);
+	printf("amb a.rgb.b: %d\n", a.rgb.b);
 	check_amb(a);
-	printf("a.rgb.b: %d\n", a.rgb.b);
 }
 
 void	cam(char *buf, t_data d)
