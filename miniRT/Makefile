@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/06/14 11:12:10 by stgerard         ###   ########.fr        #
+#    Updated: 2023/06/14 11:31:16 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS = -Wall -Wextra -Werror -g3
 RM = rm -f
 
 SRC = ./src/main.c ./src/check.c ./src/init.c ./src/load.c ./src/utils.c \
-		./src/amb.c ./src/cam.c ./src/lum.c ./src/sphere.c ./src/cyl.c \
+		./src/amb.c ./src/cam.c ./src/lum.c ./src/spher.c ./src/cyl.c \
 		./src/plan.c
 
 OBJ = ${SRC:.c=.o}
@@ -32,7 +32,7 @@ ${NAME}: ${OBJ}
 	${CC} $(CFLAGS) ${OBJ} libft.a libmlx42.a -lglfw -L/Users/${USER}/goinfre/.brew/opt/glfw/lib/ -o ${NAME}
 
 %.o: %.c
-	$(CC) $(CFLAGS)  -I./MLX42/include/MLX42 -I./include -I/Users/${USER}/goinfre/.brew/opt/glfw/include -c $< -o $@
+	$(CC) $(CFLAGS)  -I./MLX42/include/MLX42 -I./inc -I/Users/${USER}/goinfre/.brew/opt/glfw/include -c $< -o $@
 
 clean:
 	${RM} ${OBJ} libmlx42.a libft.a

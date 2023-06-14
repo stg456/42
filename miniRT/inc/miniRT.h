@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 11:07:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:23:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,7 +136,7 @@ void	cam(char *buf, t_data d);
 // lum.c
 void	lum(char *buf, t_data d);
 
-// sphere.c
+// spher.c
 void	sp(char *buf, t_data d);
 
 // plan.c
