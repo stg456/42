@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/12 18:07:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:07:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_data	load_data2(char *buf, t_data d)
 			pl(buf, d);
 		else if (ft_strncmp(buf, "cy", 2) == 0)
 		{
-			pass(buf);
+			// pass(buf);
 			cyl(buf, d);
 		}
 		else

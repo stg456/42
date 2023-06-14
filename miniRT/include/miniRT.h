@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 10:25:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/14 11:07:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,52 +109,44 @@ typedef struct s_lum
 }				t_lum;
 
 // main.c
-
 int		main(int ac, char **av);
 void	ft_error(char *str);
 void	keyhook(mlx_key_data_t keydata, void *param);
 int		close_hook(t_env e);
 
 // check.c
-
-void	check(t_env e, int ac, char **av);
 int		rgbinrange(int nb);
 int		vectinrange(double nb);
 int		ratioinrange(double nb);
 
 // init.c
-
 void	init_rt(t_env e, t_data d);
 
 // load.c
-
 int		load_data(t_env e, t_data d, char **av);
 t_data	load_data2(char *buf, t_data d);
 
-// parse.c
-
-// void	amb(char *buf, t_data d);
-void	cam(char *buf, t_data d);
-void	lum(char *buf, t_data d);
-void	sp(char *buf, t_data d);
-
-// parse2.c
-
-void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor);
-void	pl(char *buf, t_data d);
-void	cyl(char *buf, t_data d);
-
-// check2.c
-
-// void	check_amb(t_amb a);
-
 // amb.c
-
 void	amb(char *buf, t_data d);
 void	check_amb(t_amb a);
 
-// utils.c
+// cam.c
+void	cam(char *buf, t_data d);
 
+// lum.c
+void	lum(char *buf, t_data d);
+
+// sphere.c
+void	sp(char *buf, t_data d);
+
+// plan.c
+void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor);
+void	pl(char *buf, t_data d);
+
+// cyl.c
+void	cyl(char *buf, t_data d);
+
+// utils.c
 char	pass(char *str);
 
 #endif
