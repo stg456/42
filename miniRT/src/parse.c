@@ -6,33 +6,33 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 16:56:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/13 15:57:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/14 10:25:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-void	amb(char *buf, t_data d)
-{
-	t_amb	a;
-	char	**tmp;
-	char	**tmpcolor;
+// void	amb(char *buf, t_data d)
+// {
+// 	t_amb	a;
+// 	char	**tmp;
+// 	char	**tmpcolor;
 
-	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
-	pass(buf);
-	printf("dans A: %s\n", buf);
-	tmp = ft_split(buf, ' ');
-	d.nbA += 1;
-	a.ratioA = ft_atof(tmp[1]);
-	tmpcolor = ft_split(tmp[2], ',');
-	a.rgb.r = ft_atoi(tmpcolor[0]);
-	a.rgb.g = ft_atoi(tmpcolor[1]);
-	a.rgb.b = ft_atoi(tmpcolor[2]);
-	free(tmpcolor);
-	free(tmp);
-	printf("amb a.rgb.b: %d\n", a.rgb.b);
-	check_amb(a);
-}
+// 	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
+// 	pass(buf);
+// 	printf("dans A: %s\n", buf);
+// 	tmp = ft_split(buf, ' ');
+// 	d.nbA += 1;
+// 	a.ratioA = ft_atof(tmp[1]);
+// 	tmpcolor = ft_split(tmp[2], ',');
+// 	a.rgb.r = ft_atoi(tmpcolor[0]);
+// 	a.rgb.g = ft_atoi(tmpcolor[1]);
+// 	a.rgb.b = ft_atoi(tmpcolor[2]);
+// 	free(tmpcolor);
+// 	free(tmp);
+// 	printf("amb a.rgb.b: %d\n", a.rgb.b);
+// 	check_amb(a);
+// }
 
 void	cam(char *buf, t_data d)
 {

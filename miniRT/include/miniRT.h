@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/13 13:56:49 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/14 10:25:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,7 +133,7 @@ t_data	load_data2(char *buf, t_data d);
 
 // parse.c
 
-void	amb(char *buf, t_data d);
+// void	amb(char *buf, t_data d);
 void	cam(char *buf, t_data d);
 void	lum(char *buf, t_data d);
 void	sp(char *buf, t_data d);
@@ -146,6 +146,11 @@ void	cyl(char *buf, t_data d);
 
 // check2.c
 
+// void	check_amb(t_amb a);
+
+// amb.c
+
+void	amb(char *buf, t_data d);
 void	check_amb(t_amb a);
 
 // utils.c
