@@ -6,11 +6,19 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:40:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 10:47:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/14 12:14:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
+
+void	check_cam(t_cam c)
+{
+	if (c.fov)
+		ft_error("Error\nFOV of camera not in the rang\n");
+	if (vectinrange(c.axe.x) || vectinrange(c.axe.y) || vectinrange(c.axe.z))
+		ft_error("Error\norientation vector of camera not in the rang\n");
+}
 
 void	cam(char *buf, t_data d)
 {
@@ -36,5 +44,6 @@ void	cam(char *buf, t_data d)
 	free(tmp_pos);
 	free(tmp_axe);
 	free(tmp);
+	printf("cam c.axe.x: %lf\n", c.axe.x);
 }
 

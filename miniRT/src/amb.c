@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:19:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 10:21:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/14 12:17:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,16 @@ void	check_amb(t_amb a)
 {
 	printf("check2 a.rgb.b: %d\n", a.rgb.b);
 	if (rgbinrange(a.rgb.r) || rgbinrange(a.rgb.g) || rgbinrange(a.rgb.b)
-	|| ft_isdigit(a.rgb.r) || ft_isdigit(a.rgb.g) || ft_isdigit(a.rgb.b))
+		|| ft_isdigit(a.rgb.r) || ft_isdigit(a.rgb.g) || ft_isdigit(a.rgb.b))
 		ft_error("Error\nincorrect rgb value for A\n");
-	printf("check2b a.rgb.b: %d\n", a.rgb.b);
-	printf("rgbinrange(a.rgb.b): %d\n", rgbinrange(a.rgb.b));
+	if (ratioinrange(a.ratioA))
+		ft_error("Error\nincorrect ratio value for A\n");
+	// printf("check2b a.rgb.b: %d\n", a.rgb.b);
+	// printf("rgbinrange(a.rgb.b): %d\n", rgbinrange(a.rgb.b));
+	// printf("a.ratio: %lf\n", a.ratioA);
+	// printf("ratioinrange(a.rgb.b): %d\n", ratioinrange(a.rgb.b));
 }
+// ne verifie pas les lettes correctement !
 
 void	amb(char *buf, t_data d)
 {
@@ -40,6 +45,5 @@ void	amb(char *buf, t_data d)
 	a.rgb.b = ft_atoi(tmpcolor[2]);
 	free(tmpcolor);
 	free(tmp);
-	printf("amb a.rgb.b: %d\n", a.rgb.b);
 	check_amb(a);
 }

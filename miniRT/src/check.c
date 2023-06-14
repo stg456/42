@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 10:22:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/14 12:12:15 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,16 @@ int	vectinrange(double nb)
 
 int	ratioinrange(double nb)
 {
-	if (nb < 0 || nb > 1)
-		return (1);
-	else
+	if (nb >= 0 || nb <= 1)
 		return (0);
+	else
+		return (1);
+}
+
+int	fovinrange(int nb)
+{
+	if (nb >= 0 && nb <= 180)
+		return (0);
+	else
+		return (1);
 }
