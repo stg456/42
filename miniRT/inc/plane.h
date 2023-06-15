@@ -2,11 +2,13 @@
 # define PLANE_H
 
 #include "shape.h"
+#include "miniRT.h"
 
 typedef struct s_plane
 {
 	t_vec	pos;
 	t_vec	normal;
+	t_color	rgb;
 }	t_plane;
 
 t_plane	*plane_init(t_vec *pos, t_vec *normal);

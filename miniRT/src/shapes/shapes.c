@@ -1,6 +1,6 @@
 #include "../../inc/shape.h"
 
-bool	shape_intersect(t_shape *shapes, t_inter inter1)
+bool	shapes_intersect(t_shape *shapes, t_inter *inter1)
 {
 	bool	inter;
 	int		i;
@@ -30,7 +30,7 @@ bool	shape_intersect(t_shape *shapes, t_inter inter1)
 	return (inter);
 }
 
-bool	shape_doesintersect(t_shape *shapes, t_ray ray1)
+bool	shapes_doesintersect(t_shape *shapes, t_ray *ray1)
 {
 	int		i;
 

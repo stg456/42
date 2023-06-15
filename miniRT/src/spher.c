@@ -6,11 +6,21 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 11:22:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 11:23:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/15 14:41:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
+
+static void	check_sph(t_sp sp, t_data d)
+{
+	if (rgbinrange(sp.rgb.r) || rgbinrange(sp.rgb.g) || rgbinrange(sp.rgb.b)
+		|| ft_isdigit(sp.rgb.r) || ft_isdigit(sp.rgb.g) || ft_isdigit(sp.rgb.b))
+	{
+		close(d.fd);
+		ft_error("Error\nincorrect rgb value for sphere\n");
+	}
+}
 
 void	sp(char *buf, t_data d)
 {
@@ -20,7 +30,6 @@ void	sp(char *buf, t_data d)
 	char	**tmpcolor;
 
 	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
-	pass(buf);
 	printf("dans sp: %s\n", buf);
 	tmp = ft_split(buf, ' ');
 	d.nbsp += 1;
@@ -36,4 +45,5 @@ void	sp(char *buf, t_data d)
 	free(tmp_pos);
 	free(tmpcolor);
 	free(tmp);
+	check_sph(sp, d);
 }

@@ -6,11 +6,26 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 10:55:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/15 14:41:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
+
+static void	check_cyl(t_cy cy, t_data d)
+{
+	if (vectinrange(cy.axe.x) || vectinrange(cy.axe.y) || vectinrange(cy.axe.z))
+	{
+		close(d.fd);
+		ft_error("Error\norientation vector of cylinder not in the rang\n");
+	}
+	if (rgbinrange(cy.rgb.r) || rgbinrange(cy.rgb.g) || rgbinrange(cy.rgb.b)
+		|| ft_isdigit(cy.rgb.r) || ft_isdigit(cy.rgb.g) || ft_isdigit(cy.rgb.b))
+	{
+		close(d.fd);
+		ft_error("Error\nincorrect rgb value for cylinder\n");
+	}
+}
 
 void	cyl(char *buf, t_data d)
 {
@@ -21,7 +36,6 @@ void	cyl(char *buf, t_data d)
 	char	**tmpcolor;
 
 	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
-	// pass(buf);
 	printf("dans cy: %s\n", buf);
 	tmp = ft_split(buf, ' ');
 	d.nbcy += 1;
@@ -40,4 +54,5 @@ void	cyl(char *buf, t_data d)
 	cy.rgb.g = ft_atoi(tmpcolor[1]);
 	cy.rgb.b = ft_atoi(tmpcolor[2]);
 	free_all(tmp, tmp_pos, tmp_axe, tmpcolor);
+	check_cyl(cy, d);
 }

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 12:12:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/15 14:23:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	vectinrange(double nb)
 
 int	ratioinrange(double nb)
 {
-	if (nb >= 0 || nb <= 1)
+	if (nb >= 0 && nb <= 1)
 		return (0);
 	else
 		return (1);

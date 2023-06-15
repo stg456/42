@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:48:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 10:55:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/15 14:41:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,21 @@ void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor)
 	free(tmp);
 }
 
+static void	check_plan(t_pl pl, t_data d)
+{
+	if (vectinrange(pl.axe.x) || vectinrange(pl.axe.y) || vectinrange(pl.axe.z))
+	{
+		close(d.fd);
+		ft_error("Error\norientation vector of plan not in the rang\n");
+	}
+	if (rgbinrange(pl.rgb.r) || rgbinrange(pl.rgb.g) || rgbinrange(pl.rgb.b)
+		|| ft_isdigit(pl.rgb.r) || ft_isdigit(pl.rgb.g) || ft_isdigit(pl.rgb.b))
+	{
+		close(d.fd);
+		ft_error("Error\nincorrect rgb value for plan\n");
+	}
+}
+
 void	pl(char *buf, t_data d)
 {
 	t_pl	pl;
@@ -29,7 +44,6 @@ void	pl(char *buf, t_data d)
 	char	**tmpcolor;
 
 	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
-	pass(buf);
 	printf("dans pl: %s\n", buf);
 	tmp = ft_split(buf, ' ');
 	d.nbpl += 1;
@@ -46,4 +60,5 @@ void	pl(char *buf, t_data d)
 	pl.rgb.g = ft_atoi(tmpcolor[1]);
 	pl.rgb.b = ft_atoi(tmpcolor[2]);
 	free_all(tmp, tmp_pos, tmp_axe, tmpcolor);
+	check_plan(pl, d);
 }

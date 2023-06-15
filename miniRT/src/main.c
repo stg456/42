@@ -6,15 +6,16 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 10:19:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/15 15:08:26 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-void	ft_error(char *str)
+void	ft_error(char *str/*, t_data d*/)
 {
-	perror(str);
+	// close(d.fd);
+	printf("%s", str);
 	exit(EXIT_FAILURE);
 }
 
@@ -63,5 +64,5 @@ int	main(int ac, char **av)
 	mlx_loop(e.mlx);
 	close_hook(e);
 	// free(e);
-	return 0;
+	return (0);
 }

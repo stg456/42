@@ -8,7 +8,7 @@ typedef struct s_inter
 {
 	t_ray	ray;
 	float	t;
-	t_shape	*pShape;
+	void	*pShape;
 }	t_inter;
 
 //-----Instanciation-----//

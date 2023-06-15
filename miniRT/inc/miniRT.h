@@ -6,14 +6,14 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 11:23:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/15 15:08:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIRT_H
 # define MINIRT_H
 
-# include "MLX42.h"
+# include "../MLX42/include/MLX42/MLX42.h"
 # include <math.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -37,6 +37,7 @@ typedef struct s_env
 
 typedef struct s_data
 {
+	int			fd;
 	int			nbA;
 	int			nbC;
 	int			nbL;
@@ -110,7 +111,7 @@ typedef struct s_lum
 
 // main.c
 int		main(int ac, char **av);
-void	ft_error(char *str);
+void	ft_error(char *str/*, t_data d*/);
 void	keyhook(mlx_key_data_t keydata, void *param);
 int		close_hook(t_env e);
 
@@ -118,6 +119,7 @@ int		close_hook(t_env e);
 int		rgbinrange(int nb);
 int		vectinrange(double nb);
 int		ratioinrange(double nb);
+int		fovinrange(int nb);
 
 // init.c
 void	init_rt(t_env e, t_data d);
@@ -128,7 +130,6 @@ t_data	load_data2(char *buf, t_data d);
 
 // amb.c
 void	amb(char *buf, t_data d);
-void	check_amb(t_amb a);
 
 // cam.c
 void	cam(char *buf, t_data d);

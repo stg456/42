@@ -6,7 +6,7 @@ void	inter_eq(t_inter *inter1, t_inter *inter2)
 	inter1->t = inter2->t;
 	if (inter1->pShape)
 		free(inter1->pShape);
-	shape_eq(inter1->pShape, inter2->pShape);
+	inter1->pShape = inter2->pShape; // ! keep an eye on !
 }
 
 bool	intersected(t_inter *inter1)

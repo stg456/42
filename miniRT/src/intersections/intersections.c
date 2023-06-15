@@ -27,7 +27,7 @@ t_inter	*inter_cpy(t_inter *inter1)
 		return (NULL);
 	ray_eq(&inter->ray, &inter1->ray);
 	inter->t = inter1->t;
-	shape_eq(inter->pShape, inter1->pShape); // potentially change to pointer assignation
+	inter->pShape = inter1->pShape; // ! keep an eye on !
 	return (inter);
 }
 

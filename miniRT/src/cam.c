@@ -6,18 +6,24 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:40:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/14 12:14:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/15 14:42:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-void	check_cam(t_cam c)
+static void	check_cam(t_cam c, t_data d)
 {
-	if (c.fov)
+	if (fovinrange(c.fov))
+	{
+		close(d.fd);
 		ft_error("Error\nFOV of camera not in the rang\n");
+	}
 	if (vectinrange(c.axe.x) || vectinrange(c.axe.y) || vectinrange(c.axe.z))
+	{
+		close(d.fd);
 		ft_error("Error\norientation vector of camera not in the rang\n");
+	}
 }
 
 void	cam(char *buf, t_data d)
@@ -28,7 +34,6 @@ void	cam(char *buf, t_data d)
 	char	**tmp_axe;
 
 	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
-	pass(buf);
 	printf("dans C: %s\n", buf);
 	tmp = ft_split(buf, ' ');
 	d.nbC += 1;
@@ -44,6 +49,6 @@ void	cam(char *buf, t_data d)
 	free(tmp_pos);
 	free(tmp_axe);
 	free(tmp);
-	printf("cam c.axe.x: %lf\n", c.axe.x);
+	// printf("cam c.fov: %d\n", c.fov);
+	check_cam(c, d);
 }
-
