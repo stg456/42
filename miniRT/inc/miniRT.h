@@ -25,6 +25,15 @@
 # include <sys/types.h>
 # include "../libft/libft.h"
 
+# include "cylindre.h"
+# include "intersection.h"
+# include "plane.h"
+# include "ray.h"
+# include "shape.h"
+# include "sphere.h"
+# include "vector.h"
+
+
 # define PI 3.14159
 
 typedef struct s_env
@@ -46,45 +55,12 @@ typedef struct s_data
 	int			nbcy;
 }				t_data;
 
-typedef struct s_vect
-{
-	double		x;
-	double		y;
-	double		z;
-}				t_vect;
-
 typedef struct s_color
 {
 	int			r;
 	int			g;
 	int			b;
 }				t_color;
-
-typedef struct s_sp
-{
-	int			nbsp;
-	t_vect		pos;
-	double		diam;
-	t_color		rgb;
-}				t_sp;
-
-typedef struct s_pl
-{
-	int			nbpl;
-	t_vect		pos;
-	t_vect		axe;
-	t_color		rgb;
-}				t_pl;
-
-typedef struct s_cy
-{
-	int			nbcy;
-	t_vect		pos;
-	t_vect		axe;
-	double		diam;
-	double		height;
-	t_color		rgb;
-}				t_cy;
 
 typedef struct s_amb
 {
@@ -96,15 +72,15 @@ typedef struct s_amb
 typedef struct s_cam
 {
 	int			nbC;
-	t_vect		pos;
-	t_vect		axe;
+	t_vec		pos;
+	t_vec		axe;
 	int			fov;
 }				t_cam;
 
 typedef struct s_lum
 {
 	int			nbL;
-	t_vect		pos;
+	t_vec		pos;
 	double		ratioL;
 	t_color		rgb;
 }				t_lum;

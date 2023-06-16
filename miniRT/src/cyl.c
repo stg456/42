@@ -12,7 +12,7 @@
 
 #include "miniRT.h"
 
-static void	check_cyl(t_cy cy, t_data d)
+static void	check_cyl(t_cyl cy, t_data d)
 {
 	if (vectinrange(cy.axe.x) || vectinrange(cy.axe.y) || vectinrange(cy.axe.z))
 	{
@@ -29,7 +29,7 @@ static void	check_cyl(t_cy cy, t_data d)
 
 void	cyl(char *buf, t_data d)
 {
-	t_cy	cy;
+	t_cyl	cy;
 	char	**tmp;
 	char	**tmp_pos;
 	char	**tmp_axe;
@@ -47,7 +47,7 @@ void	cyl(char *buf, t_data d)
 	cy.axe.x = ft_atof(tmp_axe[0]);
 	cy.axe.y = ft_atof(tmp_axe[1]);
 	cy.axe.z = ft_atof(tmp_axe[2]);
-	cy.diam = ft_atof(tmp[3]);
+	cy.radius = ft_atof(tmp[3]) / 2;
 	cy.height = ft_atof(tmp[4]);
 	tmpcolor = ft_split(tmp[5], ',');
 	cy.rgb.r = ft_atoi(tmpcolor[0]);

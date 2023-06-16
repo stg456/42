@@ -12,7 +12,7 @@
 
 #include "miniRT.h"
 
-static void	check_sph(t_sp sp, t_data d)
+static void	check_sph(t_sphere sp, t_data d)
 {
 	if (rgbinrange(sp.rgb.r) || rgbinrange(sp.rgb.g) || rgbinrange(sp.rgb.b)
 		|| ft_isdigit(sp.rgb.r) || ft_isdigit(sp.rgb.g) || ft_isdigit(sp.rgb.b))
@@ -24,7 +24,7 @@ static void	check_sph(t_sp sp, t_data d)
 
 void	sp(char *buf, t_data d)
 {
-	t_sp	sp;
+	t_sphere	sp;
 	char	**tmp;
 	char	**tmp_pos;
 	char	**tmpcolor;
@@ -37,7 +37,7 @@ void	sp(char *buf, t_data d)
 	sp.pos.x = ft_atof(tmp_pos[0]);
 	sp.pos.y = ft_atof(tmp_pos[1]);
 	sp.pos.z = ft_atof(tmp_pos[2]);
-	sp.diam = atof(tmp[2]);
+	sp.radius = atof(tmp[2]) / 2;
 	tmpcolor = ft_split(tmp[3], ',');
 	sp.rgb.r = ft_atoi(tmpcolor[0]);
 	sp.rgb.g = ft_atoi(tmpcolor[1]);

@@ -8,6 +8,7 @@ typedef struct s_plane
 {
 	t_vec	pos;
 	t_vec	normal;
+	t_vec	axe;
 	t_color	rgb;
 }	t_plane;
 

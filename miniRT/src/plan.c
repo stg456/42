@@ -20,7 +20,7 @@ void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor)
 	free(tmp);
 }
 
-static void	check_plan(t_pl pl, t_data d)
+static void	check_plan(t_plane pl, t_data d)
 {
 	if (vectinrange(pl.axe.x) || vectinrange(pl.axe.y) || vectinrange(pl.axe.z))
 	{
@@ -37,7 +37,7 @@ static void	check_plan(t_pl pl, t_data d)
 
 void	pl(char *buf, t_data d)
 {
-	t_pl	pl;
+	t_plane	pl;
 	char	**tmp;
 	char	**tmp_pos;
 	char	**tmp_axe;
