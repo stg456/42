@@ -2,6 +2,7 @@
 # define SPHERE_H
 
 #include "shape.h"
+#include "miniRT.h"
 
 typedef struct s_sphere
 {

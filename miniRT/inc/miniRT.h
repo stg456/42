@@ -25,13 +25,15 @@
 # include <sys/types.h>
 # include "../libft/libft.h"
 
-# include "cylindre.h"
+# include "vector.h"
 # include "intersection.h"
-# include "plane.h"
 # include "ray.h"
 # include "shape.h"
+# include "cylindre.h"
+# include "plane.h"
 # include "sphere.h"
-# include "vector.h"
+# include "camera.h"
+
 
 
 # define PI 3.14159
@@ -68,14 +70,6 @@ typedef struct s_amb
 	double		ratioA;
 	t_color		rgb;
 }				t_amb;
-
-typedef struct s_cam
-{
-	int			nbC;
-	t_vec		pos;
-	t_vec		axe;
-	int			fov;
-}				t_cam;
 
 typedef struct s_lum
 {

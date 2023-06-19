@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "miniRT.h"
 
 typedef struct s_vec
 {
@@ -29,7 +30,7 @@ t_vec   *vec_init_f(float f);
 float   length(t_vec *vec);
 float   length2(t_vec *vec);
 float   normalize(t_vec *vec);
-t_vec   *normalized(t_vec *vec);
+t_vec   *normalized(t_vec *vec); // potentiellement modifier type de retour
 
 float   dot(t_vec v1, t_vec v2);
 t_vec   *cross(t_vec v1, t_vec v2);
