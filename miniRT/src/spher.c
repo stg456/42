@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 11:22:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/15 14:41:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/19 17:23:05 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static void	check_sph(t_sphere sp, t_data d)
 void	sp(char *buf, t_data d)
 {
 	t_sphere	sp;
-	char	**tmp;
-	char	**tmp_pos;
-	char	**tmpcolor;
+	char		**tmp;
+	char		**tmp_pos;
+	char		**tmpcolor;
 
 	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
 	printf("dans sp: %s\n", buf);

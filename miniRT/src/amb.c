@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:19:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/15 15:08:26 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/19 17:23:05 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	check_amb(t_amb a, t_data d)
 	// printf("rgbinrange(a.rgb.b): %d\n", rgbinrange(a.rgb.b));
 	// printf("a.ratio: %lf\n", a.ratioA);
 	// printf("ratioinrange(a.rgb.b): %d\n", ratioinrange(a.rgb.b));
-} // ne verifie pas les lettes correctement !
+}
 
 void	amb(char *buf, t_data d)
 {
