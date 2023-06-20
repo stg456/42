@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/20 11:39:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/20 12:09:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-t_data	load_data2(char *buf, t_data d)
+static t_data	load_data2(char *buf, t_data d)
 {
 	if (*buf != '\0')
 	{
@@ -41,7 +41,7 @@ t_data	load_data2(char *buf, t_data d)
 	return (d);
 }
 
-int	load_data(t_env e, t_data d, char **av)
+t_data	load_data(t_env e, t_data d, char **av)
 {
 	(void) e;
 	char	*buf;
@@ -69,5 +69,5 @@ int	load_data(t_env e, t_data d, char **av)
 		buf = get_next_line(d.fd);
 	}
 	close(d.fd);
-	return (0);
+	return (d);
 }

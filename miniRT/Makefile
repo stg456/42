@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/06/15 15:45:37 by stgerard         ###   ########.fr        #
+#    Updated: 2023/06/20 11:44:33 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ RM = rm -f
 
 SRC = ./src/main.c ./src/check.c ./src/init.c ./src/load.c ./src/utils.c \
 		./src/amb.c ./src/cam.c ./src/lum.c ./src/spher.c ./src/cyl.c \
-		./src/plan.c
+		./src/plan.c ./src/cmpt.c
 
 OBJ = ${SRC:.c=.o}
 

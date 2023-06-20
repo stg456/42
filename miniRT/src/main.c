@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/20 11:39:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/20 12:08:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int	main(int ac, char **av)
 	d.nbA = 0;
 	e.mlx = mlx_init(e.size_x, e.size_y, "miniRT", false);
 	mlx_key_hook(e.mlx, &keyhook, &e);
-	cmpt(e, d, av);
-	load_data(e, d, av);
+	d = cmpt(e, d, av);
+	d = load_data(e, d, av);
 	
 	// init_rt(e, d);
 

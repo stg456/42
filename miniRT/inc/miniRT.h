@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/20 10:27:52 by nathan           ###   ########.fr       */
+/*   Updated: 2023/06/20 12:09:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ int		fovinrange(int nb);
 void	init_rt(t_env e, t_data d);
 
 // load.c
-int		load_data(t_env e, t_data d, char **av);
+t_data	load_data(t_env e, t_data d, char **av);
 t_data	load_data2(char *buf, t_data d);
 
 // amb.c
@@ -116,6 +116,9 @@ void	pl(char *buf, t_data d);
 
 // cyl.c
 void	cyl(char *buf, t_data d);
+
+// cmpt.c
+t_data	cmpt(t_env e, t_data d, char **av);
 
 // utils.c
 char	pass(char *str);

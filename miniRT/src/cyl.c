@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/15 14:41:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/20 12:06:37 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ static void	check_cyl(t_cyl cy, t_data d)
 	}
 }
 
-void	cyl(char *buf, t_data d)
+t_cyl	cyl(char *buf, t_data d)
 {
-	t_cyl	cy;
+	t_cyl	*cy;
 	char	**tmp;
 	char	**tmp_pos;
 	char	**tmp_axe;
