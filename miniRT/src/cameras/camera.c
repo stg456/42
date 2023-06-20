@@ -10,7 +10,7 @@ t_cam	*cam_init(t_vec pos, t_vec forward, t_vec upguide, int fov, float aspect_r
 	camera->pos = pos;
 	camera->forward = forward;
 	camera->right = normalized(cross(forward, upguide));
-	camera->up = cross(right, forward);
+	camera->up = cross(camera->right, forward);
 	h = tan(fov);
 	w = h * aspect_ratio;
 	return (camera);
@@ -18,12 +18,12 @@ t_cam	*cam_init(t_vec pos, t_vec forward, t_vec upguide, int fov, float aspect_r
 
 t_ray	make_ray(t_cam *cam, t_vec2	point)
 {
-	t_vec	axe;
+	t_vec	*axe;
 	t_ray	ray;
 
 	axe = cam->forward + point.u * cam->w * cam->right + point.v * cam->h * cam->up;
 	ray.pos = cam->pos;
-	ray.axe = normalized(axe);
+	ray.axe = normalized(&axe);
 	ray.tMAX = RAY_T_MAX;
 	return (ray);
 }

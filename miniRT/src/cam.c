@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:40:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/15 14:42:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/20 11:39:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	check_cam(t_cam c, t_data d)
 	}
 }
 
-void	cam(char *buf, t_data d)
+t_cam	cam(char *buf, t_data d)
 {
 	t_cam	c;
 	char	**tmp;

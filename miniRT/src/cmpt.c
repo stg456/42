@@ -1,11 +1,11 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load.c                                             :+:      :+:    :+:   */
+/*   cmpt.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
+/*   Created: 2023/06/20 11:28:18 by stgerard          #+#    #+#             */
 /*   Updated: 2023/06/20 11:39:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
@@ -20,17 +20,17 @@ t_data	load_data2(char *buf, t_data d)
 		if (*buf == ' ' || *buf == '\t')
 			buf++;
 		if (ft_strncmp(buf, "A", 1) == 0)
-			amb(buf, d);
+			d.nbA +=1;
 		else if (ft_strncmp(buf, "C", 1) == 0)
-			cam(buf, d);
+			d.nbC += 1;
 		else if (ft_strncmp(buf, "L", 1) == 0)
-			lum(buf, d);
+			d.nbL += 1;
 		else if (ft_strncmp(buf, "sp", 2) == 0)
-			sp(buf, d);
+			d.nbsp +=1;
 		else if (ft_strncmp(buf, "pl", 2) == 0)
-			pl(buf, d);
+			d.nbpl += 1;
 		else if (ft_strncmp(buf, "cy", 2) == 0)
-			cyl(buf, d);
+			d.nbcy += 1;
 		else
 		{
 			printf("buf: %s", buf);
@@ -41,7 +41,7 @@ t_data	load_data2(char *buf, t_data d)
 	return (d);
 }
 
-int	load_data(t_env e, t_data d, char **av)
+int	cmpt(t_env e, t_data d, char **av)
 {
 	(void) e;
 	char	*buf;
@@ -63,7 +63,7 @@ int	load_data(t_env e, t_data d, char **av)
 		ft_error("Error\nfile is empty\n");
 	while (buf)
 	{
-		d = load_data2(buf, d);
+		d = cmpt2(buf, d);
 		free(buf);
 		buf = NULL;
 		buf = get_next_line(d.fd);

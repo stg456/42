@@ -22,6 +22,7 @@ class Bureaucrat
 		std::string	getGrade();
 
 	public:
+		Bureaucrat();
 		Bureaucrat(std::string name);
 		
 		~Bureaucrat();
