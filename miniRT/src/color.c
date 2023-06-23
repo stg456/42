@@ -35,7 +35,7 @@ int	frgb_to_int(t_fcolor *frgb)
 	rgb.r = frgb->r * 255;
 	rgb.g = frgb->g * 255;
 	rgb.b = frgb->b * 255;
-	return (rgb.r << 16 | rgb.g << 8 | rgb.r);
+	return (rgb.r << 16 | rgb.g << 8 | rgb.b);
 }
 
 t_color	*rgb_rgb_mult(const t_color *rgb1, const t_color *rgb2)

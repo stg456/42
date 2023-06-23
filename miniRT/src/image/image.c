@@ -30,12 +30,12 @@ void	ray_trace(void *param)
 			if (shapes_intersect(&d.shapes, &inter))
 			{
 				printf("BEFORE MLX_PUT_PIXEL\n");
-				mlx_put_pixel(d.img, x, y, 456123789);
+				mlx_put_pixel(d.img, x, y, 255);
 			}
 			else
 			{
 				printf("BEFORE MLX_PUT_PIXEL\n");
-				curr_pixel = color_initf(0.5f);
+				curr_pixel = color_init(0.0f, 0.0f, 0.0f);
 				mlx_put_pixel(d.img, x, y, frgb_to_int(&curr_pixel));
 			}
 			y++;

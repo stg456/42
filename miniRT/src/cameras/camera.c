@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   camera.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:40:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/23 11:24:29 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/23 15:52:45 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,6 @@ void	cam(char *buf, t_data *d)
 	c.forward.x = ft_atof(tmp_axe[0]);
 	c.forward.y = ft_atof(tmp_axe[1]);
 	c.forward.z = ft_atof(tmp_axe[2]);
-	// il va probablement falloir ajouter une variable fov à notre cam 
-	// à l'heure actuelle je l'ai modifié pour contenir le ratio en float dont j'ai besoin pour le raytracing (d'où l'assignation dans la ligne suivante)
-	// mais check_cam utilise le fov en range 0 - 180 donc il faut qu'on ait les deux
 	c.fov_i = ft_atoi(tmp[3]);
 	c.fov = ft_atoi(tmp[3]) * PI / 180;
 	free_all(tmp, tmp_pos, tmp_axe, NULL);
