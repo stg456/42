@@ -1,20 +1,18 @@
 #ifndef INTERSECTION_H
 # define INTERSECTION_H
 
-#include "ray.h"
-#include "shape.h"
-
-typedef struct s_inter
+typedef struct	s_inter
 {
-	t_ray	ray;
-	float	t;
-	void	*pShape;
-}	t_inter;
+	t_ray		ray;
+	float		t;
+	void		*pShape;
+	t_fcolor	frgb;
+}				t_inter;
 
 //-----Instanciation-----//
-t_inter	*inter_init();
-t_inter	*inter_cpy(t_inter *inter1);
-t_inter	*inter_cpy_ray(t_ray *ray1);
+t_inter	inter_init();
+t_inter	inter_cpy(t_inter *inter1);
+t_inter	inter_cpy_ray(t_ray *ray1);
 
 //-----Manipulations-----//
 bool	intersected(t_inter *inter1);

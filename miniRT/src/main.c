@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/20 12:08:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/23 12:41:16 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ void	keyhook(mlx_key_data_t keydata, void *param)
 
 	if (keydata.key == MLX_KEY_ESCAPE)
 		close_hook(*e);
-	// else if (keydata.key == MLX_KEY_W || keydata.key == MLX_KEY_A
-	// 		|| keydata.key == MLX_KEY_S || keydata.key == MLX_KEY_D)
-	// 	move(keydata.key, e);
+	//else if (keydata.key == MLX_KEY_S)
+	// 	save_img(img, filename);
 	// else if (keydata.key == MLX_KEY_SPACE)
 	// 	action(keydata.key, e);
 	return ;
@@ -43,26 +42,29 @@ int	close_hook(t_env e)
 
 int	main(int ac, char **av)
 {
-	t_env	e;
-	t_data	d;
+	// t_env		e;
+	t_data		d;
 	(void)ac;
-	(void)av;
 
-	// e = malloc(sizeof(t_env));
-	// d = malloc(sizeof(t_data));
+	d.env.size_x = 640;
+	d.env.size_y = 480;
+	d.env.mlx = mlx_init(d.env.size_x, d.env.size_y, "miniRT", false);
+	d.img = mlx_new_image(d.env.mlx, d.env.size_x, d.env.size_y);
+	mlx_key_hook(d.env.mlx, &keyhook, &d.env);
+	d = cmpt(d.env, d, av);
+	memory_alloc(&d);
+	load_data(&d, av);
+	if (mlx_image_to_window(d.env.mlx, d.img, 0, 0) < 0)
+	{
+		mlx_close_window(d.env.mlx);
+		ft_error("Error\nimpossible to create image\n");
 
-	e.size_x = 640;
-	e.size_y = 480;
-	d.nbA = 0;
-	e.mlx = mlx_init(e.size_x, e.size_y, "miniRT", false);
-	mlx_key_hook(e.mlx, &keyhook, &e);
-	d = cmpt(e, d, av);
-	d = load_data(e, d, av);
-	
-	// init_rt(e, d);
-
-	mlx_loop(e.mlx);
-	close_hook(e);
+	}
+	mlx_loop_hook(d.env.mlx, &ray_trace, &d);
+	mlx_loop(d.env.mlx);
+	mlx_delete_image(d.env.mlx, d.img);
+	// mlx_terminate(e.mlx);
+	close_hook(d.env);
 	// free(e);
 	return (0);
 }

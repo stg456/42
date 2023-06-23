@@ -1,4 +1,4 @@
-#include "../../inc/vector.h"
+#include "miniRT.h"
 
 float   length2(t_vec *vec)
 {
@@ -21,11 +21,11 @@ float   normalize(t_vec *vec)
     return (l);
 }
 
-t_vec   *normalized(t_vec *vec)
+t_vec   normalized(t_vec vec)
 {
-    t_vec   *v;
+    t_vec   v;
     
-    v = vec_cpy(vec);
-    normalize(v);
+    v = vec_cpy(&vec);
+    normalize(&v);
     return (v);
 }

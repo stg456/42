@@ -1,16 +1,15 @@
 #ifndef CYLINDRE_H
 # define CYLINDRE_H
 
-#include "shape.h"
-#include "miniRT.h"
-typedef struct s_cyl
+typedef struct	s_cyl
 {
-	t_vec	pos;
-	t_vec	axe;
-	float	radius;
-	float	height;
-	t_color	rgb;
-}	t_cyl;
+	t_vec		pos;
+	t_vec		axe;
+	float		radius;
+	float		height;
+	t_color		rgb;
+	t_fcolor	frgb;
+}				t_cyl;
 
 t_cyl	*cyl_init(t_vec *pos, t_vec *axe, float radius, float height);
 

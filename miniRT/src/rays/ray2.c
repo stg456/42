@@ -1,4 +1,4 @@
-#include "../../inc/ray.h"
+#include "miniRT.h"
 
 void	ray_eq(t_ray *r1, t_ray *r2)
 {

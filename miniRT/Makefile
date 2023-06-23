@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/06/20 11:44:33 by stgerard         ###   ########.fr        #
+#    Updated: 2023/06/23 14:11:21 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,14 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 RM = rm -f
 
-SRC = ./src/main.c ./src/check.c ./src/init.c ./src/load.c ./src/utils.c \
-		./src/amb.c ./src/cam.c ./src/lum.c ./src/spher.c ./src/cyl.c \
-		./src/plan.c ./src/cmpt.c
+SRC = ./src/main.c ./src/check.c ./src/load.c ./src/utils.c \
+		./src/amb.c ./src/cameras/camera.c ./src/lum.c ./src/spher.c ./src/cyl.c \
+		./src/plan.c ./src/cameras/camera2.c ./src/image/image.c ./src/intersections/intersections.c \
+		./src/rays/ray.c ./src/rays/ray2.c ./src/shapes/cylindres/cylindre.c ./src/shapes/planes/plane.c \
+		./src/shapes/spheres/sphere.c ./src/shapes/shapes.c ./src/vectors/vector.c ./src/color.c ./src/color2.c\
+		./src/intersections/intersections2.c ./src/vectors/vector2.c ./src/vectors/vector3.c \
+		./src/vectors/vector4.c ./src/vectors/vector_operations.c ./src/vectors/vector_operations2.c \
+		./src/vectors/vector_operations3.c ./src/cmpt.c
 
 OBJ = ${SRC:.c=.o}
 
@@ -29,10 +34,10 @@ ${NAME}: ${OBJ}
 	${MAKE} -sC ./MLX42
 	mv ./libft/libft.a ./
 	mv ./MLX42/libmlx42.a ./
-	${CC} $(CFLAGS) ${OBJ} libft.a libmlx42.a -lglfw -L/Users/${USER}/goinfre/.brew/opt/glfw/lib/ -o ${NAME}
+	${CC} $(CFLAGS) ${OBJ} libft.a libmlx42.a -lglfw -L/Users/${USER}/.brew/opt/glfw/lib/ -o ${NAME}
 
 %.o: %.c
-	$(CC) $(CFLAGS)  -I./MLX42/include/MLX42 -I./inc -I/Users/${USER}/goinfre/.brew/opt/glfw/include -c $< -o $@
+	$(CC) $(CFLAGS)  -I./MLX42/include/MLX42 -I./inc -I/Users/${USER}/.brew/opt/glfw/include -I/Users/${USER}/goinfre/.brew/opt/glfw/include -c $< -o $@
 
 clean:
 	${RM} ${OBJ} libmlx42.a libft.a

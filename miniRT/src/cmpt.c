@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 11:28:18 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/20 12:08:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/23 11:15:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static t_data	cmpt2(char *buf, t_data d)
 {
 	if (*buf != '\0')
 	{
-		pass(buf);
+		// pass(buf);
 		if (*buf == ' ' || *buf == '\t')
 			buf++;
 		if (ft_strncmp(buf, "A", 1) == 0)
@@ -69,5 +69,7 @@ t_data	cmpt(t_env e, t_data d, char **av)
 		buf = get_next_line(d.fd);
 	}
 	close(d.fd);
+	if (d.nbA != 1 || d.nbC != 1 || d.nbL != 1)
+		ft_error("Error\nWrong number of A, C and/or L\n");
 	return (d);
 }

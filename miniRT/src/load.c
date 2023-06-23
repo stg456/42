@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   load.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/20 12:09:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/23 13:06:18 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-static t_data	load_data2(char *buf, t_data d)
+static void	load_data2(char *buf, t_data *d)
 {
 	if (*buf != '\0')
 	{
-		pass(buf);
+		// pass(buf); // à corriger
 		if (*buf == ' ' || *buf == '\t')
 			buf++;
 		if (ft_strncmp(buf, "A", 1) == 0)
@@ -34,40 +34,56 @@ static t_data	load_data2(char *buf, t_data d)
 		else
 		{
 			printf("buf: %s", buf);
-			close(d.fd);
+			close(d->fd);
 			ft_error("Error:\nincorrect data\n");
 		}
 	}
-	return (d);
 }
 
-t_data	load_data(t_env e, t_data d, char **av)
+void	load_data(t_data *d, char **av)
 {
-	(void) e;
 	char	*buf;
 
-	d.nbA = 0;
-	d.nbC = 0;
-	d.nbcy = 0;
-	d.nbL = 0;
-	d.nbpl = 0;
-	d.nbsp = 0;
-	d.fd = open(av[1], O_RDONLY);
-	if (d.fd < 0)
+	d->fd = open(av[1], O_RDONLY);
+	if (d->fd < 0)
 	{
-		close(d.fd);
+		close(d->fd);
 		ft_error("\x1B[31mError\nInvalid file\n");
 	}
-	buf = get_next_line(d.fd);
+	buf = get_next_line(d->fd);
 	if (!buf)
 		ft_error("Error\nfile is empty\n");
 	while (buf)
 	{
-		d = load_data2(buf, d);
+		load_data2(buf, d);
 		free(buf);
 		buf = NULL;
-		buf = get_next_line(d.fd);
+		buf = get_next_line(d->fd);
 	}
-	close(d.fd);
-	return (d);
+	close(d->fd);
+}
+
+void	memory_alloc(t_data *d)
+{
+	if (d->nbsp > 0)
+	{
+		d->shapes.spheres = malloc(sizeof(t_sphere) * d->nbsp);
+		if (!d->shapes.spheres)
+			ft_error("Error:\nSphere Malloc Error\n");
+	}
+	if (d->nbpl > 0)
+	{
+		d->shapes.planes = malloc(sizeof(t_plane) * d->nbpl);
+		if (!d->shapes.planes)
+			ft_error("Error:\nPlane Malloc Error\n");
+	}
+	if (d->nbcy > 0)
+	{
+		d->shapes.cylindres = malloc(sizeof(t_cyl) * d->nbcy);
+		if (!d->shapes.cylindres)
+			ft_error("Error:\nCylindre Malloc Error\n");
+	}
+	d->shapes.sphere_nb = d->nbsp;
+	d->shapes.plane_nb = d->nbpl;
+	d->shapes.cyl_nb = d->nbcy;
 }

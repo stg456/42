@@ -1,4 +1,4 @@
-#include "../../inc/intersection.h"
+#include "miniRT.h"
 
 void	inter_eq(t_inter *inter1, t_inter *inter2)
 {

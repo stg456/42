@@ -1,36 +1,63 @@
-#include "../../inc/image.h"
-#include "../../inc/miniRT.h"
+#include "miniRT.h"
 
-void	ray_trace(t_img *img, t_cam *cam, t_shape *shapes)
+// void	ray_trace(mlx_image_t *img, t_cam *cam, t_shape *shapes)
+void	ray_trace(void *param)
 {
-	int	x;
-	int	y;
-	t_vec2	screen_coord;
-	t_ray	ray;
-	t_inter	inter;
-	float	*curr_pixel;
+	t_data		d;
+	int			x;
+	int			y;
+	t_vec2		screen_coord;
+	t_ray		ray;
+	t_inter		inter;
+	t_fcolor	curr_pixel;
 
+	d = *(t_data*)param;
 	x = 0;
 	y = 0;
-	while (x < img->width)
+	
+	while ((uint32_t)x < d.img->width)
 	{
-		while (y < img->height)
+		while ((uint32_t)y < d.img->height)
 		{
 			// toute cette section doit encore être complétée et adaptée
-			screen_coord = vec2_init_fs((2.0f * x) / img->width - 1.0f, (-2.0f * y) / img->height + 1.0f);
-			ray = make_ray(screen_coord);
-			curr_pixel = get_pixel(img, x, y);
-			inter = inter_init(ray);
-			if (intersect(inter))
+			screen_coord = vec2_init_fs((2.0f * x) / d.img->width - 1.0f, (-2.0f * y) / d.img->height + 1.0f);
+			printf("BEFORE MAKE RAY\n");
+			ray = make_ray(&d.cam, screen_coord);
+			// curr_pixel = (void*)get_pixel(img, x, y); 
+			printf("BEFORE INTER\n");
+			inter = inter_cpy_ray(&ray);
+			printf("BEFORE SHAPES_INTERSECT\n");
+			if (shapes_intersect(&d.shapes, &inter))
 			{
-				*curr_pixel = 1.0f;
+				printf("BEFORE MLX_PUT_PIXEL\n");
+				mlx_put_pixel(d.img, x, y, 456123789);
 			}
 			else
 			{
-				*curr_pixel = 0.0f;
+				printf("BEFORE MLX_PUT_PIXEL\n");
+				curr_pixel = color_initf(0.5f);
+				mlx_put_pixel(d.img, x, y, frgb_to_int(&curr_pixel));
 			}
 			y++;
 		}
+		y = 0;
 		x++;
 	}
+	
+	// while ((uint32_t)x < d.img->width)
+	// {
+	// 	while ((uint32_t)y < d.img->height)
+	// 	{
+	// 		//curr_pixel = color_initf(0.0f);
+	// 		mlx_put_pixel(d.img, x, y, 456321789);
+	// 		y++;
+	// 	}
+	// 	y = 0;
+	// 	x++;
+	// }
+}
+
+uint8_t	*get_pixel(mlx_image_t *img, int x, int y)
+{
+	return img->pixels + (img->width * x * y);
 }

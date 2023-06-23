@@ -3,33 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   cyl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/20 12:06:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/06/23 13:02:58 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-static void	check_cyl(t_cyl cy, t_data d)
+static void	check_cyl(t_cyl cy, t_data *d)
 {
 	if (vectinrange(cy.axe.x) || vectinrange(cy.axe.y) || vectinrange(cy.axe.z))
 	{
-		close(d.fd);
+		close(d->fd);
 		ft_error("Error\norientation vector of cylinder not in the rang\n");
 	}
 	if (rgbinrange(cy.rgb.r) || rgbinrange(cy.rgb.g) || rgbinrange(cy.rgb.b)
 		|| ft_isdigit(cy.rgb.r) || ft_isdigit(cy.rgb.g) || ft_isdigit(cy.rgb.b))
 	{
-		close(d.fd);
+		close(d->fd);
 		ft_error("Error\nincorrect rgb value for cylinder\n");
 	}
 }
 
-t_cyl	cyl(char *buf, t_data d)
+void	cyl(char *buf, t_data *d)
 {
-	t_cyl	*cy;
+	t_cyl	cy;
 	char	**tmp;
 	char	**tmp_pos;
 	char	**tmp_axe;
@@ -38,7 +38,6 @@ t_cyl	cyl(char *buf, t_data d)
 	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
 	printf("dans cy: %s\n", buf);
 	tmp = ft_split(buf, ' ');
-	d.nbcy += 1;
 	tmp_pos = ft_split(tmp[1], ',');
 	cy.pos.x = ft_atof(tmp_pos[0]);
 	cy.pos.y = ft_atof(tmp_pos[1]);
@@ -55,4 +54,6 @@ t_cyl	cyl(char *buf, t_data d)
 	cy.rgb.b = ft_atoi(tmpcolor[2]);
 	free_all(tmp, tmp_pos, tmp_axe, tmpcolor);
 	check_cyl(cy, d);
+	d->shapes.cylindres[d->nbcy - 1] = cy;
+	d->nbcy--;
 }

@@ -1,4 +1,4 @@
-#include "../../../inc/sphere.h"
+#include "miniRT.h"
 
 t_sphere	*sphere_init(t_vec *pos, float radius)
 {
@@ -42,6 +42,7 @@ bool		sphere_intersect(t_sphere *sphere1, t_inter *inter1) // à raccourcir
 	if (inter1->pShape)
 		free(inter1->pShape);
 	inter1->pShape = sphere1;
+	inter1->frgb = sphere1->frgb;
 	return (true);
 }
 

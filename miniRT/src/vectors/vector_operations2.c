@@ -1,4 +1,4 @@
-#include "../../inc/vector.h"
+#include "miniRT.h"
 
 t_vec   vec_opp(t_vec *vec)
 {
