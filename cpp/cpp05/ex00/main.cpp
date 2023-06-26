@@ -12,4 +12,14 @@
 
 #include "Bureaucrat.hpp"
 
-int main() {}
+int main() 
+{
+	try {
+		throw exception();
+	}
+	catch (exception) {
+		std::cout << "" << std::endl;
+	}
+
+	return 0;
+}
