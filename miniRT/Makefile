@@ -34,7 +34,7 @@ ${NAME}: ${OBJ}
 	${MAKE} -sC ./MLX42
 	mv ./libft/libft.a ./
 	mv ./MLX42/libmlx42.a ./
-	${CC} $(CFLAGS) ${OBJ} libft.a libmlx42.a -lglfw -L/Users/${USER}/.brew/opt/glfw/lib/ -o ${NAME}
+	${CC} $(CFLAGS) ${OBJ} libft.a libmlx42.a -lglfw -Iinclude -ldl -pthread -L/Users/${USER}/.brew/opt/glfw/lib/ -lm -o ${NAME}
 
 %.o: %.c
 	$(CC) $(CFLAGS)  -I./MLX42/include/MLX42 -I./inc -I/Users/${USER}/.brew/opt/glfw/include -I/Users/${USER}/goinfre/.brew/opt/glfw/include -c $< -o $@

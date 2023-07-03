@@ -23,8 +23,9 @@ bool		sphere_intersect(t_sphere *sphere1, t_inter *inter1) // à raccourcir
 	float	t2;
 
 	vec_eq(&tmp_ray.axe, &inter1->ray.axe);
+	vec_eq(&tmp_ray.pos, &inter1->ray.pos);
 	tmp_ray.tMAX = inter1->ray.tMAX;
-	tmp_ray.pos	= vec_opp(&sphere1->pos);
+	vec_sus(&tmp_ray.pos, &sphere1->pos);
 	a = length2(&tmp_ray.axe);
 	b = 2 * dot(tmp_ray.axe, tmp_ray.pos);
 	c = length2(&tmp_ray.pos) -  sqrt(sphere1->radius);
@@ -38,11 +39,13 @@ bool		sphere_intersect(t_sphere *sphere1, t_inter *inter1) // à raccourcir
 	else if (t2 > RAY_T_MIN && t2 < inter1->t)
 		inter1->t = t2;
 	else
+	{
+		printf("Nope\nt1 = %f\nt2 = %f\n", t1, t2);
 		return (false);
-	if (inter1->pShape)
-		free(inter1->pShape);
+	}
 	inter1->pShape = sphere1;
 	inter1->frgb = sphere1->frgb;
+	printf("Sphere intersection:\ninter1->t: %f\ninter1->frgb: r:%f g:%f b:%f\n", inter1->t, inter1->frgb.r, inter1->frgb.g, inter1->frgb.b);
 	return (true);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   spher.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 11:22:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/23 13:02:58 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/06/27 10:59:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,12 @@ void	sp(char *buf, t_data *d)
 	sp.rgb.r = ft_atoi(tmpcolor[0]);
 	sp.rgb.g = ft_atoi(tmpcolor[1]);
 	sp.rgb.b = ft_atoi(tmpcolor[2]);
+	sp.frgb.r = ft_atof(tmpcolor[0]);
+	sp.frgb.g = ft_atof(tmpcolor[1]);
+	sp.frgb.b = ft_atof(tmpcolor[2]);
 	free_all(tmp_pos, tmpcolor, tmp, NULL);
 	check_sph(sp, d);
+	printf("sp.pos.x: %f\n, sp.pos.y: %f\n, sp.pos.z: %f\n", sp.pos.x, sp.pos.y, sp.pos.z);
 	d->shapes.spheres[d->nbsp - 1] = sp;
 	d->nbsp--;
 }

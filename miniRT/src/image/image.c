@@ -21,20 +21,20 @@ void	ray_trace(void *param)
 		{
 			// toute cette section doit encore être complétée et adaptée
 			screen_coord = vec2_init_fs((2.0f * x) / d.img->width - 1.0f, (-2.0f * y) / d.img->height + 1.0f);
-			printf("BEFORE MAKE RAY\n");
+			// printf("BEFORE MAKE RAY\n");
 			ray = make_ray(&d.cam, screen_coord);
 			// curr_pixel = (void*)get_pixel(img, x, y); 
-			printf("BEFORE INTER\n");
+			// printf("BEFORE INTER\n");
 			inter = inter_cpy_ray(&ray);
-			printf("BEFORE SHAPES_INTERSECT\n");
+			// printf("BEFORE SHAPES_INTERSECT\n");
 			if (shapes_intersect(&d.shapes, &inter))
 			{
-				printf("BEFORE MLX_PUT_PIXEL\n");
-				mlx_put_pixel(d.img, x, y, 255);
+				// printf("BEFORE MLX_PUT_PIXEL\n");
+				mlx_put_pixel(d.img, x, y, 999999999);
 			}
 			else
 			{
-				printf("BEFORE MLX_PUT_PIXEL\n");
+				// printf("BEFORE MLX_PUT_PIXEL\n");
 				curr_pixel = color_init(0.0f, 0.0f, 0.0f);
 				mlx_put_pixel(d.img, x, y, frgb_to_int(&curr_pixel));
 			}
@@ -61,3 +61,8 @@ uint8_t	*get_pixel(mlx_image_t *img, int x, int y)
 {
 	return img->pixels + (img->width * x * y);
 }
+
+// void		save_img(mlx_image_t *img, char *filename)
+// {
+// 	printf("dans save_img");
+// }
