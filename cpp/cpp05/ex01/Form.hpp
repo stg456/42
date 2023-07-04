@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:13 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/04 17:29:49 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/07/04 18:03:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Form
 
 	public:
 		Form();
-		Form(std::string nameDoc);
+		Form(std::string nameDoc, int gradeToSigned, int gradeToExecute);
 		Form(const Form &copy);
 		Form & operator = (const Form & rhs);
 		~Form();
