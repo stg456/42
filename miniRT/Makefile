@@ -6,14 +6,15 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/06/23 14:11:21 by stgerard         ###   ########.fr        #
+#    Updated: 2023/07/03 17:25:57 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = miniRT
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror 
+#-g3 -fsanitize=address
 RM = rm -f
 
 SRC = ./src/main.c ./src/check.c ./src/load.c ./src/utils.c \
