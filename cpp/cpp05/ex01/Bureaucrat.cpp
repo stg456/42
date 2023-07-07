@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:09:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/04 14:01:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/07/07 11:08:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,7 @@ std::ostream & operator << (std::ostream & out, const Bureaucrat & rhs) {
 	out << rhs.getName() << " , bureaucrat grade " << rhs.getGrade() << std::endl;
 	return (out);
 }
+
+// void		signForm(Form &f) {
+// 	return ();
+// }
