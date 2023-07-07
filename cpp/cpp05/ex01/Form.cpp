@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/07 14:53:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/07/07 15:08:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 Form::Form(void): _nameDoc("Formulaire"), _signed(false), _gradeToSigned(), _gradeToExecute() {}
 
-Form::Form(std string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDoc(""), _signed(false), _gradeToSigned(), _gradeToExecute() {
+Form::Form(std::string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDoc(""), _signed(false), _gradeToSigned(), _gradeToExecute() {
+	(void) nameDoc;
 	if (gradeToSigned < 1 || gradeToExecute < 1)
-		throw Bureaucrat::GradeTooHighException();
+		throw Form::GradeTooHighException();
 	if (gradeToSigned > 150 || gradeToExecute > 150)
-		throw Bureaucrat::GradeTooLowException();
+		throw Form::GradeTooLowException();
 }
 
 Form::Form(const Form & copy) : _nameDoc(), _gradeToSigned(), _gradeToExecute() {
