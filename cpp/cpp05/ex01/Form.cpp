@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/07 10:46:48 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/07/07 11:31:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,15 @@ std::string	getName() const {
 	return (this->_nameDoc);
 }
 
-void		beSigned(Bureaucrat &b) {}
+void		beSigned(Bureaucrat &b) {
+	
+}
 
 bool		getSigned() const {return (this->_signed);}
 
-int			getGradeToSign() const {}
+int			getGradeToSign() const {return (this->_gradeToSigned);}
 
-int			getGradeToExecute() const {}
+int			getGradeToExecute() const {return (this->_gradeToExecute);}
 
 Form::~Form() {}
 
