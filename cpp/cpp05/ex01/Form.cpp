@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/07 15:08:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/07/07 16:26:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,5 @@ const char* Form::GradeTooLowException::what() const throw() {
 
 std::ostream & operator << (std::ostream & out, const Form & rhs) {
 	out << "je sais pas encore" << rhs.getSigned() << std::endl;
+	return (out);
 }

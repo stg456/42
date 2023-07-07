@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:09:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/07 16:02:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/07/07 16:25:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ std::ostream & operator << (std::ostream & out, const Bureaucrat & rhs) {
 	return (out);
 }
 
-void		signForm(Form &f) {
+void	Bureaucrat::signForm(Form &f) {
 	if (f.getSigned() == true)
 		std::cout << Bureaucrat::getName() << "signed" << f.getName() << std::endl;
 	else 
