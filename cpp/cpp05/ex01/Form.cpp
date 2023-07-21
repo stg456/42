@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/07 16:26:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/07/21 11:43:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,17 @@ void		Form::beSigned(Bureaucrat &b) {
 		throw Form::GradeTooLowException();
 }
 
-bool		Form::getSigned(void) const {return (this->_signed);}
+bool		Form::getSigned(void) const {
+	return (this->_signed);
+}
 
-int			Form::getGradeToSign(void) const {return (this->_gradeToSigned);}
+int			Form::getGradeToSign(void) const {
+	return (this->_gradeToSigned);
+}
 
-int			Form::getGradeToExecute(void) const {return (this->_gradeToExecute);}
+int			Form::getGradeToExecute(void) const {
+	return (this->_gradeToExecute);
+}
 
 Form::~Form(void) {}
 
