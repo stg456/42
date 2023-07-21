@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   camera.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:40:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/04 11:18:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/07/13 13:43:16 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static void	check_cam(t_cam c, t_data *d)
 
 void	cam(char *buf, t_data *d)
 {
-	t_env	env;
 	t_cam	cam;
 	char	**tmp;
 	char	**tmp_pos;
@@ -51,7 +50,7 @@ void	cam(char *buf, t_data *d)
 	free_all(tmp, tmp_pos, tmp_axe, NULL);
 	printf("avant cam_init\n");
 	//on envoie une référence de c à cam_init pour finir de compléter notre structure
-	cam_init(&cam, env.size_x / env.size_y);
+	cam_init(&cam, d->env.size_x / d->env.size_y);
 	// printf("cam c.fov: %d\n", cam.fov_i);
 	check_cam(cam, d);
 	d->cam = cam;

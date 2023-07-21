@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/03 17:59:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/07/13 13:50:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void	ft_error(char *str/*, t_data d*/)
 void	keyhook(mlx_key_data_t keydata, void *param)
 {
 	t_env	*e;
-	// t_data	d;
-	// char	**av;
 
 	e = (t_env *)param;
 	if (keydata.key == MLX_KEY_ESCAPE)
@@ -44,15 +42,14 @@ int	close_hook(t_env e)
 
 int	main(int ac, char **av)
 {
-	t_env		env;
 	t_data		d;
 	(void)ac;
 
-	env.size_x = 640;
-	env.size_y = 480;
-	env.mlx = mlx_init(env.size_x, env.size_y, "miniRT", false);
-	d.img = mlx_new_image(env.mlx, env.size_x, env.size_y);
-	mlx_key_hook(env.mlx, &keyhook, &env);
+	d.env.size_x = 640;
+	d.env.size_y = 480;
+	d.env.mlx = mlx_init(d.env.size_x, d.env.size_y, "miniRT", false);
+	d.img = mlx_new_image(d.env.mlx, d.env.size_x, d.env.size_y);
+	mlx_key_hook(d.env.mlx, &keyhook, &d.env);
 	d = cmpt(d.env, d, av);
 	memory_alloc(&d);
 	load_data(&d, av);
@@ -64,9 +61,9 @@ int	main(int ac, char **av)
 	}
 	mlx_loop_hook(d.env.mlx, &ray_trace, &d);
 	mlx_loop(d.env.mlx);
-	mlx_delete_image(env.mlx, d.img);
+	mlx_delete_image(d.env.mlx, d.img);
 	// mlx_terminate(e.mlx);
-	close_hook(env);
+	close_hook(d.env);
 	// free(e);
 	return (0);
 }
