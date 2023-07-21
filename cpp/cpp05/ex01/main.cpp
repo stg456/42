@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/07 11:07:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/07/21 14:09:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,3 +109,20 @@ int main()
 	
 	return 0;
 }
+
+// {
+// 	Bureaucrat	bob("bob", 1);
+// 	Form		michel("michel", 2, 3);
+// 	Bureaucrat	guy("guy", 3);
+	
+// 	std::cout << std::endl;
+
+// 	std::cout << bob << std::endl;
+// 	std::cout << michel << std::endl;
+// 	std::cout << guy << std::endl;
+
+// 	guy.signForm(michel);
+// 	std::cout << michel << std::endl;
+// 	bob.signForm(michel);
+// 	std::cout << michel << std::endl;
+// }
