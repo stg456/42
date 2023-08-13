@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/13 17:30:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/08/13 17:47:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,10 @@ Form & Form::operator = (const Form & rhs) {
 
 std::string	Form::getName(void) const {return (this->_nameDoc);}
 
-bool		Form::beSigned(Bureaucrat &b) {
+void		Form::beSigned(Bureaucrat &b) {
 	if (b.getGrade() > this->_gradeToSigned)
 		throw Form::GradeTooLowException();
 	this->_signed = true;
-	return true;
 }
 
 bool		Form::getSigned(void) const {
