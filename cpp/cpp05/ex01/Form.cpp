@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/21 11:43:07 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/08/13 15:31:48 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Form::Form(void): _nameDoc("Formulaire"), _signed(false), _gradeToSigned(), _gradeToExecute() {}
 
-Form::Form(std::string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDoc(""), _signed(false), _gradeToSigned(), _gradeToExecute() {
+Form::Form(std::string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDoc("Formulaire"), _signed(false), _gradeToSigned(), _gradeToExecute() {
 	(void) nameDoc;
 	if (gradeToSigned < 1 || gradeToExecute < 1)
 		throw Form::GradeTooHighException();
@@ -38,6 +38,7 @@ std::string	Form::getName(void) const {return (this->_nameDoc);}
 void		Form::beSigned(Bureaucrat &b) {
 	if (b.getGrade() > this->_gradeToSigned)
 		throw Form::GradeTooLowException();
+	this->_signed = true;
 }
 
 bool		Form::getSigned(void) const {
