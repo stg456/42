@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/23 13:06:18 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/08/01 11:46:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@ static void	load_data2(char *buf, t_data *d)
 {
 	if (*buf != '\0')
 	{
-		// pass(buf); // à corriger
-		if (*buf == ' ' || *buf == '\t')
-			buf++;
+		if (*buf == '\n')
+		{};
 		if (ft_strncmp(buf, "A", 1) == 0)
 			amb(buf, d);
 		else if (ft_strncmp(buf, "C", 1) == 0)
@@ -40,11 +39,11 @@ static void	load_data2(char *buf, t_data *d)
 	}
 }
 
-void	load_data(t_data *d, char **av)
+void	load_data(t_data *d, char *filename)
 {
 	char	*buf;
 
-	d->fd = open(av[1], O_RDONLY);
+	d->fd = open(filename, O_RDONLY);
 	if (d->fd < 0)
 	{
 		close(d->fd);

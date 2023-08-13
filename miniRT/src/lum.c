@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lum.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:42:31 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/20 18:45:25 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/08/11 14:16:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	check_lum(t_lum l, t_data *d)
 		close(d->fd);
 		ft_error("Error\nincorrect rgb value for L\n");
 	}
-	if (ratioinrange(l.ratioL))
+	if (ratioinrange(l.ratio))
 	{
 		close(d->fd);
 		ft_error("Error\nincorrect ratio value for L\n");
@@ -41,7 +41,7 @@ void	lum(char *buf, t_data *d)
 	l.pos.x = ft_atof(tmp_pos[0]);
 	l.pos.y = ft_atof(tmp_pos[1]);
 	l.pos.z = ft_atof(tmp_pos[2]);
-	l.ratioL = ft_atof(tmp[2]);
+	l.ratio = ft_atof(tmp[2]);
 	tmpcolor = ft_split(tmp[3], ',');
 	l.rgb.r = ft_atoi(tmpcolor[0]);
 	l.rgb.g = ft_atoi(tmpcolor[1]);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
+#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/07/03 17:25:57 by stgerard         ###   ########.fr        #
+#    Updated: 2023/08/11 14:32:36 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC = ./src/main.c ./src/check.c ./src/load.c ./src/utils.c \
 		./src/shapes/spheres/sphere.c ./src/shapes/shapes.c ./src/vectors/vector.c ./src/color.c ./src/color2.c\
 		./src/intersections/intersections2.c ./src/vectors/vector2.c ./src/vectors/vector3.c \
 		./src/vectors/vector4.c ./src/vectors/vector_operations.c ./src/vectors/vector_operations2.c \
-		./src/vectors/vector_operations3.c ./src/cmpt.c
+		./src/vectors/vector_operations3.c ./src/cmpt.c ./src/color_new.c
 
 OBJ = ${SRC:.c=.o}
 

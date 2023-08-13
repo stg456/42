@@ -33,3 +33,17 @@ t_fcolor	color_initf(float f)
 	frgb.b = f;
 	return (frgb);
 }
+
+void	frgb_eq(t_fcolor *frgb1, t_fcolor *frgb2)
+{
+	frgb1->r = frgb2->r;
+	frgb1->g = frgb2->g;
+	frgb1->b = frgb2->b;
+}
+
+void	rgb_eq(t_color *rgb1, t_color *rgb2)
+{
+	rgb1->r = rgb2->r;
+	rgb1->g = rgb2->g;
+	rgb1->b = rgb2->b;
+}

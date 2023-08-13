@@ -1,15 +1,12 @@
 #include "miniRT.h"
 
-t_color	*int_to_rgb(const int r, const int g, const int b)
+t_color	int_to_rgb(const int r, const int g, const int b)
 {
-	t_color	*rgb;
+	t_color	rgb;
 
-	rgb = malloc(sizeof(t_color));
-	if (!rgb)
-		return (NULL);
-	rgb->r = r;
-	rgb->g = g;
-	rgb->b = b;
+	rgb.r = r;
+	rgb.g = g;
+	rgb.b = b;
 	return (rgb);
 }
 
@@ -28,27 +25,27 @@ int	rgb_to_int(t_color *rgb)
 	return (rgb->r << 16 | rgb->g << 8 | rgb->b);
 }
 
-int	frgb_to_int(t_fcolor *frgb)
+uint32_t	frgb_to_int(t_fcolor *frgb)
 {
 	t_color rgb;
 
-	rgb.r = frgb->r * 255;
-	rgb.g = frgb->g * 255;
-	rgb.b = frgb->b * 255;
+	rgb.r = (int)(frgb->r * 255);
+	rgb.g = (int)(frgb->g * 255) & 0xFF;
+	rgb.b = (int)(frgb->b * 255) & 0xFF;
 	return (rgb.r << 16 | rgb.g << 8 | rgb.b);
 }
 
-t_color	*rgb_rgb_mult(const t_color *rgb1, const t_color *rgb2)
+t_color	rgb_rgb_mult(const t_color *rgb1, const t_color *rgb2)
 {
 	return (int_to_rgb(rgb1->r * (rgb2->r / 255), rgb1->g * (rgb2->g / 255), rgb1->b * (rgb2->b / 255)));
 }
 
-t_color	*rgb_double_mult(const t_color *rgb, const double mult)
+t_color	rgb_double_mult(const t_color *rgb, const double mult)
 {
 	return (int_to_rgb(rgb->r * mult, rgb->g * mult, rgb->b * mult));
 }
 
-t_color	*rgb_rgb_add(const t_color *rgb1, const t_color *rgb2)
+t_color	rgb_rgb_add(const t_color *rgb1, const t_color *rgb2)
 {
 	return (int_to_rgb(rgb1->r + rgb2->r, rgb1->g + rgb2->g, rgb1->b + rgb2->b));
 }

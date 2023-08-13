@@ -12,9 +12,9 @@ t_sphere	*sphere_init(t_vec *pos, float radius)
 	return (sphere);
 }
 
-bool		sphere_intersect(t_sphere *sphere1, t_inter *inter1) // à raccourcir
+bool		sphere_intersect(t_sphere *sphere1, t_inter *inter1)
 {
-	t_ray	tmp_ray;
+	t_vec	ray_pos;
 	float	a;
 	float	b;
 	float	c;
@@ -22,14 +22,12 @@ bool		sphere_intersect(t_sphere *sphere1, t_inter *inter1) // à raccourcir
 	float	t1;
 	float	t2;
 
-	vec_eq(&tmp_ray.axe, &inter1->ray.axe);
-	vec_eq(&tmp_ray.pos, &inter1->ray.pos);
-	tmp_ray.tMAX = inter1->ray.tMAX;
-	vec_sus(&tmp_ray.pos, &sphere1->pos);
-	a = length2(&tmp_ray.axe);
-	b = 2 * dot(tmp_ray.axe, tmp_ray.pos);
-	c = length2(&tmp_ray.pos) -  sqrt(sphere1->radius);
-	discri = sqrt(b) - 4 * a * c;
+	vec_eq(&ray_pos, &inter1->ray.pos); // assigns the value of inter1->ray.pos to tmp_ray.pos
+	vec_sus(&ray_pos, &sphere1->pos); // tmp_ray.pos = tmp_ray.pos - sphere1->pos
+	a = dot(inter1->ray.axe, inter1->ray.axe); // Length squared of the ray direction
+    b = 2 * dot(ray_pos, inter1->ray.axe);
+    c = dot(ray_pos, ray_pos) - sqr(sphere1->radius);
+	discri = sqr(b) - 4 * a * c;
 	if (discri < 0.0f)
 		return (false);
 	t1 = (-b - sqrt(discri)) / (2 * a);
@@ -40,12 +38,12 @@ bool		sphere_intersect(t_sphere *sphere1, t_inter *inter1) // à raccourcir
 		inter1->t = t2;
 	else
 	{
-		printf("Nope\nt1 = %f\nt2 = %f\n", t1, t2);
 		return (false);
 	}
+	inter1->pos = ray_calculate(&inter1->ray, inter1->t);
+	inter1->normal = normalized(vecs_sus(&inter1->pos, &sphere1->pos));
 	inter1->pShape = sphere1;
-	inter1->frgb = sphere1->frgb;
-	printf("Sphere intersection:\ninter1->t: %f\ninter1->frgb: r:%f g:%f b:%f\n", inter1->t, inter1->frgb.r, inter1->frgb.g, inter1->frgb.b);
+	rgb_eq(&inter1->rgb, &sphere1->rgb);
 	return (true);
 }
 
@@ -62,10 +60,10 @@ bool		sphere_doesintersect(t_sphere *sphere1, t_ray *ray1)
 	vec_eq(&tmp_ray.axe, &ray1->axe);
 	tmp_ray.tMAX = ray1->tMAX;
 	tmp_ray.pos	= vec_opp(&sphere1->pos);
-	a = length2(&tmp_ray.axe);
+	a = dot(tmp_ray.axe, tmp_ray.axe);
 	b = 2 * dot(tmp_ray.axe, tmp_ray.pos);
-	c = length2(&tmp_ray.pos) -  sqrt(sphere1->radius);
-	discri = sqrt(b) - 4 * a * c;
+	c = dot(tmp_ray.pos, tmp_ray.pos) -  sqr(sphere1->radius);
+	discri = sqr(b) - 4 * a * c;
 	if (discri < 0.0f)
 		return (false);
 	t1 = (-b - sqrt(discri)) / (2 * a);

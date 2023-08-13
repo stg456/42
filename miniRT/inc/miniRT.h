@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/03 11:45:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/08/11 13:35:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,13 @@
 # include "shape.h"
 # include "camera.h"
 # include "image.h"
-# include "light.h"
 # include "env.h"
+# include "light.h"
 # include "data.h"
 
-
-# define PI 3.14159
+#ifndef PI
+# define PI 3.1415926f
+#endif
 
 // main.c
 int		main(int ac, char **av);
@@ -60,7 +61,7 @@ int		fovinrange(int nb);
 void	init_rt(t_env e, t_data d);
 
 // load.c
-void	load_data(t_data *d, char **av);
+void	load_data(t_data *d, char *filename);
 void	memory_alloc(t_data *d);
 
 // amb.c
@@ -82,10 +83,17 @@ void	pl(char *buf, t_data *d);
 void	cyl(char *buf, t_data *d);
 
 // cmpt.c
-t_data	cmpt(t_env e, t_data d, char **av);
+void	cmpt(t_data *d, char *filename);
 void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor);
 
 // utils.c
 char	pass(char *str);
+
+// New color functions -> will eventually replace color.c and color2.c
+
+int			color_scale(int colour, float f);
+int			color_prod(int c1, int c2);
+int			color_add(int c1, int c2);
+int			color_comp(t_lum *light, t_inter hit);
 
 #endif

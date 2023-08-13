@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   amb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:19:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/23 12:28:33 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/08/11 14:16:40 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	check_amb(t_amb a, t_data *d)
 		close(d->fd);
 		ft_error("Error\nincorrect rgb value for A\n");
 	}
-	if (ratioinrange(a.ratioA))
+	if (ratioinrange(a.ratio))
 	{
 		close(d->fd);
 		ft_error("Error\nincorrect ratio value for A\n");
@@ -40,7 +40,7 @@ void	amb(char *buf, t_data *d)
 	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
 	printf("dans A: %s\n", buf);
 	tmp = ft_split(buf, ' ');
-	a.ratioA = ft_atof(tmp[1]);
+	a.ratio = ft_atof(tmp[1]);
 	tmpcolor = ft_split(tmp[2], ',');
 	a.rgb.r = ft_atoi(tmpcolor[0]);
 	a.rgb.g = ft_atoi(tmpcolor[1]);

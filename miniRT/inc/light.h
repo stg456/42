@@ -4,7 +4,7 @@
 typedef struct	s_amb
 {
 	int			nbA;
-	double		ratioA;
+	float		ratio;
 	t_color		rgb;
 }				t_amb;
 
@@ -12,7 +12,7 @@ typedef struct	s_lum
 {
 	int			nbL;
 	t_vec		pos;
-	double		ratioL;
+	float		ratio;
 	t_color		rgb;
 }				t_lum;
 

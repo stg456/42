@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   camera.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:40:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/13 13:43:16 by marvin           ###   ########.fr       */
+/*   Updated: 2023/07/24 11:10:56 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	cam(char *buf, t_data *d)
 	char	**tmp_pos;
 	char	**tmp_axe;
 
-	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
 	printf("dans C: %s\n", buf);
 	tmp = ft_split(buf, ' ');
 	tmp_pos = ft_split(tmp[1], ',');
@@ -46,7 +45,7 @@ void	cam(char *buf, t_data *d)
 	cam.forward.y = ft_atof(tmp_axe[1]);
 	cam.forward.z = ft_atof(tmp_axe[2]);
 	cam.fov_i = ft_atoi(tmp[3]);
-	cam.fov = ft_atoi(tmp[3]) * PI / 180;
+	cam.fov = (ft_atoi(tmp[3])) * PI / 180;
 	free_all(tmp, tmp_pos, tmp_axe, NULL);
 	printf("avant cam_init\n");
 	//on envoie une référence de c à cam_init pour finir de compléter notre structure

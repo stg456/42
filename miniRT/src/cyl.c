@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cyl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/23 13:02:58 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/08/10 17:11:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,20 @@ static void	check_cyl(t_cyl cy, t_data *d)
 	}
 }
 
+// void	cyl_calc(t_data *d)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (i < d->nbcy)
+// 	{
+// 		d->shapes.cylindres[i].cam_pos = vecs_sus(d->shapes.cylindres[i].pos, d->cam.pos);
+// 		d->shapes.cylindres[i].matrice = matrice_cyl(&d->shapes.cylindres[i]);
+// 		d->shapes.cylindres[i].cam_axe = matrice_mult(&d->shapes.cylindres[i].matrice, &d->cam.axe);
+// 		i++;
+// 	}
+// }
+
 void	cyl(char *buf, t_data *d)
 {
 	t_cyl	cy;
@@ -35,7 +49,6 @@ void	cyl(char *buf, t_data *d)
 	char	**tmp_axe;
 	char	**tmpcolor;
 
-	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
 	printf("dans cy: %s\n", buf);
 	tmp = ft_split(buf, ' ');
 	tmp_pos = ft_split(tmp[1], ',');
@@ -52,6 +65,9 @@ void	cyl(char *buf, t_data *d)
 	cy.rgb.r = ft_atoi(tmpcolor[0]);
 	cy.rgb.g = ft_atoi(tmpcolor[1]);
 	cy.rgb.b = ft_atoi(tmpcolor[2]);
+	cy.frgb.r = ft_atof(tmpcolor[0]) / 255;
+	cy.frgb.g = ft_atof(tmpcolor[1]) / 255;
+	cy.frgb.b = ft_atof(tmpcolor[2]) / 255;
 	free_all(tmp, tmp_pos, tmp_axe, tmpcolor);
 	check_cyl(cy, d);
 	d->shapes.cylindres[d->nbcy - 1] = cy;

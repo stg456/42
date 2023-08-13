@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   spher.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 11:22:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/27 10:59:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/08/01 11:38:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ void	sp(char *buf, t_data *d)
 	char		**tmp_pos;
 	char		**tmpcolor;
 
-	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
 	printf("dans sp: %s\n", buf);
 	tmp = ft_split(buf, ' ');
 	tmp_pos = ft_split(tmp[1], ',');
@@ -41,12 +40,12 @@ void	sp(char *buf, t_data *d)
 	sp.rgb.r = ft_atoi(tmpcolor[0]);
 	sp.rgb.g = ft_atoi(tmpcolor[1]);
 	sp.rgb.b = ft_atoi(tmpcolor[2]);
-	sp.frgb.r = ft_atof(tmpcolor[0]);
-	sp.frgb.g = ft_atof(tmpcolor[1]);
-	sp.frgb.b = ft_atof(tmpcolor[2]);
+	sp.frgb.r = ft_atof(tmpcolor[0]) / 255;
+	sp.frgb.g = ft_atof(tmpcolor[1]) / 255;
+	sp.frgb.b = ft_atof(tmpcolor[2]) / 255;
 	free_all(tmp_pos, tmpcolor, tmp, NULL);
 	check_sph(sp, d);
-	printf("sp.pos.x: %f\n, sp.pos.y: %f\n, sp.pos.z: %f\n", sp.pos.x, sp.pos.y, sp.pos.z);
+	printf("sp.frgb.r: %f\n, sp.frgb.g: %f\n, sp.frgb.b: %f\n", sp.frgb.r, sp.frgb.g, sp.frgb.b);
 	d->shapes.spheres[d->nbsp - 1] = sp;
 	d->nbsp--;
 }

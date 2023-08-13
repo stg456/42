@@ -7,6 +7,9 @@ typedef struct	s_inter
 	float		t;
 	void		*pShape;
 	t_fcolor	frgb;
+	t_color		rgb;
+	t_vec		normal;
+	t_vec		pos;
 }				t_inter;
 
 //-----Instanciation-----//
@@ -20,5 +23,6 @@ t_vec	inter_position(t_inter *inter1);
 
 //-----Operations-----//
 void	inter_eq(t_inter *inter1, t_inter *inter2);
+float	sqr(float f);
 
 #endif

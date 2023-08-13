@@ -36,3 +36,8 @@ t_inter	inter_cpy_ray(t_ray *ray1)
 	inter.pShape = NULL;
 	return (inter);
 }
+
+float	sqr(float f)
+{
+	return (f * f);
+}
