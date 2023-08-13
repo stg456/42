@@ -6,15 +6,15 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/13 15:31:48 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/08/13 16:11:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void): _nameDoc("Formulaire"), _signed(false), _gradeToSigned(), _gradeToExecute() {}
+Form::Form(void): _nameDoc(""), _signed(false), _gradeToSigned(), _gradeToExecute() {}
 
-Form::Form(std::string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDoc("Formulaire"), _signed(false), _gradeToSigned(), _gradeToExecute() {
+Form::Form(std::string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDoc(nameDoc), _signed(false), _gradeToSigned(gradeToSigned), _gradeToExecute(gradeToExecute) {
 	(void) nameDoc;
 	if (gradeToSigned < 1 || gradeToExecute < 1)
 		throw Form::GradeTooHighException();
@@ -22,7 +22,7 @@ Form::Form(std::string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDo
 		throw Form::GradeTooLowException();
 }
 
-Form::Form(const Form & copy) : _nameDoc(), _gradeToSigned(), _gradeToExecute() {
+Form::Form(const Form & copy) : _nameDoc(copy._nameDoc), _gradeToSigned(copy._gradeToSigned), _gradeToExecute(copy._gradeToExecute) {
 	*this = copy;
 }
 
