@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/21 14:09:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/08/13 15:54:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,17 @@ void test1() {
 	{
 		Bureaucrat B1("Jim", 10);
 		Bureaucrat B2("Joe", 20);
-		// Bureaucrat B3("John", 200);
-		// Bureaucrat B4("Jess", 1);
-		Bureaucrat B5;
+		Form F1("formulaire 1", 4, 10);
+		Form F2("formulaire 2", 20, 10);
 		std::cout << B1;
 		std::cout << B2;
-		// std::cout << B3;
-		// std::cout << B4;
-		B5 = B2;
-		std::cout << B5;
+		std::cout << F1;
+		std::cout << F2;
+
+		B1.signForm(F1);
+		B1.signForm(F2);
+
+
 	}
 	catch (std::exception &e) 
 	{
@@ -33,96 +35,11 @@ void test1() {
 	}
 }
 
-void test2() {
-	try 
-	{
-		// Bureaucrat B1("Jim", 10);
-		Bureaucrat B2("Joe", 20);
-		Bureaucrat B3("John", 200);
-		// Bureaucrat B4("Jess", 1);
-		Bureaucrat B5;
-		// std::cout << B1;
-		std::cout << B2;
-		std::cout << B3;
-		// std::cout << B4;
-		B5 = B2;
-		std::cout << B5;
-	}
-	catch (std::exception &e) 
-	{
-		std::cerr << e.what() << std::endl;
-	}	
-}
-
-void test3() {
-	try 
-	{
-		// Bureaucrat B1("Jim", 10);
-		Bureaucrat B2("Joe", 20);
-		// Bureaucrat B3("John", 200);
-		Bureaucrat B4("Jess", 0);
-		Bureaucrat B5;
-		// std::cout << B1;
-		std::cout << B2;
-		// std::cout << B3;
-		std::cout << B4;
-		B5 = B2;
-		std::cout << B5;
-	}
-	catch (std::exception &e) 
-	{
-		std::cerr << e.what() << std::endl;
-	}	
-}
-
-void test4() {
-	try 
-	{
-		// Bureaucrat B1("Jim", 10);
-		Bureaucrat B2("Joe", 20);
-		// Bureaucrat B3("John", 200);
-		Bureaucrat B4("Jess", 1);
-		Bureaucrat B5;
-		// std::cout << B1;
-		std::cout << B2;
-		// std::cout << B3;
-		std::cout << B4;
-		B5 = B2;
-		std::cout << B5;
-	}
-	catch (std::exception &e) 
-	{
-		std::cerr << e.what() << std::endl;
-	}	
-}
 
 int main() 
 {
 	std::cout << "___test1___" << std::endl;
 	test1();
-	std::cout << "___test2___" << std::endl;
-	test2();
-	std::cout << "___test3___" << std::endl;
-	test3();
-	std::cout << "___test4___" << std::endl;
-	test4();
 	
 	return 0;
 }
-
-// {
-// 	Bureaucrat	bob("bob", 1);
-// 	Form		michel("michel", 2, 3);
-// 	Bureaucrat	guy("guy", 3);
-	
-// 	std::cout << std::endl;
-
-// 	std::cout << bob << std::endl;
-// 	std::cout << michel << std::endl;
-// 	std::cout << guy << std::endl;
-
-// 	guy.signForm(michel);
-// 	std::cout << michel << std::endl;
-// 	bob.signForm(michel);
-// 	std::cout << michel << std::endl;
-// }
