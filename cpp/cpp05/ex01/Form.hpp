@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:13 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/07 14:31:20 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/08/13 17:30:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Form
 		Form & operator = (const Form & rhs);
 		~Form(void);
 
-		void		beSigned(Bureaucrat &b);
+		bool		beSigned(Bureaucrat &b);
 		std::string	getName(void) const;
 		bool		getSigned(void) const;
 		int			getGradeToSign(void) const;
