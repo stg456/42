@@ -6,15 +6,15 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/13 17:58:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/08/14 13:55:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
-Form::Form(void): _nameDoc(""), _signed(false), _gradeToSigned(), _gradeToExecute() {}
+Form::Form(void): _nameDoc(""), _signed(0), _gradeToSigned(0), _gradeToExecute(0) {}
 
-Form::Form(std::string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDoc(nameDoc), _signed(false), _gradeToSigned(gradeToSigned), _gradeToExecute(gradeToExecute) {
+Form::Form(std::string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDoc(nameDoc), _signed(0), _gradeToSigned(gradeToSigned), _gradeToExecute(gradeToExecute) {
 	(void) nameDoc;
 	if (gradeToSigned < 1 || gradeToExecute < 1)
 		throw Form::GradeTooHighException();
