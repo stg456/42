@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/14 13:55:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/08/14 14:38:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,14 @@ Form & Form::operator = (const Form & rhs) {
 	return *this;
 }
 
-std::string	Form::getName(void) const {return (this->_nameDoc);}
+std::string	Form::getName(void) const {
+	return (this->_nameDoc);
+}
 
 void		Form::beSigned(Bureaucrat &b) {
 	if (b.getGrade() > this->_gradeToSigned)
 		throw Form::GradeTooLowException();
-	this->_signed = true;
+	this->_signed = 1;
 }
 
 bool		Form::getSigned(void) const {
@@ -64,7 +66,6 @@ const char* Form::GradeTooLowException::what() const throw() {
 }
 
 std::ostream & operator << (std::ostream & out, const Form & rhs) {
-	out << rhs.getName() << " gradeSign " << rhs.getGradeToSign() << ", is signed "<< rhs.getSigned();
-	out << " and Formulaire " << rhs.getGradeToExecute() << std::endl;
+	out << rhs.getName() << " gradeSign " << rhs.getGradeToSign() << ", is signed "<< rhs.getSigned() << std::endl;
 	return (out);
 }
