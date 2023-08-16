@@ -22,7 +22,13 @@ t_color	char_to_rgb(const char *r, const char *g, const char *b)
 
 int	rgb_to_int(t_color *rgb)
 {
-	return (rgb->r << 16 | rgb->g << 8 | rgb->b);
+	int	rgb_int;
+	
+	rgb_int = 0;
+	rgb_int = (rgb_int << 8) | rgb->r;
+	rgb_int = (rgb_int << 8) | rgb->g;
+	rgb_int = (rgb_int << 8) | rgb->b;
+	return (rgb_int);
 }
 
 uint32_t	frgb_to_int(t_fcolor *frgb)

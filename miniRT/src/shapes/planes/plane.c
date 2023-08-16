@@ -27,6 +27,8 @@ bool	plane_intersect(t_plane *plane1, t_inter *inter1)
 		return (false);
 	inter1->t = t;
 	inter1->pShape = plane1;
+	inter1->pos = ray_calculate(&inter1->ray, inter1->t);
+	inter1->normal = normalized(vecs_sus(&inter1->pos, &plane1->pos));
 	rgb_eq(&inter1->rgb, &plane1->rgb);
 	return (true);
 }

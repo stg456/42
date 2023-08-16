@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/11 13:35:22 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/16 13:22:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,8 @@ void	pl(char *buf, t_data *d);
 
 // cyl.c
 void	cyl(char *buf, t_data *d);
+// void	cyl_calc(t_data *d);
+t_vec	matrice_mult(float *matrice, t_vec *vec);
 
 // cmpt.c
 void	cmpt(t_data *d, char *filename);

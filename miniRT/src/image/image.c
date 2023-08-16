@@ -42,7 +42,7 @@ void	ray_trace(void *param)
 			}
 			else
 			{
-				curr_pixel = 0;
+				curr_pixel = 0x00;
 				mlx_put_pixel(d.img, x, y, curr_pixel);
 			}
 			y++;
