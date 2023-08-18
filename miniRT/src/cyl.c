@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/16 14:24:09 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/17 19:31:42 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ static void	check_cyl(t_cyl cy, t_data *d)
 		close(d->fd);
 		ft_error("Error\norientation vector of cylinder not in the rang\n");
 	}
-	if (rgbinrange(cy.rgb.r) || rgbinrange(cy.rgb.g) || rgbinrange(cy.rgb.b)
-		|| ft_isdigit(cy.rgb.r) || ft_isdigit(cy.rgb.g) || ft_isdigit(cy.rgb.b))
+	if (rgbinrange(cy.rgb.r) || rgbinrange(cy.rgb.g) || rgbinrange(cy.rgb.b))
 	{
 		close(d->fd);
 		ft_error("Error\nincorrect rgb value for cylinder\n");
@@ -124,7 +123,7 @@ static void	coor_swap1(t_cyl *cyl, t_data *d)
 	cyl->axe.x = cyl->axe.z;
 	cyl->axe.z = cyl->axe.y;
 	cyl->axe.y = swap;
-	cyl->cam_pos = vecs_sus(&d->cam.pos, &cyl->pos); // before or after swap? (ask sensei)
+	cyl->cam_pos = vecs_sus(&d->cam.pos, &cyl->pos);
 	swap = d->cam.pos.x;
 	cyl->cam_pos.x = d->cam.pos.z;
 	cyl->cam_pos.z = d->cam.pos.y;
@@ -133,6 +132,7 @@ static void	coor_swap1(t_cyl *cyl, t_data *d)
 	cyl->cam_axe.x = d->cam.forward.z;
 	cyl->cam_axe.z = d->cam.forward.y;
 	cyl->cam_axe.y = swap;
+	cyl->new_coord = 1;
 }
 
 static void	coor_swap2(t_cyl *cyl, t_data *d)
@@ -143,7 +143,7 @@ static void	coor_swap2(t_cyl *cyl, t_data *d)
 	cyl->axe.x = cyl->axe.y;
 	cyl->axe.y = cyl->axe.z;
 	cyl->axe.z = swap;
-	cyl->cam_pos = vecs_sus(&d->cam.pos, &cyl->pos); // before or after swap? (ask sensei)
+	cyl->cam_pos = vecs_sus(&d->cam.pos, &cyl->pos);
 	swap = d->cam.pos.x;
 	cyl->cam_pos.x = d->cam.pos.y;
 	cyl->cam_pos.y = d->cam.pos.z;
@@ -152,6 +152,29 @@ static void	coor_swap2(t_cyl *cyl, t_data *d)
 	cyl->cam_axe.x = d->cam.forward.y;
 	cyl->cam_axe.y = d->cam.forward.z;
 	cyl->cam_axe.z = swap;
+	cyl->new_coord = 2;
+}
+
+t_vec	coor_swap3(t_vec *vec, int mode)
+{
+	float	swap;
+	t_vec	res;
+
+	if (mode == 1)
+	{
+		swap = vec->x;
+		res.x = vec->z;
+		res.z = vec->y;
+		res.y = swap;
+	}
+	else if (mode == 2)
+	{
+		swap = vec->x;
+		res.x = vec->y;
+		res.y = vec->z;
+		res.z = swap;
+	}
+	return(res);
 }
 
 static void	cyl_calc(t_cyl *cyl, t_data *d)
@@ -168,7 +191,7 @@ static void	cyl_calc(t_cyl *cyl, t_data *d)
 	else
 	{
 		matrice_cyl(cyl);
-		cyl->new_coord = true;
+		cyl->new_coord = 0;
 		cyl->cam_pos = vecs_sus(&d->cam.pos, &cyl->pos);
 		cyl->cam_pos = matrice_mult(cyl->matrice, &cyl->cam_pos);
 		cyl->cam_axe = normalized(matrice_mult(cyl->matrice, &d->cam.forward));
@@ -183,7 +206,6 @@ void	cyl(char *buf, t_data *d)
 	char	**tmp_axe;
 	char	**tmpcolor;
 
-	printf("dans cy: %s\n", buf);
 	tmp = ft_split(buf, ' ');
 	tmp_pos = ft_split(tmp[1], ',');
 	cy.pos.x = ft_atof(tmp_pos[0]);
@@ -199,15 +221,10 @@ void	cyl(char *buf, t_data *d)
 	cy.rgb.r = ft_atoi(tmpcolor[0]);
 	cy.rgb.g = ft_atoi(tmpcolor[1]);
 	cy.rgb.b = ft_atoi(tmpcolor[2]);
-	cy.frgb.r = ft_atof(tmpcolor[0]) / 255;
-	cy.frgb.g = ft_atof(tmpcolor[1]) / 255;
-	cy.frgb.b = ft_atof(tmpcolor[2]) / 255;
-	cy.new_coord = false;
-	printf("matrice: %f, %f, %f, %f, %f, %f, %f, %f, %f\n", cy.matrice[0], cy.matrice[1], cy.matrice[2], cy.matrice[3], cy.matrice[4], cy.matrice[5], cy.matrice[6], cy.matrice[7], cy.matrice[8]);
+	cy.new_coord = -1;
 	free_all(tmp, tmp_pos, tmp_axe, tmpcolor);
 	check_cyl(cy, d);
 	cyl_calc(&cy, d);
-	printf("matrice: %f, %f, %f, %f, %f, %f, %f, %f, %f\n", cy.matrice[0], cy.matrice[1], cy.matrice[2], cy.matrice[3], cy.matrice[4], cy.matrice[5], cy.matrice[6], cy.matrice[7], cy.matrice[8]);
 	d->shapes.cylindres[d->nbcy - 1] = cy;
 	d->nbcy--;
 }

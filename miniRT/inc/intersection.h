@@ -6,7 +6,6 @@ typedef struct	s_inter
 	t_ray		ray;
 	float		t;
 	void		*pShape;
-	t_fcolor	frgb;
 	t_color		rgb;
 	t_vec		normal;
 	t_vec		pos;

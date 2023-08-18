@@ -23,7 +23,7 @@ t_inter	inter_cpy(t_inter *inter1)
 	ray_eq(&inter.ray, &inter1->ray);
 	inter.t = inter1->t;
 	inter.pShape = inter1->pShape; // ! keep an eye on !
-	inter.frgb = inter1->frgb;
+	inter.rgb = inter1->rgb;
 	return (inter);
 }
 

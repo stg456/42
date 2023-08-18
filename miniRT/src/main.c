@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/09 14:48:16 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/17 18:34:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ int	main(int ac, char **av)
 	t_data		d;
 	(void)ac;
 
-	d.env.size_x = 640;
-	d.env.size_y = 480;
+	d.env.size_x = 1280;
+	d.env.size_y = 720;
 	d.env.mlx = mlx_init(d.env.size_x, d.env.size_y, "miniRT", false);
 	d.img = mlx_new_image(d.env.mlx, d.env.size_x, d.env.size_y);
 	cmpt(&d, av[1]);

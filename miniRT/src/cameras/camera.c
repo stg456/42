@@ -45,11 +45,11 @@ void	cam(char *buf, t_data *d)
 	cam.forward.y = ft_atof(tmp_axe[1]);
 	cam.forward.z = ft_atof(tmp_axe[2]);
 	cam.fov_i = ft_atoi(tmp[3]);
-	cam.fov = (ft_atoi(tmp[3])) * PI / 180;
+	cam.fov = (ft_atoi(tmp[3])) * (PI / 180);
 	free_all(tmp, tmp_pos, tmp_axe, NULL);
 	printf("avant cam_init\n");
 	//on envoie une référence de c à cam_init pour finir de compléter notre structure
-	cam_init(&cam, d->env.size_x / d->env.size_y);
+	cam_init(&cam, d->env.size_y / d->env.size_x);
 	// printf("cam c.fov: %d\n", cam.fov_i);
 	check_cam(cam, d);
 	d->cam = cam;

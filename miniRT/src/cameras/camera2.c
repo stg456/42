@@ -7,8 +7,8 @@ void	cam_init(t_cam *c, float aspect_ratio)
 	upguide = vec_init_fs(0.0f, 0.0f, 1.0f); // !
 	c->right = normalized(cross(c->forward, upguide));
 	c->up = cross(c->right, c->forward);
-	c->h = tan(c->fov);
-	c->w = c->h * aspect_ratio;
+	c->w = 2 * tan(c->fov / 2);
+	c->h = c->w * aspect_ratio;
 }
 
 t_ray	make_ray(t_cam *c, t_vec2 point)

@@ -14,6 +14,45 @@ t_cyl	*cyl_init(t_vec *pos, t_vec *axe, float radius, float height)
 	return (cylindre);
 }
 
+t_vec   cylray_origin(t_cyl * cyl, t_inter *inter)
+{
+    t_vec   ray_origin;
+
+    if (cyl->new_coord == 0)
+    {
+        ray_origin = vecs_sus(&inter->ray.pos, &cyl->pos);
+        ray_origin = matrice_mult(cyl->matrice, &ray_origin);
+    }
+     else if (cyl->new_coord == 1)
+    {
+        ray_origin = vecs_sus(&inter->ray.pos, &cyl->pos);
+        ray_origin = coor_swap3(&ray_origin, 1);
+    }
+    else if (cyl->new_coord == 2)
+    {
+        ray_origin = vecs_sus(&inter->ray.pos, &cyl->pos);
+        ray_origin = coor_swap3(&ray_origin, 2);
+    }
+    else
+        ray_origin = vecs_sus(&inter->ray.pos, &cyl->pos);
+    return (ray_origin);
+}
+
+t_vec   cylray_direction(t_cyl * cyl, t_inter *inter)
+{
+    t_vec   ray_direction;
+
+    if (cyl->new_coord == 0)
+        ray_direction = matrice_mult(cyl->matrice, &inter->ray.axe);
+    else if (cyl->new_coord == 1)
+        ray_direction = coor_swap3(&inter->ray.axe, 1);
+    else if (cyl->new_coord == 2)
+        ray_direction = coor_swap3(&inter->ray.axe, 2);
+    else
+        vec_eq(&ray_direction, &inter->ray.axe);
+    return (ray_direction);
+}
+
 bool	cyl_intersect(t_cyl *cyl, t_inter *inter)
 {
     t_vec	ray_origin;
@@ -25,17 +64,8 @@ bool	cyl_intersect(t_cyl *cyl, t_inter *inter)
 	float	c;
 	float	discri;
 
-    if (cyl->new_coord == true)
-    {
-        ray_origin = vecs_sus(&inter->ray.pos, &cyl->pos);
-        ray_origin = matrice_mult(cyl->matrice, &ray_origin);
-        ray_direction = matrice_mult(cyl->matrice, &inter->ray.axe);
-    }
-    else
-    {
-        ray_origin = vecs_sus(&inter->ray.pos, &cyl->pos);
-        ray_direction = inter->ray.axe;
-    }
+    ray_origin = cylray_origin(cyl, inter);
+    ray_direction = cylray_direction(cyl, inter);
     // Calculate coefficients of the quadratic equation
     a = sqr(ray_direction.x) + sqr(ray_direction.y);
     b = ray_direction.x * ray_origin.x + ray_direction.y * ray_origin.y;

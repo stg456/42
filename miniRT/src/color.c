@@ -31,16 +31,6 @@ int	rgb_to_int(t_color *rgb)
 	return (rgb_int);
 }
 
-uint32_t	frgb_to_int(t_fcolor *frgb)
-{
-	t_color rgb;
-
-	rgb.r = (int)(frgb->r * 255);
-	rgb.g = (int)(frgb->g * 255) & 0xFF;
-	rgb.b = (int)(frgb->b * 255) & 0xFF;
-	return (rgb.r << 16 | rgb.g << 8 | rgb.b);
-}
-
 t_color	rgb_rgb_mult(const t_color *rgb1, const t_color *rgb2)
 {
 	return (int_to_rgb(rgb1->r * (rgb2->r / 255), rgb1->g * (rgb2->g / 255), rgb1->b * (rgb2->b / 255)));

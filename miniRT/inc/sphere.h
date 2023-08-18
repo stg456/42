@@ -6,7 +6,6 @@ typedef struct	s_sphere
 	t_vec		pos; // centre
 	float		radius;
 	t_color		rgb;
-	t_fcolor	frgb;
 }				t_sphere;
 
 t_sphere	*sphere_init(t_vec *pos, float radius);

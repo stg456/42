@@ -7,7 +7,6 @@ typedef struct	s_plane
 	t_vec		normal;
 	t_vec		axe;
 	t_color		rgb;
-	t_fcolor	frgb;
 }				t_plane;
 
 t_plane	*plane_init(t_vec *pos, t_vec *normal);
