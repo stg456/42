@@ -11,10 +11,10 @@ int		get_color(char **split)
 	while (i < 3)
 	{
 		if (!ft_isint(split[i]))
-			ft_error("Error\nincorrect rgb value\n");
+			ft_error("Error\na: incorrect rgb value\n");
 		color = ft_atoi(split[i]);
 		if (!ft_isrgb(color))
-			ft_error("Error\nincorrect rgb value\n");
+			ft_error("Error\nb: incorrect rgb value\n");
 		res = (res << 8) | color;
 		i++;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/21 12:36:51 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/25 13:26:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ bool	ft_isint(char *str)
 	i = 0;
 	while (i < (int)ft_strlen(str))
 	{
-		if (!ft_isdigit(str[i]) || str[i] == '-')
-			return (false);
+		// if (!ft_isdigit(str[i]) || str[i] == '-')
+		// 	return (false);
 		i++;
 	}
 	return (true);
