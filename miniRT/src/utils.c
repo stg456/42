@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/20 18:45:25 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/08/21 12:36:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,25 @@ char	pass(char *str)
 			i++;
 	}
 	return (' ');
+}
+
+bool	ft_isrgb(int color)
+{
+	if (color >= 0 && color <= 255)
+		return (true);
+	return (false);
+}
+
+bool	ft_isint(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (i < (int)ft_strlen(str))
+	{
+		if (!ft_isdigit(str[i]) || str[i] == '-')
+			return (false);
+		i++;
+	}
+	return (true);
 }

@@ -14,9 +14,9 @@
 // 	frgb->b = powf(frgb->b * exposure, gamma);
 // }
 
-void	rgb_eq(t_color *rgb1, t_color *rgb2)
-{
-	rgb1->r = rgb2->r;
-	rgb1->g = rgb2->g;
-	rgb1->b = rgb2->b;
-}
+// void	rgb_eq(t_color *rgb1, t_color *rgb2)
+// {
+// 	rgb1->r = rgb2->r;
+// 	rgb1->g = rgb2->g;
+// 	rgb1->b = rgb2->b;
+// }

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:19:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/11 14:16:40 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/21 11:48:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 static void	check_amb(t_amb a, t_data *d)
 {
-	if (rgbinrange(a.rgb.r) || rgbinrange(a.rgb.g) || rgbinrange(a.rgb.b)
-		|| ft_isdigit(a.rgb.r) || ft_isdigit(a.rgb.g) || ft_isdigit(a.rgb.b))
-	{
-		close(d->fd);
-		ft_error("Error\nincorrect rgb value for A\n");
-	}
 	if (ratioinrange(a.ratio))
 	{
 		close(d->fd);
@@ -37,17 +31,11 @@ void	amb(char *buf, t_data *d)
 	char	**tmp;
 	char	**tmpcolor;
 
-	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
-	printf("dans A: %s\n", buf);
 	tmp = ft_split(buf, ' ');
 	a.ratio = ft_atof(tmp[1]);
 	tmpcolor = ft_split(tmp[2], ',');
-	a.rgb.r = ft_atoi(tmpcolor[0]);
-	a.rgb.g = ft_atoi(tmpcolor[1]);
-	a.rgb.b = ft_atoi(tmpcolor[2]);
-	free(tmpcolor);
-	free(tmp);
-	printf("a.rgb.r: %d\na.rgb.g: %d\na.rgb.b: %d\n", a.rgb.r, a.rgb.g, a.rgb.b);
+	a.rgb = get_color(tmpcolor);
+	free_all(tmp, tmpcolor, NULL, NULL);
 	check_amb(a, d);
 	d->amb = a;
 }

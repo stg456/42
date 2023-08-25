@@ -12,7 +12,7 @@ t_sphere	*sphere_init(t_vec *pos, float radius)
 	return (sphere);
 }
 
-bool		sphere_intersect(t_sphere *sphere1, t_inter *inter1)
+bool		sphere_intersect(t_sphere *sphere, t_inter *inter)
 {
 	t_vec	ray_pos;
 	float	a;
@@ -22,32 +22,30 @@ bool		sphere_intersect(t_sphere *sphere1, t_inter *inter1)
 	float	t1;
 	float	t2;
 
-	vec_eq(&ray_pos, &inter1->ray.pos); // assigns the value of inter1->ray.pos to tmp_ray.pos
-	vec_sus(&ray_pos, &sphere1->pos); // tmp_ray.pos = tmp_ray.pos - sphere1->pos
-	a = dot(inter1->ray.axe, inter1->ray.axe); // Length squared of the ray direction
-    b = 2 * dot(ray_pos, inter1->ray.axe);
-    c = dot(ray_pos, ray_pos) - sqr(sphere1->radius);
+	vec_eq(&ray_pos, &inter->ray.pos);
+	vec_sus(&ray_pos, &sphere->pos);
+	a = dot(inter->ray.axe, inter->ray.axe);
+    b = 2 * dot(ray_pos, inter->ray.axe);
+    c = dot(ray_pos, ray_pos) - sqr(sphere->radius);
 	discri = sqr(b) - 4 * a * c;
 	if (discri < 0.0f)
 		return (false);
 	t1 = (-b - sqrt(discri)) / (2 * a);
 	t2 = (-b + sqrt(discri)) / (2 * a);
-	if (t1 > RAY_T_MIN && t1 < inter1->t)
-		inter1->t = t1;
-	else if (t2 > RAY_T_MIN && t2 < inter1->t)
-		inter1->t = t2;
+	if (t1 > RAY_T_MIN && t1 < inter->t)
+		inter->t = t1;
+	else if (t2 > RAY_T_MIN && t2 < inter->t)
+		inter->t = t2;
 	else
-	{
 		return (false);
-	}
-	inter1->pos = ray_calculate(&inter1->ray, inter1->t);
-	inter1->normal = normalized(vecs_sus(&inter1->pos, &sphere1->pos));
-	inter1->pShape = sphere1;
-	rgb_eq(&inter1->rgb, &sphere1->rgb);
+	inter->pos = ray_calculate(&inter->ray, inter->t);
+	inter->normal = normalized(vecs_sus(&inter->pos, &sphere->pos));
+	inter->pShape = sphere;
+	inter->rgb = sphere->rgb;
 	return (true);
 }
 
-bool		sphere_doesintersect(t_sphere *sphere1, t_ray *ray1)
+bool		sphere_doesintersect(t_sphere *sphere, t_ray *ray)
 {
 	t_ray	tmp_ray;
 	float	a;
@@ -57,20 +55,20 @@ bool		sphere_doesintersect(t_sphere *sphere1, t_ray *ray1)
 	float	t1;
 	float	t2;
 
-	vec_eq(&tmp_ray.axe, &ray1->axe);
-	tmp_ray.tMAX = ray1->tMAX;
-	tmp_ray.pos	= vec_opp(&sphere1->pos);
+	vec_eq(&tmp_ray.axe, &ray->axe);
+	tmp_ray.tMAX = ray->tMAX;
+	tmp_ray.pos	= vec_opp(&sphere->pos);
 	a = dot(tmp_ray.axe, tmp_ray.axe);
 	b = 2 * dot(tmp_ray.axe, tmp_ray.pos);
-	c = dot(tmp_ray.pos, tmp_ray.pos) -  sqr(sphere1->radius);
+	c = dot(tmp_ray.pos, tmp_ray.pos) -  sqr(sphere->radius);
 	discri = sqr(b) - 4 * a * c;
 	if (discri < 0.0f)
 		return (false);
 	t1 = (-b - sqrt(discri)) / (2 * a);
-	if (t1 > RAY_T_MIN && t1 < ray1->tMAX)
+	if (t1 > RAY_T_MIN && t1 < ray->tMAX)
 		return (true);
 	t2 = (-b + sqrt(discri)) / (2 * a);
-	if (t2 > RAY_T_MIN && t2 < ray1->tMAX)
+	if (t2 > RAY_T_MIN && t2 < ray->tMAX)
 		return (true);
 	return (false);
 }

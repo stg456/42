@@ -10,10 +10,29 @@ static bool		in_shadow(t_data *d, t_inter inter, t_lum light)
 	return (shapes_intersect(&d->shapes, &shadow));
 }
 
+// static void	print_binary(int n)
+// {
+// 	while (n) 
+// 	{
+//     	if (n & 1)
+//         	printf("1");
+//     	else
+//         	printf("0");
+
+//     	n >>= 1;
+// 	}
+// 	printf("\n");
+// }
+
+// void	render_img(t_data *d)
+// {
+
+// }
+
 // void	ray_trace(mlx_image_t *img, t_cam *cam, t_shape *shapes)
-void	ray_trace(void *param)
+void	ray_trace(t_data *d)
 {
-	t_data		d;
+	// t_data		d;
 	int			x;
 	int			y;
 	t_ray		ray;
@@ -21,34 +40,41 @@ void	ray_trace(void *param)
 	uint32_t	curr_pixel;
 	bool		visible;
 
-	d = *(t_data*)param;
+	// d = *(t_data*)param;
 	x = 0;
 	y = 0;
 	
-	while ((uint32_t)x < d.img->width)
+	while ((uint32_t)x < d->img->width)
 	{
-		while ((uint32_t)y < d.img->height)
+		while ((uint32_t)y < d->img->height)
 		{
 			// toute cette section doit encore être complétée et adaptée
-			ray = make_ray(&d.cam, vec2_init_fs(((2.0f * x) / d.img->width) - 1.0f, ((-2.0f * y) / d.img->height) + 1.0f));
+			ray = make_ray(&d->cam, vec2_init_fs(((2.0f * x) / d->img->width) - 1.0f, ((-2.0f * y) / d->img->height) + 1.0f));
 			//curr_pixel = (void*)get_pixel(d.img, x, y); 
 			inter = inter_cpy_ray(&ray);
-			if (shapes_intersect(&d.shapes, &inter))
+			if (shapes_intersect(&d->shapes, &inter))
 			{
-				curr_pixel = color_prod(rgb_to_int(&inter.rgb), color_scale(rgb_to_int(&d.amb.rgb), d.amb.ratio));
-				visible = !in_shadow(&d, inter, d.lum);
-				curr_pixel = color_add(curr_pixel, visible * color_comp(&d.lum, inter));
-				mlx_put_pixel(d.img, x, y, curr_pixel);
+				curr_pixel = color_prod(inter.rgb, color_scale(d->amb.rgb, d->amb.ratio));
+				// print_binary(curr_pixel);
+				visible = !in_shadow(d, inter, d->lum);
+				curr_pixel = color_add(curr_pixel, visible * color_comp(&d->lum, inter));
+				mlx_put_pixel(d->img, x, y, curr_pixel);
 			}
 			else
 			{
-				curr_pixel = 0x00;
-				mlx_put_pixel(d.img, x, y, curr_pixel);
+				curr_pixel = 255;
+				mlx_put_pixel(d->img, x, y, curr_pixel);
 			}
 			y++;
 		}
 		y = 0;
 		x++;
+	}
+	if (mlx_image_to_window(d->env.mlx, d->img, 0, 0) < 0)
+	{
+		mlx_close_window(d->env.mlx);
+		ft_error("Error\nimpossible to create image\n");
+
 	}
 }
 

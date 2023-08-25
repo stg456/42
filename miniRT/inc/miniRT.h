@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/16 18:09:44 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/24 11:57:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@
 # include "plane.h"
 # include "shape.h"
 # include "camera.h"
-# include "image.h"
 # include "env.h"
 # include "light.h"
 # include "data.h"
+# include "image.h"
 
 #ifndef PI
 # define PI 3.1415926f
@@ -91,13 +91,15 @@ void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor);
 // utils.c
 char	pass(char *str);
 t_vec	coor_swap3(t_vec *vec, int mode);
+bool	ft_isint(char *str);
+bool	ft_isrgb(int color);
 
 
 // New color functions -> will eventually replace color.c and color2.c
 
-int			color_scale(int colour, float f);
-int			color_prod(int c1, int c2);
-int			color_add(int c1, int c2);
-int			color_comp(t_lum *light, t_inter hit);
+int		color_scale(int colour, float f);
+int		color_prod(int c1, int c2);
+int		color_add(int c1, int c2);
+int		color_comp(t_lum *light, t_inter hit);
 
 #endif

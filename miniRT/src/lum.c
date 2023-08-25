@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:42:31 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/11 14:16:40 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/21 11:46:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 static void	check_lum(t_lum l, t_data *d)
 {
-	if (rgbinrange(l.rgb.r) || rgbinrange(l.rgb.g) || rgbinrange(l.rgb.b)
-		|| ft_isdigit(l.rgb.r) || ft_isdigit(l.rgb.g) || ft_isdigit(l.rgb.b))
-	{
-		close(d->fd);
-		ft_error("Error\nincorrect rgb value for L\n");
-	}
 	if (ratioinrange(l.ratio))
 	{
 		close(d->fd);
@@ -34,8 +28,6 @@ void	lum(char *buf, t_data *d)
 	char	**tmp_pos;
 	char	**tmpcolor;
 
-	tmp = malloc(sizeof(char *) * ft_strlen(buf) + 1);
-	printf("dans L: %s\n", buf);
 	tmp = ft_split(buf, ' ');
 	tmp_pos = ft_split(tmp[1], ',');
 	l.pos.x = ft_atof(tmp_pos[0]);
@@ -43,12 +35,8 @@ void	lum(char *buf, t_data *d)
 	l.pos.z = ft_atof(tmp_pos[2]);
 	l.ratio = ft_atof(tmp[2]);
 	tmpcolor = ft_split(tmp[3], ',');
-	l.rgb.r = ft_atoi(tmpcolor[0]);
-	l.rgb.g = ft_atoi(tmpcolor[1]);
-	l.rgb.b = ft_atoi(tmpcolor[2]);
-	free(tmp_pos);
-	free(tmpcolor);
-	free(tmp);
+	l.rgb = get_color(tmpcolor);
+	free_all(tmp, tmp_pos, tmpcolor, NULL);
 	check_lum(l, d);
 	d->lum = l;
 }

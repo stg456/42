@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:48:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/17 19:31:24 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/21 11:50:43 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,34 @@
 
 void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor)
 {
-	free(tmp_pos);
-	free(tmp_axe);
-	free(tmpcolor);
-	free(tmp);
+	if (tmp_pos)
+	{
+		free(tmp_pos);
+		tmp_pos = NULL;
+	}
+	if (tmp_axe)
+	{
+		free(tmp_axe);
+		tmp_axe = NULL;
+	}
+	if (tmpcolor)
+	{
+		free(tmpcolor);
+		tmpcolor = NULL;
+	}
+	if (tmp)
+	{
+		free(tmp);
+		tmp = NULL;
+	}
 }
 
 static void	check_plan(t_plane pl, t_data *d)
 {
-	if (vectinrange(pl.axe.x) || vectinrange(pl.axe.y) || vectinrange(pl.axe.z))
+	if (vectinrange(pl.normal.x) || vectinrange(pl.normal.y) || vectinrange(pl.normal.z))
 	{
 		close(d->fd);
 		ft_error("Error\norientation vector of plan not in the rang\n");
-	}
-	if (rgbinrange(pl.rgb.r) || rgbinrange(pl.rgb.g) || rgbinrange(pl.rgb.b))
-	{
-		close(d->fd);
-		ft_error("Error\nincorrect rgb value for plan\n");
 	}
 }
 
@@ -51,12 +62,8 @@ void	pl(char *buf, t_data *d)
 	pl.normal.x = ft_atof(tmp_axe[0]);
 	pl.normal.y = ft_atof(tmp_axe[1]);
 	pl.normal.z = ft_atof(tmp_axe[2]);
-	pl.axe = pl.normal;
 	tmpcolor = ft_split(tmp[3], ',');
-	pl.rgb.r = ft_atoi(tmpcolor[0]);
-	pl.rgb.g = ft_atoi(tmpcolor[1]);
-	pl.rgb.b = ft_atoi(tmpcolor[2]);
-	printf("r: %d\ng: %d\nb: %d\n", pl.rgb.r, pl.rgb.g, pl.rgb.b);
+	pl.rgb = get_color(tmpcolor);
 	free_all(tmp, tmp_pos, tmp_axe, tmpcolor);
 	check_plan(pl, d);
 	d->shapes.planes[d->nbpl - 1] = pl;

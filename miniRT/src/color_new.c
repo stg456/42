@@ -1,5 +1,27 @@
 #include "../inc/miniRT.h"
 
+int		get_color(char **split)
+{
+	int	res;
+	int	color;
+	int	i;
+
+	i = 0;
+	res = 0;
+	while (i < 3)
+	{
+		if (!ft_isint(split[i]))
+			ft_error("Error\nincorrect rgb value\n");
+		color = ft_atoi(split[i]);
+		if (!ft_isrgb(color))
+			ft_error("Error\nincorrect rgb value\n");
+		res = (res << 8) | color;
+		i++;
+	}
+	res = (res << 8) | 255;
+	return (res);
+}
+
 static int	check_rgb(int nbr)
 {
 	if (nbr > 0xFF)
@@ -16,10 +38,11 @@ int			color_scale(int colour, float f)
 	int		g;
 	int		b;
 
-	r = check_rgb(f * (colour >> 0x10));
-	g = check_rgb(f * ((colour >> 0x08) & 0xFF));
-	b = check_rgb(f * (colour & 0xFF));
-	return ((r << 0x10) | (g << 0x08) | b);
+	r = check_rgb(f * ((colour >> 24) & 0xFF));
+	g = check_rgb(f * ((colour >> 16) & 0xFF));
+	b = check_rgb(f * ((colour >> 8) & 0xFF));
+	// printf("r: %d, g: %d, b: %d\n", r, g, b);
+	return ((r << 24) | (g << 16) | (b << 8) | 255);
 }
 
 int			color_prod(int c1, int c2)
@@ -28,13 +51,14 @@ int			color_prod(int c1, int c2)
 	int		g;
 	int		b;
 
-	r = (((float)(c1 >> 0x10) / 0xFF) *
-			((float)(c2 >> 0x10) / 0xFF)) * 0xFF;
-	g = (((float)((c1 >> 0x08) & 0xFF) / 0xFF) *
-			((float)((c2 >> 0x08) & 0xFF) / 0xFF)) * 0xFF;
-	b = (((float)(c1 & 0xFF) / 0xFF) *
-			((float)(c2 & 0xFF) / 0xFF)) * 0xFF;
-	return ((r << 0x10) | (g << 0x08) | b);
+	r = check_rgb(((float)((c1 >> 24) & 0XFF) *
+			((float)((c2 >> 24) & 0xFF) / 0xFF)));
+	g = check_rgb((((float)((c1 >> 16) & 0xFF)) *
+			((float)((c2 >> 16) & 0xFF) / 0xFF)));
+	b = check_rgb((((float)((c1 >> 8) & 0xFF)) *
+			((float)((c2 >> 8) & 0xFF) / 0xFF)));
+	// printf("r: %d, g: %d, b: %d\n", r, g, b);
+	return ((r << 24) | (g << 16) | (b << 8) | 255);
 }
 
 int			color_add(int c1, int c2)
@@ -43,10 +67,10 @@ int			color_add(int c1, int c2)
 	int		g;
 	int		b;
 
-	r = check_rgb((c1 >> 0x10) + (c2 >> 0x10));
-	g = check_rgb((c1 >> 0x08 & 0xFF) + (c2 >> 0x08 & 0xFF));
-	b = check_rgb((c1 & 0xFF) + (c2 & 0xFF));
-	return ((r << 0x10) | (g << 0x08) | b);
+	r = check_rgb(((c1 >> 24) & 0xFF) + ((c2 >> 24) & 0xFF));
+	g = check_rgb((c1 >> 16 & 0xFF) + (c2 >> 16 & 0xFF));
+	b = check_rgb((c1 >> 8 & 0xFF) + (c2 >> 8 & 0xFF));
+	return ((r << 24) | (g << 16) | (b << 8) | 255);
 }
 
 int			color_comp(t_lum *light, t_inter hit)
@@ -64,5 +88,6 @@ int			color_comp(t_lum *light, t_inter hit)
 	else
 		light_bright = (light->ratio * gain * 1000) /
 						(4.0 * M_PI * r2);
-	return (color_prod(color_add(0, color_scale(rgb_to_int(&hit.rgb), light_bright)), rgb_to_int(&light->rgb)));
+	// return (color_prod(color_scale(hit.rgb, light_bright), light->rgb));
+	return (color_prod(color_add(0, color_scale(hit.rgb, light_bright)),light->rgb));
 }

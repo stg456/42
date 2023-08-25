@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/17 19:31:42 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/25 10:22:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,6 @@ static void	check_cyl(t_cyl cy, t_data *d)
 	{
 		close(d->fd);
 		ft_error("Error\norientation vector of cylinder not in the rang\n");
-	}
-	if (rgbinrange(cy.rgb.r) || rgbinrange(cy.rgb.g) || rgbinrange(cy.rgb.b))
-	{
-		close(d->fd);
-		ft_error("Error\nincorrect rgb value for cylinder\n");
 	}
 }
 
@@ -160,6 +155,7 @@ t_vec	coor_swap3(t_vec *vec, int mode)
 	float	swap;
 	t_vec	res;
 
+	res = vec_init();
 	if (mode == 1)
 	{
 		swap = vec->x;
@@ -174,7 +170,7 @@ t_vec	coor_swap3(t_vec *vec, int mode)
 		res.y = vec->z;
 		res.z = swap;
 	}
-	return(res);
+	return (res);
 }
 
 static void	cyl_calc(t_cyl *cyl, t_data *d)
@@ -218,9 +214,7 @@ void	cyl(char *buf, t_data *d)
 	cy.radius = ft_atof(tmp[3]) / 2;
 	cy.height = ft_atof(tmp[4]);
 	tmpcolor = ft_split(tmp[5], ',');
-	cy.rgb.r = ft_atoi(tmpcolor[0]);
-	cy.rgb.g = ft_atoi(tmpcolor[1]);
-	cy.rgb.b = ft_atoi(tmpcolor[2]);
+	cy.rgb = get_color(tmpcolor);
 	cy.new_coord = -1;
 	free_all(tmp, tmp_pos, tmp_axe, tmpcolor);
 	check_cyl(cy, d);
