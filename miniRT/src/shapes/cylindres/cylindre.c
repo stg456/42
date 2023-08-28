@@ -38,29 +38,29 @@ t_vec   cylray_origin(t_cyl * cyl, t_vec *raypos)
     return (ray_origin);
 }
 
-static t_vec   cylray_origin_inv(t_cyl *cyl, t_vec *raypos)
-{
-    t_vec   ray_origin;
+// static t_vec   cylray_origin_inv(t_cyl *cyl, t_vec *raypos)
+// {
+//     t_vec   ray_origin;
 
-    if (cyl->new_coord == 0)
-    {
-        ray_origin = matrice_mult(cyl->matrice, raypos);
-        ray_origin = vecs_add(&ray_origin, &cyl->pos);
-    }
-     else if (cyl->new_coord == 1)
-    {
-        ray_origin = coor_swap_inv(raypos, 1);
-        ray_origin = vecs_add(&ray_origin, &cyl->pos);
-    }
-    else if (cyl->new_coord == 2)
-    {
-        ray_origin = coor_swap_inv(raypos, 2);
-        ray_origin = vecs_add(&ray_origin, &cyl->pos);
-    }
-    else
-        ray_origin = vecs_add(raypos, &cyl->pos);
-    return (ray_origin);
-}
+//     if (cyl->new_coord == 0)
+//     {
+//         ray_origin = matrice_mult(cyl->matrice, raypos);
+//         ray_origin = vecs_add(&ray_origin, &cyl->pos);
+//     }
+//      else if (cyl->new_coord == 1)
+//     {
+//         ray_origin = coor_swap_inv(raypos, 1);
+//         ray_origin = vecs_add(&ray_origin, &cyl->pos);
+//     }
+//     else if (cyl->new_coord == 2)
+//     {
+//         ray_origin = coor_swap_inv(raypos, 2);
+//         ray_origin = vecs_add(&ray_origin, &cyl->pos);
+//     }
+//     else
+//         ray_origin = vecs_add(raypos, &cyl->pos);
+//     return (ray_origin);
+// }
 
 t_vec   cylray_direction(t_cyl * cyl, t_ray *ray)
 {
@@ -77,18 +77,53 @@ t_vec   cylray_direction(t_cyl * cyl, t_ray *ray)
     return (ray_direction);
 }
 
+// static t_vec   cylray_direction_inv(t_cyl * cyl, t_vec *rayaxe)
+// {
+//     t_vec   ray_direction;
+
+//     if (cyl->new_coord == 0)
+//         ray_direction = matrice_mult(cyl->matrice, rayaxe);
+//     else if (cyl->new_coord == 1)
+//         ray_direction = coor_swap_inv(rayaxe, 1);
+//     else if (cyl->new_coord == 2)
+//         ray_direction = coor_swap_inv(rayaxe, 2);
+//     else
+//         vec_eq(&ray_direction, rayaxe);
+//     return (ray_direction);
+// }
+
+// static t_vec cyl_normal(t_cyl *cyl)
+// {
+//     t_vec	tmp;
+
+// 	if (cyl->axe.x != 0 && cyl->axe.y != 0 && cyl->axe.z != 0)
+// 		tmp = vec_init_fs(-cyl->axe.y / cyl->axe.x, 1.0f, 0.0f);
+// 	else if (cyl->axe.x == 0 && cyl->axe.y != 0 && cyl->axe.z != 0)
+// 		tmp = vec_init_fs(0.0f, -cyl->axe.z / cyl->axe.y, 1.0f);
+// 	else if (cyl->axe.x != 0 && cyl->axe.y == 0 && cyl->axe.z != 0)
+// 		tmp = vec_init_fs(1.0f, 0.0f, -cyl->axe.x / cyl->axe.z);
+// 	else if (cyl->axe.x != 0 && cyl->axe.y != 0 && cyl->axe.z == 0)
+// 		tmp = vec_init_fs(1.0f, -cyl->axe.x / cyl->axe.y, 0.0f);
+// 	normalize(&tmp);
+//     return (tmp);
+// }
+
 bool	cyl_intersect(t_cyl *cyl, t_inter *inter)
 {
     t_ray   raycyl;
+    t_vec   normal;
 	float	t1;
 	float	t2;
 	float	a;
 	float	b;
 	float	c;
 	float	discri;
+    float   NdotR;
 
     raycyl.pos = cylray_origin(cyl, &inter->ray.pos);
     raycyl.axe = cylray_direction(cyl, &inter->ray);
+    // normal = cyl_normal(cyl); // to check
+   
     // Calculate coefficients of the quadratic equation
     a = sqr(raycyl.axe.x) + sqr(raycyl.axe.y);
     b = raycyl.axe.x * raycyl.pos.x + raycyl.axe.y * raycyl.pos.y;
@@ -114,9 +149,13 @@ bool	cyl_intersect(t_cyl *cyl, t_inter *inter)
 	    else
     	    return (false); // No intersection within the valid range
     }
+    // raycyl.pos = cylray_origin_inv(cyl, &raycyl.pos);
+    // raycyl.axe = cylray_direction_inv(cyl, &raycyl.axe);
     inter->pos = ray_calculate(&raycyl, inter->t);
-    inter->pos = cylray_origin_inv(cyl, &inter->pos);
-	inter->normal = normalized(vecs_sus(&inter->pos, &cyl->pos));
+    NdotR = dot(inter->pos, normalized(cyl->axe)); // to check
+    normal = vecs_multf(&cyl->axe, NdotR); // to check
+	inter->normal = normalized(vecs_sus(&inter->pos, &normal)); // to check
+    // inter->normal = cylray_direction_inv(cyl, &inter->normal);
     inter->pShape = cyl;
     inter->rgb = cyl->rgb;
 	return (true);
