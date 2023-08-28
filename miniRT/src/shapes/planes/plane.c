@@ -22,8 +22,8 @@ bool	plane_intersect(t_plane *plane, t_inter *inter)
 	dDotn = dot(inter->ray.axe, plane->normal);
 	if (dDotn == 0.0f)
 		return (false);
-	// t = dot(vecs_sus(&plane->pos, &inter->ray.pos), plane->normal) / dDotn;
-	t = -(dot(plane->normal, inter->ray.pos) - dot(plane->normal, plane->pos)) / dDotn;
+	t = dot(vecs_sus(&plane->pos, &inter->ray.pos), plane->normal) / dDotn;
+	// t = -(dot(plane->normal, inter->ray.pos) - dot(plane->normal, plane->pos)) / dDotn;
 	if (t <= RAY_T_MIN || t >= inter->t)
 		return (false);
 	inter->t = t;

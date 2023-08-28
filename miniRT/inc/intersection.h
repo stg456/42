@@ -1,6 +1,7 @@
 #ifndef INTERSECTION_H
 # define INTERSECTION_H
 
+typedef struct	s_cyl	t_cyl;
 typedef struct	s_inter
 {
 	t_ray		ray;

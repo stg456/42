@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/24 11:59:57 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/27 17:58:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ int	main(int ac, char **av)
 	// 	ft_error("Error\nimpossible to create image\n");
 
 	// }
-	ray_trace(&d);
-	// mlx_loop_hook(d.env.mlx, &ray_trace, &d);
+	// ray_trace(&d);
+	mlx_loop_hook(d.env.mlx, &ray_trace, &d);
 	mlx_loops(&d);
 	mlx_delete_image(d.env.mlx, d.img);
 	// mlx_terminate(e.mlx);

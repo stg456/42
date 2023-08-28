@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/25 10:22:08 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/27 18:18:56 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,16 +88,14 @@ static void	build_inv_matrice(float *matrice, t_cyl *cyl)
 		- matrice[3] * (matrice[1] * matrice[8] - matrice[2] * matrice[7])
 		+ matrice[6] * (matrice[1] * matrice[5] - matrice[2] * matrice[4]);
 	init_trans(trans, matrice);
-	init_inv_matrice(cyl->matrice, trans, det);
+	init_inv_matrice(cyl->inv_matrice, trans, det);
 }
 
 static void	matrice_cyl(t_cyl *cyl)
 {
-	float	matrice[9];
-
-	init_matrice(matrice, cyl);
-	build_matrice(matrice, cyl);
-	build_inv_matrice(matrice, cyl);
+	init_matrice(cyl->matrice, cyl);
+	build_matrice(cyl->matrice, cyl);
+	build_inv_matrice(cyl->matrice, cyl);
 }
 
 t_vec	matrice_mult(float *matrice, t_vec *vec)
@@ -173,6 +171,29 @@ t_vec	coor_swap3(t_vec *vec, int mode)
 	return (res);
 }
 
+t_vec	coor_swap_inv(t_vec *vec, int mode)
+{
+	float	swap;
+	t_vec	res;
+
+	res = vec_init();
+	if (mode == 1)
+	{
+		swap = vec->y;
+		res.z = vec->x;
+		res.y = vec->z;
+		res.x = swap;
+	}
+	else if (mode == 2)
+	{
+		swap = vec->z;
+		res.y = vec->x;
+		res.z = vec->y;
+		res.x = swap;
+	}
+	return (res);
+}
+
 static void	cyl_calc(t_cyl *cyl, t_data *d)
 {
 	if (cyl->axe.x == 0 && cyl->axe.y == 0 && cyl->axe.z != 0)
@@ -189,8 +210,8 @@ static void	cyl_calc(t_cyl *cyl, t_data *d)
 		matrice_cyl(cyl);
 		cyl->new_coord = 0;
 		cyl->cam_pos = vecs_sus(&d->cam.pos, &cyl->pos);
-		cyl->cam_pos = matrice_mult(cyl->matrice, &cyl->cam_pos);
-		cyl->cam_axe = normalized(matrice_mult(cyl->matrice, &d->cam.forward));
+		cyl->cam_pos = matrice_mult(cyl->inv_matrice, &cyl->cam_pos);
+		cyl->cam_axe = normalized(matrice_mult(cyl->inv_matrice, &d->cam.forward));
 	}
 }
 

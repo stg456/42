@@ -1,12 +1,12 @@
 #include "miniRT.h"
 
-static bool		in_shadow(t_data *d, t_inter inter, t_lum light)
+static bool		in_shadow(t_data *d, t_inter inter, t_vec light)
 {
 	t_inter	shadow;
 
 	shadow.ray.pos = vecs_multf(&inter.normal, 0.0001);
 	shadow.ray.pos = vecs_add(&inter.pos, &shadow.ray.pos);
-	shadow.ray.axe = normalized(vecs_sus(&light.pos, &shadow.ray.pos));
+	shadow.ray.axe = normalized(vecs_sus(&light, &shadow.ray.pos));
 	return (shapes_intersect(&d->shapes, &shadow));
 }
 
@@ -30,9 +30,9 @@ static bool		in_shadow(t_data *d, t_inter inter, t_lum light)
 // }
 
 // void	ray_trace(mlx_image_t *img, t_cam *cam, t_shape *shapes)
-void	ray_trace(t_data *d)
+void	ray_trace(void *param)
 {
-	// t_data		d;
+	t_data		*d;
 	int			x;
 	int			y;
 	t_ray		ray;
@@ -40,7 +40,7 @@ void	ray_trace(t_data *d)
 	uint32_t	curr_pixel;
 	bool		visible;
 
-	// d = *(t_data*)param;
+	d = (t_data*)param;
 	x = 0;
 	y = 0;
 	
@@ -55,8 +55,7 @@ void	ray_trace(t_data *d)
 			if (shapes_intersect(&d->shapes, &inter))
 			{
 				curr_pixel = color_prod(inter.rgb, color_scale(d->amb.rgb, d->amb.ratio));
-				// print_binary(curr_pixel);
-				visible = !in_shadow(d, inter, d->lum);
+				visible = !in_shadow(d, inter, d->lum.pos);
 				curr_pixel = color_add(curr_pixel, visible * color_comp(&d->lum, inter));
 				mlx_put_pixel(d->img, x, y, curr_pixel);
 			}

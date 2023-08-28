@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/24 11:57:35 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/27 17:41:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor);
 // utils.c
 char	pass(char *str);
 t_vec	coor_swap3(t_vec *vec, int mode);
+t_vec	coor_swap_inv(t_vec *vec, int mode);
 bool	ft_isint(char *str);
 bool	ft_isrgb(int color);
 
