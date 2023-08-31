@@ -80,7 +80,7 @@ int			color_comp(t_lum *light, t_inter hit)
 	float		r2;
 	float		light_bright;
 
-	light_normal = vecs_sus(&light->pos, &hit.pos);
+	light_normal = vecs_sus(light->pos, hit.pos);
 	r2 = length2(&light_normal);
 	gain = dot(normalized(light_normal), hit.normal);
 	if (gain <= 0)

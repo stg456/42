@@ -10,23 +10,23 @@ t_vec   vec_opp(t_vec *vec)
     return (v);
 }
 
-t_vec   vecs_add(t_vec *v1, t_vec *v2)
+t_vec   vecs_add(t_vec v1, t_vec v2)
 {
 	t_vec	vec;
 
-	vec.x = v1->x + v2->x;
-	vec.y = v1->y + v2->y;
-	vec.z = v1->z + v2->z;
+	vec.x = v1.x + v2.x;
+	vec.y = v1.y + v2.y;
+	vec.z = v1.z + v2.z;
 	return (vec);
 }
 
-t_vec   vecs_sus(t_vec *v1, t_vec *v2)
+t_vec   vecs_sus(t_vec v1, t_vec v2)
 {
 	t_vec	vec;
 
-	vec.x = v1->x - v2->x;
-	vec.y = v1->y - v2->y;
-	vec.z = v1->z - v2->z;
+	vec.x = v1.x - v2.x;
+	vec.y = v1.y - v2.y;
+	vec.z = v1.z - v2.z;
 	return (vec);
 }
 

@@ -14,6 +14,6 @@ void	ray_eq(t_ray *r1, t_ray *r2)
 t_vec	ray_calculate(t_ray *r1, float t)
 {
 	t_vec	tmp;
-	tmp = vecs_multf(&r1->axe, t);
-	return (vecs_add(&r1->pos, &tmp));
+	tmp = vecs_multf(r1->axe, t);
+	return (vecs_add(r1->pos, tmp));
 }

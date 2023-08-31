@@ -10,13 +10,13 @@ t_vec   vecs_mult(t_vec *v1, t_vec *v2)
 	return (vec);
 }
 
-t_vec   vecs_multf(t_vec *v1, float f)
+t_vec   vecs_multf(t_vec v1, float f)
 {
 	t_vec	vec;
 
-	vec.x = v1->x * f;
-	vec.y = v1->y * f;
-	vec.z = v1->z * f;
+	vec.x = v1.x * f;
+	vec.y = v1.y * f;
+	vec.z = v1.z * f;
 	return (vec);
 }
 

@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/27 18:18:56 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/31 12:33:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ static void	coor_swap1(t_cyl *cyl, t_data *d)
 	cyl->axe.x = cyl->axe.z;
 	cyl->axe.z = cyl->axe.y;
 	cyl->axe.y = swap;
-	cyl->cam_pos = vecs_sus(&d->cam.pos, &cyl->pos);
+	cyl->cam_pos = vecs_sus(d->cam.pos, cyl->pos);
 	swap = d->cam.pos.x;
 	cyl->cam_pos.x = d->cam.pos.z;
 	cyl->cam_pos.z = d->cam.pos.y;
@@ -136,7 +136,7 @@ static void	coor_swap2(t_cyl *cyl, t_data *d)
 	cyl->axe.x = cyl->axe.y;
 	cyl->axe.y = cyl->axe.z;
 	cyl->axe.z = swap;
-	cyl->cam_pos = vecs_sus(&d->cam.pos, &cyl->pos);
+	cyl->cam_pos = vecs_sus(d->cam.pos, cyl->pos);
 	swap = d->cam.pos.x;
 	cyl->cam_pos.x = d->cam.pos.y;
 	cyl->cam_pos.y = d->cam.pos.z;
@@ -199,7 +199,7 @@ static void	cyl_calc(t_cyl *cyl, t_data *d)
 	if (cyl->axe.x == 0 && cyl->axe.y == 0 && cyl->axe.z != 0)
 	{
 		vec_eq(&cyl->cam_axe, &d->cam.forward);
-		cyl->cam_pos = vecs_sus(&d->cam.pos, &cyl->pos);
+		cyl->cam_pos = vecs_sus(d->cam.pos, cyl->pos);
 	}
 	else if (cyl->axe.x == 0 && cyl->axe.y != 0 && cyl->axe.z == 0)
 		coor_swap1(cyl, d);
@@ -209,7 +209,7 @@ static void	cyl_calc(t_cyl *cyl, t_data *d)
 	{
 		matrice_cyl(cyl);
 		cyl->new_coord = 0;
-		cyl->cam_pos = vecs_sus(&d->cam.pos, &cyl->pos);
+		cyl->cam_pos = vecs_sus(d->cam.pos, cyl->pos);
 		cyl->cam_pos = matrice_mult(cyl->inv_matrice, &cyl->cam_pos);
 		cyl->cam_axe = normalized(matrice_mult(cyl->inv_matrice, &d->cam.forward));
 	}
@@ -232,6 +232,7 @@ void	cyl(char *buf, t_data *d)
 	cy.axe.x = ft_atof(tmp_axe[0]);
 	cy.axe.y = ft_atof(tmp_axe[1]);
 	cy.axe.z = ft_atof(tmp_axe[2]);
+	cy.axe = normalized(cy.axe);
 	cy.radius = ft_atof(tmp[3]) / 2;
 	cy.height = ft_atof(tmp[4]);
 	tmpcolor = ft_split(tmp[5], ',');

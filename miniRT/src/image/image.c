@@ -4,9 +4,9 @@ static bool		in_shadow(t_data *d, t_inter inter, t_vec light)
 {
 	t_inter	shadow;
 
-	shadow.ray.pos = vecs_multf(&inter.normal, 0.0001);
-	shadow.ray.pos = vecs_add(&inter.pos, &shadow.ray.pos);
-	shadow.ray.axe = normalized(vecs_sus(&light, &shadow.ray.pos));
+	shadow.ray.pos = vecs_multf(inter.normal, 0.0001);
+	shadow.ray.pos = vecs_add(inter.pos, shadow.ray.pos);
+	shadow.ray.axe = normalized(vecs_sus(light, shadow.ray.pos));
 	shadow.ray.tMAX = RAY_T_MAX;
 	return (shapes_doesintersect(&d->shapes, &shadow));
 }

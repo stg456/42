@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/27 17:41:21 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/31 12:25:57 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,5 +102,9 @@ int		color_scale(int colour, float f);
 int		color_prod(int c1, int c2);
 int		color_add(int c1, int c2);
 int		color_comp(t_lum *light, t_inter hit);
+
+bool			hit_sp(t_inter *inter, t_sphere *elem);
+bool			hit_cy(t_inter *inter, t_cyl *elem);
+bool		hit_pl(t_inter *inter, t_plane *elem);
 
 #endif

@@ -39,13 +39,13 @@ void	vec_eq(t_vec *v1, t_vec *v2);
 
 // Result of the operation -> new vector
 t_vec   vec_opp(t_vec *vec);
-t_vec   vecs_add(t_vec *v1, t_vec *v2);
-t_vec   vecs_sus(t_vec *v1, t_vec *v2);
+t_vec   vecs_add(t_vec v1, t_vec v2);
+t_vec   vecs_sus(t_vec v1, t_vec v2);
 t_vec   vecs_susf(t_vec *v1, float f);
 t_vec   vecs_susf2(float f, t_vec *v1);
 
 t_vec   vecs_mult(t_vec *v1, t_vec *v2);
-t_vec   vecs_multf(t_vec *v1, float f);
+t_vec   vecs_multf(t_vec v1, float f);
 
 t_vec   vecs_div(t_vec *v1, t_vec *v2);
 t_vec   vecs_divf(t_vec *v1, float f);
