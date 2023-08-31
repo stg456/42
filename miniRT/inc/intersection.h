@@ -5,7 +5,7 @@ typedef struct	s_cyl	t_cyl;
 typedef struct	s_inter
 {
 	t_ray		ray;
-	float		t;
+	float		t; // facteur ratio de longueur entre origin ray et 1er point d'intersection
 	void		*pShape;
 	int			rgb;
 	t_vec		normal;
