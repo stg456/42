@@ -8,7 +8,7 @@ static bool		in_shadow(t_data *d, t_inter inter, t_vec light)
 	shadow.ray.pos = vecs_add(inter.pos, shadow.ray.pos);
 	shadow.ray.axe = normalized(vecs_sus(light, shadow.ray.pos));
 	shadow.ray.tMAX = RAY_T_MAX;
-	return (shapes_doesintersect(&d->shapes, &shadow));
+	return (shapes_intersect(&d->shapes, &shadow));
 }
 
 // void	ray_trace(mlx_image_t *img, t_cam *cam, t_shape *shapes)
