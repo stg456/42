@@ -47,7 +47,7 @@ bool		sphere_intersect(t_sphere *sphere, t_inter *inter)
 
 bool		sphere_doesintersect(t_sphere *sphere, t_ray *ray)
 {
-	t_ray	tmp_ray;
+	t_vec	ray_pos;
 	float	a;
 	float	b;
 	float	c;
@@ -55,12 +55,11 @@ bool		sphere_doesintersect(t_sphere *sphere, t_ray *ray)
 	float	t1;
 	float	t2;
 
-	vec_eq(&tmp_ray.axe, &ray->axe);
-	tmp_ray.tMAX = ray->tMAX;
-	tmp_ray.pos	= vec_opp(&sphere->pos);
-	a = dot(tmp_ray.axe, tmp_ray.axe);
-	b = 2 * dot(tmp_ray.axe, tmp_ray.pos);
-	c = dot(tmp_ray.pos, tmp_ray.pos) -  sqr(sphere->radius);
+	vec_eq(&ray_pos, &ray->pos);
+	vec_sus(&ray_pos, &sphere->pos);
+	a = dot(ray->axe, ray->axe);
+    b = 2 * dot(ray_pos, ray->axe);
+    c = dot(ray_pos, ray_pos) - sqr(sphere->radius);
 	discri = sqr(b) - 4 * a * c;
 	if (discri < 0.0f)
 		return (false);

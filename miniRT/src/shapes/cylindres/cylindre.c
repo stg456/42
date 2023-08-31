@@ -152,10 +152,9 @@ bool	cyl_intersect(t_cyl *cyl, t_inter *inter)
     // raycyl.pos = cylray_origin_inv(cyl, &raycyl.pos);
     // raycyl.axe = cylray_direction_inv(cyl, &raycyl.axe);
     inter->pos = ray_calculate(&raycyl, inter->t);
-    NdotR = dot(inter->pos, normalized(cyl->axe)); // to check
-    normal = vecs_multf(&cyl->axe, NdotR); // to check
-	inter->normal = normalized(vecs_sus(&inter->pos, &normal)); // to check
-    // inter->normal = cylray_direction_inv(cyl, &inter->normal);
+    NdotR = dot(inter->pos, normalized(cyl->axe));
+    normal = vecs_multf(&cyl->axe, NdotR);
+	inter->normal = normalized(vecs_sus(&inter->pos, &normal));
     inter->pShape = cyl;
     inter->rgb = cyl->rgb;
 	return (true);

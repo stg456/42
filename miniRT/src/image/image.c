@@ -7,27 +7,9 @@ static bool		in_shadow(t_data *d, t_inter inter, t_vec light)
 	shadow.ray.pos = vecs_multf(&inter.normal, 0.0001);
 	shadow.ray.pos = vecs_add(&inter.pos, &shadow.ray.pos);
 	shadow.ray.axe = normalized(vecs_sus(&light, &shadow.ray.pos));
+	shadow.ray.tMAX = RAY_T_MAX;
 	return (shapes_intersect(&d->shapes, &shadow));
 }
-
-// static void	print_binary(int n)
-// {
-// 	while (n) 
-// 	{
-//     	if (n & 1)
-//         	printf("1");
-//     	else
-//         	printf("0");
-
-//     	n >>= 1;
-// 	}
-// 	printf("\n");
-// }
-
-// void	render_img(t_data *d)
-// {
-
-// }
 
 // void	ray_trace(mlx_image_t *img, t_cam *cam, t_shape *shapes)
 void	ray_trace(void *param)

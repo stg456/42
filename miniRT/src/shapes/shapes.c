@@ -55,5 +55,6 @@ bool	shapes_doesintersect(t_shape *shapes, t_inter *inter)
 			return (true);
 		i++;
 	}
+	printf("tata\n");
 	return (false);
 }
