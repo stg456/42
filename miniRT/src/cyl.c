@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/01 12:18:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/01 12:47:53 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ static void	check_cyl(t_cyl cy, t_data *d)
 	{
 		close(d->fd);
 		ft_error("Error\nproblem in data of cylinder\n");
+	}
+	if (cy.radius < 0)
+	{
+		close(d->fd);
+		ft_error("Error\nproblem in length of sphere\n");
 	}
 }
 
