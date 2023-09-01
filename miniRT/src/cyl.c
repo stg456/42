@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cyl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/31 16:30:27 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/01 12:18:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ static void	check_cyl(t_cyl cy, t_data *d)
 	{
 		close(d->fd);
 		ft_error("Error\norientation vector of cylinder not in the rang\n");
+	}
+	if (ft_isfloat(cy.pos.x) == false || ft_isfloat(cy.pos.y) == false
+		|| ft_isfloat(cy.pos.z) == false)
+	{
+		close(d->fd);
+		ft_error("Error\nproblem in data of cylinder\n");
 	}
 }
 
