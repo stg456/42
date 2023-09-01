@@ -1,36 +1,31 @@
 #include "miniRT.h"
 
-void    vec_add(t_vec *v1, t_vec *v2)
+t_vec   vecs_add(t_vec v1, t_vec v2)
 {
-    v1->x += v2->x;
-    v1->y += v2->y;
-    v1->z += v2->z;
+	t_vec	vec;
+
+	vec.x = v1.x + v2.x;
+	vec.y = v1.y + v2.y;
+	vec.z = v1.z + v2.z;
+	return (vec);
 }
 
-void    vec_sus(t_vec *v1, t_vec *v2)
+t_vec   vecs_sus(t_vec v1, t_vec v2)
 {
-    v1->x -= v2->x;
-    v1->y -= v2->y;
-    v1->z -= v2->z;
+	t_vec	vec;
+
+	vec.x = v1.x - v2.x;
+	vec.y = v1.y - v2.y;
+	vec.z = v1.z - v2.z;
+	return (vec);
 }
 
-void    vec_mult(t_vec *v1, float f)
+t_vec   vecs_multf(t_vec v1, float f)
 {
-    v1->x *= f;
-    v1->y *= f;
-    v1->z *= f;
-}
+	t_vec	vec;
 
-void    vec_div(t_vec *v1, float f)
-{
-    v1->x /= f;
-    v1->y /= f;
-    v1->z /= f;
-}
-
-void	vec_eq(t_vec *v1, t_vec *v2)
-{
-	v1->x = v2->x;
-	v1->y = v2->y;
-	v1->z = v2->z;
+	vec.x = v1.x * f;
+	vec.y = v1.y * f;
+	vec.z = v1.z * f;
+	return (vec);
 }

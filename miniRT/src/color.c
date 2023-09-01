@@ -1,38 +1,93 @@
-#include "miniRT.h"
+#include "../inc/miniRT.h"
 
-// int	rgb_to_int(t_color *rgb)
-// {
-// 	// int	rgb_int;
-	
-// 	// rgb_int = 0;
-// 	// rgb_int = (rgb_int << 8) | rgb->r;
-// 	// rgb_int = (rgb_int << 8) | rgb->g;
-// 	// rgb_int = (rgb_int << 8) | rgb->b;
-// 	return ((rgb->r << 0x10) | (rgb->g << 0x08) | rgb->b);
-// }
-
-int	ft_min_int(const int a, const int b)
+int		get_color(char **split)
 {
-	if (a < b)
-		return (a);
-	return (b);
+	int	res;
+	int	color;
+	int	i;
+
+	i = 0;
+	res = 0;
+	while (i < 3)
+	{
+		if (!ft_isint(split[i]))
+			ft_error("Error\na: incorrect rgb value\n");
+		color = ft_atoi(split[i]);
+		if (!ft_isrgb(color))
+			ft_error("Error\nb: incorrect rgb value\n");
+		res = (res << 8) | color;
+		i++;
+	}
+	res = (res << 8) | 255;
+	return (res);
 }
 
-// void	min_rgb(t_color *rgb)
-// {
-// 	rgb->r = ft_min_int(rgb->r, 255);
-// 	rgb->g = ft_min_int(rgb->g, 255);
-// 	rgb->b = ft_min_int(rgb->b, 255);
-// }
-/*
-t_color	get_color(const char *type, const void *object)
+static int	check_rgb(int nbr)
 {
-	if (!ft_strncmp(type, "sp", ft_strlen(type)))
-		return ((t_sphere*)object)->rgb;
-	if (!ft_strncmp(type, "pl", ft_strlen(type)))
-		return ((t_plane*)object)->rgb;
-	if (!ft_strncmp(type, "cyl", ft_strlen(type)))
-		return ((t_cyl*)object)->rgb;
-	return (NULL);
+	if (nbr > 0xFF)
+		return (0xFF);
+	else if (nbr < 0)
+		return (0);
+	else
+		return (nbr);
 }
-*/
+
+int			color_scale(int colour, float f)
+{
+	int		r;
+	int		g;
+	int		b;
+
+	r = check_rgb(f * ((colour >> 24) & 0xFF));
+	g = check_rgb(f * ((colour >> 16) & 0xFF));
+	b = check_rgb(f * ((colour >> 8) & 0xFF));
+	// printf("r: %d, g: %d, b: %d\n", r, g, b);
+	return ((r << 24) | (g << 16) | (b << 8) | 255);
+}
+
+int			color_prod(int c1, int c2)
+{
+	int		r;
+	int		g;
+	int		b;
+
+	r = check_rgb(((float)((c1 >> 24) & 0XFF) *
+			((float)((c2 >> 24) & 0xFF) / 0xFF)));
+	g = check_rgb((((float)((c1 >> 16) & 0xFF)) *
+			((float)((c2 >> 16) & 0xFF) / 0xFF)));
+	b = check_rgb((((float)((c1 >> 8) & 0xFF)) *
+			((float)((c2 >> 8) & 0xFF) / 0xFF)));
+	// printf("r: %d, g: %d, b: %d\n", r, g, b);
+	return ((r << 24) | (g << 16) | (b << 8) | 255);
+}
+
+int			color_add(int c1, int c2)
+{
+	int		r;
+	int		g;
+	int		b;
+
+	r = check_rgb(((c1 >> 24) & 0xFF) + ((c2 >> 24) & 0xFF));
+	g = check_rgb((c1 >> 16 & 0xFF) + (c2 >> 16 & 0xFF));
+	b = check_rgb((c1 >> 8 & 0xFF) + (c2 >> 8 & 0xFF));
+	return ((r << 24) | (g << 16) | (b << 8) | 255);
+}
+
+int			color_comp(t_lum *light, t_inter hit)
+{
+	t_vec		light_normal;
+	float		gain;
+	float		r2;
+	float		light_bright;
+
+	light_normal = vecs_sus(light->pos, hit.pos);
+	r2 = length2(&light_normal);
+	gain = dot(normalized(light_normal), hit.normal);
+	if (gain <= 0)
+		light_bright = 0;
+	else
+		light_bright = (light->ratio * gain * 1000) /
+						(4.0 * M_PI * r2);
+	// return (color_prod(color_scale(hit.rgb, light_bright), light->rgb));
+	return (color_prod(color_add(0, color_scale(hit.rgb, light_bright)),light->rgb));
+}

@@ -14,7 +14,7 @@
 
 static void	check_cam(t_cam c, t_data *d)
 {
-	if (fovinrange(c.fov_i))
+	if (fovinrange(c.fov))
 	{
 		close(d->fd);
 		ft_error("Error\nFOV of camera not in the range\n");
@@ -42,10 +42,11 @@ void	cam(char *buf, t_data *d)
 	cam.forward.x = ft_atof(tmp_axe[0]);
 	cam.forward.y = ft_atof(tmp_axe[1]);
 	cam.forward.z = ft_atof(tmp_axe[2]);
-	cam.fov_i = ft_atoi(tmp[3]);
+	normalize(&cam.forward);
+	cam.fov = ft_atoi(tmp[3]);
+	check_cam(cam, d);
 	cam.fov = (ft_atoi(tmp[3])) * (PI / 360);
 	free_all(tmp, tmp_pos, tmp_axe, NULL);
 	cam_init(&cam, d->env.size_y / d->env.size_x);
-	check_cam(cam, d);
 	d->cam = cam;
 }

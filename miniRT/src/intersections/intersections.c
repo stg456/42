@@ -36,8 +36,3 @@ t_inter	inter_cpy_ray(t_ray *ray1)
 	ft_bzero(&inter.pos, 0);
 	return (inter);
 }
-
-float	sqr(float f)
-{
-	return (f * f);
-}

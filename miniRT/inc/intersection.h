@@ -23,6 +23,5 @@ t_vec	inter_position(t_inter *inter1);
 
 //-----Operations-----//
 void	inter_eq(t_inter *inter1, t_inter *inter2);
-float	sqr(float f);
 
 #endif

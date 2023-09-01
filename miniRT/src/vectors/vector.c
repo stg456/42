@@ -39,3 +39,12 @@ t_vec   vec_init_f(float f)
     vec.z = f;
     return (vec);
 }
+
+t_vec2   vec2_init(float u, float v)
+{
+    t_vec2   vec;
+
+    vec.u = u;
+    vec.v = v;
+    return (vec);
+}

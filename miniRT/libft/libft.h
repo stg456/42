@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 12:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/07 17:41:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/01 11:28:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 typedef struct s_list
 {
@@ -79,5 +80,6 @@ void	ft_arr_freer(char **arr);
 void	ft_putstr(char *str);
 char	*ft_strstr(const char *haystack, const char *needle);
 double	ft_atof(const char *str);
+bool	ft_isfloat(const char *str);
 
 #endif

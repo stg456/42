@@ -13,6 +13,5 @@ typedef struct	s_shape
 }				t_shape;
 
 bool	shapes_intersect(t_shape *shapes, t_inter *inter);
-// bool	shapes_doesintersect(t_shape *shapes, t_inter *inter);
 
 #endif

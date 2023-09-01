@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/08/31 12:31:33 by marvin           ###   ########.fr        #
+#    Updated: 2023/08/31 17:50:58 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,11 +20,11 @@ RM = rm -f
 SRC = ./src/main.c ./src/check.c ./src/load.c ./src/utils.c \
 		./src/amb.c ./src/cameras/camera.c ./src/lum.c ./src/spher.c ./src/cyl.c \
 		./src/plan.c ./src/cameras/camera2.c ./src/image/image.c ./src/intersections/intersections.c \
-		./src/rays/ray.c ./src/rays/ray2.c ./src/shapes/cylindres/cylindre.c ./src/shapes/planes/plane.c \
-		./src/shapes/spheres/sphere.c ./src/shapes/shapes.c ./src/vectors/vector.c ./src/color.c ./src/color2.c\
+		./src/rays/ray.c \
+		./src/shapes/shapes.c ./src/vectors/vector.c ./src/color.c \
 		./src/intersections/intersections2.c ./src/vectors/vector2.c ./src/vectors/vector3.c \
-		./src/vectors/vector4.c ./src/vectors/vector_operations.c ./src/vectors/vector_operations2.c \
-		./src/vectors/vector_operations3.c ./src/cmpt.c ./src/color_new.c ./src/hit.c
+		./src/vectors/vector_operations.c \
+		./src/cmpt.c ./src/hit.c
 
 OBJ = ${SRC:.c=.o}
 

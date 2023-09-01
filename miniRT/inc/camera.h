@@ -10,7 +10,6 @@ typedef	struct	s_cam
 	float		h;
 	float		w;
 	float		fov;
-	int			fov_i;
 }				t_cam;
 
 void	cam_init(t_cam *c, float aspect_ratio);

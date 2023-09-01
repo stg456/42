@@ -31,7 +31,7 @@ void	ray_trace(void *param)
 		while ((uint32_t)y < d->img->height)
 		{
 			// toute cette section doit encore être complétée et adaptée
-			ray = make_ray(&d->cam, vec2_init_fs(((2.0f * x) / d->img->width) - 1.0f, ((-2.0f * y) / d->img->height) + 1.0f));
+			ray = make_ray(&d->cam, vec2_init(((2.0f * x) / d->img->width) - 1.0f, ((-2.0f * y) / d->img->height) + 1.0f));
 			//curr_pixel = (void*)get_pixel(d.img, x, y); 
 			inter = inter_cpy_ray(&ray);
 			if (shapes_intersect(&d->shapes, &inter))

@@ -11,6 +11,7 @@ bool	shapes_intersect(t_shape *shapes, t_inter *inter)
 	{
 		if (hit_pl(inter, &shapes->planes[i]))
 			hit = true;
+		// printf("pl: %d ", i);
 		i++;
 	}
 	i = 0;
@@ -18,6 +19,7 @@ bool	shapes_intersect(t_shape *shapes, t_inter *inter)
 	{
 		if (hit_sp(inter, &shapes->spheres[i]))
 			hit = true;
+		// printf("sph: %d ", i);
 		i++;
 	}
 	i = 0;
@@ -25,36 +27,8 @@ bool	shapes_intersect(t_shape *shapes, t_inter *inter)
 	{
 			if (hit_cy(inter, &shapes->cylindres[i]))
 				hit = true;
+			// printf("sph: %d\n", i);
 			i++;
 	}
 	return (hit);
 }
-
-// bool	shapes_doesintersect(t_shape *shapes, t_inter *inter)
-// {
-// 	int		i;
-
-// 	i = 0;
-// 	while (i < shapes->cyl_nb)
-// 	{
-// 		if (cyl_doesintersect(&shapes->cylindres[i], inter))
-// 			return (true);
-// 		i++;
-// 	}
-// 	i = 0;
-// 	while (i < shapes->sphere_nb)
-// 	{
-// 		if (sphere_doesintersect(&shapes->spheres[i], &inter->ray))
-// 			return (true);
-// 		i++;
-// 	}
-// 	i = 0;
-// 	while (i < shapes->plane_nb)
-// 	{
-// 		if (plane_doesintersect(&shapes->planes[i], &inter->ray))
-// 			return (true);
-// 		i++;
-// 	}
-// 	printf("tata\n");
-// 	return (false);
-// }
