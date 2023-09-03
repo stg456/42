@@ -3,17 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/01 11:30:35 by stgerard         ###   ########.fr       */
-=======
-/*   By: harowana <harowana@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/02 13:13:21 by harowana         ###   ########.fr       */
->>>>>>> 0e34075369356347c7dcbf2c766131f4b1bdcb69
+/*   Updated: 2023/09/03 16:39:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +51,6 @@ float	sqr(float f)
 {
 	return (f * f);
 }
-<<<<<<< HEAD
-=======
 
 void		shapes_addback(t_elem **lst, t_elem *new, int *qty)
 {
@@ -99,4 +90,3 @@ t_vec	get_coor(char **split)
 	coor.z = ft_atof(split[2]);
 	return (coor);
 }
->>>>>>> 0e34075369356347c7dcbf2c766131f4b1bdcb69

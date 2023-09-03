@@ -3,40 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   cyl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/01 12:47:53 by stgerard         ###   ########.fr       */
-=======
-/*   By: harowana <harowana@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/02 13:13:21 by harowana         ###   ########.fr       */
->>>>>>> 0e34075369356347c7dcbf2c766131f4b1bdcb69
+/*   Updated: 2023/09/03 18:08:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-static void	check_cyl(t_elem cy, t_data *d)
+static int	check_cyl(t_elem *cy, t_data *d/*, char **tmp_pos*/)
 {
-	if (vectinrange(cy.axe.x) || vectinrange(cy.axe.y) || vectinrange(cy.axe.z))
+	if (vectinrange(cy->axe.x) || vectinrange(cy->axe.y) || vectinrange(cy->axe.z))
 	{
 		close(d->fd);
 		ft_error("Error\norientation vector of cylinder not in the rang\n");
 	}
-	if (ft_isfloat(cy.pos.x) == false || ft_isfloat(cy.pos.y) == false
-		|| ft_isfloat(cy.pos.z) == false)
+	// if (ft_isfloat(tmp_pos[0]) || ft_isfloat(tmp_pos[1])
+	// 	|| ft_isfloat(tmp_pos[2]))
+	// {
+	// 	close(d->fd);
+	// 	ft_error("Error\nproblem in data of cylinder\n");
+	// }
+	if (cy->radius < 0)
 	{
 		close(d->fd);
-		ft_error("Error\nproblem in data of cylinder\n");
+		ft_error("Error\nproblem in length of cylinder\n");
 	}
-	if (cy.radius < 0)
-	{
-		close(d->fd);
-		ft_error("Error\nproblem in length of sphere\n");
-	}
+	return (0);
 }
 
 void	cyl(char *buf, t_data *d)
@@ -59,6 +53,6 @@ void	cyl(char *buf, t_data *d)
 	cy->rgb = get_color(tmpcolor);
 	cy->next = NULL;
 	free_all(tmp, tmp_pos, tmp_axe, tmpcolor);
-	check_cyl(*cy, d);
+	check_cyl(cy, d/*, tmp_pos*/);
 	shapes_addback(&d->shapes.cylindres, cy, &d->shapes.cyl_nb);
 }

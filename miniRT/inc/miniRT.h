@@ -3,17 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/01 10:55:32 by stgerard         ###   ########.fr       */
-=======
-/*   By: harowana <harowana@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/02 14:29:37 by harowana         ###   ########.fr       */
->>>>>>> 0e34075369356347c7dcbf2c766131f4b1bdcb69
+/*   Updated: 2023/09/03 16:39:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +85,6 @@ char	pass(char *str);
 bool	ft_isint(char *str);
 bool	ft_isrgb(int color);
 float	sqr(float f);
-<<<<<<< HEAD
-bool	ft_isfloat(const char *str);
-=======
 void	shapes_addback(t_elem **lst, t_elem *new, int *qty);
 t_elem	*elem_init();
 t_vec	get_coor(char **split);
@@ -104,7 +94,6 @@ void	keyhook(mlx_key_data_t keydata, void *param);
 int		close_hook(t_env e); // to be reworked
 void	expose_hook(void *param);
 void	mlx_loops(t_data *d);
->>>>>>> 0e34075369356347c7dcbf2c766131f4b1bdcb69
 
 
 // New color functions -> will eventually replace color.c and color2.c

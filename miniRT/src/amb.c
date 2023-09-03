@@ -3,26 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   amb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:19:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/27 18:18:48 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/03 18:25:17 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-static void	check_amb(t_amb a, t_data *d)
+static void	check_amb(t_amb a, t_data *d/*, char **tmp*/)
 {
 	if (ratioinrange(a.ratio))
 	{
 		close(d->fd);
 		ft_error("Error\nincorrect ratio value for A\n");
 	}
-	// printf("check2b a.rgb.b: %d\n", a.rgb.b);
-	// printf("rgbinrange(a.rgb.b): %d\n", rgbinrange(a.rgb.b));
-	// printf("a.ratio: %lf\n", a.ratioA);
-	// printf("ratioinrange(a.rgb.b): %d\n", ratioinrange(a.rgb.b));
+	// if (ft_isfloat(tmp[1]))
+	// {
+	// 	close(d->fd);
+	// 	ft_error("Error\nincorrect value for A\n");
+	// }
 }
 
 void	amb(char *buf, t_data *d)
@@ -36,6 +37,6 @@ void	amb(char *buf, t_data *d)
 	tmpcolor = ft_split(tmp[2], ',');
 	a.rgb = get_color(tmpcolor);
 	free_all(tmp, tmpcolor, NULL, NULL);
-	check_amb(a, d);
+	check_amb(a, d/*, tmp*/);
 	d->amb = a;
 }

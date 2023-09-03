@@ -6,27 +6,28 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 12:31:59 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/01 12:32:02 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/03 17:47:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static bool	ft_isfloat2(const char *str)
+static int	ft_isfloat2(const char *str)
 {
 	int	pointcount;
 
 	pointcount = 0;
-	if (str++ == '.')
+	if (*str == '.')
 	{
 		pointcount++;
 		if (pointcount > 1)
-			return (false);
+			return (1);
+		str++;
 	}
-	return ;
+	return (0);
 }
 
-bool	ft_isfloat(const char *str)
+int	ft_isfloat(const char *str)
 {
 	int	pointcount;
 	int	signcount;
@@ -40,14 +41,15 @@ bool	ft_isfloat(const char *str)
 		ft_isfloat2(str);
 		if ((str[i] < '0' || str[i] > '9') && str[i] != '-'
 			&& str[i] != '+' && i != 0)
-			return (false);
+			return (1);
 		else if ((str[i] == '-' || str[i] == '+') && i != 0)
-			return (false);
+			return (1);
 		else if ((str[i] == '-' || str[i] == '+') && i == 0)
 			signcount++;
+		else if (signcount > 1)
 		i++;
 	}
 	if (str[ft_strlen(str) - 1] == '.')
-		return (false);
-	return (true);
+		return (1);
+	return (0);
 }
