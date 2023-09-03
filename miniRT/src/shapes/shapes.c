@@ -1,34 +1,25 @@
 #include "miniRT.h"
 
+static void		iter_lst_objs(t_inter *inter, t_elem *elem, bool *ret,
+								bool (*ft)(t_inter *inter, t_elem *elem))
+{
+	while (elem)
+	{
+		*ret |= (*ft)(inter, elem);
+		elem = elem->next;
+	}
+}
+
 bool	shapes_intersect(t_shape *shapes, t_inter *inter)
 {
 	bool	hit;
-	int		i;
 
 	hit = false;
-	i = 0;
-	while (i < shapes->plane_nb)
-	{
-		if (hit_pl(inter, &shapes->planes[i]))
-			hit = true;
-		// printf("pl: %d ", i);
-		i++;
-	}
-	i = 0;
-	while (i < shapes->sphere_nb)
-	{
-		if (hit_sp(inter, &shapes->spheres[i]))
-			hit = true;
-		// printf("sph: %d ", i);
-		i++;
-	}
-	i = 0;
-	while (i < shapes->cyl_nb)
-	{
-			if (hit_cy(inter, &shapes->cylindres[i]))
-				hit = true;
-			// printf("sph: %d\n", i);
-			i++;
-	}
+	if (shapes->planes != 0)
+		iter_lst_objs(inter, shapes->planes, &hit, *hit_pl);
+	if (shapes->cylindres != 0)
+		iter_lst_objs(inter, shapes->cylindres, &hit, *hit_cy);
+	if (shapes->spheres != 0)
+		iter_lst_objs(inter, shapes->spheres, &hit, *hit_sp);
 	return (hit);
 }

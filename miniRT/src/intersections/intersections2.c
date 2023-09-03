@@ -2,16 +2,9 @@
 
 void	inter_eq(t_inter *inter1, t_inter *inter2)
 {
-	inter1->ray = inter2->ray;
+	*inter1 = inter_cpy_ray(&inter2->ray);
 	inter1->t = inter2->t;
-	if (inter1->pShape)
-		free(inter1->pShape);
-	inter1->pShape = inter2->pShape; // ! keep an eye on !
-}
-
-bool	intersected(t_inter *inter1)
-{
-	return (inter1->pShape != NULL);
+	inter1->rgb = inter2->rgb;
 }
 
 t_vec	inter_position(t_inter *inter1)

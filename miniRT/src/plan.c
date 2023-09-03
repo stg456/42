@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   plan.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: harowana <harowana@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:48:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/21 11:50:43 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/02 13:13:21 by harowana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor)
 	}
 }
 
-static void	check_plan(t_plane pl, t_data *d)
+static void	check_plan(t_elem pl, t_data *d)
 {
 	if (vectinrange(pl.normal.x) || vectinrange(pl.normal.y) || vectinrange(pl.normal.z))
 	{
@@ -47,25 +47,22 @@ static void	check_plan(t_plane pl, t_data *d)
 
 void	pl(char *buf, t_data *d)
 {
-	t_plane	pl;
+	t_elem	*pl;
 	char	**tmp;
 	char	**tmp_pos;
 	char	**tmp_axe;
 	char	**tmpcolor;
 
+	pl = elem_init();
 	tmp = ft_split(buf, ' ');
 	tmp_pos = ft_split(tmp[1], ',');
-	pl.pos.x = ft_atof(tmp_pos[0]);
-	pl.pos.y = ft_atof(tmp_pos[1]);
-	pl.pos.z = ft_atof(tmp_pos[2]);
+	pl->pos = get_coor(tmp_pos);
 	tmp_axe = ft_split(tmp[2], ',');
-	pl.normal.x = ft_atof(tmp_axe[0]);
-	pl.normal.y = ft_atof(tmp_axe[1]);
-	pl.normal.z = ft_atof(tmp_axe[2]);
+	pl->normal = get_coor(tmp_axe);
 	tmpcolor = ft_split(tmp[3], ',');
-	pl.rgb = get_color(tmpcolor);
+	pl->rgb = get_color(tmpcolor);
+	pl->next = NULL;
 	free_all(tmp, tmp_pos, tmp_axe, tmpcolor);
-	check_plan(pl, d);
-	d->shapes.planes[d->nbpl - 1] = pl;
-	d->nbpl--;
+	check_plan(*pl, d);
+	shapes_addback(&d->shapes.planes, pl, &d->shapes.plane_nb);
 }

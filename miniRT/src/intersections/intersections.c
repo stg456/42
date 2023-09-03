@@ -10,9 +10,8 @@ t_inter	inter_init()
 	inter.ray.axe.x = 0.0f;
 	inter.ray.axe.y = 1.0f;
 	inter.ray.axe.z = 0.0f;
-	inter.ray.tMAX = RAY_T_MAX;
-	inter.t = RAY_T_MAX;
-	inter.pShape = NULL;
+	inter.ray.tMAX = INFINITY;
+	inter.t = INFINITY;
 	return (inter);
 }
 
@@ -22,7 +21,6 @@ t_inter	inter_cpy(t_inter *inter1)
 
 	ray_eq(&inter.ray, &inter1->ray);
 	inter.t = inter1->t;
-	inter.pShape = inter1->pShape; // ! keep an eye on !
 	inter.rgb = inter1->rgb;
 	return (inter);
 }

@@ -3,10 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
 /*   Updated: 2023/09/01 10:55:32 by stgerard         ###   ########.fr       */
+=======
+/*   By: harowana <harowana@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/02 14:29:37 by harowana         ###   ########.fr       */
+>>>>>>> 0e34075369356347c7dcbf2c766131f4b1bdcb69
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +37,6 @@
 # include "vector.h"
 # include "ray.h"
 # include "intersection.h"
-# include "cylindre.h"
-# include "sphere.h"
-# include "plane.h"
 # include "shape.h"
 # include "camera.h"
 # include "env.h"
@@ -61,7 +65,6 @@ void	init_rt(t_env e, t_data d);
 
 // load.c
 void	load_data(t_data *d, char *filename);
-void	memory_alloc(t_data *d);
 
 // amb.c
 void	amb(char *buf, t_data *d);
@@ -80,11 +83,8 @@ void	pl(char *buf, t_data *d);
 
 // cyl.c
 void	cyl(char *buf, t_data *d);
-// void	cyl_calc(t_data *d);
-t_vec	matrice_mult(float *matrice, t_vec *vec);
 
 // cmpt.c
-void	cmpt(t_data *d, char *filename);
 void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor);
 
 // utils.c
@@ -92,7 +92,19 @@ char	pass(char *str);
 bool	ft_isint(char *str);
 bool	ft_isrgb(int color);
 float	sqr(float f);
+<<<<<<< HEAD
 bool	ft_isfloat(const char *str);
+=======
+void	shapes_addback(t_elem **lst, t_elem *new, int *qty);
+t_elem	*elem_init();
+t_vec	get_coor(char **split);
+
+// hooks.c
+void	keyhook(mlx_key_data_t keydata, void *param);
+int		close_hook(t_env e); // to be reworked
+void	expose_hook(void *param);
+void	mlx_loops(t_data *d);
+>>>>>>> 0e34075369356347c7dcbf2c766131f4b1bdcb69
 
 
 // New color functions -> will eventually replace color.c and color2.c
@@ -103,8 +115,8 @@ int		color_prod(int c1, int c2);
 int		color_add(int c1, int c2);
 int		color_comp(t_lum *light, t_inter hit);
 
-bool	hit_sp(t_inter *inter, t_sphere *elem);
-bool	hit_cy(t_inter *inter, t_cyl *elem);
-bool	hit_pl(t_inter *inter, t_plane *elem);
+bool	hit_sp(t_inter *inter, t_elem *elem);
+bool	hit_cy(t_inter *inter, t_elem *elem);
+bool	hit_pl(t_inter *inter, t_elem *elem);
 
 #endif

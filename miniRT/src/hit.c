@@ -20,7 +20,7 @@ static void		bhaskara(float a, float b, float c, float *res)
 	}
 }
 
-bool			hit_sp(t_inter *inter, t_sphere *elem)
+bool			hit_sp(t_inter *inter, t_elem *elem)
 {
 	t_vec		v_sp2ray;
 	float		time[2];
@@ -28,7 +28,7 @@ bool			hit_sp(t_inter *inter, t_sphere *elem)
 	v_sp2ray = vecs_sus(inter->ray.pos, elem->pos);
 	bhaskara(length2(&inter->ray.axe), 2 * dot(inter->ray.axe, v_sp2ray),
 				dot(v_sp2ray, v_sp2ray) - pow(elem->radius, 2), time);
-	if (inter->t > time[0] && time[0] > 0)
+	if ((inter->t > time[0]) && (time[0] > 0))
 	{
 		inter->t = time[0];
 		inter->pos = ray_calculate(&inter->ray, inter->t);
@@ -39,7 +39,7 @@ bool			hit_sp(t_inter *inter, t_sphere *elem)
 	return (false);
 }
 
-static float	cy_calc(t_inter inter, t_cyl cy, float *y, bool ret[2])
+static float	cy_calc(t_inter inter, t_elem cy, float *y, bool ret[2])
 {
 	t_vec	v[2];
 	t_vec	v_cy2ray;
@@ -54,8 +54,8 @@ static float	cy_calc(t_inter inter, t_cyl cy, float *y, bool ret[2])
 	v_cy2ray = vecs_sus(cy.pos, inter.ray.pos);
 	dist[0] = dot(cy.axe, vecs_sus(vecs_multf(inter.ray.axe, time[0]), v_cy2ray));
 	dist[1] = dot(cy.axe, vecs_sus(vecs_multf(inter.ray.axe, time[1]), v_cy2ray));
-	ret[0] = (dist[0] >= 0 && dist[0] <= cy.height && time[0] > 0.0001);
-	ret[1] = (dist[1] >= 0 && dist[1] <= cy.height && time[1] > 0.0001);
+	ret[0] = ((dist[0] >= 0) && (dist[0] <= cy.height) && (time[0] > 0.0001));
+	ret[1] = ((dist[1] >= 0) && (dist[1] <= cy.height) && (time[1] > 0.0001));
 	if ((ret[0] == false) & (ret[1] == true))
 	{
 		*y = dist[1];
@@ -65,14 +65,14 @@ static float	cy_calc(t_inter inter, t_cyl cy, float *y, bool ret[2])
 	return (time[0]);
 }
 
-bool			hit_cy(t_inter *inter, t_cyl *elem)
+bool			hit_cy(t_inter *inter, t_elem *elem)
 {
 	bool		ret[2];
 	float		time;
 	float		y;
 
 	time = cy_calc(*inter, *elem, &y, ret);
-	if ((ret[0] || ret[1]) && inter->t > time && time > 0.0001)
+	if ((ret[0] || ret[1]) && (inter->t > time) && (time > 0.0001))
 	{
 		inter->t = time;
 		inter->pos = ray_calculate(&inter->ray, inter->t);
@@ -86,7 +86,7 @@ bool			hit_cy(t_inter *inter, t_cyl *elem)
 	return (ret[0] || ret[1]);
 }
 
-bool		hit_pl(t_inter *inter, t_plane *elem)
+bool		hit_pl(t_inter *inter, t_elem *elem)
 {
 	double	time;
 	double	den;
@@ -95,7 +95,7 @@ bool		hit_pl(t_inter *inter, t_plane *elem)
 	if (!den)
 		return (false);
 	time = dot(vecs_sus(elem->pos, inter->ray.pos), elem->normal) / den;
-	if (inter->t > time && time > 0.0001)
+	if ((inter->t > time) && (time > 0.0001))
 	{
 		inter->t = time;
 		inter->pos = ray_calculate(&inter->ray, inter->t);

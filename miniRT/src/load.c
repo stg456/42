@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/08/31 17:20:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/01 11:33:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,29 +65,4 @@ void	load_data(t_data *d, char *filename)
 		buf = get_next_line(d->fd);
 	}
 	close(d->fd);
-}
-
-void	memory_alloc(t_data *d)
-{
-	if (d->nbsp > 0)
-	{
-		d->shapes.spheres = malloc(sizeof(t_sphere) * d->nbsp);
-		if (!d->shapes.spheres)
-			ft_error("Error:\nSphere Malloc Error\n");
-	}
-	if (d->nbpl > 0)
-	{
-		d->shapes.planes = malloc(sizeof(t_plane) * d->nbpl);
-		if (!d->shapes.planes)
-			ft_error("Error:\nPlane Malloc Error\n");
-	}
-	if (d->nbcy > 0)
-	{
-		d->shapes.cylindres = malloc(sizeof(t_cyl) * d->nbcy);
-		if (!d->shapes.cylindres)
-			ft_error("Error:\nCylindre Malloc Error\n");
-	}
-	d->shapes.sphere_nb = d->nbsp;
-	d->shapes.plane_nb = d->nbpl;
-	d->shapes.cyl_nb = d->nbcy;
 }

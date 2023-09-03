@@ -1,14 +1,25 @@
 #ifndef SHAPE_H
 # define SHAPE_H
 
+typedef struct	s_elem
+{
+	t_vec			pos;
+	t_vec			axe;
+	t_vec			normal;
+	float			radius;
+	float			height;
+	int				rgb;
+	struct s_elem	*next;
+}				t_elem;
+
 typedef struct	s_shape
 {
-	int			sphere_nb; // we shouldnt have the shape count in this struct AND the data struct, needs to be adjusted
-	int			plane_nb;
-	int			cyl_nb;
-	t_sphere	*spheres;
-	t_plane		*planes;
-	t_cyl		*cylindres;
+	int		sphere_nb;
+	int		plane_nb;
+	int		cyl_nb;
+	t_elem	*spheres;
+	t_elem	*planes;
+	t_elem	*cylindres;
 
 }				t_shape;
 

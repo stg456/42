@@ -3,18 +3,21 @@
 static bool		in_shadow(t_data *d, t_inter inter, t_vec light)
 {
 	t_inter	shadow;
+	t_vec	tmp;
 
+	shadow = inter_init();
+	tmp = vecs_sus(light, inter.pos);
+	shadow.t = length(&tmp);
 	shadow.ray.pos = vecs_multf(inter.normal, 0.0001);
 	shadow.ray.pos = vecs_add(inter.pos, shadow.ray.pos);
 	shadow.ray.axe = normalized(vecs_sus(light, shadow.ray.pos));
-	shadow.ray.tMAX = RAY_T_MAX;
 	return (shapes_intersect(&d->shapes, &shadow));
 }
 
-// void	ray_trace(mlx_image_t *img, t_cam *cam, t_shape *shapes)
-void	ray_trace(void *param)
+void	ray_trace(t_data *d)
+// void	ray_trace(void *param)
 {
-	t_data		*d;
+	// t_data		*d;
 	int			x;
 	int			y;
 	t_ray		ray;
@@ -22,7 +25,7 @@ void	ray_trace(void *param)
 	uint32_t	curr_pixel;
 	bool		visible;
 
-	d = (t_data*)param;
+	// d = (t_data*)param;
 	x = 0;
 	y = 0;
 	

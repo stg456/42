@@ -5,11 +5,10 @@ typedef struct	s_cyl	t_cyl;
 typedef struct	s_inter
 {
 	t_ray		ray;
-	float		t;
-	void		*pShape;
-	int			rgb;
 	t_vec		normal;
 	t_vec		pos;
+	float		t;
+	int			rgb;
 }				t_inter;
 
 //-----Instanciation-----//
