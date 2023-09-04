@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 12:44:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 13:48:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,7 @@ bool	ft_isint(char *str)
 	return (true);
 }
 
-float	sqr(float f)
-{
-	return (f * f);
-}
-
-void		shapes_addback(t_elem **lst, t_elem *new, int *qty)
+void	shapes_addback(t_elem **lst, t_elem *new, int *qty)
 {
 	t_elem	*aux;
 
@@ -56,7 +51,7 @@ void		shapes_addback(t_elem **lst, t_elem *new, int *qty)
 	(*qty)++;
 }
 
-t_elem	*elem_init()
+t_elem	*elem_init(void)
 {
 	t_elem	*elem;
 
@@ -64,7 +59,7 @@ t_elem	*elem_init()
 	if (!elem)
 		ft_error("Error\nElem Data Struct Init Error\n");
 	ft_bzero(elem, sizeof(t_elem));
-	return(elem);
+	return (elem);
 }
 
 t_vec	get_coor(char **split)
