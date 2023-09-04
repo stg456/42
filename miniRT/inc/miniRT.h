@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 12:31:39 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/04 14:24:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	cam(char *buf, t_data *d);
 
 // lum.c
 void	lum(char *buf, t_data *d);
+int		check_rgb(int nbr);
 
 // spher.c
 void	sp(char *buf, t_data *d);

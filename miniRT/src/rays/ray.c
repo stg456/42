@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ray.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/04 14:18:40 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/04 14:18:58 by stgerard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "miniRT.h"
 
 void	ray_eq(t_ray *r1, t_ray *r2)
@@ -14,6 +26,7 @@ void	ray_eq(t_ray *r1, t_ray *r2)
 t_vec	ray_calculate(t_ray *r1, float t)
 {
 	t_vec	tmp;
+
 	tmp = vecs_multf(r1->axe, t);
 	return (vecs_add(r1->pos, tmp));
 }

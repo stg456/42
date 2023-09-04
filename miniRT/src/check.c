@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 13:52:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:17:47 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ int	rgbinrange(int nb)
 
 void	vectinrange(t_data *d, char **str)
 {
-	(void) d;
 	int	i;
+	(void)d;
 
 	i = 0;
 	while (str[i])

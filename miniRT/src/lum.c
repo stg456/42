@@ -6,11 +6,21 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:42:31 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 12:44:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:24:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
+
+int	check_rgb(int nbr)
+{
+	if (nbr > 0xFF)
+		return (0xFF);
+	else if (nbr < 0)
+		return (0);
+	else
+		return (nbr);
+}
 
 void	lum(char *buf, t_data *d)
 {
