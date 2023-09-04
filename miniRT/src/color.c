@@ -1,6 +1,6 @@
 #include "../inc/miniRT.h"
 
-int	get_color(char **split)
+int		get_color(char **split)
 {
 	int	res;
 	int	color;
@@ -32,11 +32,11 @@ static int	check_rgb(int nbr)
 		return (nbr);
 }
 
-int	color_scale(int colour, float f)
+int			color_scale(int colour, float f)
 {
-	int	r;
-	int	g;
-	int	b;
+	int		r;
+	int		g;
+	int		b;
 
 	r = check_rgb(f * ((colour >> 24) & 0xFF));
 	g = check_rgb(f * ((colour >> 16) & 0xFF));
@@ -44,11 +44,11 @@ int	color_scale(int colour, float f)
 	return ((r << 24) | (g << 16) | (b << 8) | 255);
 }
 
-int	color_prod(int c1, int c2)
+int			color_prod(int c1, int c2)
 {
-	int	r;
-	int	g;
-	int	b;
+	int		r;
+	int		g;
+	int		b;
 
 	r = check_rgb(((float)((c1 >> 24) & 0XFF) *
 			((float)((c2 >> 24) & 0xFF) / 0xFF)));
@@ -59,11 +59,11 @@ int	color_prod(int c1, int c2)
 	return ((r << 24) | (g << 16) | (b << 8) | 255);
 }
 
-int	color_add(int c1, int c2)
+int			color_add(int c1, int c2)
 {
-	int	r;
-	int	g;
-	int	b;
+	int		r;
+	int		g;
+	int		b;
 
 	r = check_rgb(((c1 >> 24) & 0xFF) + ((c2 >> 24) & 0xFF));
 	g = check_rgb((c1 >> 16 & 0xFF) + (c2 >> 16 & 0xFF));
@@ -71,12 +71,12 @@ int	color_add(int c1, int c2)
 	return ((r << 24) | (g << 16) | (b << 8) | 255);
 }
 
-int	color_comp(t_lum *light, t_inter hit)
+int			color_comp(t_lum *light, t_inter hit)
 {
-	t_vec	light_normal;
-	float	gain;
-	float	r2;
-	float	light_bright;
+	t_vec		light_normal;
+	float		gain;
+	float		r2;
+	float		light_bright;
 
 	light_normal = vecs_sus(light->pos, hit.pos);
 	r2 = length2(&light_normal);

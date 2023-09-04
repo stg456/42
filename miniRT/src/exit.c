@@ -1,19 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   exit.c                                             :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 16:02:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 16:06:47 by stgerard         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "miniRT.h"
 
-static void	free_strs(char **tmp, char **tmp_pos,
-				char **tmp_axe, char **tmpcolor)
+static void	free_strs(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor)
 {
 	int	i;
 
@@ -21,7 +8,7 @@ static void	free_strs(char **tmp, char **tmp_pos,
 	if (tmp)
 	{
 		while (tmp[i])
-			free (tmp[i++]);
+			free (tmp[i++]);	
 	}
 	i = 0;
 	if (tmp_pos)
@@ -68,7 +55,7 @@ void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor)
 	}
 }
 
-int	close_hook(t_data *d, int code)
+int		close_hook(t_data *d, int code)
 {
 	mlx_terminate(d->env.mlx);
 	if (code == 0)

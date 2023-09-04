@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 16:21:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 16:22:41 by stgerard         ###   ########.fr       */
+/*   Created: 2023/09/04 17:43:52 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/04 17:44:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 typedef struct s_amb
 {
-	int			nbA;
+	int			nb_a;
 	float		ratio;
 	int			rgb;
 }				t_amb;
 
 typedef struct s_lum
 {
-	int			nbL;
+	int			nb_l;
 	t_vec		pos;
 	float		ratio;
 	int			rgb;

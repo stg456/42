@@ -3,21 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 15:58:29 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:11:27 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
+
+bool	ft_isrgb(int color)
+{
+	if (color >= 0 && color <= 255)
+		return (true);
+	return (false);
+}
 
 bool	ft_isint(char *str)
 {
 	int	i;
 
 	i = 0;
-	while (i < (int)ft_strlen(str) && str[i] != '\n' && str[i] != '\r')
+	while (i < (int)ft_strlen(str) && str[i] != '\n' && str[i] != 'r')
 	{
 		if (!ft_isdigit(str[i]))
 			return (false);
@@ -31,7 +38,7 @@ float	sqr(float f)
 	return (f * f);
 }
 
-void	shapes_addback(t_elem **lst, t_elem *new, int *qty)
+void		shapes_addback(t_elem **lst, t_elem *new, int *qty)
 {
 	t_elem	*aux;
 
@@ -49,7 +56,7 @@ void	shapes_addback(t_elem **lst, t_elem *new, int *qty)
 	(*qty)++;
 }
 
-t_elem	*elem_init(void)
+t_elem	*elem_init()
 {
 	t_elem	*elem;
 

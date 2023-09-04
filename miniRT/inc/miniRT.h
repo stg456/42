@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 16:25:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 17:55:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@
 
 // main.c
 int		main(int ac, char **av);
-void	ft_error(char *str/*, t_data d*/);
+void	ft_error(char *str);
 void	keyhook(mlx_key_data_t keydata, void *param);
 
 // check.c
@@ -92,7 +92,7 @@ t_elem	*elem_init(void);
 t_vec	get_coor(char **split);
 
 // exit.c
-int		close_hook(t_data *d, int code); // to be reworked
+int		close_hook(t_data *d, int code);
 
 // hooks.c
 void	keyhook(mlx_key_data_t keydata, void *param);

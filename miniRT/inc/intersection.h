@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 16:20:24 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 16:21:18 by stgerard         ###   ########.fr       */
+/*   Created: 2023/09/04 17:42:51 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/04 17:44:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define INTERSECTION_H
 
 typedef struct s_cyl	t_cyl;
-
 typedef struct s_inter
 {
 	t_ray		ray;
