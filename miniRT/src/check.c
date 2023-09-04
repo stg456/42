@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/06/15 14:23:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 12:36:12 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,25 @@ int	rgbinrange(int nb)
 		return (1);
 }
 
-int	vectinrange(double nb)
+void	vectinrange(t_data *d, char **str)
 {
-	if (nb < -1 || nb > 1)
-		return (1);
-	else
-		return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_atof(str[i]) < -1 || ft_atof(str[i]) > 1 || !ft_isfloat(str[i]))
+		{
+			close(d->fd); // make changes to ft_error to include close(fd)
+			ft_error("Error\nVector non-numerical or out of range\n");
+		}
+		i++;
+	}
 }
 
-int	ratioinrange(double nb)
+int	ratioinrange(char *ratio)
 {
-	if (nb >= 0 && nb <= 1)
+	if (ft_atof(ratio) >= 0 && ft_atof(ratio) <= 1)
 		return (0);
 	else
 		return (1);
@@ -42,4 +50,14 @@ int	fovinrange(int nb)
 		return (0);
 	else
 		return (1);
+}
+
+int	split_count(char **split)
+{
+	int i;
+
+	i = 0;
+	while (split[i] && *split[i])
+		i++;
+	return (i);
 }

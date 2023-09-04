@@ -6,42 +6,30 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 11:22:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/03 18:28:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 12:44:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
 
-static int	check_pos(t_elem *sp, t_data *d, char **tmp_pos) // il faut un char *pos
+void	check_pos(t_data *d, char **pos)
 {
-	(void) sp;
-	(void) d;
-	(void) tmp_pos;
-	// if (ft_isfloat(tmp_pos[0]) || ft_isfloat(tmp_pos[1])
-	// 	|| ft_isfloat(tmp_pos[2]))
-	// {
-	// 	close(d->fd);
-	// 	ft_error("Error\nproblem in data of sphere\n");
-	// }
-	return (0);
+	if (ft_isfloat(pos[0]) == false || ft_isfloat(pos[1]) == false
+		|| ft_isfloat(pos[2]) == false)
+	{
+		close(d->fd);
+		ft_error("Error\nShape position is invalid\n");
+	}
 }
 
-// static void	check_sphere(t_elem *sp, t_data *d)
-// {
-// 	(void) sp;
-// 	(void) *d;
-// 	// if (ft_isfloat(sp.pos.x) || ft_isfloat(sp.pos.y)
-// 	// 	|| ft_isfloat(sp.pos.z))
-// 	// {
-// 	// 	close(d->fd);
-// 	// 	ft_error("Error\nproblem in data of sphere\n");
-// 	// }
-// 	if (sp->radius < 0)
-// 	{
-// 		close(d->fd);
-// 		ft_error("Error\nproblem in length of sphere\n");
-// 	}
-// }
+void	check_radius(t_data *d, char *radius)
+{
+	if (ft_isfloat(radius) == false || ft_atof(radius) < 0)
+	{
+		close(d->fd);
+		ft_error("Error\nShape radius is invalid\n");
+	}
+}
 
 void	sp(char *buf, t_data *d)
 {
@@ -52,10 +40,13 @@ void	sp(char *buf, t_data *d)
 
 	sp = elem_init();
 	tmp = ft_split(buf, ' ');
+	if (split_count(tmp) != 4)
+		ft_error("Error\nInvalid sphere data\n");
 	tmp_pos = ft_split(tmp[1], ',');
-	check_pos(sp, d, tmp_pos);
+	check_pos(d, tmp_pos);
 	sp->pos = get_coor(tmp_pos);
-	sp->radius = atof(tmp[2]) / 2; // can only be positive -> add check
+	check_radius(d, tmp[2]);
+	sp->radius = atof(tmp[2]) / 2;
 	tmpcolor = ft_split(tmp[3], ',');
 	sp->rgb = get_color(tmpcolor);
 	sp->next = NULL;

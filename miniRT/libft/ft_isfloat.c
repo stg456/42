@@ -3,31 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isfloat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 12:31:59 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/03 17:47:55 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 09:20:15 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isfloat2(const char *str)
+static bool	ft_isfloat2(const char *str)
 {
 	int	pointcount;
+	int	i;
 
+	i = 0;
 	pointcount = 0;
-	if (*str == '.')
+	while (str[i])
 	{
-		pointcount++;
-		if (pointcount > 1)
-			return (1);
-		str++;
+		if (str[i] == '.' && i == 0)
+			return (false);
+		else if (str[i] == '.')
+		{
+			pointcount++;
+			if (pointcount > 1)
+				return (false);
+		}
+		i++;
 	}
-	return (0);
+	return (true);
 }
 
-int	ft_isfloat(const char *str)
+bool	ft_isfloat(const char *str)
 {
 	int	pointcount;
 	int	signcount;
@@ -38,18 +45,18 @@ int	ft_isfloat(const char *str)
 	signcount = 0;
 	while (str[i] != '\0')
 	{
-		ft_isfloat2(str);
+		if (!ft_isfloat2(str))
+			return (false);
 		if ((str[i] < '0' || str[i] > '9') && str[i] != '-'
-			&& str[i] != '+' && i != 0)
-			return (1);
+			&& str[i] != '+' && str[i] != '.')
+			return (false);
 		else if ((str[i] == '-' || str[i] == '+') && i != 0)
-			return (1);
-		else if ((str[i] == '-' || str[i] == '+') && i == 0)
+			return (false);
+		else if ((str[i] == '-' || str[i] == '+'))
 			signcount++;
-		else if (signcount > 1)
 		i++;
 	}
-	if (str[ft_strlen(str) - 1] == '.')
-		return (1);
-	return (0);
+	if (str[ft_strlen(str) - 1] == '.' || signcount > 1)
+		return (false);
+	return (true);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   plan.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: harowana <harowana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:48:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/02 13:13:21 by harowana         ###   ########.fr       */
+/*   Updated: 2023/09/04 12:44:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,6 @@ void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor)
 	}
 }
 
-static void	check_plan(t_elem pl, t_data *d)
-{
-	if (vectinrange(pl.normal.x) || vectinrange(pl.normal.y) || vectinrange(pl.normal.z))
-	{
-		close(d->fd);
-		ft_error("Error\norientation vector of plan not in the rang\n");
-	}
-}
-
 void	pl(char *buf, t_data *d)
 {
 	t_elem	*pl;
@@ -55,14 +46,17 @@ void	pl(char *buf, t_data *d)
 
 	pl = elem_init();
 	tmp = ft_split(buf, ' ');
+	if (split_count(tmp) != 4)
+		ft_error("Error\nInvalid plane data\n");
 	tmp_pos = ft_split(tmp[1], ',');
+	check_pos(d, tmp_pos);
 	pl->pos = get_coor(tmp_pos);
 	tmp_axe = ft_split(tmp[2], ',');
+	vectinrange(d, tmp_axe);
 	pl->normal = get_coor(tmp_axe);
 	tmpcolor = ft_split(tmp[3], ',');
 	pl->rgb = get_color(tmpcolor);
 	pl->next = NULL;
 	free_all(tmp, tmp_pos, tmp_axe, tmpcolor);
-	check_plan(*pl, d);
 	shapes_addback(&d->shapes.planes, pl, &d->shapes.plane_nb);
 }

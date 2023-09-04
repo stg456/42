@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/01 11:33:20 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/04 10:46:46 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,8 @@ static void	load_data2(char *buf, t_data *d)
 {
 	if (*buf != '\0')
 	{
-		// if (*buf == '\n' || *buf == '\t' || *buf == ' ' || *buf == '\r'
-		// 		|| *buf == '\v' || *buf == '\f')
-		// {
-		// 	pass(buf);
-		// }
-		// if (*buf == '\n')
-		// 	buf++;
+		while (*buf == ' ' || *buf == '\t')
+			buf++;
 		if (ft_strncmp(buf, "A", 1) == 0)
 			amb(buf, d);
 		else if (ft_strncmp(buf, "C", 1) == 0)
@@ -59,7 +54,8 @@ void	load_data(t_data *d, char *filename)
 		ft_error("Error\nfile is empty\n");
 	while (buf)
 	{
-		load_data2(buf, d);
+		if (*buf != '\n' && *buf != '\r')
+			load_data2(buf, d);
 		free(buf);
 		buf = NULL;
 		buf = get_next_line(d->fd);

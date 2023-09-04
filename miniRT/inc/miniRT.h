@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/03 16:39:07 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 12:31:39 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,12 @@ int		close_hook(t_env e);
 
 // check.c
 int		rgbinrange(int nb);
-int		vectinrange(double nb);
-int		ratioinrange(double nb);
+void	vectinrange(t_data *d, char **str);
+int		ratioinrange(char *ratio);
 int		fovinrange(int nb);
+void	check_pos(t_data *d, char **pos);
+void	check_radius(t_data *d, char *radius);
+int		split_count(char **split);
 
 // init.c
 void	init_rt(t_env e, t_data d);
@@ -81,10 +84,10 @@ void	cyl(char *buf, t_data *d);
 void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor);
 
 // utils.c
-char	pass(char *str);
 bool	ft_isint(char *str);
 bool	ft_isrgb(int color);
 float	sqr(float f);
+bool	ft_isfloat(const char *str);
 void	shapes_addback(t_elem **lst, t_elem *new, int *qty);
 t_elem	*elem_init();
 t_vec	get_coor(char **split);

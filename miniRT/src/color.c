@@ -11,10 +11,10 @@ int		get_color(char **split)
 	while (i < 3)
 	{
 		if (!ft_isint(split[i]))
-			ft_error("Error\na: incorrect rgb value\n");
+			ft_error("Error\nRGB value is invalid\n");
 		color = ft_atoi(split[i]);
 		if (!ft_isrgb(color))
-			ft_error("Error\nb: incorrect rgb value\n");
+			ft_error("Error\nRGB value not in range\n");
 		res = (res << 8) | color;
 		i++;
 	}
@@ -41,7 +41,6 @@ int			color_scale(int colour, float f)
 	r = check_rgb(f * ((colour >> 24) & 0xFF));
 	g = check_rgb(f * ((colour >> 16) & 0xFF));
 	b = check_rgb(f * ((colour >> 8) & 0xFF));
-	// printf("r: %d, g: %d, b: %d\n", r, g, b);
 	return ((r << 24) | (g << 16) | (b << 8) | 255);
 }
 
@@ -57,7 +56,6 @@ int			color_prod(int c1, int c2)
 			((float)((c2 >> 16) & 0xFF) / 0xFF)));
 	b = check_rgb((((float)((c1 >> 8) & 0xFF)) *
 			((float)((c2 >> 8) & 0xFF) / 0xFF)));
-	// printf("r: %d, g: %d, b: %d\n", r, g, b);
 	return ((r << 24) | (g << 16) | (b << 8) | 255);
 }
 
@@ -88,6 +86,5 @@ int			color_comp(t_lum *light, t_inter hit)
 	else
 		light_bright = (light->ratio * gain * 1000) /
 						(4.0 * M_PI * r2);
-	// return (color_prod(color_scale(hit.rgb, light_bright), light->rgb));
 	return (color_prod(color_add(0, color_scale(hit.rgb, light_bright)),light->rgb));
 }

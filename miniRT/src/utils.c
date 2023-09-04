@@ -6,25 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/03 16:39:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 12:44:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
-
-char	pass(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
-	{
-		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\r' || str[i])
-			i++;
-	}
-	return (' ');
-}
 
 bool	ft_isrgb(int color)
 {
@@ -76,7 +62,7 @@ t_elem	*elem_init()
 
 	elem = malloc(sizeof(t_elem));
 	if (!elem)
-		ft_error("Elem Data Struct Init Error\n");
+		ft_error("Error\nElem Data Struct Init Error\n");
 	ft_bzero(elem, sizeof(t_elem));
 	return(elem);
 }

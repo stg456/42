@@ -19,11 +19,6 @@ static void	check_cam(t_cam c, t_data *d)
 		close(d->fd);
 		ft_error("Error\nFOV of camera not in the range\n");
 	}
-	if (vectinrange(c.forward.x) || vectinrange(c.forward.y) || vectinrange(c.forward.z))
-	{
-		close(d->fd);
-		ft_error("Error\norientation vector of camera not in the range\n");
-	}
 }
 
 void	cam(char *buf, t_data *d)
@@ -34,14 +29,14 @@ void	cam(char *buf, t_data *d)
 	char	**tmp_axe;
 
 	tmp = ft_split(buf, ' ');
+	if (split_count(tmp) != 4)
+		ft_error("Invalid cam data\n");
 	tmp_pos = ft_split(tmp[1], ',');
-	cam.pos.x = ft_atof(tmp_pos[0]);
-	cam.pos.y = ft_atof(tmp_pos[1]);
-	cam.pos.z = ft_atof(tmp_pos[2]);
+	check_pos(d, tmp_pos);
+	cam.pos = get_coor(tmp_pos);
 	tmp_axe = ft_split(tmp[2], ',');
-	cam.forward.x = ft_atof(tmp_axe[0]);
-	cam.forward.y = ft_atof(tmp_axe[1]);
-	cam.forward.z = ft_atof(tmp_axe[2]);
+	vectinrange(d, tmp_axe);
+	cam.forward = get_coor(tmp_axe);
 	normalize(&cam.forward);
 	cam.fov = ft_atoi(tmp[3]);
 	check_cam(cam, d);

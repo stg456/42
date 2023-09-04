@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 12:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/03 16:50:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 12:04:04 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ void	ft_arr_freer(char **arr);
 void	ft_putstr(char *str);
 char	*ft_strstr(const char *haystack, const char *needle);
 double	ft_atof(const char *str);
-int		ft_isfloat(const char *str);
+bool	ft_isfloat(const char *str);
 
 #endif
