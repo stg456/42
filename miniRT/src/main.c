@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 15:20:45 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/04 16:15:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	d_init(t_data *d, int width, int height)
 
 int	main(int ac, char **av)
 {
-	t_data		d;
+	t_data	d;
 	(void)ac;
 
 	d_init(&d, 1280, 720);

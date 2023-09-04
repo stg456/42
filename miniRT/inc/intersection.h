@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   intersection.h                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/04 16:20:24 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/04 16:21:18 by stgerard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef INTERSECTION_H
 # define INTERSECTION_H
 
-typedef struct	s_cyl	t_cyl;
-typedef struct	s_inter
+typedef struct s_cyl	t_cyl;
+
+typedef struct s_inter
 {
 	t_ray		ray;
 	t_vec		normal;
@@ -12,7 +25,7 @@ typedef struct	s_inter
 }				t_inter;
 
 //-----Instanciation-----//
-t_inter	inter_init();
+t_inter	inter_init(void);
 t_inter	inter_cpy(t_inter *inter1);
 t_inter	inter_cpy_ray(t_ray *ray1);
 

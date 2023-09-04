@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   image.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/04 16:19:39 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/04 16:19:53 by stgerard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef IMAGE_H
 # define IMAGE_H
 
-typedef struct	s_data	t_data;
+typedef struct s_data	t_data;
 
-uint32_t		*get_pixel(mlx_image_t *img, int x, int y);
+uint32_t	*get_pixel(mlx_image_t *img, int x, int y);
 
 void		save_img(mlx_image_t *img, char *filename);
 

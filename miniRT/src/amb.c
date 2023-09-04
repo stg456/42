@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   amb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:19:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 12:38:30 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/04 15:58:29 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
+
+bool	ft_isrgb(int color)
+{
+	if (color >= 0 && color <= 255)
+		return (true);
+	return (false);
+}
 
 void	amb(char *buf, t_data *d)
 {

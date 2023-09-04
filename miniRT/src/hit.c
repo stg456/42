@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hit.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/04 16:11:11 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/04 16:11:11 by stgerard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../inc/miniRT.h"
 
-static void		bhaskara(float a, float b, float c, float *res)
+static void	bhaskara(float a, float b, float c, float *res)
 {
 	float		sqrt_discriminant;
 	float		aux[2];
@@ -20,14 +32,14 @@ static void		bhaskara(float a, float b, float c, float *res)
 	}
 }
 
-bool			hit_sp(t_inter *inter, t_elem *elem)
+bool	hit_sp(t_inter *inter, t_elem *elem)
 {
 	t_vec		v_sp2ray;
 	float		time[2];
 
 	v_sp2ray = vecs_sus(inter->ray.pos, elem->pos);
 	bhaskara(length2(&inter->ray.axe), 2 * dot(inter->ray.axe, v_sp2ray),
-				dot(v_sp2ray, v_sp2ray) - pow(elem->radius, 2), time);
+		dot(v_sp2ray, v_sp2ray) - pow(elem->radius, 2), time);
 	if ((inter->t > time[0]) && (time[0] > 0))
 	{
 		inter->t = time[0];
@@ -50,7 +62,7 @@ static float	cy_calc(t_inter inter, t_elem cy, float *y, bool ret[2])
 	v[1] = vecs_sus(vecs_sus(inter.ray.pos, cy.pos),
 			vecs_multf(cy.axe, dot(vecs_sus(inter.ray.pos, cy.pos), cy.axe)));
 	bhaskara(length2(&v[0]), 2 * dot(v[0], v[1]),
-				length2(&v[1]) - pow(cy.radius, 2), time);
+		length2(&v[1]) - pow(cy.radius, 2), time);
 	v_cy2ray = vecs_sus(cy.pos, inter.ray.pos);
 	dist[0] = dot(cy.axe, vecs_sus(vecs_multf(inter.ray.axe, time[0]), v_cy2ray));
 	dist[1] = dot(cy.axe, vecs_sus(vecs_multf(inter.ray.axe, time[1]), v_cy2ray));
@@ -65,7 +77,7 @@ static float	cy_calc(t_inter inter, t_elem cy, float *y, bool ret[2])
 	return (time[0]);
 }
 
-bool			hit_cy(t_inter *inter, t_elem *elem)
+bool	hit_cy(t_inter *inter, t_elem *elem)
 {
 	bool		ret[2];
 	float		time;
@@ -80,13 +92,13 @@ bool			hit_cy(t_inter *inter, t_elem *elem)
 			inter->normal = vecs_multf(inter->normal, -1);
 		else
 			inter->normal = normalized(vecs_sus(inter->pos,
-								vecs_add(vecs_multf(elem->axe, y), elem->pos)));
+						vecs_add(vecs_multf(elem->axe, y), elem->pos)));
 		inter->rgb = elem->rgb;
 	}
 	return (ret[0] || ret[1]);
 }
 
-bool		hit_pl(t_inter *inter, t_elem *elem)
+bool	hit_pl(t_inter *inter, t_elem *elem)
 {
 	double	time;
 	double	den;

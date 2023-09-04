@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 13:40:58 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/04 16:25:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ bool	ft_isrgb(int color);
 float	sqr(float f);
 bool	ft_isfloat(const char *str);
 void	shapes_addback(t_elem **lst, t_elem *new, int *qty);
-t_elem	*elem_init();
+t_elem	*elem_init(void);
 t_vec	get_coor(char **split);
 
 // exit.c
@@ -98,7 +98,6 @@ int		close_hook(t_data *d, int code); // to be reworked
 void	keyhook(mlx_key_data_t keydata, void *param);
 void	expose_hook(void *param);
 void	mlx_loops(t_data *d);
-
 
 // New color functions -> will eventually replace color.c and color2.c
 
