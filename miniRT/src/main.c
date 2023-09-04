@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: harowana <harowana@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/02 14:20:31 by harowana         ###   ########.fr       */
+/*   Updated: 2023/09/04 15:20:45 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	ft_error(char *str/*, t_data d*/)
 {
-	// close(d.fd);
 	printf("%s", str);
 	exit(EXIT_FAILURE);
 }
@@ -40,9 +39,7 @@ int	main(int ac, char **av)
 	ray_trace(&d);
 	// mlx_loop_hook(d.env.mlx, &ray_trace, &d);
 	mlx_loops(&d);
-	mlx_delete_image(d.env.mlx, d.img);
-	// mlx_terminate(e.mlx);
-	close_hook(d.env);
-	// free(e);
+	// mlx_terminate(d.env.mlx);
+	close_hook(&d, 0);
 	return (0);
 }

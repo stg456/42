@@ -3,38 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   plan.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:48:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 12:44:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 14:50:36 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
-
-void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor)
-{
-	if (tmp_pos)
-	{
-		free(tmp_pos);
-		tmp_pos = NULL;
-	}
-	if (tmp_axe)
-	{
-		free(tmp_axe);
-		tmp_axe = NULL;
-	}
-	if (tmpcolor)
-	{
-		free(tmpcolor);
-		tmpcolor = NULL;
-	}
-	if (tmp)
-	{
-		free(tmp);
-		tmp = NULL;
-	}
-}
 
 void	pl(char *buf, t_data *d)
 {
@@ -47,7 +23,7 @@ void	pl(char *buf, t_data *d)
 	pl = elem_init();
 	tmp = ft_split(buf, ' ');
 	if (split_count(tmp) != 4)
-		ft_error("Error\nInvalid plane data\n");
+		ft_error("Invalid plane data\n");
 	tmp_pos = ft_split(tmp[1], ',');
 	check_pos(d, tmp_pos);
 	pl->pos = get_coor(tmp_pos);

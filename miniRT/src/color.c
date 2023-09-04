@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   color.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 14:07:34 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 14:07:34 by stgerard         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../inc/miniRT.h"
 
-int	get_color(char **split)
+int		get_color(char **split)
 {
 	int	res;
 	int	color;
@@ -34,11 +22,21 @@ int	get_color(char **split)
 	return (res);
 }
 
-int	color_scale(int colour, float f)
+static int	check_rgb(int nbr)
 {
-	int	r;
-	int	g;
-	int	b;
+	if (nbr > 0xFF)
+		return (0xFF);
+	else if (nbr < 0)
+		return (0);
+	else
+		return (nbr);
+}
+
+int			color_scale(int colour, float f)
+{
+	int		r;
+	int		g;
+	int		b;
 
 	r = check_rgb(f * ((colour >> 24) & 0xFF));
 	g = check_rgb(f * ((colour >> 16) & 0xFF));
@@ -46,26 +44,26 @@ int	color_scale(int colour, float f)
 	return ((r << 24) | (g << 16) | (b << 8) | 255);
 }
 
-int	color_prod(int c1, int c2)
+int			color_prod(int c1, int c2)
 {
-	int	r;
-	int	g;
-	int	b;
+	int		r;
+	int		g;
+	int		b;
 
-	r = check_rgb(((float)((c1 >> 24) & 0XFF)
-				*((float)((c2 >> 24) & 0xFF) / 0xFF)));
-	g = check_rgb((((float)((c1 >> 16) & 0xFF))
-				* ((float)((c2 >> 16) & 0xFF) / 0xFF)));
-	b = check_rgb((((float)((c1 >> 8) & 0xFF))
-				* ((float)((c2 >> 8) & 0xFF) / 0xFF)));
+	r = check_rgb(((float)((c1 >> 24) & 0XFF) *
+			((float)((c2 >> 24) & 0xFF) / 0xFF)));
+	g = check_rgb((((float)((c1 >> 16) & 0xFF)) *
+			((float)((c2 >> 16) & 0xFF) / 0xFF)));
+	b = check_rgb((((float)((c1 >> 8) & 0xFF)) *
+			((float)((c2 >> 8) & 0xFF) / 0xFF)));
 	return ((r << 24) | (g << 16) | (b << 8) | 255);
 }
 
-int	color_add(int c1, int c2)
+int			color_add(int c1, int c2)
 {
-	int	r;
-	int	g;
-	int	b;
+	int		r;
+	int		g;
+	int		b;
 
 	r = check_rgb(((c1 >> 24) & 0xFF) + ((c2 >> 24) & 0xFF));
 	g = check_rgb((c1 >> 16 & 0xFF) + (c2 >> 16 & 0xFF));
@@ -73,12 +71,12 @@ int	color_add(int c1, int c2)
 	return ((r << 24) | (g << 16) | (b << 8) | 255);
 }
 
-int	color_comp(t_lum *light, t_inter hit)
+int			color_comp(t_lum *light, t_inter hit)
 {
-	t_vec	light_normal;
-	float	gain;
-	float	r2;
-	float	light_bright;
+	t_vec		light_normal;
+	float		gain;
+	float		r2;
+	float		light_bright;
 
 	light_normal = vecs_sus(light->pos, hit.pos);
 	r2 = length2(&light_normal);
@@ -86,8 +84,7 @@ int	color_comp(t_lum *light, t_inter hit)
 	if (gain <= 0)
 		light_bright = 0;
 	else
-		light_bright = (light->ratio * gain * 1000)
-			/ (4.0 * M_PI * r2);
-	return (color_prod(color_add(0, color_scale(hit.rgb,
-					light_bright)), light->rgb));
+		light_bright = (light->ratio * gain * 1000) /
+						(4.0 * M_PI * r2);
+	return (color_prod(color_add(0, color_scale(hit.rgb, light_bright)),light->rgb));
 }

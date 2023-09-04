@@ -3,23 +3,24 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
+#    By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/09/04 13:50:02 by stgerard         ###   ########.fr        #
+#    Updated: 2023/09/04 13:41:38 by jlorber          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = miniRT
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror 
+#-g3 -fsanitize=address
 RM = rm -f
 
 SRC = ./src/main.c ./src/check.c ./src/load.c ./src/utils.c \
 		./src/amb.c ./src/cameras/camera.c ./src/lum.c ./src/spher.c ./src/cyl.c \
 		./src/plan.c ./src/cameras/camera2.c ./src/image/image.c ./src/intersections/intersections.c \
-		./src/rays/ray.c ./src/hooks.c \
+		./src/rays/ray.c ./src/hooks.c ./src/exit.c \
 		./src/shapes/shapes.c ./src/vectors/vector.c ./src/color.c \
 		./src/intersections/intersections2.c ./src/vectors/vector2.c ./src/vectors/vector3.c \
 		./src/vectors/vector_operations.c ./src/hit.c

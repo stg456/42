@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cyl.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:50:48 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 12:44:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 12:23:55 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	cyl(char *buf, t_data *d)
 	cy = elem_init();
 	tmp = ft_split(buf, ' ');
 	if (split_count(tmp) != 6)
-		ft_error("Error\nInvalid cylinder data\n");
+		ft_error("Invalid cylinder data\n");
 	tmp_pos = ft_split(tmp[1], ',');
 	check_pos(d, tmp_pos);
 	cy->pos = get_coor(tmp_pos);

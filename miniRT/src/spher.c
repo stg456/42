@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   spher.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 11:22:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 12:44:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 15:22:49 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	sp(char *buf, t_data *d)
 	sp = elem_init();
 	tmp = ft_split(buf, ' ');
 	if (split_count(tmp) != 4)
-		ft_error("Error\nInvalid sphere data\n");
+		ft_error("Invalid sphere data\n");
 	tmp_pos = ft_split(tmp[1], ',');
 	check_pos(d, tmp_pos);
 	sp->pos = get_coor(tmp_pos);

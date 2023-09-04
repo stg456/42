@@ -2,23 +2,14 @@
 
 void	keyhook(mlx_key_data_t keydata, void *param)
 {
-	t_env	*e;
+	t_data	*d;
 
-	e = (t_env *)param;
+	d = (t_data *)param;
 	if (keydata.key == MLX_KEY_ESCAPE)
-		close_hook(*e);
+		close_hook(d, 0);
 	// else if (keydata.key == MLX_KEY_S)
 	// 	save_img(d.img, av[1]);
-	// else if (keydata.key == MLX_KEY_SPACE)
-	// 	action(keydata.key, e);
 	return ;
-}
-
-int		close_hook(t_env e) // to be reworked
-{
-	(void)e;
-	// free(&e);
-	exit(EXIT_SUCCESS);
 }
 
 void	expose_hook(void *param)

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 13:48:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 15:26:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ bool	ft_isint(char *str)
 	int	i;
 
 	i = 0;
-	while (i < (int)ft_strlen(str) && str[i] != '\n' && str[i] != 'r')
+	while (i < (int)ft_strlen(str) && str[i] != '\n' && str[i] != '\r')
 	{
 		if (!ft_isdigit(str[i]))
 			return (false);
@@ -33,7 +33,12 @@ bool	ft_isint(char *str)
 	return (true);
 }
 
-void	shapes_addback(t_elem **lst, t_elem *new, int *qty)
+float	sqr(float f)
+{
+	return (f * f);
+}
+
+void		shapes_addback(t_elem **lst, t_elem *new, int *qty)
 {
 	t_elem	*aux;
 
@@ -51,13 +56,13 @@ void	shapes_addback(t_elem **lst, t_elem *new, int *qty)
 	(*qty)++;
 }
 
-t_elem	*elem_init(void)
+t_elem	*elem_init()
 {
 	t_elem	*elem;
 
 	elem = malloc(sizeof(t_elem));
 	if (!elem)
-		ft_error("Error\nElem Data Struct Init Error\n");
+		ft_error("Elem Data Struct Init Error\n");
 	ft_bzero(elem, sizeof(t_elem));
 	return (elem);
 }

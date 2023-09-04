@@ -28,19 +28,3 @@ t_ray	make_ray(t_cam *c, t_vec2 point)
 	ray.tMAX = RAY_T_MAX;
 	return (ray);
 }
-
-// t_ray	make_ray(t_cam *c, t_vec2 point)
-// {
-// 	t_vec	axe;
-// 	t_ray	ray;
-// 	t_vec	tmp;
-
-// 	axe = vecs_multf(&c->up, point.v);
-// 	tmp = vecs_multf(&c->right, point.u);
-// 	axe = vecs_add(&axe, &tmp);
-// 	axe = vecs_add(&axe, &c->forward);
-// 	ray.pos = c->pos;
-// 	ray.axe = normalized(axe);
-// 	ray.tMAX = RAY_T_MAX;
-// 	return (ray);
-// }

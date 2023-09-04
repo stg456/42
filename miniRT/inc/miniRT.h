@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 14:24:20 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 13:40:58 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@
 int		main(int ac, char **av);
 void	ft_error(char *str/*, t_data d*/);
 void	keyhook(mlx_key_data_t keydata, void *param);
-int		close_hook(t_env e);
 
 // check.c
 int		rgbinrange(int nb);
@@ -70,7 +69,6 @@ void	cam(char *buf, t_data *d);
 
 // lum.c
 void	lum(char *buf, t_data *d);
-int		check_rgb(int nbr);
 
 // spher.c
 void	sp(char *buf, t_data *d);
@@ -93,9 +91,11 @@ void	shapes_addback(t_elem **lst, t_elem *new, int *qty);
 t_elem	*elem_init();
 t_vec	get_coor(char **split);
 
+// exit.c
+int		close_hook(t_data *d, int code); // to be reworked
+
 // hooks.c
 void	keyhook(mlx_key_data_t keydata, void *param);
-int		close_hook(t_env e); // to be reworked
 void	expose_hook(void *param);
 void	mlx_loops(t_data *d);
 

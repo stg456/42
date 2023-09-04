@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 14:17:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/04 15:18:12 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int	rgbinrange(int nb)
 void	vectinrange(t_data *d, char **str)
 {
 	int	i;
-	(void)d;
 
 	i = 0;
 	while (str[i])
 	{
 		if (ft_atof(str[i]) < -1 || ft_atof(str[i]) > 1 || !ft_isfloat(str[i]))
 		{
+			close(d->fd);
 			ft_error("Error\nVector non-numerical or out of range\n");
 		}
 		i++;
@@ -54,7 +54,7 @@ int	fovinrange(int nb)
 
 int	split_count(char **split)
 {
-	int	i;
+	int i;
 
 	i = 0;
 	while (split[i] && *split[i])
