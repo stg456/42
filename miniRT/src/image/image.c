@@ -56,10 +56,6 @@ void	ray_trace(t_data *d)
 				mlx_put_pixel(d->img, x, y, light_calc(d, inter));
 			else
 				mlx_put_pixel(d->img, x, y, 255);
-<<<<<<< HEAD
-			y++;
-=======
->>>>>>> 985758392d8f0e007dc48753413357a6ee6f885b
 		}
 		y = -1;
 	}
