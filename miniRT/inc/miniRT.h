@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 17:55:20 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/05 14:57:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ void	load_data(t_data *d, char *filename);
 
 // amb.c
 void	amb(char *buf, t_data *d);
+int		check_rgb(int nbr);
 
 // cam.c
 void	cam(char *buf, t_data *d);

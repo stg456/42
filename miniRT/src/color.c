@@ -34,16 +34,6 @@ int	get_color(char **split)
 	return (res);
 }
 
-static int	check_rgb(int nbr)
-{
-	if (nbr > 0xFF)
-		return (0xFF);
-	else if (nbr < 0)
-		return (0);
-	else
-		return (nbr);
-}
-
 int	color_scale(int colour, float f)
 {
 	int	r;
@@ -98,5 +88,6 @@ int	color_comp(t_lum *light, t_inter hit)
 	else
 		light_bright = (light->ratio * gain * 1000)
 			/ (4.0 * M_PI * r2);
-	return (color_prod(color_add(0, color_scale(hit.rgb, light_bright)), light->rgb));
+	return (color_prod(color_add(0, color_scale(hit.rgb, light_bright)),
+			light->rgb));
 }

@@ -42,6 +42,7 @@ void	ray_trace(t_data *d)
 	int			x;
 	int			y;
 	t_inter		inter;
+	t_ray		ray;
 
 	x = -1;
 	y = -1;
@@ -49,9 +50,9 @@ void	ray_trace(t_data *d)
 	{
 		while ((uint32_t)++y < d->img->height)
 		{
-			inter.ray = make_ray(&d->cam, vec2_init(((2.0f * x) / d->img->width) - 1.0f,
-						((-2.0f * y) / d->img->height) + 1.0f));
-			inter.t = INFINITY;
+			ray = make_ray(&d->cam, vec2_init(((2.0f * x) / d->img->width)
+						- 1.0f, ((-2.0f * y) / d->img->height) + 1.0f));
+			inter = inter_cpy_ray(&ray);
 			if (shapes_intersect(&d->shapes, &inter))
 				mlx_put_pixel(d->img, x, y, light_calc(d, inter));
 			else

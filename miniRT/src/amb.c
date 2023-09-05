@@ -12,6 +12,16 @@
 
 #include "miniRT.h"
 
+int	check_rgb(int nbr)
+{
+	if (nbr > 0xFF)
+		return (0xFF);
+	else if (nbr < 0)
+		return (0);
+	else
+		return (nbr);
+}
+
 float	sqr(float f)
 {
 	return (f * f);

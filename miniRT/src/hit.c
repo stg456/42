@@ -58,14 +58,17 @@ static float	cy_calc(t_inter inter, t_elem cy, float *y, bool ret[2])
 	float	time[2];
 	float	dist[2];
 
-	v[0] = vecs_sus(inter.ray.axe, vecs_multf(cy.axe, dot(inter.ray.axe, cy.axe)));
+	v[0] = vecs_sus(inter.ray.axe, vecs_multf(cy.axe,
+				dot(inter.ray.axe, cy.axe)));
 	v[1] = vecs_sus(vecs_sus(inter.ray.pos, cy.pos),
 			vecs_multf(cy.axe, dot(vecs_sus(inter.ray.pos, cy.pos), cy.axe)));
 	bhaskara(length2(&v[0]), 2 * dot(v[0], v[1]),
 		length2(&v[1]) - pow(cy.radius, 2), time);
 	v_cy2ray = vecs_sus(cy.pos, inter.ray.pos);
-	dist[0] = dot(cy.axe, vecs_sus(vecs_multf(inter.ray.axe, time[0]), v_cy2ray));
-	dist[1] = dot(cy.axe, vecs_sus(vecs_multf(inter.ray.axe, time[1]), v_cy2ray));
+	dist[0] = dot(cy.axe, vecs_sus(vecs_multf(inter.ray.axe, time[0]),
+				v_cy2ray));
+	dist[1] = dot(cy.axe, vecs_sus(vecs_multf(inter.ray.axe, time[1]),
+				v_cy2ray));
 	ret[0] = ((dist[0] >= 0) && (dist[0] <= cy.height) && (time[0] > 0.0001));
 	ret[1] = ((dist[1] >= 0) && (dist[1] <= cy.height) && (time[1] > 0.0001));
 	if ((ret[0] == false) & (ret[1] == true))

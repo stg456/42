@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 10:22:17 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/05 14:59:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ static void	d_init(t_data *d, int width, int height)
 
 int	main(int ac, char **av)
 {
-	t_data		d;
-	(void)ac;
+	t_data	d;
 
+	(void)ac;
 	d_init(&d, 1280, 720);
 	load_data(&d, av[1]);
 	ray_trace(&d);
