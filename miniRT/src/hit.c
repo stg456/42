@@ -92,7 +92,11 @@ bool	hit_cy(t_inter *inter, t_elem *elem)
 		inter->t = time;
 		inter->pos = ray_calculate(&inter->ray, inter->t);
 		if ((ret[0] == false) & (ret[1] == true))
+		{
+			inter->normal = normalized(vecs_sus(inter->pos,
+						vecs_add(vecs_multf(elem->axe, y), elem->pos)));
 			inter->normal = vecs_multf(inter->normal, -1);
+		}
 		else
 			inter->normal = normalized(vecs_sus(inter->pos,
 						vecs_add(vecs_multf(elem->axe, y), elem->pos)));
