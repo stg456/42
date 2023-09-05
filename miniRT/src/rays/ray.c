@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:57:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 17:58:26 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/05 09:49:20 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ray_eq(t_ray *r1, t_ray *r2)
 t_vec	ray_calculate(t_ray *r1, float t)
 {
 	t_vec	tmp;
+
 	tmp = vecs_multf(r1->axe, t);
 	return (vecs_add(r1->pos, tmp));
 }

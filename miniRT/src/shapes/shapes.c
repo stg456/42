@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   shapes.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/05 09:45:44 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/05 09:45:56 by stgerard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "miniRT.h"
 
-static void		iter_lst_objs(t_inter *inter, t_elem *elem, bool *ret,
+static void	iter_lst_objs(t_inter *inter, t_elem *elem, bool *ret,
 								bool (*ft)(t_inter *inter, t_elem *elem))
 {
 	t_elem	*it;

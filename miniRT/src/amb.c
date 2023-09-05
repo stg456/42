@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   amb.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:19:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 12:38:30 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/05 09:55:08 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
+
+float	sqr(float f)
+{
+	return (f * f);
+}
 
 void	amb(char *buf, t_data *d)
 {

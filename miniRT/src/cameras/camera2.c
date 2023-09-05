@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   camera2.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/05 09:51:11 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/05 09:51:11 by stgerard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "miniRT.h"
 
 void	cam_init(t_cam *c, float aspect_ratio)
 {
 	t_vec	upguide;
 
-	upguide = vec_init_fs(0.0f, 0.0f, 1.0f); // !
+	upguide = vec_init_fs(0.0f, 0.0f, 1.0f);
 	c->right = normalized(cross(c->forward, upguide));
 	c->up = cross(c->right, c->forward);
 	c->w = 2 * tan(c->fov / 2);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 14:11:27 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/05 09:55:08 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,7 @@ bool	ft_isint(char *str)
 	return (true);
 }
 
-float	sqr(float f)
-{
-	return (f * f);
-}
-
-void		shapes_addback(t_elem **lst, t_elem *new, int *qty)
+void	shapes_addback(t_elem **lst, t_elem *new, int *qty)
 {
 	t_elem	*aux;
 
@@ -56,7 +51,7 @@ void		shapes_addback(t_elem **lst, t_elem *new, int *qty)
 	(*qty)++;
 }
 
-t_elem	*elem_init()
+t_elem	*elem_init(void)
 {
 	t_elem	*elem;
 
