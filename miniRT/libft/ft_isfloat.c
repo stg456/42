@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isfloat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 12:31:59 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 09:20:15 by nathan           ###   ########.fr       */
+/*   Updated: 2023/09/05 10:08:19 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,9 @@ static bool	ft_isfloat2(const char *str)
 
 bool	ft_isfloat(const char *str)
 {
-	int	pointcount;
 	int	signcount;
 	int	i;
 
-	pointcount = 0;
 	i = 0;
 	signcount = 0;
 	while (str[i] != '\0')

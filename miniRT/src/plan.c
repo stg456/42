@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   plan.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:48:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 14:50:36 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/05 10:00:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	pl(char *buf, t_data *d)
 	pl->normal = get_coor(tmp_axe);
 	tmpcolor = ft_split(tmp[3], ',');
 	pl->rgb = get_color(tmpcolor);
-	pl->next = NULL;
 	free_all(tmp, tmp_pos, tmp_axe, tmpcolor);
 	shapes_addback(&d->shapes.planes, pl, &d->shapes.plane_nb);
 }

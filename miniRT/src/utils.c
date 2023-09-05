@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 09:55:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/05 10:00:51 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ void	shapes_addback(t_elem **lst, t_elem *new, int *qty)
 			aux = aux->next;
 		aux->next = new;
 	}
+	new->next = NULL;
 	(*qty)++;
 }
 

@@ -3,20 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 15:20:45 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/05 10:22:17 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
-
-void	ft_error(char *str/*, t_data d*/)
-{
-	printf("%s", str);
-	exit(EXIT_FAILURE);
-}
 
 static void	d_init(t_data *d, int width, int height)
 {
@@ -37,9 +31,7 @@ int	main(int ac, char **av)
 	d_init(&d, 1280, 720);
 	load_data(&d, av[1]);
 	ray_trace(&d);
-	// mlx_loop_hook(d.env.mlx, &ray_trace, &d);
 	mlx_loops(&d);
-	// mlx_terminate(d.env.mlx);
 	close_hook(&d, 0);
 	return (0);
 }

@@ -3,14 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 09:55:38 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 10:01:48 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/05 10:22:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
+
+void	ft_error(char *str/*, t_data d*/)
+{
+	printf("%s", str);
+	exit(EXIT_FAILURE);
+}
 
 static void	free_strs(char **tmp, char **tmp_pos, char **tmp_axe,
 	char **tmpcolor)
@@ -70,7 +76,8 @@ void	free_all(char **tmp, char **tmp_pos, char **tmp_axe, char **tmpcolor)
 
 int	close_hook(t_data *d, int code)
 {
-	mlx_terminate(d->env.mlx);
+	(void)d;
+	// mlx_terminate(d->env.mlx);
 	if (code == 0)
 		exit(EXIT_SUCCESS);
 	else

@@ -26,38 +26,41 @@ static bool	in_shadow(t_data *d, t_inter inter, t_vec light)
 	return (shapes_intersect(&d->shapes, &shadow));
 }
 
+static uint32_t	light_calc(t_data *d, t_inter inter)
+{
+	uint32_t	color;
+	bool		visible;
+
+	color = color_prod(inter.rgb, color_scale(d->amb.rgb, d->amb.ratio));
+	visible = !in_shadow(d, inter, d->lum.pos);
+	color = color_add(color, visible * color_comp(&d->lum, inter));
+	return (color);
+}
+
 void	ray_trace(t_data *d)
 {
 	int			x;
 	int			y;
-	t_ray		ray;
 	t_inter		inter;
-	uint32_t	curr_pixel;
-	bool		visible;
 
-	x = 0;
-	y = 0;
-	while ((uint32_t)x < d->img->width)
+	x = -1;
+	y = -1;
+	while ((uint32_t)++x < d->img->width)
 	{
-		while ((uint32_t)y < d->img->height)
+		while ((uint32_t)++y < d->img->height)
 		{
-			ray = make_ray(&d->cam, vec2_init(((2.0f * x) / d->img->width) - 1.0f,
+			inter.ray = make_ray(&d->cam, vec2_init(((2.0f * x) / d->img->width) - 1.0f,
 						((-2.0f * y) / d->img->height) + 1.0f));
-			inter = inter_cpy_ray(&ray);
+			inter.t = INFINITY;
 			if (shapes_intersect(&d->shapes, &inter))
-			{
-				curr_pixel = color_prod(inter.rgb, color_scale(d->amb.rgb, d->amb.ratio));
-				visible = !in_shadow(d, inter, d->lum.pos);
-				curr_pixel = color_add(curr_pixel, visible * color_comp(&d->lum, inter));
-				mlx_put_pixel(d->img, x, y, curr_pixel);
-			}
+				mlx_put_pixel(d->img, x, y, light_calc(d, inter));
 			else
-			{
 				mlx_put_pixel(d->img, x, y, 255);
-			}
+<<<<<<< HEAD
 			y++;
+=======
+>>>>>>> 985758392d8f0e007dc48753413357a6ee6f885b
 		}
-		y = 0;
-		x++;
+		y = -1;
 	}
 }

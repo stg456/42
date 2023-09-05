@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   spher.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 11:22:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 15:22:49 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/05 10:00:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	sp(char *buf, t_data *d)
 	sp->radius = atof(tmp[2]) / 2;
 	tmpcolor = ft_split(tmp[3], ',');
 	sp->rgb = get_color(tmpcolor);
-	sp->next = NULL;
 	free_all(tmp_pos, tmpcolor, tmp, NULL);
 	shapes_addback(&d->shapes.spheres, sp, &d->shapes.sphere_nb);
 }
