@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 14:57:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:37:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,6 @@
 # include "data.h"
 # include "image.h"
 
-#ifndef PI
-# define PI 3.1415926f
-#endif
-
 // main.c
 int		main(int ac, char **av);
 void	ft_error(char *str);
@@ -63,7 +59,6 @@ void	load_data(t_data *d, char *filename);
 
 // amb.c
 void	amb(char *buf, t_data *d);
-int		check_rgb(int nbr);
 
 // cam.c
 void	cam(char *buf, t_data *d);
@@ -91,6 +86,11 @@ bool	ft_isfloat(const char *str);
 void	shapes_addback(t_elem **lst, t_elem *new, int *qty);
 t_elem	*elem_init(void);
 t_vec	get_coor(char **split);
+
+// utils2.c
+
+float	sqr(float f);
+int		get_color(char **split);
 
 // exit.c
 int		close_hook(t_data *d, int code);

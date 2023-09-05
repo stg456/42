@@ -40,8 +40,9 @@ void	cam(char *buf, t_data *d)
 	normalize(&cam.forward);
 	cam.fov = ft_atoi(tmp[3]);
 	check_cam(cam, d);
-	cam.fov = (ft_atoi(tmp[3])) * (PI / 360);
+	cam.fov = (ft_atoi(tmp[3])) * (M_PI / 360);
 	free_all(tmp, tmp_pos, tmp_axe, NULL);
 	cam_init(&cam, d->env.size_y / d->env.size_x);
 	d->cam = cam;
+	d->cam_count++;
 }

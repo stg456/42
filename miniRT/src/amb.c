@@ -6,26 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:19:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 14:57:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:07:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
-
-int	check_rgb(int nbr)
-{
-	if (nbr > 0xFF)
-		return (0xFF);
-	else if (nbr < 0)
-		return (0);
-	else
-		return (nbr);
-}
-
-float	sqr(float f)
-{
-	return (f * f);
-}
 
 void	amb(char *buf, t_data *d)
 {
@@ -43,4 +28,5 @@ void	amb(char *buf, t_data *d)
 	a.rgb = get_color(tmpcolor);
 	free_all(tmp, tmpcolor, NULL, NULL);
 	d->amb = a;
+	d->alight_count++;
 }

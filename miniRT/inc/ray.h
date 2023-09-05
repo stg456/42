@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:46:51 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 17:55:20 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:42:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_ray	ray_init_param2(t_vec pos, t_vec axe);
 
 //-----Manipulations-----//
 void	ray_eq(t_ray *r1, t_ray *r2);
-
 
 //-----Operations-----//
 t_vec	ray_calculate(t_ray *r1, float t);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/09/05 10:28:46 by marvin           ###   ########.fr        #
+#    Updated: 2023/09/05 15:16:15 by jlorber          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRC = ./src/main.c ./src/check.c ./src/load.c ./src/utils.c \
 		./src/amb.c ./src/cameras/camera.c ./src/lum.c ./src/spher.c ./src/cyl.c \
 		./src/plan.c ./src/cameras/camera2.c ./src/image/image.c \
 		./src/intersections/intersections.c ./src/intersections/intersections2.c \
-		./src/rays/ray.c ./src/hooks.c ./src/exit.c \
+		./src/rays/ray.c ./src/hooks.c ./src/exit.c ./src/utils2.c \
 		./src/shapes/shapes.c ./src/vectors/vector.c ./src/color.c \
 		./src/vectors/vector2.c ./src/vectors/vector3.c \
 		./src/vectors/vector_operations.c ./src/hit.c

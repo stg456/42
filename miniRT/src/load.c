@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   load.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 09:48:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:56:11 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	load_data2(char *buf, t_data *d)
 			pl(buf, d);
 		else if (ft_strncmp(buf, "cy", 2) == 0)
 			cyl(buf, d);
-		else
+		else if (*buf != '\r' && *buf != '\n' && *buf != '\0')
 		{
 			printf("buf: %s", buf);
 			close(d->fd);
@@ -61,4 +61,6 @@ void	load_data(t_data *d, char *filename)
 		buf = get_next_line(d->fd);
 	}
 	close(d->fd);
+	if (d->alight_count != 1 || d->cam_count != 1 || d->light_count != 1)
+		ft_error("Error\nCam, ambiant light or light count is invalid\n");
 }

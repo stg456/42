@@ -6,7 +6,7 @@
 /*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 17:41:08 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 13:39:20 by nathan           ###   ########.fr       */
+/*   Updated: 2023/09/05 14:53:11 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ typedef struct s_data
 	t_amb		amb;
 	t_lum		lum;
 	t_env		env;
+	int			cam_count;
+	int			light_count;
+	int			alight_count;
 }				t_data;
 
 #endif

@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:25:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 14:54:06 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/05 15:31:35 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "miniRT.h"
-
-	// else if (keydata.key == MLX_KEY_S)
-	// 	save_img(d.img, av[1]);
 
 void	keyhook(mlx_key_data_t keydata, void *param)
 {

@@ -12,26 +12,14 @@
 
 #include "../inc/miniRT.h"
 
-int	get_color(char **split)
+static int	check_rgb(int nbr)
 {
-	int	res;
-	int	color;
-	int	i;
-
-	i = 0;
-	res = 0;
-	while (i < 3)
-	{
-		if (!ft_isint(split[i]))
-			ft_error("Error\nRGB value is invalid\n");
-		color = ft_atoi(split[i]);
-		if (!ft_isrgb(color))
-			ft_error("Error\nRGB value not in range\n");
-		res = (res << 8) | color;
-		i++;
-	}
-	res = (res << 8) | 255;
-	return (res);
+	if (nbr > 0xFF)
+		return (0xFF);
+	else if (nbr < 0)
+		return (0);
+	else
+		return (nbr);
 }
 
 int	color_scale(int colour, float f)
@@ -53,7 +41,7 @@ int	color_prod(int c1, int c2)
 	int	b;
 
 	r = check_rgb(((float)((c1 >> 24) & 0XFF)
-				* ((float)((c2 >> 24) & 0xFF) / 0xFF)));
+				*((float)((c2 >> 24) & 0xFF) / 0xFF)));
 	g = check_rgb((((float)((c1 >> 16) & 0xFF))
 				* ((float)((c2 >> 16) & 0xFF) / 0xFF)));
 	b = check_rgb((((float)((c1 >> 8) & 0xFF))

@@ -1,35 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 14:16:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 15:40:06 by stgerard         ###   ########.fr       */
+/*   Created: 2023/09/05 15:13:02 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/05 15:13:05 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "miniRT.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+float	sqr(float f)
 {
-	size_t	i;
-	size_t	nb;
+	return (f * f);
+}
+
+int	get_color(char **split)
+{
+	int	res;
+	int	color;
+	int	i;
 
 	i = 0;
-	nb = 0;
-	while (src[nb] != '\0')
-		nb++;
-	if (dstsize != '\0')
+	res = 0;
+	while (i < 3)
 	{
-		while (i < dstsize - 1 && src[i] != '\0' && src[i] != '\n'
-			&& src[i] != '\r' && src[i] != ' ')
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		if (!ft_isint(split[i]))
+			ft_error("Error\nRGB value is invalid\n");
+		color = ft_atoi(split[i]);
+		if (!ft_isrgb(color))
+			ft_error("Error\nRGB value not in range\n");
+		res = (res << 8) | color;
+		i++;
 	}
-	return (nb);
+	res = (res << 8) | 255;
+	return (res);
 }
