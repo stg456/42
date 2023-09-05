@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 10:00:51 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/05 16:38:14 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_elem	*elem_init(void)
 
 	elem = malloc(sizeof(t_elem));
 	if (!elem)
-		ft_error("Elem Data Struct Init Error\n");
+		ft_error("Error\nElem Data Struct Init Error\n");
 	ft_bzero(elem, sizeof(t_elem));
 	return (elem);
 }

@@ -30,7 +30,7 @@ void	cam(char *buf, t_data *d)
 
 	tmp = ft_split(buf, ' ');
 	if (split_count(tmp) != 4)
-		ft_error("Invalid cam data\n");
+		ft_error("Error\nInvalid cam data\n");
 	tmp_pos = ft_split(tmp[1], ',');
 	check_pos(d, tmp_pos);
 	cam.pos = get_coor(tmp_pos);
