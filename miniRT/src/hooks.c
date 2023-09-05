@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hooks.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/05 11:25:15 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/05 11:25:50 by stgerard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "miniRT.h"
 
 void	keyhook(mlx_key_data_t keydata, void *param)
@@ -15,12 +27,12 @@ void	keyhook(mlx_key_data_t keydata, void *param)
 void	expose_hook(void *param)
 {
 	t_data *d;
+
 	d = param;
 	if (mlx_image_to_window(d->env.mlx, d->img, 0, 0) < 0)
 	{
 		mlx_close_window(d->env.mlx);
 		ft_error("Error\nimpossible to create image\n");
-
 	}
 }
 

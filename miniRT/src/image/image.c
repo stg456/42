@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   image.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/05 11:11:31 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/05 11:11:31 by stgerard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "miniRT.h"
 
-static bool		in_shadow(t_data *d, t_inter inter, t_vec light)
+static bool	in_shadow(t_data *d, t_inter inter, t_vec light)
 {
 	t_inter	shadow;
 	t_vec	tmp;
@@ -25,12 +37,12 @@ void	ray_trace(t_data *d)
 
 	x = 0;
 	y = 0;
-	
 	while ((uint32_t)x < d->img->width)
 	{
 		while ((uint32_t)y < d->img->height)
 		{
-			ray = make_ray(&d->cam, vec2_init(((2.0f * x) / d->img->width) - 1.0f, ((-2.0f * y) / d->img->height) + 1.0f));
+			ray = make_ray(&d->cam, vec2_init(((2.0f * x) / d->img->width) - 1.0f,
+						((-2.0f * y) / d->img->height) + 1.0f));
 			inter = inter_cpy_ray(&ray);
 			if (shapes_intersect(&d->shapes, &inter))
 			{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:48:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/04 12:23:45 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/05 11:03:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c && index < 0)
 			index = i;
 		else if (((s[i] == c && s[index] != '\n' && s[index] != '\r')
-			|| i == ft_strlen(s)) && index >= 0)
+				|| i == ft_strlen(s)) && index >= 0)
 		{
 			split[j++] = word_dup(s, index, i);
 			index = -1;
