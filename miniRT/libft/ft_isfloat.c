@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isfloat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/01 12:31:59 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 10:08:19 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/06 15:10:44 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ bool	ft_isfloat(const char *str)
 			signcount++;
 		i++;
 	}
-	if (str[ft_strlen(str) - 1] == '.' || signcount > 1)
+	if (str[ft_strlen(str) - 1] == '.' || signcount > 1
+		|| (signcount == 1 && ft_strlen(str) == 1))
 		return (false);
 	return (true);
 }

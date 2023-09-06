@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 15:54:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 16:38:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/06 15:22:03 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ t_vec	get_coor(char **split)
 {
 	t_vec	coor;
 
+	if (split_count(split) != 3)
+		ft_error("Error\nInvalid coordinates\n");
 	coor.x = ft_atof(split[0]);
 	coor.y = ft_atof(split[1]);
 	coor.z = ft_atof(split[2]);

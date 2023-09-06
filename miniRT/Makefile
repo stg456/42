@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+         #
+#    By: nathan <nathan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/16 16:51:24 by stgerard          #+#    #+#              #
-#    Updated: 2023/09/05 16:59:20 by jlorber          ###   ########.fr        #
+#    Updated: 2023/09/06 13:55:22 by nathan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = miniRT
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror #-g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 RM = rm -f
 
 SRC = ./src/main.c ./src/check.c ./src/load.c ./src/utils.c \

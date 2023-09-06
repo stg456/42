@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 15:13:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 15:13:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/06 15:23:09 by nathan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ int	get_color(char **split)
 
 	i = 0;
 	res = 0;
+	if (split_count(split) != 3)
+		ft_error("Error\nRGB values are invalid\n");
 	while (i < 3)
 	{
 		if (!ft_isint(split[i]))
