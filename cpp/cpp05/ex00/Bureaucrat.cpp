@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:09:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/07/04 14:01:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/06 10:22:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,14 +56,14 @@ Bureaucrat & Bureaucrat::operator = (const Bureaucrat & rhs) {
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return ("Exception: GradeTooHigh");
+	return ("Exception: Grade Too High");
 }
 
 const char* Bureaucrat::GradeTooLowException::what() const throw() {
-	return ("Exception: GradeTooLow");
+	return ("Exception: Grade Too Low");
 }
 
 std::ostream & operator << (std::ostream & out, const Bureaucrat & rhs) {
-	out << rhs.getName() << " , bureaucrat grade " << rhs.getGrade() << std::endl;
+	out << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
 	return (out);
 }
