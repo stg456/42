@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:47:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/08 11:28:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/08 11:52:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class RobotomyRequestForm
 	private:
 		std::string	_target;
 	
-	Public:
+	public:
 		RobotomyRequestForm(void);
 		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(const RobotomyRequestForm &copy);

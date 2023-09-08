@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:05:43 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/08 11:33:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/08 11:52:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class PresidentialPardonForm
 	private:
 		std::string	_target;
 	
-	Public:
+	public:
 		PresidentialPardonForm(void);
 		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
