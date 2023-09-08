@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/06 13:00:59 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/08 10:36:26 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void test1() {
 void test2() {
 	try 
 	{
-		Bureaucrat B1("Jim", 60);
+		Bureaucrat B1("Joe", 60);
 		Form F1("formulaire 1", 40, 60);
 		std::cout << B1;
 		std::cout << F1;
