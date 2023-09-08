@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/08 10:23:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/08 13:25:05 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,3 +73,7 @@ std::ostream & operator << (std::ostream & out, const Form & rhs) {
 		out << "not signed" << std::endl;
 	return (out);
 }
+
+std::string	getTarget(void) {}
+
+void	execute(Bureaucrat const & executor) {}
