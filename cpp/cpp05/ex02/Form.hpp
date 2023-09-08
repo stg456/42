@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:13 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/08 11:28:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/08 12:12:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ class Form
 		bool		getSigned(void) const;
 		int			getGradeToSign(void) const;
 		int			getGradeToExecute(void) const;
-		void		execute(Bureaucrat const & executor) const;
+		virtual std::string	getTarget(void) const = 0;
+		virtual void		execute(Bureaucrat const & executor) const = 0;
 		
 		class GradeTooHighException : public std::exception 
 		{

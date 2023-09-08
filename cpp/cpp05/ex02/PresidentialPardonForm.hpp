@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:05:43 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/08 11:52:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/08 13:03:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,12 @@ class PresidentialPardonForm
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
 		PresidentialPardonForm & operator = (const PresidentialPardonForm & rhs);
 		~PresidentialPardonForm();
+
+		class GradeTooLowException : public std::exception 
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 #endif
