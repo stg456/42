@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:44:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/08 11:19:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/08 11:47:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,25 @@
 #include "Form.hpp"
 
 class Bureaucrat;
-class Form;
+// class Form;
 
-class ShrubberyCreationForm
+class ShrubberyCreationForm : public Form
 {
 	private:
 		std::string	_target;
-		int			_sign;
-		int			_exec;
 	
 	Public:
-		ShrubberyCreationForm();
+		ShrubberyCreationForm(void);
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		ShrubberyCreationForm & operator = (const ShrubberyCreationForm & rhs);
 		~ShrubberyCreationForm();
+
+		class GradeTooLowException : public std::exception 
+		{
+			public:
+				virtual const char *what() const throw();
+		};
 };
 
 #endif
