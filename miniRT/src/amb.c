@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:19:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/10 15:45:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/10 15:50:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	amb(char *buf, t_data *d)
 	char	**tmp;
 	char	**tmpcolor;
 
-	tmp = ft_split2(buf, ' ', '\n');
+	tmp = ft_split2(buf, ' ', '\t');
 	if (split_count(tmp) != 3)
 		ft_error("Error\nInvalid ambiant light data\n");
 	if (!ft_isfloat(tmp[1]) || ratioinrange(tmp[1]))
