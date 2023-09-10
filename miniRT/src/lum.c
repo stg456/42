@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lum.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nathan <nathan@student.42.fr>              +#+  +:+       +#+        */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:42:31 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/06 15:29:29 by nathan           ###   ########.fr       */
+/*   Updated: 2023/09/10 15:59:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	lum(char *buf, t_data *d)
 	char	**tmp_pos;
 	char	**tmpcolor;
 
-	tmp = ft_split(buf, ' ');
+	tmp = ft_split2(buf, ' ', '\t');
 	if (split_count(tmp) != 4)
 		ft_error("Error\nInvalid light data\n");
 	tmp_pos = ft_split(tmp[1], ',');

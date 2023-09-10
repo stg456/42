@@ -28,7 +28,7 @@ void	cam(char *buf, t_data *d)
 	char	**tmp_pos;
 	char	**tmp_axe;
 
-	tmp = ft_split(buf, ' ');
+	tmp = ft_split2(buf, ' ', '\t');
 	if (split_count(tmp) != 4)
 		ft_error("Error\nInvalid cam data\n");
 	tmp_pos = ft_split(tmp[1], ',');

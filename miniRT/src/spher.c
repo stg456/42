@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 11:22:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 16:38:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/10 15:59:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	sp(char *buf, t_data *d)
 	char		**tmpcolor;
 
 	sp = elem_init();
-	tmp = ft_split(buf, ' ');
+	tmp = ft_split2(buf, ' ', '\t');
 	if (split_count(tmp) != 4)
 		ft_error("Error\nInvalid sphere data\n");
 	tmp_pos = ft_split(tmp[1], ',');
