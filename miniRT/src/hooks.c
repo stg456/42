@@ -6,7 +6,7 @@
 /*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 11:25:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 15:31:35 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/11 11:51:46 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,8 @@ void	keyhook(mlx_key_data_t keydata, void *param)
 	return ;
 }
 
-void	expose_hook(void *param)
+void	expose_img(t_data *d)
 {
-	t_data	*d;
-
-	d = param;
 	if (mlx_image_to_window(d->env.mlx, d->img, 0, 0) < 0)
 	{
 		mlx_close_window(d->env.mlx);
@@ -37,6 +34,5 @@ void	expose_hook(void *param)
 void	mlx_loops(t_data *d)
 {
 	mlx_key_hook(d->env.mlx, &keyhook, &d->env);
-	mlx_loop_hook(d->env.mlx, &expose_hook, d);
 	mlx_loop(d->env.mlx);
 }

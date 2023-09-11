@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/11 10:02:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/11 11:29:27 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	d_init(t_data *d, int width, int height)
 {
 	d->env.size_x = width;
 	d->env.size_y = height;
-	d->env.mlx = mlx_init(d->env.size_x, d->env.size_y, "miniRT", false);
+	d->env.mlx = mlx_init(d->env.size_x, d->env.size_y, "miniRT", true);
 	d->img = mlx_new_image(d->env.mlx, d->env.size_x, d->env.size_y);
 	d->shapes.cylindres = NULL;
 	d->shapes.spheres = NULL;

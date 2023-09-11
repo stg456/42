@@ -60,4 +60,5 @@ void	ray_trace(t_data *d)
 		}
 		y = -1;
 	}
+	expose_img(d);
 }

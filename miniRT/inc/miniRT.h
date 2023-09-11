@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/11 09:58:01 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/11 11:52:05 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int		close_hook(t_data *d, int code);
 
 // hooks.c
 void	keyhook(mlx_key_data_t keydata, void *param);
-void	expose_hook(void *param);
+void	expose_img(t_data *d);
 void	mlx_loops(t_data *d);
 
 // New color functions -> will eventually replace color.c and color2.c

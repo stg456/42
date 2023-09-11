@@ -6,7 +6,7 @@
 /*   By: jlorber <jlorber@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/22 15:38:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 15:56:11 by jlorber          ###   ########.fr       */
+/*   Updated: 2023/09/11 12:22:47 by jlorber          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ void	load_data(t_data *d, char *filename)
 {
 	char	*buf;
 
+	if (ft_strncmp(filename + ft_strlen(filename) - 3, ".rt", 3) != 0)
+		ft_error("Error\nThis program requires a .rt scene file.\n");
 	d->fd = open(filename, O_RDONLY);
 	if (d->fd < 0)
 	{
