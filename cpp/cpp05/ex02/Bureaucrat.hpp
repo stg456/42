@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:10:35 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/08 11:42:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/11 14:10:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ class Bureaucrat
 		void		upGrade();
 		void		downGrade();
 		void		signForm(Form &f);
+		void		executeForm(Form const & form);
 
 		class GradeTooHighException : public std::exception 
 		{
