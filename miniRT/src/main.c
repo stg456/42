@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:10:23 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 15:06:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/11 10:02:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void	d_init(t_data *d, int width, int height)
 	d->cam_count = 0;
 	d->light_count = 0;
 	d->alight_count = 0;
+	d->c1 = ' ';
+	d->c2 = '\t';
 }
 
 int	main(int ac, char **av)

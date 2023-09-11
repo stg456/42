@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:48:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/10 15:59:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/11 09:42:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	pl(char *buf, t_data *d)
 	char	**tmpcolor;
 
 	pl = elem_init();
-	tmp = ft_split2(buf, ' ', '\t');
+	tmp = ft_split2(buf, d);
 	if (split_count(tmp) != 4)
 		ft_error("Error\nInvalid plane data\n");
 	tmp_pos = ft_split(tmp[1], ',');

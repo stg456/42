@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 10:42:31 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/10 15:59:13 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/11 09:42:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	lum(char *buf, t_data *d)
 	char	**tmp_pos;
 	char	**tmpcolor;
 
-	tmp = ft_split2(buf, ' ', '\t');
+	tmp = ft_split2(buf, d);
 	if (split_count(tmp) != 4)
 		ft_error("Error\nInvalid light data\n");
 	tmp_pos = ft_split(tmp[1], ',');

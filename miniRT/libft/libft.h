@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/22 12:44:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/10 15:37:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/11 09:55:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,5 @@ void	ft_putstr(char *str);
 char	*ft_strstr(const char *haystack, const char *needle);
 double	ft_atof(const char *str);
 bool	ft_isfloat(const char *str);
-char	**ft_split2(char const *s, char c1, char c2);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:02:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/05 15:37:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/11 09:58:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,10 @@ t_vec	get_coor(char **split);
 
 float	sqr(float f);
 int		get_color(char **split);
+
+// ft_split2.c
+
+char	**ft_split2(char const *s, t_data *d);
 
 // exit.c
 int		close_hook(t_data *d, int code);

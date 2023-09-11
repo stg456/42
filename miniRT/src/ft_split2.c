@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/28 11:48:56 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/10 15:41:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/11 10:06:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "miniRT.h"
 
-static size_t	count_words(char const *s, char c1, char c2)
+static size_t	count_words(char const *s, t_data *d)
 {
 	size_t	words;
 	size_t	new_word;
@@ -21,19 +21,20 @@ static size_t	count_words(char const *s, char c1, char c2)
 	new_word = 0;
 	while (*s)
 	{
-		if ((*s != c1 || *s != c2) && !new_word)
+		if ((*s != d->c1 || *s != d->c2) && !new_word)
 		{
 			new_word = 1;
 			words++;
 		}
-		else if (*s == c1 || *s == c2)
+		else if (*s == d->c1 || *s == d->c2)
 			new_word = 0;
 		s++;
 	}
 	return (words);
 }
 
-static char	**calloc_cpy_word(char const *s, char c1, char c2, char **split, size_t s_len)
+static char	**calloc_cpy_word(char const *s, t_data *d, char **split,
+			size_t s_len)
 {
 	size_t	i;
 	size_t	i_split;
@@ -44,7 +45,7 @@ static char	**calloc_cpy_word(char const *s, char c1, char c2, char **split, siz
 	word_len = 0;
 	while (i < s_len + 1 && s_len > 0)
 	{
-		if (s[i] == c1 || s[i] == c2 || !s[i])
+		if (s[i] == d->c1 || s[i] == d->c2 || !s[i])
 		{
 			if (word_len > 0)
 			{
@@ -62,7 +63,7 @@ static char	**calloc_cpy_word(char const *s, char c1, char c2, char **split, siz
 	return (split);
 }
 
-char	**ft_split2(char const *s, char c1, char c2)
+char	**ft_split2(char const *s, t_data *d)
 {
 	size_t	words;
 	size_t	s_len;
@@ -71,11 +72,11 @@ char	**ft_split2(char const *s, char c1, char c2)
 	if (!s)
 		return (NULL);
 	s_len = ft_strlen(s);
-	words = count_words(s, c1, c2);
+	words = count_words(s, d);
 	split = (char **)ft_calloc(sizeof(char *), words + 1);
 	if (!split)
 		return (NULL);
-	split = calloc_cpy_word(s, c1, c2, split, s_len);
+	split = calloc_cpy_word(s, d, split, s_len);
 	split[words] = NULL;
 	return (split);
 }
