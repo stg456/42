@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:09:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/11 14:10:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/11 16:35:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,6 @@ void	Bureaucrat::signForm(Form &f) {
 	// return ;
 }
 
-void	executeForm(Form const & form) {
-
+void	executeForm(Form const & f) {
+	executor.getName() << " executed " << f.getTarget << std::endl;
 }
