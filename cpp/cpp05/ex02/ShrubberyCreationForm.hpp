@@ -6,16 +6,17 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:44:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 17:44:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/12 20:09:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
-// #include "Bureaucrat.hpp"
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include <fstream>
+#include <string>
 
 class ShrubberyCreationForm : public Form
 {
