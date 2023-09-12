@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 20:13:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/12 23:50:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ std::string	ShrubberyCreationForm::getTarget() const {
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	std::cout << getTarget() << " has create Shrubbery." << std::endl;
+	std::cout << executor.getName() << " has create Shrubbery." << std::endl;
 	std::ofstream out;
 	out.open(this->_target + "_Shrubbery", std::ios::out);
 	out << "  o__o___o__o " << std::endl;
