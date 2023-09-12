@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:44:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 17:15:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:44:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 // #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include <fstream>
 
 class ShrubberyCreationForm : public Form
 {
