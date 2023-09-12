@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/11 17:41:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/12 11:54:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(void): _target("") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): _target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form(target, 145, 137), _target(target) {
 	if (getGradeToSign() < 145 || getGradeToExecute() < 137)
-		throw PShrubberyCreationForm::GradeTooLowException();
+		throw ShrubberyCreationForm::GradeTooLowException();
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & copy): _target(copy._target) {*this = copy;}
@@ -31,5 +31,5 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator = (const ShrubberyCreati
 }
 
 const char * ShrubberyCreationForm::GradeTooLowException::what() const throw() {
-	return ("Exception: Grade Too Low");
+	return ("Exception: Grade Too Low to sign or execute ShrubberyCreationForm");
 }
