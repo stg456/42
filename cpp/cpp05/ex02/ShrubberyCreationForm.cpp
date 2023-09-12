@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 15:53:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:15:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator = (const ShrubberyCreati
 
 const char * ShrubberyCreationForm::GradeTooLowException::what() const throw() {
 	return ("Exception: Grade Too Low to sign or execute ShrubberyCreationForm");
+}
+
+std::string	ShrubberyCreationForm::getTarget() const {
+	return (this->_target);
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {

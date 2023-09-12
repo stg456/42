@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:44:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 15:38:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:15:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ class ShrubberyCreationForm : public Form
 				virtual const char *what() const throw();
 		};
 
-		void	execute(Bureaucrat const & executor) const;
+		std::string	getTarget() const;
+		void		execute(Bureaucrat const & executor) const;
 };
 
 #endif

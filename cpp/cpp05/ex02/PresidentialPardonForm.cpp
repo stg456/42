@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:09:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 15:53:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/12 17:17:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,10 @@ PresidentialPardonForm & PresidentialPardonForm::operator = (const PresidentialP
 
 const char * PresidentialPardonForm::GradeTooLowException::what() const throw() {
 	return ("Exception: Grade Too Low to sign or execute PresidentialPardonForm");
+}
+
+std::string	PresidentialPardonForm::getTarget() const {
+	return (this->_target);
 }
 
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
