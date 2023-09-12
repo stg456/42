@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:05:43 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 13:59:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:28:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "Form.hpp"
 
 class Bureaucrat;
-class Form;
+// class Form;
 
 class PresidentialPardonForm : public Form
 {

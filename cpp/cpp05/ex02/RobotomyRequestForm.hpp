@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:47:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 14:12:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:28:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "Form.hpp"
 
 class Bureaucrat;
-class Form;
+// class Form; // forward declaration of Form class
 
 class RobotomyRequestForm : public Form
 {

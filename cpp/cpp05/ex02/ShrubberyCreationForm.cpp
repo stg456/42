@@ -6,15 +6,15 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 14:12:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:53:12 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void): _target("") {}
+ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137), _target("") {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form(target, 145, 137), _target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string ShrubberyCreationForm): Form(ShrubberyCreationForm, 145, 137), _target("") {
 	if (getGradeToSign() < 145 || getGradeToExecute() < 137)
 		throw ShrubberyCreationForm::GradeTooLowException();
 }
@@ -35,5 +35,5 @@ const char * ShrubberyCreationForm::GradeTooLowException::what() const throw() {
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	std::cout << getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
+	std::cout << getTarget() << " has create Shrubbery." << std::endl;
 }

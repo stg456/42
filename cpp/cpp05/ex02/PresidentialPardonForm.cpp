@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:09:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 13:59:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/12 15:53:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ const char * PresidentialPardonForm::GradeTooLowException::what() const throw() 
 }
 
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
+	(void) executor;
 	std::cout << getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }
