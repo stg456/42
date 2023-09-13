@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 15:50:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 16:24:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void test() {
 		PresidentialPardonForm	presid("formulaire de pardon présidentiel");
         Bureaucrat B1("Jim", 130);
 		Bureaucrat B2("Jess", 50);
-		Bureaucrat B3("Jack", 10);
+		Bureaucrat B3("Jack", 26);
 
     try {
         B1.signForm(shrub);
