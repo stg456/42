@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:10:35 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 17:44:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:11:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <exception>
 #include "Form.hpp"
+#include <string>
 // #include "ShrubberyCreationForm.hpp"  // forward declaration of ShrubberyCreationForm class
 // #include "RobotomyRequestForm.hpp"    // surtout pas ça
 // #include "PresidentialPardonForm.hpp"

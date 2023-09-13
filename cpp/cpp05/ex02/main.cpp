@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 09:38:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:33:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 void test1() {
 
-        ShrubberyCreationForm	shrub("form1");
-		RobotomyRequestForm		robot("form2");
-		PresidentialPardonForm	presid("form3");
-        Bureaucrat B1("Jim", 50);
+        ShrubberyCreationForm	shrub("formulaire de création de Shrubbery");
+		RobotomyRequestForm		robot("formulaire de robotomysation");
+		PresidentialPardonForm	presid("formulaire de pardon présidentiel");
+        Bureaucrat B1("Jim", 150);
 
     try {
         B1.signForm(shrub);
@@ -31,22 +31,22 @@ void test1() {
         std::cerr << e.what() << std::endl;
     }
 	std::cout << std::endl;
-    try {
-        B1.signForm(robot);
-		B1.executeForm(robot);
-    }
-    catch(std::exception &e) {
-        std::cerr << e.what() << std::endl;
-    }
-	std::cout << std::endl;
-    try {
-        B1.signForm(presid);
-		B1.executeForm(presid);
-    }
-    catch(std::exception &e) {
-        std::cerr << e.what() << std::endl;
-    }
-	std::cout << std::endl;
+    // try {
+    //     B1.signForm(robot);
+	// 	B1.executeForm(robot);
+    // }
+    // catch(std::exception &e) {
+    //     std::cerr << e.what() << std::endl;
+    // }
+	// std::cout << std::endl;
+    // try {
+    //     B1.signForm(presid);
+	// 	B1.executeForm(presid);
+    // }
+    // catch(std::exception &e) {
+    //     std::cerr << e.what() << std::endl;
+    // }
+	// std::cout << std::endl;
 }
 
 int main() 

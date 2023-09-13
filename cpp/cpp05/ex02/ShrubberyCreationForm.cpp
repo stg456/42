@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 09:49:58 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:33:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ std::string	ShrubberyCreationForm::getTarget() const {
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
+	if (this->getSigned() == false)
+		throw ShrubberyCreationForm::GradeTooLowException();
+	else if (executor.getGrade() > this->getGradeToExecute())
+		throw Form::GradeTooLowException();
 	std::cout << executor.getName() << " has create Shrubbery." << std::endl;
 	std::ofstream out;
 	if (!out)
