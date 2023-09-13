@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 14:26:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 14:39:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137), _target() {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string str): Form(ShrubberyCreationForm, 0, 145, 137), _target(target) {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string str): Form("ShrubberyCreationForm", 145, 137), _target(str) {
 	if (this->getGradeToSign() < 145 || this->getGradeToExecute() < 137)
 		throw ShrubberyCreationForm::GradeTooLowException();
 	return ;
