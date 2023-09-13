@@ -6,15 +6,15 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 12:03:04 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 14:26:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137), _target("") {}
+// ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137), _target() {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string ShrubberyCreationForm): Form(ShrubberyCreationForm, 145, 137), _target("") {
+ShrubberyCreationForm::ShrubberyCreationForm(std::string str): Form(ShrubberyCreationForm, 0, 145, 137), _target(target) {
 	if (this->getGradeToSign() < 145 || this->getGradeToExecute() < 137)
 		throw ShrubberyCreationForm::GradeTooLowException();
 	return ;

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:44:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 20:09:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 14:26:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ShrubberyCreationForm : public Form
 	
 	public:
 		ShrubberyCreationForm(void);
-		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(std::string str);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		ShrubberyCreationForm & operator = (const ShrubberyCreationForm & rhs);
 		~ShrubberyCreationForm();
