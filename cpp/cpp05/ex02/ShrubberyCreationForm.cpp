@@ -6,18 +6,16 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 14:39:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 15:38:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-// ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137), _target() {}
+ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137), _target() {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string str): Form("ShrubberyCreationForm", 145, 137), _target(str) {
-	if (this->getGradeToSign() < 145 || this->getGradeToExecute() < 137)
-		throw ShrubberyCreationForm::GradeTooLowException();
-	return ;
+	this->_target = str;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & copy): _target(copy._target) {*this = copy;}
@@ -40,7 +38,7 @@ std::string	ShrubberyCreationForm::getTarget() const {
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	if (this->getSigned() == false || (executor.getGrade() > this->getGradeToExecute()))
+	if (executor.getGrade() > 137)
 		throw ShrubberyCreationForm::GradeTooLowException();
 	else {
 		std::cout << executor.getName() << " has create Shrubbery." << std::endl;
