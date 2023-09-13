@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 15:40:02 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 09:58:47 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,9 @@ std::ostream & operator << (std::ostream & out, const Form & rhs) {
 	return (out);
 }
 
-// std::string	getTarget(void) {}
+std::string	getTarget(void) {}
 
 // void	execute(Bureaucrat const & executor) {
-// 	if (executor.getGrade() > _gradeToExecute)
+// 	if (executor.getGrade() > _gradeToExecute())
 // 		throw Form::GradeTooLowException();
 // }

@@ -6,12 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 09:25:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 09:49:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137), _target("") {}
 
@@ -42,6 +41,11 @@ std::string	ShrubberyCreationForm::getTarget() const {
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 	std::cout << executor.getName() << " has create Shrubbery." << std::endl;
 	std::ofstream out;
+	if (!out)
+	{
+		std::cerr << "Error: cannot create file." << std::endl;
+		return ;
+	}
 	out.open(this->_target + "_Shrubbery", std::ios::out);
 	out << "  o__o___o__o " << std::endl;
 	out << "    o/_/_/o   " << std::endl;
