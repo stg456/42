@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:02:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 11:21:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 16:12:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ RobotomyRequestForm & RobotomyRequestForm::operator = (const RobotomyRequestForm
 }
 
 const char * RobotomyRequestForm::GradeTooLowException::what() const throw() {
-	return ("Exception: Grade Too Low to sign or execute RobotomyRequestForm");
+	return ("Exception: Grade Too Low to execute RobotomyRequestForm");
 }
 
 std::string	RobotomyRequestForm::getTarget() const {
