@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 11:33:10 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/13 11:46:26 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137), _target("") {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string ShrubberyCreationForm): Form(ShrubberyCreationForm, 145, 137), _target("") {
-	if (getGradeToSign() < 145 || getGradeToExecute() < 137)
+	if (this->getGradeToSign() < 145 || this->getGradeToExecute() < 137)
 		throw ShrubberyCreationForm::GradeTooLowException();
+	return ;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & copy): _target(copy._target) {*this = copy;}
@@ -31,7 +32,7 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator = (const ShrubberyCreati
 }
 
 const char * ShrubberyCreationForm::GradeTooLowException::what() const throw() {
-	return ("Exception: Grade Too Low to sign or execute ShrubberyCreationForm");
+	return ("Exception: Grade Too Low to execute ShrubberyCreationForm");
 }
 
 std::string	ShrubberyCreationForm::getTarget() const {
@@ -39,22 +40,22 @@ std::string	ShrubberyCreationForm::getTarget() const {
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
-	if (this->getSigned() == false)
+	if (this->getSigned() == false || (executor.getGrade() > this->getGradeToExecute()))
 		throw ShrubberyCreationForm::GradeTooLowException();
-	else if (executor.getGrade() > this->getGradeToExecute())
-		throw Form::GradeTooLowException();
-	std::cout << executor.getName() << " has create Shrubbery." << std::endl;
-	std::ofstream out;
-	if (!out)
-	{
-		std::cerr << "Error: cannot create file." << std::endl;
-		return ;
+	else {
+		std::cout << executor.getName() << " has create Shrubbery." << std::endl;
+		std::ofstream out;
+		if (!out)
+		{
+			std::cerr << "Error: cannot create file." << std::endl;
+			return ;
+		}
+		out.open(this->_target + "_Shrubbery", std::ios::out);
+		out << "  o__o___o__o " << std::endl;
+		out << "    o/_/_/o   " << std::endl;
+		out << "       ||     " << std::endl;
+		out << "       ||     "<< std::endl;
+		out << "	  /||+    " << std::endl;
+		out.close();
 	}
-	out.open(this->_target + "_Shrubbery", std::ios::out);
-	out << "  o__o___o__o " << std::endl;
-	out << "    o/_/_/o   " << std::endl;
-	out << "       ||     " << std::endl;
-	out << "       ||     "<< std::endl;
-	out << "	  /||+    " << std::endl;
-	out.close();
 }
