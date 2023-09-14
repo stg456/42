@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 11:41:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/14 14:01:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/14 16:23:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ Intern::Intern(void) {
 	this->_formName[0] = "shrubbery creation";
 	this->_formName[1] = "robotomy request";
 	this->_formName[2] = "presidential pardon";
-	this->_form[0] = &Intern::makeShrubberyCreationForm;
-	this->_form[1] = &Intern::makeRobotomyRequestForm;
-	this->_form[2] = &Intern::makePresidentialPardonForm;
+	this->_form[0] = & Intern::makeShrubberyCreationForm;
+	this->_form[1] = & Intern::makeRobotomyRequestForm;
+	this->_form[2] = & Intern::makePresidentialPardonForm;
 }
 
 Intern::Intern(const Intern &copy) {
