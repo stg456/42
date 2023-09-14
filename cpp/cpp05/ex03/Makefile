@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 16:08:20 by stgerard          #+#    #+#              #
-#    Updated: 2023/09/08 11:09:19 by stgerard         ###   ########.fr        #
+#    Updated: 2023/09/14 16:07:55 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,15 @@ NAME = Bureaucrat
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 
 
 RM = rm -f
 
 SRCS =	main.cpp Bureaucrat.cpp Form.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
-		PresidentialPardonForm.cpp
+		PresidentialPardonForm.cpp \
+		Intern.cpp
 
 OBJS = ${SRCS:.cpp=.o}
 
