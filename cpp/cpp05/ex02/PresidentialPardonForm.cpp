@@ -6,15 +6,15 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:09:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 16:23:47 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/14 11:29:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void): _target("") {}
+PresidentialPardonForm::PresidentialPardonForm(void): _target("PresidentialPardonForm") {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target): Form("", 25, 5), _target(target) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target): Form(target, 25, 5), _target(target) {
 	if (getGradeToSign() > 25 || getGradeToExecute() > 5)
 		throw PresidentialPardonForm::GradeTooLowException();
 }
@@ -39,11 +39,9 @@ std::string	PresidentialPardonForm::getTarget() const {
 }
 
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
-	if (executor.getGrade() <= 5) {
-		std::cout << getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
-	}
-	else if (executor.getGrade() > 5) {
-		std::cout << executor.getName() << " has create PresidentialPardonForm." << std::endl;
+	if (executor.getGrade() > 5)
 		throw PresidentialPardonForm::GradeTooLowException();
+	if (executor.getGrade() <= 5) {
+		std::cout << executor.getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 	}
 }

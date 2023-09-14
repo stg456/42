@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 16:12:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/14 11:29:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) : Form("ShrubberyCreationForm", 145, 137), _target() {}
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string str): Form("ShrubberyCreationForm", 145, 137), _target(str) {
-	this->_target = str;
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target): Form(target, 145, 137), _target(target) {
+	this->_target = target;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm & copy): _target(copy._target) {*this = copy;}
