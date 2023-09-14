@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 11:41:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/14 13:20:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/14 14:01:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,20 @@ Form *		Intern::makeForm(std::string formName, std::string target) {
 	for (int i = 0; i < 3; i++)
 	{
 		if (formName == this->_formName[i])
-			return (this->*_form[i])(target);
+			return ((this->*_form[i])(target));
 	}
 	std::cout << "Form name not found" << std::endl;
 	return NULL;
 }
 
-// Form *		Intern::makeShrubberyCreationForm(std::string target) {
-// 	return new ShrubberyCreationForm(target);
-// }
+Form *		Intern::makeShrubberyCreationForm(std::string target) {
+	return new ShrubberyCreationForm(target);
+}
 
-// Form *		Intern::makeRobotomyRequestForm(std::string target) {
-// 	return new RobotomyRequestForm(target);
-// }
+Form *		Intern::makeRobotomyRequestForm(std::string target) {
+	return new RobotomyRequestForm(target);
+}
 
-// Form *		Intern::makePresidentialPardonForm(std::string target) {
-// 	return new PresidentialPardonForm(target);
-// }
+Form *		Intern::makePresidentialPardonForm(std::string target) {
+	return new PresidentialPardonForm(target);
+}
