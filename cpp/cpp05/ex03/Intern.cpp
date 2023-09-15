@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 11:41:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/15 10:43:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/15 10:49:12 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Intern & Intern::operator = (const Intern & rhs) {
 
 Intern::~Intern(void) {}
 
-Form *		Intern::makeForm(std::string formName, std::string target) {
+Form *		Intern::makeForm(std::string formName, std::string target) { // il ne trouve pas la request !
 	int i = 0;
 	Form * (Intern::*makeForm[3]) (std::string target) = {&Intern::Shrub, &Intern::Robot, &Intern::Presid};
 	std::string str[3] = {"shrubbery request", "robotomy request", "presidential pardon request"};

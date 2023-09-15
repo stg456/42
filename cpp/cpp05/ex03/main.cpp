@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/15 10:38:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/15 10:47:26 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void test1() {
 	Form * rrf;
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 	// if (rrf) {
-		B3.signForm(*rrf);
-		B3.executeForm(*rrf);
+		// B3.signForm(*rrf);
+		// B3.executeForm(*rrf);
 	// }
 	delete rrf;
 }
