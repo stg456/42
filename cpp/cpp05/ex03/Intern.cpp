@@ -6,20 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 11:41:00 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/14 16:23:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/15 10:43:12 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
 
-Intern::Intern(void) {
-	this->_formName[0] = "shrubbery creation";
-	this->_formName[1] = "robotomy request";
-	this->_formName[2] = "presidential pardon";
-	this->_form[0] = & Intern::makeShrubberyCreationForm;
-	this->_form[1] = & Intern::makeRobotomyRequestForm;
-	this->_form[2] = & Intern::makePresidentialPardonForm;
-}
+Intern::Intern(void) {}
 
 Intern::Intern(const Intern &copy) {
 	*this = copy;
@@ -34,23 +27,27 @@ Intern & Intern::operator = (const Intern & rhs) {
 Intern::~Intern(void) {}
 
 Form *		Intern::makeForm(std::string formName, std::string target) {
-	for (int i = 0; i < 3; i++)
-	{
-		if (formName == this->_formName[i])
-			return ((this->*_form[i])(target));
+	int i = 0;
+	Form * (Intern::*makeForm[3]) (std::string target) = {&Intern::Shrub, &Intern::Robot, &Intern::Presid};
+	std::string str[3] = {"shrubbery request", "robotomy request", "presidential pardon request"};
+	if (formName == str[i]) {
+			std::cout << "Intern creates " << formName << std::endl;
+			return (this->*makeForm[i])(target);
 	}
-	std::cout << "Form name not found" << std::endl;
-	return NULL;
+	else {
+		std::cout << "the request " << formName << " do not exist." << std::endl;
+		return NULL;
+	}
 }
 
-Form *		Intern::makeShrubberyCreationForm(std::string target) {
+Form *		Intern::Shrub(std::string target) {
 	return new ShrubberyCreationForm(target);
 }
 
-Form *		Intern::makeRobotomyRequestForm(std::string target) {
+Form *		Intern::Robot(std::string target) {
 	return new RobotomyRequestForm(target);
 }
 
-Form *		Intern::makePresidentialPardonForm(std::string target) {
+Form *		Intern::Presid(std::string target) {
 	return new PresidentialPardonForm(target);
 }
