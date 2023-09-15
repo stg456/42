@@ -6,23 +6,24 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:11:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/15 12:55:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/15 13:13:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "convert.hpp"
 
-Convert::Convert() {}
+ScalarConverter::ScalarConverter() {}
 
-Convert::Convert(const Convert & copy) {
+ScalarConverter::ScalarConverter(const ScalarConverter & copy) {
 	*this = copy;
 }
 
-Convert & Convert::operator = (const Convert & rhs) {
+ScalarConverter & ScalarConverter::operator = (const ScalarConverter & rhs) {
 	return *this;
 }
 
-Convert::~Convert() {}
+ScalarConverter::~ScalarConverter() {}
+
 
 void	ToInt(double nb) {
 

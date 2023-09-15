@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:10:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/15 12:55:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/15 13:13:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 # include <iostream>
 
-class Convert
+class ScalarConverter
 {
 	public:
-		Convert();
-		Convert(const Convert & copy);
-		Convert & operator = (const Convert & rhs);
-		~Convert();
+		ScalarConverter();
+		ScalarConverter(const ScalarConverter & copy);
+		ScalarConverter & operator = (const ScalarConverter & rhs);
+		~ScalarConverter();
 
 		void	ft_convert(double nb);
 };
