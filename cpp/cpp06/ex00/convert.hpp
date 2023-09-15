@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:10:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/15 12:42:48 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/15 12:55:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Convert
 		Convert & operator = (const Convert & rhs);
 		~Convert();
 
-		void	ft_convert(double nb)
+		void	ft_convert(double nb);
 };
 
 #endif

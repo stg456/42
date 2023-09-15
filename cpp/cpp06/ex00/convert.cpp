@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 12:11:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/15 12:42:48 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/15 12:55:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ Convert::Convert(const Convert & copy) {
 }
 
 Convert & Convert::operator = (const Convert & rhs) {
-	// if (this == &rhs)
-	// 	return *this;
 	return *this;
 }
 
