@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/18 17:25:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:28:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(int ac, char **av)
 		return 1;
 	}
 	else {
-		if (strlen(av[1]) && !isdigit(*av[1]))
+		if (strlen(av[1]) == 1 && !isdigit(*av[1]))
 			d = std::strtod(av[1], NULL); // interprete comme un double, passe les whitspaces etc
 		sc.convert(d);
 	}
