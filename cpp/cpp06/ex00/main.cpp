@@ -5,12 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 12:20:41 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/15 12:36:38 by stgerard         ###   ########.fr       */
+/*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/18 10:04:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "convert.hpp"
+#include "ScalarConverter.hpp"
 
-#include <iostream>
-
+int main(int argc, char **argv)
+{
+	if (argc != 2)
+	{
+		std::cout << "Wrong number of arguments" << std::endl;
+		return 1;
+	}
+	ScalarConverter sc;
+	sc.convert(argv[1]);
+	return 0;
+}

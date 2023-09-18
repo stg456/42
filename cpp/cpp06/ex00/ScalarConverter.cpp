@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.cpp                                        :+:      :+:    :+:   */
+/*   ScalarConverter.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/15 12:11:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/15 13:13:13 by stgerard         ###   ########.fr       */
+/*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
+/*   Updated: 2023/09/18 09:49:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "convert.hpp"
+#include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter() {}
 
@@ -18,32 +18,21 @@ ScalarConverter::ScalarConverter(const ScalarConverter & copy) {
 	*this = copy;
 }
 
-ScalarConverter & ScalarConverter::operator = (const ScalarConverter & rhs) {
+ScalarConverter & ScalarConverter::operator=(const ScalarConverter & rhs) {
+	// if (this != &rhs)
+	// {
+	// }
 	return *this;
 }
 
 ScalarConverter::~ScalarConverter() {}
 
+void	ScalarConverter::convert(std::string str) {}
 
-void	ToInt(double nb) {
+void	ScalarConverter::toChar() {}
 
-}
+void	ScalarConverter::toInt() {}
 
-void	ToFloat(double nb) {
+void	ScalarConverter::toFloat() {}
 
-}
-
-void	ToDouble(double nb) {
-
-}
-
-void	ToChar(double nb) {
-
-}
-
-void	ft_convert(double nb) {
-	ToInt(nb);
-	ToFloat(nb);
-	ToDouble(nb);
-	ToChar(nb);
-}
+void	ScalarConverter::toDouble() {}

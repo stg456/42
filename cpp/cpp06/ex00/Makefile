@@ -6,11 +6,11 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 16:08:20 by stgerard          #+#    #+#              #
-#    Updated: 2023/09/15 12:12:08 by stgerard         ###   ########.fr        #
+#    Updated: 2023/09/18 10:04:44 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
+NAME = ScalarConverter
 
 CC = c++
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRCS = main.cpp convert.cpp \
+SRCS = main.cpp ScalarConverter.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
