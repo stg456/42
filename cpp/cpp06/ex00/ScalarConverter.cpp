@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/18 14:06:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/18 14:24:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ void	ScalarConverter::toChar(double d) {
 }
 
 void	ScalarConverter::toInt(double d) {
-	
+	int i = static_cast<int>(d);
 }
 
 void	ScalarConverter::toFloat(double d) {
-
+	float f = static_cast<float>(d);
 }
 
 void	ScalarConverter::toDouble(double d) {
-
+	return (d);
 }
 
 void	ScalarConverter::convert(double d) {
