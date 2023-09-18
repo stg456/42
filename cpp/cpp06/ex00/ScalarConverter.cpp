@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/18 13:24:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/18 14:06:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,32 @@ ScalarConverter & ScalarConverter::operator = (const ScalarConverter & rhs) {
 
 ScalarConverter::~ScalarConverter() {}
 
-void	ScalarConverter::convert(double d) {
 
+
+void	ScalarConverter::toChar(double d) {
+	if (d >= 32 && d <= 126)
+		std::cout << "char: " << static_cast<char>(d) << std::endl;
+	else
+		std::cout << "char: Non displayable" << std::endl;
+}
+
+void	ScalarConverter::toInt(double d) {
+	
+}
+
+void	ScalarConverter::toFloat(double d) {
 
 }
 
-void	ScalarConverter::toChar() {}
+void	ScalarConverter::toDouble(double d) {
 
-void	ScalarConverter::toInt() {}
+}
 
-void	ScalarConverter::toFloat() {}
+void	ScalarConverter::convert(double d) {
+	ScalarConverter	sc;
 
-void	ScalarConverter::toDouble() {}
+	sc.toChar(d);
+	sc.toInt(d);
+	sc.toFloat(d);
+	sc.toDouble(d);
+}
