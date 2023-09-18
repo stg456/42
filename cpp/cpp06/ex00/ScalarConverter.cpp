@@ -6,11 +6,11 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/18 09:49:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/18 10:06:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+# include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter() {}
 
