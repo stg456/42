@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/18 16:32:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/18 17:12:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ ScalarConverter::ScalarConverter(const ScalarConverter & copy) {
 }
 
 ScalarConverter & ScalarConverter::operator = (const ScalarConverter & rhs) {
+	if (this == &rhs)
+		return *this;
 	return *this;
 }
 
@@ -34,10 +36,10 @@ void	ScalarConverter::toChar(double d) {
 }
 
 void	ScalarConverter::toInt(double d) {
-	if (d < std::numeric_limits<int>::min() || d > std::numeric_limits<int>::max() || std::numeric_limits<int>::signaling_NaN())
-		std::cout << "int: impossible" << std::endl;
-	else
+	if (d > std::numeric_limits<int>::min() && d < std::numeric_limits<int>::max() && std::numeric_limits<int>::signaling_NaN())
 		std::cout << "int: " << static_cast<int>(d) << std::endl;
+	else
+		std::cout << "int: impossible" << std::endl;
 }
 
 void	ScalarConverter::toFloat(double d) {
@@ -52,7 +54,6 @@ void	ScalarConverter::toDouble(double d) {
 		std::cout << "double: " << static_cast<double>(d) << std::endl;
 	else
 		std::cout << "double: out of range" << std::endl;
-	return (d);
 }
 
 void	ScalarConverter::convert(double d) {
