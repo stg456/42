@@ -6,20 +6,21 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/18 10:06:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/18 11:13:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "ScalarConverter.hpp"
 
-int main(int argc, char **argv)
+int main(int ac, char **av)
 {
-	if (argc != 2)
-	{
+	ScalarConverter sc;
+
+	if (ac != 2) {
 		std::cout << "Wrong number of arguments" << std::endl;
 		return 1;
 	}
-	ScalarConverter sc;
-	sc.convert(argv[1]);
+
+	sc.convert(av[1]);
 	return 0;
 }
