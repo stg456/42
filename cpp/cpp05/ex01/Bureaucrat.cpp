@@ -6,13 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:09:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/08 10:36:26 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:11:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() {}
+Bureaucrat::Bureaucrat() : _name("Bill") {}
 
 Bureaucrat::Bureaucrat(std::string name, int i) : _name(name) {
 	if (i < 1)
@@ -37,13 +37,13 @@ int Bureaucrat::getGrade() const {
 }
 
 void  Bureaucrat::upGrade() {
-	if (this->_grade == 1)
+	if (this->_grade <= 1)
 		throw Bureaucrat::GradeTooHighException();
 	this->_grade--;
 }
 
 void  Bureaucrat::downGrade() {
-	if (this->_grade == 150)
+	if (this->_grade >= 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade++;
 }
