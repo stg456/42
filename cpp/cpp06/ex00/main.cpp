@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/18 17:45:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/19 10:47:08 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@ int main(int ac, char **av)
 		std::cout << "Wrong number of arguments" << std::endl;
 		return 1;
 	}
-	else {
-		if (av[1]) {
+	if (ac == 2) {
+		if (strlen(av[1]) == 1 && !isdigit(av[1][0]))
+			d = static_cast<double>(av[1][0]);
+		else {
 			d = std::strtod(av[1], NULL); // interprete comme un double, passe les whitspaces etc
 			std::cout << "d: " << d << std::endl;
-			sc.convert(d);
 		}
 	}
+	sc.convert(d);
 	
 	return 0;
 }
