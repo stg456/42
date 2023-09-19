@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/14 11:32:17 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/19 17:29:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void test() {
 
     try {
         B1.signForm(shrub);
+		B1.signForm(shrub);
 		B1.executeForm(shrub);
     }
     catch(std::exception &e) {
