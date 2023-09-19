@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/19 10:54:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/19 11:04:56 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,14 +43,14 @@ void	ScalarConverter::toInt(double d) {
 }
 
 void	ScalarConverter::toFloat(double d) {
-	if(!std::numeric_limits<float>::infinity())
+	if(d > std::numeric_limits<float>::min() && d < std::numeric_limits<float>::max() /*!std::numeric_limits<float>::infinity()*/)
 		std::cout << "float: " << static_cast<float>(d) << std::endl;
 	else
 		std::cout << "float: out of range" << std::endl;
 }
 
 void	ScalarConverter::toDouble(double d) {
-	if(!std::numeric_limits<double>::infinity())
+	if(d > std::numeric_limits<double>::min() && d < std::numeric_limits<double>::max() /*!std::numeric_limits<double>::infinity()*/)
 		std::cout << "double: " << static_cast<double>(d) << std::endl;
 	else
 		std::cout << "double: out of range" << std::endl;
