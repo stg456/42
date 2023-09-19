@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/18 17:12:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/19 10:54:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	ScalarConverter::toChar(double d) {
 }
 
 void	ScalarConverter::toInt(double d) {
-	if (d > std::numeric_limits<int>::min() && d < std::numeric_limits<int>::max() && std::numeric_limits<int>::signaling_NaN())
+	if (d > std::numeric_limits<int>::min() && d < std::numeric_limits<int>::max()/* && std::numeric_limits<int>::signaling_NaN()*/)
 		std::cout << "int: " << static_cast<int>(d) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
