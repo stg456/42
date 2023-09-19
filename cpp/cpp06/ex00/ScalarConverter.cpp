@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/19 11:04:56 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/19 11:23:56 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ScalarConverter::toInt(double d) {
 
 void	ScalarConverter::toFloat(double d) {
 	if(d > std::numeric_limits<float>::min() && d < std::numeric_limits<float>::max() /*!std::numeric_limits<float>::infinity()*/)
-		std::cout << "float: " << static_cast<float>(d) << std::endl;
+		std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
 	else
 		std::cout << "float: out of range" << std::endl;
 }
