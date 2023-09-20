@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:09:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/20 13:17:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:08:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,6 @@ void	Bureaucrat::signForm(AForm &f) {
 	else if (f.getSigned() == false && f.getGradeToSign() >= this->getGrade())
 		std::cout << this->_name << " sign " << f.getName() << " because his grade permit him to sign" << std::endl;
 	f.beSigned(*this);
-	
-	// return ;
 }
 
 void	Bureaucrat::executeForm(AForm const & f) {
@@ -86,9 +84,10 @@ void	Bureaucrat::executeForm(AForm const & f) {
 	// 	std::cout << f.getName() << " couldn't execute " << f.getTarget() << " because his grade is too low to execute" << std::endl;
 	// else if (f.getGradeToExecute() >= getGrade()) {
 	// 	std::cout << f.getName() << " executed " << f.getTarget() << std::endl;
-	if (f.getSigned() == true)
+	if (f.getSigned() == true) {
 		f.execute(*this);
+		std::cout << this->_name << " executed " << f.getName() << std::endl;
+	}
 	else
 		std::cout << this->_name << " couldn't execute " << f.getName() << " because this form is not signed." << std::endl;
-		return ;
 }
