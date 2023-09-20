@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:09:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/20 15:05:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:51:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void  Bureaucrat::downGrade() {
 Bureaucrat & Bureaucrat::operator = (const Bureaucrat & rhs) {
 	if (this == &rhs)
 		return *this;
+	// this->_grade = rhs._grade;
 	return *this;
 }
 
@@ -68,7 +69,7 @@ std::ostream & operator << (std::ostream & out, const Bureaucrat & rhs) {
 	return (out);
 }
 
-void	Bureaucrat::signForm(AForm &f) {
+void	Bureaucrat::signForm(Form &f) {
 	if (f.getSigned() == 1 )
 		std::cout << this->_name << " always signed " << f.getName() << std::endl;
 	else if (f.getSigned() == false && f.getGradeToSign() < this->getGrade())
@@ -78,7 +79,11 @@ void	Bureaucrat::signForm(AForm &f) {
 	f.beSigned(*this);
 }
 
-void	Bureaucrat::executeForm(AForm const & f) {
+void	Bureaucrat::executeForm(Form const & f) {
+	// if ((!f.getGradeToExecute()) || !f.getSigned())
+	// 	std::cout << f.getName() << " couldn't execute " << f.getTarget() << " because his grade is too low to execute" << std::endl;
+	// else if (f.getGradeToExecute() >= getGrade()) {
+	// 	std::cout << f.getName() << " executed " << f.getTarget() << std::endl;
 	if (f.getSigned() == true) {
 		f.execute(*this);
 		std::cout << this->_name << " executed " << f.getName() << std::endl;

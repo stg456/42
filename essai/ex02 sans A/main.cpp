@@ -6,12 +6,12 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/20 15:03:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:58:06 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -21,7 +21,7 @@ void test() {
         ShrubberyCreationForm	shrub("formulaire de création de Shrubbery");
 		RobotomyRequestForm		robot("formulaire de robotomysation");
 		PresidentialPardonForm	presid("formulaire de pardon présidentiel");
-        Bureaucrat B1("Jim", 130);	// 145 to sign, 137 to execute
+        Bureaucrat B1("Jim", 160);	// 145 to sign, 137 to execute
 		Bureaucrat B2("Jess", 40);	// 72 to sign, 45 to execute
 		Bureaucrat B3("Jack", 5);	// 25 to sign, 5 to execute
 
