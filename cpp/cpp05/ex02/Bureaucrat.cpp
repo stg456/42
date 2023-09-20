@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:09:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/20 14:08:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/20 14:23:47 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void  Bureaucrat::downGrade() {
 Bureaucrat & Bureaucrat::operator = (const Bureaucrat & rhs) {
 	if (this == &rhs)
 		return *this;
-	this->_grade = rhs._grade;
+	// this->_grade = rhs._grade;
 	return *this;
 }
 
