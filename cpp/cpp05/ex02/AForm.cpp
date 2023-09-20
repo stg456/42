@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/20 12:57:53 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:27:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ std::string	AForm::getName(void) const {
 }
 
 void		AForm::beSigned(Bureaucrat &b) {
+	// if (this->getSigned() == true)
+	// 	throw
 	if (b.getGrade() > this->_gradeToSigned)
 		throw AForm::GradeTooLowException();
 	this->_signed = 1;
