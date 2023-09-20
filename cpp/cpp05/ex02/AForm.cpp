@@ -6,21 +6,15 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/20 15:07:05 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:28:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm(void): _nameDoc(""), _signed(0), _gradeToSigned(150), _gradeToExecute(150) {}
+AForm::AForm(void): _nameDoc("form"), _signed(0), _gradeToSigned(150), _gradeToExecute(150) {}
 
-AForm::AForm(std::string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDoc(nameDoc), _gradeToSigned(gradeToSigned), _gradeToExecute(gradeToExecute) {
-	(void) nameDoc;
-	if (gradeToSigned < 1 || gradeToExecute < 1)
-		throw AForm::GradeTooHighException();
-	if (gradeToSigned > 150 || gradeToExecute > 150)
-		throw AForm::GradeTooLowException();
-}
+AForm::AForm(std::string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDoc(nameDoc), _gradeToSigned(gradeToSigned), _gradeToExecute(gradeToExecute) {}
 
 AForm::AForm(const AForm & copy) : _nameDoc(copy._nameDoc), _gradeToSigned(copy._gradeToSigned), _gradeToExecute(copy._gradeToExecute) {
 	*this = copy;
