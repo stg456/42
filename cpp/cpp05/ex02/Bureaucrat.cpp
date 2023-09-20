@@ -6,20 +6,21 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:09:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/19 17:31:37 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/20 13:17:12 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat() : _name("Bill") {}
+Bureaucrat::Bureaucrat() : _name("Bill"), _grade(150) {}
 
-Bureaucrat::Bureaucrat(std::string name, int i) : _name(name) {
-	if (i < 1)
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade) {
+	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
-	if (i > 150)
+	else if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	this->_grade = i;
+	else
+		this->_grade = grade;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat & copy) {
@@ -68,7 +69,7 @@ std::ostream & operator << (std::ostream & out, const Bureaucrat & rhs) {
 	return (out);
 }
 
-void	Bureaucrat::signForm(Form &f) {
+void	Bureaucrat::signForm(AForm &f) {
 	if (f.getSigned() == 1 )
 		std::cout << this->_name << " always signed " << f.getName() << std::endl;
 	else if (f.getSigned() == false && f.getGradeToSign() < this->getGrade())
@@ -80,11 +81,14 @@ void	Bureaucrat::signForm(Form &f) {
 	// return ;
 }
 
-void	Bureaucrat::executeForm(Form const & f) {
+void	Bureaucrat::executeForm(AForm const & f) {
 	// if ((!f.getGradeToExecute()) || !f.getSigned())
 	// 	std::cout << f.getName() << " couldn't execute " << f.getTarget() << " because his grade is too low to execute" << std::endl;
 	// else if (f.getGradeToExecute() >= getGrade()) {
 	// 	std::cout << f.getName() << " executed " << f.getTarget() << std::endl;
+	if (f.getSigned() == true)
 		f.execute(*this);
+	else
+		std::cout << this->_name << " couldn't execute " << f.getName() << " because this form is not signed." << std::endl;
 		return ;
 }
