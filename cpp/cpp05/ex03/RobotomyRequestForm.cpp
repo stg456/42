@@ -6,15 +6,15 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:02:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 09:53:56 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:09:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(void): _target("RobotomyRequestForm") {}
+RobotomyRequestForm::RobotomyRequestForm(void): AForm("RobotomyRequestForm", 25, 5), _target("Bender") {}
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm(target, 72, 45), _target("RobotomyRequestForm") {
+RobotomyRequestForm::RobotomyRequestForm(std::string target): AForm("RobotomyRequestForm", 72, 45), _target(target) {
 	if (getGradeToSign() < 72 || getGradeToExecute() < 45)
 		throw RobotomyRequestForm::GradeTooLowException();
 }
