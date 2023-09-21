@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 16:14:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:12:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ ScalarConverter & ScalarConverter::operator = (const ScalarConverter & rhs) {
 ScalarConverter::~ScalarConverter() {}
 
 
-// int ScalarConverter::check(char *argv)
-// {
-// 	if (strcmp(argv, "-inff") == 0 || strcmp(argv, "+inff") == 0 || strcmp(argv, "nanf") == 0 
-// 		|| strcmp(argv, "-inf") == 0 || strcmp(argv, "+inf") == 0 || strcmp(argv, "nan") == 0
-// 			|| strcmp(argv, "inf") == 0 || strcmp(argv, "inff") == 0)
-// 		return (0);
-// 	return (1);	
-// }
+int ScalarConverter::check(char *argv)
+{
+	if (strcmp(argv, "-inff") == 0 || strcmp(argv, "+inff") == 0 || strcmp(argv, "nanf") == 0 
+		|| strcmp(argv, "-inf") == 0 || strcmp(argv, "+inf") == 0 || strcmp(argv, "nan") == 0
+			|| strcmp(argv, "inf") == 0 || strcmp(argv, "inff") == 0)
+		return (0);
+	return (1);	
+}
 
 void	ScalarConverter::toChar(double d) {
 	if (d >= 32 && d <= 126)

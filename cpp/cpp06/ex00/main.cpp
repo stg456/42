@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 16:17:01 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:16:08 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int main(int argc, char **argv)
 		return 1;
 	}
 	if (argc == 2) {
-	// 	if (sc.check(argv[1])) {
-	// 	std::cout << "char: impossible" << std::endl;
-	// 	std::cout << "int: impossible" << std::endl;
-	// 	std::cout << "float: nanf" << std::endl;
-	// 	std::cout << "double: nan" << std::endl;
-	// 	return 0;
-	// 	}
+		if (!sc.check(argv[1])) {
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+		return 0;
+		}
 		if (strlen(argv[1]) == 1 && !isdigit(argv[1][0]))
 			d = static_cast<double>(argv[1][0]);
 		
@@ -41,3 +41,4 @@ int main(int argc, char **argv)
 	
 	return 0;
 }
+// pas encore les neg, pas encore le .0
