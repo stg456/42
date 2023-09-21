@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 15:09:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:12:22 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 			std::cerr << "Error: cannot create file." << std::endl;
 			return ;
 		}
-		out.open(this->_target, std::ios::out);
+		out.open(this->getName(), std::ios::out);
 		out << "  o__o___o__o " << std::endl;
 		out << "    o/_/_/o   " << std::endl;
 		out << "       ||     " << std::endl;

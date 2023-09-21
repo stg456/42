@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:09:54 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 14:28:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:14:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,5 +88,4 @@ void	Bureaucrat::executeForm(AForm const & f) {
 	}
 	else
 		std::cout << f.getTarget() << " couldn't execute " << f.getName() << " because this form is not signed." << std::endl;
-	// f.getSigned() == false;
 }

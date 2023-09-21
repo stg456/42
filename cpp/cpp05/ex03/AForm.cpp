@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 15:04:49 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:14:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,5 @@ std::ostream & operator << (std::ostream & out, const AForm & rhs) {
 		out <<  "signed" << std::endl;
 	else
 		out << "not signed" << std::endl;
-	// this->beSigned() = 0;
 	return (out);
 }

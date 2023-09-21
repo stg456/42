@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:09:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 15:09:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:14:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,4 @@ void	PresidentialPardonForm::execute(Bureaucrat const & executor) const {
 	if (executor.getGrade() <= 5) {
 		std::cout << executor.getName() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 	}
-	// this->getSigned() == false;
 }
