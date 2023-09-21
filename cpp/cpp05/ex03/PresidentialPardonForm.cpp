@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:09:11 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/14 11:29:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:53:56 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 PresidentialPardonForm::PresidentialPardonForm(void): _target("PresidentialPardonForm") {}
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target): Form(target, 25, 5), _target(target) {
+PresidentialPardonForm::PresidentialPardonForm(std::string target): AForm(target, 25, 5), _target(target) {
 	if (getGradeToSign() > 25 || getGradeToExecute() > 5)
 		throw PresidentialPardonForm::GradeTooLowException();
 }

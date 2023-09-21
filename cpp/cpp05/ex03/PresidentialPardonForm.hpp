@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:05:43 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/12 17:17:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:50:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 # define PRESIDENTIALPARDONFORM_HPP
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 class Bureaucrat;
 // class Form;
 
-class PresidentialPardonForm : public Form
+class PresidentialPardonForm : public AForm
 {
 	private:
 		std::string	_target;

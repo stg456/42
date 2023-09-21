@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 16:08:20 by stgerard          #+#    #+#              #
-#    Updated: 2023/09/19 17:33:46 by stgerard         ###   ########.fr        #
+#    Updated: 2023/09/21 09:47:54 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRCS =	main.cpp Bureaucrat.cpp Form.cpp \
+SRCS =	main.cpp Bureaucrat.cpp AForm.cpp \
 		ShrubberyCreationForm.cpp \
 		RobotomyRequestForm.cpp \
 		PresidentialPardonForm.cpp \

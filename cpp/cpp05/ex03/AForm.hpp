@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:13 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 11:03:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:26:04 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-# define FORM_HPP
+#ifndef AFORM_HPP
+# define AFORM_HPP
 
 #include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class Form
+class AForm
 {
 	private:
 		std::string const	_nameDoc;
@@ -26,11 +26,11 @@ class Form
 		int const			_gradeToExecute;
 
 	public:
-		Form(void);
-		Form(std::string nameDoc, int gradeToSigned, int gradeToExecute);
-		Form(const Form &copy);
-		virtual Form & operator = (const Form & rhs);
-		virtual ~Form(void);
+		AForm(void);
+		AForm(std::string nameDoc, int gradeToSigned, int gradeToExecute);
+		AForm(const AForm &copy);
+		virtual AForm & operator = (const AForm & rhs);
+		virtual ~AForm(void);
 
 		void		beSigned(Bureaucrat &b);
 		std::string	getName(void) const;
@@ -52,6 +52,6 @@ class Form
 		};
 };
 
-std::ostream & operator << (std::ostream & out, const Form & rhs);
+std::ostream & operator << (std::ostream & out, const AForm & rhs);
 
 #endif

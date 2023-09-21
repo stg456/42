@@ -6,12 +6,12 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/15 11:37:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:52:38 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -20,7 +20,7 @@
 void test1() {
 	Bureaucrat B3("Jack", 5);
 	Intern someRandomIntern;
-	Form * rrf;
+	AForm * rrf;
 	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
 	if (rrf) {
 		B3.signForm(*rrf);
@@ -32,7 +32,7 @@ void test1() {
 void test2() {
 	Bureaucrat B2("Jim", 5);
 	Intern someRandomIntern;
-	Form * rrf;
+	AForm * rrf;
 	rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
 	B2.signForm(*rrf);
 	B2.executeForm(*rrf);
@@ -42,7 +42,7 @@ void test2() {
 void test3() {
 	Bureaucrat B1("Joe", 5);
 	Intern someRandomIntern;
-	Form * rrf;
+	AForm * rrf;
 	rrf = someRandomIntern.makeForm("presidential pardon request", "Bender");
 	B1.signForm(*rrf);
 	B1.executeForm(*rrf);
@@ -52,7 +52,7 @@ void test3() {
 void test4() {
 	Bureaucrat B3("Jack", 5);
 	Intern someRandomIntern;
-	Form * rrf;
+	AForm * rrf;
 	rrf = someRandomIntern.makeForm("bla bla request", "Bender");
 	if (rrf) {
 		B3.signForm(*rrf);

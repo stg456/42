@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:47:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/14 11:15:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:50:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 # define ROBOTOMYREQUESTFORM_HPP
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <cstdlib> // Inclure la bibliothèque pour les fonctions de génération aléatoire
 #include <ctime>	// Inclure la bibliothèque pour l'initialisation de la graine
 
 class Bureaucrat;
 // class Form; // pb: forward declaration of Form class
 
-class RobotomyRequestForm : public Form
+class RobotomyRequestForm : public AForm
 {
 	private:
 		std::string	_target;

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 09:35:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:46:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ void test() {
         ShrubberyCreationForm	shrub("formulaire de création de Shrubbery");
 		RobotomyRequestForm		robot("formulaire de robotomysation");
 		PresidentialPardonForm	presid("formulaire de pardon présidentiel");
-        Bureaucrat B1("Jim", 151);	// 145 to sign, 137 to execute
-		Bureaucrat B2("Jess", 40);	// 72 to sign, 45 to execute
-		Bureaucrat B3("Jack", 5);	// 25 to sign, 5 to execute
+        // Bureaucrat B1("Jim", 151);	// 145 to sign, 137 to execute
+		// Bureaucrat B2("Jess", 40);	// 72 to sign, 45 to execute
+		// Bureaucrat B3("Jack", 5);	// 25 to sign, 5 to execute
 
     try {
+	    Bureaucrat B1("Jim", 130);	// 145 to sign, 137 to execute
+
         B1.signForm(shrub);
 		// B1.signForm(shrub);
 		B1.executeForm(shrub);
@@ -35,6 +37,8 @@ void test() {
     }
 	std::cout << std::endl;
     try {
+		Bureaucrat B2("Jess", 40);	// 72 to sign, 45 to execute
+
         B2.signForm(robot);
 		B2.executeForm(robot);
     }
@@ -43,6 +47,8 @@ void test() {
     }
 	std::cout << std::endl;
     try {
+		Bureaucrat B3("Jack", 5);	// 25 to sign, 5 to execute
+
         B3.signForm(presid);
 		B3.executeForm(presid);
     }

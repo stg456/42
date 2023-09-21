@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:44:02 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/13 14:26:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:50:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include <fstream>
 #include <string>
 
-class ShrubberyCreationForm : public Form
+class ShrubberyCreationForm : public AForm
 {
 	private:
 		std::string	_target;

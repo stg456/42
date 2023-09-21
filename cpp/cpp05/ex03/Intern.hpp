@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 11:38:20 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/15 11:38:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:53:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define INTERN_HPP
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
@@ -27,10 +27,10 @@ class Intern
 		Intern & operator = (const Intern & rhs);
 		~Intern(void);
 
-		Form *		makeForm(std::string formName, std::string target);
-		Form *		Shrub(std::string target);
-		Form *		Robot(std::string target);
-		Form *		Presid(std::string target);
+		AForm *		makeForm(std::string formName, std::string target);
+		AForm *		Shrub(std::string target);
+		AForm *		Robot(std::string target);
+		AForm *		Presid(std::string target);
 };
 
 #endif
