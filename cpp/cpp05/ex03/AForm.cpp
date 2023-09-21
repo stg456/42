@@ -6,17 +6,17 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 14:17:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 14:44:53 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-AForm::AForm(void): _nameDoc("form"), _signed(0), _gradeToSigned(150), _gradeToExecute(150) {}
+AForm::AForm(void): _nameDoc("form"), _signed(false), _gradeToSigned(150), _gradeToExecute(150) {}
 
-AForm::AForm(std::string nameDoc, int gradeToSigned, int gradeToExecute) : _nameDoc(nameDoc), _gradeToSigned(gradeToSigned), _gradeToExecute(gradeToExecute) {}
+AForm::AForm(std::string nameDoc, bool signed, int gradeToSigned, int gradeToExecute) : _nameDoc(nameDoc), _signed(signed), _gradeToSigned(gradeToSigned), _gradeToExecute(gradeToExecute) {}
 
-AForm::AForm(const AForm & copy) : _nameDoc(copy._nameDoc), _gradeToSigned(copy._gradeToSigned), _gradeToExecute(copy._gradeToExecute) {
+AForm::AForm(const AForm & copy) : _nameDoc(copy._nameDoc), _signed(signed), _gradeToSigned(copy._gradeToSigned), _gradeToExecute(copy._gradeToExecute) {
 	*this = copy;
 }
 
@@ -65,5 +65,6 @@ std::ostream & operator << (std::ostream & out, const AForm & rhs) {
 		out <<  "signed" << std::endl;
 	else
 		out << "not signed" << std::endl;
+	// this->beSigned() = 0;
 	return (out);
 }
