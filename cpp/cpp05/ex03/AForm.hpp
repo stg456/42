@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:13 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 14:39:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:00:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class AForm
 
 	public:
 		AForm(void);
-		AForm::AForm(std::string nameDoc, bool signed, int gradeToSigned, int gradeToExecute);
+		AForm(std::string nameDoc, bool sign, int gradeToSigned, int gradeToExecute);
 		AForm(const AForm &copy);
 		virtual AForm & operator = (const AForm & rhs);
 		virtual ~AForm(void);

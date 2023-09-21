@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 14:44:53 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:04:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 AForm::AForm(void): _nameDoc("form"), _signed(false), _gradeToSigned(150), _gradeToExecute(150) {}
 
-AForm::AForm(std::string nameDoc, bool signed, int gradeToSigned, int gradeToExecute) : _nameDoc(nameDoc), _signed(signed), _gradeToSigned(gradeToSigned), _gradeToExecute(gradeToExecute) {}
+AForm::AForm(std::string nameDoc, bool sign, int gradeToSigned, int gradeToExecute) : _nameDoc(nameDoc), _signed(sign), _gradeToSigned(gradeToSigned), _gradeToExecute(gradeToExecute) {}
 
-AForm::AForm(const AForm & copy) : _nameDoc(copy._nameDoc), _signed(signed), _gradeToSigned(copy._gradeToSigned), _gradeToExecute(copy._gradeToExecute) {
+AForm::AForm(const AForm & copy) : _nameDoc(copy._nameDoc), _signed(copy._signed), _gradeToSigned(copy._gradeToSigned), _gradeToExecute(copy._gradeToExecute) {
 	*this = copy;
 }
 
