@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 09:52:38 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 10:15:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void test1() {
 }
 
 void test2() {
-	Bureaucrat B2("Jim", 5);
+	Bureaucrat B2("Jim", 65);
 	Intern someRandomIntern;
 	AForm * rrf;
 	rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
