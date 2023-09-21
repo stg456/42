@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/19 11:23:56 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 15:56:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ ScalarConverter & ScalarConverter::operator = (const ScalarConverter & rhs) {
 ScalarConverter::~ScalarConverter() {}
 
 
+static int check(char *argv)
+{
+	if (strcmp(argv, "-inff") == 0 || strcmp(argv, "+inff") == 0 || strcmp(argv, "nanf") == 0 
+		|| strcmp(argv, "-inf") == 0 || strcmp(argv, "+inf") == 0 || strcmp(argv, "nan") == 0
+			|| strcmp(argv, "inf") == 0 || strcmp(argv, "inff") == 0)
+		return (0);
+	return (1);	
+}
 
 void	ScalarConverter::toChar(double d) {
 	if (d >= 32 && d <= 126)
@@ -59,6 +67,14 @@ void	ScalarConverter::toDouble(double d) {
 void	ScalarConverter::convert(double d) {
 	ScalarConverter	sc;
 
+	if (sc.check(d))
+	{
+		std::cout << "char: impossible" << std::endl;
+		std::cout << "int: impossible" << std::endl;
+		std::cout << "float: nanf" << std::endl;
+		std::cout << "double: nan" << std::endl;
+		return ;
+	}
 	sc.toChar(d);
 	sc.toInt(d);
 	sc.toFloat(d);
