@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 16:11:17 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/20 15:27:14 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:35:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void test() {
         ShrubberyCreationForm	shrub("formulaire de création de Shrubbery");
 		RobotomyRequestForm		robot("formulaire de robotomysation");
 		PresidentialPardonForm	presid("formulaire de pardon présidentiel");
-        Bureaucrat B1("Jim", 130);	// 145 to sign, 137 to execute
+        Bureaucrat B1("Jim", 151);	// 145 to sign, 137 to execute
 		Bureaucrat B2("Jess", 40);	// 72 to sign, 45 to execute
 		Bureaucrat B3("Jack", 5);	// 25 to sign, 5 to execute
 

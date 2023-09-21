@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/04 15:53:32 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/20 15:28:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/21 09:32:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ const char* AForm::GradeTooHighException::what() const throw() {
 }
 
 const char* AForm::GradeTooLowException::what() const throw() {
-	return ("Exception: Grade Too Low");
+	return (" Exception: Grade Too Low");
 }
 
 std::ostream & operator << (std::ostream & out, const AForm & rhs) {
