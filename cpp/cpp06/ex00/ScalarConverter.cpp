@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/22 10:16:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/22 10:42:53 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,6 @@ ScalarConverter & ScalarConverter::operator = (const ScalarConverter & rhs) {
 
 ScalarConverter::~ScalarConverter() {}
 
-
-double	ScalarConverter::neg(double d) {
-	if (d < 0)
-		d *= -1;
-	return (d);
-}
 
 int ScalarConverter::check(char *argv)
 {
@@ -90,7 +84,6 @@ void	ScalarConverter::toDouble(double d) {
 void	ScalarConverter::convert(double d) {
 	ScalarConverter	sc;
 
-	sc.neg(d);
 	sc.toChar(d);
 	sc.toInt(d);
 	sc.toFloat(d);
