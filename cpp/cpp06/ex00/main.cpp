@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 17:16:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/22 11:14:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,4 @@ int main(int argc, char **argv)
 	
 	return 0;
 }
-// pas encore les neg, pas encore le .0
+// pas encore les neg
