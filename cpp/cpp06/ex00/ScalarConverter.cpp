@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:45:26 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 17:12:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/22 10:16:30 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,12 @@ ScalarConverter & ScalarConverter::operator = (const ScalarConverter & rhs) {
 ScalarConverter::~ScalarConverter() {}
 
 
+double	ScalarConverter::neg(double d) {
+	if (d < 0)
+		d *= -1;
+	return (d);
+}
+
 int ScalarConverter::check(char *argv)
 {
 	if (strcmp(argv, "-inff") == 0 || strcmp(argv, "+inff") == 0 || strcmp(argv, "nanf") == 0 
@@ -44,22 +50,39 @@ void	ScalarConverter::toChar(double d) {
 }
 
 void	ScalarConverter::toInt(double d) {
-	if (d > std::numeric_limits<int>::min() && d < std::numeric_limits<int>::max()/* && std::numeric_limits<int>::signaling_NaN()*/)
+	if (d > std::numeric_limits<int>::min() && d < std::numeric_limits<int>::max())
 		std::cout << "int: " << static_cast<int>(d) << std::endl;
 	else
 		std::cout << "int: impossible" << std::endl;
 }
 
 void	ScalarConverter::toFloat(double d) {
-	if(d > std::numeric_limits<float>::min() && d < std::numeric_limits<float>::max() /*!std::numeric_limits<float>::infinity()*/)
-		std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+
+
+	if(d > std::numeric_limits<float>::min() && d < std::numeric_limits<float>::max()) {
+		float   f = static_cast<float>(d);
+		int     i = static_cast<int>(d);
+
+		std::cout << "float: " << static_cast<float>(d);
+		if (f - i == 0)
+			std::cout << ".0f" << std::endl;
+		else
+			std::cout << "f" << std::endl;
+	}
 	else
 		std::cout << "float: out of range" << std::endl;
 }
 
 void	ScalarConverter::toDouble(double d) {
-	if(d > std::numeric_limits<double>::min() && d < std::numeric_limits<double>::max() /*!std::numeric_limits<double>::infinity()*/)
-		std::cout << "double: " << static_cast<double>(d) << std::endl;
+	if (d > std::numeric_limits<double>::min() && d < std::numeric_limits<double>::max()) {
+	// float   f = static_cast<float>(d);
+		int     i = static_cast<int>(d);
+		std::cout << "double: " << static_cast<double>(d);
+		if (d - i == 0)
+			std::cout << ".0" << std::endl;
+		else
+			std::cout << std::endl;
+	}
 	else
 		std::cout << "double: out of range" << std::endl;
 }
@@ -67,6 +90,7 @@ void	ScalarConverter::toDouble(double d) {
 void	ScalarConverter::convert(double d) {
 	ScalarConverter	sc;
 
+	sc.neg(d);
 	sc.toChar(d);
 	sc.toInt(d);
 	sc.toFloat(d);

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:06:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/21 17:12:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/22 10:14:53 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ScalarConverter
 		~ScalarConverter();
 		ScalarConverter & operator=(const ScalarConverter & rhs);
 
+		double	neg(double d);
 		int		check(char *argv);
 		void	convert(double d);
 		void	toChar(double d);
