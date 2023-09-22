@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 10:06:05 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/22 10:42:53 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/22 11:11:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <cstdlib>
 #include <string>
 #include <limits>
+#include <cmath>
 
 class ScalarConverter
 {
