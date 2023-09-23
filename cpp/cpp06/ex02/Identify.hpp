@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:42:13 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/23 15:52:57 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/23 16:04:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class A : public Base {};
 class B : public Base {};
 
 class C : public Base {};
+
 
 Base* generate(void);
 
