@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/23 14:58:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/23 15:57:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,29 @@ int main()
 	data->n = 42;
 	data->s2 = "World";
 
-	std::srand(std::time(0)); // la generation du code aleatoire sur la graine fonction du temps
+	// std::srand(std::time(0)); // la generation du code aleatoire sur la graine fonction du temps
 
-	int i = std::rand();
-	{
-		if (i % 2 == 0)
-			std::cout << executor.getName() << " has been robotomized." << std::endl;
-		else
-			std::cout << executor.getName() << " has not been robotomized." << std::endl;
-	}
+	// int i = std::rand();
+	// {
+	// 	if (i % 2 == 0)
+	// 		std::cout << executor.getName() << " has been robotomized." << std::endl;
+	// 	else
+	// 		std::cout << executor.getName() << " has not been robotomized." << std::endl;
+	// }
 
-	std::cout << "Data: " << data->s1 << " " << data->n << " " << data->s2 << std::endl;
+	Base* base = generate();
 
-	uintptr_t raw = serialize(data);
+	// std::cout << "Data: " << data->s1 << " " << data->n << " " << data->s2 << std::endl;
 
-	std::cout << "Raw: " << raw << std::endl;
+	// uintptr_t raw = serialize(data);
 
-	Data* data2 = deserialize(raw);
+	// std::cout << "Raw: " << raw << std::endl;
 
-	std::cout << "Data: " << data2->s1 << " " << data2->n << " " << data2->s2 << std::endl;
+	// Data* data2 = deserialize(raw);
 
-	delete data;
+	// std::cout << "Data: " << data2->s1 << " " << data2->n << " " << data2->s2 << std::endl;
 
-	return 0;
+	// delete data;
+
+	// return 0;
 }
