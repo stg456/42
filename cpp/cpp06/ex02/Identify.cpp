@@ -6,9 +6,13 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:44:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/22 16:44:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/23 14:50:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Identify.hpp"
 #include <iostream>
+
+Base* Base::generate(void) {
+
+}
