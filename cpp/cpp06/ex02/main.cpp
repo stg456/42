@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/23 15:57:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/25 10:42:27 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 
 int main()
 {
-	Data* data = new Data;
+	// Data* data = new Data;
 
-	data->s1 = "Hello";
-	data->n = 42;
-	data->s2 = "World";
+	// data->s1 = "Hello";
+	// data->n = 42;
+	// data->s2 = "World";
 
 	// std::srand(std::time(0)); // la generation du code aleatoire sur la graine fonction du temps
 
