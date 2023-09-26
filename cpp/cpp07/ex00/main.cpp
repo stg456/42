@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/26 10:44:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/26 10:55:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ int main()
 
 	swap(a, b);
 	std::cout << "a = " << a << ", b = " << b << std::endl;
+	
+	min(a, b);
+	std::cout << "min(a, b) = " << min(a, b) << std::endl;
+
+	max(a, b);
+	std::cout << "max(a, b) = " << max(a, b) << std::endl;
+
 
 	return 0;
 }
