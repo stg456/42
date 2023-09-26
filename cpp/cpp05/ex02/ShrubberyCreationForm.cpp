@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 11:01:47 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/26 08:33:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/26 08:37:26 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,13 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const {
 		out << "  o__o___o__o " << std::endl;
 		out << "    o/_/_/o   " << std::endl;
 		out << "       ||     " << std::endl;
-		out << "       ||     "<< std::endl;
+		out << "       ||     " << std::endl;
 		out << "	  /||+    " << std::endl;
 		out << "              " << std::endl;
 		out << "  o__o___o__o " << std::endl;
 		out << "    o/_/_/o   " << std::endl;
 		out << "       ||     " << std::endl;
-		out << "       ||     "<< std::endl;
+		out << "       ||     " << std::endl;
 		out << "	  /||+    " << std::endl;
 		out.close();
 	}
