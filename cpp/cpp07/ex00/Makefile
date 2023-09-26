@@ -6,7 +6,7 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 16:08:20 by stgerard          #+#    #+#              #
-#    Updated: 2023/09/22 16:43:41 by stgerard         ###   ########.fr        #
+#    Updated: 2023/09/26 10:44:40 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 RM = rm -f
 
-SRCS = main.cpp Identify.cpp \
+SRCS = main.cpp \
 
 OBJS = ${SRCS:.cpp=.o}
 
