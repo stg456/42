@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:44:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/25 16:04:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/26 08:49:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 Base::~Base() {}
 
 Base* Base::generate(void) {
-	std::srand(std::time(0)); // la generation du code aleatoire sur la graine fonction du temps
 
 	std::srand(std::time(0));
 	int i = std::rand();

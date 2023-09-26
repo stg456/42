@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:42:13 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/25 16:03:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/26 09:47:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Base
 	public:
 		virtual ~Base();
 
-	Base*	generate(void);
+	// Base*	generate(void);
 };
 
 class A : public Base {};
