@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:42:13 by stgerard          #+#    #+#             */
-/*   Updated: 2023/09/26 09:47:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/09/26 10:08:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ class Base
 {
 	public:
 		virtual ~Base();
-
-	// Base*	generate(void);
 };
 
 class A : public Base {};
@@ -34,8 +32,8 @@ class C : public Base {};
 
 Base* generate(void);
 
-void identify_from_pointer(Base* p);
+void identify(Base* p);
 
-void identify_from_reference(Base & p);
+void identify(Base & p);
 
 #endif
