@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <string>
+#include <cstring>
 #include <limits>
 #include <cmath>
 
