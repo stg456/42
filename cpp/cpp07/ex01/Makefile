@@ -6,11 +6,11 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 16:08:20 by stgerard          #+#    #+#              #
-#    Updated: 2023/09/26 11:59:57 by stgerard         ###   ########.fr        #
+#    Updated: 2023/10/04 13:57:47 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = whatever
+NAME = iter
 
 CC = c++
 
