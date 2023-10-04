@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:44:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/04 12:00:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/04 13:32:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,25 @@ void identify(Base* p) {
 void identify(Base & p) {
 	try
 	{
-		A	&a_class = dynamic_cast<A&>(p);
+		A& class_a = dynamic_cast<A&>(p);
 		std::cout << "Identify with reference: Class Type A" << std::endl;
-		(void) a_class;
+		(void) class_a; // le dynamic_cast ne retourne pas de valeur, il faut donc utiliser la variable pour éviter un warning
 	}
 	catch(std::exception &e) {}
 
 	try
 	{
-		B	&b_class = dynamic_cast<B&>(p);
+		B& class_b = dynamic_cast<B&>(p);
 		std::cout << "Identify with reference: Class Type B" << std::endl;
-		(void) b_class; 
+		(void) class_b; 
 	}
 	catch(std::exception &e) {}
 
 	try
 	{
-		C	&c_class = dynamic_cast<C&>(p);
+		C& class_c = dynamic_cast<C&>(p);
 		std::cout << "Identify with reference: Class Type C" << std::endl;
-		(void) c_class;
+		(void) class_c;
 	}
 	catch(std::exception &e) {}
 }
