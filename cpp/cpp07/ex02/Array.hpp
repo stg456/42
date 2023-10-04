@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/04 17:02:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/04 17:28:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,13 @@ class Array
 		return *this;
 	};
 
-	Array<T> & operator [] ()
+	Array<T> & operator [] () {
+		
+	};
+
+	void std::exection::what() {
+		std::cout << "Error: index is out of bounds" << std::endl;
+	};
 
 	private:
 		T*				_array;
