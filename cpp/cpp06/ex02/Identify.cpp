@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/22 16:44:15 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/04 11:36:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/04 12:00:36 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,10 @@ void identify(Base* p) {
 }
 
 void identify(Base & p) {
-	// if (dynamic_cast<A*>(&p))
-	// 	std::cout << "A" << std::endl;
-	// else if (dynamic_cast<B*>(&p))
-	// 	std::cout << "B" << std::endl;
-	// else if (dynamic_cast<C*>(&p))
-	// 	std::cout << "C" << std::endl;
 	try
 	{
 		A	&a_class = dynamic_cast<A&>(p);
-		std::cout << "Identify2: Class Type A" << std::endl;
+		std::cout << "Identify with reference: Class Type A" << std::endl;
 		(void) a_class;
 	}
 	catch(std::exception &e) {}
@@ -56,7 +50,7 @@ void identify(Base & p) {
 	try
 	{
 		B	&b_class = dynamic_cast<B&>(p);
-		std::cout << "Identify2: Class Type B" << std::endl;
+		std::cout << "Identify with reference: Class Type B" << std::endl;
 		(void) b_class; 
 	}
 	catch(std::exception &e) {}
@@ -64,7 +58,7 @@ void identify(Base & p) {
 	try
 	{
 		C	&c_class = dynamic_cast<C&>(p);
-		std::cout << "Identify2: Class Type C" << std::endl;
+		std::cout << "Identify with reference: Class Type C" << std::endl;
 		(void) c_class;
 	}
 	catch(std::exception &e) {}
