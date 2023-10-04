@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 12:09:14 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/04 10:18:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/04 13:44:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ITER_HPP
 
 #include <iostream>
+#include <string>
 
 template <typename T>
 
