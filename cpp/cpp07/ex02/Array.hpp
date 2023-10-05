@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/04 17:28:31 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:43:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,13 +46,20 @@ class Array
 		return *this;
 	};
 
-	Array<T> & operator [] () {
+	Array<T> & operator [] (unsigned int size) {
+		if (size > _size)
+			throw BadSizeException();
+		return (this->_array[size]);
+	};
 		
 	};
 
-	void std::exection::what() {
-		std::cout << "Error: index is out of bounds" << std::endl;
+	class BadSizeException: public std::exception {
+		const char* what() const throw() {
+			return "Error: the memory size is over";
 	};
+		// std::cout << "Error: the memory size is over" << std::endl;
+	// };
 
 	private:
 		T*				_array;
