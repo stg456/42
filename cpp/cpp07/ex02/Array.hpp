@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/05 11:43:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:56:08 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define ARRAY_HPP
 
 #include <iostream>
+#include <exception>
+#include <string>
 
 template <typename T>
 class Array
@@ -51,7 +53,9 @@ class Array
 			throw BadSizeException();
 		return (this->_array[size]);
 	};
-		
+
+	unsigned int size() const {
+		return this->_size;
 	};
 
 	class BadSizeException: public std::exception {
@@ -65,8 +69,5 @@ class Array
 		T*				_array;
 		unsigned int	_size;
 };
-
-
-
 
 #endif
