@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/05 13:38:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:47:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,10 @@ class Array
 
 	Array<T>(Array const & src) {
 		// unsigned int size = src.size();
-		// _size = size - 1;
 		// _array = new T[size];
 
-		// for (unsigned int i = 0; i < size; i++)
-		// 	_array[i] = src._array[i];
+		for (unsigned int i = 0; i < size; i++)
+			this->_array[i] = src._array[i];
 	};
 
 	~Array<T>() {
