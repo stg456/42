@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/05 12:39:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:38:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,24 +23,25 @@ class Array
 {
 	public:
 	Array<T>(): _size(0) {
-		_array = new T[0];
+		this->_array = new T[this->_size];
 	};
 
-	Array<T>(unsigned int n): _size(n - 1) {
-		_array = new T[n];
+	Array<T>(unsigned int n): _size(n) {
+		this->_array = new T[this->_size];
 	};
 
 	Array<T>(Array const & src) {
-		unsigned int size = src.size();
-		_size = size - 1;
-		_array = new T[size];
+		// unsigned int size = src.size();
+		// _size = size - 1;
+		// _array = new T[size];
 
-		for (unsigned int i = 0; i < size; i++)
-			_array[i] = src._array[i];
+		// for (unsigned int i = 0; i < size; i++)
+		// 	_array[i] = src._array[i];
 	};
 
 	~Array<T>() {
-		delete [] _array;
+		if (this->_size > 0)
+			delete [] this->_array;
 	};
 
 	Array<T> & operator = (Array <T> const & rhs) {
