@@ -6,11 +6,11 @@
 #    By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/26 16:08:20 by stgerard          #+#    #+#              #
-#    Updated: 2023/10/04 14:11:13 by stgerard         ###   ########.fr        #
+#    Updated: 2023/10/05 16:29:52 by stgerard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Array
+NAME = easyfind
 
 CC = c++
 
