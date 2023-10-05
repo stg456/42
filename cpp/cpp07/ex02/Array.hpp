@@ -6,12 +6,12 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/05 16:15:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/05 17:06:53 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+// #ifndef ARRAY_HPP
+// # define ARRAY_HPP
 
 #include <iostream>
 #include <exception>
@@ -44,15 +44,15 @@ class Array
 	};
 
 	Array<T> & operator = (Array <T> const & rhs) {
-		for (size_t i = 0; i < _size; i++)
-			_array[i] = rhs._array[i];
+		// for (size_t i = 0; i < _size; i++)
+		// 	_array[i] = rhs._array[i];
 		return *this;
 	};
 
 	Array<T> & operator [] (unsigned int size) {
-		if (size > _size)
-			throw BadSizeException();
-		return (this->_array[size]);
+		// if (size > _size)
+		// 	throw BadSizeException();
+		// return (this->_array[size]);
 	};
 
 	unsigned int size() const {
@@ -71,4 +71,4 @@ class Array
 		unsigned int	_size;
 };
 
-#endif
+// #endif
