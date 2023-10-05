@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/05 11:56:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/05 12:39:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <exception>
 #include <string>
+#include <stdlib.h>
 
 template <typename T>
 class Array
@@ -42,7 +43,7 @@ class Array
 		delete [] _array;
 	};
 
-	Array<T> & operator = (Array T const & rhs) {
+	Array<T> & operator = (Array <T> const & rhs) {
 		for (size_t i = 0; i < _size; i++)
 			_array[i] = rhs._array[i];
 		return *this;
