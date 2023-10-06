@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/06 10:04:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/06 10:07:25 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,15 @@ class Array
 	};
 
 	Array<T> & operator = (Array <T> const & rhs) {
-		for (int i = 0; i < _size; i++)
+		for (unsigned int i = 0; i < _size; i++)
 			this->_array[i] = rhs._array[i];
 		return *this;
 	};
 
 	Array<T> & operator [] (unsigned int size) {
-		// if (size > _size)
-		// 	throw BadSizeException();
-		// return (this->_array[size]);
+		if (size > _size)
+			throw BadSizeException();
+		return (this->_array[size]);
 	};
 
 	unsigned int size() const {
