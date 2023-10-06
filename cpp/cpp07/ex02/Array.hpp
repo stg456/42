@@ -6,17 +6,18 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/05 17:18:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/06 09:49:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #ifndef ARRAY_HPP
-// # define ARRAY_HPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
 
 #include <iostream>
-#include <exception>
+#include <stdexcept>
 #include <string>
-#include <stdlib.h>
+#include <cstdlib>
+#include <ctime>
 
 template <typename T>
 class Array
@@ -44,8 +45,8 @@ class Array
 	};
 
 	Array<T> & operator = (Array <T> const & rhs) {
-		// for (size_t i = 0; i < _size; i++)
-		// 	_array[i] = rhs._array[i];
+		for (int i = 0; i < _size; i++)
+			this->_array[i] = rhs._array[i];
 		return *this;
 	};
 
@@ -64,11 +65,11 @@ class Array
 			return "Error: the memory size is over";
 	};
 		// std::cout << "Error: the memory size is over" << std::endl;
-	// };
+};
 
 	private:
 		T*				_array;
 		unsigned int	_size;
 };
 
-// #endif
+#endif
