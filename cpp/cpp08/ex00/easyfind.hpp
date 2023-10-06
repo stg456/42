@@ -23,7 +23,7 @@
 template <typename T>
 void easyfind(T& container, int n) {
     typename T::iterator    iter;
-    for (inter = begin; inter = end; inter++) {
+    for (iter = T&.begin; iter != T&.end; iter++) {
         try {
 
         }
