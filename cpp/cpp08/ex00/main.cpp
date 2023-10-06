@@ -13,6 +13,9 @@
 #include "easyfind.hpp"
 
 int main() {
+	std::string allo[5] = {"allo", "la", "terre", "ici", "42"};
+
+	
 
 	return 0
 }

@@ -27,8 +27,8 @@ void easyfind(T& container, int n) {
         try {
 
         }
-        catch {
-
+        catch std::exception {
+            return ("hors sol");
         };
     };
 };
