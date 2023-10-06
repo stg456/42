@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/06 11:25:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/06 11:35:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,7 @@ Array<T>::~Array(void)
 }
 
 template <typename T>
-Array<T>	&Array<T>::operator=(Array const &src)
-{
+Array<T>	& Array<T>::operator = (Array const & src) {
 	if (this != &src)
 	{
 		if (this->_array)
@@ -76,16 +75,14 @@ Array<T>	&Array<T>::operator=(Array const &src)
 }
 
 template <typename T>
-T		&Array<T>::operator[](unsigned int n) const
-{
+T		& Array<T>::operator [] (unsigned int n) const {
 	if (n >= this->_size)
 		throw std::exception();
 	return (this->_array[n]);
 }
 
 template <typename T>
-unsigned int	Array<T>::size(void)
-{
+unsigned int	Array<T>::size(void) {
 	return (this->_size);
 }
 
