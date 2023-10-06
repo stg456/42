@@ -6,70 +6,87 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/06 10:07:25 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/06 11:25:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ARRAY_HPP
 # define ARRAY_HPP
 
-#include <iostream>
-#include <stdexcept>
-#include <cstring>
-#include <cstdlib>
-#include <ctime>
+# include <iostream>
+# include <string>
 
 template <typename T>
-class Array
+class	Array
 {
 	public:
-	Array<T>(): _size(0) {
-		this->_array = new T[this->_size];
-	};
+		Array(void);
+		Array(unsigned int n);
+		Array(Array const &src);
+		~Array(void);
 
-	Array<T>(unsigned int n): _size(n) {
-		this->_array = new T[this->_size];
-	};
-
-	Array<T>(Array const & src) {
-		unsigned int size = src.size();
-		this->_array = new T[size];
-
-		for (unsigned int i = 0; i < size; i++)
-			this->_array[i] = src._array[i];
-	}; // pas encore ca
-
-	~Array<T>() {
-		if (this->_size > 0)
-			delete [] this->_array;
-	};
-
-	Array<T> & operator = (Array <T> const & rhs) {
-		for (unsigned int i = 0; i < _size; i++)
-			this->_array[i] = rhs._array[i];
-		return *this;
-	};
-
-	Array<T> & operator [] (unsigned int size) {
-		if (size > _size)
-			throw BadSizeException();
-		return (this->_array[size]);
-	};
-
-	unsigned int size() const {
-		return this->_size;
-	};
-
-	class BadSizeException: public std::exception {
-		const char* what() const throw() {
-			return "Error: the memory size is over";
-	};
-		// std::cout << "Error: the memory size is over" << std::endl;
-};
+		Array			& operator = (Array const & src);
+		T				& operator[](unsigned int n) const;
+		unsigned int	size(void);
 
 	private:
-		T*				_array;
+		T				*_array;
 		unsigned int	_size;
 };
+
+template <typename T>
+Array<T>::Array(void) : _array(NULL), _size(0) {
+	return ;
+}
+
+template <typename T>
+Array<T>::Array(unsigned int n) : _array(new T[n]), _size(n) {
+	for (unsigned int i = 0; i < this->_size; i++)
+		this->_array[i] = T();
+	return ;
+}
+
+template <typename T>
+Array<T>::Array(Array const &src) : _array(NULL), _size(0) {
+	*this = src;
+	return ;
+}
+
+template <typename T>
+Array<T>::~Array(void)
+{
+	if (this->_array)
+		delete [] this->_array;
+	return ;
+}
+
+template <typename T>
+Array<T>	&Array<T>::operator=(Array const &src)
+{
+	if (this != &src)
+	{
+		if (this->_array)
+			delete [] this->_array;
+		this->_array = new T[src._size];
+		this->_size = src._size;
+		for (unsigned int i = 0; i < this->_size; i++)
+			this->_array[i] = src._array[i];
+	}
+	return (*this);
+}
+
+template <typename T>
+T		&Array<T>::operator[](unsigned int n) const
+{
+	if (n >= this->_size)
+		throw std::exception();
+	return (this->_array[n]);
+}
+
+template <typename T>
+unsigned int	Array<T>::size(void)
+{
+	return (this->_size);
+}
 
 #endif
