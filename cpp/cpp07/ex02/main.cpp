@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/06 11:58:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:02:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,10 @@
 #include "Array.hpp"
 #include <ctime>
 
-#define MAX_VAL 750
+// #define MAX_VAL 750
 
 int main( void ) {
 	Array<int> numbers(10);
-
 	std::srand(static_cast<unsigned int>(std::time(0))); // Initialisez la graine avec le temps actuel.
 	std::cout << "La taille du tableau est de " << numbers.size() << std::endl;
 	std::cout << "Les valeurs aleatoires du tableau sont :" << std::endl;
@@ -28,6 +27,7 @@ int main( void ) {
 		std::cout << numbers[i] << std::endl;
 	}
 	std::cout << std::endl;
+
 	Array<std::string> strings(5);
 	strings[0] = "Ceci";
 	strings[1] = "me";
