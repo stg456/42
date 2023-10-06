@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/06 09:52:36 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/06 10:04:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int main(int, char**)
     }
     try
     {
+		std::cout << "index: -2 Expected: Bab index" << std::endl;
         numbers[-2] = 0;
     }
     catch(const std::exception& e)
@@ -50,6 +51,7 @@ int main(int, char**)
     }
     try
     {
+		std::cout << "index: 750 Expected: Bab index" << std::endl;
         numbers[MAX_VAL] = 0;
     }
     catch(const std::exception& e)
@@ -61,6 +63,6 @@ int main(int, char**)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }

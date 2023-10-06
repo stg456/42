@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/06 09:49:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/06 10:04:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include <stdexcept>
-#include <string>
+#include <cstring>
 #include <cstdlib>
 #include <ctime>
 
