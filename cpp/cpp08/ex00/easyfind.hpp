@@ -22,10 +22,16 @@
 
 template <typename T>
 void easyfind(T& container, int n) {
-    for (int i = 0; i <= n i++)
-    
+    typename T::iterator    iter;
+    for (inter = begin; inter = end; inter++) {
+        try {
 
-}
+        }
+        catch {
+
+        };
+    };
+};
 
 
 #endif
