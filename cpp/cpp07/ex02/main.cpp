@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/06 10:04:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/06 10:39:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int main(int, char**)
     }
     try
     {
-		std::cout << "index: -2 Expected: Bab index" << std::endl;
+		std::cout << "index: -2 Expected: Bad index" << std::endl;
         numbers[-2] = 0;
     }
     catch(const std::exception& e)
