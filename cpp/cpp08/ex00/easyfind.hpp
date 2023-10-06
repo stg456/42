@@ -14,14 +14,18 @@
 # define EASYFIND_HPP
 
 # include <iostream>
+# include <stdexcept>
 # include <algorithm>
 # include <vector>
-# include <list>
-# include <map>
-
+# include <iterator>
 
 
 template <typename T>
+void easyfind(T& container, int n) {
+    for (int i = 0; i <= n i++)
+    
+
+}
 
 
 #endif
