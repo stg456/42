@@ -14,10 +14,10 @@
 # define EASYFIND_HPP
 
 # include <iostream>
-# include <stdexcept>
-# include <algorithm>
+// # include <stdexcept>
+// # include <algorithm>
 # include <vector>
-# include <iterator>
+// # include <iterator>
 
 
 template <typename T>
