@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/06 11:42:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/06 11:54:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	Array
 		Array(Array const &src);
 		~Array(void);
 
-		Array			& operator = (Array const & src);
+		Array			& operator = (Array const & rhs);
 		T				& operator[](unsigned int n) const;
 		unsigned int	size(void);
 
@@ -60,15 +60,15 @@ Array<T>::~Array(void) {
 }
 
 template <typename T>
-Array<T>	& Array<T>::operator = (Array const & src) {
-	if (this != &src)
+Array<T>	& Array<T>::operator = (Array const & rhs) {
+	if (this != &rhs)
 	{
 		if (this->_array)
 			delete [] this->_array;
-		this->_array = new T[src._size];
-		this->_size = src._size;
+		this->_array = new T[rhs._size];
+		this->_size = rhs._size;
 		for (unsigned int i = 0; i < this->_size; i++)
-			this->_array[i] = src._array[i];
+			this->_array[i] = rhs._array[i];
 	}
 	return (*this);
 }
