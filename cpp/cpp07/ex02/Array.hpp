@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 14:08:28 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/06 11:35:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/06 11:42:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ Array<T>::Array(Array const &src) : _array(NULL), _size(0) {
 }
 
 template <typename T>
-Array<T>::~Array(void)
-{
+Array<T>::~Array(void) {
 	if (this->_array)
 		delete [] this->_array;
 	return ;
