@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:49:57 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/06 11:30:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/06 11:47:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ int main( void ) {
 	}
 	std::cout << std::endl;
 	Array<std::string> strings(5);
-	strings[0] = "Hello";
-	strings[1] = "World";
-	strings[2] = "!";
-	strings[3] = "How";
-	strings[4] = "are you?";
+	strings[0] = "Parfois";
+	strings[1] = "mon";
+	strings[2] = "genie";
+	strings[3] = "m'effrait";
+	strings[4] = "!";
 	std::cout << "La taille du tableau est de " << strings.size() << std::endl;
 	std::cout << "Les valeurs du tableau sont :" << std::endl;
 	for (int i = 0; i < static_cast<int>(strings.size()); i++) {
