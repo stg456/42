@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/08 15:31:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/08 15:58:31 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int main() {
 		std::cout << "nb found" << std::endl;
 	else
 		std::cout << "nb not found" << std::endl;
+
+
 
 	if (easyfind(allo, "42") == 1)
 		std::cout << "42 found" << std::endl;
