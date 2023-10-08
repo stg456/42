@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:14:42 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/08 14:45:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/08 14:57:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define EASYFIND_HPP
 
 # include <iostream>
-# include <stdexcept>
+# include <exception>
 # include <algorithm>
 # include <vector>
 # include <iterator>
@@ -30,8 +30,6 @@ void easyfind(T& container, int n) {
 			std::cout << "found " << n << std::endl;
 		else
 			return ("not found");
-
-
 };
 
 
