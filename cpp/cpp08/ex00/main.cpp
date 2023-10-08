@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/08 16:23:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:26:29 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,17 @@ int main() {
 	else
 		std::cout << "nb not found" << std::endl;
 
-	std::vector<std::string> allo;
-	allo.push_back("allo");
-	allo.push_back("la");
-	allo.push_back("terre");
-	allo.push_back("ici");
-	allo.push_back("42");
+	// std::vector<std::string> allo;
+	// allo.push_back("allo");
+	// allo.push_back("la");
+	// allo.push_back("terre");
+	// allo.push_back("ici");
+	// allo.push_back("42");
 
-	if (easyfind(allo, "42") == 1)
-		std::cout << "42 found" << std::endl;
-	else
-		std::cout << "42 not found" << std::endl;
+	// if (easyfind(allo, "42") == 1)
+	// 	std::cout << "42 found" << std::endl;
+	// else
+	// 	std::cout << "42 not found" << std::endl;
 
 	return 0;
 }
