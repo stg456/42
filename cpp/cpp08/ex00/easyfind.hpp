@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:14:42 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/08 15:29:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/08 16:23:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <vector>
 # include <iterator>
 # include <list>
-
+# include <string>
 
 template <typename T>
 int easyfind(T& container, int n) {
