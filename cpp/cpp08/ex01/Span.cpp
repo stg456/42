@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:37:33 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/09 11:43:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/09 13:37:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,3 +33,10 @@ void Span::addNumber(int nb) {
 
 }
 
+unsigned int Span::shortestSpan() const {
+	
+}
+
+unsigned int Span::longestSpan() const {
+
+}
