@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:34:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/09 11:21:29 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/09 11:43:32 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ class Span
 		Span& operator = (const Span& rhs);
 		
 		void addNumber(int nb);
-		void addNumber(int nb, unsigned int count);
-		int shortestSpan();
-		int longestSpan();
+		unsigned int shortestSpan() const;
+		unsigned int longestSpan() const;
 
 		class noSpanPossible : public std::exception {
 			virtual const char* what() const throw();
