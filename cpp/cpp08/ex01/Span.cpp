@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:37:33 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/10 11:55:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/10 12:15:45 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,16 @@ Span::Span(const Span& copy) {
 Span::~Span() {}
 
 Span& Span::operator = (const Span& rhs) {
-	this->_size = rhs._size;
+	if (this->_size != rhs._size)
+		this->_size = rhs._size;
 	return *this;
 }
 
 void Span::addNumber(int nb) {
 	if (this->_size == 0)
-		throw std::exception();
-	this->_size++;
+		throw noAddPossibleException();
+	// this->_size++;
+	push_back(nb);
 }
 
 unsigned int Span::shortestSpan() const {
@@ -48,6 +50,6 @@ unsigned int Span::longestSpan() const {
 
 }
 
-const char* Span::noAddPossible::what() const throw() {
+const char* Span::noAddPossibleException::what() const throw() {
 	return "No add possible";
 }
