@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:34:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/10 12:20:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/10 15:59:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ class Span
 		unsigned int longestSpan() const;
 
 		class noAddPossibleException : public std::exception {
+			virtual const char* what() const throw();
+		};
+
+		class noSpanPossibleException : public std::exception {
 			virtual const char* what() const throw();
 		};
 };

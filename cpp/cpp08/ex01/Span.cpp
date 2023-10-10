@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:37:33 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/10 15:49:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/10 15:59:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,8 @@ unsigned int Span::longestSpan() const {
 
 const char* Span::noAddPossibleException::what() const throw() {
 	return "No add possible";
+}
+
+const char* Span::noSpanPossibleException::what() const throw() {
+	return "No span possible";
 }
