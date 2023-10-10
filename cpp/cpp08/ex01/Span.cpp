@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:37:33 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/10 15:12:52 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/10 15:13:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ unsigned int Span::shortestSpan() const {
 }
 
 unsigned int Span::longestSpan() const {
-	unsigned int max = 1;
+	unsigned int max;
 	unsigned int min;
 	for (unsigned int i = 0; i < this->_size; i++) {
 		if (max < static_cast<unsigned int>(this->_v[i]))
