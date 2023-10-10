@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:37:33 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/09 13:55:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/10 11:43:19 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,18 @@ Span& Span::operator = (const Span& rhs) {
 void Span::addNumber(int nb) {
 	if (this->_size == 0)
 		throw std::exception();
-	
+	this->_size++;
 }
 
 unsigned int Span::shortestSpan() const {
-	
+	for (int i = 0; i < this->_size; i++) {
+		for (int j = i + 1; j <= this->_size; j++) {
+			if (i != j) {
+				unsigned int k = std::abs(this->_size[i] - this->_size[j]);
+
+			}
+		}
+	}
 }
 
 unsigned int Span::longestSpan() const {
