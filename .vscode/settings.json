@@ -71,6 +71,7 @@
 		"memory_resource": "cpp",
 		"filesystem": "cpp",
 		"types.h": "c",
-		"mlx42.h": "c"
+		"mlx42.h": "c",
+		"list": "cpp"
 	}
 }
