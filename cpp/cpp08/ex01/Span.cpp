@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:37:33 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/10 15:59:01 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/10 17:20:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void Span::addNumber(int nb) {
 }
 
 unsigned int Span::shortestSpan() const {
+	if (_v.size() <= 1)
+		throw noSpanPossibleException();
 	unsigned int min;
 	for (unsigned int i = 0; i < this->_size; i++) {
 		for (unsigned int j = i + 1; j <= this->_size; j++) {
@@ -52,6 +54,8 @@ unsigned int Span::shortestSpan() const {
 }
 
 unsigned int Span::longestSpan() const {
+	if (_v.size() <= 1)
+		throw noSpanPossibleException();
 	unsigned int max = _v[0];
 	unsigned int min = _v[0];
 	unsigned int k;
@@ -72,4 +76,12 @@ const char* Span::noAddPossibleException::what() const throw() {
 
 const char* Span::noSpanPossibleException::what() const throw() {
 	return "No span possible";
+}
+
+void Span::addNumbers(std::vector<int>::iterator begin, std::vector<int>::iterator end) {
+	// std::iterator_traits<std::vector<int>::iterator>::difference_type diff = std::distance(begin, end);
+	srand(time(NULL));
+	if (this->_v.size() + std::distance(begin, end) > this->_size)
+		throw noAddPossibleException();
+	this->_v.insert(this->_v.end(), begin, end);
 }

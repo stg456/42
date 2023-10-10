@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/10 14:52:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/10 17:20:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,15 @@ int main() {
 
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
+
+	Span sp2 = Span(10000);
+	std::vector<int> v;
+	for (int i = 0; i < 10000; i++)
+		v.push_back(i);
+	sp2.addNumbers(v.begin(), v.end());
+
+	std::cout << sp2.shortestSpan() << std::endl;
+	std::cout << sp2.longestSpan() << std::endl;
 
 	return 0;
 }
