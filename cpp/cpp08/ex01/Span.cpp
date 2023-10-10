@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:37:33 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/10 14:20:34 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/10 14:30:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void Span::addNumber(int nb) {
 }
 
 unsigned int Span::shortestSpan() const {
+	unsigned int min = 0;
 	for (int i = 0; i < this->_size; i++) {
 		for (int j = i + 1; j <= this->_size; j++) {
 			if (i != j) {
@@ -47,10 +48,21 @@ unsigned int Span::shortestSpan() const {
 			}
 		}
 	}
+	return min;
 }
 
 unsigned int Span::longestSpan() const {
-
+	unsigned int max = 0;	
+	for (int i = 0; i < this->_size; i++) {
+		for (int j = i + 1; j <= this->_size; j++) {
+			if (i != j) {
+				unsigned int k = std::abs(this->_v[i] - this->_v[j]);
+				if (k > max)
+					max = k;
+			}
+		}
+	}
+	return max;
 }
 
 const char* Span::noAddPossibleException::what() const throw() {
