@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:37:33 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/10 15:00:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/10 15:12:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,15 @@ unsigned int Span::shortestSpan() const {
 
 unsigned int Span::longestSpan() const {
 	unsigned int max = 1;
-	unsigned int l = 0;
+	unsigned int min;
 	for (unsigned int i = 0; i < this->_size; i++) {
-		for (unsigned int j = i + 1; j <= this->_size; j++) {
-			if (i != j) {
-				unsigned int k = std::abs(this->_v[i] - this->_v[j]);
-				if (k > max)
-					max = k;
-			}
+		if (max < static_cast<unsigned int>(this->_v[i]))
+			max = this->_v[i];
+		if (min > static_cast<unsigned int>(this->_v[i]))
+			min = this->_v[i];
+		unsigned int k = (max - min);
+		if (k > max) {
+			max = k;
 		}
 	}
 	return max;
