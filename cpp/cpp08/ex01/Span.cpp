@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:37:33 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/10 15:13:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/10 15:49:52 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ Span& Span::operator = (const Span& rhs) {
 void Span::addNumber(int nb) {
 	if (_v.size() == this->_size)
 		throw noAddPossibleException();
-	// this->_size++;
 	_v.push_back(nb);
 }
 
@@ -53,19 +52,18 @@ unsigned int Span::shortestSpan() const {
 }
 
 unsigned int Span::longestSpan() const {
-	unsigned int max;
-	unsigned int min;
+	unsigned int max = _v[0];
+	unsigned int min = _v[0];
+	unsigned int k;
 	for (unsigned int i = 0; i < this->_size; i++) {
 		if (max < static_cast<unsigned int>(this->_v[i]))
 			max = this->_v[i];
 		if (min > static_cast<unsigned int>(this->_v[i]))
 			min = this->_v[i];
-		unsigned int k = (max - min);
-		if (k > max) {
-			max = k;
-		}
+		k = (max - min);
+		// std::cout << "k = " << k << std::endl;
 	}
-	return max;
+	return k;
 }
 
 const char* Span::noAddPossibleException::what() const throw() {
