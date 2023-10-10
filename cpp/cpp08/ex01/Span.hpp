@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:34:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/10 12:15:45 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/10 12:20:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class Span
 {
 	private:
 		unsigned int		_size;
+		std::vector<int>	_v;
 	
 	public:
 		Span();
