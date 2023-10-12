@@ -72,6 +72,13 @@
 		"filesystem": "cpp",
 		"types.h": "c",
 		"mlx42.h": "c",
-		"list": "cpp"
+		"list": "cpp",
+		"__bits": "cpp",
+		"__tree": "cpp",
+		"clocale": "cpp",
+		"compare": "cpp",
+		"concepts": "cpp",
+		"map": "cpp",
+		"variant": "cpp"
 	}
 }
