@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/12 12:18:56 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:25:48 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int main() {
 	inlist.push_back(5);
 	inlist.push_back(17);
 	std::cout << "top: " << inlist.back() << std::endl;
-	// inlist.pop.back();
+	inlist.pop_back();
 	std::cout << "size: " << inlist.size() << std::endl;
 	inlist.push_back(3);
 	inlist.push_back(5);
