@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 17:27:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/12 11:40:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:18:56 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stack>
 // # include <deque>
 // # include <vector>
-// # include <list>
+# include <list>
 
 template <typename T>
 class MutantStack : public std::stack<T>
