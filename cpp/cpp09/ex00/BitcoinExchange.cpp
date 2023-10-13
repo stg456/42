@@ -24,3 +24,6 @@ void	getData() {
 	
 }
 
+const char* BitcoinExchange::notCorrectValueException::what() const throw() {
+	return "Not correct value";
+}

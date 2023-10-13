@@ -19,6 +19,10 @@ class BitcoinExchange
 
 		void	getData();
 
+		class notCorrectValueException : public std::exception {
+			virtual const char* what() const throw();
+		};
+
 	private:
 		std::string	data;
 		std::string	input;
