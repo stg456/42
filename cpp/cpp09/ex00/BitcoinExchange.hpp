@@ -1,7 +1,7 @@
 #ifndef BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
-BitcoinExchange.hpp
+// BitcoinExchange.hpp
 
 # include <iostream>
 
