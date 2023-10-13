@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:37:33 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/13 14:57:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/13 15:38:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ unsigned int Span::shortestSpan() const {
 unsigned int Span::longestSpan() const {
 	if (_v.size() <= 1)
 		throw noSpanPossibleException();
+
 	// unsigned int max = _v[0];
 	// unsigned int min = _v[0];
 	// unsigned int k;
@@ -65,13 +66,15 @@ unsigned int Span::longestSpan() const {
 	// 	if (min > static_cast<unsigned int>(this->_v[i]))
 	// 		min = this->_v[i];
 	// 	k = (max - min);
-	sort(this->_v.begin(), this->_v.end());
+	// std::sort(this->_v.begin(), this->_v.end());
 	// k = this->_v[this->_size - 1] - this->_v[0];
 
 	// std::cout << "k = " << k << std::endl;
 
 	// return k;
-	return (std::distance(this->_v.begin(), this->_v.end()));
+	// return (std::distance(this->_v.begin(), this->_v.end() - 1));
+	// return (this->_v[this->_size - 1] - this->_v[0]);
+	return (*std::max_element(this->_v.begin(), this->_v.end()) - *std::min_element(this->_v.begin(), this->_v.end())); // marche sans algo
 }
 
 const char* Span::noAddPossibleException::what() const throw() {

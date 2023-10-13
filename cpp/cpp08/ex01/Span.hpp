@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:34:06 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/13 14:42:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/13 15:38:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <ctime>
 # include <cstdlib>
 # include <algorithm>
+# include <limits>
+# include <string>
 
 class Span
 {
