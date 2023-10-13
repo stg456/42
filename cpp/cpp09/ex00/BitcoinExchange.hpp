@@ -6,6 +6,7 @@
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <string>
 
 class BitcoinExchange 
 {
@@ -19,8 +20,8 @@ class BitcoinExchange
 		void	getData();
 
 	private:
-		std::ifstream	data;
-		std::ifstream	input;
+		std::string	data;
+		std::string	input;
 };
 
 #endif
