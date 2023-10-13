@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/08 16:37:33 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/10 17:20:43 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/13 14:57:15 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,22 @@ unsigned int Span::shortestSpan() const {
 unsigned int Span::longestSpan() const {
 	if (_v.size() <= 1)
 		throw noSpanPossibleException();
-	unsigned int max = _v[0];
-	unsigned int min = _v[0];
-	unsigned int k;
-	for (unsigned int i = 0; i < this->_size; i++) {
-		if (max < static_cast<unsigned int>(this->_v[i]))
-			max = this->_v[i];
-		if (min > static_cast<unsigned int>(this->_v[i]))
-			min = this->_v[i];
-		k = (max - min);
-		// std::cout << "k = " << k << std::endl;
-	}
-	return k;
+	// unsigned int max = _v[0];
+	// unsigned int min = _v[0];
+	// unsigned int k;
+	// for (unsigned int i = 0; i < this->_size; i++) {
+	// 	if (max < static_cast<unsigned int>(this->_v[i]))
+	// 		max = this->_v[i];
+	// 	if (min > static_cast<unsigned int>(this->_v[i]))
+	// 		min = this->_v[i];
+	// 	k = (max - min);
+	sort(this->_v.begin(), this->_v.end());
+	// k = this->_v[this->_size - 1] - this->_v[0];
+
+	// std::cout << "k = " << k << std::endl;
+
+	// return k;
+	return (std::distance(this->_v.begin(), this->_v.end()));
 }
 
 const char* Span::noAddPossibleException::what() const throw() {
