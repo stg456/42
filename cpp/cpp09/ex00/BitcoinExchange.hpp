@@ -3,7 +3,9 @@
 
 // BitcoinExchange.hpp
 
-# include <iostream>
+#include <iostream>
+#include <fstream>
+#include <map>
 
 class BitcoinExchange 
 {
@@ -19,6 +21,6 @@ class BitcoinExchange
 	private:
 		std::ifstream	data;
 		std::ifstream	input;
-}
+};
 
 #endif
