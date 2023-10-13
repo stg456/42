@@ -1,4 +1,4 @@
-# include "BitcoinExchange.hpp"
+#include "BitcoinExchange.hpp"
 
 BitcoinExchange::BitcoinExchange(char *argv) {
 	std::ifstream	input;

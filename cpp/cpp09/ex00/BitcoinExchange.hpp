@@ -1,8 +1,6 @@
 #ifndef BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
-// BitcoinExchange.hpp
-
 #include <iostream>
 #include <fstream>
 #include <map>
@@ -25,8 +23,6 @@ class BitcoinExchange
 
 	private:
 		std::map<std::string, float>	dataMap;
-		// std::string	data;
-		// std::string	input;
 };
 
 #endif
