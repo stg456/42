@@ -20,6 +20,7 @@ BitcoinExchange & BitcoinExchange::operator = (BitcoinExchange const &rhs) {
 }
 
 void	getData() {
+
 	for (std::map<std::string, float>::iterator it = dataMap.begin(); it != dataMap.end(); it++) {
 		std::cout << it->first << " => " << it->second << '\n';
 	}
