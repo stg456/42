@@ -17,9 +17,9 @@ class BitcoinExchange
 
 		void	getData();
 
-		class notCorrectValueException : public std::exception {
-			virtual const char* what() const throw();
-		};
+		// class notCorrectValueException : public std::exception {
+		// 	virtual const char* what() const throw();
+		// };
 
 	private:
 		std::map<std::string, float>	dataMap;
