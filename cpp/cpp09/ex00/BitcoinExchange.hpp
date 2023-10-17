@@ -16,7 +16,7 @@ class BitcoinExchange
 		BitcoinExchange & operator = (BitcoinExchange const &rhs);
 
 		void	getData(std::string &filename); //load
-
+		char	separator(std::string &filename);
 
 		// class notCorrect
 		// class notCorrectValueException : public std::exception {
