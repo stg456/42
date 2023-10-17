@@ -53,7 +53,3 @@ void	getData() {
 		std::cout << it->first << " => " << it->second << '\n';
 	}
 }
-
-// const char* BitcoinExchange::notCorrectValueException::what() const throw() {
-// 	return "Not correct value";
-// }

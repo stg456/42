@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <map>
 #include <string>
 
@@ -16,12 +17,10 @@ class BitcoinExchange
 		BitcoinExchange & operator = (BitcoinExchange const &rhs);
 
 		void	getData(std::string &filename); //load
-		char	separator(std::string &filename);
+		// char	separator(std::string &filename);
+		void	evalData(std::map); //eval
 
-		// class notCorrect
-		// class notCorrectValueException : public std::exception {
-		// 	virtual const char* what() const throw();
-		// };
+
 
 	private:
 		std::map<std::string, float>	dataMap;
