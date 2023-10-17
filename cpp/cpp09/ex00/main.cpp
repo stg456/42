@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/17 15:20:03 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:41:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int main(int argc, char **argv) {
 		std::cout << "Error: could not open file" << std::endl;
 		return 1;
 	}
-	BitcoinExchange btc;
+	BitcoinExchange btc(argv[1]);
 	btc.getData("data.csv"); // load
 
-	btc.evalData(dataMap); // eval
+	btc.evalData(argv[1]); // eval
 
 
 
