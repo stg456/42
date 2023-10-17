@@ -10,6 +10,7 @@
 class BitcoinExchange 
 {
 	public:
+		BitcoinExchange();
 		BitcoinExchange(char *argv);
 		BitcoinExchange(BitcoinExchange const &src);
 		~BitcoinExchange();

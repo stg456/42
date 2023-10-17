@@ -1,5 +1,7 @@
 # include "BitcoinExchange.hpp"
 
+BitcoinExchange::BitcoinExchange() {}
+
 BitcoinExchange::BitcoinExchange(char *argv) {
 	// std::ifstream	input;
 	// std::ifstream	data;
