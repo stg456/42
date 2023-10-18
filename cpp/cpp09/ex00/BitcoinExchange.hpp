@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/18 17:05:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:24:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ class BitcoinExchange
 
 
 	private:
-		std::map<std::string, float>	_map;
+		std::map<std::string, float>	_data;
 };
 
 #endif
