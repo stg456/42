@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/18 11:23:21 by stgerard          #+#    #+#             */
+/*   Updated: 2023/10/18 11:52:20 by stgerard         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
@@ -18,7 +30,7 @@ class BitcoinExchange
 		BitcoinExchange & operator = (BitcoinExchange const &rhs);
 
 		void	getData(std::string &filename); //load
-		// char	separator(std::string &filename);
+
 		void	evalData(std::map); //eval
 
 
