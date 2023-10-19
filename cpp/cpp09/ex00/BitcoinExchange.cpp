@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/18 18:11:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/19 12:28:01 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ BitcoinExchange & BitcoinExchange::operator = (BitcoinExchange const &rhs) {
 	return *this;
 }
 
-std::map<std::string, float>	BitcoinExchange::getData() {
-	return (_data);
+std::map<std::string, float>	BitcoinExchange::getData(std::string) {
+	// return (_data);
 	// for (std::map<std::string, float>::iterator it = _map.begin(); it != _map.end(); it++) {
 	// 	std::cout << it->first << " => " << it->second << '\n';
 	// }
 }
 
-int	validDate() {
-	
+int		BitcoinExchange::validDate(std::string date) {
+
 }
 
-void	evalData(std::map) {
+void	BitcoinExchange::evalData(std::map<std::string, float>) {
 
 }
