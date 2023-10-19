@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/19 12:28:01 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:45:16 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class BitcoinExchange
 
 		std::map<std::string, float>	getData(std::string);
 		int validDate(std::string date);
+		int	validData(std::string data);
 
 		void	evalData(std::map<std::string, float>);
 
