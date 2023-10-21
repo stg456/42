@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/21 17:45:30 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/21 18:04:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,17 @@ std::map<std::string, float>	BitcoinExchange::getData(char *argv) {
 	return (_data);
 }
 
-int validDate() {
+int validDate(std::string date) {
+	std::map<std::string, float>::iterator it;
+	std::string year = date.substr(0, 4);
+	std::string month = date.substr(5, 2);
+	std::string day = date.substr(8, 2);
+
+	for (it = _data.begin(); it != _data.end(); it++) {
+		if (date ==it->first)
+			return (it->second);
+	}
+
 	
 }
 
