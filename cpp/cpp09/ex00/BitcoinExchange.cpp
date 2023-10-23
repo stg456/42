@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/23 11:33:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/23 15:35:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,10 @@ std::map<std::string, float>	BitcoinExchange::getData(char *argv) {
 		}
 	}
 	return (_data);
+}
+
+std::map<std::string, float>	BitcoinExchange::getInput(char *argv) {
+	
 }
 
 int BitcoinExchange::validDate(std::string date) {
