@@ -24,7 +24,7 @@ BitcoinExchange::BitcoinExchange(std::string filename) {
 	while (std::getline(infile, line)) {
 		std::istringstream iss(line);
 		std::string date = line.substr(0, 10);
-		float price = atof(line.substr(11).c_str());
+		float price = stof(line.substr(11).c_str());
 		if (!(iss >> date >> price)) {
 			std::cout << "Error: could not read file" << std::endl;
 			return ;

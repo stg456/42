@@ -20,8 +20,8 @@ int main(int argc, char **argv) {
 	std::cout << "File: " << argv[1] << std::endl;
 
 	BitcoinExchange btc;
-	btc.getData("data.csv");
-	// btc.getData(argv[1]);
+	// btc.getData("data.csv");
+	btc.getData(argv[1]);
 
 
 
