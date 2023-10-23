@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/23 11:19:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:20:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int validDate(std::string date) {
 	if (day < "01" || day > "31")
 		return (0);
 	if (year == "2012" || year == "2016" || year == "2020 " && month == "02" && day > "29")
-		return (0
+		return (0);
 	if (year != "2012" || year != "2016" || year != "2020 " && month == "02" && day > "28")
 		return (0);
 	if (month == "04" && day > "30" || month == "06" && day > "30" || month == "09" && day > "30" || month == "11" && day > "30")
