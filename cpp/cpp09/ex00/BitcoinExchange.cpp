@@ -63,7 +63,18 @@ std::map<std::string, float>	BitcoinExchange::getData(char *argv) {
 }
 
 std::map<std::string, float>	BitcoinExchange::getInput(char *argv) {
-	
+	std::map<std::string, float>::iterator it;
+	std::string year = date.substr(0, 4);
+	std::string month = date.substr(5, 2);
+	std::string day = date.substr(8, 2);
+
+	for (it = date.begin(); it != date.end(); it++) {
+		if (date.it->first) {
+			std::cout << "key: " << it->first << "value: " << it->second << std::endl;
+				return ();
+		}
+
+	}
 }
 
 int BitcoinExchange::validDate(std::string date) {
