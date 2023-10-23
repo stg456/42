@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/21 16:24:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:40:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class BitcoinExchange
 
 		BitcoinExchange & operator = (BitcoinExchange const &rhs);
 
-		float	getData(std::string date);
+		std::map<std::string, float>	getData(char *argv);
 		void	exchange(std::string input);
 
 

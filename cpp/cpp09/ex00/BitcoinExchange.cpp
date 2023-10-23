@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/21 18:04:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/23 10:40:51 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ int validDate(std::string date) {
 	std::string month = date.substr(5, 2);
 	std::string day = date.substr(8, 2);
 
-	for (it = _data.begin(); it != _data.end(); it++) {
-		if (date ==it->first)
-			return (it->second);
-	}
+	// for (it = _data.begin(); it != _data.end(); it++) {
+	// 	if (date ==it->first)
+	// 		return (it->second);
+	// }
 
 	
 }
