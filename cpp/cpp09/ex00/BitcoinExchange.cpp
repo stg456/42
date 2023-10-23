@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/23 11:20:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:28:05 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,17 @@ BitcoinExchange & BitcoinExchange::operator = (BitcoinExchange const &rhs) {
 std::map<std::string, float>	BitcoinExchange::getData(char *argv) {
 
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
-		std::cout << it->first << " => " << it->second << '\n';
-
+		if (validDate(it->first) == 1) {
+			std::cout << it->first << " => " << it->second << '\n';
+		}
+		else {
+			std::cout << "Error: bad input => " << it->first << '\n';
+		}
 	}
 	return (_data);
 }
 
-int validDate(std::string date) {
+int BitcoinExchange::validDate(std::string date) {
 	std::map<std::string, float>::iterator it;
 	std::string year = date.substr(0, 4);
 	std::string month = date.substr(5, 2);
