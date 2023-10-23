@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/23 10:40:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/23 11:19:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,31 @@ int validDate(std::string date) {
 	std::string month = date.substr(5, 2);
 	std::string day = date.substr(8, 2);
 
+	if (year.length() != 4 || month.length() != 2 || day.length() != 2)
+		return (0);
+	if (year < "2009" || year > "2022")
+		return (0);
+	if (month < "01" || month > "12")
+		return (0);
+	if (day < "01" || day > "31")
+		return (0);
+	if (year == "2012" || year == "2016" || year == "2020 " && month == "02" && day > "29")
+		return (0
+	if (year != "2012" || year != "2016" || year != "2020 " && month == "02" && day > "28")
+		return (0);
+	if (month == "04" && day > "30" || month == "06" && day > "30" || month == "09" && day > "30" || month == "11" && day > "30")
+		return (0);
+	return (1);
+}
+
+
 	// for (it = _data.begin(); it != _data.end(); it++) {
 	// 	if (date ==it->first)
 	// 		return (it->second);
 	// }
 
 	
-}
+
 
 int validePrice() {
 
