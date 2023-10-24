@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/24 15:00:42 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/24 15:22:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,14 +50,23 @@ BitcoinExchange & BitcoinExchange::operator = (BitcoinExchange const &rhs) {
 
 
 void	BitcoinExchange::getData(std::string filename) {
+	std::ifstream file(filename.c_str());
+	if (!file.is_open()) {
+		std::cout << "Error: could not open file" << std::endl;
+		return ;
+	}
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
 		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
 	}
+	file.close();
 }
 
 void	BitcoinExchange::getInput(std::string input) {
 	std::ifstream file(input);
-	
+	if (!file.is_open()) {
+		std::cout << "Error: could not open file" << std::endl;
+		return ;
+	}
 	// std::map<std::string, float>::iterator it;
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
 		// std::string year = date.substr(0, 4);
@@ -65,8 +74,7 @@ void	BitcoinExchange::getInput(std::string input) {
 		// std::string day = date.substr(8, 2);
 		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
 	}
-
-
+	file.close();
 }
 
 
