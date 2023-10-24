@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/24 14:32:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:34:55 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ BitcoinExchange & BitcoinExchange::operator = (BitcoinExchange const &rhs) {
 
 void	BitcoinExchange::getInput(std::string input) {
 	std::ifstream file(input);
+	
 	// std::map<std::string, float>::iterator it;
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
 		// std::string year = date.substr(0, 4);
