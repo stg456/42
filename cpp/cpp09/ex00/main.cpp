@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/23 15:31:28 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:03:50 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main(int argc, char **argv) {
 
 	BitcoinExchange btc;
 	// btc.getData("data.csv");
-	btc.getData(argv[1]);
+	btc.getInput(argv[1]);
 
 
 

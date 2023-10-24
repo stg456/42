@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/23 15:35:57 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:06:07 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ BitcoinExchange::BitcoinExchange(std::string filename) {
 	while (std::getline(infile, line)) {
 		std::istringstream iss(line);
 		std::string date = line.substr(0, 10);
-		float price = stof(line.substr(11).c_str());
+		float price = std::stof(line.substr(11).c_str());
 		if (!(iss >> date >> price)) {
 			std::cout << "Error: could not read file" << std::endl;
 			return ;
@@ -50,7 +50,7 @@ BitcoinExchange & BitcoinExchange::operator = (BitcoinExchange const &rhs) {
 
 
 std::map<std::string, float>	BitcoinExchange::getData(char *argv) {
-
+	(void)argv;
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
 		if (validDate(it->first) == 1) {
 			std::cout << it->first << " => " << it->second << '\n';
@@ -63,19 +63,22 @@ std::map<std::string, float>	BitcoinExchange::getData(char *argv) {
 }
 
 std::map<std::string, float>	BitcoinExchange::getInput(char *argv) {
-	std::map<std::string, float>::iterator it;
-	std::string year = date.substr(0, 4);
-	std::string month = date.substr(5, 2);
-	std::string day = date.substr(8, 2);
-
-	for (it = date.begin(); it != date.end(); it++) {
-		if (date.it->first) {
-			std::cout << "key: " << it->first << "value: " << it->second << std::endl;
-				return ();
-		}
-
+	(void)argv;
+	// std::map<std::string, float>::iterator it;
+	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
+		// std::string year = date.substr(0, 4);
+		// std::string month = date.substr(5, 2);
+		// std::string day = date.substr(8, 2);
+		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
 	}
+
+	// 	if (data.it->first) {
+	// 		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
+
+	// }
+	return (_data);
 }
+
 
 int BitcoinExchange::validDate(std::string date) {
 	std::map<std::string, float>::iterator it;
@@ -91,11 +94,11 @@ int BitcoinExchange::validDate(std::string date) {
 		return (0);
 	if (day < "01" || day > "31")
 		return (0);
-	if (year == "2012" || year == "2016" || year == "2020 " && month == "02" && day > "29")
+	if ((year == "2012" || year == "2016" || year == "2020") && (month == "02" && day > "29"))
 		return (0);
-	if (year != "2012" || year != "2016" || year != "2020 " && month == "02" && day > "28")
+	if ((year != "2012" || year != "2016" || year != "2020") && (month == "02" && day > "28"))
 		return (0);
-	if (month == "04" && day > "30" || month == "06" && day > "30" || month == "09" && day > "30" || month == "11" && day > "30")
+	if ((month == "04" && day > "30") || (month == "06" && day > "30") || (month == "09" && day > "30") || (month == "11" && day > "30"))
 		return (0);
 	return (1);
 }
@@ -109,6 +112,6 @@ int BitcoinExchange::validDate(std::string date) {
 	
 
 
-int validePrice() {
+// int validePrice() {
 
-}
+// }

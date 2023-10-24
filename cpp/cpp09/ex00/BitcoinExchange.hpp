@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/23 15:35:57 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/24 13:50:06 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <fstream>
 #include <sstream>
 #include <map>
-#include <cstring>
+#include <string>
 
 class BitcoinExchange 
 {
