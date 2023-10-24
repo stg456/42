@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/24 14:06:07 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:32:40 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,21 +49,19 @@ BitcoinExchange & BitcoinExchange::operator = (BitcoinExchange const &rhs) {
 }
 
 
-std::map<std::string, float>	BitcoinExchange::getData(char *argv) {
-	(void)argv;
-	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
-		if (validDate(it->first) == 1) {
-			std::cout << it->first << " => " << it->second << '\n';
-		}
-		else {
-			std::cout << "Error: bad input => " << it->first << '\n';
-		}
-	}
-	return (_data);
-}
+// void	BitcoinExchange::getData(std::string filename) {
+// 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
+// 		if (validDate(it->first) == 1) {
+// 			std::cout << it->first << " => " << it->second << '\n';
+// 		}
+// 		else {
+// 			std::cout << "Error: bad input => " << it->first << '\n';
+// 		}
+// 	}
+// }
 
-std::map<std::string, float>	BitcoinExchange::getInput(char *argv) {
-	(void)argv;
+void	BitcoinExchange::getInput(std::string input) {
+	std::ifstream file(input);
 	// std::map<std::string, float>::iterator it;
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
 		// std::string year = date.substr(0, 4);
@@ -76,7 +74,7 @@ std::map<std::string, float>	BitcoinExchange::getInput(char *argv) {
 	// 		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
 
 	// }
-	return (_data);
+	// return (_data);
 }
 
 

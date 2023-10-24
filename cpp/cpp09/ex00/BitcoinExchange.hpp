@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/24 13:50:06 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:29:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ class BitcoinExchange
 
 		BitcoinExchange & operator = (BitcoinExchange const &rhs);
 
-		std::map<std::string, float>	getData(char *argv);
-		std::map<std::string, float>	getInput(char *argv);
-		int								validDate(std::string date);
-		void							exchange(std::string input);
+		void	getData(std::string filename);
+		void	getInput(std::string input);
+		int		validDate(std::string date);
+		// void	exchange(std::string input);
 
 
 	private:
