@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/24 15:48:32 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/24 16:02:02 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ BitcoinExchange::BitcoinExchange(std::string filename) {
 			return ;
 		}
 		_data.insert (std::pair<std::string, float>(date, price));
+		std::cout << "key: " << date << "value: " << price << std::endl;
 	}
 	infile.close();	
 }
@@ -50,23 +51,15 @@ BitcoinExchange & BitcoinExchange::operator = (BitcoinExchange const &rhs) {
 
 
 void	BitcoinExchange::getData(std::string filename) {
-	// std::ifstream file(filename.c_str());
-	// if (!file.is_open()) {
-	// 	std::cout << "Error: could not open file" << std::endl;
-	// 	return ;
-	// }
+
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
 		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
 	}
-	// file.close();
+
 }
 
 void	BitcoinExchange::getInput(std::string input) {
-	// std::ifstream file(input);
-	// if (!file.is_open()) {
-	// 	std::cout << "Error: could not open file" << std::endl;
-	// 	return ;
-	// }
+
 
 	// std::map<std::string, float>::iterator it;
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
@@ -75,7 +68,6 @@ void	BitcoinExchange::getInput(std::string input) {
 		// std::string day = date.substr(8, 2);
 		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
 	}
-	// file.close();
 }
 
 
