@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/24 14:54:22 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/24 15:00:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,11 @@ BitcoinExchange & BitcoinExchange::operator = (BitcoinExchange const &rhs) {
 }
 
 
-// void	BitcoinExchange::getData(std::string filename) {
-// 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
-// 		if (validDate(it->first) == 1) {
-// 			std::cout << it->first << " => " << it->second << '\n';
-// 		}
-// 		else {
-// 			std::cout << "Error: bad input => " << it->first << '\n';
-// 		}
-// 	}
-// }
+void	BitcoinExchange::getData(std::string filename) {
+	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
+		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
+	}
+}
 
 void	BitcoinExchange::getInput(std::string input) {
 	std::ifstream file(input);
