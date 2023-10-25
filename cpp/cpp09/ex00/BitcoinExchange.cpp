@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/25 15:43:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:55:43 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	BitcoinExchange::getData(std::string filename) {
 			float price = std::stof(str.substr(11).c_str());
 			_data.insert (std::pair<std::string, float>(date, price));
 		}
+		check++;
 	}
 
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
@@ -74,7 +75,7 @@ void	BitcoinExchange::getData(std::string filename) {
 }
 
 void	BitcoinExchange::getInput(std::string input) {
-	std::ifstream file2(filename);
+	std::ifstream file2(input);
 	if (!file2.is_open()) {
 		std::cout << "Error: could not open file" << std::endl;
 		return ;
@@ -84,7 +85,7 @@ void	BitcoinExchange::getInput(std::string input) {
 		// std::string year = date.substr(0, 4);
 		// std::string month = date.substr(5, 2);
 		// std::string day = date.substr(8, 2);
-		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
+		std::cout << "key: " << it->first << " value: " << it->second << std::endl;
 	}
 	file2.close();
 }
