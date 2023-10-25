@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/25 15:31:09 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:43:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,22 +52,30 @@ BitcoinExchange & BitcoinExchange::operator = (BitcoinExchange const &rhs) {
 
 void	BitcoinExchange::getData(std::string filename) {
 	std::ifstream file(filename);
-	std::string str;
-
-	if (!filename.is_open()) {
+	if (!file.is_open()) {
 		std::cout << "Error: could not open file" << std::endl;
 		return ;
+	}
+	std::string str;
+	int check = 0;
+
+	while (getline(file, str)) {
+		if (check != 0) {
+			std::string date = str.substr(0, 10);
+			float price = std::stof(str.substr(11).c_str());
+			_data.insert (std::pair<std::string, float>(date, price));
+		}
 	}
 
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
 		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
 	}
-
+	file.close();
 }
 
 void	BitcoinExchange::getInput(std::string input) {
-
-	if (!input.is_open()) {
+	std::ifstream file2(filename);
+	if (!file2.is_open()) {
 		std::cout << "Error: could not open file" << std::endl;
 		return ;
 	}
@@ -78,6 +86,7 @@ void	BitcoinExchange::getInput(std::string input) {
 		// std::string day = date.substr(8, 2);
 		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
 	}
+	file2.close();
 }
 
 
