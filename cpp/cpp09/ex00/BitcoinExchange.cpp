@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/25 16:32:40 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/25 16:43:12 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,9 +85,9 @@ void	BitcoinExchange::getInput(std::string input) {
 		// std::string year = date.substr(0, 4);
 		// std::string month = date.substr(5, 2);
 		// std::string day = date.substr(8, 2);
-		std::cout << "a" << std::endl;
+		// std::cout << "a" << std::endl;
 			validDate(it->first);
-		std::cout << "key: " << it->first << " value: " << it->second << std::endl;
+		// std::cout << "key: " << it->first << " value: " << it->second << std::endl;
 	}
 	file2.close();
 	// validDate(it->first);
