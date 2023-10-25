@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/25 16:43:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:57:44 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,47 +68,69 @@ void	BitcoinExchange::getData(std::string filename) {
 		check++;
 	}
 
-	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
-		std::cout << "key: " << it->first << " value: " << it->second << std::endl;
-	}
+	// for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
+	// 	std::cout << "key: " << it->first << " value: " << it->second << std::endl;
+	// }
 	file.close();
 }
 
 void	BitcoinExchange::getInput(std::string input) {
 	std::ifstream file2(input);
+	std::string str2;
 	if (!file2.is_open()) {
 		std::cout << "Error: could not open file" << std::endl;
 		return ;
 	}
-	// std::map<std::string, float>::iterator it;
+	// str2 = getline(file2);
+	int check = 0;
+
+	while (getline(file2, str2)) {
+		if (check != 0) {
+			std::string date = str2.substr(0, 10);
+				float price = 0.0;
+			std::cout << "a" << std::endl;
+			if (str2.size() < 12)
+				std::cout << "Error: bad input => " << str2 << '\n';
+			else
+				price = std::stof(str2.substr(12));
+			if (!price)
+				std::cout << "Error: bad input => " << str2 << '\n';
+			std::cout << "b" << std::endl;
+			// if (date && price)
+				_data.insert(std::make_pair(date, price));
+		}
+		check++;
+	}
+
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
+
 		// std::string year = date.substr(0, 4);
 		// std::string month = date.substr(5, 2);
 		// std::string day = date.substr(8, 2);
 		// std::cout << "a" << std::endl;
-			validDate(it->first);
+		validDate(it);
+
 		// std::cout << "key: " << it->first << " value: " << it->second << std::endl;
 	}
 	file2.close();
-	// validDate(it->first);
 }
 
 
-void BitcoinExchange::validDate(std::string date) {
-	std::map<std::string, float>::iterator it;
-	std::string year = date.substr(0, 4);
-	std::string month = date.substr(5, 2);
-	std::string day = date.substr(8, 2);
+void BitcoinExchange::validDate(std::map<std::string, float>::iterator it) {
+
+	std::string year = it->first.substr(0, 4);
+	std::string month = it->first.substr(5, 2);
+	std::string day = it->first.substr(8, 2);
 
 	if ((year.length() != 4 || month.length() != 2 || day.length() != 2) || (year < "2009" || year > "2022")
 		|| (month < "01" || month > "12") || (day < "01" || day > "31"))
-		std::cout << "Error: bad input => " << date << '\n';
+		std::cout << "Error: bad input => " << it->first << '\n';
 	else if ((year == "2012" || year == "2016" || year == "2020") && (month == "02" && day > "29"))
-		std::cout << "Error: bad input => " << date << '\n';
+		std::cout << "Error: bad input => " << it->first << '\n';
 	else if ((year != "2012" || year != "2016" || year != "2020") && (month == "02" && day > "28"))
-		std::cout << "Error: bad input => " << date << '\n';
+		std::cout << "Error: bad input => " << it->first << '\n';
 	else if ((month == "04" && day > "30") || (month == "06" && day > "30") || (month == "09" && day > "30") || (month == "11" && day > "30"))
-		std::cout << "Error: bad input => " << date << '\n';
+		std::cout << "Error: bad input => " << it->first << '\n';
 	else {
 		std::cout << "key: " << it->first << " value: " << it->second << std::endl;
 	}

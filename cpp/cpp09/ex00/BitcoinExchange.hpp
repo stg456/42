@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/25 15:25:49 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:35:41 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class BitcoinExchange
 
 		void	getData(std::string filename);
 		void	getInput(std::string input);
-		void	validDate(std::string date);
+		void 	validDate(std::map<std::string, float>::iterator it);
 		// void	exchange(std::string input);
 
 

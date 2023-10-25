@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/25 16:31:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/25 17:55:29 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int argc, char **argv) {
 	std::cout << "File: " << argv[1] << std::endl;
 
 	BitcoinExchange btc;
-	btc.getData("data.csv");
+	// btc.getData("data.csv");
 	btc.getInput(argv[1]);
 
 
