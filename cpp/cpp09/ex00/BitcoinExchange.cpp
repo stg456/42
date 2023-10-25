@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/24 16:49:08 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:31:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 BitcoinExchange::BitcoinExchange() {}
 
-BitcoinExchange::BitcoinExchange(std::string filename) {
-	std::ifstream infile(filename.c_str()); // c_str() converts string to char* with '\0'
-	if (!infile.is_open()) {
-		std::cout << "Error: could not open file" << std::endl;
-		return ;
-	}
-	std::string line;
-	while (std::getline(infile, line)) {
-		std::istringstream iss(line);
-		std::string date = line.substr(0, 10);
-		float price = std::stof(line.substr(11).c_str());
-		if (!(iss >> date >> price)) {
-			std::cout << "Error: could not read file" << std::endl;
-			return ;
-		}
-		_data.insert (std::pair<std::string, float>(date, price));
-		std::cout << "key: " << date << "value: " << price << std::endl;
-	}
-	infile.close();	
-}
+// BitcoinExchange::BitcoinExchange(std::string filename) {}
+// 	std::ifstream infile(filename.c_str()); // c_str() converts string to char* with '\0'
+// 	if (!infile.is_open()) {
+// 		std::cout << "Error: could not open file" << std::endl;
+// 		return ;
+// 	}
+// 	std::string line;
+// 	while (std::getline(infile, line)) {
+// 		std::istringstream iss(line);
+// 		std::string date = line.substr(0, 10);
+// 		float price = std::stof(line.substr(11).c_str());
+// 		if (!(iss >> date >> price)) {
+// 			std::cout << "Error: could not read file" << std::endl;
+// 			return ;
+// 		}
+// 		_data.insert (std::pair<std::string, float>(date, price));
+// 		std::cout << "key: " << date << "value: " << price << std::endl;
+// 	}
+// 	infile.close();	
+// }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &src) {
 	*this = src;
@@ -54,6 +54,11 @@ void	BitcoinExchange::getData(std::string filename) {
 	std::ifstream file(filename);
 	std::string str;
 
+	if (!filename.is_open()) {
+		std::cout << "Error: could not open file" << std::endl;
+		return ;
+	}
+
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
 		std::cout << "key: " << it->first << "value: " << it->second << std::endl;
 	}
@@ -62,7 +67,10 @@ void	BitcoinExchange::getData(std::string filename) {
 
 void	BitcoinExchange::getInput(std::string input) {
 
-
+	if (!input.is_open()) {
+		std::cout << "Error: could not open file" << std::endl;
+		return ;
+	}
 	// std::map<std::string, float>::iterator it;
 	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
 		// std::string year = date.substr(0, 4);

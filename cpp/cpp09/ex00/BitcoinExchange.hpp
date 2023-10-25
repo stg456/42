@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/24 14:46:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/25 15:25:49 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class BitcoinExchange
 {
 	public:
 		BitcoinExchange();
-		BitcoinExchange(std::string filename);
+		// BitcoinExchange(std::string filename);
 		BitcoinExchange(BitcoinExchange const &src);
 		~BitcoinExchange();
 
