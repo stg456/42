@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/25 17:57:44 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/25 18:08:46 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,14 +88,14 @@ void	BitcoinExchange::getInput(std::string input) {
 		if (check != 0) {
 			std::string date = str2.substr(0, 10);
 				float price = 0.0;
-			std::cout << "a" << std::endl;
+			// std::cout << "a" << std::endl;
 			if (str2.size() < 12)
 				std::cout << "Error: bad input => " << str2 << '\n';
 			else
 				price = std::stof(str2.substr(12));
-			if (!price)
-				std::cout << "Error: bad input => " << str2 << '\n';
-			std::cout << "b" << std::endl;
+			// if (!price)
+			// 	std::cout << "Error: bad input => " << str2 << '\n';
+			// std::cout << "b" << std::endl;
 			// if (date && price)
 				_data.insert(std::make_pair(date, price));
 		}
@@ -110,7 +110,7 @@ void	BitcoinExchange::getInput(std::string input) {
 		// std::cout << "a" << std::endl;
 		validDate(it);
 
-		// std::cout << "key: " << it->first << " value: " << it->second << std::endl;
+		std::cout << "key: " << it->first << " value: " << it->second << std::endl;
 	}
 	file2.close();
 }
