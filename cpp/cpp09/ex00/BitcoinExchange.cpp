@@ -49,6 +49,17 @@ BitcoinExchange & BitcoinExchange::operator = (BitcoinExchange const &rhs) {
 	return *this;
 }
 
+// float stringToFloat(const std::string& str) {
+//     std::istringstream iss(str);
+//     float result;
+    
+//     if (!(iss >> result)) {
+//         // La conversion a échoué
+//         // Vous pouvez gérer l'erreur ici
+//     }
+    
+//     return result;
+// }
 
 void	BitcoinExchange::getData(std::string filename) {
 	std::ifstream file(filename);
