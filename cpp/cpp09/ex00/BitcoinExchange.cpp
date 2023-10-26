@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/26 11:10:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:17:54 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,39 +81,37 @@ void	BitcoinExchange::getInput(std::string input) {
 		std::cout << "Error: could not open file" << std::endl;
 		return ;
 	}
-	// str2 = getline(file2);
-	int check = 0;
 
+	int check = 0;
 	while (getline(file2, str2)) {
 		if (check != 0) {
 			std::string date = str2.substr(0, 10);
-				float price = 0.0;
-			// std::cout << "a" << std::endl;
-			if (str2.size() < 12)
-				std::cout << "Error: bad input => " << str2 << '\n';
-			else
-				price = std::stof(str2.substr(12));
-			// if (!price)
-			// 	std::cout << "Error: bad input => " << str2 << '\n';
-			// std::cout << "b" << std::endl;
-			// if (date && price)
-			_data.insert(std::make_pair(date, price));
+				float price = std::stof(str2.substr(12));
+			if (str2.size() < 12) {
+				std::cout << "Error: bad input => " << str2 << std::endl;
+			}
+			else if (price < 0)
+				std::cout << "Error: not a positive number." << std::endl;
+				// price = std::stof(str2.substr(12));
+			else if (price > 1000)
+					std::cout << "Error: too large a number." << std::endl;
+
+			std::cout << "key: " << date << " value: " << price << std::endl;
 		}
+
+			// if (date && price)
+			// _data.insert(std::make_pair(date, price));
+
+			// std::cout << "key: " << date << " value: " << price << std::endl;
+
 		check++;
 	}
 
-	for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
-
-		// std::string year = date.substr(0, 4);
-		// std::string month = date.substr(5, 2);
-		// std::string day = date.substr(8, 2);
-		// std::cout << "a" << std::endl;
-
-		std::cout << "key: " << it->first << " value: " << it->second << std::endl;
-		validDate(it);
-
+	// for (std::map<std::string, float>::iterator it = _data.begin(); it != _data.end(); it++) {
 		// std::cout << "key: " << it->first << " value: " << it->second << std::endl;
-	}
+		// validDate(it);
+		// std::cout << "key: " << it->first << " value: " << it->second << std::endl;
+	// }
 	file2.close();
 }
 
