@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/26 12:36:27 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:39:53 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,13 +123,13 @@ void BitcoinExchange::validDate(std::map<std::string, float>::iterator it) {
 
 	if ((year.length() != 4 || month.length() != 2 || day.length() != 2) || (year < "2009" || year > "2022")
 		|| (month < "01" || month > "12") || (day < "01" || day > "31"))
-		std::cout << "Error: bad input => " << it->first << '\n';
+		std::cout << "Error: bad input => " << it->first << std::endl;
 	else if ((year == "2012" || year == "2016" || year == "2020") && (month == "02" && day > "29"))
-		std::cout << "Error: bad input => " << it->first << '\n';
+		std::cout << "Error: bad input => " << it->first << std::endl;
 	else if ((year != "2012" || year != "2016" || year != "2020") && (month == "02" && day > "28"))
-		std::cout << "Error: bad input => " << it->first << '\n';
+		std::cout << "Error: bad input => " << it->first << std::endl;
 	else if ((month == "04" && day > "30") || (month == "06" && day > "30") || (month == "09" && day > "30") || (month == "11" && day > "30"))
-		std::cout << "Error: bad input => " << it->first << '\n';
+		std::cout << "Error: bad input => " << it->first << std::endl;
 	else {
 		std::cout << "key: " << it->first << " value: " << it->second << std::endl;
 	}
