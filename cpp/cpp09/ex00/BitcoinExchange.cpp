@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/26 12:17:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:29:09 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,22 +87,21 @@ void	BitcoinExchange::getInput(std::string input) {
 		if (check != 0) {
 			std::string date = str2.substr(0, 10);
 				float price = std::stof(str2.substr(12));
-			if (str2.size() < 12) {
+			if (str2.size() < 11) {
 				std::cout << "Error: bad input => " << str2 << std::endl;
 			}
 			else if (price < 0)
 				std::cout << "Error: not a positive number." << std::endl;
 				// price = std::stof(str2.substr(12));
 			else if (price > 1000)
-					std::cout << "Error: too large a number." << std::endl;
-
+				std::cout << "Error: too large a number." << std::endl;
+			_data.insert(std::make_pair(date, price));
+			if (!price)
+				std::cout << "Error: bad input => " << str2 << std::endl;
 			std::cout << "key: " << date << " value: " << price << std::endl;
+			// else
 		}
 
-			// if (date && price)
-			// _data.insert(std::make_pair(date, price));
-
-			// std::cout << "key: " << date << " value: " << price << std::endl;
 
 		check++;
 	}
