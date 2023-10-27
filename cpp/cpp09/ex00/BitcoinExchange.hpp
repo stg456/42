@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:21 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/25 17:35:41 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/27 16:10:56 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class BitcoinExchange
 {
 	public:
 		BitcoinExchange();
-		// BitcoinExchange(std::string filename);
 		BitcoinExchange(BitcoinExchange const &src);
 		~BitcoinExchange();
 
@@ -32,8 +31,9 @@ class BitcoinExchange
 
 		void	getData(std::string filename);
 		void	getInput(std::string input);
-		void 	validDate(std::map<std::string, float>::iterator it);
-		// void	exchange(std::string input);
+		int 	validDate(std::map<std::string, float>::iterator it);
+		float	getPrice(std::string date);
+
 
 
 	private:
