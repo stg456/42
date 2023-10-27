@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:16:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/27 14:55:50 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/27 15:14:39 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ RPN::RPN(RPN const &src) {
 // 	return *this;
 // }
 
-int	check(std::string av) {
+int	RPN::check(std::string av) {
 	for (int i = 0; i < av.length(); i++) {
 		if (av[i] == ' ')
 			continue ;
@@ -42,15 +42,26 @@ int	check(std::string av) {
 }
 
 int	RPN::calculate(std::string str_rpn) {
-	// int		nb1;
-	// int 	nb2;
+	int		nb1;
+	int 	nb2;
 	for (int i = 0; i < str_rpn.length(); i++) {
 		if (str_rpn[i] == ' ')
 			continue ;
 		else if (isdigit(str_rpn[i])) {
-			
+			nb1 = stoi(std::string(1, str_rpn[i]));
+			_stack.push(nb1); // ajoute un element au dessus de la pile
 		}
+		else {
+			nb2 = _stack.top(); // accede au 1er element
+			_stack.pop(); // remove le 1er element
+			if (_stack.empty()) {
+				std::cout << "Error" << std::endl;
+				return 1;
+			}
+			nb1 = _stack.top();
+			_stack.pop();
 
+		}
 	}
 	std::cout << str_rpn << std::endl;
 	return 0;
