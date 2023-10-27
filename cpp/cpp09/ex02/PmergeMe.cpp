@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/27 17:46:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:01:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,6 @@ PmergeMe::~PmergeMe() {}
 
 
 PmergeMe & PmergeMe::operator = (PmergeMe const &rhs) {
-	if (this != &rhs) {
-		_vector = rhs._vector;
-	}
 	return *this;
 }
 
@@ -47,9 +44,14 @@ void PmergeMe::insert(char **av) {
 		_vector.push_back(atoi(av[i]));
 		i++;
 	}
+
+	while (av[i]) {
+		_deque.push_back(atoi(av[i]));
+		i++;
+	}
 }
 
-void PmergeMe::print() {
+void PmergeMe::print(int ac) {
 	std::vector<int>::iterator it = _vector.begin();
 
 	while (it != _vector.end()) {

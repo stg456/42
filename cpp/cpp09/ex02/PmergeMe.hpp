@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:41:34 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/27 17:13:35 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:01:21 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 #include <iostream>
 #include <vector>
+#include <deque>
 
 class PmergeMe {
 	public:
@@ -25,8 +26,9 @@ class PmergeMe {
 
 		bool check(char *str);
 		void insert(char **av);
-		void print();
+		void print(int ac);
 
 	private:
 		std::vector<int> _vector;
+		std::deque<int> _deque;
 };
