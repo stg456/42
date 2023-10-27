@@ -1,33 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
+/*   Created: 2023/10/27 16:41:34 by stgerard          #+#    #+#             */
 /*   Updated: 2023/10/27 17:13:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#pragma once
 
-int main(int ac, char **av) {
-	PmergeMe p;
+#include <iostream>
+#include <vector>
 
-	if (ac < 2) {
-		std::cout << "Error: arguments required" << std::endl;
-		return 1;
-	}
+class PmergeMe {
+	public:
+		PmergeMe();
+		PmergeMe(PmergeMe const &src);
+		~PmergeMe();
 
-	for (int i; av[i]; i++) {
-		if ((p.check(av[i]))) {
-			std::cout << "Error" << std::endl;
-			return 1;
-		}
-	}
-	p.insert(av);
-	p.print();
+		PmergeMe & operator = (PmergeMe const &rhs);
 
-	return 0;
-}
+		bool check(char *str);
+		void insert(char **av);
+		void print();
+
+	private:
+		std::vector<int> _vector;
+};

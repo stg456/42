@@ -1,33 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PmergeMe.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
+/*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
 /*   Updated: 2023/10/27 17:13:35 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "BitcoinExchange.hpp"
+#include "PmergeMe.hpp"
 
-int main(int ac, char **av) {
-	PmergeMe p;
+PmergeMe::PmergeMe() {}
 
-	if (ac < 2) {
-		std::cout << "Error: arguments required" << std::endl;
-		return 1;
+PmergeMe::PmergeMe(PmergeMe const &src) {
+	*this = src;
+}
+
+PmergeMe::~PmergeMe() {}
+
+bool PmergeMe::check(char *str) {
+	int i = 0;
+
+	while (str[i]) {
+		if (!isdigit(str[i]))
+			return true;
+		i++;
 	}
+	return false;
+}
 
-	for (int i; av[i]; i++) {
-		if ((p.check(av[i]))) {
-			std::cout << "Error" << std::endl;
-			return 1;
-		}
+void PmergeMe::insert(char **av) {
+	int i = 1;
+
+	while (av[i]) {
+		_vector.push_back(atoi(av[i]));
+		i++;
 	}
-	p.insert(av);
-	p.print();
+}
 
-	return 0;
+void PmergeMe::print() {
+	std::vector<int>::iterator it = _vector.begin();
+
+	while (it != _vector.end()) {
+		std::cout << *it << std::endl;
+		it++;
+	}
 }
