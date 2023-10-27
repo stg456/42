@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:14:53 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/26 14:42:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/27 14:16:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ class RPN
 
 		// RPN & operator = (RPN const &rhs);
 
-		void	calculate(std::string input);
+		int	check(std::string av);
+		int	calculate(std::string input);
 
 	private:
 		std::stack<int>	_stack;

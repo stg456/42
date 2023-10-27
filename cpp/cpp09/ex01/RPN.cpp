@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:16:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/26 14:42:46 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/27 14:16:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,26 @@ RPN::RPN(RPN const &src) {
 // 	return *this;
 // }
 
-void	RPN::calculate(std::string input) {
+int	check(std::string av) {
+	for (int i = 0; i < av.length(); i++) {
+		if (av[i] == ' ')
+			continue ;
+		else if (av[i] == '+' || av[i] == '-' || av[i] == '*' || av[i] == '/' || av[i] == '%')
+			continue ;
+		else if (av[i] >= '0' && av[i] <= '9')
+			continue ;
+		else
+			return 1;
+	}
+	return 0;
+}
+
+int	RPN::calculate(std::string input) {
 	int		nb1;
 	int 	nb2;
 	for (int i = 0; i < input.length(); i++) {
 		
 	}
 	std::cout << input << std::endl;
+	return 0;
 }
