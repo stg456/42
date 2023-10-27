@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:16:25 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/27 15:14:39 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/27 15:22:06 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ RPN::RPN(RPN const &src) {
 // }
 
 int	RPN::check(std::string av) {
-	for (int i = 0; i < av.length(); i++) {
+	for (size_t i = 0; i < av.length(); i++) {
 		if (av[i] == ' ')
 			continue ;
 		else if (av[i] == '+' || av[i] == '-' || av[i] == '*' || av[i] == '/')
@@ -44,7 +44,7 @@ int	RPN::check(std::string av) {
 int	RPN::calculate(std::string str_rpn) {
 	int		nb1;
 	int 	nb2;
-	for (int i = 0; i < str_rpn.length(); i++) {
+	for (size_t i = 0; i < str_rpn.length(); i++) {
 		if (str_rpn[i] == ' ')
 			continue ;
 		else if (isdigit(str_rpn[i])) {
@@ -61,8 +61,15 @@ int	RPN::calculate(std::string str_rpn) {
 			nb1 = _stack.top();
 			_stack.pop();
 
+			if (str_rpn[i] == '+')
+				_stack.push(nb1 + nb2);
+			else if (str_rpn[i] == '-')
+				_stack.push(nb1 - nb2);
+			else if (str_rpn[i] == '*')
+				_stack.push(nb1 * nb2);
+			else if (str_rpn[i] == '/')
+				_stack.push(nb1 / nb2);
 		}
 	}
-	std::cout << str_rpn << std::endl;
-	return 0;
+	return (_stack.top());
 }
