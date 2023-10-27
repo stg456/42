@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/27 18:01:21 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/27 18:08:23 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ PmergeMe::~PmergeMe() {}
 
 
 PmergeMe & PmergeMe::operator = (PmergeMe const &rhs) {
+	if (this != &rhs) {
+		_vector = rhs._vector;
+		_deque = rhs._deque;
+	}
 	return *this;
 }
 
@@ -30,7 +34,7 @@ bool PmergeMe::check(char *str) {
 	int i = 0;
 
 	while (str[i]) {
-		if (!isdigit(str[i]))
+		if (isdigit(str[i]))
 			return true;
 		i++;
 	}
@@ -53,6 +57,7 @@ void PmergeMe::insert(char **av) {
 
 void PmergeMe::print(int ac) {
 	std::vector<int>::iterator it = _vector.begin();
+	ac = ac - 1;
 
 	while (it != _vector.end()) {
 		std::cout << *it << std::endl;
