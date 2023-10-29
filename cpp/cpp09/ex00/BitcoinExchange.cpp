@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/27 16:38:51 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/29 17:09:11 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,29 +57,33 @@ void	BitcoinExchange::getInput(std::string input) {
 		return ;
 	}
 
-	int check = 0;
+	int check = 1;
 	while (1) {
 		getline(file2, str2);
 		if (str2.size() == 0)
 			break;
+		if (str2 == "date | value")
+			continue;
 		if (check != 0) {
 			int pos = str2.find("|");
 			if (pos == -1) {
 				std::cout << "Error: bad input => " << str2 << std::endl;
-				break;
+				continue;
 			}
 			std::string str3 = str2.substr(pos + 2);
-			std::string str4 = str3.substr(0, pos - 1);
+			std::string str4 = str2.substr(0, pos - 1);
+			//std::cout << "str3: " << str3 << std::endl << "str4: " << str4 << std::endl;
 
-			float value = std::atof(str4.c_str());
+			float value = std::atof(str3.c_str());
 			if (value < 0)
 				std::cout << "Error: not a positive number." << std::endl;
 			else if (value > 1000)
 				std::cout << "Error: too large a number." << std::endl;
-			else if (pos == -1)
+			else if (pos == -1) {
 				std::cout << "Error: bad input => " << str2 << std::endl;
+			}
 			else {
-				std::cout << "key: " << str4.substr(0, 10) << std::fixed << std::setprecision(2) << " value: " << value * getPrice(str3) << std::endl;
+				std::cout << "key: " << str4.substr(0, 10) << " value: " << value * getPrice(str4) << std::endl;
 			}
 			check++;
 		}
@@ -116,10 +120,10 @@ int BitcoinExchange::validDate(std::map<std::string, float>::iterator it) {
 float	BitcoinExchange::getPrice(std::string date) {
 	std::map<std::string, float>::iterator it;
 
-	std::string year = it->first.substr(0, 4);
-	std::string month = it->first.substr(5, 2);
-	std::string day = it->first.substr(8, 2);
-
+	std::string year = date.substr(0, 4);
+	std::string month = date.substr(5, 2);
+	std::string day = date.substr(8, 2);
+	
 	for (it = _data.begin(); it != _data.end(); it++) {
 		if (date == it->first)
 			return (it->second);
