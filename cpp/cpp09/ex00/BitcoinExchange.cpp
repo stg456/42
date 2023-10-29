@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 11:23:30 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/29 17:09:11 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/29 17:17:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,8 @@ void	BitcoinExchange::getInput(std::string input) {
 				std::cout << "Error: bad input => " << str2 << std::endl;
 			}
 			else {
-				std::cout << "key: " << str4.substr(0, 10) << " value: " << value * getPrice(str4) << std::endl;
+				std::cout << str4 << " => " << str3 << " = " << value * getPrice(str4) << std::endl;
+				// std::cout << "key: " << str4.substr(0, 10) << " value: " << value * getPrice(str4) << std::endl;
 			}
 			check++;
 		}
