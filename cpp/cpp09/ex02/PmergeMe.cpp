@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 11:00:24 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:14:33 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ PmergeMe & PmergeMe::operator = (PmergeMe const &rhs) {
 }
 
 
-bool PmergeMe::check(char *str) {
+int PmergeMe::check(char *str) {
 	int i = 0;
 
 	while (str[i]) {
 		if (isdigit(str[i]))
-			return true;
+			return 0;
 		i++;
 	}
-	return false;
+	return 1;
 }
 
 void PmergeMe::insert(char **av) {
@@ -55,7 +55,7 @@ void PmergeMe::insert(char **av) {
 	}
 }
 
-void PmergeMe::print(int ac) {
+void PmergeMe::print(int ac, char **av) {
 // Sur la première ligne, vous devez afficher un texte explicite suivi du positif non trié
 // séquence entière
 // Sur la deuxième ligne, vous devez afficher un texte explicite suivi du positif trié
@@ -72,22 +72,24 @@ void PmergeMe::print(int ac) {
 
 	
 	std::cout << "Before: ";
-	for (int i = 0; i < ac; i++) {
-		std::cout << _vector[i] << std::endl;
-		std::cout << _deque[i] << std::endl;
+	for (int i = 1; i <= ac; i++) {
+		std::cout << av[i];
+		// std::cout << _vector[i] << std::endl;
+		// std::cout << _deque[i] << std::endl;
 	}
+	std::cout << std::endl;
 
 	std::clock_t start1 = std::clock();
-	std::sort();
+	std::sort(_vector.begin(), _vector.end());
 	std::clock_t end1 = std::clock();
 	
 	std::clock_t start2 = std::clock();
-	std::sort();
+	std::sort(_deque.begin(), _deque.end());
 	std::clock_t end2 = std::clock();
 	
 	std::cout << "After: ";
 	std::vector<int>::iterator it = _vector.begin();
-	ac = ac - 1;
+
 
 	while (it != _vector.end()) {
 		std::cout << *it << std::endl;
