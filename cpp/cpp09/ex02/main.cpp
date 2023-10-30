@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 12:47:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 13:11:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int main(int ac, char **av) {
 	}
 	// std::cout << "b" << std::endl;
 	p.insert(av);
-	std::cout << "c" << std::endl;
+	// std::cout << "c" << std::endl;
 	p.print(ac, av);
-	std::cout << "d" << std::endl;
+	// std::cout << "d" << std::endl;
 
 	return 0;
 }
