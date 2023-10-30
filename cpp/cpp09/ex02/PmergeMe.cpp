@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 11:14:33 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:20:13 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,12 @@ PmergeMe & PmergeMe::operator = (PmergeMe const &rhs) {
 
 int PmergeMe::check(char *str) {
 	int i = 0;
-
+	// std::cout << "a" << std::endl;
 	while (str[i]) {
-		if (isdigit(str[i]))
+		if (isdigit(str[i])) {
+			std::cout << str[i] << std::endl;
 			return 0;
+		}
 		i++;
 	}
 	return 1;
