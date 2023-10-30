@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 13:22:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 13:59:10 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,15 @@ PmergeMe & PmergeMe::operator = (PmergeMe const &rhs) {
 
 int PmergeMe::check(char *str) {
 	int i = 0;
-	// std::cout << "a1" << std::endl;
 	while (str[i]) {
 		if (isdigit(str[i])) {
-			// std::cout << str[i] << std::endl;
-			// std::cout << isdigit(str[i]) << std::endl;
 			return 0;
 		}
 		else if (!isalpha(str[i])) {
-			// std::cout << str[i] << std::endl;
 			return 1;
 		}
 		i++;
 	}
-	// std::cout << "a2" << std::endl;
 	return 0;
 }
 
@@ -63,27 +58,10 @@ void PmergeMe::insert(char **av) {
 	}
 }
 
-void PmergeMe::print(int ac, char **av) {
-// Sur la première ligne, vous devez afficher un texte explicite suivi du positif non trié
-// séquence entière
-// Sur la deuxième ligne, vous devez afficher un texte explicite suivi du positif trié
-// séquence entière.
-// Sur la troisième ligne, vous devez afficher un texte explicite indiquant l’heure utilisée par
-// votre algorithme en spécifiant le premier conteneur utilisé pour trier l’entier positif
-// séquence
-// Sur la dernière ligne, vous devez afficher un texte explicite indiquant l’heure utilisée par
-// votre algorithme en spécifiant le second conteneur utilisé pour trier l’entier positif
-// séquence
-// Le format pour l’affichage du temps utilisé pour effectuer votre tri
-// est libre mais la précision choisie doit permettre de
-// différence entre les deux contenants utilisés
-
-	
+void PmergeMe::print(int ac, char **av) {	
 	std::cout << "Before:";
 	for (int i = 1; i < ac; i++) {
 		std::cout << " " << av[i];
-		// std::cout << _vector[i] << std::endl;
-		// std::cout << _deque[i] << std::endl;
 	}
 	std::cout << std::endl;
 
