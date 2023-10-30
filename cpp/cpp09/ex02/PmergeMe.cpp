@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 10:58:12 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:00:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,6 @@ void PmergeMe::print(int ac) {
 		it++;
 	}
 
-	std::cout << "Time: " << (end - start1) * 1000 << std::endl;
-	std::cout << "Time: " << (end - start2) * 1000 << std::endl;
+	std::cout << "Time: " << (end1 - start1) * 1000 << std::endl;
+	std::cout << "Time: " << (end2 - start2) * 1000 << std::endl;
 }
