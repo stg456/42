@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:41:34 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 11:31:54 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 13:20:24 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <deque>
 #include <algorithm>
 #include <cctype>
+#include <iomanip>
 
 class PmergeMe {
 	public:
