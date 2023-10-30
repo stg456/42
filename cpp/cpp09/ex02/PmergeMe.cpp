@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 12:55:19 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 13:09:59 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,16 +97,20 @@ void PmergeMe::print(int ac, char **av) {
 	
 	std::cout << "After:";
 	std::vector<int>::iterator it = _vector.begin();
-	std::cout << " " << *it;
+	while (it != _vector.end()) {
+		std::cout << " " << *it;
+		it++;
+	}
+	std::cout << std::endl;
 	
-	std::deque<int>::iterator it2 = _deque.begin();
-	std::cout << " " << *it2;
+	// std::deque<int>::iterator it2 = _deque.begin();
+	// std::cout << " " << *it2;
 
 	while (it != _vector.end()) {
 		std::cout << *it << std::endl;
 		it++;
 	}
 
-	std::cout << "Time to process: " << (end1 - start1) * 1000 << std::endl;
-	std::cout << "Time to process: " << (end2 - start2) * 1000 << std::endl;
+	std::cout << "Time to process with <vector>: " << (end1 - start1) * 1000 << std::endl;
+	std::cout << "Time to process: with <deque>" << (end2 - start2) * 1000 << std::endl;
 }
