@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 09:52:00 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:27:57 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void PmergeMe::print(int ac) {
 // est libre mais la précision choisie doit permettre de
 // différence entre les deux contenants utilisés
 
+	std::clock_t start = std::clock();
 	std::cout << "Before: ";
 	for (int i = 0; i < ac; i++) {
 		std::cout << _vector[i] << std::endl;
@@ -83,4 +84,6 @@ void PmergeMe::print(int ac) {
 		std::cout << *it << std::endl;
 		it++;
 	}
+	const std::clock_t end = std::clock();
+	std::cout << "Time: " << end - start << std::endl;
 }
