@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/27 18:08:23 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 09:36:00 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,20 @@ void PmergeMe::insert(char **av) {
 }
 
 void PmergeMe::print(int ac) {
+Sur la première ligne, vous devez afficher un texte explicite suivi du positif non trié
+séquence entière
+Sur la deuxième ligne, vous devez afficher un texte explicite suivi du positif trié
+séquence entière.
+Sur la troisième ligne, vous devez afficher un texte explicite indiquant l’heure utilisée par
+votre algorithme en spécifiant le premier conteneur utilisé pour trier l’entier positif
+séquence
+Sur la dernière ligne, vous devez afficher un texte explicite indiquant l’heure utilisée par
+votre algorithme en spécifiant le second conteneur utilisé pour trier l’entier positif
+séquence
+Le format pour l’affichage du temps utilisé pour effectuer votre tri
+est libre mais la précision choisie doit permettre de
+différence entre les deux contenants utilisés
+
 	std::vector<int>::iterator it = _vector.begin();
 	ac = ac - 1;
 
