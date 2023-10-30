@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 11:28:16 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:49:58 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ int PmergeMe::check(char *str) {
 		if (isdigit(str[i])) {
 			std::cout << str[i] << std::endl;
 			return 0;
+		}
+		else if (!isalpha(str[i])) {
+			std::cout << str[i] << std::endl;
+			return 1;
 		}
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 11:23:15 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 11:46:28 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main(int ac, char **av) {
 		return 1;
 	}
 
-	for (int i = 1; i < ac; i++) {
+	for (int i = 1; i <= ac; i++) {
 		if ((p.check(av[i]))) {
 			std::cout << "Error in arguments" << std::endl;
 			return 1;
