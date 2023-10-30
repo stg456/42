@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:42:10 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 10:27:57 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/10/30 10:58:12 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,13 +70,22 @@ void PmergeMe::print(int ac) {
 // est libre mais la précision choisie doit permettre de
 // différence entre les deux contenants utilisés
 
-	std::clock_t start = std::clock();
+	
 	std::cout << "Before: ";
 	for (int i = 0; i < ac; i++) {
 		std::cout << _vector[i] << std::endl;
 		std::cout << _deque[i] << std::endl;
 	}
-	std::cout << "Before: ";
+
+	std::clock_t start1 = std::clock();
+	std::sort();
+	std::clock_t end1 = std::clock();
+	
+	std::clock_t start2 = std::clock();
+	std::sort();
+	std::clock_t end2 = std::clock();
+	
+	std::cout << "After: ";
 	std::vector<int>::iterator it = _vector.begin();
 	ac = ac - 1;
 
@@ -84,6 +93,7 @@ void PmergeMe::print(int ac) {
 		std::cout << *it << std::endl;
 		it++;
 	}
-	const std::clock_t end = std::clock();
-	std::cout << "Time: " << end - start << std::endl;
+
+	std::cout << "Time: " << (end - start1) * 1000 << std::endl;
+	std::cout << "Time: " << (end - start2) * 1000 << std::endl;
 }
