@@ -4,6 +4,11 @@
 #include <string>
 
 class Server {
+	private:
+		int 			_port;
+		std::string		_password;
+		
+
 	public:
 		Server();
 		~Server();
