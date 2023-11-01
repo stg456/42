@@ -6,7 +6,7 @@
 /*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/10/30 14:54:20 by stgerard         ###   ########.fr       */
+/*   Updated: 2023/11/01 10:04:42 by stgerard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(int ac, char **av) {
 	if (ac != 3) {
-		std::cout << "Error: arguments required" << std::endl;
+		std::cerr << "Error: arguments required" << std::endl;
 		return 1;
 	}
 
