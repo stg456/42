@@ -3,7 +3,9 @@
 #include <iostream>
 #include <string>
 
-class Sercer;
+#include "server.hpp"
+
+class Server;
 
 class User {
 	public:
