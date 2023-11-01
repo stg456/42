@@ -15,7 +15,9 @@ class User {
 		~User();
 		
 		std::string	getUserNmae();
+		std::string getNickName();
 		std::string getSocket();
+		
 
 		void setPassword();
 
