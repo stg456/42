@@ -13,9 +13,11 @@
 #include <map>
 #include <cstdlib>
 
-
 #include "user.hpp"
+#include "channel.hpp"
 
+class User;
+class Channel;
 
 class Server {
 	private:

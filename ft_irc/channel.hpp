@@ -8,7 +8,7 @@
 class User;
 class Server;
 
-Class Channel
+class Channel
 {
 	private:
 		std::string _name;
@@ -16,9 +16,9 @@ Class Channel
 		std::string _password;
 
 	public:
-		channel();
+		Channel();
 		// channel(const channel &src);
-		~channel();
+		~Channel();
 
 		std::string getName();
 		// std::vector<User> getUsers() const;
