@@ -14,9 +14,6 @@
 #include <cstdlib>
 
 
-#include "user.hpp"
-
-
 class Server {
 	private:
 		int 			_port;
@@ -33,6 +30,23 @@ class Server {
 		void			set_port(std::string port);
 		void			set_password(std::string password);
 		void			run();
+
+
+};
+
+class User {
+	public:
+		User();
+		User(const User &src);
+		User(int socket);
+		~User();
+		
+		std::string	getUserNmae();
+		std::string getNickName();
+		std::string getSocket();
+		
+
+		void setPassword();
 
 
 };
