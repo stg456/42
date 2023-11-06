@@ -25,7 +25,7 @@ class User {
 		User(int socket);
 		~User();
 		
-		std::string	getUserNmae() const;
+		std::string	getUserName() const;
 		std::string getNickName() const;
 		std::string getSocket() const;
 		std::string getState() const;
