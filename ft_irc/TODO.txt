@@ -1,0 +1,26 @@
+A FAIRE
+- ajout max client dans server.hpp + get/set
+- Name du chan est à la fois dans la clé et dans la structure ? je ne sais pas je laisse au cas ou
+	On peut l'ôter car on y accède facilement avec chan.first
+	quand on recupere juste Channel et pas la map, on n'a plus acces au nom, il vaut mieux le garder, car j'ai essaye de modifier et ca bloque.
+- int fd est à la fois dans la clé et dans la structure (Fred)
+	On peut l'ôter car on y accède facilement avec client.first
+- AUTHENTICATE commande , je ne comprends pas => a priori pas concerné avec IRSSI (protocole SASL)
+	Il suffit d'envoyer au serveur : /PASS password
+
+
+EN COURS
+- ajout bool is operator (Client)
+- Surcharger l'operator << dans client et channel pour utilisation avec "cout"
+
+
+FAIT
+- std::string	_nameChan; => private ?   oui c'etait pour simplifier les tests
+- Utilisation de "auto" dans la déclaration de variable, super pratique et moins d'erreurs :
+	utiliser:	auto ite = _chansList.end();
+	au lieu de:	std::map<std::string, Channel>::iterator ite = _chansList.end();
+	=> NON. Ce n'est pas admis dans le standard c++98
+- Modifier Makefile : lister tous les cpp car sinon ca génère un "*.o"
+- Mise en conformité au std++98
+- mettre les getters en const dans les hpp
+- Corriger les msgs reçus et envoyés. +caracteres en trop

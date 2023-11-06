@@ -1,32 +1,69 @@
-#pragma once
-
-#include <iostream>
-
-#include "server.hpp"
-#include "user.hpp"
-
-#define MAX_CONNECTED 100
-
-class User;
-class Server;
+#ifndef CHANNEL_HPP
+# define CHANNEL_HPP
+# include <string>
+# include <list>
+# include <vector>
+# include <iostream>
+# include <vector>
 
 class Channel
 {
 	private:
-		std::string _name;
-		// std::vector<User> _users;
-		std::string _password;
-
-	public:
+		bool					_invite;
+		bool					_needPasswordChan;
+		bool					_needLimitUser;
+		bool					_needProtectTopic;
+		
+		int						_userLimit; //5 change constructor
+		std::string				_keyPass;
+		std::string				_topic;
+		std::list<std::string>	_clientChan;
+		//std::vector<std::string> _clientChan;// Voir si vector ou list
+		std::string				_nameChan; 
+		std::list<std::string>	_chanBanList;
+		
+	
+	public: 
 		Channel();
-		// channel(const channel &src);
+		Channel(const Channel & src);
 		~Channel();
+  
+		Channel& operator=(const Channel& rhs);
 
-		std::string getName();
-		// std::vector<User> getUsers() const;
-		std::string getPassword();
+		//set
+		void setInvite(bool invite);
+		void setNeedPasswordChan(bool pass);
+		void setNeedLimitUser(bool limit);
+		void setNeedProtectTopic(bool protect);
 
-		void setPassword(std::string password);
+		void setKeyPass(std::string key);
+		void setUserLimit(int limit);
+		void setNameChan(std::string name);
+		void setClientChan(std::string clientChan);
+		void setTopic(std::string topic);
+		void setChanBanList(std::string name);
+	
 
+		//get
+		bool getInvite(void) const;
+		bool getNeedPasswordChan(void) const;
+		bool getNeedLimitUser(void) const;
+		bool getNeedProtectTopic(void) const;
 
+		std::string getKeyPass(void) const;
+		int getUserLimit(void) const;
+		std::string getNameChan(void) const;
+		//std::list<std::string> getClientChan(void) const;
+		std::string getTopic(void) const;
+		std::list<std::string> getChanListBan(void) const;
+		
+		
+		//functions
+		int	 isBan(std::string nameUser); //check if user is ban return 1
+		void clearChanBanList(std::string nameUser);
+	
 };
+
+std::ostream& operator<<(std::ostream& flux, const Channel& chan);
+
+#endif

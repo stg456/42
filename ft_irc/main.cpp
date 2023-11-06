@@ -1,27 +1,34 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: stgerard <stgerard@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/05 16:15:37 by stgerard          #+#    #+#             */
-/*   Updated: 2023/11/01 14:48:21 by stgerard         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
+#include "Server.hpp"
 
-#include "server.hpp"
+int checkPort(int port) {
+	if(port < 6660 || port > 7000) {
+		std::cerr << "Error: port : 6660 - 7000" << std::endl;
+		return(1);}
+	return(0);
+}
+
+bool isNumeric(std::string const &str) {
+	return (!str.empty() && str.find_first_not_of("0123456789") == std::string::npos);
+}
 
 int main(int ac, char **av) {
-	if (ac != 3) {
-		std::cerr << "Error: arguments required" << std::endl;
-		return 1;
-	}
-	Server irc;
-	irc.set_port(av[1]);
-	irc.set_password(av[2]);
-	irc.run();
-	
 
-	return 0;
+	Server serv;
+	if(ac != 3)
+	{
+			std::cerr << "Usage: ./ircserv <port> <password>" << std::endl;
+			return(1);
+	}
+
+	if(isNumeric(std::string(av[1])) == false)
+	{
+		std::cout << "Error: port : Only number" << std::endl;
+		return(1);
+	}
+	serv.setPort(atoi(av[1]));
+	if(checkPort(serv.getPort()))
+		return(1);
+	serv.setPassword(av[2]);
+
+	return(serv.start());
 }
