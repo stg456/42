@@ -5,6 +5,8 @@
 #include "server.hpp"
 #include "user.hpp"
 
+#define MAX_CONNECTED 100
+
 class User;
 class Server;
 
