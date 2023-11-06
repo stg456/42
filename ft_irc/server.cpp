@@ -31,5 +31,11 @@ void Server::set_password(std::string password) {
 void Server::run() {
 	std::cout << "Server is running on port " << this->_port << std::endl;
 	std::cout << "Password is " << this->_password << std::endl;
+
+
+
+
+
+
 }
 

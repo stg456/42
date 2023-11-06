@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <netinet/ip.h>
@@ -23,6 +24,7 @@ class Server {
 	private:
 		int 			_port;
 		std::string		_password;
+		int				_socket;
 
 	public:
 		Server();
