@@ -12,6 +12,7 @@
 #include <algorithm>
 #include <vector>
 #include <map>
+#include <list>
 #include <cstdlib>
 
 #include "user.hpp"
@@ -25,6 +26,9 @@ class Server {
 		int 			_port;
 		std::string		_password;
 		int				_socket;
+		std::list <user *> _users;
+		std::list <channel *> _channels;
+		std::map <std::string, ???> _commands;
 
 	public:
 		Server();
@@ -37,6 +41,9 @@ class Server {
 		void			set_port(std::string port);
 		void			set_password(std::string password);
 		void			run();
+		void			createServer(int port, std::string password);
+		void 			addUser(int socket);
+		void			listenUser();
 
 
 };
