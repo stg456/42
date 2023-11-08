@@ -1,6 +1,12 @@
 #include "Server.hpp"
 //#include "Channel.hpp"
 
+const std::string	Server::SERVER_NAME = "IRCserv.42.fr";
+const int Server::MAX_CLIENTS = 1024;
+const int Server::MAX_CHANS = 1024;
+const int Server::MAX_CLIENTS_PER_CHAN = 50;
+const int Server::MAX_CHANS_PER_CLIENT = 10;
+
 Server::Server(){}
 Server::Server(const Server & src){(void) src;}
 Server::~Server(){}
@@ -15,9 +21,7 @@ Server& Server::operator=(const Server &rhs)
 
 int Server::start()
 {
-	const int MAX_CLIENTS = 4096;
-	const int MAX_CHANS = 4096;
-
+	setChanLimitMaxServ(MAX_CHANS);
 	// Création d'une socket pour écouter les connexions entrantes
 	int serverSocket = socket(AF_INET, SOCK_STREAM, 0);
 	if (serverSocket == -1) {
@@ -66,7 +70,7 @@ int Server::start()
 				std::cout << "[Server] Incoming connection on fd " << clientSocket << std::endl;
 				std::cout << "[Server] Client count: " << clientcount << std::endl;
 				newClient(clientSocket);
-				writeClientMap();
+				//writeClientMap();
 			}
 			else {
 				std::cerr << "[Server] Max client count reached, connection refused " << std::endl;
@@ -79,20 +83,19 @@ int Server::start()
 		for (size_t i = 1; i < pollfds.size(); ++i) {
 			if (pollfds[i].revents & POLLIN) {
 				// Lecture des données du client
-				// Ajoutez ici la logique de traitement des commandes IRC
 				char buffer[1024];
 				std::memset(buffer, 0, sizeof(buffer));
 				ssize_t bytesRead = recv(pollfds[i].fd, buffer, sizeof(buffer), 0);
 				std::cout << "bytesRead = " << bytesRead << std::endl;
 				if (bytesRead <= 0) {
 					// Erreur ou déconnexion du client
-					std::cout << "Je vais eraser le client " << _clientsMap.find(pollfds[i].fd)->first << std::endl;
+					//std::cout << "Je vais eraser le client " << _clientsMap.find(pollfds[i].fd)->first << std::endl;
 					_clientsMap.erase(_clientsMap.find(pollfds[i].fd));
 					close(pollfds[i].fd);
 					pollfds.erase(pollfds.begin() + i);
 					clientcount--;
-					std::cout << "[Server] Client count: " << clientcount << std::endl;
-					writeClientMap();
+					//std::cout << "[Server] Client count: " << clientcount << std::endl;
+					//writeClientMap();
 					i--;
 				}
 				else {
@@ -119,11 +122,14 @@ int Server::start()
 
 void Server::sendToClient(int fd, std::string msg)
 {
-	std::cout << "sendToClient: " << msg << std::endl;
+	std::cout << SERVER_NAME << " sendToClient: " << msg << std::endl;
 	send(fd, msg.c_str(), msg.size(), 0);
 }
 
-/********  set  ************* */
+/********  SET  ************* */
+void Server::setNameServ(std::string name)
+{	_nameServ = name;	}
+
 void Server::setPassword(std::string password)
 {	_password = password;	}
 
@@ -139,7 +145,7 @@ void Server::setCmd(std::string buf)
 void Server::setChan(std::string name)
 {
 	_chansList[name] = Channel();
-	//_chansList[name].setNameChan(name);
+	_chansList[name].setNameChan(name);
 }
 
 void Server::newClient(int fd)
@@ -149,24 +155,34 @@ void Server::newClient(int fd)
 	//_clientsMap[fd].setFd(fd); //répéter la clé du map ??
 }
 
-void Server::setChanLimitMax(int max)
+void Server::setChanLimitMaxServ(int max)
 {	_chanLimitMax = max;	}
 
-/********  get  ************* */
-std::string Server::getPassword() const
+void Server::setClientMaxServ(int max)
+{	_clientMaxServ = max;	}
+
+
+/********  GET  ************* */
+std::string Server::getNameServ(void) const
+{	return(_nameServ);	}
+
+std::string Server::getPassword(void) const
 {	return(_password);	}
 
-int Server::getPort() const
+int Server::getPort(void) const
 {	return(_port);	}
 
-std::string Server::getCmd() const
+std::string Server::getCmd(void) const
 {	return(_cmd);	}
 
-std::map<std::string, Channel> Server::getChanList() const
+std::map<std::string, Channel> Server::getChanList(void) const
 {	return(_chansList);	}
 
-int		Server::getChanLimitMax(void) const
+int		Server::getChanLimitMaxServ(void) const
 {	return(_chanLimitMax);	}
+
+int Server::getClientMaxServ(void) const
+{	return(_clientMaxServ);	}
 
 Channel  &Server::getChan(std::string name)
 {
@@ -180,5 +196,17 @@ Channel  &Server::getChan(std::string name)
 			return(it->second);
 		}
 	}
-	return(_chansList.begin()->second);///////error? //////////////////////////
+	return(_chansList.end()->second);///////error? //////////////////////////
+}
+
+Client  &Server::getUserServ(int fd)
+{
+	std::map<int,Client>::iterator it;
+
+	it = _clientsMap.find(fd);
+	if(it != _clientsMap.end())
+	{
+		return(it->second);
+	}
+	return(_clientsMap.end()->second);///////error? ////////////////
 }

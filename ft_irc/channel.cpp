@@ -27,8 +27,8 @@ void Channel::setInvite(bool invite)
 {   _invite = invite;   }
 void Channel::setNeedPasswordChan(bool pass)
 {   _needPasswordChan = pass;  }
-void Channel::setNeedLimitUser(bool limit)
-{	_needLimitUser = limit;	}
+// void Channel::setNeedLimitUser(bool limit)
+// {	_needLimitUser = limit;	}
 void Channel::setNeedProtectTopic(bool protect)
 {	_needProtectTopic = protect;	}
 void Channel::setKeyPass(std::string key)
@@ -37,24 +37,25 @@ void Channel::setUserLimit(int limit)
 {   _userLimit = limit; }
 void Channel::setNameChan(std::string name)
 {   _nameChan = name;  }
-/*void Channel::setClientChan(std::list<std::string> clientChan)
-{   _clientChan.push_back(clientChan);   }*/
+void Channel::setClientChan(std::string client)
+{   _clientChan.push_back(client);   }
 void Channel::setTopic(std::string topic)
 {	
 	topic.erase(0,1);
 	_topic = topic;
 }
-void Channel::setChanBanList(std::string name)
-{	_chanBanList.push_back(name);	}
-
+/*void Channel::setChanBanList(std::string name)
+{	_chanBanList.push_back(name);	}*/
+void Channel::setOperatorChan(std::string oper)
+{	_operatorChan.push_back(oper);	}
 
 //get
 bool Channel::getInvite(void) const
 {   return(_invite);    }
 bool Channel::getNeedPasswordChan(void) const
 {   return(_needPasswordChan);  }
-bool Channel::getNeedLimitUser(void) const
-{	return(_needLimitUser);	}
+//bool Channel::getNeedLimitUser(void) const
+//{	return(_needLimitUser);	}
 bool Channel::getNeedProtectTopic(void) const
 {	return(	_needProtectTopic);	}
 
@@ -64,34 +65,10 @@ int Channel::getUserLimit(void) const
 {   return(_userLimit); }
 std::string Channel::getNameChan(void) const
 {   return(_nameChan);  }
-//std::list<std::string> Channel::getClientChan(void) const
-//{   return(_clientChan);}
+std::vector<std::string> Channel::getClientChan(void) const
+{   return(_clientChan);}
 std::string Channel::getTopic(void) const
 {   return(_topic); }
-std::list<std::string> Channel::getChanListBan(void) const
-{	return(_chanBanList);	}
+std::vector<std::string> Channel::getOperatorChan(void) const
+{	return(_operatorChan);	}
 
-int Channel::isBan(std::string nameUser)
-{
-	std::list<std::string>::iterator it;
-	std::list<std::string>::iterator ite = _chanBanList.end();
-
-	for(it = _chanBanList.begin(); it != ite; ++it)
-	{
-		if(*it == nameUser)
-			return(1);
-	}
-	return(0);
-}
-
-void Channel::clearChanBanList(std::string nameUser)
-{
-	std::list<std::string>::iterator it;
-	std::list<std::string>::iterator ite = _chanBanList.end();
-
-	for(it = _chanBanList.begin(); it != ite; ++it)
-	{
-		if(*it == nameUser)
-			it->clear();
-	}
-}

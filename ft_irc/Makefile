@@ -1,12 +1,11 @@
 
 NAME = ircserv
 
-SRC =  main.cpp Server.cpp cmd.cpp Channel.cpp Client.cpp utils.cpp utils2.cpp \
+#SRC =  main.cpp Server.cpp cmd.cpp Channel.cpp Client.cpp utilsServer.cpp utils2.cpp \
 	cmd/invite.cpp cmd/join.cpp cmd/kick.cpp cmd/mode.cpp cmd/nick.cpp \
-	cmd/notice.cpp cmd/oper.cpp cmd/password.cpp cmd/privmsg.cpp cmd/quit.cpp \
-	cmd/topic.cpp  cmd/cap.cpp
-
-#SRC =  multicli.cpp
+	cmd/notice.cpp  cmd/password.cpp cmd/privmsg.cpp cmd/quit.cpp \
+	cmd/topic.cpp  cmd/cap.cpp utilsChan.cpp
+SRC = $(wildcard *.cpp) $(wildcard cmd/*.cpp)
 
 OBJ = $(SRC:.cpp=.o)
 

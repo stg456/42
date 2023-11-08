@@ -11,16 +11,18 @@ class Channel
 	private:
 		bool					_invite;
 		bool					_needPasswordChan;
-		bool					_needLimitUser;
+		//bool					_needLimitUser;
 		bool					_needProtectTopic;
-		
-		int						_userLimit; //5 change constructor
+
+		std::string				_nameChan; 
+		int						_userLimit; //5 change constructor   0 = illimite
 		std::string				_keyPass;
 		std::string				_topic;
-		std::list<std::string>	_clientChan;
-		//std::vector<std::string> _clientChan;// Voir si vector ou list
-		std::string				_nameChan; 
-		std::list<std::string>	_chanBanList;
+		std::vector<std::string> _clientChan;
+		std::vector<std::string> _operatorChan;
+
+		
+		//std::list<std::string>	_chanBanList;
 		
 	
 	public: 
@@ -33,7 +35,7 @@ class Channel
 		//set
 		void setInvite(bool invite);
 		void setNeedPasswordChan(bool pass);
-		void setNeedLimitUser(bool limit);
+		//void setNeedLimitUser(bool limit);
 		void setNeedProtectTopic(bool protect);
 
 		void setKeyPass(std::string key);
@@ -41,7 +43,8 @@ class Channel
 		void setNameChan(std::string name);
 		void setClientChan(std::string clientChan);
 		void setTopic(std::string topic);
-		void setChanBanList(std::string name);
+		//void setChanBanList(std::string name);
+		void setOperatorChan(std::string oper);// a tester
 	
 
 		//get
@@ -53,14 +56,20 @@ class Channel
 		std::string getKeyPass(void) const;
 		int getUserLimit(void) const;
 		std::string getNameChan(void) const;
-		//std::list<std::string> getClientChan(void) const;
+		std::vector<std::string> getClientChan(void) const;
 		std::string getTopic(void) const;
-		std::list<std::string> getChanListBan(void) const;
+		//std::list<std::string> getChanListBan(void) const;
+		std::vector<std::string> getOperatorChan(void) const;
 		
 		
-		//functions
-		int	 isBan(std::string nameUser); //check if user is ban return 1
-		void clearChanBanList(std::string nameUser);
+		//utilsChan.cpp
+		int 	clientInChan(std::string name); // 1 = ok  0 = not in chan
+		void 	clearClientChan(std::string name);
+		void 	getClientChanList(); //print list
+		//int	 isBan(std::string nameUser); //check if user is ban return 1
+		//void clearChanBanList(std::string nameUser);
+		int 	isOperator(std::string oper);// 1 = is operator
+		void	clearOperatorChan(std::string oper);
 	
 };
 

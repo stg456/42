@@ -1,20 +1,28 @@
 A FAIRE
-- ajout max client dans server.hpp + get/set
-- Name du chan est à la fois dans la clé et dans la structure ? je ne sais pas je laisse au cas ou
-	On peut l'ôter car on y accède facilement avec chan.first
-	quand on recupere juste Channel et pas la map, on n'a plus acces au nom, il vaut mieux le garder, car j'ai essaye de modifier et ca bloque.
-- int fd est à la fois dans la clé et dans la structure (Fred)
-	On peut l'ôter car on y accède facilement avec client.first
 - AUTHENTICATE commande , je ne comprends pas => a priori pas concerné avec IRSSI (protocole SASL)
 	Il suffit d'envoyer au serveur : /PASS password
+- PING PONG message
+
+
+SUGGESTIONS(si on a le temps)
+- ajout HELP commande pour afficher comment utiliser les commandes
 
 
 EN COURS
-- ajout bool is operator (Client)
-- Surcharger l'operator << dans client et channel pour utilisation avec "cout"
+- j: ajout fonction setMaxChan() dans Server.cpp L21, a voir si ca ne derange pas ton code
+- j: modification nom server "Mulhouse_42"(voir si simplification pour la modification et si le nom vous convient)
+- j: revoir les messages erreurs
 
+- Surcharger l'operator << dans client et channel pour utilisation avec "cout"
+- mise en commentaire de _banList
 
 FAIT
+- j: ajout server variable _nameServ
+- j: ajout max client dans server.hpp + get/set
+
+- suppression fichier OPER
+- int fd est à la fois dans la clé et dans la structure (Fred). on garde
+- Name du chan est à la fois dans la clé et dans la structure ? on garde
 - std::string	_nameChan; => private ?   oui c'etait pour simplifier les tests
 - Utilisation de "auto" dans la déclaration de variable, super pratique et moins d'erreurs :
 	utiliser:	auto ite = _chansList.end();

@@ -2,7 +2,7 @@
 
 void Server::cmdMode(std::string arg)
 {//check si user qui entre la commande est un moderateur
-	
+	//482 error
 	//fisrt arg <target>
    std::string target = firstArg(arg);
 	//check if existe and remove
@@ -20,7 +20,10 @@ void Server::cmdMode(std::string arg)
 		std::string listMode[8] = {"+i", "-i", "+t", "-t", "+k", "-k", "+l", "-l"};
 
 	    if(mode.size() < 2)
-		   std::cout << "<client> <channel> <modestring> <mode arguments>..." <<  mode.size() << std::endl;
+		{
+		   std::cout /*<Server>*/<< "RPL_324 <client> <channel> <modestring> <mode arguments>..." << std::endl;////////////////////change
+		   return;
+		}
 		mode.erase(mode.size()-1, mode.size()); 
 		if (mode.size() != 3 && (mode[0] != '+' || mode[0] != '-') && (mode[1] != 'i' || mode[1] != 't' || mode[1] != 'k' || mode[1] != 'l'))
 		{
@@ -78,14 +81,14 @@ void Server::cmdMode(std::string arg)
 			}
 			case(6): //+l
 			{
-				getChan(target).setNeedLimitUser(true);
-				std::cout << getChan(target).getNeedLimitUser() << std::endl;
+				getChan(target).setUserLimit(20);
+				std::cout << getChan(target).getUserLimit() << std::endl;
 				break;
 			}
-			case(7): //-l
+			case(7): //-l 0 = illimite
 			{
-				getChan(target).setNeedLimitUser(false);
-				std::cout << getChan(target).getNeedLimitUser() << std::endl;
+				getChan(target).setUserLimit(0); 
+				std::cout << getChan(target).getUserLimit() << std::endl;
 				break;
 			}
 		
@@ -95,17 +98,21 @@ void Server::cmdMode(std::string arg)
 				break;
 			}
 		}
+		//std::cout /*<< client */<<" RPL_324 " << getChan(target) << " MODE " << mode << std::endl;
 	}
-	/*else
+	else //add rpl 221
 	{
-		//if(findUser(tmp != 1)//check user
+		std::string tmp = arg.erase(0, target.size()+1); 
+		std::string chanTarget = firstArg(tmp);
+		if(getChan(chanTarget).clientInChan(target) == 0)//check user
 		   std::cout << " 401 <client> <nickname> :No such nick/channel" << std::endl;     
 		 else
 		{
-			????
+			//????
 			std::cout <<   "502 <client> :Cant change mode for other users" << std::endl;     
 		}
 	}
+	/*
 	std::cout <<"target: " << tmp << std::endl;
 	std::string arg2 = arg.erase(0, tmp.size()+1);
 		

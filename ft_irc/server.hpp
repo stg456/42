@@ -24,23 +24,27 @@
 # include "Channel.hpp"
 
 
-
 class Server
 {
 	private:
-		std::string	_password;
-		int			_port;
-
-		//cmd
+		std::string						_nameServ;
+		std::string						_password;
+		int								_port;
 		std::string 					_cmd; //delete
 		std::map<int, Client>			_clientsMap;
 		std::map<std::string, Channel>	_chansList;
-
+		int 							_chanLimitMax;
+	
 	//add set get
-	 	int 							_chanLimitMax;
+		int								_clientMaxServ;
 	
 
 	public:
+	 	static const std::string SERVER_NAME;
+		static const int MAX_CLIENTS;
+		static const int MAX_CHANS;
+		static const int MAX_CLIENTS_PER_CHAN;
+		static const int MAX_CHANS_PER_CLIENT;
 		Server();
 		Server(const Server & src);
 		~Server();
@@ -52,11 +56,13 @@ class Server
 		void		sendToClient(int fd, std::string msg);
 
 		//set
+		void setNameServ(std::string);
 		void setPassword(std::string _password);//directement a la creation de serv( port, password)?
 		void setPort(int _port);// directement a la creation de serv( port, password)?
 		void setCmd(std::string);
 		void setChan(std::string name);
-		void setChanLimitMax(int max);
+		void setChanLimitMaxServ(int max);
+		void setClientMaxServ(int max);
 
 		void newClient(int fd);
 		//void delClient(int fd);
@@ -64,12 +70,15 @@ class Server
 		//void sendToAllClient(std::string msg);
 
 		// get
+		std::string 					getNameServ(void) const;
 		std::string						getPassword(void) const;
 		int								getPort(void) const;
 		std::string						getCmd(void) const;
 		std::map<std::string, Channel>	getChanList(void) const;
 		Channel							&getChan(std::string name); //one chan
-		int								getChanLimitMax(void) const;
+		Client							&getUserServ (int fd); // one client
+		int								getChanLimitMaxServ(void) const;
+		int								getClientMaxServ(void) const;
 
 
 		/****** utils.cpp *******/
@@ -96,7 +105,7 @@ class Server
 		void	cmdPrivmsg(std::string arg);
 		void	cmdNotice(std::string arg);
 		void	cmdOper(std::string arg);
-		void	cmdQuit(std::string arg);
+		void	cmdQuit(std::string arg, int fd);
 		void	cmdCap(std::string arg);
 };
 

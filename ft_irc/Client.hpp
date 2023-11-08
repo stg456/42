@@ -10,17 +10,17 @@
 class Client 
 {
 	private:
-		//int						_fd;  clé du map
+		int							_fd;
 		std::string					_userName;
 		std::string					_nickname;
 		std::string					_realName;
 		bool						_isOperator;
-		int							_status;	// user, server, operator...
-		std::vector<std::string>	_chanCli; //list of channels the client is on
+		int							_status;	// user, server, operator. ??..
+		std::vector<std::string>	_chanCli;	//list of channels the client is on
 		
 	public:
 		Client();
-		Client(std::string userName, std::string nickName, std::string realName, int fd);
+		Client(int fd);
 		Client(const Client & src);
 		~Client();
 

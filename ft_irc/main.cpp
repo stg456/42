@@ -13,7 +13,8 @@ bool isNumeric(std::string const &str) {
 
 int main(int ac, char **av) {
 
-	Server serv;
+	Server Mulhouse_42;
+	Mulhouse_42.setNameServ("Mulhouse_42");
 	if(ac != 3)
 	{
 			std::cerr << "Usage: ./ircserv <port> <password>" << std::endl;
@@ -25,10 +26,10 @@ int main(int ac, char **av) {
 		std::cout << "Error: port : Only number" << std::endl;
 		return(1);
 	}
-	serv.setPort(atoi(av[1]));
-	if(checkPort(serv.getPort()))
+	Mulhouse_42.setPort(atoi(av[1]));
+	if(checkPort(Mulhouse_42.getPort()))
 		return(1);
-	serv.setPassword(av[2]);
+	Mulhouse_42.setPassword(av[2]);
 
-	return(serv.start());
+	return(Mulhouse_42.start());
 }

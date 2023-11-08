@@ -6,8 +6,16 @@ void Server::findCmd(std::string request, int fd)
 	
 	if(request.size() == word.size())
 	{
+		std::transform(request.begin(), request.end(), request.begin(), ::toupper);
+		 if (request == "QUIT") //quit sans message
+		 {
+			cmdQuit("Bye", fd);
+		 }
+		 else
+		 {
 			std::cout << /*<client> <command>*/" :Not enough parameters" << std::endl; ////////////////////
 			std::string test = word.erase(word.size()-1, word.size());//erase \n
+		 }
 	}
 	else
 	{
@@ -15,9 +23,9 @@ void Server::findCmd(std::string request, int fd)
 		std::string arg = request.erase(0, word.size()+1);
 	
 		int level = -1;
-		std::string listCmd[12]= {"NICK", "PASS", "KICK", "INVITE", "TOPIC", "MODE", "JOIN", "PRIVMSG", "NOTICE", "OPER", "QUIT", "CAP", }; // add? remove?
+		std::string listCmd[11]= {"NICK", "PASS", "KICK", "INVITE", "TOPIC", "MODE", "JOIN", "PRIVMSG", "NOTICE", "QUIT", "CAP", }; // add? remove?
 
-		for (int i = 0; i < 12; i++)
+		for (int i = 0; i < 11; i++)
 		{ 
 			if (listCmd[i] == getCmd())
 			{
@@ -75,15 +83,10 @@ void Server::findCmd(std::string request, int fd)
 			}
 			case(9):
 			{
-				cmdOper(arg);
+				cmdQuit(arg, fd);
 				break;
 			}
 			case(10):
-			{
-				cmdQuit(arg);
-				break;
-			}
-			case(11):
 			{
 				cmdCap(arg);
 				break;

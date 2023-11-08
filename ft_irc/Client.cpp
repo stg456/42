@@ -2,7 +2,16 @@
 
 
 Client::Client(){} //: _userName(""), _nickname(""), _realName("") {}
-//Client::Client(std::string userName, std::string nickName, std::string realName) // fd??
+//Client::Client(std::string userName, std::string nickName, std::string realName)
+
+Client::Client(int fd) : _fd(fd) {
+	_userName = "";
+	_nickname = "";
+	_realName = "";
+	_isOperator = false;
+	_status = 0;
+	_chanCli = std::vector<std::string>();
+}
 
 Client::Client(const Client & src)
 {(void)src;}
