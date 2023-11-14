@@ -1,4 +1,0 @@
-ircserv
-*.o
-cmd/*.o
-.vscode/
