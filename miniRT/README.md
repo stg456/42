@@ -1,4 +1,4 @@
-# miniRT
+# miniRT 
 Welcome to our page for the miniRT project of school 42!
 
 In this project, we are building our own raytracer in C language.
