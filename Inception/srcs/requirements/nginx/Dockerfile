@@ -1,2 +1,5 @@
 FROM debian:buster
 docker build -t nginx .
+docker image ls
+docker run -it <nginx>
+docker ps -a
