@@ -16,7 +16,7 @@ Warlock::Warlock(Warlock const & src) {
 
 Warlock & Warlock::operator = (Warlock const & rhs) {
 	this->_name = rhs._name;
-	this->_titls = rhs._title;
+	this->_title = rhs._title;
 	return *this;
 }
 
@@ -32,6 +32,6 @@ void Warlock::setTitle(std::string const & str) {
 	_title = str;
 }
 
-void introduce() const {
-	std::Cout << _name << ": I am " << _name << ", " << _title << "!" << std::endl;
+void Warlock::introduce() const {
+	std::cout << _name << ": I am " << _name << ", " << _title << "!" << std::endl;
 }
