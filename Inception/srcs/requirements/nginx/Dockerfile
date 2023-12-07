@@ -1,8 +1,7 @@
 FROM debian:buster
 
-docker build -t nginx .
+# docker build -t nginx .
 
-docker run -it nginx
+# docker run -it nginx
 
 EXPOSE 443
-
