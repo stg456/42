@@ -1,6 +1,6 @@
 FROM debian:buster
 
-RUN 
+docker build -t nginx .
 
 
 
