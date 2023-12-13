@@ -54,3 +54,7 @@ dkms.conf
 
 .DS_Store
 .vscode
+
+# env variables
+*.env
+.env
