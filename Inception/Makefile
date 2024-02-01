@@ -1,20 +1,21 @@
 NAME = Inception
 
-RM = rm -f
+SRCS = ./srcs/docker-compose.yml
 
-all:
+all: run
 
-build:
+run: 
 
-start:
+up: docker-compose up -d 
 
-stop:
+down: docker-compose -f ./docker-compose.yml down
 
-clean:
+# restart: docker-compose restart
 
-fclean:
+# stop: docker-compose -f ./docker-compose.yml stop
 
-re:
+clean:	down
 
-.PHONY:
+fclean: clean
 
+# .PHONY: all up down run clean fclean 
