@@ -6,7 +6,8 @@ services:
     networks:
       - inception
     build: ./requirements/mariadb
-    env_file: .env
+    env_file:
+    - ./.env
     volumes:
       - mariadb:/var/lib/mysql
     restart: unless-stopped
@@ -16,7 +17,8 @@ services:
     networks:
       - inception
     build: ./requirements/nginx
-    env_file: .env
+    env_file:
+    - ./.env
     depends_on:        	 # Nouvelle ligne, indiquant de ne pas démarrer NGINX tant que WordPress n'a pas démarré.
       - wordpress
     volumes:
@@ -30,7 +32,8 @@ services:
     networks:
       - inception
     build: ./requirements/wordpress
-    env_file: .env
+    env_file:
+    - ./.env
     depends_on:    					# WordPress démarrera uniquement après MariaDB (sinon il ne pourra pas configurer la base de données...)
       - mariadb
     volumes:

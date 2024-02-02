@@ -1,5 +1,5 @@
 if [ ! -f "/var/www/html/index.php" ]; then
-    sleep 10
+    sleep 60
     mkdir -p /var/www/html && chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html # dossier site
     mkdir -p /var/www/.wp-cli && chown -R www-data:www-data /var/www/.wp-cli && chmod -R 755 /var/www/.wp-cli # dossier wp-cli
     sudo -u www-data wp core download --path="/var/www/html/"
