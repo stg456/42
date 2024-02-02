@@ -1,10 +1,14 @@
 FROM debian:buster
 
-RUN apt-get update -y && apt-get install mariadb-server -y
+RUN apt-get update -y && apt-get -y install mariadb-server
 
-RUN mkdir -p /etc/mysql/mariadb.conf.d/
+COPY ./init_db.sh /init_db.sh
 
-COPY conf/50-server.cnf	/etc/mysql/mariadb.conf.d/50-server.cnf
+COPY ./50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
-# RUN mysql -e
+RUN chmod 700 /init_db.sh
+
+ENTRYPOINT ["/bin/sh", "/init_db.sh"]
+
+EXPOSE 3306
 

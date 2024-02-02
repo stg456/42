@@ -30,7 +30,7 @@ RUN chmod 755 /run/php/php7.3-fpm.pid
 RUN wget -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x /usr/local/bin/wp
 
-copy ./wp-cofig.php /wp-config.php
+COPY ./wp-config.php /wp-config.php
 
 ENTRYPOINT ["/bin/sh", "/install_wordpress.sh"]
-expose 9000
+EXPOSE 9000
