@@ -14,10 +14,6 @@ RUN apt-get -y update && apt-get -y install wget\
 
 # RUN		chown -R root:root /var/www/wordpress  # super dangereux
 
-RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-RUN chmod +x wp-cli.phar
-RUN mv wp-cli.phar /usr/local/bin/wp
-
 COPY ./www.conf /etc/php/7.3/fpm/pool.d/www.conf
 COPY ./install_wordpress.sh /install_wordpress.sh
 
@@ -27,7 +23,7 @@ RUN mkdir -p /run/php && touch /run/php/php7.3-fpm.pid
 RUN chown www-data:www-data /run/php/php7.3-fpm.pid
 RUN chmod 755 /run/php/php7.3-fpm.pid 
 
-RUN wget -o /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+RUN wget -O /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x /usr/local/bin/wp
 
 COPY ./wp-config.php /wp-config.php

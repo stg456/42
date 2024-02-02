@@ -1,4 +1,4 @@
-if [! -f "/var/www/html/index.php"]; then #si index existe wp est installe
+if [ ! -f "/var/www/html/index.php" ]; then
     sleep 10
     mkdir -p /var/www/html && chown -R www-data:www-data /var/www/html && chmod -R 755 /var/www/html # dossier site
     mkdir -p /var/www/.wp-cli && chown -R www-data:www-data /var/www/.wp-cli && chmod -R 755 /var/www/.wp-cli # dossier wp-cli
