@@ -19,7 +19,7 @@ services:
     build: ./requirements/nginx
     env_file:
     - ./.env
-    depends_on:        	 # Nouvelle ligne, indiquant de ne pas démarrer NGINX tant que WordPress n'a pas démarré.
+    depends_on:
       - wordpress
     volumes:
       - wordpress:/var/www/wordpress
