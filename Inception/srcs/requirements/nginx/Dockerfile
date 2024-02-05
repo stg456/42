@@ -11,7 +11,7 @@ RUN apt-get update && apt-get -y install nginx openssl
 
 # RUN     rm -f /etc/nginx/nginx.conf
 
-RUN     openssl req -x509 -nodes -out /etc/nginx/ssl/inception.pem -keyout /etc/nginx/ssl/inception.key -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=stgerard.42.fr/UID=stgerard"
+RUN     openssl req -x509 -nodes -out /etc/nginx/ssl/inception.pem -keyout /etc/nginx/ssl/inception.key -subj "/C=FR/ST=Haut-Rhin/L=Mulhouse/O=42 Network/OU=42/CN=stgerard.42.fr/UID=stgerard"
 
 COPY    ./conf/nginx.conf /etc/nginx/nginx.conf
 
