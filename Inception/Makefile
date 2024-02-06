@@ -2,20 +2,21 @@ NAME = Inception
 
 SRCS = ./srcs/docker-compose.yml
 
-all: run
+all: refresh
 
-run: 
+refresh:
+		@docker-compose -f srcs/docker-compose.yml up -d --build
 
-up: docker-compose up -d 
-
-down: docker-compose -f ./docker-compose.yml down
+stop:
+		@docker-compose -f srcs/docker-compose.yml stop
 
 # restart: docker-compose restart
 
-# stop: docker-compose -f ./docker-compose.yml stop
-
-clean:	down
+clean:	stop
+		rm -rf ~/data/mariadb/*
+		rm -rf ~/data/wordpress/*
 
 fclean: clean
+		docker system prune -af
 
-# .PHONY: all up down run clean fclean 
+.PHONY: all down refresh clean fclean

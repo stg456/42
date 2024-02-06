@@ -1,6 +1,6 @@
 FROM debian:buster
 
-RUN apt-get update -y && apt-get -y install mariadb-server
+RUN apt-get update -y && apt-get install -y mariadb-server
 
 COPY ./init_db.sh /init_db.sh
 
