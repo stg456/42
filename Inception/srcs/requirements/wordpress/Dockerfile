@@ -14,21 +14,17 @@ RUN apt-get -y update && apt-get -y install wget\
 
 # RUN		chown -R root:root /var/www/wordpress  # super dangereux
 
+RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+RUN chmod +x wp-cli.phar
+
+RUN mv wp-cli.phar /usr/local/bin/wp-cli.phar
+
 COPY ./www.conf /etc/php/7.3/fpm/pool.d/www.conf
+
 COPY ./install_wordpress.sh /install_wordpress.sh
 
-RUN mkdir -p /var/www/html
-RUN chmod 755 /var/www/html
-RUN chown -R www-data:www-data /var/www/html
-
-RUN chmod 700 /install_wordpress.sh
-
-RUN mkdir -p /run/php && touch /run/php/php7.3-fpm.pid
-RUN chown www-data:www-data /run/php/php7.3-fpm.pid
-RUN chmod 755 /run/php/php7.3-fpm.pid 
-
-RUN wget -O /usr/local/bin/wp https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-RUN chmod +x /usr/local/bin/wp
+RUN chmod +x /install_wordpress.sh
 
 ENTRYPOINT ["/bin/sh", "/install_wordpress.sh"]
 EXPOSE 9000
