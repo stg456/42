@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3"
     
 services:
   mariadb:
@@ -26,8 +26,8 @@ services:
     volumes:
       - /home/stgerard/data/wordpress:/var/www/wordpress
     ports:
-      - "443:443" 		# on indique le port qui sera exposé a la machine locale
-    restart: unless-stopped 		# Ici nous changeons, le container redémarrera uniquement en cas de crash.
+      - "443:443" # on indique le port qui sera exposé a la machine locale
+    restart: unless-stopped # Ici nous changeons, le container redémarrera uniquement en cas de crash.
 
   wordpress:
     container_name: wordpress
