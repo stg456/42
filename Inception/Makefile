@@ -13,8 +13,8 @@ stop:
 # restart: docker-compose restart
 
 clean:	stop
-		rm -rf ~/data/mariadb/*
-		rm -rf ~/data/wordpress/*
+		rm -rf /home/stgerard/data/mariadb/*
+		rm -rf /home/stgerard/data/wordpress/*
 
 fclean: clean
 		docker system prune -af
