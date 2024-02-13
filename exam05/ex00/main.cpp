@@ -1,5 +1,5 @@
-#include <iostream>
-#include "Warlock.hpp"
+# include <iostream>
+# include "Warlock.hpp"
 
 int main()
 {
