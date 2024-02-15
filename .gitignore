@@ -56,5 +56,5 @@ dkms.conf
 .vscode
 
 # env variables
-*.env
-.env
+# *.env
+# .env

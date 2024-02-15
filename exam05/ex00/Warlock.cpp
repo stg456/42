@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "Warlock.hpp"
 
 Warlock::Warlock() {}
@@ -35,3 +36,26 @@ void Warlock::setTitle(std::string const &str) {
 void Warlock::introduce() const {
     std::cout<<_name<<": I am "<<_name<<", "<<_title<<"!"<<std::endl;
 }
+=======
+#include "Warlock.cpp"
+
+Warlock::Warlock() {}
+
+Warlock::Warlock(Warlock const &obj) {}
+
+Warlock::Warlock & operator = (Warlock const & rhs) {}
+
+Warlock::Warlock(std::string name, std::string title) {}
+
+Warlock::~Warlock() {
+    std::cout <<_name << ": My job here is done!" << std::endl;
+}
+
+std::string const & Warlock::getName() const {}
+
+std::string const & Warlock::getTitle()const {}
+
+void Warlock::setTitle(std::string const & str) {}
+
+void Warlock::introduce() const{}
+>>>>>>> a33c94c461bc0e42ae186abf3f786592899d6c81

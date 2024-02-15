@@ -1,0 +1,30 @@
+FROM debian:buster
+
+RUN apt-get -y update && apt-get -y install wget\
+											php7.3\
+											php-fpm\
+											php-mysql\
+											mariadb-client\
+											sudo
+
+# RUN wget https://fr.wordpress.org/wordpress-6.0-fr_FR.tar.gz -P /var/www
+
+# de-tar
+# RUN cd /var/www && tar -xzf wordpress-6.0-fr_FR.tar.gz && rm wordpress-6.0-fr_FR.tar.gz
+
+# RUN		chown -R root:root /var/www/wordpress  # super dangereux
+
+RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+
+RUN chmod +x wp-cli.phar
+
+RUN mv wp-cli.phar /usr/local/bin/wp-cli.phar
+
+COPY ./www.conf /etc/php/7.3/fpm/pool.d/www.conf
+
+COPY ./install_wordpress.sh /install_wordpress.sh
+
+RUN chmod +x /install_wordpress.sh
+
+ENTRYPOINT ["/bin/sh", "/install_wordpress.sh"]
+EXPOSE 9000
