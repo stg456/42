@@ -35,3 +35,19 @@ void Warlock::setTitle(std::string const &str) {
 void Warlock::introduce() const {
     std::cout<<_name<<": I am "<<_name<<", "<<_title<<"!"<<std::endl;
 }
+
+void Warlock::learnSpell(ASpell* spell) {
+    if (spell)
+        if (_spellBook.find(spell->getName()) == _spellBook.end())
+            _spellBook[spell.getName()] = spell->clone();
+}
+
+void Warlock::forgetSpell(std::string spellName) {
+    if (_spellBook.find(spellName) != _spellBook.end())
+        spellBook.erase(_spellBook.find(spellName));
+}
+
+void Warlock::launchSpell(std::string spellName, ATarget const &target) {
+    if (_spellBook.find(spellName) != _spellBook.end())
+        _spellBook[spellName]->launch(target);
+}
