@@ -9,7 +9,7 @@ services:
     env_file:
     - ./.env
     volumes:
-      - /home/stgerard/data/mariadb:/var/lib/mysql
+ #    - /home/stgerard/data/mariadb:/var/lib/mysql
     expose:
       - "3306"
     restart: unless-stopped
@@ -24,7 +24,7 @@ services:
     depends_on:
       - wordpress
     volumes:
-      - /home/stgerard/data/wordpress:/var/www/wordpress
+#      - /home/stgerard/data/wordpress:/var/www/wordpress
     ports:
       - "443:443" # on indique le port qui sera exposé a la machine locale
     restart: unless-stopped # Ici nous changeons, le container redémarrera uniquement en cas de crash.
@@ -39,7 +39,7 @@ services:
     depends_on:
       - mariadb
     volumes:
-      - /home/stgerard/data/wordpress:/var/www/wordpress
+#      - /home/stgerard/data/wordpress:/var/www/wordpress
     expose:
       - "9000"
     restart: unless-stopped
