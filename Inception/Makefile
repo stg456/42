@@ -10,13 +10,16 @@ refresh:
 stop:
 		@docker-compose -f srcs/docker-compose.yml stop
 
-# restart: docker-compose restart
+restart:
+		@docker-compose -f srcs/docker-compose.yml restart
 
 clean:	stop
-		rm -rf /home/stgerard/data/mariadb/*
-		rm -rf /home/stgerard/data/wordpress/*
-
-fclean: clean
 		docker system prune -af
 
-.PHONY: all down refresh clean fclean
+fclean: clean
+		sudo rm -rf /home/stgerard/data/mariadb/*
+		sudo rm -rf /home/stgerard/data/wordpress/*
+
+re: fclean refresh
+
+.PHONY: all stop refresh restart clean fclean re
