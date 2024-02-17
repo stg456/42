@@ -1,4 +1,4 @@
-while ! mysqladmin ping -h"$MYSQL_HOST" --silent; do
+while ! mysqladmin ping --user=${MYSQL_USER} --password=${MYSQL_PASSWORD} -h"$MYSQL_HOST" --silent; do
     sleep 1
 done
 
