@@ -3,3 +3,10 @@
 # docker run -it nginx      // run l'image
 # docker ps                 // connaitre les docker lance
 
+volumes:
+  wp:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/stgerard/data/wordpress'
