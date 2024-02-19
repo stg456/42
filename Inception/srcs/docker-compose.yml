@@ -48,8 +48,3 @@ networks:
   inception:
     driver: bridge
 
-# pour build:   docker-compose up <-f> <path_docker_compose> -d --build // precise le chemin si pas dans le dossier
-# pour l'arreter:   docker-compose -f  <path_docker_compose> stop
-# pour supprimer le build:  docker-compose -f  <path_docker_compose> down -v
-# pour supprimer tous les comtainer:  docker system prune -af
-# RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone 
