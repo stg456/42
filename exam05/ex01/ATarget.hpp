@@ -1,7 +1,7 @@
 #pragma once
-#include "Warlock.hpp"
 
-class Warlock;
+#include "Warlock.hpp"
+#include "ASpell.hpp"
 
 class ASpell;
 
@@ -12,11 +12,12 @@ class ATarget
 
     public:
         ATarget(std::string type);
-        ATarget(Atrget const &src);
-        ATarget & operator = (Atarget const &rhs);
+        ATarget(ATarget const &src);
+        ATarget& operator = (ATarget const &rhs);
         virtual ~ATarget();
 
         std::string getType() const;
         virtual ATarget* clone() const = 0;
         void getHitBySpell(ASpell const &spell) const;
 };
+
