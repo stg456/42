@@ -1,5 +1,4 @@
-# include <iostream>
-# include "Warlock.hpp"
+#include "Warlock.hpp"
 
 int main()
 {
@@ -16,3 +15,4 @@ int main()
 
   return (0);
 }
+
