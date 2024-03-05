@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Warlock.hpp"
-#include "ATarget;hpp"
+#include "ATarget.hpp"
 
 class ATarget;
 

@@ -2,14 +2,15 @@
 
 #include <iostream>
 #include <map>
-#include "ASpell"
+#include "ASpell.hpp"
+#include "ATarget.hpp"
 
 class Warlock
 {
     private:
         std::string _name;
         std::string _title;
-        std::map <std::string, ASpell*> _SpellBook;
+        std::map<std::string, ASpell*> _SpellBook;
 
         Warlock();
         Warlock(Warlock const &src);
