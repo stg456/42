@@ -4,13 +4,15 @@
 #include <map>
 #include "ASpell.hpp"
 #include "ATarget.hpp"
+#include "SpellBook.hpp"
 
 class Warlock
 {
     private:
         std::string _name;
         std::string _title;
-        std::map<std::string, ASpell*> _SpellBook;
+//        std::map<std::string, ASpell*> _SpellBook;
+        SpellBook   _SpellBook;
 
         Warlock();
         Warlock(Warlock const &src);
@@ -26,7 +28,7 @@ class Warlock
         void introduce() const;
 
         void learnSpell(ASpell* spell);
-        void forgetSpell(std::string spellName);
-        void launchSpell(std::string spellName, ATarget const &target);
+        void forgetSpell(std::string SpellName);
+        void launchSpell(std::string SpellName, ATarget const &target);
 };
 
