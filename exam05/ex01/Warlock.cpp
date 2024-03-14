@@ -2,54 +2,53 @@
 
 Warlock::Warlock() {}
 
-Warlock::Warlock(std::string name, std::string title): _name(name), _title(title) {
-    std::cout<<_name<<": This looks like another boring day."<<std::endl;
-}
-
-Warlock::~Warlock() {
-    std::cout<<_name<<": My job here is done!"<<std::endl;
-}
-
 Warlock::Warlock(Warlock const &src) {
     *this = src;
 }
 
-Warlock& Warlock::operator = (Warlock const &rhs) {
-    this->_name = rhs.getName();
-    this->_title = rhs.getTitle();
-    return *this;
+Warlock& Warlock::operator=(Warlock const &rhs) {
+    this->name = rhs.name;
+    this->title = rhs.title;
+    return (*this);
+}
+
+Warlock::Warlock(std::string const &name, std::string const &title) {
+    this->name = name;
+    this->title = title;
+    std::cout<<this->name<<": This looks like another boring day.\n";
+}
+
+Warlock::~Warlock() {
+    std::cout<<this->name<<": My job here is done!\n";
 }
 
 std::string const & Warlock::getName() const {
-    return (_name);
+    return (name);
 }
 
 std::string const & Warlock::getTitle() const {
-    return (_title);
+    return (title);
 }
 
-void Warlock::setTitle(std::string const &str) {
-     _title = str;
+void Warlock::setTitle(std::string const &src) {
+    this->title = src;
 }
 
 void Warlock::introduce() const {
-    std::cout<<_name<<": I am "<<_name<<", "<<_title<<"!"<<std::endl;
+    std::cout<<this->name<<": I am "<<this->name<<", "<<this->title<<"!\n";
 }
 
-void Warlock::learnSpell(ASpell*spell) {
+void Warlock::learnSpell(ASpell* spell) {
     if (spell)
-        _book.insert(std::pair<std::string, ASpell*>(spell->getName(), spell->clone()));
+        book.insert(std::pair<std::string, ASpell*>(spell->getName(), spell->clone()));
 }
 
 void Warlock::forgetSpell(std::string spellname) {
-    std::map<std::string, ASpell*>::iterator it = _book.find(spellname);
-    if (it != _book.end())
-        delete it->second;
-    _book.erase(spellname);
+    if (book.find(spellname) != book.end())
+        book.erase(book.find(spellname));
 }
-
+    
 void Warlock::launchSpell(std::string spellname, ATarget const &target) {
-    ASpell* spell = _book[spellname];
-    if (spell)
-        spell->launch(target);
+    if (book.find(spellname) != book.end())
+        book[spellname]->launch(target);
 }

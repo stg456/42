@@ -9,3 +9,4 @@ class Fwoosh : public ASpell
         ~Fwoosh();
         ASpell* clone() const;
 };
+
