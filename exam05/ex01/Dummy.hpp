@@ -9,4 +9,3 @@ class Dummy : public ATarget
         ~Dummy();
         ATarget* clone() const;
 };
-
