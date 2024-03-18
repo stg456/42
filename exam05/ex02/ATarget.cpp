@@ -1,23 +1,27 @@
 #include "ATarget.hpp"
 
-ATarget::ATarget(std::string type) : _type(type) {}
+ATarget::ATarget() {}
 
-ATarget::~ATarget() {}
+ATarget::ATarget(std::string type): type(type) {}
 
 ATarget::ATarget(ATarget const &src) {
     *this = src;
 }
 
-ATarget& ATarget::operator = (ATarget const &rhs) {
-    _type = rhs.getType();
+ATarget& ATarget::operator=(ATarget const &rhs) {
+    this->type = rhs.type;
     return *this;
 }
 
+ATarget::~ATarget() {}
+
 std::string ATarget::getType() const {
-    return (_type);
+    return (type);
 }
 
-void ATarget::getHitBySpell(ASpell const &spell) const {
-    std::cout<<_type<<" has been "<<spell.getEffects()<<"!"<<std::endl;
+// ATarget clone() const = 0;
+
+void ATarget::getHitBySpell(ASpell const &src) const {
+    std::cout<<src.getName()<<" has been "<<src.getEffects()<<"!\n";
 }
 

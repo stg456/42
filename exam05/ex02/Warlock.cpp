@@ -6,53 +6,52 @@ Warlock::Warlock(Warlock const &src) {
     *this = src;
 }
 
-Warlock& Warlock::operator = (Warlock const &rhs) {
-    _name = rhs._name;
-    _title = rhs._title;
-    return (*this);
+Warlock& Warlock::operator=(Warlock const &rhs) {
+    this->name = rhs.name;
+    this->title = rhs.title;
+    return *this;
 }
 
-
-Warlock::Warlock(std::string name, std::string title): _name(name), _title(title) {
-    std::cout<<_name<<": This looks like another boring day."<<std::endl;
+Warlock::Warlock(std::string const &name, std::string const &title) : name(name), title(title) {
+    std::cout<<name<<": This looks like another boring day.\n";
 }
 
 Warlock::~Warlock() {
-    std::cout<<_name<<": My job here is done!"<<std::endl;
+    std::cout<<name<<": My job here is done!\n";
 }
 
-
 std::string const & Warlock::getName() const {
-    return (_name);
+    return (name);
 }
 
 std::string const & Warlock::getTitle() const {
-    return (_title);
+    return (title);
 }
 
-void	Warlock::setTitle(std::string const &str) {
-    _title = str;
+void Warlock::setTitle(std::string const &str) {
+    this->title = str;
 }
 
-void	Warlock::introduce() const {
-    std::cout<<_name<<": I am "<<_name<<", "<<_title<<"!"<<std::endl;    
+void Warlock::introduce() const {
+    std::cout<<name<<": I am "<<name<<": I am "<<title<<"!\n";
 }
 
-void Warlock::learnSpell(ASpell* spell) {
+void Warlock::learnSpell(ASpell *spell) {
 //    if (spell)
-//        if (_SpellBook.find(spell->getName()) == _SpellBook.end())
-//            _SpellBook[spell->getName()] = spell->clone();
-    _SpellBook.learnSpell(spell);
+//        book.insert(std::pair<std::string, ASpell*>(spell->getName(), spell->clone()));
+    spellB.learnSpell(spell);
 }
 
-void Warlock::forgetSpell(std::string spellName) {
-//    if (_SpellBook.find(spellName) != _SpellBook.end())
-//        _SpellBook.erase(_SpellBook.find(spellName));
-    _SpellBook.forgetSpell(spellName);
+void Warlock::forgetSpell(std::string spell) {
+//    if (book.find(spellname) != book.end())
+//        book.erase(book.find(spellname));
+    spellB.forgetSpell(spell);
 }
 
-void Warlock::launchSpell(std::string spellName, ATarget const &target) {
-    if (_SpellBook.createSpell(spellName))
-        _SpellBook.createSpell(spellName)->launch(target);
+void Warlock::launchSpell(std::string spell, ATarget const &target) {
+//    if (book.find(spellname) != book.end())
+//        book[spellname]->launch(target);
+    if (spellB.createSpell(spell))
+        spellB.createSpell(spell)->launch(target);
 }
 

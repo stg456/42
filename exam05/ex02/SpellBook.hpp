@@ -1,16 +1,16 @@
 #pragma once
 
-#include "ASpell.hpp"
+#include <iostream>
 #include <map>
-
-// class ASpell;
+#include "ASpell.hpp"
 
 class SpellBook
 {
     private:
+        std::map<std::string, ASpell*> spellB;
+
         SpellBook(SpellBook const &src);
-        SpellBook & operator = (SpellBook const &rhs);
-        std::map<std::string, ASpell*> _SpellBook;
+        SpellBook& operator=(SpellBook const &rhs);
 
     public:
         SpellBook();
@@ -20,4 +20,3 @@ class SpellBook
         void forgetSpell(std::string const &);
         ASpell* createSpell(std::string const &);
 };
-

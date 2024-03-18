@@ -1,8 +1,5 @@
-#pragma once
 
 #include "ASpell.hpp"
-
-class ASpell;
 
 class Polymorph : public ASpell
 {
@@ -11,4 +8,5 @@ class Polymorph : public ASpell
         ~Polymorph();
         ASpell* clone() const;
 };
+
 
