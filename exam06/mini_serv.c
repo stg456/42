@@ -20,6 +20,8 @@ int main(int ac, char **av)
 {
     if (ac != 2)
         err("Wrong number of arguments\n");
+
+        
 // init const
 
 // verif err fatal
@@ -36,6 +38,6 @@ int main(int ac, char **av)
 
 // boucle du serveur
 
-
+// glootie 
 
 }
