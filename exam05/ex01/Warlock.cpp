@@ -36,8 +36,7 @@ void Warlock::introduce() const {
     std::cout<<name<<": I am "<<name<<": I am "<<title<<"!\n";
 }
 
-
-void Warlock::learnSpell(ASpell* spell) {
+void Warlock::learnSpell(ASpell *spell) {
     if (spell)
         book.insert(std::pair<std::string, ASpell*>(spell->getName(), spell->clone()));
 }
@@ -51,3 +50,4 @@ void Warlock::launchSpell(std::string spellname, ATarget const &target) {
     if (book.find(spellname) != book.end())
         book[spellname]->launch(target);
 }
+

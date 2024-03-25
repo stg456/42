@@ -3,7 +3,7 @@
 #include "ATarget.hpp"
 #include "Dummy.hpp"
 #include "Fwoosh.hpp"
-#include <map>
+
 
 int main()
 {
@@ -20,4 +20,3 @@ int main()
   richard.forgetSpell("Fwoosh");
   richard.launchSpell("Fwoosh", bob);
 }
-

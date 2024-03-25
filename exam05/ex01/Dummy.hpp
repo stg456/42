@@ -1,4 +1,4 @@
-#pragma once
+#pragma once 
 
 #include "ATarget.hpp"
 
@@ -9,3 +9,4 @@ class Dummy : public ATarget
         ~Dummy();
         ATarget* clone() const;
 };
+

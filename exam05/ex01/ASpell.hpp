@@ -13,7 +13,7 @@ class ASpell
 
     public:
         ASpell();
-        ASpell(std::string name, std::string effects);
+        ASpell(std::string const &name, std::string const &effects);
         ASpell(ASpell const &src);
         ASpell& operator=(ASpell const &rhs);
         virtual ~ASpell();
@@ -21,6 +21,5 @@ class ASpell
         std::string getName() const;
         std::string getEffects() const;
         virtual ASpell* clone() const = 0;
-        void launch(ATarget const &) const;
+        void launch(ATarget const &target) const;
 };
-
