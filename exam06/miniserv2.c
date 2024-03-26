@@ -27,7 +27,7 @@ void err(char *msg)
     else
         write(2, "Fatal error", 11);
     write(2, '\n', 1);
-    exit (1);    
+    exit (1);
 }
 
 void sendAll(int senderfd)
@@ -50,5 +50,5 @@ int main(int ac, char **av)
     FD_ZERO(&act);
     bzero(&servaddr, sizeof(servaddr));
     servaddr.sin_family = AF_INET;
-    
+
 }
