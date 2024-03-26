@@ -10,14 +10,13 @@
 typedef struct s_client
 {
     int fd;
-    char str[1024];
-//    int id
+    char msg[1024];
 }           t_client;
 
-t_client[1024];
+t_client clients[1024];
 fd_set active, readfd, writefd;
 int maxfd = 0, nextid = 0;
-char buftoread[120000], buftoread[120000]; 
+char buftoread[120000], buftowrite[120000]; 
 
 void err(char *str) {
 if (str)
@@ -30,7 +29,7 @@ exit (1);
 
 void sendAll(int senderFd)
 {
-    for (int fr = 0; fd <= maxfd; fd++)
+    for (int fd = 0; fd <= maxfd; fd++)
         if (FD_ISSET(fd, &writefd) && fd != senderFd)
             send(fd, &buftowrite, strlen(buftowrite), 0);
 }
@@ -58,10 +57,44 @@ int main(int ac, char **av)
     while (1) 
     {
         readfd = writefd = active;
-        if (if (select(maxfd + 1, &readfd)))
+        if (select(maxfd + 1, &readfd, writefd, NULL, NULL) < 0) continue ;
+        for (int fd = 0; fd <= maxfd; fd++) {
+            if (FD_ISSET(fd, readfd) && fd == socketfd) {
+                int clientfd = accept(socketfd, (struct sockaddr *)&servaddr, &len);
+                if (clientfd <= 0) continue ;
+                clients[clientfd].id = nextid++;
+                FD_SET(clientfd, &active);
+                if (clientfd > maxfd) maxfd = clientfd;
+                sprintf(buftowrite, "server: client %d just arrived\n", index -1);
+                sendall(clientfd);
+                break;
+            }
+            if (FD_ISSET(fd, &readfd) && fd != socketfd) {
+                int nbytes = recv(fd, buftoread, 70000, 0);
+                if (nbytes<= 0) {
+                    FD_CLR(fd, &active);
+                    char buftowrite[100];
+                    sprintf(buftowrite, "server: client %d just left\n", clients[fd].id);
+                    sendall(fd);
+                    close(fd);
+                    break;
+                }
+                else {
+                    for (int i = 0;j = strlen(clients[fd].msg); i < nbytes; i++, j++) {
+                        clients[fd].msg[j] = buftoread[i];
+                        if (clients[fd].msg[j] == '\n') {
+                            clients[fd].msg[j] = 0;
+                            sprintf(buftowrite, "client %d: %s\n", clients[fd].id, clients[fd].msg);
+                            sendAll(fd);
+                            bzero(clients[fd].msg, strlen(clients[fd].msg));
+                            j = -1;
+                        }
+                    }
+                }
+            }
+        }
     }
-
-
+}
 
         
 // init const
@@ -82,4 +115,3 @@ int main(int ac, char **av)
 
 // glootie 
 
-}
