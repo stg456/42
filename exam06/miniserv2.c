@@ -42,5 +42,13 @@ int main(int ac, char **av)
     if (ac != 2)
         err("Wrong number of arguments\n");
 
+    socklen_t len;
+    struct sockaddr_in servaddr;
+
+    int sockfd = socket(AF_INET, SOCK_STREAM, 0);
+    if (sockfd == -1) err(NULL);
+    FD_ZERO(&act);
+    bzero(&servaddr, sizeof(servaddr));
+    servaddr.sin_family = AF_INET;
     
 }
